@@ -2,7 +2,7 @@
   <header id="feeds-header">
     <Row id="feeds-row" type="flex">
         <Col :sm="8"><img src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" alt="" id="lead"></Col>
-        <Col :sm="8"><Input v-model="searchText" icon="ios-clock-outline" id="searchbox" placeholder="Search" /> </Col>
+        <Col :sm="8"><Input v-model="searchText" icon="ios-search" id="searchbox" placeholder="Search" /> </Col>
     </Row>   
     <Row id="catrow" :gutter="40" type="flex" justify="center" >
       <Col><p>Entertainment</p> </Col>
