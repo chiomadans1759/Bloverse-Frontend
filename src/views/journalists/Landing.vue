@@ -10,7 +10,7 @@
                     <img class="logo" src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" >
                   </Col>
                   <Col class="header-button">
-                    <Button ghost shape="circle"  @click="displayModal=true">Sign-in</Button>
+                    <!--<Button ghost shape="circle"  @click="displayModal=true">Sign-in</Button>-->
                     <router-link to="/journalist/apply">Register</router-link>
                     <router-link to="/journalist/login">Login</router-link>
 
