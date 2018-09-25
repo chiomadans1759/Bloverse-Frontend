@@ -3,6 +3,9 @@
     <Row id="feeds-row" type="flex">
         <Col :sm="8"><img src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" alt="" id="lead"></Col>
         <Col :sm="8"><Input v-model="searchText" icon="ios-search" id="searchbox" placeholder="Search" /> </Col>
+        <Col>
+          <router-link to="/journalist" >Write for us</router-link>
+        </Col>
     </Row>   
     <Row id="catrow" :gutter="40" type="flex" justify="center" >
       <Col><p>Entertainment</p> </Col>

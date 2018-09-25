@@ -1,0 +1,101 @@
+<template>
+<Col :sm="18" :md="10" :xs="22" class="auth-section">
+  <h1 id="page-title">Sign in</h1>
+  <Row type="flex" justify="space-between" id="btn-social-grp">
+    <Col :sm="11" :xs="24">
+      <Button class="btn-social my-btn" id="btn-google" long> 
+        <Icon id="google-icon" type=logo-google />
+        Google
+      </Button>
+    </Col>
+    <Col :sm="11" :xs="24"> 
+      <Button class="btn-social my-btn" id="btn-facebook" long>Facebook</Button>
+    </Col>
+    <Col :sm="11" :xs="24">
+      <Button class="btn-social my-btn" id="btn-linkedln" long>Linkedln</Button> 
+    </Col>
+    <Col :sm="11" :xs="24">
+      <Button class="btn-social my-btn" id="btn-twitter" long>Twitter</Button>
+    </Col>
+  </Row>
+  <p class="p-or">OR</p>
+  <Form ref="loginForm" class="auth-form login-form" :model="user" :rules="loginValidate">
+    <FormItem prop="email">
+      <Input class="my-input" v-model="user.email" size="large" placeholder="E-mail*" />
+    </FormItem>
+    <FormItem prop="password">
+      <Input class="my-input" v-model="user.password" placeholder="Password*"/>
+    </FormItem>
+    <FormItem>
+      <Button class="my-btn btn-main" @click="handleLogin" long>LOG IN</Button>
+    </FormItem>
+  </Form>
+  
+  <div id="register-here">Not Yet on Blovere? <br> 
+    <router-link id="login-link" to="apply"> Register Here </router-link>
+  </div>
+</Col>
+</template>
+
+
+
+
+
+
+<script>
+import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
+export default {
+  components: { Button, Row, Col, Icon, Input, Form, FormItem},
+  data: function(){
+    return {
+      user: {
+        email: '',
+        password: ''
+      },
+      loginValidate: {
+        email: [
+          { required: true, message: 'Email cannot be empty', trigger: 'blur' },
+          { type: 'email', message: 'Not a valid email', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: 'Please fill in the password.', trigger: 'blur' },
+          {
+            type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur',
+          },
+        ],
+      }
+
+    }
+  },
+  methods: {
+    handleLogin: function(){
+      this.$refs.loginForm.validate(valid=>{
+        if(valid){
+
+        }else{
+          this.$Message.error('Some fields were not filled');
+        }
+      })
+    }
+  }
+
+}
+</script>
+
+
+<style scoped>
+
+  #register-here{
+    display:flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    font-size: 18px;
+    margin-top: 12px;
+  }
+
+  #register-link{
+    color:#2F80ED;
+  }
+
+
+</style>;;

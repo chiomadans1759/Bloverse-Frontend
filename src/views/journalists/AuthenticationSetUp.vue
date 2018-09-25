@@ -1,0 +1,67 @@
+<template>
+<Col :sm="18" :md="10" :xs="22" class="auth-section">
+  <h1 id="page-title">Welcome to Bloverse</h1>
+  <h3 id="sub-title">Choose an option to complete your registration</h3>
+  <Row type="flex" justify="space-between" id="btn-social-grp">
+    <Col :sm="11" :xs="24">
+      <Button class="my-btn btn-social" id="btn-google" long> 
+        <Icon id="google-icon" type=logo-google />
+        Google
+      </Button>
+    </Col>
+    <Col :sm="11" :xs="24"> 
+      <Button class="my-btn btn-social" id="btn-facebook" long>Facebook</Button>
+    </Col>
+    <Col :sm="11" :xs="24">
+      <Button class="my-btn btn-social" id="btn-linkedln" long>Linkedln</Button> 
+    </Col>
+    <Col :sm="11" :xs="24">
+      <Button class="my-btn btn-social" id="btn-twitter" long>Twitter</Button>
+    </Col>
+  </Row>
+  <p class="p-or">OR</p>
+  <p id="manual-wrapper"><router-link to="setup" class="my-btn btn-main" id="btn-manual"> Continue Setup Manually </router-link></p>
+</Col>
+</template>
+
+
+
+
+
+
+<script>
+import { Button,Row, Col, Icon } from 'iview';
+export default {
+  components: { Button, Row, Col, Icon },
+}
+</script>
+
+
+<style scoped>
+
+#page-title {
+  font-weight: normal;
+  color: #828282;
+}
+
+#sub-title {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 24px;
+  color: #4F4F4F;
+  text-align: center;
+}
+
+#manual-wrapper {
+  display: flex;
+}
+
+#btn-manual {
+  flex-grow: 1;
+  text-align: center;
+  padding: .5rem 0;
+  border-radius: 5px;
+}
+
+
+</style>
