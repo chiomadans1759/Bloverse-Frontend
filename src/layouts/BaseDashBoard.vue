@@ -6,8 +6,10 @@
     <Layout id="main">
       <DashboardHeader @logout="logOut" />
       <Content id="content">
-        <router-view :paths="currentPath" name="location"></router-view>
-        <router-view></router-view>
+        <transition name="fade" mode="out-in">
+          <router-view :paths="currentPath" name="location"></router-view>
+          <router-view></router-view>
+        </transition>
       </Content>
     </Layout>
   </Layout>
