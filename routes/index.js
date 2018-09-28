@@ -20,6 +20,8 @@ import JournalistManualSetUp from '../src/views/journalists/AuthenticationSetUpM
 import JournalistSignIn from '../src/views/journalists/AuthenticationSignIn.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
 
+import FillCreate from '../src/views/journalists/FillCreate.vue';
+
 
 import Feeds from '../src/views/DisplayFeeds.vue';
 
@@ -41,7 +43,13 @@ const routes = [
           { path: 'posts', component: BasePost,
             children: [
               { path: '', component: MyPosts },
-              { path: 'create', component: CreatePost }
+              { path: 'create', component: CreatePost,
+                children: [
+                  {
+                    path: 'fill', component: FillCreate
+                  }
+                ]
+              }
             ]
           }
         ]
