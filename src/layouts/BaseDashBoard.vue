@@ -15,8 +15,8 @@
 
 <script>
   import { Layout, Icon, Sider } from 'iview';
-  import DashboardHeader from '../../components/DashboardHeader.vue';
-  import DashboardSidebarLinks from '../../components/DashboardSideBarLinks.vue';
+  import DashboardHeader from '../components/DashboardHeader.vue';
+  import DashboardSidebarLinks from '../components/DashboardSideBarLinks.vue';
   export default {
     components: { Layout, Icon, Sider, DashboardHeader, DashboardSidebarLinks }
   }

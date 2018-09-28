@@ -1,64 +1,26 @@
 <template>
-    <div class="layout">
-      <Layout v-if="!template">
-        <Row>
-          <Col @click.native="template='basic'" :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }" class-name="paper3">
-      
-            <img src="https://res.cloudinary.com/di11juunm/image/upload/v1538047729/paper_1.png" class="paper1"><br />
-            </a>
-            <div class="page1">
-              <p class="page">Basic Template</p>
-            </div>
-          </Col>
-          <Col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
-            <img src="https://res.cloudinary.com/di11juunm/image/upload/v1538047817/paper21.png" class="second">
-            <p class="page">Custom Template 1</p>
-          </Col>
-          <Col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
-            <img src="https://res.cloudinary.com/di11juunm/image/upload/v1538047817/paper21.png">
-            <p class="page">Custom Template 2</p>
-          </Col>
-          <Col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
-            <img src="https://res.cloudinary.com/di11juunm/image/upload/v1538047817/paper21.png">
-            <p class="page">Custom Template 3</p>
-          </Col>
-        </Row>
-      </Layout>
-      <FillCreate v-else />
-    </div>
-</template>
-<script>
-  import { Row, Col, Layout } from 'iview';
-    import FillCreate from './FillCreate.vue'
-
-    export default {
-      components: { FillCreate, Row, Col, Layout },
-      data() {
-        return {
-          template: null
-        }
-      },
-      
-    }
-</script>
-
-<style scoped>
-  .second {
-    margin-left: -10px;
-  }
-
-  .page {
-    text-align: center;
-
-  }
-
-  .page1 {
-    margin-left: -90px;
-    margin-top: 35px;
-  }
-
-.paper3 {
+  <BasicCreatePost v-if="selectedTemplate === 'basic'" />
+  <TemplateChooser v-else @selectTemplate="selectedTemplate=$event" />
   
-}
-</style>
+</template>
 
+<script>
+  import TemplateChooser from '../../components/TemplateChooser.vue';
+  import BasicCreatePost from '../../components/CreatePostBasic.vue';
+
+  export default {
+    components: { TemplateChooser, BasicCreatePost },
+    data(){
+      return {
+        selectedTemplate: null
+      }
+    },
+    watch: {
+      selectedTemplate(val){
+        console.log(val);
+      }
+    }
+
+    
+  }
+</script>

@@ -3,24 +3,22 @@ import Vue from 'vue';
 
 
 
-import BaseDashBoard from '../src/views/journalists/BaseDashBoard.vue';
+import BaseDashBoard from '../src/layouts/BaseDashBoard.vue';
 import MyProfile from '../src/views/journalists/MyProfile.vue';
 import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
-import BasePost from '../src/views/journalists/BasePost.vue';
+import BasePost from '../src/layouts/BlankBase.vue';
 import MyPosts from '../src/views/journalists/MyPosts.vue';
 import CreatePost from '../src/views/journalists/CreatePost.vue';
 
 
 
-import BaseJournalist from '../src/views/journalists/Base.vue';
+import BaseJournalist from '../src/layouts/BlankBase.vue';
 import JournalistLanding from '../src/views/journalists/Landing.vue';
 import JournalistApply from '../src/views/journalists/AuthenticationApply.vue';
 import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
 import JournalistManualSetUp from '../src/views/journalists/AuthenticationSetUpManual.vue';
 import JournalistSignIn from '../src/views/journalists/AuthenticationSignIn.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
-
-import FillCreate from '../src/views/journalists/FillCreate.vue';
 
 
 import Feeds from '../src/views/DisplayFeeds.vue';
@@ -43,13 +41,7 @@ const routes = [
           { path: 'posts', component: BasePost,
             children: [
               { path: '', component: MyPosts },
-              { path: 'create', component: CreatePost,
-                children: [
-                  {
-                    path: 'fill', component: FillCreate
-                  }
-                ]
-              }
+              { path: 'create', component: CreatePost }
             ]
           }
         ]

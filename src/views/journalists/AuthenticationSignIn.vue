@@ -1,4 +1,5 @@
 <template>
+  <BaseAuthentication>
 <Col :sm="18" :md="10" :xs="22" class="auth-section">
   <h1 id="page-title">Sign in</h1>
   <Row type="flex" justify="space-between" id="btn-social-grp">
@@ -35,6 +36,7 @@
     <router-link id="login-link" to="apply"> Register Here </router-link>
   </div>
 </Col>
+  </BaseAuthentication>
 </template>
 
 
@@ -43,9 +45,10 @@
 
 
 <script>
+  import BaseAuthentication from '../../layouts/BaseAuthentication';
 import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
 export default {
-  components: { Button, Row, Col, Icon, Input, Form, FormItem},
+  components: { Button, Row, Col, Icon, Input, Form, FormItem, BaseAuthentication },
   data: function(){
     return {
       user: {
@@ -71,7 +74,7 @@ export default {
     handleLogin: function(){
       this.$refs.loginForm.validate(valid=>{
         if(valid){
-
+          this.$router.push('/journalist/holuborhee/dashboard')
         }else{
           this.$Message.error('Some fields were not filled');
         }

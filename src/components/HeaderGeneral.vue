@@ -1,14 +1,14 @@
 <template>
   <nav>
     <Row type="flex" justify="space-between" class="header-nav">
-        <Col>
-          <img src="https://res.cloudinary.com/naera/image/upload/v1532035571/bloverse/b_blue.png" style="heigh:15px">
-          <span style="height: 30px; font-size: 24px; font-weight: bold">BLOVERSE</span>
-        </Col>
-        <Col>
-          <Button type="primary"  shape="circle" ghost>Register</Button>
-          <Button type="primary" shape="circle" style="color: white">Log in</Button>
-        </Col>
+      <Col>
+        <img src="https://res.cloudinary.com/naera/image/upload/v1532035571/bloverse/b_blue.png" style="heigh:15px">
+        <span style="height: 30px; font-size: 24px; font-weight: bold">BLOVERSE</span>
+      </Col>
+      <Col>
+        <Button type="primary"  shape="circle" ghost>Register</Button>
+        <Button type="primary" shape="circle" style="color: white">Log in</Button>
+      </Col>
     </Row>
  </nav>
 </template>

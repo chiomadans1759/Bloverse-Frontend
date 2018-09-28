@@ -1,4 +1,5 @@
 <template>
+  <BaseAuthentication>
   <Col :sm="18" :md="18" :xs="22" class="auth-section">
     <h2 id="page-title"> Complete your registration </h2>
     <Row type="flex" justify="center">
@@ -34,6 +35,7 @@
       </Row>
     </section>
   </Col>
+  </BaseAuthentication>
 </template>
 
 
@@ -42,16 +44,17 @@
 
 
 <script>
+  import BaseAuthentication from '../../layouts/BaseAuthentication';
   import PageOne from '../../components/SetUpStepOne.vue';
   import PageTwo from '../../components/SetUpStepTwo.vue';
 
-  import { Steps, Step, Row, Col } from 'iview';
+  import { Steps, Step, Row, Col, } from 'iview';
 
   
 
 export default {
 //     props: ['value', 'linkedIn'],
-  components: { PageOne, PageTwo, Steps, Step, Row, Col },
+  components: { PageOne, PageTwo, Steps, Step, Row, Col, BaseAuthentication },
   data: function(){
     return {
       currentPage: 1,

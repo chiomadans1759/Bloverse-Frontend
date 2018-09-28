@@ -1,12 +1,12 @@
 <template>
   <Header id="header">
-    <Row id="items-wrapper" type="flex" justify="space-between">
+    <Row id="items-wrapper" type="flex" justify="space-between" align="middle">
       <Col><Icon type="navicon-round" color="#E0E0E0"></Icon></Col>
       <Col span="12"><Input icon="ios-search" placeholder="Search"></Input></Col>
       <Col><Icon type="android-notifications-none" color="#BDBDBD"></Icon></Col>
       <Col>
         
-          <Avatar icon="person" /> <span>Jackman Welsh</span>
+        <Avatar icon="person" /> <span>Jackman Welsh</span>
         <Dropdown>
           <Icon type="md-arrow-dropdown" />
           <DropdownMenu slot="list">

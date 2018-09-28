@@ -1,4 +1,5 @@
 <template>
+  <BaseAuthentication>
 <Col :sm="18" :md="10" :xs="22" class="auth-section">
   <h1 id="page-title">Welcome to Bloverse</h1>
   <h3 id="sub-title">Choose an option to complete your registration</h3>
@@ -22,6 +23,7 @@
   <p class="p-or">OR</p>
   <p id="manual-wrapper"><router-link to="setup" class="my-btn btn-main" id="btn-manual"> Continue Setup Manually </router-link></p>
 </Col>
+  </BaseAuthentication>
 </template>
 
 
@@ -30,9 +32,10 @@
 
 
 <script>
+  import BaseAuthentication from '../../layouts/BaseAuthentication';
 import { Button,Row, Col, Icon } from 'iview';
 export default {
-  components: { Button, Row, Col, Icon },
+  components: { Button, Row, Col, Icon, BaseAuthentication },
 }
 </script>
 

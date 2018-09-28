@@ -11,7 +11,7 @@
                   </Col>
                   <Col class="header-button">
                     <!--<Button ghost shape="circle"  @click="displayModal=true">Sign-in</Button>-->
-                    <router-link to="/journalist/apply">Register</router-link>
+                    <router-link to="/journalist/apply">Register</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
                     <router-link to="/journalist/login">Login</router-link>
 
                     <!--<Button class="btn register" type="default" shape="circle" @click="displayModal=true" ghost>Register</Button>

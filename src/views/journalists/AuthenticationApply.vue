@@ -1,89 +1,92 @@
 <template>
- <Col :sm="18" :md="10" :xs="22" class="auth-section">
- <Modal
-   v-model="isSuccess"
-   :width="726"
-   id="success-modal">
-       <Alert type="success">Success!</Alert>
-       <p>Your application has been sent to bloverse. A message will be sent to your mail to continue the verification and approval process in 48hrs.</p>
-   <div slot="footer"></div>
- </Modal>
-  <h1 id="page-title">Apply</h1> 
-  <Form ref="applyForm" :model="applicant" class="auth-form" :rules="validateApplication">
-    <h3 id="form-instruction">Fill the form below to apply as a journalist on Bloverse</h3>
-    <Row type="flex" justify="space-between">
-      <Col :sm="11" :xs="24">
-        <FormItem prop="firstName" :error="errors.firstName">
-          <Input class="my-input" v-model="applicant.firstName" placeholder="First name*"  />
-        </FormItem>
-      </Col>
-      <Col :sm="11" :xs="24">
-        <FormItem prop="lastName" :error="errors.lastName">
-          <Input class="my-input" v-model="applicant.lastName" placeholder="Last name*" />
-        </FormItem>
-      </Col>
-    </Row>
-    <Row type="flex" justify="space-between">
-      <Col :sm="11" :xs="24">
-        <FormItem prop="email" :error="errors.email">
-          <Input class="my-input" v-model="applicant.email" placeholder="Email*"  />
-        </FormItem>
-      </Col>
-      <Col :sm="11" :xs="24">
-        <FormItem prop="phone" :error="errors.phone">
-          <Input class="my-input" v-model="applicant.phone" placeholder="Phone*" />
-        </FormItem>
-      </Col>
-    </Row>
-    <FormItem prop="linkedIn" :error="errors.linkedIn">
-      <Input class="my-input" v-model="applicant.linkedIn" placeholder="Linkedln profle link*"  />
-    </FormItem>
-    <FormItem prop="twitter" :error="errors.twitter">
-      <Input class="my-input" v-model="applicant.twitter" placeholder="Twitter profle link*"  />
-    </FormItem>
-    <FormItem prop="articles" :error="errors.articles">
-      <Input class="my-input" v-model="applicant.articles[0]" placeholder="Link to written article one*"  />
-    </FormItem>
-    <FormItem>
-      <Input class="my-input" v-model="applicant.articles[1]" placeholder="Link to written article two"  />
-    </FormItem>
-    <FormItem>
-      <Input class="my-input" v-model="applicant.articles[2]" placeholder="Link to written article three"  />
-    </FormItem>
-    <Row type="flex" justify="space-between">
-      <Col :sm="11" :xs="24">
-        <FormItem prop="countryId" :error="errors.countryId">
-          <Select class="my-select" placeholder="Country*" v-model="applicant.countryId" filterable>
-            <Option  v-for="item in countries" :value="item.id" :key="item.id">{{ item.name }}</Option>
-          </Select>
-        </FormItem>
-      </Col>
-      <Col :sm="11" :xs="24">
-        <FormItem prop="categoryId" :error="errors.categoryId">
-          <Select class="my-select" placeholder="Category*" v-model="applicant.categoryId" filterable>
-            <Option  v-for="item in categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
-          </Select>
-        </FormItem>
-      </Col>
-    </Row>
-    <FormItem prop="terms">
-      <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
-    </FormItem>
-    <Button class="my-btn btn-secondary" long @click.prevent="handleSubmit">SUBMIT</Button>
-      <div id="login-here">already have an account?<br> 
-        <router-link id="login-link" to=""> Log in here </router-link>
-      </div>
-  </Form>
- </Col>
+  <BaseAuthentication>
+    <Col :sm="18" :md="10" :xs="22" class="auth-section">
+      <Modal
+       v-model="isSuccess"
+       :width="726"
+       id="success-modal">
+        <Alert type="success">Success!</Alert>
+        <p>Your application has been sent to bloverse. A message will be sent to your mail to continue the verification and approval process in 48hrs.</p>
+        <div slot="footer"></div>
+      </Modal>
+    <h1 id="page-title">Apply</h1> 
+    <Form ref="applyForm" :model="applicant" class="auth-form" :rules="validateApplication">
+      <h3 id="form-instruction">Fill the form below to apply as a journalist on Bloverse</h3>
+      <Row type="flex" justify="space-between">
+        <Col :sm="11" :xs="24">
+          <FormItem prop="firstName" :error="errors.firstName">
+            <Input class="my-input" v-model="applicant.firstName" placeholder="First name*"  />
+          </FormItem>
+        </Col>
+        <Col :sm="11" :xs="24">
+          <FormItem prop="lastName" :error="errors.lastName">
+            <Input class="my-input" v-model="applicant.lastName" placeholder="Last name*" />
+          </FormItem>
+        </Col>
+      </Row>
+      <Row type="flex" justify="space-between">
+        <Col :sm="11" :xs="24">
+          <FormItem prop="email" :error="errors.email">
+            <Input class="my-input" v-model="applicant.email" placeholder="Email*"  />
+          </FormItem>
+        </Col>
+        <Col :sm="11" :xs="24">
+          <FormItem prop="phone" :error="errors.phone">
+            <Input class="my-input" v-model="applicant.phone" placeholder="Phone*" />
+          </FormItem>
+        </Col>
+      </Row>
+      <FormItem prop="linkedIn" :error="errors.linkedIn">
+        <Input class="my-input" v-model="applicant.linkedIn" placeholder="Linkedln profle link*"  />
+      </FormItem>
+      <FormItem prop="twitter" :error="errors.twitter">
+        <Input class="my-input" v-model="applicant.twitter" placeholder="Twitter profle link*"  />
+      </FormItem>
+      <FormItem prop="articles" :error="errors.articles">
+        <Input class="my-input" v-model="applicant.articles[0]" placeholder="Link to written article one*"  />
+      </FormItem>
+      <FormItem>
+        <Input class="my-input" v-model="applicant.articles[1]" placeholder="Link to written article two"  />
+      </FormItem>
+      <FormItem>
+        <Input class="my-input" v-model="applicant.articles[2]" placeholder="Link to written article three"  />
+      </FormItem>
+      <Row type="flex" justify="space-between">
+        <Col :sm="11" :xs="24">
+          <FormItem prop="countryId" :error="errors.countryId">
+            <Select class="my-select" placeholder="Country*" v-model="applicant.countryId" filterable>
+              <Option  v-for="item in countries" :value="item.id" :key="item.id">{{ item.name }}</Option>
+            </Select>
+          </FormItem>
+        </Col>
+        <Col :sm="11" :xs="24">
+          <FormItem prop="categoryId" :error="errors.categoryId">
+            <Select class="my-select" placeholder="Category*" v-model="applicant.categoryId" filterable>
+              <Option  v-for="item in categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
+            </Select>
+          </FormItem>
+        </Col>
+      </Row>
+      <FormItem prop="terms">
+        <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
+      </FormItem>
+      <Button class="my-btn btn-secondary" long @click.prevent="handleSubmit">SUBMIT</Button>
+        <div id="login-here">already have an account?<br> 
+          <router-link id="login-link" to=""> Log in here </router-link>
+        </div>
+    </Form>
+   </Col>
+  </BaseAuthentication>
 </template>
 
 
 
 <script>
-import { Form, FormItem, Row, Col, Input, Select,Option, Checkbox, Modal, Alert, Button } from 'iview';
-import Utility from '../../Utility.js';
+  import BaseAuthentication from '../../layouts/BaseAuthentication';
+  import { Form, FormItem, Row, Col, Input, Select,Option, Checkbox, Modal, Alert, Button } from 'iview';
+  import Utility from '../../Utility.js';
 export default {
-  components: { Form, FormItem, Row, Col, Input, Select, Option,Checkbox, Modal, Alert, Button },
+  components: { Form, FormItem, Row, Col, Input, Select, Option,Checkbox, Modal, Alert, Button, BaseAuthentication },
   data: function(){
     return {
       categories: null,
