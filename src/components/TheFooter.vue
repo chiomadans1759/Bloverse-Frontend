@@ -39,10 +39,10 @@
       <Col>English</Col>
       <Col>(c) 2018 Bloverse. All Right Reserved</Col>
       <Col>
-        <Icon class="footer-icon" type="social-facebook"></Icon>
-        <Icon class="footer-icon" type="social-twitter"></Icon>
-        <Icon class="footer-icon" type="social-linkedin"></Icon>
-        <Icon class="footer-icon" type="social-instagram"></Icon>
+        <Icon class="footer-icon" type="logo-facebook"></Icon>
+        <Icon class="footer-icon" type="logo-twitter"></Icon>
+        <Icon class="footer-icon" type="logo-linkedin"></Icon>
+        <Icon class="footer-icon" type="logo-instagram"></Icon>
       </Col>
     </Row>
                                   
