@@ -118,7 +118,7 @@
     methods: {
       publishPost: async function(){
         let response, config;
-
+        
         try{
           config = { headers: {'Authorization': `Token ${this.session.token}`}};
           if(this.post.id)

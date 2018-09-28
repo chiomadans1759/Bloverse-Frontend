@@ -9,22 +9,26 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Contacts</a></li>
           <li><a href="#">Terms and Conditions</a></li>
-          <li><a href="/docs/#/policy">Privacy Policy</a></li>
+          <li><router-link to="/policy">Privacy Policy</router-link></li>
         </ul>
       </Col>
       <Col>
         <ul class="footer-list">
-          <li><a href="/docs/#/rules/journalist">House Rules (Journalists)</a></li>
-          <li><a href="/docs/#/ranking/journalist">Ranking System (Journalists)</a></li>
-          <li><a href="/docs/#/guides">Guides to Publish Article</a></li>
-          <li><a href="/docs/#/faq/journalist">Frequently Asked Question (Journalists)</a></li>
+          <li>
+            <router-link to="/rules/journalist">House Rules (Journalists)</router-link>
+          </li>
+          <li>
+            <router-link to="/ranking/journalist">Ranking System (Journalists)</router-link>
+          </li>
+          <li><router-link to="/guides">Guides to Publish Article</router-link></li>
+          <li><router-link to="/faq/journalist">Frequently Asked Question (Journalists)</router-link></li>
         </ul>
       </Col>
       <Col>
         <ul class="footer-list">
-          <li><a href="/docs/#/rules/commenter">House Rules (Commenters)</a></li>
-          <li><a href="/docs/#/ranking/commenter">Ranking System (Commenters)</a></li>
-          <li><a href="/docs/#/faq/commenter">Frequently Asked Question (Commenters)</a></li>
+          <li><router-link to="/rules/commenter">House Rules (Commenters)</router-link></li>
+          <li><router-link to="/ranking/commenter">Ranking System (Commenters)</router-link></li>
+          <li><router-link to="/faq/commenter">Frequently Asked Question (Commenters)</router-link></li>
         </ul>
       </Col>
       <!--<Col>

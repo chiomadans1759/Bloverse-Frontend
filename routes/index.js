@@ -20,6 +20,11 @@ import JournalistManualSetUp from '../src/views/journalists/AuthenticationSetUpM
 import JournalistSignIn from '../src/views/journalists/AuthenticationSignIn.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
 
+import FrequentlyAskedQuestions from '../src/views/DocsFAQ.vue';
+import HouseRules from '../src/views/DocsHouseRules.vue';
+import RankingSystem from '../src/views/DocsRankingSystem.vue';
+import PublishGuide from '../src/views/DocsPublishGuide.vue';
+
 
 import Feeds from '../src/views/DisplayFeeds.vue';
 
@@ -45,9 +50,13 @@ const routes = [
             ]
           }
         ]
-      }
+      },
     ]
-  }
+  },
+  { path: '/faq/:person', component: FrequentlyAskedQuestions },
+  { path: '/rules/:person', component: HouseRules },
+  { path: '/guides', component: PublishGuide },
+  { path: '/ranking/:person', component: RankingSystem }
 ]
 
 
