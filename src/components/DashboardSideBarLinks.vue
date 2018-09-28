@@ -1,13 +1,13 @@
 <template>
   <div id="links-wrapper">
    <router-link class="router-link" :to="`/journalist/${username}/dashboard`">
-     <Icon class="icon" type="ios-keypad"></Icon>
+     <Icon class="icon" type="ios-home"></Icon>
    </router-link>
    <router-link class="router-link" :to="`/journalist/${username}/posts/create`">
-   	 <Icon class="icon" type="ios-keypad"></Icon>
+   	 <Icon class="icon" type="ios-document"></Icon>
    </router-link>
    <router-link class="router-link" :to="`/journalist/${username}/posts`">
-   	 <Icon class="icon" type="ios-keypad"></Icon>
+   	 <Icon class="icon" type="logo-rss"></Icon>
    </router-link>
   </div>
 </template>
@@ -46,6 +46,10 @@
 
   #links-wrapper .router-link .icon {
     margin: auto;
+  }
+
+  .icon {
+    font-size: 35px;
   }
 
 </style>
