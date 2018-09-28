@@ -1,3 +1,3 @@
 <template>
-  <h1>This is jouranlist detail page {{$route.params.username}}</h1>
+  <h1>Journalist {{$route.params.username}}'s profile page</h1>
 </template>

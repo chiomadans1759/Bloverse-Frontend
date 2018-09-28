@@ -36,7 +36,7 @@ const routes = [
       { path: 'register', component: JournalistSetUp },
       { path: 'setup', component: JournalistManualSetUp },
       { path: 'verify', component: JournalistVerify },
-      { path: ':username', component: BaseJournalist,
+      { path: ':username', component: BaseDashBoard,
         children: [
           { path: '', component: MyProfile },
           { path: 'dashboard', component: DashBoardHome },

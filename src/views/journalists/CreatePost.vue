@@ -1,9 +1,9 @@
 <template>
     <div class="layout">
-      <Layout v-if="post">
+      <Layout v-if="!template">
         <Row>
-          <Col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }" class-name="paper3">
-          <a v-on:click="post = false">
+          <Col @click.native="template='basic'" :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }" class-name="paper3">
+      
             <img src="https://res.cloudinary.com/di11juunm/image/upload/v1538047729/paper_1.png" class="paper1"><br />
             </a>
             <div class="page1">
@@ -28,17 +28,17 @@
     </div>
 </template>
 <script>
+  import { Row, Col, Layout } from 'iview';
     import FillCreate from './FillCreate.vue'
 
     export default {
+      components: { FillCreate, Row, Col, Layout },
       data() {
         return {
-          post: true
+          template: null
         }
       },
-      components: {
-        FillCreate
-      }
+      
     }
 </script>
 
