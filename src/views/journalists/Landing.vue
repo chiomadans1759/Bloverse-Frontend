@@ -45,13 +45,13 @@
             </Col>
             
             <Col :sm="7" class="section-2-description">
-              <Icon class="section-2-icon" type="android-folder"></Icon>
+              <Icon class="section-2-icon" type="ios-create" md="md-create"></Icon>
               <h2>154</h2>
               <p> Content providers have joined </p>
             </Col>
 
             <Col :sm="7" class="section-2-description">
-                <Icon class="section-2-icon" type="android-people"></Icon>
+                <Icon class="section-2-icon" type="ios-people"></Icon>
                 <h2>1785698</h2>
                 <p>Unique visitors have accessed the site </p>
             </Col>
@@ -519,7 +519,7 @@ export default {
   }
 
   .section-2-icon {
-    font-size: 33px;
+    font-size: 45px;
   }
 
   .section-2-description > h2 {
