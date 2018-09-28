@@ -7,7 +7,7 @@
             <section>
                 <Row class="header-row" type="flex" justify="space-between" align="middle">
                   <Col class="brand">
-                    <img class="logo" src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" >
+                    <router-link to="/"><img class="logo" src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" ></router-link>
                   </Col>
                   <Col class="header-button">
                     <!--<Button ghost shape="circle"  @click="displayModal=true">Sign-in</Button>-->

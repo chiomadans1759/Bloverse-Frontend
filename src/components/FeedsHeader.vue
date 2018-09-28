@@ -1,7 +1,9 @@
 <template>
   <header id="feeds-header">
     <Row id="feeds-row" type="flex" justify="space-around" align="middle">
-        <Col><img src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" alt="" id="lead"></Col>
+        <Col>
+          <router-link to="/"><img src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" alt="" id="lead"></router-link>
+        </Col>
         <Col :sm="8"><Input v-model="searchText" icon="ios-search" id="searchbox" placeholder="Search" /> </Col>
         <Col>
           <router-link to="/journalist" >Write for us</router-link>

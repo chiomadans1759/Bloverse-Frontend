@@ -30,12 +30,12 @@
     components: { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem },
     methods: {
       logout: function(){
-        this.clearSession();
-        localStorage.clear();
-        window.location = '/';
+        /*this.clearSession();
+        localStorage.clear();*/
+        this.$router.push('/journalist')
       },
 
-      ...mapMutations(['clearSession']),
+      //...mapMutations(['clearSession']),
     }
   }
 </script>

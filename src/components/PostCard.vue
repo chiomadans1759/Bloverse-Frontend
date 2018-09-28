@@ -7,7 +7,7 @@
       <Col span="14" id="body">
         <Row type="flex" justify="end">
          <Col>
-           <Icon type="md-eye" />
+           <Icon type="md-checkbox" />
          </Col>
         </Row>
         <h2>{{post.title}}</h2>
