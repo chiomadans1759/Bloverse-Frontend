@@ -92,6 +92,7 @@
 <script>
 import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
 import WithFooter from '../../layouts/WithFooter';
+import {page} from 'vue-analytics';
 
 
 export default {
@@ -105,6 +106,9 @@ export default {
     };
   },
   methods: {
+    track () {
+      page(journalist)
+    }
     // show: function () {
     //     this.visible = true;
     // }
