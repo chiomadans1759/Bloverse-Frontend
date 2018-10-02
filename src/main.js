@@ -13,7 +13,7 @@ import 'iview/dist/styles/iview.css';
 Vue.use(VueRouter);
 Vue.use(VueAnalytics, {
   id: 'UA-126813609-1',
-  router
+  routes
 })
 Vue.config.productionTip = false
 

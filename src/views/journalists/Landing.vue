@@ -106,9 +106,6 @@ export default {
     };
   },
   methods: {
-    track () {
-      page(journalist)
-    }
     // show: function () {
     //     this.visible = true;
     // }
