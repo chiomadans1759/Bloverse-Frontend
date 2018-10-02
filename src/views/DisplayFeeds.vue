@@ -9,7 +9,6 @@
 
 <script>
   import data from '../data.js';
-  import { page } from 'vue-analytics'
   import FeedsHeader from '../components/FeedsHeader.vue'
   import FeedsSection from '../components/FeedsSection.vue';
   import TheFooter from '../components/TheFooter.vue';
@@ -19,13 +18,7 @@
       return {
         posts: data.posts
       }
-    },
-      methods: {
-        track () {
-          page('/')
-        }
-
-      }
+    }
   }
   
 </script>
