@@ -25,6 +25,10 @@ import HouseRules from '../src/views/DocsHouseRules.vue';
 import RankingSystem from '../src/views/DocsRankingSystem.vue';
 import PublishGuide from '../src/views/DocsPublishGuide.vue';
 
+import AdminLogin from '../src/views/admin/Login.vue';
+import AdminHome from '../src/views/admin/Home.vue';
+import BaseAdmin from '../src/layouts/BlankBase.vue';
+
 
 import Feeds from '../src/views/DisplayFeeds.vue';
 
@@ -56,7 +60,14 @@ const routes = [
   { path: '/faq/:person', component: FrequentlyAskedQuestions },
   { path: '/rules/:person', component: HouseRules },
   { path: '/guides', component: PublishGuide },
-  { path: '/ranking/:person', component: RankingSystem }
+  { path: '/ranking/:person', component: RankingSystem },
+  { path: '/admin', component: BaseAdmin,
+    children: [
+      { path: '', redirect: 'dashboard' },
+      { path: 'dashboard', component: AdminHome },
+      { path: 'login', component: AdminLogin }
+    ]
+  },
 ]
 
 

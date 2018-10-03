@@ -84,7 +84,7 @@
 <script>
   import BaseAuthentication from '../../layouts/BaseAuthentication';
   import { Form, FormItem, Row, Col, Input, Select,Option, Checkbox, Modal, Alert, Button } from 'iview';
-  import Utility from '../../Utility.js';
+  //import Utility from '../../Utility.js';
 export default {
   components: { Form, FormItem, Row, Col, Input, Select, Option,Checkbox, Modal, Alert, Button, BaseAuthentication },
   data: function(){
@@ -196,8 +196,8 @@ export default {
     }
   },
   mounted: async function(){ 
-    this.categories = await Utility.categories; 
-    this.countries = await Utility.countries;
+    //this.categories = await Utility.categories; 
+    //this.countries = await Utility.countries;
   }
 }
 </script>

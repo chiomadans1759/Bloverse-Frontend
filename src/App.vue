@@ -7,8 +7,17 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex'
 export default {
-  name: 'app'
+  name: 'app',
+  methods: {
+    ...mapActions([
+      'setGeneralData'
+      ])
+  },
+  mounted(){
+    this.setGeneralData()
+  }
 }
 </script>
 
