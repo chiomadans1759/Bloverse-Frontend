@@ -55,14 +55,14 @@
         <Col :sm="11" :xs="24">
           <FormItem prop="countryId" :error="errors.countryId">
             <Select class="my-select" placeholder="Country*" v-model="applicant.countryId" filterable>
-              <Option  v-for="item in countries" :value="item.id" :key="item.id">{{ item.name }}</Option>
+              <Option  v-for="item in general.countries" :value="item.id" :key="item.id">{{ item.name }}</Option>
             </Select>
           </FormItem>
         </Col>
         <Col :sm="11" :xs="24">
           <FormItem prop="categoryId" :error="errors.categoryId">
             <Select class="my-select" placeholder="Category*" v-model="applicant.categoryId" filterable>
-              <Option  v-for="item in categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
+              <Option  v-for="item in general.categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
             </Select>
           </FormItem>
         </Col>
@@ -84,14 +84,12 @@
 <script>
   import BaseAuthentication from '../../layouts/BaseAuthentication';
   import { Form, FormItem, Row, Col, Input, Select,Option, Checkbox, Modal, Alert, Button } from 'iview';
+  import { mapState, mapActions } from 'vuex';
   //import Utility from '../../Utility.js';
 export default {
   components: { Form, FormItem, Row, Col, Input, Select, Option,Checkbox, Modal, Alert, Button, BaseAuthentication },
   data: function(){
     return {
-      categories: null,
-      countries: null,
-      applicant: { articles: [] },
       isSuccess: false,
       serverResponse: {},
       errors: {},
@@ -134,70 +132,72 @@ export default {
       },
     }
   },
-  watch: {
-    serverResponse: {
-      handler: function(val){
-        switch(val.status){
-          case 201:
-            this.isSuccess = true;
-            //this.applicant = { articles: [] };
-            this.$refs.applyForm.resetFields();
-            break;
-          case 400: 
-            let fieldErrors, varClient;
-            let { data } = val.data;
-            
-            let clientServer = { 
-              first_name: 'firstName', 
-              last_name: 'lastName', 
-              email: 'email', 
-              phone_number: 'phone', 
-              linkedin_url: 'linkedIn', 
-              twitter_url: 'twitter', 
-              articles: 'articles', 
-              country: 'countryId',
-              category: 'categoryId'
-            };
-            Object.keys(data).forEach((field)=>{
-              fieldErrors = data[field]; //get the server errors for a field
-              varClient = clientServer[field]; // get the variable name on front end from the client server map
-              
-              /* This should set the error for a formItem and also cause the validation state of the form change to error while it also displays the message */
-              this.errors[varClient] = fieldErrors[0];
-              // BUG !!!! Currently it sets the message but doesn't display the error message unless when a field is edited
-
-              
-            })
-            break;
-          default:
-            this.$Message.error('Something went wrong, this may be an issue with your network connectivity. You may try to reload the page');
-        }
+  computed: {
+    applicant: {
+      get(){
+        return this.$store.state.auth.applicant;
       },
-      deep: true
-    }
+      set(props){
+        this.$store.commit('setApplicant', props);
+      }
+    },
+    ...mapState([
+        'general',
+      ])
   },
   methods: {
     handleSubmit: function() {
       this.errors = {}; // reset error
+      console.log(this.applicant)
       this.$refs.applyForm.validate(async (valid) => {
         if (valid) {
-          await this.apply();
+          let applied = await this.apply();
+
+          if(applied === true) this.handleSuccess();
+          else if(applied.errors) this.handleError(applied.errors);
+          else 
+            this.$Message.error('Something went wrong, this may be an issue with your network connectivity. You may try to reload the page'); 
         } else {
           this.$Message.error('Some Forms fields were not filled correctly!');
         }
       })
     },
-    apply: async function(){
-      try {
-        this.serverResponse = await this.$http.post('/api/v1/apply/', this.applicant);
-      }catch(error){
-        this.serverResponse = error.response;
-      }
-    }
+    handleError(errors){
+      let fieldErrors, varClient;
+      
+      let clientServer = { 
+        first_name: 'firstName', 
+        last_name: 'lastName', 
+        email: 'email', 
+        phone_number: 'phone', 
+        linkedin_url: 'linkedIn', 
+        twitter_url: 'twitter', 
+        articles: 'articles', 
+        country: 'countryId',
+        category: 'categoryId'
+      };
+      Object.keys(errors).forEach((field)=>{
+        fieldErrors = errors[field]; //get the server errors for a field
+        varClient = clientServer[field]; // get the variable name on front end from the client server map
+        
+        /* This should set the error for a formItem and also cause the validation state of the form change to error while it also displays the message */
+        this.errors[varClient] = fieldErrors[0];
+        // BUG !!!! Currently it sets the message but doesn't display the error message unless when a field is edited 
+      })
+      console.log(this.errors)
+      this.$Message.error('Some Forms fields were not filled correctly!');
+    },
+    handleSuccess(){
+      this.isSuccess = true;
+      this.$refs.applyForm.resetFields();
+    },
+    ...mapActions([
+      'apply'
+    ]),
+
   },
   mounted: async function(){ 
-    //this.categories = await Utility.categories; 
-    //this.countries = await Utility.countries;
+    console.log(this.general)
   }
 }
 </script>

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <transition name="fade" mode="out-in">
+    <h2 v-if="loading">Loading...</h2>
+    <transition v-else name="fade" mode="out-in">
       <router-view />
     </transition>
   </div>
@@ -8,17 +9,24 @@
 
 <script>
   import { mapActions } from 'vuex'
-export default {
-  name: 'app',
-  methods: {
-    ...mapActions([
-      'setGeneralData'
-      ])
-  },
-  mounted(){
-    this.setGeneralData()
+  export default {
+    name: 'app',
+    data(){
+      return {
+        loading: true
+      }
+    },
+    methods: {
+      ...mapActions([
+        'setGeneralData'
+        ])
+    },
+    async mounted(){
+      await this.setGeneralData();
+      console.log(this.$store.state);
+      this.loading = false;
+    }
   }
-}
 </script>
 
 <style>

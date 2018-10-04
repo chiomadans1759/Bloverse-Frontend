@@ -3,7 +3,7 @@ import axios from 'axios';
 import { locale, Message } from 'iview';
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
-import store from '../stores';
+import store from '../stores/index';
 
 
 import routes from '../routes'
