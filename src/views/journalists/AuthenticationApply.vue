@@ -207,13 +207,11 @@ export default {
 
 
 <style>
-
 #success-modal .ivu-modal-body {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 #success-modal .ivu-alert {
   text-align: center;
   width: 80%;
@@ -222,35 +220,26 @@ export default {
   background-color: white;
   color: #6FCF97;
 }
-
 #success-modal p {
   font-size: 18px;
   margin: 1rem 0 3rem; 
   color: #828282;
 }
-
-
-
 @media screen and (min-width:768px) {
   #success-modal p {
     width: 80%;
   }
-
   #success-modal .ivu-alert {
     width: 60%;
   }
 }
-
 /*#section-register > * {
   border: 1px solid red;
 }*/
-
 #terms{
   padding-left:20px;
   font-size:14px;
 }
-
-
 #login-here{
   display:flex;
   justify-content: flex-end;
@@ -258,9 +247,7 @@ export default {
   font-size: 18px;
   margin-top: 12px;
 }
-
 #login-link{
   color:#2F80ED;
 }
-
 </style>

@@ -4,6 +4,7 @@ import { locale, Message } from 'iview';
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
 import store from '../stores/index';
+import VueAnalytics from 'vue-analytics';
 
 
 import routes from '../routes'
@@ -23,6 +24,10 @@ Vue.prototype.$http = axios;
 Vue.prototype.$Message = Message;
 
 Vue.use(VueRouter);
+Vue.use(VueAnalytics, {
+  id: 'UA-126813609-1',
+  router
+})
 Vue.config.productionTip = false
 
 
@@ -48,3 +53,12 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+
+ga('set', 'page', router.currentRoute.path);
+ga('send', 'pageview');
+
+router.afterEach(( to, from ) => {
+  ga('set', 'page', to.path);
+  ga('send', 'pageview');
+});
