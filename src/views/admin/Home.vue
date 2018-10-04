@@ -1,5 +1,5 @@
 <template>
-<div>
+<div v-if="ready">
     <Layout>
         <Header style="background:#5b6270; color: white; min-height:100px ">
           <Row type="flex" justify="space-between" align="middle" style="margin: 40px">
@@ -40,6 +40,7 @@
   </Row>
   <DisplayApplicants></DisplayApplicants>
 </div>
+<h2 v-else>Loading....</h2>
 </template>
 
 <script>
@@ -62,6 +63,9 @@
           total = this.general.applicants.length;
 
           return { accepted, rejected, total };
+        },
+        ready(){
+          return this.general.applicants ? true : false
         },
         ...mapState([
           'general'
