@@ -32,7 +32,7 @@
         </Col>
         <Col :sm="11" :xs="24">
           <FormItem prop="phone" :error="errors.phone">
-            <Input class="my-input" v-model="applicant.phone" placeholder="Phone*" />
+            <Input class="my-input" v-model="applicant.phone" placeholder="Phone* e.g. +2348164488989 " />
           </FormItem>
         </Col>
       </Row>
