@@ -41,12 +41,11 @@
   Vue.component('SelectStatus', SelectStatus);
 
   import { Row, Col, Table, Input, Page, Select, Option, Button } from 'iview';
-  import { mapState } from 'vuex'
+  import { mapState, mapGetters } from 'vuex'
 
   export default {
   	name: 'MyTable',
   	components: { Row, Col, Table, Input, Page, Select, Option, Button },
-  	props: { pendingUsers: Array },
   	data: function(){
       return {
       	updatingUsersStatus: false,
@@ -142,7 +141,7 @@
   	  // Process pending users to produce a format that matches the table data
   	  users() {
   	  	let users;
-  	  	users = this.pendingUsers.filter(user=> {
+  	  	users = this.pendingApplicants.filter(user=> {
   	  		return !this.processedUsersId.includes(user.id)
   	  	})
   	    users = users.map((user) => {
@@ -151,9 +150,9 @@
   	      } = user;
 
   	      const name = `${first_name} ${last_name}`;
-  	      category = this.categories.find(cat => cat.id === category);
+  	      category = this.general.categories.find(cat => cat.id === category);
   	      category = category.name;
-  	      country = this.countries.find(con => con.id === country);
+  	      country = this.general.countries.find(con => con.id === country);
   	      country = country.name;
 
   	      return {
@@ -176,19 +175,13 @@
   	  },
 
   	  ...mapState([
-  	    'session',
-  	    'categories',
-  	    'countries'
-  	  ])
+  	    'general',
+  	  ]),
+      ...mapGetters([
+        'pendingApplicants'
+      ])
   	},
-  	watch: {
-  	  categories(val) {
-  	    this.tblColumns[3].filters = val.map(category => ({ label: category.name, value: category.name }));
-  	  },
-  	  countries(val) {
-  	    this.tblColumns[4].filters = val.map(country => ({ label: country.name, value: country.name }));
-  	  },
-  	},
+  	
   	methods: {
   		changeSelection(selections) {
   		  this.selectedUsers = selections.length > 0 ? selections : null;

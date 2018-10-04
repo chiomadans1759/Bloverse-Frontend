@@ -25,6 +25,7 @@
 
 <script>
   import { Row, Col, Form, Icon, Button, Input, FormItem } from 'iview';
+  import { mapActions } from 'vuex';
 
   export default {
     components: {
@@ -51,42 +52,31 @@
         serverResponse: null,
       };
     },
-    watch: {
-      serverResponse(val) {
-        const { status, data } = val;
-        switch (status) {
-          case 200:
-            this.$Message.success('You have been successfully logged in, system is redirecting to dashboard...');
-            localStorage.setItem('admin', JSON.stringify(data.data));
-            window.location = '/super';
-            break;
-          case 404:
-            this.user.password = null;
-            this.$Message.error(data.message);
-            break;
-          default:
-            this.user = { email: null, password: null };
-            this.$Message.error('Something went wrong');
-        }
-      },
-    },
     methods: {
       handleSubmit() {
         this.$refs.logInForm.validate(async (valid) => {
           if (valid) {
-            await this.logUserIn();
+            let loggedIn = await this.login(this.user);
+            if(loggedIn === true)
+              this.handleSuccess()
+            else
+              this.handleError();
           } else {
             this.$Message.error('There is an error in your input!');
           }
         });
       },
-      async logUserIn() {
-        try {
-          this.serverResponse = await this.$http.post('/api/v1/admin/', this.user);
-        } catch (error) {
-          this.serverResponse = error.response;
-        }
+      handleSuccess(){
+        this.$Message.success('You have been successfully logged in, system is redirecting to dashboard...');
+        this.$router.push('/admin');
       },
+      handleError(){
+        this.user.password = null;
+        this.$Message.error('Username or Password does not match');
+      },
+      ...mapActions([
+        'login'
+      ]),
     },
   }
 </script>

@@ -8,16 +8,25 @@ export default {
     loggedInUser: null
   },
   actions: {
-    login ({commit}, params) {
-      //let reponse = await Api.post('authentication')
+    async login ({commit}, params) {
+      let response = await Api.post('authentication', params)
+      switch(response.statusCode){
+        case 201:
+          commit('setJwt', response.data.token);
+          commit('setLoggedInUser', response.data.user)
+          //localStorage.setItem('admin', JSON.stringify(data.data));
+          return true;
+        default:
+          return { errors: response.data };
+      }
     },
-    async apply ({commit, state}){
+    async apply ({state}){
       let response = await Api.post('applicants', state.applicant)
       switch(response.statusCode){
         case 201:
           return true;
         default:
-          return {errors: response.data};
+          return { errors: response.data };
       }
     }
   },
@@ -31,8 +40,8 @@ export default {
     setJwt(state, jwt){
       state.jwt = jwt
     },
-    setCurrentUser(state, user){
-      state.user = user;
+    setLoggedInUser(state, user){
+      state.loggedInUser = user;
     }
   }
 }
