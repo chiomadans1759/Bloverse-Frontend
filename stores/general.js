@@ -30,7 +30,6 @@ export default {
     },
     setCountries(state, countries){
       state.countries = countries;
-      console.log(state);
     }
   }
 }
