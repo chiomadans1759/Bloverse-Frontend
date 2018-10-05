@@ -3,7 +3,7 @@ import axios from 'axios';
 import { locale, Message } from 'iview';
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
-import store from '../stores/index';
+import store from '../stores';
 import VueAnalytics from 'vue-analytics';
 
 
@@ -48,12 +48,6 @@ Vue.filter('firstToUpper', (value) => {
   return value.charAt(0).toUpperCase() + value.substr(1);
 });
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
-
 
 ga('set', 'page', router.currentRoute.path);
 ga('send', 'pageview');
@@ -62,3 +56,10 @@ router.afterEach(( to, from ) => {
   ga('set', 'page', to.path);
   ga('send', 'pageview');
 });
+
+
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')

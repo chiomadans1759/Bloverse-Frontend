@@ -1,11 +1,14 @@
 import axios from 'axios';
+import store from '../stores';
 
 let BASE_URL = 'https://bloverse-api.herokuapp.com/api/v1/'
 class Api {
   static async get(url, requireAuth=false) {
-    let response, statusCode, statusText, data, message;
+    let response, statusCode, statusText, data, message, config;
     try {
-      response = await axios.get(BASE_URL + url +'/')
+      console.log(store.state.auth);
+      config = { headers: {'Authorization': `Token ${store.state.auth.jwt}`}};
+      response = requireAuth ? await axios.get(BASE_URL + url +'/', config) : await axios.get(BASE_URL + url +'/')
       statusCode = response.status;
       data = response.data.data;
       statusText = response.data.status;

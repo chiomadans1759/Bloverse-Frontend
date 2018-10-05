@@ -1,5 +1,5 @@
 <template>
-<div>
+<div v-if="ready">
     <Layout>
         <Header style="background:#5b6270; color: white; min-height:100px ">
           <Row type="flex" justify="space-between" align="middle" style="margin: 40px">
@@ -38,13 +38,15 @@
         </a>
       </Col>
   </Row>
-  <DisplayApplicants @updated="getStats" :pending-users="pendingUsers"></DisplayApplicants>
+  <DisplayApplicants></DisplayApplicants>
 </div>
+<h2 v-else>Loading....</h2>
 </template>
 
 <script>
   //import Utility from '../../Utility.js';
   import DisplayApplicants from '../../components/DisplayApplicantsTable.vue';
+  import { mapActions, mapGetters, mapState } from 'vuex';
 
 
   import { Row, Col, Card, Layout, Header, Button } from 'iview';
@@ -52,50 +54,39 @@
       components: {
         Row, ICol: Col, Card, Layout, Header, IButton: Button, DisplayApplicants,
       },
-      data: function() {
-return {
-        stats: {},
-        pendingUsers: [],
-      };
-},
-      async mounted() {
-        let response,
-          categories,
-          countries,
-          session;
+      computed: {
+        stats: function(){
+          let total, accepted, rejected;
 
-        if (localStorage.getItem('admin')) {
-          // Retrieve the object from storage
-          const retrievedObject = localStorage.getItem('admin');
-          session = JSON.parse(retrievedObject);
-        }
+          accepted = this.acceptedApplicants.length;
+          rejected = this.rejectedApplicants.length;
+          total = this.general.applicants.length;
 
-
-        categories = await Utility.categories;
-        countries = await Utility.countries;
-
-        store.commit({
-          type: 'init', categories, countries, session,
-        });
-        response = await this.$http.get('/api/v1/applicants/');
-        this.pendingUsers = response.data;
-        await this.getStats();
+          return { accepted, rejected, total };
+        },
+        ready(){
+          return this.general.applicants ? true : false
+        },
+        ...mapState([
+          'general'
+        ])
       },
       methods: {
         logOut() {
           localStorage.clear();
           window.location = '/login';
         },
-        async getStats() {
-          const token = store.state.session && store.state.session.token;
+        ...mapActions([
+          'getAllApplicants'
+        ]),
 
-          const config = { headers: { Authorization: `Token ${token}` } };
-          const response = await this.$http.get('/api/v1/applicants/stats/', config);
-          const { status, data } = response.data;
-          if (status === 'success') {
-            this.stats = data.applicants;
-          }
-        },
+        ...mapGetters([
+          'acceptedApplicants',
+          'rejectedApplicants',
+        ])
+      },
+      async mounted() {
+        await this.getAllApplicants()
       },
   }
   
