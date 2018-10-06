@@ -9,7 +9,7 @@
         </template>
         <template v-else>
           Already Registered?
-          <span slot="desc">It looks like you have been previously registrered. Click <router-link to="/signin">here to login</router-link></span>
+          <span slot="desc">It looks like you have been previously registrered. Click <router-link to="/journalist/login">here to login</router-link></span>
         </template>
         
 
@@ -33,7 +33,7 @@
   import {Row, Col, Button, Input, Form, FormItem, Alert } from 'iview';
   import BaseAuthentication from '../../layouts/BaseAuthentication';
   import Hashids from 'hashids';
-  import { mapMutations } from 'vuex'
+  import { mapActions, mapState } from 'vuex'
 
 
   let hashids = new Hashids("SG.AKa2vomKT26KSV9yNHf-HQ.e-", 16);
@@ -48,47 +48,37 @@
           type: 'info'
         }
       }
+    },
+    computed: {
+      ...mapState([
+        'auth',
+        'general'
+      ])
     },   
     methods: {
       getIdFromToken: function(){
         //Unhash a Toekn(hashed ID) and return the ID
         let idArray = hashids.decode(this.token);
-        console.log(idArray);
         return idArray[0];
       },
-      getApplicantById: async function(id){
-        try {
-          let response = await this.$http.get(`/api/v1/applicants/${id}/`)
-          return response.data.data.applicant;
-        }catch(error){
-          return null;
-        }
-      },
-      isAccepted: function(applicant){
-        return applicant && applicant.status === 2;
-      },
-      isAUser: function(applicant){
-        //Checks if an applicant had previously setup account as user
-        //curently returns false but will be dynamic once endpoint is ready
-        return false;
+      isApplicantAccepted(){
+        return this.auth.applicant.status === 2;
       },
       verifyToken: async function(){
         this.processing = true;
         if (this.token) {
-
           const id = this.getIdFromToken();
-          const applicant = await this.getApplicantById(id);
-          if(this.isAccepted(applicant)){
-            const isAUser = this.isAUser(applicant)
-            this.alert.type = isAUser ? 'info' : 'success';
+          await this.getApplicantById(id);
+          if(this.auth.applicant && this.isApplicantAccepted()){
+            let hadRegistered = await this.applicantHasRegistered();
+            if(hadRegistered)
+              this.alert.type = 'info';
+            else{
+              this.alert.type = 'success';
+              this.$router.push('/journalist/register')
+            }             
             this.alert.show = true;
-            if(!isAUser){
-              let { first_name: firstName, last_name: lastName, email, phone_number: phone, category, country } = applicant;
-              this.updateUser({firstName, lastName, email, phone, category, country});
-              this.$router.push('register');
-            }
-            
-          }
+          }  
           else
             this.$Message.error('Invalid Token'); 
         } else {
@@ -97,8 +87,9 @@
         this.processing = false;
       },
 
-      ...mapMutations([
-        'updateUser'
+      ...mapActions([
+        'getApplicantById',
+        'applicantHasRegistered'
       ]),
     },
   }

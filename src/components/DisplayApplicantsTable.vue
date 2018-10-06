@@ -41,7 +41,7 @@
   Vue.component('SelectStatus', SelectStatus);
 
   import { Row, Col, Table, Input, Page, Select, Option, Button } from 'iview';
-  import { mapState, mapGetters } from 'vuex'
+  import { mapState, mapGetters, mapActions } from 'vuex'
 
   export default {
   	name: 'MyTable',
@@ -179,48 +179,33 @@
   	  ]),
       ...mapGetters([
         'pendingApplicants'
-      ])
+      ]),
   	},
-  	
+  	watch: {
+  	  'general.categories': (val) => {
+  	    this.tblColumns[3].filters = val.map(category => ({ label: category.name, value: category.name }));
+  	  },
+  	  'general.countries': (val) => {
+  	    this.tblColumns[4].filters = val.map(country => ({ label: country.name, value: country.name }));
+  	  },
+  	},
   	methods: {
   		changeSelection(selections) {
   		  this.selectedUsers = selections.length > 0 ? selections : null;
   		},
-  		processSelectedUsers(){
+  		async processSelectedUsers(){
         this.updatingUsersStatus = true;
-        let url, pre, action;
-        pre = '/api/v1/applicants';
-        let processedUsers = [];
-        console.log(this.selectedUsers);
-  			this.selectedUsers.forEach(async user=> {
-  				if(user.status === 1)
-  					return;
-  				action = user.status === 2 ? `${user.id}/accept/` : `${user.id}/decline/`	
-  				url = `${pre}/${action}`;
-  				const statusUpdated = await this.updateStatus(url);
-  				if (statusUpdated) {
-  					processedUsers.push(user);
-  				}
-  			})
+        const processedUsers = await this.rejectAcceptApplicants(this.selectedUsers);
         const currentProcessedUsersId = processedUsers.map(user=> user.id);
   			this.processedUsersId.push(...currentProcessedUsersId);
 
   			this.$Message.success('Process Successfull');
   			this.updatingUsersStatus = false;
   			this.$emit('updated');
-
   		},
-  		async updateStatus(url){
-  			const token = this.session && this.session.token;
-  			const config = { headers: { Authorization: `Token ${token}` } };
-  			try{
-          const response = await this.$http.put(url, {}, config)
-          const { status, data } = response.data;
-          return status === "success";
-  			}catch(error){
-          return false;
-  			}
-  		}
+      ...mapActions([
+        'rejectAcceptApplicants'
+      ])
   	}
   }
 

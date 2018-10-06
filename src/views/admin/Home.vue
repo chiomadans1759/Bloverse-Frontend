@@ -6,7 +6,8 @@
             <Col>
               <img src="https://res.cloudinary.com/naera/image/upload/v1532035571/bloverse/b_blue.png">
               <span style="height: 30px; font-size: 24px;">BLOVERSE</span></Col>
-            <Col ><span style="padding-right:10px">Administrator</span>
+            <Col>
+              <span style="padding-right:10px">Administrator</span>
               <Button type="default" @click="logOut" ghost>LOGOUT</Button>
             </Col>
         </Row>
@@ -32,8 +33,8 @@
       <Col span="6" class="status">
         <a href = #>
           <Card :bordered="true">
-          <p slot="title"  style="font-size: 25px; color: #5b6270"> REJECTED </p>
-          <p style="padding: 5px; color: blue; font-size: 40px;"> <b>{{stats.rejected}}</b> </p>
+            <p slot="title"  style="font-size: 25px; color: #5b6270"> REJECTED </p>
+            <p style="padding: 5px; color: blue; font-size: 40px;"> <b>{{stats.rejected}}</b> </p>
           </Card>
         </a>
       </Col>
@@ -51,50 +52,49 @@
 
   import { Row, Col, Card, Layout, Header, Button } from 'iview';
   export default {
-      components: {
-        Row, ICol: Col, Card, Layout, Header, IButton: Button, DisplayApplicants,
-      },
-      computed: {
-        stats: function(){
-          let total, accepted, rejected;
+    components: {
+      Row, ICol: Col, Card, Layout, Header, IButton: Button, DisplayApplicants,
+    },
+    computed: {
+      stats: function(){
+        let total, accepted, rejected;
 
-          accepted = this.acceptedApplicants.length;
-          rejected = this.rejectedApplicants.length;
-          total = this.general.applicants.length;
+        accepted = this.acceptedApplicants.length;
+        rejected = this.rejectedApplicants.length;
+        total = this.general.applicants.length;
 
-          return { accepted, rejected, total };
-        },
-        ready(){
-          return this.general.applicants ? true : false
-        },
-        ...mapState([
-          'general'
-        ])
+        return { accepted, rejected, total };
       },
-      methods: {
-        logOut() {
-          localStorage.clear();
-          window.location = '/login';
-        },
-        ...mapActions([
-          'getAllApplicants'
-        ]),
+      ready(){
 
-        ...mapGetters([
-          'acceptedApplicants',
-          'rejectedApplicants',
-        ])
+        return this.general.applicants ? true : false;
       },
-      async mounted() {
-        await this.getAllApplicants()
+      ...mapState([
+        'general'
+      ]),
+      ...mapGetters([
+        'acceptedApplicants',
+        'rejectedApplicants',
+      ])
+    },
+    methods: {
+      logOut() {
+        localStorage.clear();
+        window.location = '/login';
       },
+      ...mapActions([
+        'getAllApplicants'
+      ]),
+    },
+    async mounted() {
+      await this.getAllApplicants()
+    },
   }
   
 </script>
 
 
-<style>
-  /* Styles should be here */
+<style scoped>
   .status{
     min-height: 150px;
     padding: 20px;
@@ -102,13 +102,13 @@
   }
 
   body {
-  background: #eee;
+    background: #eee;
   }
 
   img {
-  margin-right: 5px;
-  width: 24px;
-  border-radius: 10px;
+    margin-right: 5px;
+    width: 24px;
+    border-radius: 10px;
   }
 
   #table-section {
