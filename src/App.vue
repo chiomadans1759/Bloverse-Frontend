@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2 v-if="loading">Loading...</h2>
+    <rise-loader v-if="loading" :loading="loading" :color="color" :size="size" :margin="margin"></rise-loader>
     <transition v-else name="fade" mode="out-in">
       <router-view />
     </transition>
@@ -9,13 +9,19 @@
 
 <script>
   import { mapActions } from 'vuex'
+  import RiseLoader from 'vue-spinner/src/RiseLoader.vue'
   export default {
     name: 'app',
     data(){
       return {
-        loading: true
+        loading: true,
+        color: '#000080',
+        margin: '300px 0 0 0'
       }
     },
+      components: {
+        RiseLoader
+      },
     methods: {
       ...mapActions([
         'setGeneralData'
