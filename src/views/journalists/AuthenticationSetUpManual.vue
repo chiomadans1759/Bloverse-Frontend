@@ -8,7 +8,6 @@
           <Step content="Verify Previous Info"></Step>
           <Step id="last" title="Final" content="Personalize your account"></Step>
         </Steps> -->
-        <div v-bind:class="{ active: isActive }"></div>
        <div class="steps">
           <div class=container> 
             <div class="step-count"> 
@@ -30,8 +29,8 @@
     <section class="auth-form">
       <h3 id="form-instruction">Fill the form below to become journalist on Bloverse</h3>
       <Row type="flex" justify="center">
-        <PageOne v-if="currentPage===1" @toNext="updateCurrentPage(2)" />
-        <PageTwo v-else />
+        <PageOne v-if="currentPage===1" :user="user" @toNext="updateCurrentPage(2)" />
+        <PageTwo v-else :user="user" @done="completeSetup" />
       </Row>
     </section>
   </Col>
@@ -49,23 +48,68 @@
   import PageTwo from '../../components/SetUpStepTwo.vue';
 
   import { Steps, Step, Row, Col, } from 'iview';
+  import { mapMutations, mapActions } from 'vuex';
 
   
 
-export default {
-//     props: ['value', 'linkedIn'],
-  components: { PageOne, PageTwo, Steps, Step, Row, Col, BaseAuthentication },
-  data: function(){
-    return {
-      currentPage: 1,
-    }
-  },
-  methods:{
-    updateCurrentPage: function(newPage) {
-      this.currentPage = newPage;
+  export default {
+  //     props: ['value', 'linkedIn'],
+    components: { PageOne, PageTwo, Steps, Step, Row, Col, BaseAuthentication },
+    data: function(){
+      return {
+        currentPage: 1,
+      }
     },
+    computed: {
+      user: {
+        get(){
+          return this.$store.state.auth.newUser;
+        },
+        set(props){
+          this.$store.commit('setNewUser', props);
+        }
+      },
+      ...mapMutations([
+        'auth'
+      ])
+    },
+    watch: {
+      'user.firstName': function(val){
+        this.setUsername();
+      },
+      'user.lastName': function(val){
+        this.setUsername();
+      }
+    },
+    methods:{
+      updateCurrentPage: function(newPage) {
+        this.currentPage = newPage;
+      },
+      completeSetup: async function(){
+        let success = await this.registerJournalist()
+        if(success){
+          success = await this.login(this.user)
+          if(success){
+            this.$Message.success('Registration successfull, You are being redirected to login')
+            let username = this.auth.loggedInUser.userName;
+            this.$router.push(`/journalist/${username}/dashboard`)
+          }
+        }
+        else
+          this.$Message.error('Something went wrong');
+      },
+      ...mapMutations([
+        'setUsername'
+      ]),
+      ...mapActions([
+        'registerJournalist',
+        'login'
+      ])
+    },
+    mounted(){
+      this.setUsername();
+    }
   }
-}
 //       LoadingIcon, DisplayImage 
  
 

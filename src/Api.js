@@ -24,7 +24,7 @@ class Api {
       
     }
 
-    return { statusCode, statusText, data }
+    return { statusCode, statusText, data, message }
     
   }
 
@@ -38,8 +38,8 @@ class Api {
       statusText = response.data.status;
     }catch(error){
       if(error.response){
+        console.log(error.response)
         statusCode = error.response.status;
-
         statusText = error.response.data.status;
         data = error.response.data.data;
         message = error.response.data.message;
@@ -49,7 +49,7 @@ class Api {
       
     }
 
-    return { statusCode, statusText, data }
+    return { statusCode, statusText, data, message }
     
   }
 
@@ -73,7 +73,7 @@ class Api {
       
     }
 
-    return { statusCode, statusText, data }
+    return { statusCode, statusText, data, message }
   }
 
 }

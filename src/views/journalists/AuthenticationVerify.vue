@@ -71,11 +71,12 @@
           await this.getApplicantById(id);
           if(this.auth.applicant && this.isApplicantAccepted()){
             let hadRegistered = await this.applicantHasRegistered();
+            console.log(hadRegistered);
             if(hadRegistered)
               this.alert.type = 'info';
             else{
               this.alert.type = 'success';
-              this.$router.push('/journalist/register')
+              this.$router.push('register')
             }             
             this.alert.show = true;
           }  

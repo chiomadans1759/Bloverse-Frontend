@@ -3,7 +3,7 @@ import Api from '../src/Api';
 export default {
   state: {
     jwt: null,
-    newUser: {},
+    newUser: { imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg' },
     applicant: { articles: [] },
     loggedInUser: null
   },
@@ -47,6 +47,15 @@ export default {
       let response = await Api.get('journalists?applicant='+state.applicant.id)
       return response.data.journalists.length > 0;
     },
+    async registerJournalist({state}){
+      let response = await Api.post('journalists/', state.newUser);
+      switch(response.statusCode){
+        case 201:
+          return true;
+        default:
+          return { errors: response.data };
+      }
+    }
   },
   mutations: {
     setApplicant(state, props){
@@ -63,6 +72,9 @@ export default {
     },
     setLoggedInUser(state, user){
       state.loggedInUser = user;
+    },
+    setUsername(state){
+      state.newUser.username = `${state.newUser.firstName}.${state.newUser.lastName}`.toLowerCase();
     }
   }
 }

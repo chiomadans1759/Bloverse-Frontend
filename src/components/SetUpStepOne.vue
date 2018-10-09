@@ -14,13 +14,13 @@
       <Input class="my-input" v-model="user.phone" readonly placeholder="Phone*" />
     </FormItem>
     <FormItem>
-      <Select class="my-select" placeholder="Category*" v-model="user.category" disabled>  
-        <Option v-for="item in categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
+      <Select class="my-select" placeholder="Category*" v-model="user.categoryId" disabled>  
+        <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
       </Select>
     </FormItem>
     <FormItem>
-      <Select class="my-select" placeholder="Country*" v-model="user.country" disabled>  
-        <Option v-for="item in countries" :value="item.id" :key="item.id">{{ item.name }}</Option>
+      <Select class="my-select" placeholder="Country*" v-model="user.countryId" disabled>  
+        <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{ item.name }}</Option>
       </Select>
     </FormItem>
   </Form>
@@ -35,6 +35,7 @@
   import { mapState } from 'vuex';
 
   export default {
+    props: { user: Object },
     components: { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem },
     data: function(){
       return {
@@ -49,18 +50,9 @@
       }
     },
     computed: {
-      user: {
-        get(){
-          return this.$store.state.user;
-        },
-        set(props){
-          this.$store.commit('updateUser', props);
-        }
-      },
       ...mapState([
          // map this.count to store.state.count
-         'categories',
-         'countries'
+         'general'
        ]),
     },
     methods: {
@@ -76,7 +68,7 @@
         })*/
         
       }
-    }
+    },
   }
 </script>
 

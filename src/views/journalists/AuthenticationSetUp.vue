@@ -33,10 +33,30 @@
 
 <script>
   import BaseAuthentication from '../../layouts/BaseAuthentication';
-import { Button,Row, Col, Icon } from 'iview';
-export default {
-  components: { Button, Row, Col, Icon, BaseAuthentication },
-}
+  import { Button,Row, Col, Icon } from 'iview';
+  import { mapState, mapMutations } from 'vuex';
+
+  export default {
+    components: { Button, Row, Col, Icon, BaseAuthentication },
+    computed: {
+      ...mapState([
+        'auth'
+      ])
+    },
+    methods: {
+      ...mapMutations([
+        'setNewUser'
+      ])
+    },
+    beforeRouteLeave (to, from, next) {
+      // called when the route that renders this component is about to
+      // be navigated away from.
+      // has access to `this` component instance.
+      let { id: applicant, first_name: firstName, last_name: lastName, email, phone_number: phone, category, country } = this.auth.applicant;
+      this.setNewUser({ applicant, firstName, lastName, email, phone, category, country });
+      next();
+    }
+  }
 </script>
 
 

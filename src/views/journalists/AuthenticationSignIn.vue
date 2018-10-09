@@ -45,8 +45,12 @@
 
 
 <script>
+  
+  import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
+  import { mapActions, mapState } from 'vuex';
+
+
   import BaseAuthentication from '../../layouts/BaseAuthentication';
-import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
 export default {
   components: { Button, Row, Col, Icon, Input, Form, FormItem, BaseAuthentication },
   data: function(){
@@ -70,16 +74,30 @@ export default {
 
     }
   },
+  computed: {
+    ...mapState([
+      'auth'
+    ])
+  },
   methods: {
     handleLogin: function(){
-      this.$refs.loginForm.validate(valid=>{
+      this.$refs.loginForm.validate(async valid=>{
         if(valid){
-          this.$router.push('/journalist/holuborhee/dashboard')
+          let success = await this.login(this.user)
+          if(success){
+            this.$Message.success('You have been successfully logged in');
+            let username = this.auth.loggedInUser.userName;
+            this.$router.push(`/journalist/${username}/dashboard`)
+          }else
+            this.$Message.error('Username and password does not match');
         }else{
           this.$Message.error('Some fields were not filled');
         }
       })
-    }
+    },
+    ...mapActions([
+      'login'
+    ])
   }
 
 }
