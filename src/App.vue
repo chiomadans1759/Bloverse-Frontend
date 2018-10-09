@@ -19,11 +19,10 @@
     methods: {
       ...mapActions([
         'setGeneralData'
-        ])
+      ])
     },
     async mounted(){
       await this.setGeneralData();
-      console.log(this.$store.state);
       this.loading = false;
     }
   }

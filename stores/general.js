@@ -10,10 +10,10 @@ export default {
     async setGeneralData ({commit}) {
       let response, categories, countries;
 
-      response = await Api.get('categories');
+      response = await Api.get('categories/');
       categories = response.data && response.data.categories;
 
-      response = await Api.get('countries');
+      response = await Api.get('countries/');
       countries = response.data && response.data.countries;
 
       commit('setCountries', countries);
@@ -23,8 +23,26 @@ export default {
     async getAllApplicants({commit}){
       let response, applicants;
 
-      response = await Api.get('applicants', true);
+      response = await Api.get('applicants/', true);
       commit('setApplicants', response.data.applicants);
+    },
+    async rejectAcceptApplicants({dispatch}, applicants){
+      let processedUsers = [];
+      applicants.forEach(async applicant=> {
+        if(applicant.status === 1)
+          return;
+        const statusUpdated = await dispatch('processApplicant', applicant);
+        if (statusUpdated) {
+          processedUsers.push(applicant);
+        }
+      })
+      await dispatch('getAllApplicants');
+      return processedUsers;
+    },
+    async processApplicant(context, applicant){
+      let { id, status } = applicant;
+      let response = await Api.put('applicants/'+id +'/', { status }, true);
+      return response.statusCode === 200;
     }
   },
   mutations: {

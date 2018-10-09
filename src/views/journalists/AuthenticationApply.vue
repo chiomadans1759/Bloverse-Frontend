@@ -142,8 +142,8 @@ export default {
       }
     },
     ...mapState([
-        'general',
-      ])
+      'general',
+    ])
   },
   methods: {
     handleSubmit: function() {
