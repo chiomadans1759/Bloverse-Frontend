@@ -48,7 +48,7 @@
   import PageTwo from '../../components/SetUpStepTwo.vue';
 
   import { Steps, Step, Row, Col, } from 'iview';
-  import { mapMutations, mapActions } from 'vuex';
+  import { mapMutations, mapActions, mapState } from 'vuex';
 
   
 
@@ -69,7 +69,7 @@
           this.$store.commit('setNewUser', props);
         }
       },
-      ...mapMutations([
+      ...mapState([
         'auth'
       ])
     },

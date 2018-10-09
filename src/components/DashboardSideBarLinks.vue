@@ -1,12 +1,12 @@
 <template>
   <div id="links-wrapper">
-   <router-link class="router-link" :to="`/journalist/${username}/dashboard`">
+   <router-link class="router-link" :to="`/journalist/${auth.loggedInUser.userName}/dashboard`">
      <Icon class="icon" type="ios-home"></Icon>
    </router-link>
-   <router-link class="router-link" :to="`/journalist/${username}/posts/create`">
+   <router-link class="router-link" :to="`/journalist/${auth.loggedInUser.userName}/posts/create`">
    	 <Icon class="icon" type="ios-document"></Icon>
    </router-link>
-   <router-link class="router-link" :to="`/journalist/${username}/posts`">
+   <router-link class="router-link" :to="`/journalist/${auth.loggedInUser.userName}/posts`">
    	 <Icon class="icon" type="logo-rss"></Icon>
    </router-link>
   </div>
@@ -15,8 +15,15 @@
 
 <script>
   import { Icon } from 'iview';
+  import { mapState } from 'vuex';
+
   export default {
-  	components: { Icon }
+  	components: { Icon },
+    computed: {
+      ...mapState([
+        'auth'
+      ])
+    }
   } 
 
 </script>

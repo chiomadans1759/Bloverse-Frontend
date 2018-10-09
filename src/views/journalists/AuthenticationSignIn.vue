@@ -25,7 +25,7 @@
       <Input class="my-input" v-model="user.email" size="large" placeholder="E-mail*" />
     </FormItem>
     <FormItem prop="password">
-      <Input class="my-input" v-model="user.password" placeholder="Password*"/>
+      <Input class="my-input" type="password" v-model="user.password" placeholder="Password*"/>
     </FormItem>
     <FormItem>
       <Button class="my-btn btn-main" @click="handleLogin" long>LOG IN</Button>

@@ -7,7 +7,7 @@
       <Col :md="12" :xs="24">
         <Form ref="stepTwoForm" :model="user" :rules="validateUserFields">
           <FormItem prop="username">
-            <Input class="my-input" v-model="user.username" placeholder="Username*" />
+            <Input class="my-input" v-model="user.username" readonly placeholder="Username*" />
           </FormItem>
           <Row type="flex" justify="space-between">
             <Col :md="11" :xs="24">
