@@ -1,14 +1,11 @@
 <template>
   <div id="app">
-    <h2 v-if="loading">Loading...</h2>
-    <transition v-else name="fade" mode="out-in">
-      <router-view />
-    </transition>
+      <router-view v-if="general.categories" />
   </div>
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import { mapActions, mapState } from 'vuex'
   export default {
     name: 'app',
     data(){
@@ -21,9 +18,19 @@
         'setGeneralData'
       ])
     },
+    computed: {
+      ...mapState([
+        'general'
+      ])
+    },
     async mounted(){
+      this.$Loading.start();
       await this.setGeneralData();
-      this.loading = false;
+      if(this.general.categories)
+        this.$Loading.finish();
+      else
+        this.$Loading.error();
+      //this.loading = false;
     }
   }
 </script>
