@@ -41,7 +41,7 @@
   </Row>
   <DisplayApplicants></DisplayApplicants>
 </div>
-<h2 v-else>Loading....</h2>
+<h2 v-else></h2>
 </template>
 
 <script>
@@ -87,7 +87,12 @@
       ]),
     },
     async mounted() {
-      await this.getAllApplicants()
+      this.$Loading.start();
+      await this.getAllApplicants();
+      if(this.general.categories)
+        this.$Loading.finish();
+      else
+        this.$Loading.error();
     },
   }
   
