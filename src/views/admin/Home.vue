@@ -41,7 +41,6 @@
   </Row>
   <DisplayApplicants></DisplayApplicants>
 </div>
-<h2 v-else></h2>
 </template>
 
 <script>
