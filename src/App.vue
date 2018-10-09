@@ -1,35 +1,36 @@
 <template>
   <div id="app">
-    <rise-loader v-if="loading" :loading="loading" :color="color" :size="size" :margin="margin"></rise-loader>
-    <transition v-else name="fade" mode="out-in">
-      <router-view />
-    </transition>
+      <router-view v-if="general.categories" />
   </div>
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
-  import RiseLoader from 'vue-spinner/src/RiseLoader.vue'
+  import { mapActions, mapState } from 'vuex'
   export default {
     name: 'app',
     data(){
       return {
-        loading: true,
-        color: '#000080',
-        margin: '300px 0 0 0'
+        loading: true
       }
     },
-      components: {
-        RiseLoader
-      },
     methods: {
       ...mapActions([
         'setGeneralData'
       ])
     },
+    computed: {
+      ...mapState([
+        'general'
+      ])
+    },
     async mounted(){
+      this.$Loading.start();
       await this.setGeneralData();
-      this.loading = false;
+      if(this.general.categories)
+        this.$Loading.finish();
+      else
+        this.$Loading.error();
+      //this.loading = false;
     }
   }
 </script>
