@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios';
-import { locale, Message } from 'iview';
+import { locale, Message, LoadingBar } from 'iview';
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
 import store from '../stores';
@@ -22,6 +22,8 @@ locale(lang);
 Vue.prototype.$IVIEW = {};
 Vue.prototype.$http = axios;
 Vue.prototype.$Message = Message;
+Vue.prototype.$Loading = LoadingBar;
+
 
 Vue.use(VueRouter);
 Vue.use(VueAnalytics, {
@@ -52,9 +54,15 @@ Vue.filter('firstToUpper', (value) => {
 ga('set', 'page', router.currentRoute.path);
 ga('send', 'pageview');
 
-router.afterEach(( to, from ) => {
+/*router.beforeEach((to, from, next) => {
+  LoadingBar.start();
+  next();
+});*/
+
+router.afterEach(( to, from, next) => {
   ga('set', 'page', to.path);
   ga('send', 'pageview');
+  //LoadingBar.finish();
 });
 
 
