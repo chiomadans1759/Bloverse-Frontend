@@ -32,7 +32,8 @@ class Api {
   static async post(url, payload, requireAuth=false) {
     let response, statusCode, statusText, data, message;
     try {
-      response = await axios.post(BASE_URL + url, payload)
+      let config = { headers: {'Authorization': `Token ${store.state.auth.jwt}`}};
+      response = requireAuth ? await axios.post(BASE_URL + url, payload, config) : await axios.post(BASE_URL + url, payload)
       statusCode = response.status;
       data = response.data.data;
       statusText = response.data.status;

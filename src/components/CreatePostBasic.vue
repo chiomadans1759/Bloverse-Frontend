@@ -25,13 +25,13 @@
       <Col span="13" id="create-post">
         <Row  type="flex"  justify="space-between">
           <Col :sm="11">
-            <Select v-model="post.categoryId" placeholder="Choose Category">
-              <Option v-for="item in categories" :value="item.id" :key="item.id">{{item.name}}</Option>
+            <Select v-model="post.category" placeholder="Choose Category">
+              <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
             </Select>
           </Col>
           <Col :sm="11">
-            <Select v-model="post.countryId" placeholder="Choose Country">
-              <Option v-for="item in countries" :value="item.id" :key="item.id">{{item.name}}</Option>
+            <Select v-model="post.country" placeholder="Choose Country">
+              <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{item.name}}</Option>
             </Select>
           </Col>
         </Row>
@@ -54,13 +54,13 @@
 
         <Row type="flex" justify="space-between">
           <Col>
-            <Button id="btn-draft" @click="handleSave">
+            <Button id="btn-draft" @click="handleProcessPost">
               <span v-if="post.id">Save Changes</span>
               <span v-else>Save as draft</span>
             </Button>
           </Col>
           <Col>
-            <Button id="btn-publish" @click="handlePublish">Publish</Button>
+            <Button id="btn-publish" @click="handleProcessPost(true)">Publish</Button>
           </Col>
         </Row>
 
@@ -83,7 +83,7 @@
 
 <script>
   import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert } from 'iview';
-  //import { mapState } from 'vuex'
+  import { mapState, mapActions, mapMutations } from 'vuex'
 
   export default {
     components: {
@@ -92,30 +92,65 @@
     data: function(){
       return {
         modal: {},
-        post: { keyPoints: [], imageUrl: "https://res.cloudinary.com/naera/image/upload/v1532594342/945_S_fuswub.png"}
-
       };
       
-    },
-    watch: {
-      session: function(val){
-        console.log(val);
-        this.post.categoryId = val.user.category.id;
-        this.post.countryId = val.user.country.id;
-      }
     },
     computed: {
       showResponse: function(){
         return Object.keys(this.modal).length > 0 ?true:false;
       },
+      post: {
+        get(){
+          return this.$store.state.journalist.post;
+        },
+        set(props){
+          this.$store.commit('setPost', props);
+        }
+      },
 
-      /*...mapState([
-        'session',
-        'categories',
-        'countries'
-      ])*/
+      ...mapState([
+        'general',
+        'auth',
+      ])
     },
     methods: {
+      ...mapActions([
+        'processPost'
+      ]),
+      ...mapMutations([
+        'setPost'
+      ]),
+      handleProcessPost: async function(shouldPublish=false){
+        await this.processPost({shouldPublish});
+
+        if(this.post.isPublished)
+          this.modal = { action: 'PUBLISH' };
+        else
+          this.modal = { action: 'SAVE' };
+
+        this.modal.status = 'success';
+
+        /*let { data, status } = await this.createOrUpdatePost();
+        status = status === 403 ? 401 : status; //Convert 403 response error to 401;
+
+        switch(status){
+          case 200:
+          case 201:
+            let { id, title, body, image_url: imageUrl, country: countryId, category: categoryId, keypoint: keyPoints } = data.data.post;
+            this.modal = {status: data.status};
+            this.post = { id, title, body, imageUrl, countryId, categoryId, keyPoints };
+            break;
+          case 400:
+            this.modal = { data: data.data, status: 'error' };
+            break;
+          case 401: 
+            // Unauthenticated
+            break;
+          default:
+            this.modal = {status: 'Error', data: {'SERVER ERROR': ['The server is not responding, can you try again']}};
+        }
+        this.modal.action = 'SAVE';*/
+      },
       publishPost: async function(){
         let response, config;
         
@@ -128,28 +163,6 @@
         }
 
         return response;
-      },
-      createOrUpdate: async function(){
-        let response, config;
-
-        try{
-          config = { headers: {'Authorization': `Token ${this.session.token}`}};
-          if(this.post.id){
-            let { keypoint: keyPoints, image_url: imageUrl, title, body} = this.post;
-            response = await this.$http.put(`/api/v1/posts/${this.post.id}/update/`, 
-              { keypoint, image_url, title, body}, 
-              config
-            )
-          }   
-          else
-            response = await this.$http.post('/api/v1/posts/', this.post, config)
-          //this.post.id = response.data.data.post.id;
-        }catch(error){
-          response = error.response;
-        }
-
-        return response;
-
       },
       handlePublish: async function(){
         //Perform Create Or update
@@ -192,45 +205,9 @@
         
         
       },
-      handleSave: async function(){
-        let { data, status } = await this.createOrUpdate();
-        status = status === 403 ? 401 : status; //Convert 403 response error to 401;
-
-        switch(status){
-          case 200:
-          case 201:
-            let { id, title, body, image_url: imageUrl, country: countryId, category: categoryId, keypoint: keyPoints } = data.data.post;
-            this.modal = {status: data.status};
-            this.post = { id, title, body, imageUrl, countryId, categoryId, keyPoints };
-            break;
-          case 400:
-            this.modal = { data: data.data, status: 'error' };
-            break;
-          case 401: 
-            // Unauthenticated
-            break;
-          default:
-            this.modal = {status: 'Error', data: {'SERVER ERROR': ['The server is not responding, can you try again']}};
-        }
-        this.modal.action = 'SAVE';
-      }
     },
-    mounted: async function(){
-      
-      if(this.$route.params.slug){
-        let response;
-        try {
-          response = await this.$http.get(`/api/v1/posts/${this.$route.params.slug}/`);
-
-          let { id, title, body, image_url: imageUrl, country: countryId, category: categoryId, keypoint: keyPoints } = response.data.data.post;
-          this.post = { id, title, body, imageUrl, countryId, categoryId, keyPoints };
-        }catch(error){
-          console.log(error);
-        }
-      }
-      
-      
-      
+    mounted(){
+      this.setPost({category: this.auth.loggedInUser.category.id, country: this.auth.loggedInUser.country.id})
     }
   }
 
@@ -297,3 +274,26 @@
     margin: .5rem 0;
   }
 </style>
+
+
+<!--
+
+mounted: async function(){
+  
+  if(this.$route.params.slug){
+    let response;
+    try {
+      response = await this.$http.get(`/api/v1/posts/${this.$route.params.slug}/`);
+
+      let { id, title, body, image_url: imageUrl, country: countryId, category: categoryId, keypoint: keyPoints } = response.data.data.post;
+      this.post = { id, title, body, imageUrl, countryId, categoryId, keyPoints };
+    }catch(error){
+      console.log(error);
+    }
+  }
+  
+  
+  
+}
+
+-->

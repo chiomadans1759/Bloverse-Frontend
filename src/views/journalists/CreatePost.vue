@@ -1,10 +1,12 @@
 <template>
-  <BasicCreatePost v-if="selectedTemplate === 'basic'" />
+  <BasicCreatePost v-if="selectedTemplate === 'basic' || isCreatingPost" />
   <TemplateChooser v-else @selectTemplate="selectedTemplate=$event" />
   
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+
   import TemplateChooser from '../../components/TemplateChooser.vue';
   import BasicCreatePost from '../../components/CreatePostBasic.vue';
 
@@ -15,12 +17,10 @@
         selectedTemplate: null
       }
     },
-    watch: {
-      selectedTemplate(val){
-        console.log(val);
-      }
-    }
-
-    
+    computed: {
+      ...mapGetters([
+        'isCreatingPost'
+      ])
+    },  
   }
 </script>
