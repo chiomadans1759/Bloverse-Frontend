@@ -129,6 +129,11 @@
           this.modal = { action: 'SAVE' };
 
         this.modal.status = 'success';
+      }
+    },
+    mounted(){
+      this.setPost({category: this.auth.loggedInUser.category.id, country: this.auth.loggedInUser.country.id})
+    }
 
         /*let { data, status } = await this.createOrUpdatePost();
         status = status === 403 ? 401 : status; //Convert 403 response error to 401;
@@ -149,8 +154,8 @@
           default:
             this.modal = {status: 'Error', data: {'SERVER ERROR': ['The server is not responding, can you try again']}};
         }
-        this.modal.action = 'SAVE';*/
-      },
+        this.modal.action = 'SAVE';
+
       publishPost: async function(){
         let response, config;
         
@@ -204,11 +209,8 @@
         }
         
         
-      },
-    },
-    mounted(){
-      this.setPost({category: this.auth.loggedInUser.category.id, country: this.auth.loggedInUser.country.id})
-    }
+      },*/
+    
   }
 
 </script>
