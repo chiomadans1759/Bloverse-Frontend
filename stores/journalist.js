@@ -23,8 +23,8 @@ export default {
       switch(response.statusCode){
         case 200:
         case 201:
-          let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published:isPublished=false } = response.data.post;
-          let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished };
+          let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published:isPublished=false, slug } = response.data.post;
+          let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug };
           commit('setPost', updatedPost);
           return true;
         default:
@@ -32,11 +32,19 @@ export default {
       }
 
     },
+    async getMyPost({commit, rootState}){
+      let userId = rootState.auth.loggedInUser.id;
+      let response = await Api.get('journalists/' + userId + '/posts/', true);
+      commit('setPosts', response.data.posts) ;
+    }
   },
   mutations: {
     setPost(state, props){
       state.post = {...state.post, ...props};
     },
+    setPosts(state, props){
+      state.posts = props
+    }
   },
   getters: {
     isCreatingPost(state){

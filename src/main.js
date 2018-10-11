@@ -54,15 +54,15 @@ Vue.filter('firstToUpper', (value) => {
 ga('set', 'page', router.currentRoute.path);
 ga('send', 'pageview');
 
-/*router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => {
   LoadingBar.start();
   next();
-});*/
+});
 
 router.afterEach(( to, from, next) => {
   ga('set', 'page', to.path);
   ga('send', 'pageview');
-  //LoadingBar.finish();
+  LoadingBar.finish();
 });
 
 

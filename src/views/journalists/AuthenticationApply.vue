@@ -72,7 +72,7 @@
       </FormItem>
       <Button class="my-btn btn-secondary" long @click.prevent="handleSubmit">SUBMIT</Button>
         <div id="login-here">already have an account?<br> 
-          <router-link id="login-link" to=""> Log in here </router-link>
+          <router-link id="login-link" to="login"> Log in here </router-link>
         </div>
     </Form>
    </Col>
