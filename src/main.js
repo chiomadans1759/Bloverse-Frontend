@@ -5,6 +5,7 @@ import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
 import store from '../stores';
 import VueAnalytics from 'vue-analytics';
+import VueGoodshare from "vue-goodshare";
 
 
 import routes from '../routes'
@@ -26,6 +27,7 @@ Vue.prototype.$Loading = LoadingBar;
 
 
 Vue.use(VueRouter);
+Vue.use(VueGoodshare)
 Vue.use(VueAnalytics, {
   id: 'UA-126813609-1',
   router

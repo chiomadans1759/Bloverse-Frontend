@@ -16,7 +16,17 @@
         <p>Published Successfully</p>
       </div>
       <div v-else-if="modal.action === 'SAVE'">
-       <p>Saved Successfully</p> 
+       <p>Saved Successfully</p>
+       <vue-goodshare-facebook
+        page_url="https://bloverse-frontend.herokuapp.com/"
+        title_social="Facebook"
+        has_icon
+  ></vue-goodshare-facebook>
+         <vue-goodshare-twitter
+        page_url="https://bloverse-frontend.herokuapp.com/"
+        title_social="Twitter"
+        has_icon
+  ></vue-goodshare-twitter>
       </div>
 
       
@@ -84,14 +94,17 @@
 <script>
   import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert } from 'iview';
   import { mapState, mapActions, mapMutations } from 'vuex'
+  import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
+  import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
 
   export default {
     components: {
-      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert
+      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, VueGoodshareFacebook, VueGoodshareTwitter
     },
     data: function(){
       return {
         modal: {},
+        // url: 'https://bloverse-frontend.herokuapp.com/' + this.post.slug
       };
       
     },
