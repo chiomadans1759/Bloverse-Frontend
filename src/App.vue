@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-      <router-view v-if="general.categories" />
+    <LoadingIcon v-if="loading" />
+    <router-view v-else />
   </div>
 </template>
 
 <script>
   import { mapActions, mapState } from 'vuex'
+  import LoadingIcon from './components/Loading';
   export default {
     name: 'app',
+    components: { LoadingIcon },
     data(){
       return {
         loading: true
@@ -24,12 +27,8 @@
       ])
     },
     async mounted(){
-      this.$Loading.start();
       await this.setGeneralData();
-      if(this.general.categories)
-        this.$Loading.finish();
-      else
-        this.$Loading.error();
+      this.loading = false;
       //this.loading = false;
     }
   }
