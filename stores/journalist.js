@@ -11,10 +11,11 @@ export default {
       let userId = rootState.auth.loggedInUser.id;
       let { id, title, body, keyPoints: keypoint, imageUrl: image_url, category, country } = state.post;
       
-      let payload = { keypoint, image_url, title, body, category, country, isPublished: params.shouldPublish };
+      let payload = { keypoint, image_url, title, body, category, country, is_published: params.shouldPublish };
 
       let response;
       if(id){
+        payload = { keypoint, image_url, title, body, is_published: params.shouldPublish };
         response = await Api.put('journalists/' + userId + '/posts/' + id, payload, true);
       }else{
         response = await Api.post('journalists/' + userId + '/posts/', payload, true);

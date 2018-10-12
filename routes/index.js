@@ -30,10 +30,18 @@ import AdminHome from '../src/views/admin/Home.vue';
 import BaseAdmin from '../src/layouts/BlankBase.vue';
 
 
-import Feeds from '../src/views/DisplayFeeds.vue';
+import BaseFeeds from '../src/layouts/BaseFeeds.vue';
+import PostFeeds from '../src/views/PostFeeds.vue';
+import PostDisplay from '../src/views/PostDisplay.vue';
 
 const routes = [
-  { path: '/', component: Feeds },
+  { path: '/', component: BaseFeeds,
+    children: [
+      { path: '', component: PostFeeds },
+      { path: 'posts', redirect: '/' },
+      { path: 'posts/:slug', component: PostDisplay }
+    ]
+  },
   {
     path: '/journalist', component: BaseJournalist,
     children: [

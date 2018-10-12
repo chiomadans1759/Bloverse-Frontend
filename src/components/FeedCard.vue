@@ -1,10 +1,12 @@
 <template>
-  <Card class="feed-card">
-    <img :src="imageUrl" />
-    <h2 id="category"><p>{{post.category.name}}</p></h2>
-    <h2 id="title"><p>{{post.title}}</p></h2>
-    <h2 id="summary"><p>{{post.body | summarize}}</p></h2>
-  </Card>
+  <router-link :to="`posts/${post.slug}`">
+    <Card class="feed-card">
+      <img :src="imageUrl" />
+      <h2 id="category"><p>{{post.category.name}}</p></h2>
+      <h2 id="title"><p>{{post.title}}</p></h2>
+      <h2 id="summary"><p>{{post.body | summarize}}</p></h2>
+    </Card>
+  </router-link>
 </template>
 
 <script >

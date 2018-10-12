@@ -29,10 +29,10 @@
         'journalist'
       ])
     },
-    created () {
+    async created () {
         // fetch the data when the view is created and the data is
         // already being observed
-        this.getMyPost()
+      await this.getMyPost()
     },
     watch: {
       // call again the method if the route changes

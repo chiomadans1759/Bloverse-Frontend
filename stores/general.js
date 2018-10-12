@@ -5,6 +5,7 @@ export default {
     categories: null,
     countries: null,
     applicants: null,
+    publishedPosts: null
   },
   actions: {
     async setGeneralData ({commit}) {
@@ -43,6 +44,10 @@ export default {
       let { id, status } = applicant;
       let response = await Api.put('applicants/'+id +'/', { status }, true);
       return response.statusCode === 200;
+    },
+    async getAllPublishedPosts({commit}){
+      let response = await Api.get('posts?is_published=true')
+      commit('setPublishedPosts', response.data.post);
     }
   },
   mutations: {
@@ -58,6 +63,9 @@ export default {
     },
     setApplicants(state, applicants){
       state.applicants = applicants;
+    },
+    setPublishedPosts(state, posts){
+      state.publishedPosts = posts;
     }
   },
   getters: {
