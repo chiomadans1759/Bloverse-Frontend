@@ -102,4 +102,7 @@ margin:25px 0;
     padding: 10px 30px 10px 30px;
     border-radius: 10px;
   }
+   .auth a:hover{
+    color: #FFFFFF;
+   }
 </style>
