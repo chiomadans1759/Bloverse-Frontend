@@ -1,92 +1,49 @@
 <template>
 
 <Row id="display-post" type="flex" justify="space-between">
-    
-<Col class="share-links" :sm="2">
- <Icon type="logo-facebook" v-for="i in 4" :key="i"></Icon>
-</Col>
-<Col class="main-feed" :sm="20">
-<h2 class="border">Lorem Ipsum is simply dummy</h2>
-<ul class="summary-feed">
-  <li>This lorem ipsum is the first keypoint</li>
-  <li>This lorem ipsum is the first keypoint</li>
-  <li>This lorem ipsum is the first keypoint</li>
-  <li>This lorem ipsum is the first keypoint</li>
-</ul>
-
-<img class="main-image" src="https://res.cloudinary.com/aolfiligre/image/upload/v1532799606/samples/ecommerce/accessories-bag.jpg" />
-
-<p class="main-body">
-    ICAN (2006) stated that the main purpose of public sector accounting includes; Ascertaining the legitimacy of transactions and their compliance with the established norms, regulations and status, Providing evidence of stewardship, Providing a basis for decision making, Enhancing the appraisal of the efficiency of management, Highlighting the various sources of revenues and the expenditures to be incurred, Evaluating the economy, efficiency and effectiveness with which public sector organizations pursue their goals and objectives, Providing the means by which actual performance may be compared with the target set etc.<br><br>
-
-ICAN (2006) stated that the main purpose of public sector accounting includes; Ascertaining the legitimacy of transactions and their compliance with the established norms, regulations and status, Providing evidence of stewardship, Providing a basis for decision making, Enhancing the appraisal of the efficiency of management, Highlighting the various sources of revenues and the expenditures to be incurred, Evaluating the economy, efficiency and effectiveness with which public sector organizations pursue their goals and objectives, Providing the means by which actual performance may be compared with the target set, etc.<br><br>
-
-ICAN (2006) stated that the main purpose of public sector accounting includes; Ascertaining the legitimacy of transactions and their compliance with the established norms, regulations and status, Providing evidence of stewardship, Providing a basis for decision making, Enhancing the appraisal of the efficiency of management, Highlighting the various sources of revenues and the expenditures to be incurred, Evaluating the economy, efficiency and effectiveness with which public sector organizations pursue their goals and objectives, Providing the means by which actual performance may be compared with the target set, etc.<br><br>
-
-ICAN (2006) stated that the main purpose of public sector accounting includes; Ascertaining the legitimacy of transactions and their compliance with the established norms, regulations and status, Providing evidence of stewardship, Providing a basis for decision making, Enhancing the appraisal of the efficiency of management, Highlighting the various sources of revenues and the expenditures to be incurred, Evaluating the economy, efficiency and effectiveness with which public sector organizations pursue their goals and objectives, Providing the means by which actual performance may be compared with the target set, etc.<br>
-
-
-
-</p>    
-
-<section id="trendweek">
-                        <Row type="flex" justify="space-between">
-                          <i-col id="texta" :sm="8">
-                            <h5><p>Similar</p></h5>
-                           
-                          </i-col>
-                
-                                
-                            </Row>
-                                
-                
-                        </section>
-                
-                        <section>
-                                <Row type="flex" justify="space-between">
-                                <Card class="postcard2" style="width:240px">
-                            
-                                            <img src="https://res.cloudinary.com/aolfiligre/image/upload/v1532799601/samples/animals/three-dogs.jpg" />
-                                            <h2 id="cardhead"><p>ENTERTAINMENT</p></h2>
-                                            <h2 id="cardtitle"><p>Lorem Ipsum is simply dummy</p></h2>
-                                            
-                                            
-                                    
-                                    </Card>
-                                    <Card class="postcard2" style="width:240px">
-                            
-                                            <img src="https://res.cloudinary.com/aolfiligre/image/upload/v1532799605/samples/ecommerce/leather-bag-gray.jpg" />
-                                            <h2 id="cardhead"><p>ENTERTAINMENT</p></h2>
-                                            <h2 id="cardtitle"><p>Lorem Ipsum is simply dummy</p></h2>
-                                            
-                                    
-                                    </Card>
-                                    <Card class="postcard2" style="width:240px">
-                            
-                                            <img src="https://res.cloudinary.com/aolfiligre/image/upload/v1532799886/mission-impossible-fallout-poster.jpg" />
-                                            <h2 id="cardhead"><p>ENTERTAINMENT</p></h2>
-                                            <h2 id="cardtitle"><p>Lorem Ipsum is simply dummy</p></h2>
-                                            
-                                    
-                                    </Card>
-                                
-                                </Row>
-                        </section>
-
-                        <Form>
-        <FormItem id="input">
-            <Input v-model="newComment"  id="searchbox2" type="textarea" :rows="5" placeholder="Reply to this post with  a comment"> </Input>
-        </FormItem>
-        </form>
-
-         <Button type="success" id="btn-comment" long>Show Comments</Button>
-
-
-
-
-
-
-</Col>
+  <Col class="share-links" :sm="2">
+    <Icon type="logo-facebook" v-for="i in 4" :key="i"></Icon>
+  </Col>
+  <Col class="main-feed" :sm="20">
+    <h2 class="border">{{post.title}}</h2>
+    <ul class="summary-feed">
+      <li v-for="point in post.keypoint">{{point}}</li>
+    </ul>
+    <img class="main-image" :src="post.image_url" />
+    <p class="main-body" v-html="post.body"></p>    
+    <section id="trendweek">
+      <Row type="flex" justify="space-between">
+        <i-col id="texta" :sm="8">
+          <h5><p>Similar</p></h5>    
+        </i-col>       
+      </Row>
+    </section>
+    <section>
+      <Row type="flex" justify="space-between">
+        <Card class="postcard2" style="width:240px">
+          <img src="https://res.cloudinary.com/aolfiligre/image/upload/v1532799601/samples/animals/three-dogs.jpg" />
+          <h2 id="cardhead"><p>ENTERTAINMENT</p></h2>
+          <h2 id="cardtitle"><p>Lorem Ipsum is simply dummy</p></h2>   
+        </Card>
+        <Card class="postcard2" style="width:240px">
+          <img src="https://res.cloudinary.com/aolfiligre/image/upload/v1532799605/samples/ecommerce/leather-bag-gray.jpg" />
+          <h2 id="cardhead"><p>ENTERTAINMENT</p></h2>
+          <h2 id="cardtitle"><p>Lorem Ipsum is simply dummy</p></h2>                      
+        </Card>
+        <Card class="postcard2" style="width:240px">
+          <img src="https://res.cloudinary.com/aolfiligre/image/upload/v1532799886/mission-impossible-fallout-poster.jpg" />
+          <h2 id="cardhead"><p>ENTERTAINMENT</p></h2>
+          <h2 id="cardtitle"><p>Lorem Ipsum is simply dummy</p></h2>
+        </Card> 
+      </Row>
+    </section>
+    <Form>
+      <FormItem id="input">
+        <Input v-model="newComment"  id="searchbox2" type="textarea" :rows="5" placeholder="Reply to this post with  a comment"> </Input>
+      </FormItem>
+    </Form>
+    <Button type="success" id="btn-comment" long>Show Comments</Button>
+  </Col>
 
 </Row>
 
@@ -94,22 +51,26 @@ ICAN (2006) stated that the main purpose of public sector accounting includes; A
 
 
 <script>
-import { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button} from 'iview';
+  import { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button} from 'iview';
+  import { mapGetters, mapState } from 'vuex';
 
-export default {
-    components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button},
-    data: function(){
-        return {
-           newComment: ''
-        }
-    },
-    methods: {
-        show: function () {
-            this.visible = true;
-        }
-    }
-    
-}
+  export default {
+      components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button},
+      data: function(){
+          return {
+             newComment: ''
+          }
+      },
+      computed: {
+        post: function(){
+          return this.general.publishedPosts.find(post => post.slug === this.$route.params.slug);
+        },
+        ...mapState([
+          'general'
+        ])
+      }
+      
+  }
 
 
 </script>
