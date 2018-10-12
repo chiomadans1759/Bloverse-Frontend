@@ -16,7 +16,19 @@
         <p>Published Successfully</p>
       </div>
       <div v-else-if="modal.action === 'SAVE'">
-       <p>Saved Successfully</p> 
+       <p>Saved Successfully</p>
+       <div class="posts">
+        <vue-goodshare-facebook
+        page_url="https://bloverse-frontend.herokuapp.com/"
+        has_icon
+        style="font-size: 25px;"
+  ></vue-goodshare-facebook>
+         <vue-goodshare-twitter
+        page_url="https://bloverse-frontend.herokuapp.com/"
+        has_icon
+        style="font-size: 25px;"
+  ></vue-goodshare-twitter>
+      </div>
       </div>
 
       
@@ -50,7 +62,7 @@
           <Icon type="ios-cloud-upload" size="52" :style="{color: '#BDBDBD', margin: 'auto'}"></Icon>
         </Upload>
 
-        <Input type="textarea" :rows="12" v-model="post.body" placeholder="Content"></Input>
+        <vue-editor v-model="post.body" style="background: white;"></vue-editor>
 
         <Row type="flex" justify="space-between">
           <Col>
@@ -70,8 +82,7 @@
         <Card id="display-post">
           <h2 id="title">{{post.title}}</h2>
           <img :src="post.imageUrl" id="image"  />
-          <p id="body">
-            {{post.body}}
+          <p v-html="post.body" id="body">
           </p>
 
         </Card>
@@ -84,14 +95,18 @@
 <script>
   import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert } from 'iview';
   import { mapState, mapActions, mapMutations } from 'vuex'
+  import { VueEditor } from "vue2-editor";
+  import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
+  import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
 
   export default {
     components: {
-      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert
+      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor
     },
     data: function(){
       return {
         modal: {},
+        // url: 'https://bloverse-frontend.herokuapp.com/' + this.post.slug
       };
       
     },
@@ -274,6 +289,10 @@
 
   .keypoints .ivu-input-wrapper {
     margin: .5rem 0;
+  }
+  .posts 
+  {
+    position: relative;
   }
 </style>
 
