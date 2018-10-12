@@ -1,5 +1,5 @@
 <template>
-  <Card id="post-card" @click.native="processClick">
+  <Card id="post-card" @click.native="processClick" v-if="!havePosts">
     <Row type="flex" justify="space-between">
       <Col span="8">
         <img :src="imageUrl" />
@@ -31,6 +31,7 @@
       </Col>
     </Row>
   </Card>
+  <h3 v-else>Please Create a post</h3>
 
 </template>
 
@@ -55,8 +56,8 @@
         if(!this.isPublished)
           url += '/edit';
         this.$router.push(url)
-      }
-    },
+        }
+      },
     filters: {
       summarize: function (value) {
         if (!value) return ''
@@ -64,7 +65,6 @@
       }
     }
   }
-
 
 </script>
 
