@@ -7,13 +7,11 @@
       <Col span="14" id="body">
         <Row type="flex" justify="end">
          <Col>
-           <Icon type="md-checkbox" />
+           <Icon type="md-checkbox" class="icon1" v-if="post_isPublished" />
+           <Icon type="ios-folder" class="icon2" v-else />
          </Col>
         </Row>
-        <h2>{{post.title}}</h2>
-        <p>
-          {{post.body | summarize}}....
-        </p>
+        <h3>{{post.title}}</h3>
         <Row :style="{marginTop: '1.5rem'}" type="flex" justify="space-between">
           <Col>
             <Icon type="md-eye" /> 24K
@@ -43,9 +41,6 @@
     computed: {
       imageUrl: function(){
         return this.post.image_url;
-      },
-      isPublished: function(){
-        return this.post.is_published;
       }
     },
     methods: {
@@ -55,8 +50,8 @@
         if(!this.isPublished)
           url += '/edit';
         this.$router.push(url)
-      }
-    },
+        }
+      },
     filters: {
       summarize: function (value) {
         if (!value) return ''
@@ -64,7 +59,6 @@
       }
     }
   }
-
 
 </script>
 
@@ -77,7 +71,7 @@
   }
 
   #post-card {
-    height: 150px;
+    height: 180px;
     margin: 2rem 0;
     cursor: pointer;
 
@@ -100,5 +94,17 @@
 
   #post-card .ivu-card-body > * {
     height: 100%;
+  }
+
+  .icon1 {
+    color: #26E248;
+    font-size: 25px;
+    margin-top: -50px;
+  }
+
+  .icon2 {
+    color: #26B7E2;
+    font-size: 25px;
+    margin-top: -50px;
   }
 </style>
