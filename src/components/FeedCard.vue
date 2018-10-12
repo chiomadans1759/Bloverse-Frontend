@@ -4,7 +4,9 @@
       <img :src="imageUrl" />
       <h2 id="category"><p>{{post.category.name}}</p></h2>
       <h2 id="title"><p>{{post.title}}</p></h2>
-      <h2 id="summary"><p>{{post.body | summarize}}</p></h2>
+      <ul id="summary">
+        <li v-for="point in post.keypoint">{{point}}</li>
+      </ul>
     </Card>
   </router-link>
 </template>
@@ -31,6 +33,9 @@
 
 <style scoped>
   
+  .feed-card {
+    color:#828282;
+  }
   .feed-card img{
     display: block;
     object-fit: cover;
@@ -56,15 +61,9 @@
     font-weight: 500;
   }
 
-  #summary{
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-    text-align: justify;
-    font-size: 14px;
-    font-weight: 300;
-    color:#828282;
-    
+  #summary {
+    margin: 10px 40px;
+    font-size: 18px;
   }
 </style>
 
