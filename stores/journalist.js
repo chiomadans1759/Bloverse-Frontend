@@ -12,6 +12,7 @@ export default {
       let { id, title, body, keyPoints: keypoint, imageUrl: image_url, category, country } = state.post;
       
       let payload = { keypoint, image_url, title, body, category, country, is_published: params.shouldPublish };
+      console.log(payload)
 
       let response;
       if(id){
