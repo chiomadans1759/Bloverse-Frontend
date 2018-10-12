@@ -32,7 +32,10 @@
         </Col>
         <Col :sm="11" :xs="24">
           <FormItem prop="phone" :error="errors.phone">
-            <Input class="my-input" v-model="applicant.phone" placeholder="Phone* e.g. +2348164488989 " />
+            <div class="country-code">
+              <CountryCode />
+              <!-- <Input class="my-input" v-model="applicant.phone" placeholder="Phone* e.g. +2348164488989 " /> -->
+            </div>
           </FormItem>
         </Col>
       </Row>
@@ -83,11 +86,12 @@
 
 <script>
   import BaseAuthentication from '../../layouts/BaseAuthentication';
+  import CountryCode from '../../components/CountryCodeDrop.vue';
   import { Form, FormItem, Row, Col, Input, Select,Option, Checkbox, Modal, Alert, Button } from 'iview';
   import { mapState, mapActions } from 'vuex';
   //import Utility from '../../Utility.js';
 export default {
-  components: { Form, FormItem, Row, Col, Input, Select, Option,Checkbox, Modal, Alert, Button, BaseAuthentication },
+  components: { Form, FormItem, Row, Col, Input, Select, Option,Checkbox, Modal, Alert, Button, BaseAuthentication, CountryCode },
   data: function(){
     return {
       isSuccess: false,
@@ -249,5 +253,9 @@ export default {
 }
 #login-link{
   color:#2F80ED;
+}
+.country-code{
+  display:flex;
+  
 }
 </style>
