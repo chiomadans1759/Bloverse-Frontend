@@ -64,6 +64,8 @@
 
         <vue-editor v-model="post.body" style="background: white;"></vue-editor>
 
+        <br />
+
         <Row type="flex" justify="space-between">
           <Col>
             <Button id="btn-draft" @click="handleProcessPost">

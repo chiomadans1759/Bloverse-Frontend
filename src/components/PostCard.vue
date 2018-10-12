@@ -10,7 +10,7 @@
            <Icon type="md-checkbox" />
          </Col>
         </Row>
-        <h2>{{post.title}}</h2>
+        <h3>{{post.title}}</h3>
         <p>
           {{post.body | summarize}}....
         </p>
@@ -77,7 +77,7 @@
   }
 
   #post-card {
-    height: 150px;
+    height: 180px;
     margin: 2rem 0;
     cursor: pointer;
 
