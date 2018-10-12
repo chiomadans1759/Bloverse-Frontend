@@ -32,10 +32,14 @@
         </Col>
         <Col :sm="11" :xs="24">
           <FormItem prop="phone" :error="errors.phone">
-            <div class="country-code">
-              <CountryCode />
-              <!-- <Input class="my-input" v-model="applicant.phone" placeholder="Phone* e.g. +2348164488989 " /> -->
-            </div>
+              <Input class="my-input" v-model="applicant.phone" placeholder="Phone* e.g. +2348164488989 ">
+                <Select v-model="code" slot="prepend" style="width: 80px">
+                    <Option value="http">
+                      <img src="https://res.cloudinary.com/naera/image/upload/v1532035571/bloverse/b_blue.png" style="height:15px"/> +234
+                    </Option>
+                    <Option value="https">https://</Option>
+                </Select>
+              </Input>
           </FormItem>
         </Col>
       </Row>
@@ -97,6 +101,7 @@ export default {
       isSuccess: false,
       serverResponse: {},
       errors: {},
+      code: '',
       validateApplication: {
         firstName: [
           { required: true, message: 'Firstname cannot be blank', trigger: 'blur' }
