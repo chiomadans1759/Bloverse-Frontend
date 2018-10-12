@@ -1,5 +1,5 @@
 <template>
-  <Card id="post-card" @click.native="processClick" v-if="!havePosts">
+  <Card id="post-card" @click.native="processClick">
     <Row type="flex" justify="space-between">
       <Col span="8">
         <img :src="imageUrl" />
@@ -7,13 +7,11 @@
       <Col span="14" id="body">
         <Row type="flex" justify="end">
          <Col>
-           <Icon type="md-checkbox" />
+           <Icon type="md-checkbox" class="icon1" v-if="post_isPublished" />
+           <Icon type="ios-folder" class="icon2" v-else />
          </Col>
         </Row>
         <h3>{{post.title}}</h3>
-        <p>
-          {{post.body | summarize}}....
-        </p>
         <Row :style="{marginTop: '1.5rem'}" type="flex" justify="space-between">
           <Col>
             <Icon type="md-eye" /> 24K
@@ -31,7 +29,6 @@
       </Col>
     </Row>
   </Card>
-  <h3 v-else>Please Create a post</h3>
 
 </template>
 
@@ -44,9 +41,6 @@
     computed: {
       imageUrl: function(){
         return this.post.image_url;
-      },
-      isPublished: function(){
-        return this.post.is_published;
       }
     },
     methods: {
@@ -100,5 +94,17 @@
 
   #post-card .ivu-card-body > * {
     height: 100%;
+  }
+
+  .icon1 {
+    color: #26E248;
+    font-size: 25px;
+    margin-top: -50px;
+  }
+
+  .icon2 {
+    color: #26B7E2;
+    font-size: 25px;
+    margin-top: -50px;
   }
 </style>

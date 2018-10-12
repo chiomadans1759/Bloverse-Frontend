@@ -32,7 +32,7 @@
     </FormItem>
   </Form>
   
-  <div id="register-here">Not Yet on Blovere? <br> 
+  <div id="register-here">Not Yet on Bloverse? <br> 
     <router-link id="login-link" to="apply"> Register Here </router-link>
   </div>
 </Col>
@@ -112,6 +112,7 @@ export default {
     flex-direction: row;
     font-size: 18px;
     margin-top: 12px;
+    text-align: center;
   }
 
   #register-link{

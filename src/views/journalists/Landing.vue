@@ -12,7 +12,7 @@
                   <Col class="header-button">
                     <!--<Button ghost shape="circle"  @click="displayModal=true">Sign-in</Button>-->
                     <router-link to="/journalist/apply" class="auth">Register</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <router-link to="/journalist/login" class="auth">Login</router-link>
+                    <router-link to="/journalist/login" class="auth1">Login</router-link>
 
                     <!--<Button class="btn register" type="default" shape="circle" @click="displayModal=true" ghost>Register</Button>
                     <Button class="btn login" type="primary" shape="circle"  @click="displayModal=true">Login</Button>-->
@@ -562,6 +562,18 @@ export default {
     background: #2f80ed;
   }
 
+  .auth {
+    background: #FFFFFF;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+  }
+
+  .auth1 {
+    background: #2f80ed;
+    color: #FFFFFF;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+  }
   .section-3-header {
     width: 100%;
     margin-top: 40px;
