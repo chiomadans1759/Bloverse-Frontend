@@ -563,16 +563,18 @@ export default {
   }
 
   .auth {
-    background: #FFFFFF;
-    padding: 10px 30px 10px 30px;
-    border-radius: 10px;
+    background: transparent;
+    padding: 5px 30px 5px 30px;
+    border-radius: 20px;
+    border: 2px solid #fff;
   }
 
   .auth1 {
     background: #2f80ed;
     color: #FFFFFF;
-    padding: 10px 30px 10px 30px;
-    border-radius: 10px;
+    padding: 5px 30px 5px 30px;
+    border-radius: 20px;
+    border: 2px solid #2f80ed;
   }
   .section-3-header {
     width: 100%;
