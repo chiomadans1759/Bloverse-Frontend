@@ -27,8 +27,9 @@
       ])
     },
     async mounted(){
-      await this.setGeneralData();
-      this.loading = false;
+      let loaded = await this.setGeneralData();
+
+      this.loading = !loaded;
       //this.loading = false;
     }
   }
