@@ -46,6 +46,7 @@ Button{
     padding: 10px 30px 10px 30px;
     border-radius: 10px;
     border: 2px solid #2f80ed;
+    color: #2f80ed;
   }
 
   .auth1 {
