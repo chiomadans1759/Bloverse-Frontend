@@ -15,7 +15,7 @@
     </Layout>
   <Row type="flex" justify="space-around" style="padding:20px; margin:30px">
       <Col span="6" class="status">
-          <a href = #>
+          <a href=#>
             <Card :border="true">
                 <p slot="title" style="font-size: 25px; color: #5b6270"> TOTAL </p>
                 <p style="padding: 5px; color: blue; font-size: 40px;"><b>{{stats.total}}</b></p>
@@ -23,7 +23,7 @@
           </a>
       </Col>
       <Col span="6" class="status">
-          <a href = #>
+          <a href=#>
             <Card shodow>
               <p slot="title"  style="font-size: 25px; color: #5b6270"> ACCEPTED </p>
               <p style="padding: 5px; color: blue; font-size: 40px;"> <b>{{stats.accepted}}</b> </p>
@@ -31,7 +31,7 @@
           </a>
       </Col>
       <Col span="6" class="status">
-        <a href = #>
+        <a href=#>
           <Card :bordered="true">
             <p slot="title"  style="font-size: 25px; color: #5b6270"> REJECTED </p>
             <p style="padding: 5px; color: blue; font-size: 40px;"> <b>{{stats.rejected}}</b> </p>
@@ -46,11 +46,17 @@
 <script>
   //import Utility from '../../Utility.js';
   import DisplayApplicants from '../../components/DisplayApplicantsTable.vue';
+  import store from '../../../stores';
   import { mapActions, mapGetters, mapState } from 'vuex';
 
 
   import { Row, Col, Card, Layout, Header, Button } from 'iview';
   export default {
+    data(){
+      return {
+        ready: false
+      }
+    },
     components: {
       Row, ICol: Col, Card, Layout, Header, IButton: Button, DisplayApplicants,
     },
@@ -64,10 +70,6 @@
 
         return { accepted, rejected, total };
       },
-      ready(){
-
-        return this.general.applicants ? true : false;
-      },
       ...mapState([
         'general'
       ]),
@@ -76,23 +78,20 @@
         'rejectedApplicants',
       ])
     },
-    methods: {
-      logOut() {
-        localStorage.clear();
-        window.location = '/login';
-      },
-      ...mapActions([
-        'getAllApplicants'
-      ]),
-    },
-    async mounted() {
-      this.$Loading.start();
-      await this.getAllApplicants();
-      if(this.general.categories)
-        this.$Loading.finish();
+    async beforeRouteEnter (to, from, next) {
+
+      let succeed = await store.dispatch('getAllApplicants')
+      if(succeed)
+        next(vm => vm.ready = true)
       else
-        this.$Loading.error();
+        next(vm => vm.$emit('loadingError'))
     },
+    methods: {
+      ...mapActions([
+        'getAllApplicants',
+        'logout'
+      ]),
+    }
   }
   
 </script>

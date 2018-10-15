@@ -8,13 +8,12 @@ export default {
     loggedInUser: null
   },
   actions: {
-    async login ({commit}, params) {
+    async login ({commit, state}, params) {
       let response = await Api.post('authentication/', params)
       switch(response.statusCode){
         case 201:
           commit('setJwt', response.data.token);
           commit('setLoggedInUser', response.data.user)
-          //localStorage.setItem('admin', JSON.stringify(data.data));
           return true;
         default:
           return { errors: response.data };
@@ -55,7 +54,11 @@ export default {
         default:
           return { errors: response.data };
       }
-    }
+    },
+    logOut() {
+      localStorage.clear();
+      window.location = '/login';
+    },
   },
   mutations: {
     setApplicant(state, props){
@@ -69,9 +72,17 @@ export default {
     },
     setJwt(state, jwt){
       state.jwt = jwt
+      if(jwt) 
+        localStorage.setItem('jwt', jwt);
+      else
+        localStorage.removeItem('jwt');
     },
     setLoggedInUser(state, user){
       state.loggedInUser = user;
+      if(user)
+        localStorage.setItem('loggedInUser', JSON.stringify(user));
+      else
+        localStorage.removeItem('loggedInUser');
     },
     setUsername(state){
       state.newUser.username = `${state.newUser.firstName}.${state.newUser.lastName}`.toLowerCase();

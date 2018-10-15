@@ -29,7 +29,13 @@ export default {
       let response, applicants;
 
       response = await Api.get('applicants/', true);
-      commit('setApplicants', response.data.applicants);
+      switch(response.statusCode){
+        case 200:
+          commit('setApplicants', response.data.applicants);
+          return true;
+      }
+
+      return false;
     },
     async rejectAcceptApplicants({dispatch}, applicants){
       let processedUsers = [];
