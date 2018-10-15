@@ -27,7 +27,7 @@ Vue.prototype.$Loading = LoadingBar;
 
 Vue.use(VueRouter);
 Vue.use(VueAnalytics, {
-  id: 'UA-126813609-1',
+  id: 'UA-127172964-2',
   router
 })
 Vue.config.productionTip = false
