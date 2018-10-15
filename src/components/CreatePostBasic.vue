@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Modal v-model="showResponse">
-      <Alert :type="modal.status">{{modal.status | firstToUpper}}</Alert>
-      <div v-if="modal.status === 'error'">
+    <Modal v-model="publishModal">
+      <Alert type="success">Success</Alert>
+      <!--<div v-if="modal.status === 'error'">
         <ul>
           <li v-for="(errors, field) in modal.data">
             {{field}}
@@ -11,27 +11,24 @@
             </ul>
           </li>
         </ul>
+      </div>-->
+      <div>
+        <p>Your post has been successfully published</p>
+         <div class="posts">
+          <vue-goodshare-facebook
+            page_url="https://bloverse-frontend.herokuapp.com/"
+            has_icon
+            style="font-size: 25px;"
+          >
+          </vue-goodshare-facebook>
+          <vue-goodshare-twitter
+            page_url="https://bloverse-frontend.herokuapp.com/"
+            has_icon
+            style="font-size: 25px;"
+          >
+          </vue-goodshare-twitter>
+        </div>
       </div>
-      <div v-else-if="modal.action === 'PUBLISH'">
-        <p>Published Successfully</p>
-      </div>
-      <div v-else-if="modal.action === 'SAVE'">
-       <p>Saved Successfully</p>
-       <div class="posts">
-        <vue-goodshare-facebook
-        page_url="https://bloverse-frontend.herokuapp.com/"
-        has_icon
-        style="font-size: 25px;"
-  ></vue-goodshare-facebook>
-         <vue-goodshare-twitter
-        page_url="https://bloverse-frontend.herokuapp.com/"
-        has_icon
-        style="font-size: 25px;"
-  ></vue-goodshare-twitter>
-      </div>
-      </div>
-
-      
     </Modal>
     <Row type="flex" justify="space-between">
       <Col span="13" id="create-post">
@@ -68,13 +65,13 @@
 
         <Row type="flex" justify="space-between">
           <Col>
-            <Button id="btn-draft" @click="handleProcessPost">
+            <Button id="btn-draft" @click="handleProcessPost()">
               <span v-if="post.id">Save Changes</span>
               <span v-else>Save as draft</span>
             </Button>
           </Col>
           <Col>
-            <Button id="btn-publish" @click="handleProcessPost(true)">Publish</Button>
+            <Button id="btn-publish" :disabled="post.isPublished" @click="handleProcessPost(true)">Publish</Button>
           </Col>
         </Row>
 
@@ -107,15 +104,12 @@
     },
     data: function(){
       return {
-        modal: {},
+        publishModal: false,
         // url: 'https://bloverse-frontend.herokuapp.com/' + this.post.slug
       };
       
     },
     computed: {
-      showResponse: function(){
-        return Object.keys(this.modal).length > 0 ?true:false;
-      },
       post: {
         get(){
           return this.$store.state.journalist.post;
@@ -138,14 +132,13 @@
         'setPost'
       ]),
       handleProcessPost: async function(shouldPublish=false){
-        await this.processPost({shouldPublish});
-
-        if(this.post.isPublished)
-          this.modal = { action: 'PUBLISH' };
-        else
-          this.modal = { action: 'SAVE' };
-
-        this.modal.status = 'success';
+        //console.log(this.post);
+        let success = await this.processPost({shouldPublish});
+        if(success){
+          this.$Message.success("Post successfully saved");
+          this.publishModal = shouldPublish;
+        }else
+          this.$Message.error("Something went wrong");
       }
     },
     mounted(){

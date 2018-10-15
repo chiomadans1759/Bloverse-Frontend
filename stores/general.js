@@ -10,15 +10,19 @@ export default {
   actions: {
     async setGeneralData ({commit}) {
       let response, categories, countries;
-
+      
       response = await Api.get('categories/');
-      categories = response.data && response.data.categories;
-
-      response = await Api.get('countries/');
-      countries = response.data && response.data.countries;
-
-      commit('setCountries', countries);
-      commit('setCategories', categories);
+      
+      switch(response.statusCode){
+        case 200:
+          categories = response.data && response.data.categories;
+          response = await Api.get('countries/');
+          countries = response.data && response.data.countries;
+          commit('setCountries', countries);
+          commit('setCategories', categories);
+          return true;
+      }
+      return false;
       //commit('setState', { categories, countries });
     },
     async getAllApplicants({commit}){
