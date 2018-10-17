@@ -34,10 +34,9 @@
           <FormItem prop="phone" :error="errors.phone">
               <Input class="my-input" v-model="applicant.phone" placeholder="Phone* e.g. +2348164488989 ">
                 <Select v-model="code" slot="prepend" style="width: 80px">
-                    <Option value="http">
-                      <img src="https://res.cloudinary.com/naera/image/upload/v1532035571/bloverse/b_blue.png" style="height:15px"/> +234
-                    </Option>
-                    <Option value="https">https://</Option>
+                  <Option class="country-dropdown"  v-for="(countryFlag, index) in countryFlags" :value="countryFlag.code" :key="index">
+                      <img :src="countryFlag.imgURL" style="height:15px"/>    {{ countryFlag.code }}              
+                  </Option>
                 </Select>
               </Input>
           </FormItem>
@@ -86,18 +85,17 @@
   </BaseAuthentication>
 </template>
 
-
-
 <script>
   import BaseAuthentication from '../../layouts/BaseAuthentication';
-  import CountryCode from '../../components/CountryCodeDrop.vue';
+  import countryFlag from '../../countryFlags.js';
   import { Form, FormItem, Row, Col, Input, Select,Option, Checkbox, Modal, Alert, Button } from 'iview';
   import { mapState, mapActions } from 'vuex';
   //import Utility from '../../Utility.js';
 export default {
-  components: { Form, FormItem, Row, Col, Input, Select, Option,Checkbox, Modal, Alert, Button, BaseAuthentication, CountryCode },
+  components: { Form, FormItem, Row, Col, Input, Select, Option,Checkbox, Modal, Alert, Button, BaseAuthentication, },
   data: function(){
     return {
+      countryFlags : countryFlag.countryData,
       isSuccess: false,
       serverResponse: {},
       errors: {},
@@ -211,11 +209,12 @@ export default {
 }
 </script>
 
-
-
-
-
 <style>
+.country-dropdown{
+ display: flex;
+ justify-content: space-between; 
+ align-items: center
+}
 #success-modal .ivu-modal-body {
   display: flex;
   flex-direction: column;
