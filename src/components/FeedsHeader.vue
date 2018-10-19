@@ -6,7 +6,7 @@
         </Col>
         <Col :sm="8"><Input v-model="searchText" icon="ios-search" id="searchbox" placeholder="Search" /> </Col>
         <Col>
-          <router-link to="/journalist" >Write for us</router-link>
+          <router-link to="/journalist" class="auth">Write for us</router-link>
         </Col>
     </Row>   
     <Row id="catrow" :gutter="40" type="flex" justify="center" >
@@ -91,10 +91,18 @@ margin:25px 0;
     display: none;
   }
   #lead {
-width:50px;
-height:70px;
-margin: 5px 35px;
-
-
+    width:50px;
+    height:70px;
+    margin: 5px 35px
   }
+
+  .auth {
+    background: #2f80ed;
+    color: #FFFFFF;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+  }
+   .auth a:hover{
+    color: #FFFFFF;
+   }
 </style>

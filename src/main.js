@@ -26,10 +26,12 @@ Vue.prototype.$Loading = LoadingBar;
 
 
 Vue.use(VueRouter);
+
 /*Vue.use(VueAnalytics, {
-  id: 'UA-126813609-1',
+  id: 'UA-127172964-2',
   router
 })*/
+
 Vue.config.productionTip = false
 
 
@@ -68,17 +70,20 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-ga('set', 'page', router.currentRoute.path);
-ga('send', 'pageview');
+
+
+
 
 router.beforeEach((to, from, next) => {
   LoadingBar.start();
   next();
 });
 
+ga('set', 'page', router.currentRoute.path);
+ga('send', 'pageview');
+
 router.afterEach(( to, from, next) => {
   ga('set', 'page', to.path);
   ga('send', 'pageview');
-  console.log('Start fecthcing data')
   LoadingBar.finish();
 });
