@@ -1,5 +1,5 @@
 <template>
-<div v-if="ready">
+  <div>
     <Layout>
         <Header style="background:#5b6270; color: white; min-height:100px ">
           <Row type="flex" justify="space-between" align="middle" style="margin: 40px">
@@ -10,43 +10,48 @@
               <span style="padding-right:10px">Administrator</span>
               <Button type="default" @click="logOut" ghost>LOGOUT</Button>
             </Col>
-        </Row>
+          </Row>
       </Header>
     </Layout>
-  <Row type="flex" justify="space-around" style="padding:20px; margin:30px">
-      <Col span="6" class="status">
-          <a href=#>
-            <Card :border="true">
-                <p slot="title" style="font-size: 25px; color: #5b6270"> TOTAL </p>
-                <p style="padding: 5px; color: blue; font-size: 40px;"><b>{{stats.total}}</b></p>
-            </Card>
-          </a>
-      </Col>
-      <Col span="6" class="status">
-          <a href=#>
-            <Card shodow>
-              <p slot="title"  style="font-size: 25px; color: #5b6270"> ACCEPTED </p>
-              <p style="padding: 5px; color: blue; font-size: 40px;"> <b>{{stats.accepted}}</b> </p>
-            </Card>
-          </a>
-      </Col>
-      <Col span="6" class="status">
-        <a href=#>
-          <Card :bordered="true">
-            <p slot="title"  style="font-size: 25px; color: #5b6270"> REJECTED </p>
-            <p style="padding: 5px; color: blue; font-size: 40px;"> <b>{{stats.rejected}}</b> </p>
-          </Card>
-        </a>
-      </Col>
-  </Row>
-  <DisplayApplicants></DisplayApplicants>
-</div>
+    <Loading v-if="general.loading" message="Loading Applicant Details..." />
+    <div v-else>
+      <Row type="flex" justify="space-around" style="padding:20px; margin:30px" >
+          <Col span="6" class="status">
+              <a href=#>
+                <Card :border="true">
+                    <p slot="title" style="font-size: 25px; color: #5b6270"> TOTAL </p>
+                    <p style="padding: 5px; color: blue; font-size: 40px;"><b>{{stats.total}}</b></p>
+                </Card>
+              </a>
+          </Col>
+          <Col span="6" class="status">
+              <a href=#>
+                <Card shodow>
+                  <p slot="title"  style="font-size: 25px; color: #5b6270"> ACCEPTED </p>
+                  <p style="padding: 5px; color: blue; font-size: 40px;"> <b>{{stats.accepted}}</b> </p>
+                </Card>
+              </a>
+          </Col>
+          <Col span="6" class="status">
+            <a href=#>
+              <Card :bordered="true">
+                <p slot="title"  style="font-size: 25px; color: #5b6270"> REJECTED </p>
+                <p style="padding: 5px; color: blue; font-size: 40px;"> <b>{{stats.rejected}}</b> </p>
+              </Card>
+            </a>
+          </Col>
+      </Row>
+      <DisplayApplicants></DisplayApplicants>
+    </div>
+  </div>
+  
 </template>
 
 <script>
   //import Utility from '../../Utility.js';
   import DisplayApplicants from '../../components/DisplayApplicantsTable.vue';
   import store from '../../../stores';
+  import Loading from '../../components/Loading';
   import { mapActions, mapGetters, mapState } from 'vuex';
 
 
@@ -58,7 +63,7 @@
       }
     },
     components: {
-      Row, ICol: Col, Card, Layout, Header, IButton: Button, DisplayApplicants,
+      Row, ICol: Col, Card, Layout, Header, IButton: Button, DisplayApplicants, Loading
     },
     computed: {
       stats: function(){
@@ -78,19 +83,14 @@
         'rejectedApplicants',
       ])
     },
-    async beforeRouteEnter (to, from, next) {
-
-      let succeed = await store.dispatch('getAllApplicants')
-      if(succeed)
-        next(vm => vm.ready = true)
-      else
-        next(vm => vm.$emit('loadingError'))
-    },
     methods: {
       ...mapActions([
         'getAllApplicants',
         'logout'
       ]),
+    },
+    async created(){
+      await this.getAllApplicants();
     }
   }
   

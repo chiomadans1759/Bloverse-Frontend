@@ -4,7 +4,7 @@ import { locale, Message, LoadingBar } from 'iview';
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
 import store from '../stores';
-import VueAnalytics from 'vue-analytics';
+//import VueAnalytics from 'vue-analytics';
 
 
 import routes from '../routes'
@@ -26,10 +26,10 @@ Vue.prototype.$Loading = LoadingBar;
 
 
 Vue.use(VueRouter);
-Vue.use(VueAnalytics, {
+/*Vue.use(VueAnalytics, {
   id: 'UA-126813609-1',
   router
-})
+})*/
 Vue.config.productionTip = false
 
 
@@ -48,8 +48,25 @@ Vue.filter('firstToUpper', (value) => {
   if (!value) return '';
   value = value.toString();
   return value.charAt(0).toUpperCase() + value.substr(1);
-});
+}); 
 
+
+
+new Vue({
+  router,
+  store,
+  created() {
+    let jwt, loggedInUser;
+
+    jwt = localStorage.getItem('jwt')
+    loggedInUser = localStorage.getItem('loggedInUser');
+    loggedInUser = loggedInUser && JSON.parse(loggedInUser);
+
+    store.commit('setJwt', jwt);
+    store.commit('setLoggedInUser', loggedInUser);
+  },
+  render: h => h(App)
+}).$mount('#app')
 
 ga('set', 'page', router.currentRoute.path);
 ga('send', 'pageview');
@@ -62,12 +79,6 @@ router.beforeEach((to, from, next) => {
 router.afterEach(( to, from, next) => {
   ga('set', 'page', to.path);
   ga('send', 'pageview');
+  console.log('Start fecthcing data')
   LoadingBar.finish();
 });
-
-
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
