@@ -71,7 +71,7 @@
             </Button>
           </Col>
           <Col>
-            <Button id="btn-publish" :disabled="post.isPublished" @click="handleProcessPost(true)">Publish</Button>
+            <Button id="btn-publish" :disabled="post.is_published" @click="handleProcessPost(true)">Publish</Button>
           </Col>
         </Row>
 

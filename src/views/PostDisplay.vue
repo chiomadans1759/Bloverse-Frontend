@@ -1,10 +1,11 @@
 <template>
-
-<Row id="display-post" type="flex" justify="space-between">
+<Loading v-if="general.loading" message="Getting Feeds" />
+<Row id="display-post" type="flex" v-else justify="space-between">
   <Col class="share-links" :sm="2">
     <Icon type="logo-facebook" v-for="i in 4" :key="i"></Icon>
   </Col>
   <Col class="main-feed" :sm="20">
+    <router-link v-if="isLoggedIn" :to="`/journalist/${auth.loggedInUser.userName}/posts`"> <Icon type="ios-arrow-round-back" /> Back to Dashboard</router-link>
     <h2 class="border">{{post.title}}</h2>
     <ul class="summary-feed">
       <li v-for="point in post.keypoint">{{point}}</li>
@@ -52,7 +53,7 @@
 
 <script>
   import { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button} from 'iview';
-  import { mapGetters, mapState } from 'vuex';
+  import { mapGetters, mapState, mapActions } from 'vuex';
 
   export default {
       components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button},
@@ -66,8 +67,18 @@
           return this.general.publishedPosts.find(post => post.slug === this.$route.params.slug);
         },
         ...mapState([
-          'general'
-        ])
+          'general',
+          'auth'
+        ]),
+        ...mapGetters(['isLoggedIn'])
+      },
+      methods: {
+        ...mapActions(['getAllPublishedPosts'])
+      },
+      async created () {
+        // fetch the data when the view is created and the data is
+        // already being observed
+        await this.getAllPublishedPosts();
       }
       
   }

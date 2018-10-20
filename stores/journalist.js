@@ -34,10 +34,13 @@ export default {
       }
 
     },
-    async getMyPost({commit, rootState}){
+    async getMyPosts({commit, rootState}){
       let userId = rootState.auth.loggedInUser.id;
+      commit('setLoading', true, { root: true });
       let response = await Api.get('journalists/' + userId + '/posts/', true);
       commit('setPosts', response.data.posts) ;
+      commit('setLoading', false, { root: true });
+
     }
   },
   mutations: {
