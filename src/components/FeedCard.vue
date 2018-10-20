@@ -2,11 +2,8 @@
   <router-link :to="`posts/${post.slug}`">
     <Card class="feed-card">
       <img :src="imageUrl" />
-      <h2 id="category"><p>{{post.category.name}}</p></h2>
+      <h2 id="category"><p>{{category}}</p></h2>
       <h2 id="title"><p>{{post.title}}</p></h2>
-      <ul id="summary">
-        <li v-for="point in post.keypoint">{{point}}</li>
-      </ul>
     </Card>
   </router-link>
 </template>
@@ -14,6 +11,11 @@
 <script >
   import { Card } from 'iview';
   export default {
+    data () {
+      return {
+        category: 'Entertainment'
+      }
+    },
     name: 'FeedCard',
     props: { post: Object},
     components: { Card },

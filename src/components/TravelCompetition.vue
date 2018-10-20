@@ -34,8 +34,9 @@
       <Col span="13" id="create-post">
         <Row  type="flex"  justify="space-between">
           <Col :sm="11">
-            <Select v-model="post.category.id" placeholder="Choose Category">
+            <Select v-model="post.category" placeholder="Choose Category" disabled>
               <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
+              <!--<Option v-for="item in general.categories" :value="item.id" :key="item.id" disabled>{{item.name}}</Option> -->
             </Select>
           </Col>
           <Col :sm="11">
@@ -45,16 +46,23 @@
           </Col>
         </Row>
         <Card class="keypoints">
-          <Input placeholder="Key point one" v-model="post.keyPoints[0]" size="large"></Input>
-          <Input placeholder="Key point two" v-model="post.keyPoints[1]" size="large"></Input>
-          <Input placeholder="Key point three" v-model="post.keyPoints[2]" size="large"></Input>
-          <Input placeholder="Key point four" v-model="post.keyPoints[3]" size="large"></Input>
+              <input
+              ref="autocomplete" 
+              placeholder="Location" 
+              class="search-location"
+              onfocus="value = ''" 
+              type="text" />
+          <DatePicker id="keypoint" type="date" placement="bottom-end" placeholder="Time Taken" style="width: 100%"></DatePicker>
+            <Select placeholder="Device Used"  id="keypoint">
+           <Option v-for="item in deviceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+          </Select>
         </Card>
-        <Input placeholder="Heading" v-model="post.title" size="large"></Input>
+        
 
         <Upload
           type="drag"
           id="upload-post-image"
+          class="image"
           action="//jsonplaceholder.typicode.com/posts/">
           <Icon type="ios-cloud-upload" size="52" :style="{color: '#BDBDBD', margin: 'auto'}"></Icon>
         </Upload>
@@ -92,7 +100,7 @@
 </template>
 
 <script>
-  import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert } from 'iview';
+  import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker } from 'iview';
   import { mapState, mapActions, mapMutations } from 'vuex'
   import { VueEditor } from "vue2-editor";
   import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
@@ -100,11 +108,37 @@
 
   export default {
     components: {
-      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor
+      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor
     },
     data: function(){
       return {
         publishModal: false,
+                deviceList: [
+                    {
+                        value: 'IPhone',
+                        label: 'IPhone'
+                    },
+                    {
+                        value: 'Samsung',
+                        label: 'Samsung'
+                    },
+                    {
+                        value: 'Techno',
+                        label: 'Techno'
+                    },
+                    {
+                        value: 'Huawei',
+                        label: 'Huawei'
+                    },
+                    {
+                        value: 'Infinix',
+                        label: 'Infinix'
+                    },
+                    {
+                        value: 'Gionee',
+                        label: 'Gionee'
+                    }
+                ], 
         // url: 'https://bloverse-frontend.herokuapp.com/' + this.post.slug
       };
       
@@ -142,8 +176,14 @@
       }
     },
     mounted(){
-      this.setPost({category: this.auth.loggedInUser.category.id, country: this.auth.loggedInUser.country.id})
-    }
+      this.setPost({category: 7 , country: this.auth.loggedInUser.country.id}),
+
+        this.autocomplete = new google.maps.places.Autocomplete(
+        (this.$refs.autocomplete),
+          {types: ['geocode']}
+    );
+  },
+    
 
         /*let { data, status } = await this.createOrUpdatePost();
         status = status === 403 ? 401 : status; //Convert 403 response error to 401;
@@ -232,6 +272,7 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 120vh;
+    margin-bottom: 30px;
   }
 
   #display-post #image {
@@ -266,6 +307,9 @@
     font-weight: bold;
     line-height: 21px
   }
+  .rows {
+    padding:14px;
+  }
 
   #btn-draft {
     background-color: white;
@@ -277,6 +321,10 @@
     color: white;
   }
 
+  #keypoint {
+    margin-bottom:25px;
+  }
+
   .red-border {
     border: 1px solid red;
   }
@@ -285,10 +333,33 @@
   .keypoints .ivu-input-wrapper {
     margin: .5rem 0;
   }
+
+  .keypoints {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 35vh;
+  }
+
+  .image {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
   .posts 
   {
     position: relative;
   }
+
+  .search-location {
+    width: 100%;
+    margin-bottom:25px;
+    height: 30px;
+    color: black;
+    border: 1px solid #DCDCDC;
+    border-radius: 2px;
+    padding-left: 9px;
+    font-size: 13px;
+}
 </style>
 
 
