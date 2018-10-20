@@ -1,5 +1,8 @@
 <template>
-  <BasicCreatePost v-if="selectedTemplate === 'basic' || isCreatingPost" />
+<div v-if="selectedTemplate !==null || isCreatingPost"> 
+  <BasicCreatePost v-if="selectedTemplate === 'basic' " />
+  <TravelCreatePost v-else-if="selectedTemplate === 'travel' " />
+  </div>
   <TemplateChooser v-else @selectTemplate="selectedTemplate=$event" />
   
 </template>
@@ -9,9 +12,10 @@
 
   import TemplateChooser from '../../components/TemplateChooser.vue';
   import BasicCreatePost from '../../components/CreatePostBasic.vue';
+  import TravelCreatePost from '../../components/TravelCompetition.vue';
 
   export default {
-    components: { TemplateChooser, BasicCreatePost },
+    components: { TemplateChooser, BasicCreatePost, TravelCreatePost },
     data(){
       return {
         selectedTemplate: null
