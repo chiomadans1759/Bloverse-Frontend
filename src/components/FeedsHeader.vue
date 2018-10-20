@@ -6,8 +6,13 @@
         </Col>
         <Col :sm="8"><Input v-model="searchText" icon="ios-search" id="searchbox" placeholder="Search" /> </Col>
         <Col>
-          <router-link to="/journalist" class="auth">Write for us</router-link>
+          <router-link to="/journalist" class="auth">Write</router-link>
         </Col>
+         <Col :sm="3">
+           <Select v-model="country" placeholder="Choose Country" id="country">
+              <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{item.name}}</Option>
+            </Select>
+          </Col>
     </Row>   
     <Row id="catrow" :gutter="40" type="flex" justify="center" >
       <Col><p>Entertainment</p> </Col>
@@ -22,15 +27,22 @@
 
 
 <script>
-  import { Row, Col, Input } from 'iview'
+  import { Row, Col, Input, Select, Option } from 'iview'
+  import { mapState, mapMutations } from 'vuex'
 
   export default {
-    components: { Row, Col, Input },
+    components: { Row, Col, Input, Select, Option },
     data(){
       return {
-        searchText: ''
+        searchText: '',
+        country: null
       }
-    }
+    },
+     computed: {
+      ...mapState([
+        'general'
+      ])
+    },
   }
 </script>
 
@@ -38,24 +50,26 @@
 
 <style>
 #feeds-header {
-margin-bottom:30px;
-
+  margin-bottom:30px;
 
 }
+#country {
+  width: 100%;
+}
   #feeds-row {
-    background-color:#f5f6fa;
+    background-color:#2f80ed;
     width:100%;
     height:80px;
     position: relative;
   }
   .ivu-input-wrapper{
-margin:25px 0;
+    margin:25px 0;
   }
    #catrow {
     height: 60px;
     width: 100%;
-    background-color:#273c75 ;
-    color: #f5f6fa;
+    background-color:#f5f6fa ;
+    color: #151516;
     position: absolute;
     margin: 0% !important;
     padding-top: 15px;
@@ -97,12 +111,11 @@ margin:25px 0;
   }
 
   .auth {
-    background: #2f80ed;
     color: #FFFFFF;
-    padding: 10px 30px 10px 30px;
     border-radius: 10px;
+    font-size: 15px;
   }
-   .auth a:hover{
+   .auth:hover{
     color: #FFFFFF;
    }
 </style>

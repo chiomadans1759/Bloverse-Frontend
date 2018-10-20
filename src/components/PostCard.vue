@@ -98,13 +98,13 @@
 
   .icon1 {
     color: #26E248;
-    font-size: 25px;
-    margin-top: -50px;
+    font-size: 20px;
+    margin-top: -40px;
   }
 
   .icon2 {
     color: #26B7E2;
-    font-size: 25px;
-    margin-top: -50px;
+    font-size: 20px;
+    margin-top: -40px;
   }
 </style>
