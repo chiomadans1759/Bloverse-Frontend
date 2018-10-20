@@ -8,7 +8,7 @@
         </router-link>
       </Col>
       <Col>
-       <router-link to="/journalist/apply" class="auth">Register</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+       <router-link to="/journalist/apply" class="auth">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
        <router-link to="/journalist/login" class="auth1">Login</router-link>
       </Col>
     </Row>
