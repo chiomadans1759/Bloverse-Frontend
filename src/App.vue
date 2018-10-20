@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import { mapActions, mapState } from 'vuex'
+  import { mapActions, mapMutations, mapState } from 'vuex'
   import LoadingIcon from './components/Loading';
   export default {
     name: 'app',
@@ -22,13 +22,10 @@
       ])
     },
     computed: {
-      ...mapState([
-        'general'
-      ])
+      ...mapState(['auth', 'general'])
     },
-    async mounted(){
+    async created(){
       let loaded = await this.setGeneralData();
-
       this.loading = !loaded;
       //this.loading = false;
     }

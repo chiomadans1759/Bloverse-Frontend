@@ -5,7 +5,8 @@ export default {
     categories: null,
     countries: null,
     applicants: null,
-    publishedPosts: null
+    publishedPosts: null,
+    loading: false
   },
   actions: {
     async setGeneralData ({commit}) {
@@ -27,9 +28,16 @@ export default {
     },
     async getAllApplicants({commit}){
       let response, applicants;
-
+      commit('setLoading', true);
       response = await Api.get('applicants/', true);
-      commit('setApplicants', response.data.applicants);
+      switch(response.statusCode){
+        case 200:
+          commit('setApplicants', response.data.applicants);
+          commit('setLoading', false);
+          return true;
+      }
+
+      return false;
     },
     async rejectAcceptApplicants({dispatch}, applicants){
       let processedUsers = [];
@@ -50,8 +58,10 @@ export default {
       return response.statusCode === 200;
     },
     async getAllPublishedPosts({commit}){
-      let response = await Api.get('posts?is_published=true')
+      commit('setLoading', true);
+      let response = await Api.get('posts?is_published=true')     
       commit('setPublishedPosts', response.data.post);
+      commit('setLoading', false);
     }
   },
   mutations: {
@@ -70,6 +80,9 @@ export default {
     },
     setPublishedPosts(state, posts){
       state.publishedPosts = posts;
+    },
+    setLoading(state, loading){
+      state.loading = loading;
     }
   },
   getters: {
