@@ -10,7 +10,7 @@
     </Col>
   </Row>
   <Row type="flex" justify="space-between" v-if="showPosts">
-    <Col v-for="post in journalist.posts" :md="11" :key="i">
+    <Col v-for="post in journalist.posts" :md="11" :key="post.id">
       <PostCard :post="post" />
     </Col>
   </Row>

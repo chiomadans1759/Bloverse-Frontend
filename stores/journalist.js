@@ -49,6 +49,9 @@ export default {
     },
     setPosts(state, props){
       state.posts = props
+    },
+    clearPost(state){
+      state.post = { keyPoints: [], imageUrl: "https://res.cloudinary.com/naera/image/upload/v1532594342/945_S_fuswub.png"}
     }
   },
   getters: {

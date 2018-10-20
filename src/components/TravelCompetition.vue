@@ -176,7 +176,7 @@
       }
     },
     mounted(){
-      this.setPost({category: 7 , country: this.auth.loggedInUser.country.id}),
+      this.setPost({category: 7, country: this.auth.loggedInUser.country.id}),
 
         this.autocomplete = new google.maps.places.Autocomplete(
         (this.$refs.autocomplete),

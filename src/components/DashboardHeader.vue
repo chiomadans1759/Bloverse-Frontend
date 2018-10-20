@@ -7,7 +7,7 @@
       <Col><Icon type="android-notifications-none" color="#BDBDBD"></Icon></Col>
       <Col>
         
-        <Avatar icon="person" /> &nbsp; <span>Jackman Welsh</span>
+        <Avatar icon="person" /> &nbsp; <span>{{name}}</span> &nbsp;
         <Dropdown>
           <Icon type="md-arrow-dropdown" />
           <DropdownMenu slot="list">
@@ -15,6 +15,7 @@
             <DropdownItem divided @click.native="logout">Log out</DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        &nbsp;
       </Col>
     </Row> 
   </Header>
@@ -23,12 +24,19 @@
 
 <script>
   import { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem } from 'iview';
-  import { mapMutations } from 'vuex'
+  import { mapMutations, mapState } from 'vuex'
   export default {
     components: { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem },
     data(){
       return {
         collapsed: false
+      }
+    },
+    computed: {
+      ...mapState(['auth']),
+      name(){
+        let { firstName, lastName } = this.auth.loggedInUser; 
+        return firstName + ' ' +  lastName;
       }
     },
     methods: {
