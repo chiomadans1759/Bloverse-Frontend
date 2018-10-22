@@ -32,7 +32,10 @@ export default {
       response = await Api.get('applicants/', true);
       switch(response.statusCode){
         case 200:
-          commit('setApplicants', response.data.applicants);
+          //removes admin from applicants
+          let onlyApplicants = response.data.applicants.filter(applicant=> applicant.id !== 1);
+
+          commit('setApplicants', onlyApplicants);
           commit('setLoading', false);
           return true;
       }
@@ -42,6 +45,7 @@ export default {
     async rejectAcceptApplicants({dispatch}, applicants){
       let processedUsers = [];
       applicants.forEach(async applicant=> {
+
         if(applicant.status === 1)
           return;
         const statusUpdated = await dispatch('processApplicant', applicant);
