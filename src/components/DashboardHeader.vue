@@ -3,7 +3,7 @@
     <Icon @click.native="handleIconClick" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
     <Row id="items-wrapper" type="flex" justify="space-between" align="middle">
       <Col><Icon type="navicon-round" color="#E0E0E0"></Icon></Col>
-      <Col span="12"><Input icon="ios-search" placeholder="Search"></Input></Col>
+      
       <Col><Icon type="android-notifications-none" color="#BDBDBD"></Icon></Col>
       <Col>
         
