@@ -64,7 +64,7 @@ export default {
     async getAllPublishedPosts({commit}){
       commit('setLoading', true);
       let response = await Api.get('posts?is_published=true')     
-      commit('setPublishedPosts', response.data.post);
+      commit('setPublishedPosts', response.data.posts);
       commit('setLoading', false);
     }
   },

@@ -1,13 +1,19 @@
 import Api from '../src/Api';
+import axios from 'axios';
 
 export default {
   state: {
     posts: null,
-    post: { keyPoints: [], imageUrl: "https://res.cloudinary.com/naera/image/upload/v1532594342/945_S_fuswub.png"}
+    post: { keyPoints: [] }
 
   },
   actions: {
-    async processPost({commit, rootState, state}, params){
+    async processPost({commit, rootState, state, dispatch}, params){
+      if(params.shouldUploadImage){
+        let newUrl = await dispatch('doUpload');
+        commit('setPost', {imageUrl: newUrl});
+      }
+        
       let userId = rootState.auth.loggedInUser.id;
       let { id, title, body, keyPoints: keypoint, imageUrl: image_url, category, country } = state.post;
       
@@ -33,6 +39,21 @@ export default {
           return false;
       }
 
+    },
+    async doUpload({state}){
+      const cloudinary = {
+        uploadPreset: 'pspvcsig',
+        apiKey: '967987814344437',
+        cloudName: 'naera'
+      };
+      const clUrl = `https://api.cloudinary.com/v1_1/${cloudinary.cloudName}/upload`;
+      const formData = new FormData()
+      formData.append('file', state.post.imageUrl);
+      formData.append('upload_preset', cloudinary.uploadPreset);
+      formData.append('folder', 'bloverse');
+      const resp = await axios.post(clUrl, formData);
+      console.log(resp.data.secure_url);
+      return resp.data.secure_url;
     },
     async getMyPosts({commit, rootState}){
       let userId = rootState.auth.loggedInUser.id;

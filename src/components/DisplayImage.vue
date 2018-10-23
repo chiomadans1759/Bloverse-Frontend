@@ -1,14 +1,12 @@
 <template>
-  <section id="img-display">
-  	<Modal v-model="uploadDialog">
-  	  <image-chooser @cancel="uploadDialog=false" @uploaded="uploaded" />
-  	</Modal>
+  <section id="img-display" :style="{height, width}">
+  	<image-chooser :show="displayChooser" @closeModal="displayChooser=false" @selectImage="handleImageSelected" />
   	<div class="img-wrapper" @mouseover="imageHover = true" @mouseleave="imageHover = false">
   	  <img v-if="currImage" :src="currImage" :alt="alt">
   	  <div v-else  style="display: flex; width: 100%; height: 100%">
         <h2 style="margin: auto">NO IMAGE</h2>
   	  </div>
-  	  <div v-if="canEdit" id="activate-upload" v-show="imageHover" @click="uploadDialog = true">
+  	  <div v-if="canEdit" id="activate-upload" v-show="imageHover" @click="displayChooser = true">
         <div style="margin: auto; display: flex; flex-direction: column; align-items: center;">
           <Icon type="ios-camera"></Icon>
           <h3 v-if="currImage">Click to Change Photo</h3>
@@ -21,20 +19,20 @@
 
 
 <script >
-  import { Icon, Modal } from 'iview';
+  import { Icon } from 'iview';
   import ImageChooser from './ImageChooser.vue'
   export default {
-  	props: ['value', 'canEdit', 'alt'],
-  	components: {ImageChooser, Icon, Modal },
+  	props: ['value', 'canEdit', 'alt', 'height', 'width'],
+  	components: {ImageChooser, Icon },
   	data: function() {
   	  return {
-  	  	uploadDialog: false,
+  	  	displayChooser: false,
   	  	imageHover: false,
   	  	currImage: this.value
   	  } 
   	},
     methods: {
-      uploaded(evt){
+      handleImageSelected(evt){
         this.currImage = evt;
         this.$emit('input', evt);
       }
@@ -47,10 +45,11 @@
 <style scoped>
 
   section#img-display {
-    background: blue;
-    width: 100%;
-    height: 100%
+    background: white;
+    border: .1px solid grey;
   }
+
+
   .img-wrapper {
     height: 100% !important;
     width: 100% !important;
