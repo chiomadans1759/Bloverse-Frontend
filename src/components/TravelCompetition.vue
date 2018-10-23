@@ -45,7 +45,7 @@
             </Select>
           </Col>
         </Row>
-        <Card class="keypoints">
+        <Card class="key-points">
               <input
               ref="autocomplete" 
               placeholder="Location" 
@@ -330,11 +330,11 @@
   }
 
 
-  .keypoints .ivu-input-wrapper {
+  .key-points .ivu-input-wrapper {
     margin: .5rem 0;
   }
 
-  .keypoints {
+  .key-points {
     margin-top: 40px;
     margin-bottom: 40px;
     height: 35vh;

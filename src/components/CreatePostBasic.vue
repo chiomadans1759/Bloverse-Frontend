@@ -48,7 +48,7 @@
           <Input placeholder="Key point one" v-model="post.keyPoints[0]" size="large"></Input>
           <Input placeholder="Key point two" v-model="post.keyPoints[1]" size="large"></Input>
           <Input placeholder="Key point three" v-model="post.keyPoints[2]" size="large"></Input>
-          <Input placeholder="Key point four" v-model="post.keyPoints[3]" size="large"></Input>
+          
         </Card>
         <Input placeholder="Heading" v-model="post.title" size="large"></Input>
 

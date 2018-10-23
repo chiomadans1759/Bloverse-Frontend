@@ -4,9 +4,9 @@
         <Col>
           <router-link to="/"><img src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" alt="" id="lead"></router-link>
         </Col>
-        <Col :sm="8"><Input v-model="searchText" icon="ios-search" id="searchbox" placeholder="Search" /> </Col>
+       
         <Col>
-          <router-link to="/journalist" class="auth">Write</router-link>
+          <router-link to="/journalist" id="write">Write</router-link>
         </Col>
          <Col :sm="3">
            <Select v-model="country" placeholder="Choose Country" id="country">
@@ -110,12 +110,14 @@
     margin: 5px 35px
   }
 
-  .auth {
+  #write {
     color: #FFFFFF;
     border-radius: 10px;
     font-size: 15px;
+    display:flex;
+    margin-left:900px;
   }
-   .auth:hover{
+  #write:hover{
     color: #FFFFFF;
    }
 </style>

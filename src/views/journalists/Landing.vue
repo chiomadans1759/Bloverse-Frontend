@@ -74,14 +74,14 @@
                                     <p> description</p>
                             </i-Col>
                         </Row>   -->
-          <Row class="section-4" type="flex" justify="space-around" >
+          <!-- <Row class="section-4" type="flex" justify="space-around" >
             <Col class="map-section" span="20">
               <span class="underline"> Active Regions</span>
               <div class="imap">
                   <div ref="bubbles" style=" margin-top: -70px; width: 100%; height: 100%;"></div>
               </div>  
             </Col>
-          </Row>
+          </Row> -->
         </Content>
       </Layout>
     </div>
