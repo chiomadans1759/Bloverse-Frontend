@@ -31,6 +31,11 @@
   	  	currImage: this.value
   	  } 
   	},
+    watch: {
+      value(val){
+        this.currImage = val;
+      }
+    },
     methods: {
       handleImageSelected(evt){
         this.currImage = evt;

@@ -75,7 +75,7 @@
       <Col span="10">
         <Card id="display-post">
           <h2 id="title">{{post.title}}</h2>
-          <DisplayImage v-model="displayedImage" height="200px" width="100%" :can-edit="false" />
+          <DisplayImage :value="post.imageUrl" height="200px" width="100%" :can-edit="false" />
           <p v-html="post.body" id="body">
           </p>
 
@@ -103,7 +103,6 @@
       return {
         publishModal: false,
         isNewImage: false,
-        displayedImage: '',
         // url: 'https://bloverse-frontend.herokuapp.com/' + this.post.slug
       };
       
@@ -144,7 +143,6 @@
     },
     watch: {
       'post.imageUrl': function(val){
-        this.displayedImage = val;
         this.isNewImage = true;
       }
     },
