@@ -1,6 +1,7 @@
 <template>
   <div>
     <Modal v-model="publishModal">
+      <router-link to="/" class="goTo">Home</router-link>
       <Alert type="success">Success</Alert>
       <!--<div v-if="modal.status === 'error'">
         <ul>
@@ -12,9 +13,10 @@
           </li>
         </ul>
       </div>-->
-      <div>
+       <div>
         <p>Your post has been successfully published</p>
          <div class="posts">
+           <p class="text-center">Share your posts on</p>
           <vue-goodshare-facebook
             page_url="https://bloverse-frontend.herokuapp.com/"
             has_icon
@@ -137,9 +139,13 @@
         if(success){
           this.$Message.success("Post successfully saved");
           this.publishModal = shouldPublish;
+           this.router.go("/");
         }else
           this.$Message.error("Something went wrong");
-      }
+      },  
+        ok: function() {
+          this.router.go("/");
+        }
     },
     mounted(){
       this.setPost({category: this.auth.loggedInUser.category.id, country: this.auth.loggedInUser.country.id})
@@ -231,7 +237,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 120vh;
+    min-height: 200vh;
   }
 
   #display-post #image {
@@ -288,6 +294,13 @@
   .posts 
   {
     position: relative;
+  }
+
+  .goTo {
+    background: #2f80ed;
+    color: #FFFFFF;
+    padding: 13px 30px 13px 30px;
+    border-radius: 10px;
   }
 </style>
 

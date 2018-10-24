@@ -45,14 +45,17 @@ Button{
     background: #FFFFFF;
     padding: 10px 30px 10px 30px;
     border-radius: 10px;
-    border: 2px solid #2f80ed;
+    border: 1px solid #2f80ed;
     color: #2f80ed;
   }
 
+.auth:hover {
+  color: #2f80ed;
+}
   .auth1 {
     background: #2f80ed;
     color: #FFFFFF;
-    padding: 10px 30px 10px 30px;
+    padding: 13px 30px 13px 30px;
     border-radius: 10px;
   }
 .header-nav{

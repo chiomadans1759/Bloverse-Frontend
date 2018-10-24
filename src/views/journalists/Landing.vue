@@ -40,13 +40,13 @@
           <Row class="section-2" type="flex" justify="space-around">
             <Col :sm="7" class="section-2-description">
               <Icon class="section-2-icon" type="ios-paper"></Icon>
-              <h2>53082</h2>
+              <h2>{{postCount}}</h2>
               <p> Article have been publish </p>
             </Col>
             
             <Col :sm="7" class="section-2-description">
               <Icon class="section-2-icon" type="ios-create" md="md-create"></Icon>
-              <h2>154</h2>
+              <h2>{{journalistCount}}</h2>
               <p> Content providers have joined </p>
             </Col>
 
@@ -92,25 +92,28 @@
 <script>
 import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
 import WithFooter from '../../layouts/WithFooter';
+import { mapState, mapActions, mapGetters } from 'vuex';
 import {page} from 'vue-analytics';
 
 
 export default {
   components: { Button, Modal, Layout, Icon, Row, Content, Col, WithFooter },
-
-  data: function() {
-    return {
-      displayModal: false,
-      signingUp: false,
-      processing: false
-    };
+  computed: {
+    ...mapGetters([
+     'journalistCount',
+        'postCount'
+      ])
   },
   methods: {
-    // show: function () {
-    //     this.visible = true;
-    // }
-  }, 
-  mounted:function(){
+    ...mapActions([
+      'getAllJournalists',
+      'getAllPublishedPosts'
+      ])
+  },
+  mounted:
+    async function(){
+    await this.getAllJournalists();
+    await this.getAllPublishedPosts();
     let mapp = this.$refs.bubbles;
     var bubble_map = new Datamap({
       element: mapp,

@@ -5,7 +5,8 @@ export default {
     categories: null,
     countries: null,
     applicants: null,
-    publishedPosts: null,
+    publishedPosts: [],
+    journalists: [],
     loading: false
   },
   actions: {
@@ -33,6 +34,20 @@ export default {
       switch(response.statusCode){
         case 200:
           commit('setApplicants', response.data.applicants);
+          commit('setLoading', false);
+          return true;
+      }
+
+      return false;
+    },
+
+    async getAllJournalists({commit}){
+      let response;
+      commit('setLoading', true);
+      response = await Api.get('journalists/');
+      switch(response.statusCode){
+        case 200:
+          commit('setJournalists', response.data.journalists);
           commit('setLoading', false);
           return true;
       }
@@ -81,6 +96,9 @@ export default {
     setPublishedPosts(state, posts){
       state.publishedPosts = posts;
     },
+    setJournalists(state, journalists){
+      state.journalists = journalists;
+    },
     setLoading(state, loading){
       state.loading = loading;
     }
@@ -97,6 +115,12 @@ export default {
     rejectedApplicants(state){
       // Filter rejected applicants
       return state.applicants.filter(applicant=> applicant.status === 3);
+    },
+    journalistCount(state){
+      return state.journalists.length;
+    },
+    postCount (state) {
+      return state.publishedPosts.length;
     }
   }
 }

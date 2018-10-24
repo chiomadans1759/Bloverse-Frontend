@@ -119,6 +119,7 @@
 
   #stat-wrapper {
     margin-bottom: 30px;
+    color: #828282;
   }
 
   .title {
