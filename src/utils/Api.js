@@ -1,5 +1,5 @@
 import axios from 'axios';
-import store from '../stores';
+import store from '../../stores';
 
 let BASE_URL = 'https://bloverse-api.herokuapp.com/api/v1/'
 class Api {

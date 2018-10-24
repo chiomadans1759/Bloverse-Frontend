@@ -1,4 +1,4 @@
-import Api from '../src/Api';
+import Api from '../src/utils/Api';
 import axios from 'axios';
 
 export default {
