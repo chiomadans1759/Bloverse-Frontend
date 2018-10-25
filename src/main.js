@@ -63,9 +63,11 @@ new Vue({
     jwt = localStorage.getItem('jwt')
     loggedInUser = localStorage.getItem('loggedInUser');
     loggedInUser = loggedInUser && JSON.parse(loggedInUser);
+    const shouldRegister = localStorage.getItem('shouldRegister') || false;
 
     store.commit('setJwt', jwt);
     store.commit('setLoggedInUser', loggedInUser);
+    store.commit('setShouldRegister', shouldRegister);
   },
   render: h => h(App)
 }).$mount('#app')
@@ -75,8 +77,38 @@ new Vue({
 
 
 router.beforeEach((to, from, next) => {
+  const onlyAuth = to.matched.some(record=>record.meta.auth)
+  const onlyJournalist = to.matched.some(record=>record.meta.journalist)
+  const onlyAdmin = to.matched.some(record=>record.meta.admin)
   LoadingBar.start();
-  next();
+  if(onlyAuth){
+    if(store.getters.isAuthenticated){
+      if(onlyJournalist && store.getters.isAJournalist)
+        next()
+      else if(onlyAdmin && store.getters.isAnAdmin)
+        next()
+      else
+        next({path: '/'})
+    }
+    else{
+      let nextUrl = to.fullPath
+      if(onlyJournalist)
+        next({path: '/journalist/login', params: { nextUrl }})
+      else if(onlyAdmin)
+        next({path: '/admin/login', params: { nextUrl }})
+      else
+        next({path: '/'})
+    }
+  }
+  else if(to.matched.some(record=>record.meta.acceptedApplicant)){
+    if(store.getters.allowedToRegister === false)
+      next()
+    else{
+      console.log('to verify');
+      next({path: '/journalist/verify'})
+    }
+  }else
+    next();
 });
 
 ga('set', 'page', router.currentRoute.path);

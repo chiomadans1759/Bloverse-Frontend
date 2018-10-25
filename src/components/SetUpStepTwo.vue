@@ -2,7 +2,7 @@
   <Col :md="22" :xs="24">
     <Row type="flex" justify="space-between" align="middle">
       <Col :md="8" :xs="24" id="photo-wrapper">
-        <DisplayPhoto :value="user.imageUrl" :canEdit="true" />
+        <DisplayPhoto :value="user.imageUrl" :canEdit="true" height="200px" width="50%" />
       </Col>
       <Col :md="12" :xs="24">
         <Form ref="stepTwoForm" :model="user" :rules="validateUserFields">
