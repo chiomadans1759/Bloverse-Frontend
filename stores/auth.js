@@ -5,7 +5,8 @@ export default {
     jwt: null,
     newUser: { imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg' },
     applicant: { articles: [] },
-    loggedInUser: null
+    loggedInUser: null,
+    shouldRegister: false
   },
   actions: {
     async login ({commit, state}, params) {
@@ -55,9 +56,10 @@ export default {
           return { errors: response.data };
       }
     },
-    logOut() {
-      localStorage.clear();
-      window.location = '/login';
+    clearSession({commit}) {
+      commit('setJwt', null);
+      commit('setLoggedInUser', null);
+      return true;
     },
   },
   mutations: {
@@ -86,11 +88,24 @@ export default {
     },
     setUsername(state){
       state.newUser.username = `${state.newUser.firstName}.${state.newUser.lastName}`.toLowerCase();
+    },
+    setShouldRegister(state, value){
+      state.shouldRegister = value;
+      localStorage.setItem('shouldRegister', value);
     }
   },
   getters: {
-    isLoggedIn(state){
+    isAuthenticated(state){
       return state.loggedInUser !== null;
+    },
+    isAnAdmin(state){
+      return state.loggedInUser.type === 'Admin';
+    },
+    isAJournalist(state){
+      return state.loggedInUser.type === 'Journalist';
+    },
+    allowedToRegister(state){
+      return state.shouldRegister;
     }
   }
 }

@@ -1,16 +1,12 @@
 import Vue from 'vue';
 
 
-
-
 import BaseDashBoard from '../src/layouts/BaseDashBoard.vue';
 import MyProfile from '../src/views/journalists/MyProfile.vue';
 import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
 import BasePost from '../src/layouts/BlankBase.vue';
 import MyPosts from '../src/views/journalists/MyPosts.vue';
 import CreatePost from '../src/views/journalists/CreatePost.vue';
-
-
 
 import BaseJournalist from '../src/layouts/BlankBase.vue';
 import JournalistLanding from '../src/views/journalists/Landing.vue';
@@ -28,7 +24,6 @@ import PublishGuide from '../src/views/DocsPublishGuide.vue';
 import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
 import BaseAdmin from '../src/layouts/BlankBase.vue';
-
 
 import BaseFeeds from '../src/layouts/BaseFeeds.vue';
 import PostFeeds from '../src/views/PostFeeds.vue';
@@ -48,10 +43,14 @@ const routes = [
       { path: '', component: JournalistLanding },
       { path: 'apply', component: JournalistApply },
       { path: 'login', component: JournalistSignIn },
-      { path: 'register', component: JournalistSetUp },
-      { path: 'setup', component: JournalistManualSetUp },
+      { path: 'register', component: JournalistSetUp, meta: { acceptedApplicant: true } },
+      { path: 'setup', component: JournalistManualSetUp, meta: { acceptedApplicant: true } },
       { path: 'verify', component: JournalistVerify },
       { path: ':username', component: BaseDashBoard,
+        meta: {
+          journalist: true,
+          auth: true
+        },
         children: [
           { path: '', component: MyProfile },
           { path: 'dashboard', component: DashBoardHome },
@@ -73,7 +72,12 @@ const routes = [
   { path: '/admin', component: BaseAdmin,
     children: [
       { path: '', redirect: 'dashboard' },
-      { path: 'dashboard', component: AdminHome },
+      { path: 'dashboard', component: AdminHome, 
+        meta: {
+          admin: true,
+          auth: true
+        }
+      },
       { path: 'login', component: AdminLogin }
     ]
   },

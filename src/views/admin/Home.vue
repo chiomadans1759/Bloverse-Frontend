@@ -86,8 +86,12 @@
     methods: {
       ...mapActions([
         'getAllApplicants',
-        'logOut'
+        'clearSession'
       ]),
+      logOut(){
+        if(this.clearSession())
+          this.$router.push('/admin/login');
+      },
     },
     async created(){
       await this.getAllApplicants();

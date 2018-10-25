@@ -12,7 +12,7 @@
           <Icon type="md-arrow-dropdown" />
           <DropdownMenu slot="list">
             <DropdownItem >Profile</DropdownItem>
-            <DropdownItem divided @click.native="logout">Log out</DropdownItem>
+            <DropdownItem divided @click.native="logOut">Log out</DropdownItem>
           </DropdownMenu>
         </Dropdown>
         &nbsp;
@@ -24,7 +24,7 @@
 
 <script>
   import { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem } from 'iview';
-  import { mapMutations, mapState } from 'vuex'
+  import { mapMutations, mapState, mapActions } from 'vuex'
   export default {
     components: { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem },
     data(){
@@ -40,10 +40,12 @@
       }
     },
     methods: {
-      logout: function(){
-        /*this.clearSession();
-        localStorage.clear();*/
-        this.$router.push('/journalist')
+      ...mapActions([
+        'clearSession'
+      ]),
+      logOut(){
+        if(this.clearSession())
+          this.$router.push('/journalist/login');
       },
       handleIconClick(){
         this.collapsed = !this.collapsed
