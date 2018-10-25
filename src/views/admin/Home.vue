@@ -1,21 +1,21 @@
 <template>
   <div>
     <Layout>
-        <Header style="background:#5b6270; color: white; min-height:100px ">
-          <Row type="flex" justify="space-between" align="middle" style="margin: 40px">
+        <Header id="admin-header">
+          <Row type="flex" justify="space-between">
             <Col>
-              <img src="https://res.cloudinary.com/naera/image/upload/v1532035571/bloverse/b_blue.png">
-              <span style="height: 30px; font-size: 24px;">BLOVERSE</span></Col>
+              <img src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" style="width:40px">
+              </Col>
             <Col>
-              <span style="padding-right:10px">Administrator</span>
-              <Button type="default" @click="logOut" ghost>LOGOUT</Button>
+              
+              <Button type="error" @click="logOut">LOGOUT</Button>
             </Col>
           </Row>
       </Header>
     </Layout>
     <Loading v-if="general.loading" message="Loading Applicant Details..." />
-    <div v-else>
-      <Row type="flex" justify="space-around" style="padding:20px; margin:30px" >
+    <div id="admin-body" v-else>
+      <Row type="flex" justify="space-around" style="padding:20px; margin:20px" >
           <Col span="6" class="status">
               <a href=#>
                 <Card :border="true">
@@ -63,7 +63,7 @@
       }
     },
     components: {
-      Row, ICol: Col, Card, Layout, Header, IButton: Button, DisplayApplicants, Loading
+      Row, ICol: Col, Card, Layout, Header, Button, DisplayApplicants, Loading
     },
     computed: {
       stats: function(){
@@ -120,6 +120,9 @@
 
   #table-section > * {
     margin: 1rem 0;
+  }
+  #admin-header {
+    background-color: #2d3436;
   }
 
 

@@ -1,8 +1,8 @@
 <template>
   <BaseAuthentication>
-<Col :sm="18" :md="10" :xs="22" class="auth-section">
+<Col :sm="18" :md="10" :xs="22" class="auth-section"></col>
   <h1 id="page-title">Welcome to Bloverse</h1>
-  <h3 id="sub-title">Choose an option to complete your registration</h3>
+  <!-- <h3 id="sub-title">Choose an option to complete your registration</h3>
   <Row type="flex" justify="space-between" id="btn-social-grp">
     <Col :sm="11" :xs="24">
       <Button class="my-btn btn-social" id="btn-google" long> 
@@ -22,7 +22,7 @@
   </Row>
   <p class="p-or">OR</p>
   <p id="manual-wrapper"><router-link to="setup" class="my-btn btn-main" id="btn-manual"> Continue Setup Manually </router-link></p>
-</Col>
+</Col> -->
   </BaseAuthentication>
 </template>
 
