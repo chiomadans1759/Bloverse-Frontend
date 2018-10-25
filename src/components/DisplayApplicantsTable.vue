@@ -181,14 +181,6 @@
         'pendingApplicants'
       ]),
   	},
-  	watch: {
-  	  'general.categories': (val) => {
-  	    this.tblColumns[3].filters = val.map(category => ({ label: category.name, value: category.name }));
-  	  },
-  	  'general.countries': (val) => {
-  	    this.tblColumns[4].filters = val.map(country => ({ label: country.name, value: country.name }));
-  	  },
-  	},
   	methods: {
   		changeSelection(selections) {
   		  this.selectedUsers = selections.length > 0 ? selections : null;
@@ -206,7 +198,11 @@
       ...mapActions([
         'rejectAcceptApplicants'
       ])
-  	}
+  	},
+    created(){
+      this.tblColumns[3].filters = this.general.categories.map(category => ({ label: category.name, value: category.name }));
+      this.tblColumns[4].filters = this.general.countries.map(country => ({ label: country.name, value: country.name }));
+    }
   }
 
 

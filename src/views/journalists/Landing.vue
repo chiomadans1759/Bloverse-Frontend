@@ -11,7 +11,7 @@
                   </Col>
                   <Col class="header-button">
                     <!--<Button ghost shape="circle"  @click="displayModal=true">Sign-in</Button>-->
-                    <router-link to="/journalist/apply" class="auth">Register</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <router-link to="/journalist/apply" class="auth">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
                     <router-link to="/journalist/login" class="auth1">Login</router-link>
 
                     <!--<Button class="btn register" type="default" shape="circle" @click="displayModal=true" ghost>Register</Button>
@@ -52,7 +52,7 @@
 
             <Col :sm="7" class="section-2-description">
                 <Icon class="section-2-icon" type="ios-people"></Icon>
-                <h2>1785698</h2>
+                <h2 id="query-output" ref="user">{{metrics}}</h2>
                 <p>Unique visitors have accessed the site </p>
             </Col>
           </Row>
@@ -74,14 +74,14 @@
                                     <p> description</p>
                             </i-Col>
                         </Row>   -->
-          <Row class="section-4" type="flex" justify="space-around" >
+          <!-- <Row class="section-4" type="flex" justify="space-around" >
             <Col class="map-section" span="20">
               <span class="underline"> Active Regions</span>
               <div class="imap">
                   <div ref="bubbles" style=" margin-top: -70px; width: 100%; height: 100%;"></div>
               </div>  
             </Col>
-          </Row>
+          </Row> -->
         </Content>
       </Layout>
     </div>
@@ -90,6 +90,14 @@
 </template>
 
 <script>
+ let VIEW_ID = '183411172';
+//  let startDate = new Date();
+//  let dd = today.getDate();
+//  if (dd < 10) {
+//    dd = '0' + dd
+//  }
+// startDate = dd - 1;
+
 import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
 import WithFooter from '../../layouts/WithFooter';
 import { mapState, mapActions, mapGetters } from 'vuex';
@@ -108,7 +116,37 @@ export default {
     ...mapActions([
       'getAllJournalists',
       'getAllPublishedPosts'
-      ])
+      ]),
+
+      queryReports: function () {
+      gapi.client.request({
+      path: '/v4/reports:batchGet',
+      root: 'https://analyticsreporting.googleapis.com/',
+      method: 'POST',
+      body: {
+        reportRequests: [
+          {
+            viewId: VIEW_ID,
+            dateRanges: [
+              {
+                startDate: '20daysAgo',
+                endDate: 'today'
+              }
+            ],
+            metrics: [
+              {
+                expression: 'ga:users'
+              }
+            ]
+          }
+        ]
+      }
+    }).then(displayResults, console.error.bind(console));
+   },
+   displayResults: function(response) {
+    let formattedJson = JSON.stringify(response.result, null, 2);
+    this.$user('query-output').value = formattedJson;
+   }
   },
   mounted:
     async function(){

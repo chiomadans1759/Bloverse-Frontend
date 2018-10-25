@@ -86,7 +86,7 @@
     methods: {
       ...mapActions([
         'getAllApplicants',
-        'logout'
+        'logOut'
       ]),
     },
     async created(){

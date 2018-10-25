@@ -1,22 +1,38 @@
-import Api from '../src/Api';
+import Api from '../src/utils/Api';
+import axios from 'axios';
 
 export default {
   state: {
     posts: null,
-    post: { keyPoints: [], imageUrl: "https://res.cloudinary.com/naera/image/upload/v1532594342/945_S_fuswub.png"}
+    post: { keyPoints: [] }
 
   },
   actions: {
-    async processPost({commit, rootState, state}, params){
+    async processPost({commit, rootState, state, dispatch}, params){
+      if(params.shouldUploadImage){
+        let newUrl = await dispatch('doUpload');
+        commit('setPost', {imageUrl: newUrl});
+      }
+        
       let userId = rootState.auth.loggedInUser.id;
+      // if(state.post.categories == 7){
+      //   let { location: location, duration: duration, deviceType: device_type, category, country, body } = state.post;
+      //   let payload = { location, duration, device_type, category, country, body, is_published: params.shouldPublish};
+      //   console.log(payload)
+      // }else{ 
+      let payload;
       let { id, title, body, keyPoints: keypoint, imageUrl: image_url, category, country } = state.post;
-      
-      let payload = { keypoint, image_url, title, body, category, country, is_published: params.shouldPublish };
+      if (state.post.categories == 7) {
+        let { location: location, duration: duration, deviceType: device_type, category, country, body } = state.post;
+        payload = {  location, duration, device_type, category, country, body, is_published: params.shouldPublish};
+        console.log(payload)
+      }else{
+      payload = { id, keypoint, image_url, title, body, category, country, is_published: params.shouldPublish };
       console.log(payload)
-
+      }
       let response;
       if(id){
-        payload = { keypoint, image_url, title, body, is_published: params.shouldPublish };
+       let payload = { id, keypoint, image_url, title, body, is_published: params.shouldPublish } 
         response = await Api.put('journalists/' + userId + '/posts/' + id, payload, true);
       }else{
         response = await Api.post('journalists/' + userId + '/posts/', payload, true);
@@ -34,10 +50,28 @@ export default {
       }
 
     },
-    async getMyPost({commit, rootState}){
+    async doUpload({state}){
+      const cloudinary = {
+        uploadPreset: 'pspvcsig',
+        apiKey: '967987814344437',
+        cloudName: 'naera'
+      };
+      const clUrl = `https://api.cloudinary.com/v1_1/${cloudinary.cloudName}/upload`;
+      const formData = new FormData()
+      formData.append('file', state.post.imageUrl);
+      formData.append('upload_preset', cloudinary.uploadPreset);
+      formData.append('folder', 'bloverse');
+      const resp = await axios.post(clUrl, formData);
+      console.log(resp.data.secure_url);
+      return resp.data.secure_url;
+    },
+    async getMyPosts({commit, rootState}){
       let userId = rootState.auth.loggedInUser.id;
+      commit('setLoading', true, { root: true });
       let response = await Api.get('journalists/' + userId + '/posts/', true);
       commit('setPosts', response.data.posts) ;
+      commit('setLoading', false, { root: true });
+
     }
   },
   mutations: {
@@ -46,6 +80,9 @@ export default {
     },
     setPosts(state, props){
       state.posts = props
+    },
+    clearPost(state){
+      state.post = { keyPoints: [], imageUrl: "https://res.cloudinary.com/naera/image/upload/v1532594342/945_S_fuswub.png"}
     }
   },
   getters: {

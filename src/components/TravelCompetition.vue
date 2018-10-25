@@ -45,29 +45,26 @@
             </Select>
           </Col>
         </Row>
-        <Card class="keypoints">
+        <Card class="key-points">
               <input
+              v-model="post.location"
               ref="autocomplete" 
               placeholder="Location" 
               class="search-location"
               onfocus="value = ''" 
               type="text" />
-          <DatePicker id="keypoint" type="date" placement="bottom-end" placeholder="Time Taken" style="width: 100%"></DatePicker>
-            <Select placeholder="Device Used"  id="keypoint">
-           <Option v-for="item in deviceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+          <DatePicker v-model="post.duration" id="keypoint" type="date" placement="bottom-end" placeholder="Time Taken" style="width: 100%"></DatePicker>
+            <Select placeholder="Device Used"  id="keypoint" v-model="post.deviceType">
+           <Option  v-for="item in deviceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
           </Select>
         </Card>
+
+        <Input placeholder="Heading" v-model="post.title" size="large"></Input>
         
 
-        <Upload
-          type="drag"
-          id="upload-post-image"
-          class="image"
-          action="//jsonplaceholder.typicode.com/posts/">
-          <Icon type="ios-cloud-upload" size="52" :style="{color: '#BDBDBD', margin: 'auto'}"></Icon>
-        </Upload>
+        <DisplayImage v-model="post.imageUrl" height="200px" width="50%" :can-edit="true" />
 
-        <vue-editor v-model="post.body" style="background: white;"></vue-editor>
+        <vue-editor v-model="post.body" style="background: white; margin-top: 20px;"></vue-editor>
 
         <br />
 
@@ -105,14 +102,16 @@
   import { VueEditor } from "vue2-editor";
   import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
   import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
+  import DisplayImage from './DisplayImage';
 
   export default {
     components: {
-      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor
+      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor, DisplayImage
     },
     data: function(){
       return {
-        publishModal: false,
+         publishModal: false,
+         isNewImage: false,
                 deviceList: [
                     {
                         value: 'IPhone',
@@ -166,17 +165,24 @@
         'setPost'
       ]),
       handleProcessPost: async function(shouldPublish=false){
-        //console.log(this.post);
-        let success = await this.processPost({shouldPublish});
-        if(success){
-          this.$Message.success("Post successfully saved");
-          this.publishModal = shouldPublish;
+        if(this.post.imageUrl){
+          let success = await this.processPost({shouldPublish, shouldUploadImage: this.isNewImage});
+          if(success){
+            this.$Message.success("Post successfully saved");
+            this.publishModal = shouldPublish;
+          }else
+            this.$Message.error("Something went wrong");
         }else
-          this.$Message.error("Something went wrong");
+          this.$Message.error("You must select an image");
+      }
+    },
+    watch: {
+      'post.imageUrl': function(val){
+        this.isNewImage = true;
       }
     },
     mounted(){
-      this.setPost({category: 7 , country: this.auth.loggedInUser.country.id}),
+      this.setPost({category: 7, country: this.auth.loggedInUser.country.id}),
 
         this.autocomplete = new google.maps.places.Autocomplete(
         (this.$refs.autocomplete),
@@ -330,11 +336,11 @@
   }
 
 
-  .keypoints .ivu-input-wrapper {
+  .key-points .ivu-input-wrapper {
     margin: .5rem 0;
   }
 
-  .keypoints {
+  .key-points {
     margin-top: 40px;
     margin-bottom: 40px;
     height: 35vh;

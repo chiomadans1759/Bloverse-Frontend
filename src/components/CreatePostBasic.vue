@@ -50,18 +50,13 @@
           <Input placeholder="Key point one" v-model="post.keyPoints[0]" size="large"></Input>
           <Input placeholder="Key point two" v-model="post.keyPoints[1]" size="large"></Input>
           <Input placeholder="Key point three" v-model="post.keyPoints[2]" size="large"></Input>
-          <Input placeholder="Key point four" v-model="post.keyPoints[3]" size="large"></Input>
+          
         </Card>
         <Input placeholder="Heading" v-model="post.title" size="large"></Input>
 
-        <Upload
-          type="drag"
-          id="upload-post-image"
-          action="//jsonplaceholder.typicode.com/posts/">
-          <Icon type="ios-cloud-upload" size="52" :style="{color: '#BDBDBD', margin: 'auto'}"></Icon>
-        </Upload>
+        <DisplayImage v-model="post.imageUrl" height="200px" width="50%" :can-edit="true" />
 
-        <vue-editor v-model="post.body" style="background: white;"></vue-editor>
+        <vue-editor v-model="post.body" style="background: white; "></vue-editor>
 
         <br />
 
@@ -73,7 +68,7 @@
             </Button>
           </Col>
           <Col>
-            <Button id="btn-publish" :disabled="post.isPublished" @click="handleProcessPost(true)">Publish</Button>
+            <Button id="btn-publish" :disabled="post.is_published" @click="handleProcessPost(true)">Publish</Button>
           </Col>
         </Row>
 
@@ -82,7 +77,7 @@
       <Col span="10">
         <Card id="display-post">
           <h2 id="title">{{post.title}}</h2>
-          <img :src="post.imageUrl" id="image"  />
+          <DisplayImage :value="post.imageUrl" height="200px" width="100%" :can-edit="false" />
           <p v-html="post.body" id="body">
           </p>
 
@@ -100,13 +95,16 @@
   import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
   import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
 
+  import DisplayImage from './DisplayImage';
+
   export default {
     components: {
-      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor
+      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor, DisplayImage
     },
     data: function(){
       return {
         publishModal: false,
+        isNewImage: false,
         // url: 'https://bloverse-frontend.herokuapp.com/' + this.post.slug
       };
       
@@ -134,18 +132,21 @@
         'setPost'
       ]),
       handleProcessPost: async function(shouldPublish=false){
-        //console.log(this.post);
-        let success = await this.processPost({shouldPublish});
-        if(success){
-          this.$Message.success("Post successfully saved");
-          this.publishModal = shouldPublish;
-           this.router.go("/");
+        if(this.post.imageUrl){
+          let success = await this.processPost({shouldPublish, shouldUploadImage: this.isNewImage});
+          if(success){
+            this.$Message.success("Post successfully saved");
+            this.publishModal = shouldPublish;
+          }else
+            this.$Message.error("Something went wrong");
         }else
-          this.$Message.error("Something went wrong");
-      },  
-        ok: function() {
-          this.router.go("/");
-        }
+          this.$Message.error("You must select an image");
+      }
+    },
+    watch: {
+      'post.imageUrl': function(val){
+        this.isNewImage = true;
+      }
     },
     mounted(){
       this.setPost({category: this.auth.loggedInUser.category.id, country: this.auth.loggedInUser.country.id})

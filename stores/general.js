@@ -1,4 +1,4 @@
-import Api from '../src/Api'
+import Api from '../src/utils/Api'
 
 export default {
   state: {
@@ -7,6 +7,7 @@ export default {
     applicants: null,
     publishedPosts: [],
     journalists: [],
+    travelPosts: null,
     loading: false
   },
   actions: {
@@ -33,7 +34,10 @@ export default {
       response = await Api.get('applicants/', true);
       switch(response.statusCode){
         case 200:
-          commit('setApplicants', response.data.applicants);
+          //removes admin from applicants
+          let onlyApplicants = response.data.applicants.filter(applicant=> applicant.id !== 1);
+
+          commit('setApplicants', onlyApplicants);
           commit('setLoading', false);
           return true;
       }
@@ -57,6 +61,7 @@ export default {
     async rejectAcceptApplicants({dispatch}, applicants){
       let processedUsers = [];
       applicants.forEach(async applicant=> {
+
         if(applicant.status === 1)
           return;
         const statusUpdated = await dispatch('processApplicant', applicant);
@@ -75,7 +80,7 @@ export default {
     async getAllPublishedPosts({commit}){
       commit('setLoading', true);
       let response = await Api.get('posts?is_published=true')     
-      commit('setPublishedPosts', response.data.post);
+      commit('setPublishedPosts', response.data.posts);
       commit('setLoading', false);
     }
   },

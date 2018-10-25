@@ -10,12 +10,9 @@
 
 <script >
   import { Card } from 'iview';
+  import { mapState } from 'vuex';
+
   export default {
-    data () {
-      return {
-        category: 'Entertainment'
-      }
-    },
     name: 'FeedCard',
     props: { post: Object},
     components: { Card },
@@ -23,6 +20,11 @@
       imageUrl: function(){
         return this.post.image_url;
       },
+      ...mapState(['general']),
+      category(){
+        const postCategory = this.general.categories.find( category => category.id === this.post.category);
+        return postCategory.name;
+      }
     },
     filters: {
       summarize: function (value) {

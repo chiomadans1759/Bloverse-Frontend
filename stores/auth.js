@@ -1,4 +1,4 @@
-import Api from '../src/Api';
+import Api from '../src/utils/Api';
 
 export default {
   state: {
@@ -86,6 +86,11 @@ export default {
     },
     setUsername(state){
       state.newUser.username = `${state.newUser.firstName}.${state.newUser.lastName}`.toLowerCase();
+    }
+  },
+  getters: {
+    isLoggedIn(state){
+      return state.loggedInUser !== null;
     }
   }
 }
