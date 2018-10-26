@@ -15,7 +15,7 @@
       <div>
         <p>Your post has been successfully published</p>
          <div class="posts">
-          <vue-goodshare-facebook
+          <!-- <vue-goodshare-facebook
             page_url="https://bloverse-frontend.herokuapp.com/"
             has_icon
             style="font-size: 25px;"
@@ -26,7 +26,7 @@
             has_icon
             style="font-size: 25px;"
           >
-          </vue-goodshare-twitter>
+          </vue-goodshare-twitter> -->
         </div>
       </div>
     </Modal>
@@ -100,13 +100,13 @@
   import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker } from 'iview';
   import { mapState, mapActions, mapMutations } from 'vuex'
   import { VueEditor } from "vue2-editor";
-  import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
-  import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
+  // import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
+  // import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
   import DisplayImage from './DisplayImage';
 
   export default {
     components: {
-      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor, DisplayImage
+      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker, VueEditor, DisplayImage
     },
     data: function(){
       return {

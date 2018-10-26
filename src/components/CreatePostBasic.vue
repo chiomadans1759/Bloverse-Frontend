@@ -1,7 +1,7 @@
 <template>
   <div>
     <Modal v-model="publishModal">
-      <router-link to="/" class="goTo">Home</router-link>
+      <!-- <router-link to="/" class="goTo">Home</router-link> -->
       <Alert type="success">Success</Alert>
       <!--<div v-if="modal.status === 'error'">
         <ul>
@@ -17,18 +17,20 @@
         <p>Your post has been successfully published</p>
          <div class="posts">
            <p class="text-center">Share your posts on</p>
-          <vue-goodshare-facebook
-            page_url="https://bloverse-frontend.herokuapp.com/"
+           <facebook :url="url" scale="3"></facebook>
+           <twitter :url="url" scale="3"></twitter>
+          <!-- <vue-goodshare-facebook
+            page_url="https://bloverse-frontend.herokuapp.com/posts/slug"
             has_icon
             style="font-size: 25px;"
           >
-          </vue-goodshare-facebook>
-          <vue-goodshare-twitter
-            page_url="https://bloverse-frontend.herokuapp.com/"
+          </vue-goodshare-facebook> -->
+          <!-- <vue-goodshare-twitter
+            page_url="https://bloverse-frontend.herokuapp.com/posts/slug"
             has_icon
             style="font-size: 25px;"
           >
-          </vue-goodshare-twitter>
+          </vue-goodshare-twitter> -->
         </div>
       </div>
     </Modal>
@@ -92,20 +94,22 @@
   import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert } from 'iview';
   import { mapState, mapActions, mapMutations } from 'vuex'
   import { VueEditor } from "vue2-editor";
-  import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
-  import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
+  import {Facebook, Twitter} from 'vue-socialmedia-share';
+  // import SocialSharing from 'vue-social-sharing';
+  // import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
+  // import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
 
   import DisplayImage from './DisplayImage';
 
   export default {
     components: {
-      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor, DisplayImage
+      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, VueEditor, DisplayImage, Facebook, Twitter
     },
     data: function(){
       return {
         publishModal: false,
         isNewImage: false,
-        // url: 'https://bloverse-frontend.herokuapp.com/' + this.post.slug
+        url: 'https://bloverse-frontend.herokuapp.com/#/posts/slug'
       };
       
     },
@@ -116,6 +120,11 @@
         },
         set(props){
           this.$store.commit('setPost', props);
+        },
+        url(){
+          console.log('test', this.post)
+          return "https://bloverse-frontend.herokuapp.com/#/posts/" + this.post.slug;
+
         }
       },
 

@@ -2,7 +2,10 @@
 <Loading v-if="general.loading" message="Getting Feeds" />
 <Row id="display-post" type="flex" v-else justify="space-between">
   <Col class="share-links" :sm="2">
-    <Icon type="logo-facebook" v-for="i in 4" :key="i"></Icon>
+  <ion-icon name="heart-empty" style="font-size: 30px;"></ion-icon>
+  <facebook :url="url" scale="2"></facebook>
+    <twitter :url="url" scale="2"></twitter>
+    <linkedin :url="url" scale="2"></linkedin>
   </Col>
   <Col class="main-feed" :sm="20">
     <router-link v-if="isLoggedIn" :to="`/journalist/${auth.loggedInUser.userName}/posts`"> <Icon type="ios-arrow-round-back" /> Back to Dashboard</router-link>
@@ -54,12 +57,14 @@
 <script>
   import { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button} from 'iview';
   import { mapGetters, mapState, mapActions } from 'vuex';
+  import { Facebook, Twitter, Linkedin} from 'vue-socialmedia-share';
 
   export default {
-      components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button},
+      components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button, Facebook, Twitter, Linkedin},
       data: function(){
           return {
-             newComment: ''
+             newComment: '',
+             url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
           }
       },
       computed: {

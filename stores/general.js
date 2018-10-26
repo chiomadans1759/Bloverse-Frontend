@@ -7,7 +7,6 @@ export default {
     applicants: null,
     publishedPosts: [],
     journalists: [],
-    travelPosts: null,
     loading: false
   },
   actions: {

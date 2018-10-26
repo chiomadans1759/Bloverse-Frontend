@@ -52,7 +52,7 @@
 
             <Col :sm="7" class="section-2-description">
                 <Icon class="section-2-icon" type="ios-people"></Icon>
-                <h2 id="query-output" ref="user">{{metrics}}</h2>
+                <h2></h2>
                 <p>Unique visitors have accessed the site </p>
             </Col>
           </Row>
@@ -90,14 +90,6 @@
 </template>
 
 <script>
- let VIEW_ID = '183411172';
-//  let startDate = new Date();
-//  let dd = today.getDate();
-//  if (dd < 10) {
-//    dd = '0' + dd
-//  }
-// startDate = dd - 1;
-
 import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
 import WithFooter from '../../layouts/WithFooter';
 import { mapState, mapActions, mapGetters } from 'vuex';
@@ -145,7 +137,7 @@ export default {
    },
    displayResults: function(response) {
     let formattedJson = JSON.stringify(response.result, null, 2);
-    this.$user('query-output').value = formattedJson;
+   document.getElementById('query-output').value = formattedJson;
    }
   },
   mounted:

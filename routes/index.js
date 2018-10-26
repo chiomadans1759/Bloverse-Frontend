@@ -47,10 +47,6 @@ const routes = [
       { path: 'setup', component: JournalistManualSetUp, meta: { acceptedApplicant: true } },
       { path: 'verify', component: JournalistVerify },
       { path: ':username', component: BaseDashBoard,
-        meta: {
-          journalist: true,
-          auth: true
-        },
         children: [
           { path: '', component: MyProfile },
           { path: 'dashboard', component: DashBoardHome },

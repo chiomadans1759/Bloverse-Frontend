@@ -13,6 +13,7 @@ import App from './App.vue'
 // import lang from 'iview/dist/locale/en-US';
 
 import 'iview/dist/styles/iview.css';
+var SocialSharing = require('vue-social-sharing');
 
 
 // configure language
@@ -26,7 +27,7 @@ Vue.prototype.$Loading = LoadingBar;
 
 
 Vue.use(VueRouter);
-
+Vue.use(SocialSharing);
 /*Vue.use(VueAnalytics, {
   id: 'UA-127172964-2',
   router

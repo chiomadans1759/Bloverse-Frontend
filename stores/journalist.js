@@ -13,23 +13,18 @@ export default {
         let newUrl = await dispatch('doUpload');
         commit('setPost', {imageUrl: newUrl});
       }
-        
+        // The commented codes on this section are for implementing travelCompetition posts
       let userId = rootState.auth.loggedInUser.id;
-      // if(state.post.categories == 7){
-      //   let { location: location, duration: duration, deviceType: device_type, category, country, body } = state.post;
-      //   let payload = { location, duration, device_type, category, country, body, is_published: params.shouldPublish};
-      //   console.log(payload)
-      // }else{ 
-      let payload;
+      // let payload;
       let { id, title, body, keyPoints: keypoint, imageUrl: image_url, category, country } = state.post;
-      if (state.post.categories == 7) {
-        let { location: location, duration: duration, deviceType: device_type, category, country, body } = state.post;
-        payload = {  location, duration, device_type, category, country, body, is_published: params.shouldPublish};
-        console.log(payload)
-      }else{
-      payload = { id, keypoint, image_url, title, body, category, country, is_published: params.shouldPublish };
+      // if (state.post.categories == 7) {
+      //   let { location: location, duration: duration, deviceType: device_type, category, country, body } = state.post;
+      //   payload = {  location, duration, device_type, category, country, body, is_published: params.shouldPublish};
+      //   console.log(payload)
+      // }else{
+      let payload = { id, keypoint, image_url, title, body, category, country, is_published: params.shouldPublish };
       console.log(payload)
-      }
+      //}
       let response;
       if(id){
        let payload = { id, keypoint, image_url, title, body, is_published: params.shouldPublish } 
