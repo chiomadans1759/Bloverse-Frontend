@@ -40,19 +40,19 @@
           <Row class="section-2" type="flex" justify="space-around">
             <Col :sm="7" class="section-2-description">
               <Icon class="section-2-icon" type="ios-paper"></Icon>
-              <h2>{{postCount}}</h2>
+              <h2>{{general.metrics.publishedPost}}</h2>
               <p> Article have been publish </p>
             </Col>
             
             <Col :sm="7" class="section-2-description">
               <Icon class="section-2-icon" type="ios-create" md="md-create"></Icon>
-              <h2>{{journalistCount}}</h2>
+              <h2>{{general.metrics.journalists}}</h2>
               <p> Content providers have joined </p>
             </Col>
 
             <Col :sm="7" class="section-2-description">
                 <Icon class="section-2-icon" type="ios-people"></Icon>
-                <h2></h2>
+                <h2>{{general.metrics.views.total}}</h2>
                 <p>Unique visitors have accessed the site </p>
             </Col>
           </Row>
@@ -93,57 +93,24 @@
 import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
 import WithFooter from '../../layouts/WithFooter';
 import { mapState, mapActions, mapGetters } from 'vuex';
-import {page} from 'vue-analytics';
+import { page } from 'vue-analytics';
 
 
 export default {
   components: { Button, Modal, Layout, Icon, Row, Content, Col, WithFooter },
   computed: {
-    ...mapGetters([
-     'journalistCount',
-        'postCount'
-      ])
+    ...mapState([
+      'general'
+    ])
   },
   methods: {
     ...mapActions([
-      'getAllJournalists',
-      'getAllPublishedPosts'
-      ]),
-
-      queryReports: function () {
-      gapi.client.request({
-      path: '/v4/reports:batchGet',
-      root: 'https://analyticsreporting.googleapis.com/',
-      method: 'POST',
-      body: {
-        reportRequests: [
-          {
-            viewId: VIEW_ID,
-            dateRanges: [
-              {
-                startDate: '20daysAgo',
-                endDate: 'today'
-              }
-            ],
-            metrics: [
-              {
-                expression: 'ga:users'
-              }
-            ]
-          }
-        ]
-      }
-    }).then(displayResults, console.error.bind(console));
-   },
-   displayResults: function(response) {
-    let formattedJson = JSON.stringify(response.result, null, 2);
-   document.getElementById('query-output').value = formattedJson;
-   }
+      'getGeneralMetrics'
+    ])
   },
   mounted:
     async function(){
-    await this.getAllJournalists();
-    await this.getAllPublishedPosts();
+    await this.getGeneralMetrics();
     let mapp = this.$refs.bubbles;
     var bubble_map = new Datamap({
       element: mapp,

@@ -9,12 +9,12 @@
   </Col>
   <Col class="main-feed" :sm="20">
     <router-link v-if="isLoggedIn" :to="`/journalist/${auth.loggedInUser.userName}/posts`"> <Icon type="ios-arrow-round-back" /> Back to Dashboard</router-link>
-    <h2 class="border">{{post.title}}</h2>
+    <h2 class="border">{{general.currentPost.title}}</h2>
     <ul class="summary-feed">
-      <li v-for="point in post.keypoint">{{point}}</li>
+      <li v-for="point in general.currentPost.keypoint">{{point}}</li>
     </ul>
-    <img class="main-image" :src="post.image_url" />
-    <p class="main-body" v-html="post.body"></p>    
+    <img class="main-image" :src="general.currentPost.image_url" />
+    <p class="main-body" v-html="general.currentPost.body"></p>    
     <section id="trendweek">
       <Row type="flex" justify="space-between">
         <i-col id="texta" :sm="8">
@@ -59,17 +59,19 @@
   import { mapGetters, mapState, mapActions } from 'vuex';
   import { Facebook, Twitter, Linkedin} from 'vue-socialmedia-share';
 
+  import Loading from '../components/Loading.vue';
+
   export default {
-      components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button, Facebook, Twitter, Linkedin},
+      components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button, Facebook, Twitter, Linkedin, Loading},
       data: function(){
           return {
              newComment: '',
-             url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
+             //url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
           }
       },
       computed: {
-        post: function(){
-          return this.general.publishedPosts.find(post => post.slug === this.$route.params.slug);
+        url(){
+          return `https://bloverse-frontend.herokuapp.com/#/posts/${this.general.currentPost.slug}`;
         },
         ...mapState([
           'general',
@@ -78,12 +80,13 @@
         ...mapGetters(['isLoggedIn'])
       },
       methods: {
-        ...mapActions(['getAllPublishedPosts'])
+        ...mapActions(['getPostBySlug'])
       },
       async created () {
         // fetch the data when the view is created and the data is
         // already being observed
-        await this.getAllPublishedPosts();
+        let { slug } = this.$route.params
+        await this.getPostBySlug({slug});
       }
       
   }

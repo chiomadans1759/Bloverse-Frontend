@@ -6,8 +6,10 @@ export default {
     countries: null,
     applicants: null,
     publishedPosts: [],
+    currentPost: {},
     journalists: [],
-    loading: false
+    loading: false,
+    metrics: {}
   },
   actions: {
     async setGeneralData ({commit}) {
@@ -26,6 +28,11 @@ export default {
       }
       return false;
       //commit('setState', { categories, countries });
+    },
+    async getGeneralMetrics({commit}){
+      const response = await Api.get('metrics/general/');
+      let { statusCode, data } = response;
+      commit('setMetrics', data);
     },
     async getAllApplicants({commit}){
       let response, applicants;
@@ -81,6 +88,12 @@ export default {
       let response = await Api.get('posts?is_published=true')     
       commit('setPublishedPosts', response.data.posts);
       commit('setLoading', false);
+    },
+    async getPostBySlug({commit}, {slug}){
+      commit('setLoading', true);
+      let response = await Api.get(`posts?slug=${slug}`)     
+      commit('setCurrentPost', response.data.posts[0]);
+      commit('setLoading', false);
     }
   },
   mutations: {
@@ -105,6 +118,12 @@ export default {
     },
     setLoading(state, loading){
       state.loading = loading;
+    },
+    setCurrentPost(state, post){
+      state.currentPost = post;
+    },
+    setMetrics(state, metrics){
+      state.metrics = metrics
     }
   },
   getters: {

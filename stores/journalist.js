@@ -15,18 +15,21 @@ export default {
       }
         // The commented codes on this section are for implementing travelCompetition posts
       let userId = rootState.auth.loggedInUser.id;
-      // let payload;
-      let { id, title, body, keyPoints: keypoint, imageUrl: image_url, category, country } = state.post;
-      // if (state.post.categories == 7) {
-      //   let { location: location, duration: duration, deviceType: device_type, category, country, body } = state.post;
-      //   payload = {  location, duration, device_type, category, country, body, is_published: params.shouldPublish};
-      //   console.log(payload)
-      // }else{
-      let payload = { id, keypoint, image_url, title, body, category, country, is_published: params.shouldPublish };
-      console.log(payload)
-      //}
+      let payload;
+      
+      console.log(state.post);
+
+      if (state.post.category == 7) {
+        console.log('travel competition')
+        let { id, title, location, duration, deviceType: device_type, imageUrl: image_url, category, country, body } = state.post;
+        payload = { id, title, location, duration, device_type, image_url, category, country, body, is_published: params.shouldPublish};
+      }else{
+        let { id, title, body, keyPoints: keypoint, imageUrl: image_url, category, country } = state.post;
+        payload = { id, keypoint, image_url, title, body, category, country, is_published: params.shouldPublish };
+      }
+
       let response;
-      if(id){
+      if(state.post.id){
        let payload = { id, keypoint, image_url, title, body, is_published: params.shouldPublish } 
         response = await Api.put('journalists/' + userId + '/posts/' + id, payload, true);
       }else{
@@ -36,8 +39,8 @@ export default {
       switch(response.statusCode){
         case 200:
         case 201:
-          let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published:isPublished=false, slug } = response.data.post;
-          let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug };
+          let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published:isPublished=false, slug, location, duration, device_type } = response.data.post;
+          let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, location, duration, device_type };
           commit('setPost', updatedPost);
           return true;
         default:
@@ -81,8 +84,11 @@ export default {
     }
   },
   getters: {
-    isCreatingPost(state){
-      return state.post.title || state.post.body || state.post.keyPoints.length > 0
+    isCreatingBasicPost(state){
+      return (state.post.title || state.post.body) && state.post.keyPoints.length > 0
+    },
+    isCreatingTravelPost(state){
+      return (state.post.title || state.post.body) && state.post.deviceType
     }
   }
 }

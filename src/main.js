@@ -38,6 +38,7 @@ Vue.config.productionTip = false
 
 // Routing logic
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

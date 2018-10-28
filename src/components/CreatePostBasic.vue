@@ -1,7 +1,6 @@
 <template>
   <div>
     <Modal v-model="publishModal">
-      <!-- <router-link to="/" class="goTo">Home</router-link> -->
       <Alert type="success">Success</Alert>
       <!--<div v-if="modal.status === 'error'">
         <ul>
@@ -13,24 +12,21 @@
           </li>
         </ul>
       </div>-->
-       <div>
+      <div>
         <p>Your post has been successfully published</p>
          <div class="posts">
-           <p class="text-center">Share your posts on</p>
-           <facebook :url="url" scale="3"></facebook>
-           <twitter :url="url" scale="3"></twitter>
-          <!-- <vue-goodshare-facebook
-            page_url="https://bloverse-frontend.herokuapp.com/posts/slug"
+          <vue-goodshare-facebook
+            page_url="https://bloverse-frontend.herokuapp.com/"
             has_icon
             style="font-size: 25px;"
           >
-          </vue-goodshare-facebook> -->
-          <!-- <vue-goodshare-twitter
-            page_url="https://bloverse-frontend.herokuapp.com/posts/slug"
+          </vue-goodshare-facebook>
+          <vue-goodshare-twitter
+            page_url="https://bloverse-frontend.herokuapp.com/"
             has_icon
             style="font-size: 25px;"
           >
-          </vue-goodshare-twitter> -->
+          </vue-goodshare-twitter>
         </div>
       </div>
     </Modal>
@@ -38,7 +34,7 @@
       <Col span="13" id="create-post">
         <Row  type="flex"  justify="space-between">
           <Col :sm="11">
-            <Select v-model="post.category.id" placeholder="Choose Category">
+            <Select v-model="post.category" placeholder="Choose Category" :disabled="isTravel">
               <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
             </Select>
           </Col>
@@ -48,7 +44,21 @@
             </Select>
           </Col>
         </Row>
-        <Card class="keypoints">
+        
+        <Card class="key-points" v-if="isTravel">
+              <input
+              v-model="post.location"
+              ref="autocomplete" 
+              placeholder="Location" 
+              class="search-location"
+              onfocus="value = ''" 
+              type="text" />
+          <DatePicker v-model="post.duration" id="keypoint" type="date" placement="bottom-end" placeholder="Time Taken" style="width: 100%"></DatePicker>
+            <Select placeholder="Device Used"  id="keypoint" v-model="post.deviceType">
+           <Option  v-for="item in deviceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+          </Select>
+        </Card>
+        <Card class="keypoints" v-else>
           <Input placeholder="Key point one" v-model="post.keyPoints[0]" size="large"></Input>
           <Input placeholder="Key point two" v-model="post.keyPoints[1]" size="large"></Input>
           <Input placeholder="Key point three" v-model="post.keyPoints[2]" size="large"></Input>
@@ -58,7 +68,7 @@
 
         <DisplayImage v-model="post.imageUrl" height="200px" width="50%" :can-edit="true" />
 
-        <vue-editor v-model="post.body" style="background: white; "></vue-editor>
+        <vue-editor v-model="post.body" style="background: white;"></vue-editor>
 
         <br />
 
@@ -91,25 +101,50 @@
 </template>
 
 <script>
-  import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert } from 'iview';
+  import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker } from 'iview';
   import { mapState, mapActions, mapMutations } from 'vuex'
   import { VueEditor } from "vue2-editor";
-  import {Facebook, Twitter} from 'vue-socialmedia-share';
-  // import SocialSharing from 'vue-social-sharing';
-  // import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
-  // import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
+  import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
+  import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
 
   import DisplayImage from './DisplayImage';
 
   export default {
     components: {
-      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, VueEditor, DisplayImage, Facebook, Twitter
+      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor, DisplayImage, DatePicker
     },
+    props: ['isTravel'],
     data: function(){
       return {
         publishModal: false,
         isNewImage: false,
-        url: 'https://bloverse-frontend.herokuapp.com/#/posts/slug'
+        deviceList: [
+            {
+                value: 'IPhone',
+                label: 'IPhone'
+            },
+            {
+                value: 'Samsung',
+                label: 'Samsung'
+            },
+            {
+                value: 'Techno',
+                label: 'Techno'
+            },
+            {
+                value: 'Huawei',
+                label: 'Huawei'
+            },
+            {
+                value: 'Infinix',
+                label: 'Infinix'
+            },
+            {
+                value: 'Gionee',
+                label: 'Gionee'
+            }
+        ],
+        // url: 'https://bloverse-frontend.herokuapp.com/' + this.post.slug
       };
       
     },
@@ -120,11 +155,6 @@
         },
         set(props){
           this.$store.commit('setPost', props);
-        },
-        url(){
-          console.log('test', this.post)
-          return "https://bloverse-frontend.herokuapp.com/#/posts/" + this.post.slug;
-
         }
       },
 
@@ -158,7 +188,16 @@
       }
     },
     mounted(){
-      this.setPost({category: this.auth.loggedInUser.category.id, country: this.auth.loggedInUser.country.id})
+      if(this.isTravel){
+          this.setPost({category: 7, country: this.auth.loggedInUser.country.id}),
+
+          this.autocomplete = new google.maps.places.Autocomplete(
+            (this.$refs.autocomplete),
+              {types: ['geocode']}
+          );
+      }else{
+        this.setPost({category: this.auth.loggedInUser.category.id, country: this.auth.loggedInUser.country.id})
+      }
     }
 
         /*let { data, status } = await this.createOrUpdatePost();
@@ -247,7 +286,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 200vh;
+    min-height: 120vh;
   }
 
   #display-post #image {
@@ -304,13 +343,6 @@
   .posts 
   {
     position: relative;
-  }
-
-  .goTo {
-    background: #2f80ed;
-    color: #FFFFFF;
-    padding: 13px 30px 13px 30px;
-    border-radius: 10px;
   }
 </style>
 

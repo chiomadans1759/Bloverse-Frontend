@@ -1,8 +1,7 @@
 <template>
-  <div v-if="selectedTemplate !==null || isCreatingPost">
+  <div v-if="selectedTemplate !== null">
     <Button id="btn-back" icon="ios-arrow-back" @click="clearCurrentPost" type="error">Back to Choose Template</Button>
-    <BasicCreatePost v-if="selectedTemplate === 'basic' " />
-    <TravelCreatePost v-else-if="selectedTemplate === 'travel' " />
+    <BasicCreatePost :isTravel="selectedTemplate === 'travel'" />
   </div>
   <TemplateChooser v-else @selectTemplate="selectedTemplate=$event" />
   
@@ -25,7 +24,8 @@
     },
     computed: {
       ...mapGetters([
-        'isCreatingPost'
+        'isCreatingBasicPost',
+        'isCreatingTravelPost'
       ]),
       ...mapState(['journalist'])
     },
@@ -48,10 +48,10 @@
         this.setPost(updatedPost);
       }
 
-      if(this.isCreatingPost){
+      if(this.isCreatingBasicPost)
         this.selectedTemplate = 'basic';
-      }
-
+      else if(this.isCreatingTravelPost)
+        this.selectedTemplate = 'travel';
     }  
   }
 </script>

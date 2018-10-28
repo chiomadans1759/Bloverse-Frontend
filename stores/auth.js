@@ -102,7 +102,7 @@ export default {
       return state.loggedInUser.type === 'Admin';
     },
     isAJournalist(state){
-      return state.loggedInUser.type === 'Journalist';
+      return state.loggedInUser.type === 'journalist';
     },
     allowedToRegister(state){
       return state.shouldRegister;
