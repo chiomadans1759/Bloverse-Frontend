@@ -71,7 +71,7 @@
       },
       computed: {
         url(){
-          return `https://bloverse-frontend.herokuapp.com/#/posts/${this.general.currentPost.slug}`;
+          return `https://bloverse-frontend.herokuapp.com/posts/${this.general.currentPost.slug}`;
         },
         ...mapState([
           'general',

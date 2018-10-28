@@ -16,13 +16,13 @@
         <p>Your post has been successfully published</p>
          <div class="posts">
           <vue-goodshare-facebook
-            page_url="https://bloverse-frontend.herokuapp.com/"
+            :page_url="url"
             has_icon
             style="font-size: 25px;"
           >
           </vue-goodshare-facebook>
           <vue-goodshare-twitter
-            page_url="https://bloverse-frontend.herokuapp.com/"
+            :page_url="url"
             has_icon
             style="font-size: 25px;"
           >
@@ -156,6 +156,9 @@
         set(props){
           this.$store.commit('setPost', props);
         }
+      },
+      url(){
+        return `https://bloverse-frontend.herokuapp.com/posts/${this.post.slug}`;
       },
 
       ...mapState([
