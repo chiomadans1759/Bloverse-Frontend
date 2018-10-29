@@ -2,13 +2,13 @@
   <div>
     <Row :gutter="32" id="stat-wrapper">
       <Col :sm="8">
-        <stat-card variant="fade" title="views" :stats="{ today: 30, week: 250, total: 12800 }" />
+        <stat-card variant="fade" title="views" id="stat-point1" :stats="{ today: 30, week: 250, total: 12800}" />
       </Col>
       <Col :sm="8">
-        <stat-card variant="primary" title="published" :stats="{ today: 30, week: 250, total: 1670 }" />
+        <stat-card variant="primary" title="published" id="stat-point2" :stats="{ today: 30, week: 250, total: 1670}" />
       </Col>
       <Col :sm="8">
-        <stat-card variant="success" title="points" :stats="{ today: 2, week: 10, total: 200 }" />
+        <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ today: '2 of 10', week: '12 of 150', total: 200}" />
       </Col>
     </Row>
 
@@ -17,6 +17,8 @@
         <Card id="map-card">
           <h2 slot="title" class="title">Total Visits</h2>
           <span slot="extra">
+            <ion-icon name="add" id="extra-icon"></ion-icon>
+            <ion-icon name="remove" id="extra-icon"></ion-icon>
             <!-- Zoom out and zoom in for map -->
           </span>
           <Row :gutter="16" id="select-wrapper">
@@ -126,9 +128,8 @@
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    line-height: 28px;
     font-size: 24px;
-    color: #828282;
+    color: #9da19c;
   }
 
   #trending-card {
@@ -160,6 +161,27 @@
     /* padding-left: 8px; */
   }
 
+  #stat-point2 {
+    color: #2F80ED;
+  }
+
+  #stat-point3 {
+    color: #6FCF97;
+  }
+  #stat-point1 {
+    color: #56CCF2;
+  }
+
+  #extra-icon {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2F80ED;
+    margin-left: 10px;
+    border: 2px solid #2F80ED;
+     border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+  }
   .entity{
     display: flex;
     flex-direction: column;
