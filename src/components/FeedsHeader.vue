@@ -13,15 +13,20 @@
               <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{item.name}}</Option>
             </Select>
           </Col>
+          <Col :sm="3">
+           <Select v-model="categories" placeholder="Choose categories" id="categories">
+              <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
+            </Select>
+          </Col>
     </Row>   
-    <Row id="catrow" :gutter="40" type="flex" justify="center" >
+    <!-- <Row id="catrow" :gutter="40" type="flex" justify="center" >
       <Col><p>Entertainment</p> </Col>
       <Col><p>Business</p> </Col>
       <Col><p>Sport</p></Col>
       <Col><p>Technology</p></Col>
       <Col><p>Politics</p></Col>
       <Col><p>Health</p> </Col>
-    </Row>
+    </Row> -->
   </header>
 </template>
 
@@ -32,12 +37,6 @@
 
   export default {
     components: { Row, Col, Input, Select, Option },
-    data(){
-      return {
-        searchText: '',
-        country: null
-      }
-    },
      computed: {
       ...mapState([
         'general'

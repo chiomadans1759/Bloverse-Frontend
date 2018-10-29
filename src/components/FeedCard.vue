@@ -1,10 +1,12 @@
 <template>
   <router-link :to="`posts/${post.slug}`">
+  <div class="container">
     <Card class="feed-card">
       <img :src="imageUrl" />
       <h2 id="category"><p>{{category}}</p></h2>
       <h2 id="title"><p>{{post.title}}</p></h2>
     </Card>
+  </div>
   </router-link>
 </template>
 
@@ -36,6 +38,12 @@
 </script>
 
 <style scoped>
+
+.container {
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
   
   .feed-card {
     color:#828282;

@@ -2,7 +2,7 @@
   <BaseAuthentication>
 <Col :sm="18" :md="10" :xs="22" class="auth-section">
   <h1 id="page-title">Sign in</h1>
-  <Row type="flex" justify="space-between" id="btn-social-grp">
+  <!-- <Row type="flex" justify="space-between" id="btn-social-grp">
     <Col :sm="11" :xs="24">
       <Button class="btn-social my-btn" id="btn-google" long> 
         <Icon id="google-icon" type=logo-google />
@@ -19,7 +19,7 @@
       <Button class="btn-social my-btn" id="btn-twitter" long>Twitter</Button>
     </Col>
   </Row>
-  <p class="p-or">OR</p>
+  <p class="p-or">OR</p> -->
   <Form ref="loginForm" class="auth-form login-form" :model="user" :rules="loginValidate">
     <FormItem prop="email">
       <Input class="my-input" v-model="user.email" size="large" placeholder="E-mail*" />
