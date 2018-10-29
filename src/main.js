@@ -103,10 +103,9 @@ router.beforeEach((to, from, next) => {
     }
   }
   else if(to.matched.some(record=>record.meta.acceptedApplicant)){
-    if(store.getters.allowedToRegister === false)
+    if(store.getters.allowedToRegister === true)
       next()
     else{
-      console.log('to verify');
       next({path: '/journalist/verify'})
     }
   }else
