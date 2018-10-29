@@ -41,7 +41,7 @@
             <Col :sm="7" class="section-2-description">
               <Icon class="section-2-icon" type="ios-paper"></Icon>
               <h2>{{general.metrics.publishedPost}}</h2>
-              <p> Article have been publish </p>
+              <p> Article have been published</p>
             </Col>
             
             <Col :sm="7" class="section-2-description">
