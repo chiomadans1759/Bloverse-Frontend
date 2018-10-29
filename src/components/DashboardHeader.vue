@@ -3,10 +3,9 @@
     <Icon @click.native="handleIconClick" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
     <Row id="items-wrapper" type="flex" justify="space-between" align="middle">
       <Col><Icon type="navicon-round" color="#E0E0E0"></Icon></Col>
-      
-      <Col><Icon type="android-notifications-none" color="#BDBDBD"></Icon></Col>
+      <Col></Col>
       <Col>
-        
+      <Icon type="ios-notifications-outline" style="font-size: 30px; color: grey; margin-right: 90px;"></Icon>
         <Avatar icon="person" /> &nbsp; <span>{{name}}</span> &nbsp;
         <Dropdown>
           <Icon type="md-arrow-dropdown" />
@@ -72,7 +71,7 @@
   #header #items-wrapper {
     flex: 1 1 auto;
   }
-    .rotate-icon{
+    .rotateIcon{
         transform: rotate(-90deg);
     }
 </style>

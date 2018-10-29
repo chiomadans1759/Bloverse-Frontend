@@ -2,25 +2,25 @@
   <div class="stat-card">
     <div class="top">
       <h2 class="title title_underline">{{title | toUpperCase}}</h2>
-      <Icon type="ios-stats-outline" id="icon-style" />
+      <Icon type="ios-stats-outline" style="font-size: 25px; transform: scale(1.5,1);" id="icon-style" />
     </div>
     <div class="analysis">
-      <p >Articles</p>
+      <p style="color: black; font-size: 15px;">Articles</p>
       <div  class="sub-analysis">
         <div>
-          <span :style="{color: 'var(--primary)'}">{{stats.today}}</span>
-          <span>Today</span> 
+          <span :style="{color: 'var(--primary)'}">{{stats.today}}&nbsp;&nbsp;</span>
+          <span style="color: grey;">Today</span> 
         </div>
         <hr :style="{margin: '.2rem 0'}" />
         <div>
-          <span :style="{color: 'var(--primary)'}">{{stats.week}}</span>
-          <span>This week</span>
+          <span :style="{color: 'var(--primary)'}">{{stats.week}}&nbsp;&nbsp;</span>
+          <span style="color: grey;">This week</span>
         </div>
       </div>
     </div>
     <div class="total">
-      <span class="title" :style="{color: '#333333', fontWeight: 'bold'}">Total {{title}}</span>
-      <span class="title" :style="{color: '#56CCF2', fontWeight: 'bold'}">{{stats.total}}</span>
+      <span :style="{color: '#333333', fontWeight: 'bold', fontSize: '20px'}">Total {{title}}</span>
+      <span   :style="{fontWeight: 'bold', fontSize: '20px'}">{{stats.total}}</span>
     </div>
   </div>
 </template>
@@ -117,3 +117,4 @@
   }
 
 </style>
+
