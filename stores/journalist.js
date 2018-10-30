@@ -4,7 +4,8 @@ import axios from 'axios';
 export default {
   state: {
     posts: null,
-    post: { keyPoints: [] }
+    post: { keyPoints: [] },
+    metrics: {},
 
   },
   actions: {
@@ -17,21 +18,22 @@ export default {
       let userId = rootState.auth.loggedInUser.id;
       let payload;
       
-      console.log(state.post);
+      let postId;
 
       if (state.post.category == 7) {
-        console.log('travel competition')
         let { id, title, location, duration, deviceType: device_type, imageUrl: image_url, category, country, body } = state.post;
+        postId = id;
         payload = { id, title, location, duration, device_type, image_url, category, country, body, is_published: params.shouldPublish};
       }else{
         let { id, title, body, keyPoints: keypoint, imageUrl: image_url, category, country } = state.post;
+        postId = id;
         payload = { id, keypoint, image_url, title, body, category, country, is_published: params.shouldPublish };
       }
 
       let response;
       if(state.post.id){
-       let payload = { id, keypoint, image_url, title, body, is_published: params.shouldPublish } 
-        response = await Api.put('journalists/' + userId + '/posts/' + id, payload, true);
+       //let payload = { keypoint, image_url, title, body, is_published: params.shouldPublish } 
+        response = await Api.put('journalists/' + userId + '/posts/' + postId, payload, true);
       }else{
         response = await Api.post('journalists/' + userId + '/posts/', payload, true);
       }
@@ -70,6 +72,13 @@ export default {
       commit('setPosts', response.data.posts) ;
       commit('setLoading', false, { root: true });
 
+    },
+    async getMyMetrics({commit, rootState}){
+      let userId = rootState.auth.loggedInUser.id;
+      commit('setLoading', true, { root: true });
+      let response = await Api.get(`metrics/journalists/${userId}`);
+      commit('setMyMetrics', response.data);
+      commit('setLoading', false, { root: true });
     }
   },
   mutations: {
@@ -80,7 +89,10 @@ export default {
       state.posts = props
     },
     clearPost(state){
-      state.post = { keyPoints: [], imageUrl: "https://res.cloudinary.com/naera/image/upload/v1532594342/945_S_fuswub.png"}
+      state.post = { keyPoints: [] }
+    },
+    setMyMetrics(state, metrics){
+      state.metrics = metrics;
     }
   },
   getters: {
@@ -89,6 +101,12 @@ export default {
     },
     isCreatingTravelPost(state){
       return (state.post.title || state.post.body) && state.post.deviceType
+    },
+    views(state){
+      return state.metrics.views;
+    },
+    articles(state){
+      return state.metrics.publishedArticles;
     }
   }
 }

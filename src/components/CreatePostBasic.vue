@@ -29,6 +29,9 @@
           </vue-goodshare-twitter>
         </div>
       </div>
+      <div slot="footer">
+        <router-link :to="`/journalist/${auth.loggedInUser.userName}/posts`" >Go to all Post <Icon type="md-arrow-round-forward" /></router-link>
+      </div>
     </Modal>
     <Row type="flex" justify="space-between">
       <Col span="13" id="create-post">
@@ -92,7 +95,6 @@
           <DisplayImage :value="post.imageUrl" height="200px" width="100%" :can-edit="false" />
           <p v-html="post.body" id="body">
           </p>
-
         </Card>
       </Col>
     </Row>

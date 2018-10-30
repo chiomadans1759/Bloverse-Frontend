@@ -2,10 +2,10 @@
   <div>
     <Row :gutter="32" id="stat-wrapper">
       <Col :sm="8">
-        <stat-card variant="fade" title="views" id="stat-point1" :stats="{ today: 30, week: 250, total: 12800}" />
+        <stat-card variant="fade" title="views" id="stat-point1" :stats="{ today: views.today, week: views.week, total: views.total}" />
       </Col>
       <Col :sm="8">
-        <stat-card variant="primary" title="published" id="stat-point2" :stats="{ today: 30, week: 250, total: 1670}" />
+        <stat-card variant="primary" title="published" id="stat-point2" :stats="{ today: articles.today, week: articles.week, total: articles.total}" />
       </Col>
       <Col :sm="8">
         <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ today: '2 of 10', week: '12 of 150', total: 200}" />
@@ -76,6 +76,7 @@
 
 <script>
   import { Row, Col, Card, Select, Option, locale, Avatar, Icon } from 'iview';
+  import { mapActions, mapGetters } from 'vuex';
   import DashboardStatDisplayCard from '../../components/JournalistStatDisplayCard.vue';
   import lang from 'iview/dist/locale/en-US';
 
@@ -96,7 +97,14 @@
         country: '',
       }
     },
-    mounted: function(){
+    computed:{
+      ...mapGetters(['views', 'articles'])
+    },
+    methods: {
+      ...mapActions(['getMyMetrics'])
+    },
+    mounted: async function(){
+      await this.getMyMetrics();
       let mapElement = this.$refs.activityMap;
       var map = new Datamap({element: mapElement,
         fills: {
