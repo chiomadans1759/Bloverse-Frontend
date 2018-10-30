@@ -8,16 +8,6 @@
         <Col>
           <router-link to="/journalist" id="write">Write</router-link>
         </Col>
-         <Col :sm="3">
-           <Select v-model="country" placeholder="Choose Country" id="country">
-              <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{item.name}}</Option>
-            </Select>
-          </Col>
-          <Col :sm="3">
-           <Select v-model="categories" placeholder="Choose categories" id="categories">
-              <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
-            </Select>
-          </Col>
     </Row>   
     <!-- <Row id="catrow" :gutter="40" type="flex" justify="center" >
       <Col><p>Entertainment</p> </Col>

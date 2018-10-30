@@ -2,7 +2,7 @@
   <div class="stat-card">
     <div class="top">
       <h2 class="title title_underline">{{title | toUpperCase}}</h2>
-      <Icon type="ios-stats-outline" style="font-size: 25px; transform: scale(1.5,1);" id="icon-style" />
+      <Icon type="md-stats" style="font-size: 25px; transform: scale(1.5,1);" id="icon-style" />
     </div>
     <div class="analysis">
       <p style="color: black; font-size: 15px;">Articles</p>
