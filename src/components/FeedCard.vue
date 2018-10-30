@@ -9,7 +9,7 @@
       <h2 id="category"><p>{{category}}</p></h2>
       <h2 id="title"><p>{{post.title}}</p></h2>
       <footer>
-        <Icon type="md-heart" /> 234
+        <Icon type="md-eye" /> {{post.views}}
         <Icon type="md-text" style="margin-left: 15px;" /> 54
         <span style="margin-left: 80px;"><Icon type="ios-share-alt" style="transform:rotate(180deg); font-size: 15px;" /><Icon type="md-more" style="margin-left: 30px; font-size: 15px;" /></span>
       </footer>
