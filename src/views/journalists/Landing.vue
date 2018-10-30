@@ -34,7 +34,7 @@
             </Col>
             <Col class="section-description" :sm="8">
                     <iframe width="400" height="200"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">                                        </iframe>
+                    src="https://www.youtube.com/embed/EjRM4DMdnGw">                                        </iframe>
             </Col>
           </Row> 
           <Row class="section-2" type="flex" justify="space-around">
