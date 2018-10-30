@@ -48,13 +48,13 @@
           <h2 slot="title" class="title">Trending</h2>
                <Row type="flex" justify="space-around">
             <Col span="10">
-              <Select placeholder="Region" v-model="region">
-                <Option >Entertainment</Option>
+              <Select v-model="categories" placeholder="Categories" id="categories">
+                <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
               </Select>
             </Col>
             <Col span="10">
-              <Select placeholder="Subregion" v-model="subRegion">
-                <Option >Nigeria</Option>
+              <Select v-model="country" placeholder="Country" id="country">
+                <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{item.name}}</Option>
               </Select>
             </Col>
           </Row>
@@ -79,6 +79,7 @@
   import { mapActions, mapGetters } from 'vuex';
   import DashboardStatDisplayCard from '../../components/JournalistStatDisplayCard.vue';
   import lang from 'iview/dist/locale/en-US';
+  import { mapState } from 'vuex';
 
   // configure language
   locale(lang);
@@ -90,12 +91,11 @@
       StatCard: DashboardStatDisplayCard,
       Icon
     },
-    data: function(){
-      return {
-        region: '',
-        subRegion: '',
-        country: '',
-      }
+    computed: {
+
+      ...mapState([
+        'general'
+      ])
     },
     computed:{
       ...mapGetters(['views', 'articles'])
