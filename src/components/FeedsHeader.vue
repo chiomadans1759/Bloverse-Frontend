@@ -38,10 +38,10 @@
 
 
 <style>
-#feeds-header {
-  margin-bottom:30px;
+/* #feeds-header {
+  margin-bottom:30px; */
 
-}
+
 #country {
   width: 100%;
 }
@@ -52,6 +52,7 @@
     position: relative;
      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
      padding: 50px 0;
+     margin: 0;
   }
   .ivu-input-wrapper{
     margin:25px 0;
