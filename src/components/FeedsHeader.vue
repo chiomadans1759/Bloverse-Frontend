@@ -2,7 +2,7 @@
   <header id="feeds-header">
     <Row id="feeds-row" type="flex" justify="space-around" align="middle">
         <Col>
-          <router-link to="/"><img src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" alt="" id="lead"></router-link>
+          <router-link to="/"><img src="https://res.cloudinary.com/naera/image/upload/v1537182542/bloverse/FINAL.png" style="width:350px;height:80px" alt="" id="lead"></router-link>
         </Col>
        
         <Col>
@@ -46,10 +46,12 @@
   width: 100%;
 }
   #feeds-row {
-    background-color:#2f80ed;
+    background-color:#f1f2f6;
     width:100%;
     height:80px;
     position: relative;
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+     padding: 50px 0;
   }
   .ivu-input-wrapper{
     margin:25px 0;
@@ -62,7 +64,7 @@
     position: absolute;
     margin: 0% !important;
     padding-top: 15px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+     
 }
   
   #catrow ul {
@@ -100,13 +102,13 @@
   }
 
   #write {
-    color: #FFFFFF;
+    color: grey;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 25px;
     display:flex;
     margin-left:900px;
   }
   #write:hover{
-    color: #FFFFFF;
+    color:#2F80ED;
    }
 </style>
