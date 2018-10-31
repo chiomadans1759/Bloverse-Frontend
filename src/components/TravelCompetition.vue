@@ -136,9 +136,30 @@
                     {
                         value: 'Gionee',
                         label: 'Gionee'
+                    },
+                    {
+                        value: 'Nokia',
+                        label: 'Nokia'
+                    },
+                    {
+                        value: 'Huawei',
+                        label: 'Huawei'
+                    },
+                    {
+
+                        value: 'ZTE',
+                        label: 'ZTE'
+                    },
+                    {
+                        value: 'Lenovo',
+                        label: 'Lenovo'
+                    },
+                    {
+                        value: 'LG',
+                        label: 'LG'
                     }
+
                 ], 
-        // url: 'https://bloverse-frontend.herokuapp.com/' + this.post.slug
       };
       
     },
@@ -155,7 +176,10 @@
       ...mapState([
         'general',
         'auth',
-      ])
+      ]),
+      url() {
+        
+      }
     },
     methods: {
       ...mapActions([
