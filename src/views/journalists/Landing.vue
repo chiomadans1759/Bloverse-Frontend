@@ -32,7 +32,7 @@
                 <Button class="know" type="primary" ><router-link to="/journalist/apply" id="getStarted">Get Started</router-link> </Button>
             </Col>
             <Col class="section-description" :sm="10">
-                <iframe width="400" height="700"
+                <iframe width="400" height="400"
                   src="https://www.youtube.com/embed/EjRM4DMdnGw">                           
                </iframe>
             </Col>
