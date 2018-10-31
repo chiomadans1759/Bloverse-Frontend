@@ -2,7 +2,7 @@
   <div>
     <FeedsHeader />
     <router-view></router-view>
-    <TheFooter />
+    <!-- <TheFooter /> -->
   </div>
   
 </template>
