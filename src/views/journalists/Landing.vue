@@ -31,9 +31,10 @@
                 Excited? You should be! #PressPlay #JoinTheBloverse</p>
                 <Button class="know" type="primary" ><router-link to="/journalist/apply" id="getStarted">Get Started</router-link> </Button>
             </Col>
-            <Col class="section-description" :sm="8">
-                    <iframe width="400" height="300"
-                    src="https://www.youtube.com/embed/EjRM4DMdnGw">                                        </iframe>
+            <Col class="section-description" :sm="10">
+                <iframe width="400" height="400"
+                  src="https://www.youtube.com/embed/EjRM4DMdnGw">                           
+               </iframe>
             </Col>
           </Row> 
           <Row class="section-2" type="flex" justify="space-around">
@@ -501,7 +502,7 @@ export default {
 
   iframe {
     width: 100%;
-    height: 17rem;
+    height: 27rem;
     border: none;
   }
 
@@ -509,7 +510,7 @@ export default {
     padding: 20px;
     text-align: center;
     height: 100%;
-    /* border: 1px solid green; */
+    height: 100%;
   }
   .section-2 {
     color: white;
