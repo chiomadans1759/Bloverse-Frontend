@@ -1,6 +1,6 @@
 <template>
   <section class="my-section">
-    <Loading v-if="general.loading" message="Getting Feeds" />
+    <Loading v-if="general.loading" message="Getting Feeds" id="bloading" />
     <Row :gutter="24" class="body" v-else :style="{marginTop: '50px', marginBottom: '50px'}">
       <template v-if="postExists">
       <Row>
