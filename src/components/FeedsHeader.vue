@@ -1,16 +1,11 @@
 <template>
   <header id="feeds-header">
-   
-   
-     
-          <router-link class ="logo-wrapper" to="/"><img src="https://res.cloudinary.com/naera/image/upload/v1537182542/bloverse/FINAL.png" style="width:350px;height:80px" alt="" id="lead"></router-link>
-   
-       
-        
-          <router-link to="/journalist" id="write">Write</router-link>
-     
-        </div>
-     
+    <!-- <router-link class ="logo-wrapper" to="/"><img src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" style="width:40px;height:50px" alt="" id="lead"> &nbsp; -->
+    <router-link to="/"><span id="header-text">Bloverse</span>
+    </router-link>
+    <router-link to="/journalist" id="write">Write</router-link>
+
+
     <!-- <Row id="catrow" :gutter="40" type="flex" justify="center" >
       <Col><p>Entertainment</p> </Col>
       <Col><p>Business</p> </Col>
@@ -40,36 +35,39 @@
 
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 /* #feeds-header {
   margin-bottom:30px; */
-
-
-
-  #feeds-header {
-    background-color:#f1f2f6;
-    width:100%;
-   
-    padding:10px 15px;
-   
-     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
-       display: flex;
+#feeds-header {
+  background-color:#fff;
+  padding:10px 15px;
+  border-bottom: 2px solid rgb(236, 230, 230);
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19); */
+  display: flex;
   justify-content: space-between;
-
   align-items: center;
    
-   
   }
- 
-
-
 
   #write {
-    color: grey;
-    font-size: 25px;
+    color:#2F80ED;
+    font-size: 20px;
+    border: 2px solid #2F80ED;
+    margin-right: 20px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
 
-    
   }
+
   #write:hover{
     color:#2F80ED;
+   }
+
+   #header-text{
+     font-size: 40px;
+     font-weight:  bold;
+     letter-spacing: 3px;
+     font-family: 'Raleway', sans-serif;
+     color: rgb(25, 109, 235);
    }
 </style>

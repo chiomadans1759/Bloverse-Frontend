@@ -31,7 +31,7 @@
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', 'Roboto', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -39,5 +39,8 @@
 
 :root {
   --primary: #2F80ED;
+}
+body{
+  margin: 0 30px;
 }
 </style>
