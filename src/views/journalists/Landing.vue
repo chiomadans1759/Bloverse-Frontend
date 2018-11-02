@@ -1,5 +1,4 @@
 <template>
-  <WithFooter>
     <div class="layout">
       <Layout>
         <Content>
@@ -30,11 +29,12 @@
                 <h2> Get started on Bloverse</h2>
                 <p> Bloverse was created with you in mind. Have you ever thought about creating a news blog but then balked at the thought of the effort required?. Well I have good news! At bloverse we leverage state of the art AI techniques to make your life easier and help you on the journey to being an elite content creator. With our journalist ranking system you can see how you rank compared to others in your circle. The ultimate objective of bloverse is to create a platform with high quality content creators based on feedback from an engaged community. 
                 Excited? You should be! #PressPlay #JoinTheBloverse</p>
-                <Button class="know" type="primary" >Get Started </Button>
+                <Button class="know" type="primary" ><router-link to="/journalist/apply" id="getStarted">Get Started</router-link> </Button>
             </Col>
-            <Col class="section-description" :sm="8">
-                    <iframe width="400" height="200"
-                    src="https://www.youtube.com/embed/EjRM4DMdnGw">                                        </iframe>
+            <Col class="section-description" :sm="10">
+                <iframe width="400" height="400"
+                  src="https://www.youtube.com/embed/EjRM4DMdnGw">                           
+               </iframe>
             </Col>
           </Row> 
           <Row class="section-2" type="flex" justify="space-around">
@@ -85,19 +85,19 @@
         </Content>
       </Layout>
     </div>
-  </WithFooter>
+  <!-- </WithFooter> -->
   
 </template>
 
 <script>
 import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
-import WithFooter from '../../layouts/WithFooter';
+// import WithFooter from '../../layouts/WithFooter';
 import { mapState, mapActions, mapGetters } from 'vuex';
 import { page } from 'vue-analytics';
 
 
 export default {
-  components: { Button, Modal, Layout, Icon, Row, Content, Col, WithFooter },
+  components: { Button, Modal, Layout, Icon, Row, Content, Col},
   computed: {
     ...mapState([
       'general'
@@ -502,7 +502,7 @@ export default {
 
   iframe {
     width: 100%;
-    height: 17rem;
+    height: 27rem;
     border: none;
   }
 
@@ -510,7 +510,7 @@ export default {
     padding: 20px;
     text-align: center;
     height: 100%;
-    /* border: 1px solid green; */
+    height: 100%;
   }
   .section-2 {
     color: white;
@@ -611,6 +611,10 @@ export default {
     background: white;
     border-radius: 4px;
     margin-top: 50px;
+  }
+  
+  #getStarted {
+    color: #fff;
   }
 
 </style>

@@ -1,14 +1,16 @@
 <template>
   <header id="feeds-header">
-    <Row id="feeds-row" type="flex" justify="space-around" align="middle">
-        <Col>
-          <router-link to="/"><img src="https://res.cloudinary.com/naera/image/upload/v1537182542/bloverse/FINAL.png" style="width:350px;height:80px" alt="" id="lead"></router-link>
-        </Col>
+   
+   
+     
+          <router-link class ="logo-wrapper" to="/"><img src="https://res.cloudinary.com/naera/image/upload/v1537182542/bloverse/FINAL.png" style="width:350px;height:80px" alt="" id="lead"></router-link>
+   
        
-        <Col>
+        
           <router-link to="/journalist" id="write">Write</router-link>
-        </Col>
-    </Row>   
+     
+        </div>
+     
     <!-- <Row id="catrow" :gutter="40" type="flex" justify="center" >
       <Col><p>Entertainment</p> </Col>
       <Col><p>Business</p> </Col>
@@ -42,72 +44,30 @@
   margin-bottom:30px; */
 
 
-#country {
-  width: 100%;
-}
-  #feeds-row {
+
+  #feeds-header {
     background-color:#f1f2f6;
     width:100%;
-    height:80px;
-    position: relative;
+   
+    padding:10px 15px;
+   
      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
-     padding: 50px 0;
-     margin: 0;
+       display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+   
+   
   }
-  .ivu-input-wrapper{
-    margin:25px 0;
-  }
-   #catrow {
-    height: 60px;
-    width: 100%;
-    background-color:#f5f6fa ;
-    color: #151516;
-    position: absolute;
-    margin: 0% !important;
-    padding-top: 15px;
-     
-}
-  
-  #catrow ul {
-    padding: 0;
-    margin: 0;
-    
-  }
-  #catrow p{
-    font-size: 21px;
-    font-weight: 300;
-  }
-  #catrow li {
-    display: inline;
-    float: left;
-  }
-  #catrow a {
-    display: inline-block;
-    width: 100px;
-    text-align: center;
-    text-decoration: none;
-    padding: 10px 0;
-    color: #eee;
-    text-decoration: none;
-  }
-  #catrow li:hover {
-    background-color: #444;
-  }
-  #catrow a#openup {
-    display: none;
-  }
-  #lead {
-    width:50px;
-    height:70px;
-    margin: 5px 35px
-  }
+ 
+
+
 
   #write {
     color: grey;
-    border-radius: 10px;
     font-size: 25px;
-    display:flex;
-    margin-left:900px;
+
+    
   }
   #write:hover{
     color:#2F80ED;
