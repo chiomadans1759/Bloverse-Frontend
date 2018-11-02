@@ -19,7 +19,7 @@
     <Spin fix>
         <Icon type="ios-loading" size=100 class="demo-spin-icon-load"></Icon>
         <div v-if="message">{{message}}...</div>
-        <div v-else>Bloverse is Loading...</div>
+        <div v-else>Loading...</div>
     </Spin>
   </div>
 

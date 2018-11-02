@@ -1,11 +1,11 @@
 <template>
   <section class="my-section">
     <Loading v-if="general.loading" message="Getting Feeds" />
-    <Row :gutter="16" class="body" v-else :style="{marginTop: '50px', marginBottom: '50px'}">
+    <Row :gutter="24" class="body" v-else :style="{marginTop: '50px', marginBottom: '50px'}">
       <template v-if="postExists">
-      <Row type="flex">
-        <Col span="4"><p id="feedsTitle">Latest</p></Col>
-        <Col span="4" style="margin-left: 40px;">
+      <Row>
+        <Col span="6"><p id="feedsTitle">Happening Now</p></Col>
+        <Col span="4" style="margin-left: 20px;">
             <Select v-model="categories" placeholder="Choose categories" id="categories">
               <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
             </Select>
@@ -14,8 +14,8 @@
            <Select v-model="country" placeholder="Choose Country" id="country">
               <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{item.name}}</Option>
             </Select></Col>
-    </Row>
-        <Col :xs="24" :sm="6" v-for="post in general.publishedPosts" :key="post.id" :style="{marginTop: '20px'}">
+      </Row>
+        <Col :xs="24" :sm="8" v-for="post in general.publishedPosts" :key="post.id" :style="{marginTop: '20px'}">
           <FeedCard :post="post"  />
         </Col>
       </template>
@@ -57,7 +57,7 @@
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 500;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 @media only screen and (max-width: 600px) {
