@@ -44,6 +44,6 @@
   --primary: #2F80ED;
 }
 body{
-  margin: 0 30px;
+  margin: 0px;
 }
 </style>
