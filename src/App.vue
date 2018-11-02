@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import { mapActions, mapMutations, mapState } from 'vuex'
+  import { mapActions } from 'vuex'
   import LoadingIcon from './components/Loading';
   export default {
     name: 'app',
@@ -20,9 +20,6 @@
       ...mapActions([
         'setGeneralData'
       ])
-    },
-    computed: {
-      ...mapState(['auth', 'general'])
     },
     async created(){
       let loaded = await this.setGeneralData();

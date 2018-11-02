@@ -32,9 +32,10 @@ import PostDisplay from '../src/views/PostDisplay.vue';
 const routes = [
   { path: '/', component: BaseFeeds,
     children: [
-      { path: '', component: PostFeeds },
-      { path: 'posts', redirect: '/' },
-      { path: 'posts/:slug', component: PostDisplay }
+      //{ path: '', component: PostFeeds },
+      { path: '', redirect: '/journalist' },
+      //{ path: 'posts', redirect: '/' },
+      //{ path: 'posts/:slug', component: PostDisplay }
     ]
   },
   {
@@ -46,7 +47,7 @@ const routes = [
       { path: 'register', component: JournalistSetUp, meta: { acceptedApplicant: true } },
       { path: 'setup', component: JournalistManualSetUp, meta: { acceptedApplicant: true } },
       { path: 'verify', component: JournalistVerify },
-      { path: ':username', component: BaseDashBoard,
+      /*{ path: ':username', component: BaseDashBoard,
         meta: {
           journalist: true,
           auth: true
@@ -62,13 +63,13 @@ const routes = [
             ]
           }
         ]
-      },
+      },*/
     ]
   },
-  { path: '/faq/:person', component: FrequentlyAskedQuestions },
-  { path: '/rules/:person', component: HouseRules },
-  { path: '/guides', component: PublishGuide },
-  { path: '/ranking/:person', component: RankingSystem },
+  //{ path: '/faq/:person', component: FrequentlyAskedQuestions },
+  //{ path: '/rules/:person', component: HouseRules },
+  //{ path: '/guides', component: PublishGuide },
+  //{ path: '/ranking/:person', component: RankingSystem },
   { path: '/admin', component: BaseAdmin,
     children: [
       { path: '', redirect: 'dashboard' },
