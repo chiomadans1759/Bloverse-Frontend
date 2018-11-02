@@ -1,7 +1,7 @@
 import axios from 'axios';
 import store from '../../stores';
 
-let BASE_URL = 'https://bloverse-api.herokuapp.com/api/v1/'
+let BASE_URL = 'https://api.bloverse.com/api/v1/'
 class Api {
   static async get(url, requireAuth=false) {
     let response, statusCode, statusText, data, message, config;
