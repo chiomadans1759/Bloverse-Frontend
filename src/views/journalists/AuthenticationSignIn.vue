@@ -84,10 +84,9 @@ export default {
       this.$refs.loginForm.validate(async valid=>{
         if(valid){
           let success = await this.login(this.user)
-          if(success){
+          if(success === true){
             this.$Message.success('You have been successfully logged in');
             let username = this.auth.loggedInUser.userName;
-            console.log(this.auth.jwt);
             this.$router.push(`/journalist/${username}/dashboard`)
           }else
             this.$Message.error('Username and password does not match');
