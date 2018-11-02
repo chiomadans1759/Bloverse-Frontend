@@ -32,7 +32,7 @@
         </Col>
         <Col :sm="11" :xs="24">
           <FormItem prop="phone" :error="errors.phone">
-              <Input class="my-input" v-model="applicant.phone" placeholder="Phone* e.g. +2348164488989 ">
+              <Input class="my-input" v-model="applicant.phone" placeholder="Digits after code here ">
                 <Select v-model="code" slot="prepend" style="width: 80px">
                   <Option class="country-dropdown"  v-for="(countryFlag, index) in countryFlags" :value="countryFlag.code" :key="index">
                       <img :src="countryFlag.imgURL" style="height:15px"/>    {{ countryFlag.code }}              
@@ -99,7 +99,7 @@ export default {
       isSuccess: false,
       serverResponse: {},
       errors: {},
-      code: '',
+      code: '+1',
       validateApplication: {
         firstName: [
           { required: true, message: 'Firstname cannot be blank', trigger: 'blur' }
@@ -155,9 +155,10 @@ export default {
   methods: {
     handleSubmit: function() {
       this.errors = {}; // reset error
-      console.log(this.applicant)
+      
       this.$refs.applyForm.validate(async (valid) => {
         if (valid) {
+          this.applicant.phone = this.code + '' + this.applicant.phone;
           let applied = await this.apply();
 
           if(applied === true) this.handleSuccess();
