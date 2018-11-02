@@ -8,8 +8,8 @@
         </router-link>
       </Col>
       <Col>
-        <Button type="primary"  shape="circle" ghost>Register</Button>
-        <Button type="primary" shape="circle" style="color: white">Log in</Button>
+       <router-link to="/journalist/apply" class="auth">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+       <router-link to="/journalist/login" class="auth1">Login</router-link>
       </Col>
     </Row>
  </nav>
@@ -41,6 +41,23 @@ Button{
   padding-right: 30px;
   padding-left: 30px;
 }
+ .auth {
+    background: #FFFFFF;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+    border: 1px solid #2f80ed;
+    color: #2f80ed;
+  }
+
+.auth:hover {
+  color: #2f80ed;
+}
+  .auth1 {
+    background: #2f80ed;
+    color: #FFFFFF;
+    padding: 13px 30px 13px 30px;
+    border-radius: 10px;
+  }
 .header-nav{
   padding: 15px 40px 10px 40px;
 }

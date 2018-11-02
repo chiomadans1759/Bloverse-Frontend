@@ -15,30 +15,28 @@
       <div>
         <p>Your post has been successfully published</p>
          <div class="posts">
-          <vue-goodshare-facebook
-            :page_url="url"
+          <!-- <vue-goodshare-facebook
+            page_url="https://bloverse-frontend.herokuapp.com/"
             has_icon
             style="font-size: 25px;"
           >
           </vue-goodshare-facebook>
           <vue-goodshare-twitter
-            :page_url="url"
+            page_url="https://bloverse-frontend.herokuapp.com/"
             has_icon
             style="font-size: 25px;"
           >
-          </vue-goodshare-twitter>
+          </vue-goodshare-twitter> -->
         </div>
-      </div>
-      <div slot="footer">
-        <router-link :to="`/journalist/${auth.loggedInUser.userName}/posts`" >Go to all Post <Icon type="md-arrow-round-forward" /></router-link>
       </div>
     </Modal>
     <Row type="flex" justify="space-between">
       <Col span="13" id="create-post">
         <Row  type="flex"  justify="space-between">
           <Col :sm="11">
-            <Select v-model="post.category" placeholder="Choose Category" :disabled="isTravel">
+            <Select v-model="post.category" placeholder="Choose Category" disabled>
               <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
+              <!--<Option v-for="item in general.categories" :value="item.id" :key="item.id" disabled>{{item.name}}</Option> -->
             </Select>
           </Col>
           <Col :sm="11">
@@ -47,8 +45,7 @@
             </Select>
           </Col>
         </Row>
-        
-        <Card class="key-points" v-if="isTravel">
+        <Card class="key-points">
               <input
               v-model="post.location"
               ref="autocomplete" 
@@ -61,17 +58,13 @@
            <Option  v-for="item in deviceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
           </Select>
         </Card>
-        <Card class="keypoints" v-else>
-          <Input placeholder="Key point one" v-model="post.keyPoints[0]" size="large"></Input>
-          <Input placeholder="Key point two" v-model="post.keyPoints[1]" size="large"></Input>
-          <Input placeholder="Key point three" v-model="post.keyPoints[2]" size="large"></Input>
-          
-        </Card>
+
         <Input placeholder="Heading" v-model="post.title" size="large"></Input>
+        
 
         <DisplayImage v-model="post.imageUrl" height="200px" width="50%" :can-edit="true" />
 
-        <vue-editor v-model="post.body" style="background: white;"></vue-editor>
+        <vue-editor v-model="post.body" style="background: white; margin-top: 20px;"></vue-editor>
 
         <br />
 
@@ -83,7 +76,7 @@
             </Button>
           </Col>
           <Col>
-            <Button id="btn-publish" :disabled="post.is_published" @click="handleProcessPost(true)">Publish</Button>
+            <Button id="btn-publish" :disabled="post.isPublished" @click="handleProcessPost(true)">Publish</Button>
           </Col>
         </Row>
 
@@ -92,9 +85,10 @@
       <Col span="10">
         <Card id="display-post">
           <h2 id="title">{{post.title}}</h2>
-          <DisplayImage :value="post.imageUrl" height="200px" width="100%" :can-edit="false" />
+          <img :src="post.imageUrl" id="image"  />
           <p v-html="post.body" id="body">
           </p>
+
         </Card>
       </Col>
     </Row>
@@ -106,68 +100,66 @@
   import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker } from 'iview';
   import { mapState, mapActions, mapMutations } from 'vuex'
   import { VueEditor } from "vue2-editor";
-  import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
-  import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
-
+  // import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
+  // import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
   import DisplayImage from './DisplayImage';
 
   export default {
     components: {
-      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor, DisplayImage, DatePicker
+      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker, VueEditor, DisplayImage
     },
-    props: ['isTravel'],
     data: function(){
       return {
-        publishModal: false,
-        isNewImage: false,
-        deviceList: [
-            {
-                value: 'IPhone',
-                label: 'IPhone'
-            },
-            {
-                value: 'Samsung',
-                label: 'Samsung'
-            },
-            {
-                value: 'Techno',
-                label: 'Techno'
-            },
-            {
-                value: 'Huawei',
-                label: 'Huawei'
-            },
-            {
-                value: 'Infinix',
-                label: 'Infinix'
-            },
-            {
-                value: 'Gionee',
-                label: 'Gionee'
-            },
-             {
-                value: 'Nokia',
-                label: 'Nokia'
-            },
-            {
-                value: 'Huawei',
-                label: 'Huawei'
-            },
-            {
+         publishModal: false,
+         isNewImage: false,
+                deviceList: [
+                    {
+                        value: 'IPhone',
+                        label: 'IPhone'
+                    },
+                    {
+                        value: 'Samsung',
+                        label: 'Samsung'
+                    },
+                    {
+                        value: 'Techno',
+                        label: 'Techno'
+                    },
+                    {
+                        value: 'Huawei',
+                        label: 'Huawei'
+                    },
+                    {
+                        value: 'Infinix',
+                        label: 'Infinix'
+                    },
+                    {
+                        value: 'Gionee',
+                        label: 'Gionee'
+                    },
+                    {
+                        value: 'Nokia',
+                        label: 'Nokia'
+                    },
+                    {
+                        value: 'Huawei',
+                        label: 'Huawei'
+                    },
+                    {
 
-                value: 'ZTE',
-                label: 'ZTE'
-            },
-            {
-                value: 'Lenovo',
-                label: 'Lenovo'
-            },
-            {
-                value: 'LG',
-                label: 'LG'
-            }
+                        value: 'ZTE',
+                        label: 'ZTE'
+                    },
+                    {
+                        value: 'Lenovo',
+                        label: 'Lenovo'
+                    },
+                    {
+                        value: 'LG',
+                        label: 'LG'
+                    }
 
-        ],
+                ], 
       };
       
     },
@@ -180,14 +172,14 @@
           this.$store.commit('setPost', props);
         }
       },
-      url(){
-        return `https://bloverse-frontend.herokuapp.com/posts/${this.post.slug}`;
-      },
 
       ...mapState([
         'general',
         'auth',
-      ])
+      ]),
+      url() {
+        
+      }
     },
     methods: {
       ...mapActions([
@@ -214,17 +206,14 @@
       }
     },
     mounted(){
-      if(this.isTravel){
-          this.setPost({category: 7, country: this.auth.loggedInUser.country.id}),
+      this.setPost({category: 7, country: this.auth.loggedInUser.country.id}),
 
-          this.autocomplete = new google.maps.places.Autocomplete(
-            (this.$refs.autocomplete),
-              {types: ['geocode']}
-          );
-      }else{
-        this.setPost({category: this.auth.loggedInUser.category.id, country: this.auth.loggedInUser.country.id})
-      }
-    }
+        this.autocomplete = new google.maps.places.Autocomplete(
+        (this.$refs.autocomplete),
+          {types: ['geocode']}
+    );
+  },
+    
 
         /*let { data, status } = await this.createOrUpdatePost();
         status = status === 403 ? 401 : status; //Convert 403 response error to 401;
@@ -313,6 +302,7 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 120vh;
+    margin-bottom: 30px;
   }
 
   #display-post #image {
@@ -347,6 +337,9 @@
     font-weight: bold;
     line-height: 21px
   }
+  .rows {
+    padding:14px;
+  }
 
   #btn-draft {
     background-color: white;
@@ -358,18 +351,45 @@
     color: white;
   }
 
+  #keypoint {
+    margin-bottom:25px;
+  }
+
   .red-border {
     border: 1px solid red;
   }
 
 
-  .keypoints .ivu-input-wrapper {
+  .key-points .ivu-input-wrapper {
     margin: .5rem 0;
   }
+
+  .key-points {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 35vh;
+  }
+
+  .image {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
   .posts 
   {
     position: relative;
   }
+
+  .search-location {
+    width: 100%;
+    margin-bottom:25px;
+    height: 30px;
+    color: black;
+    border: 1px solid #DCDCDC;
+    border-radius: 2px;
+    padding-left: 9px;
+    font-size: 13px;
+}
 </style>
 
 

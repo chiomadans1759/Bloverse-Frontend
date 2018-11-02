@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <h2 v-if="loading">Loading...</h2>
-    <transition v-else name="fade" mode="out-in">
-      <router-view />
-    </transition>
+    <LoadingIcon v-if="loading" />
+    <router-view v-else />
   </div>
 </template>
 
 <script>
   import { mapActions } from 'vuex'
+  import LoadingIcon from './components/Loading';
   export default {
     name: 'app',
+    components: { LoadingIcon },
     data(){
       return {
         loading: true
@@ -21,16 +21,17 @@
         'setGeneralData'
       ])
     },
-    async mounted(){
-      await this.setGeneralData();
-      this.loading = false;
+    async created(){
+      let loaded = await this.setGeneralData();
+      this.loading = !loaded;
+      //this.loading = false;
     }
   }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', 'Roboto', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -38,5 +39,8 @@
 
 :root {
   --primary: #2F80ED;
+}
+body{
+  margin: 0px;
 }
 </style>

@@ -1,22 +1,20 @@
 <template>
   <Header id="header">
+    <Icon @click.native="handleIconClick" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
     <Row id="items-wrapper" type="flex" justify="space-between" align="middle">
       <Col><Icon type="navicon-round" color="#E0E0E0"></Icon></Col>
-      <Col span="12"><Input icon="ios-search" placeholder="Search"></Input></Col>
-      <Col><Icon type="android-notifications-none" color="#BDBDBD"></Icon></Col>
+      <Col></Col>
       <Col>
-        
-        <Avatar icon="person" /> <span>Jackman Welsh</span>
+      <Icon type="ios-notifications-outline" style="font-size: 30px; color: grey; margin-right: 90px;"></Icon>
+        <Avatar icon="person" /> &nbsp; <span>{{name}}</span> &nbsp;
         <Dropdown>
           <Icon type="md-arrow-dropdown" />
           <DropdownMenu slot="list">
-            <DropdownItem >驴打滚</DropdownItem>
-            <DropdownItem>炸酱面</DropdownItem>
-            <DropdownItem disabled>豆汁儿</DropdownItem>
-            <DropdownItem>冰糖葫芦</DropdownItem>
-            <DropdownItem divided @click.native="logout">Log out</DropdownItem>
+            <DropdownItem >Profile</DropdownItem>
+            <DropdownItem divided @click.native="logOut">Log out</DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        &nbsp;
       </Col>
     </Row> 
   </Header>
@@ -25,18 +23,37 @@
 
 <script>
   import { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem } from 'iview';
-  import { mapMutations } from 'vuex'
+  import { mapMutations, mapState, mapActions } from 'vuex'
   export default {
     components: { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem },
+    data(){
+      return {
+        collapsed: false
+      }
+    },
+    computed: {
+      ...mapState(['auth']),
+      name(){
+        let { firstName, lastName } = this.auth.loggedInUser; 
+        return firstName + ' ' +  lastName;
+      }
+    },
     methods: {
-      logout: function(){
-        /*this.clearSession();
-        localStorage.clear();*/
-        this.$router.push('/journalist')
+      ...mapActions([
+        'clearSession'
+      ]),
+      logOut(){
+        if(this.clearSession())
+          this.$router.push('/journalist/login');
       },
+      handleIconClick(){
+        this.collapsed = !this.collapsed
+        this.$emit('collapsed', this.collapsed)
+      }
 
       //...mapMutations(['clearSession']),
     }
+     
   }
 </script>
 
@@ -49,10 +66,12 @@
     display: flex;
     align-items: center;
     padding-left: 1rem;
-    padding-right: 1rem;
   }
 
   #header #items-wrapper {
     flex: 1 1 auto;
   }
+    .rotateIcon{
+        transform: rotate(-90deg);
+    }
 </style>

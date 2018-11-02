@@ -1,34 +1,73 @@
-import Api from '../src/Api'
+import Api from '../src/utils/Api'
 
 export default {
   state: {
     categories: null,
     countries: null,
     applicants: null,
+    publishedPosts: [],
+    currentPost: {},
+    journalists: [],
+    loading: false,
+    metrics: {}
   },
   actions: {
     async setGeneralData ({commit}) {
       let response, categories, countries;
-
+      
       response = await Api.get('categories/');
-      categories = response.data && response.data.categories;
-
-      response = await Api.get('countries/');
-      countries = response.data && response.data.countries;
-
-      commit('setCountries', countries);
-      commit('setCategories', categories);
+      
+      switch(response.statusCode){
+        case 200:
+          categories = response.data && response.data.categories;
+          response = await Api.get('countries/');
+          countries = response.data && response.data.countries;
+          commit('setCountries', countries);
+          commit('setCategories', categories);
+          return true;
+      }
+      return false;
       //commit('setState', { categories, countries });
+    },
+    async getGeneralMetrics({commit}){
+      const response = await Api.get('metrics/general/');
+      let { statusCode, data } = response;
+      commit('setMetrics', data);
     },
     async getAllApplicants({commit}){
       let response, applicants;
-
+      commit('setLoading', true);
       response = await Api.get('applicants/', true);
-      commit('setApplicants', response.data.applicants);
+      switch(response.statusCode){
+        case 200:
+          //removes admin from applicants
+          let onlyApplicants = response.data.applicants.filter(applicant=> applicant.id !== 1);
+
+          commit('setApplicants', onlyApplicants);
+          commit('setLoading', false);
+          return true;
+      }
+
+      return false;
+    },
+
+    async getAllJournalists({commit}){
+      let response;
+      commit('setLoading', true);
+      response = await Api.get('journalists/');
+      switch(response.statusCode){
+        case 200:
+          commit('setJournalists', response.data.journalists);
+          commit('setLoading', false);
+          return true;
+      }
+
+      return false;
     },
     async rejectAcceptApplicants({dispatch}, applicants){
       let processedUsers = [];
       applicants.forEach(async applicant=> {
+
         if(applicant.status === 1)
           return;
         const statusUpdated = await dispatch('processApplicant', applicant);
@@ -43,6 +82,18 @@ export default {
       let { id, status } = applicant;
       let response = await Api.put('applicants/'+id +'/', { status }, true);
       return response.statusCode === 200;
+    },
+    async getAllPublishedPosts({commit}){
+      commit('setLoading', true);
+      let response = await Api.get('posts?is_published=true')     
+      commit('setPublishedPosts', response.data.posts);
+      commit('setLoading', false);
+    },
+    async getPostBySlug({commit}, {slug}){
+      commit('setLoading', true);
+      let response = await Api.get(`posts?slug=${slug}`)     
+      commit('setCurrentPost', response.data.posts[0]);
+      commit('setLoading', false);
     }
   },
   mutations: {
@@ -58,6 +109,21 @@ export default {
     },
     setApplicants(state, applicants){
       state.applicants = applicants;
+    },
+    setPublishedPosts(state, posts){
+      state.publishedPosts = posts;
+    },
+    setJournalists(state, journalists){
+      state.journalists = journalists;
+    },
+    setLoading(state, loading){
+      state.loading = loading;
+    },
+    setCurrentPost(state, post){
+      state.currentPost = post;
+    },
+    setMetrics(state, metrics){
+      state.metrics = metrics
     }
   },
   getters: {
@@ -72,6 +138,12 @@ export default {
     rejectedApplicants(state){
       // Filter rejected applicants
       return state.applicants.filter(applicant=> applicant.status === 3);
+    },
+    journalistCount(state){
+      return state.journalists.length;
+    },
+    postCount (state) {
+      return state.publishedPosts.length;
     }
   }
 }

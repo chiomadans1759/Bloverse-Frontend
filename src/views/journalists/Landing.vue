@@ -1,5 +1,4 @@
 <template>
-  <WithFooter>
     <div class="layout">
       <Layout>
         <Content>
@@ -11,8 +10,8 @@
                   </Col>
                   <Col class="header-button">
                     <!--<Button ghost shape="circle"  @click="displayModal=true">Sign-in</Button>-->
-                    <router-link to="/journalist/apply" class="auth">Register</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <router-link to="/journalist/login" class="auth">Login</router-link>
+                    <router-link to="/journalist/apply" class="auth">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <router-link to="/journalist/login" class="auth1">Login</router-link>
 
                     <!--<Button class="btn register" type="default" shape="circle" @click="displayModal=true" ghost>Register</Button>
                     <Button class="btn login" type="primary" shape="circle"  @click="displayModal=true">Login</Button>-->
@@ -30,29 +29,30 @@
                 <h2> Get started on Bloverse</h2>
                 <p> Bloverse was created with you in mind. Have you ever thought about creating a news blog but then balked at the thought of the effort required?. Well I have good news! At bloverse we leverage state of the art AI techniques to make your life easier and help you on the journey to being an elite content creator. With our journalist ranking system you can see how you rank compared to others in your circle. The ultimate objective of bloverse is to create a platform with high quality content creators based on feedback from an engaged community. 
                 Excited? You should be! #PressPlay #JoinTheBloverse</p>
-                <Button class="know" type="primary" >Get Started </Button>
+                <Button class="know" type="primary" ><router-link to="/journalist/apply" id="getStarted">Get Started</router-link> </Button>
             </Col>
-            <Col class="section-description" :sm="8">
-                    <iframe width="400" height="200"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">                                        </iframe>
+            <Col class="section-description" :sm="10">
+                <iframe width="400" height="400"
+                  src="https://www.youtube.com/embed/EjRM4DMdnGw">                           
+               </iframe>
             </Col>
           </Row> 
           <Row class="section-2" type="flex" justify="space-around">
             <Col :sm="7" class="section-2-description">
               <Icon class="section-2-icon" type="ios-paper"></Icon>
-              <h2>53082</h2>
-              <p> Article have been publish </p>
+              <h2>{{general.metrics.publishedPost}}</h2>
+              <p> Article have been published</p>
             </Col>
             
             <Col :sm="7" class="section-2-description">
               <Icon class="section-2-icon" type="ios-create" md="md-create"></Icon>
-              <h2>154</h2>
+              <h2>{{general.metrics.journalists}}</h2>
               <p> Content providers have joined </p>
             </Col>
 
             <Col :sm="7" class="section-2-description">
                 <Icon class="section-2-icon" type="ios-people"></Icon>
-                <h2>1785698</h2>
+                <h2>{{general.metrics.views.total}}</h2>
                 <p>Unique visitors have accessed the site </p>
             </Col>
           </Row>
@@ -74,43 +74,43 @@
                                     <p> description</p>
                             </i-Col>
                         </Row>   -->
-          <Row class="section-4" type="flex" justify="space-around" >
+          <!-- <Row class="section-4" type="flex" justify="space-around" >
             <Col class="map-section" span="20">
               <span class="underline"> Active Regions</span>
               <div class="imap">
                   <div ref="bubbles" style=" margin-top: -70px; width: 100%; height: 100%;"></div>
               </div>  
             </Col>
-          </Row>
+          </Row> -->
         </Content>
       </Layout>
     </div>
-  </WithFooter>
+  <!-- </WithFooter> -->
   
 </template>
 
 <script>
 import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
-import WithFooter from '../../layouts/WithFooter';
-import {page} from 'vue-analytics';
+// import WithFooter from '../../layouts/WithFooter';
+import { mapState, mapActions, mapGetters } from 'vuex';
+import { page } from 'vue-analytics';
 
 
 export default {
-  components: { Button, Modal, Layout, Icon, Row, Content, Col, WithFooter },
-
-  data: function() {
-    return {
-      displayModal: false,
-      signingUp: false,
-      processing: false
-    };
+  components: { Button, Modal, Layout, Icon, Row, Content, Col},
+  computed: {
+    ...mapState([
+      'general'
+    ])
   },
   methods: {
-    // show: function () {
-    //     this.visible = true;
-    // }
-  }, 
-  mounted:function(){
+    ...mapActions([
+      'getGeneralMetrics'
+    ])
+  },
+  mounted:
+    async function(){
+    await this.getGeneralMetrics();
     let mapp = this.$refs.bubbles;
     var bubble_map = new Datamap({
       element: mapp,
@@ -502,7 +502,7 @@ export default {
 
   iframe {
     width: 100%;
-    height: 17rem;
+    height: 27rem;
     border: none;
   }
 
@@ -510,7 +510,7 @@ export default {
     padding: 20px;
     text-align: center;
     height: 100%;
-    /* border: 1px solid green; */
+    height: 100%;
   }
   .section-2 {
     color: white;
@@ -562,6 +562,20 @@ export default {
     background: #2f80ed;
   }
 
+  .auth {
+    background: transparent;
+    padding: 5px 30px 5px 30px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+  }
+
+  .auth1 {
+    background: #2f80ed;
+    color: #FFFFFF;
+    padding: 5px 30px 5px 30px;
+    border-radius: 20px;
+    border: 2px solid #2f80ed;
+  }
   .section-3-header {
     width: 100%;
     margin-top: 40px;
@@ -597,6 +611,10 @@ export default {
     background: white;
     border-radius: 4px;
     margin-top: 50px;
+  }
+  
+  #getStarted {
+    color: #fff;
   }
 
 </style>

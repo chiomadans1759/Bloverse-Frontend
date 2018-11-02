@@ -11,7 +11,7 @@
       </Modal>
     <h1 id="page-title">Apply</h1> 
     <Form ref="applyForm" :model="applicant" class="auth-form" :rules="validateApplication">
-      <h3 id="form-instruction">Fill the form below to apply as a journalist on Bloverse</h3>
+      <h3 id="form-instruction">Fill the form below to apply as a content provider on Bloverse</h3>
       <Row type="flex" justify="space-between">
         <Col :sm="11" :xs="24">
           <FormItem prop="firstName" :error="errors.firstName">
@@ -78,7 +78,7 @@
       </FormItem>
       <Button class="my-btn btn-secondary" long @click.prevent="handleSubmit">SUBMIT</Button>
         <div id="login-here">already have an account?<br> 
-          <router-link id="login-link" to=""> Log in here </router-link>
+          <router-link id="login-link" to="login"> Log in here </router-link>
         </div>
     </Form>
    </Col>

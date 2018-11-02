@@ -33,7 +33,7 @@
   import {Row, Col, Button, Input, Form, FormItem, Alert } from 'iview';
   import BaseAuthentication from '../../layouts/BaseAuthentication';
   import Hashids from 'hashids';
-  import { mapActions, mapState } from 'vuex'
+  import { mapActions, mapState, mapMutations } from 'vuex'
 
 
   let hashids = new Hashids("SG.AKa2vomKT26KSV9yNHf-HQ.e-", 16);
@@ -74,8 +74,9 @@
             if(hadRegistered)
               this.alert.type = 'info';
             else{
+              this.setShouldRegister(true);
               this.alert.type = 'success';
-              this.$router.push('/journalist/register')
+              this.$router.push('register')
             }             
             this.alert.show = true;
           }  
@@ -91,6 +92,7 @@
         'getApplicantById',
         'applicantHasRegistered'
       ]),
+      ...mapMutations(['setShouldRegister'])
     },
   }
 </script>

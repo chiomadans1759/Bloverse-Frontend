@@ -2,7 +2,7 @@
   <BaseAuthentication>
 <Col :sm="18" :md="10" :xs="22" class="auth-section">
   <h1 id="page-title">Sign in</h1>
-  <Row type="flex" justify="space-between" id="btn-social-grp">
+  <!-- <Row type="flex" justify="space-between" id="btn-social-grp">
     <Col :sm="11" :xs="24">
       <Button class="btn-social my-btn" id="btn-google" long> 
         <Icon id="google-icon" type=logo-google />
@@ -19,20 +19,20 @@
       <Button class="btn-social my-btn" id="btn-twitter" long>Twitter</Button>
     </Col>
   </Row>
-  <p class="p-or">OR</p>
+  <p class="p-or">OR</p> -->
   <Form ref="loginForm" class="auth-form login-form" :model="user" :rules="loginValidate">
     <FormItem prop="email">
       <Input class="my-input" v-model="user.email" size="large" placeholder="E-mail*" />
     </FormItem>
     <FormItem prop="password">
-      <Input class="my-input" v-model="user.password" placeholder="Password*"/>
+      <Input class="my-input" type="password" v-model="user.password" placeholder="Password*"/>
     </FormItem>
     <FormItem>
       <Button class="my-btn btn-main" @click="handleLogin" long>LOG IN</Button>
     </FormItem>
   </Form>
   
-  <div id="register-here">Not Yet on Blovere? <br> 
+  <div id="register-here">Not Yet on Bloverse? <br> 
     <router-link id="login-link" to="apply"> Register Here </router-link>
   </div>
 </Col>
@@ -45,8 +45,12 @@
 
 
 <script>
+  
+  import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
+  import { mapActions, mapState } from 'vuex';
+
+
   import BaseAuthentication from '../../layouts/BaseAuthentication';
-import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
 export default {
   components: { Button, Row, Col, Icon, Input, Form, FormItem, BaseAuthentication },
   data: function(){
@@ -70,16 +74,31 @@ export default {
 
     }
   },
+  computed: {
+    ...mapState([
+      'auth'
+    ])
+  },
   methods: {
     handleLogin: function(){
-      this.$refs.loginForm.validate(valid=>{
+      this.$refs.loginForm.validate(async valid=>{
         if(valid){
-          this.$router.push('/journalist/holuborhee/dashboard')
+          let success = await this.login(this.user)
+          if(success){
+            this.$Message.success('You have been successfully logged in');
+            let username = this.auth.loggedInUser.userName;
+            console.log(this.auth.jwt);
+            this.$router.push(`/journalist/${username}/dashboard`)
+          }else
+            this.$Message.error('Username and password does not match');
         }else{
           this.$Message.error('Some fields were not filled');
         }
       })
-    }
+    },
+    ...mapActions([
+      'login'
+    ])
   }
 
 }
@@ -94,6 +113,7 @@ export default {
     flex-direction: row;
     font-size: 18px;
     margin-top: 12px;
+    text-align: center;
   }
 
   #register-link{

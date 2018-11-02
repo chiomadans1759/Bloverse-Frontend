@@ -1,7 +1,7 @@
 import axios from 'axios';
-import store from '../stores';
+import store from '../../stores';
 
-let BASE_URL = 'https://bloverse-api.herokuapp.com/api/v1/'
+let BASE_URL = 'https://api.bloverse.com/v1/'
 class Api {
   static async get(url, requireAuth=false) {
     let response, statusCode, statusText, data, message, config;
@@ -24,7 +24,7 @@ class Api {
       
     }
 
-    return { statusCode, statusText, data }
+    return { statusCode, statusText, data, message }
     
   }
 
@@ -32,14 +32,15 @@ class Api {
   static async post(url, payload, requireAuth=false) {
     let response, statusCode, statusText, data, message;
     try {
-      response = await axios.post(BASE_URL + url, payload)
+      let config = { headers: {'Authorization': `Token ${store.state.auth.jwt}`}};
+      response = requireAuth ? await axios.post(BASE_URL + url, payload, config) : await axios.post(BASE_URL + url, payload)
       statusCode = response.status;
       data = response.data.data;
       statusText = response.data.status;
     }catch(error){
       if(error.response){
+        console.log(error.response)
         statusCode = error.response.status;
-
         statusText = error.response.data.status;
         data = error.response.data.data;
         message = error.response.data.message;
@@ -49,7 +50,7 @@ class Api {
       
     }
 
-    return { statusCode, statusText, data }
+    return { statusCode, statusText, data, message }
     
   }
 
@@ -73,7 +74,7 @@ class Api {
       
     }
 
-    return { statusCode, statusText, data }
+    return { statusCode, statusText, data, message }
   }
 
 }

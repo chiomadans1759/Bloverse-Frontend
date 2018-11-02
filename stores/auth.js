@@ -1,20 +1,20 @@
-import Api from '../src/Api';
+import Api from '../src/utils/Api';
 
 export default {
   state: {
     jwt: null,
-    newUser: {},
+    newUser: { imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg' },
     applicant: { articles: [] },
-    loggedInUser: null
+    loggedInUser: null,
+    shouldRegister: false
   },
   actions: {
-    async login ({commit}, params) {
+    async login ({commit, state}, params) {
       let response = await Api.post('authentication/', params)
       switch(response.statusCode){
         case 201:
           commit('setJwt', response.data.token);
           commit('setLoggedInUser', response.data.user)
-          //localStorage.setItem('admin', JSON.stringify(data.data));
           return true;
         default:
           return { errors: response.data };
@@ -47,6 +47,20 @@ export default {
       let response = await Api.get('journalists?applicant='+state.applicant.id)
       return response.data.journalists.length > 0;
     },
+    async registerJournalist({state}){
+      let response = await Api.post('journalists/', state.newUser);
+      switch(response.statusCode){
+        case 201:
+          return true;
+        default:
+          return { errors: response.data };
+      }
+    },
+    clearSession({commit}) {
+      commit('setJwt', null);
+      commit('setLoggedInUser', null);
+      return true;
+    },
   },
   mutations: {
     setApplicant(state, props){
@@ -60,9 +74,38 @@ export default {
     },
     setJwt(state, jwt){
       state.jwt = jwt
+      if(jwt) 
+        localStorage.setItem('jwt', jwt);
+      else
+        localStorage.removeItem('jwt');
     },
     setLoggedInUser(state, user){
       state.loggedInUser = user;
+      if(user)
+        localStorage.setItem('loggedInUser', JSON.stringify(user));
+      else
+        localStorage.removeItem('loggedInUser');
+    },
+    setUsername(state){
+      state.newUser.username = `${state.newUser.firstName}.${state.newUser.lastName}`.toLowerCase();
+    },
+    setShouldRegister(state, value){
+      state.shouldRegister = value;
+      localStorage.setItem('shouldRegister', value);
+    }
+  },
+  getters: {
+    isAuthenticated(state){
+      return state.loggedInUser !== null;
+    },
+    isAnAdmin(state){
+      return state.loggedInUser.type === 'Admin';
+    },
+    isAJournalist(state){
+      return state.loggedInUser.type === 'journalist';
+    },
+    allowedToRegister(state){
+      return state.shouldRegister;
     }
   }
 }

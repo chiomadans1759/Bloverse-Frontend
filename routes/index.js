@@ -1,16 +1,12 @@
 import Vue from 'vue';
 
 
-
-
 import BaseDashBoard from '../src/layouts/BaseDashBoard.vue';
 import MyProfile from '../src/views/journalists/MyProfile.vue';
 import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
 import BasePost from '../src/layouts/BlankBase.vue';
 import MyPosts from '../src/views/journalists/MyPosts.vue';
 import CreatePost from '../src/views/journalists/CreatePost.vue';
-
-
 
 import BaseJournalist from '../src/layouts/BlankBase.vue';
 import JournalistLanding from '../src/views/journalists/Landing.vue';
@@ -29,42 +25,60 @@ import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
 import BaseAdmin from '../src/layouts/BlankBase.vue';
 
-
-import Feeds from '../src/views/DisplayFeeds.vue';
+import BaseFeeds from '../src/layouts/BaseFeeds.vue';
+import PostFeeds from '../src/views/PostFeeds.vue';
+import PostDisplay from '../src/views/PostDisplay.vue';
 
 const routes = [
-  { path: '/', component: Feeds },
+  { path: '/', component: BaseFeeds,
+    children: [
+      //{ path: '', component: PostFeeds },
+      { path: '', redirect: '/journalist' },
+      //{ path: 'posts', redirect: '/' },
+      //{ path: 'posts/:slug', component: PostDisplay }
+    ]
+  },
   {
     path: '/journalist', component: BaseJournalist,
     children: [
       { path: '', component: JournalistLanding },
       { path: 'apply', component: JournalistApply },
       { path: 'login', component: JournalistSignIn },
-      { path: 'register', component: JournalistSetUp },
-      { path: 'setup', component: JournalistManualSetUp },
+      { path: 'register', component: JournalistSetUp, meta: { acceptedApplicant: true } },
+      { path: 'setup', component: JournalistManualSetUp, meta: { acceptedApplicant: true } },
       { path: 'verify', component: JournalistVerify },
-      { path: ':username', component: BaseDashBoard,
+      /*{ path: ':username', component: BaseDashBoard,
+        meta: {
+          journalist: true,
+          auth: true
+        },
         children: [
           { path: '', component: MyProfile },
           { path: 'dashboard', component: DashBoardHome },
           { path: 'posts', component: BasePost,
             children: [
               { path: '', component: MyPosts },
-              { path: 'create', component: CreatePost }
+              { path: 'create', component: CreatePost },
+              { path: ':slug/edit', component: CreatePost }
             ]
           }
         ]
-      },
+      },*/
     ]
   },
-  { path: '/faq/:person', component: FrequentlyAskedQuestions },
-  { path: '/rules/:person', component: HouseRules },
-  { path: '/guides', component: PublishGuide },
-  { path: '/ranking/:person', component: RankingSystem },
+  //{ path: '/faq/:person', component: FrequentlyAskedQuestions },
+  //{ path: '/rules/:person', component: HouseRules },
+  //{ path: '/guides', component: PublishGuide },
+  //{ path: '/ranking/:person', component: RankingSystem },
   { path: '/admin', component: BaseAdmin,
     children: [
       { path: '', redirect: 'dashboard' },
-      { path: 'dashboard', component: AdminHome },
+      { path: 'dashboard', component: AdminHome, 
+        meta: {
+          admin: true,
+          auth: true
+        }
+      },
       { path: 'login', component: AdminLogin }
     ]
   },

@@ -1,22 +1,40 @@
 <template>
-  <Card class="feed-card">
-    <img :src="imageUrl" />
-    <h2 id="category"><p>{{post.category.name}}</p></h2>
-    <h2 id="title"><p>{{post.title}}</p></h2>
-    <h2 id="summary"><p>{{post.body | summarize}}</p></h2>
-  </Card>
+  <router-link :to="`posts/${post.slug}`">
+  <div class="container">
+    <Card class="feed-card">
+      <div id="sectionWidth">
+        <Avatar icon="person" /> &nbsp; <span>John Doe <p style="float: right; margin-top: 5px;">3 hours ago</p></span>
+      </div>
+      <img :src="imageUrl" />
+      <h2 id="category"><p>{{category}}</p></h2>
+      <h2 id="title"><p>{{post.title}}</p></h2>
+      <footer type="flex" justify="space-around">
+        <Icon type="md-eye" /> {{post.views}}
+        <Icon type="md-text" style="margin-left: 15px;" /> 54
+       
+      </footer>
+    </Card>
+  </div>
+  </router-link>
 </template>
 
 <script >
-  import { Card } from 'iview';
+  import { Card, Avatar, Icon } from 'iview';
+  import { mapState } from 'vuex';
+
   export default {
     name: 'FeedCard',
     props: { post: Object},
-    components: { Card },
+    components: { Card, Avatar, Icon },
     computed: {
       imageUrl: function(){
         return this.post.image_url;
       },
+      ...mapState(['general']),
+      category(){
+        const postCategory = this.general.categories.find( category => category.id === this.post.category);
+        return postCategory.name;
+       }
     },
     filters: {
       summarize: function (value) {
@@ -28,21 +46,37 @@
 </script>
 
 <style scoped>
+
+.container {
+  margin: 30px;
+}
   
+  .feed-card {
+    color:#828282;
+    margin : 0 !important;
+   border: 2px solid rgb(236, 230, 230);
+   border-radius: 20px;
+   padding:10px
+  }
   .feed-card img{
     display: block;
     object-fit: cover;
     width: 100%;
-    height: 200px;
+    height: 195px;
     border: 1px block #ddd;
     cursor: pointer;
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
+    margin: 20px;
   }
 
   #category{
     margin-top: 20px;
     color: #2F80ED;
     text-align: center;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
 
   }
@@ -50,19 +84,17 @@
     margin-top: 15px;
     color: #828282;
     text-align: center;
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 500;
   }
 
-  #summary{
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-    text-align: justify;
-    font-size: 14px;
-    font-weight: 300;
-    color:#828282;
-    
+  #summary {
+    margin: 10px 40px;
+    font-size: 18px;
+  }
+  #sectionWidth {
+    height: 6vh;
+    margin: 5px;
   }
 </style>
 
@@ -70,8 +102,11 @@
 <style>
   .feed-card .ivu-card-body{
     height: 400px;
-    border: 1px solid #E0E0E0;
+ 
+    border-radius: 20px;
     padding: 0px;
+    width:100%;
+ 
 
   }
 </style>

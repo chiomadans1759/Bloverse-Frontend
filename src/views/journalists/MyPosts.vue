@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <Loading v-if="general.loading" message="Loading your posts" />
+  <div v-else>
    <Row type="flex" justify="end">
     <Col>
       <Icon :style="{ marginRight: '1rem'}" type="android-apps"></Icon>
@@ -8,47 +9,51 @@
       <Icon type="android-apps"></Icon>
     </Col>
   </Row>
-  <Row v-if="post" type="flex" justify="space-between">
-    <Col v-for="i in 10" :md="11" :key="i">
+  <Row type="flex" justify="space-between" v-if="showPosts">
+    <Col v-for="post in journalist.posts" :md="11" :key="post.id">
       <PostCard :post="post" />
     </Col>
   </Row>
-  <div v-else>
-    <h1>Loading Posts...</h1>
-  </div> 
+   <div v-else class="showposts">
+    <h2>This Place looks empty !</h2><br />
+    <router-link :to="`/journalist/${auth.loggedInUser.userName}/posts/create`" id="showbutton">Create Posts Here</router-link>
+    </div>
   </div>
 </template>
 
 
 <script>
   import { Row, Col, Icon } from 'iview';
-  import { mapState } from 'vuex'
+  import { mapState, mapActions } from 'vuex'
 
   import PostCard from '../../components/PostCard.vue';
+  import Loading from '../../components/Loading';
   export default {
-    components: { Row, Col, PostCard, Icon },
-    data: function(){
-      return {
-        posts: null,
-        post: { title: 'Lorem ipsum dolor sit amet, consectetur  ', body: 'Integer aliquam auctor facilisis. Donec egestas in turpis id rutrum. Ut eget ullamcorper lorem, quis rhoncus neque. Duis tincidunt sed urna ac tincidunt. Phasellus vitae tellus in lacus condimentum rhoncus. Phasellus a tincidunt massa, in dictum sapien. Vestibulum consequat quis odio ut vulputate. Donec in convallis turpis. Vivamus metus metus, viverra ut imperdiet in, consequat nec sem. In dapibus congue risus nec malesuada. In quis orci non tortor imperdiet rutrum. Phasellus purus ante, aliquam in semper nec, ultricies a tortor. Nullam sagittis ultrices purus eget pellentesque. In tempor dolor non nisi vulputate varius. Sed tortor augue, ullamcorper consequat lorem fringilla, vehicula bibendum dolor.', image_url: 'https://res.cloudinary.com/naera/image/upload/v1532594342/945_S_fuswub.png' } //this is dummy post for show
+    components: { Row, Col, PostCard, Icon, Loading },
+    computed: {
+      ...mapState([
+        'journalist',
+        'general',
+        'auth'
+      ]),
+
+      showPosts: function () {
+        return this.journalist.posts.length > 0
       }
     },
-    computed: {
-      // mix this into the outer object with the object spread operator
-      ...mapState([
-        'session',
-      ])
+    async created () {
+        // fetch the data when the view is created and the data is
+        // already being observed
+      await this.getMyPosts()
     },
-    mounted: async function(){
-      /*try {
-        let config = { headers: {'Authorization': `Token ${this.session.token}`}};
-        let response = await this.$http.get('/api/v1/users/posts/', config);
-        let { data, status } = response;
-        this.posts = data.data.posts;
-      }catch(error){
-        console.log(error.response);
-      }*/
-      
+    watch: {
+      // call again the method if the route changes
+      '$route': 'getMyPosts'
+    },
+    methods: {
+      ...mapActions([
+        'getMyPosts'
+      ])
     }
   }
 
@@ -57,6 +62,23 @@
 
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+.showposts{
+  text-align: center;
+  margin-top: 15%;
+}
 
+.showposts h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
+}
+
+.showposts #showbutton {
+  background: #1497C9;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
 
 </style>
