@@ -54,12 +54,15 @@
   .feed-card {
     color:#828282;
     margin : 0 !important;
+   border: 2px solid rgb(236, 230, 230);
+   border-radius: 20px;
+   padding:10px
   }
   .feed-card img{
     display: block;
     object-fit: cover;
     width: 100%;
-    height: 150px;
+    height: 195px;
     border: 1px block #ddd;
     cursor: pointer;
   }
@@ -73,7 +76,7 @@
     margin-top: 20px;
     color: #2F80ED;
     text-align: center;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 500;
 
   }
@@ -81,7 +84,7 @@
     margin-top: 15px;
     color: #828282;
     text-align: center;
-    font-size: 17px;
+    font-size: 23px;
     font-weight: 500;
   }
 
@@ -99,8 +102,11 @@
 <style>
   .feed-card .ivu-card-body{
     height: 400px;
-    border: 1px solid #E0E0E0;
+ 
+    border-radius: 20px;
     padding: 0px;
+    width:100%;
+ 
 
   }
 </style>
