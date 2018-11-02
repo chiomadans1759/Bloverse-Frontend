@@ -73,9 +73,9 @@
           </FormItem>
         </Col>
       </Row>
-      <FormItem prop="terms">
+      <!--<FormItem prop="terms">
         <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
-      </FormItem>
+      </FormItem>-->
       <Button class="my-btn btn-secondary" long @click.prevent="handleSubmit">SUBMIT</Button>
         <div id="login-here">already have an account?<br> 
           <router-link id="login-link" to="login"> Log in here </router-link>
@@ -131,11 +131,11 @@ export default {
         articles: [
           { required: true, type: 'array', min: 1, message: 'You must provide link to at least one post', trigger: 'blur' }, // BUG!!! Type URL cannot be used while type array is already in use
         ],
-        terms: [
+        /*terms: [
           {
             required: true, type: 'boolean', message: 'You have not agreed to our terms', trigger: 'change'
           }
-        ]
+        ]*/
       },
     }
   },
