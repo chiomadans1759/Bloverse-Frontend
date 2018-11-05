@@ -47,7 +47,7 @@ const routes = [
       { path: 'register', component: JournalistSetUp, meta: { acceptedApplicant: true } },
       { path: 'setup', component: JournalistManualSetUp, meta: { acceptedApplicant: true } },
       { path: 'verify', component: JournalistVerify },
-      /*{ path: ':username', component: BaseDashBoard,
+      { path: ':username', component: BaseDashBoard,
         meta: {
           journalist: true,
           auth: true
@@ -63,7 +63,7 @@ const routes = [
             ]
           }
         ]
-      },*/
+      },
     ]
   },
   //{ path: '/faq/:person', component: FrequentlyAskedQuestions },
