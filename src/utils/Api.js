@@ -1,7 +1,7 @@
 import axios from 'axios';
 import store from '../../stores';
 
-let BASE_URL = 'https://api.bloverse.com/v1/'
+let BASE_URL = process.env.VUE_APP_API
 class Api {
   static async get(url, requireAuth=false) {
     let response, statusCode, statusText, data, message, config;
