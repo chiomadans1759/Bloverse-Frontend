@@ -10,8 +10,8 @@
                   </Col>
                   <Col class="header-button">
                     <!--<Button ghost shape="circle"  @click="displayModal=true">Sign-in</Button>-->
-                    <router-link to="/journalist/apply" class="auth">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <router-link to="/journalist/login" class="auth1">Login</router-link>
+                    <router-link to="/creators/apply" class="auth">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <router-link to="/creators/login" class="auth1">Login</router-link>
 
                     <!--<Button class="btn register" type="default" shape="circle" @click="displayModal=true" ghost>Register</Button>
                     <Button class="btn login" type="primary" shape="circle"  @click="displayModal=true">Login</Button>-->
@@ -29,7 +29,7 @@
                 <h2> Get started on Bloverse</h2>
                 <p> Bloverse was created with you in mind. Have you ever thought about creating a news blog but then balked at the thought of the effort required?. Well I have good news! At bloverse we leverage state of the art AI techniques to make your life easier and help you on the journey to being an elite content creator. With our journalist ranking system you can see how you rank compared to others in your circle. The ultimate objective of bloverse is to create a platform with high quality content creators based on feedback from an engaged community. 
                 Excited? You should be! #PressPlay #JoinTheBloverse</p>
-                <Button class="know" type="primary" ><router-link to="/journalist/apply" id="getStarted">Get Started</router-link> </Button>
+                <Button class="know" type="primary" ><router-link to="/creators/apply" id="getStarted">Get Started</router-link> </Button>
             </Col>
             <Col class="section-description" :sm="10">
                 <iframe width="400" height="400"
