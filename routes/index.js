@@ -33,13 +33,13 @@ const routes = [
   { path: '/', component: BaseFeeds,
     children: [
       //{ path: '', component: PostFeeds },
-      { path: '', redirect: '/journalist' },
+      { path: '', redirect: '/creators' },
       //{ path: 'posts', redirect: '/' },
       //{ path: 'posts/:slug', component: PostDisplay }
     ]
   },
   {
-    path: '/journalist', component: BaseJournalist,
+    path: '/creators', component: BaseJournalist,
     children: [
       { path: '', component: JournalistLanding },
       { path: 'apply', component: JournalistApply },
