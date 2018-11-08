@@ -1,15 +1,12 @@
 <template>
   <nav>
-    <Row type="flex" justify="space-between" class="header-nav">
-      <Col>
-        <router-link to="/">
-          <img src="https://res.cloudinary.com/naera/image/upload/v1532035571/bloverse/b_blue.png" style="heigh:15px">
-          <span style="height: 30px; font-size: 24px; font-weight: bold">BLOVERSE</span>
-        </router-link>
+    <Row class="header-row" type="flex" justify="space-between" align="middle">
+      <Col class="brand">
+        <router-link to="/"><img class="logo" src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" ></router-link>
       </Col>
-      <Col>
-       <router-link to="/journalist/apply" class="auth">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-       <router-link to="/journalist/login" class="auth1">Login</router-link>
+      <Col class="header-button">
+        <router-link to="/creators/apply" class="auth register">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+        <router-link to="/creators/login" class="auth login">Login</router-link>
       </Col>
     </Row>
  </nav>
@@ -17,47 +14,50 @@
 <script >
  import { Icon, Row, Col, Button } from 'iview';
   export default {
-  	components: { Icon, Row, Col, Button },
-  	data () {
-            return {
-            }
-  	},
-    methods: {
-        }
-
-    }
+  	components: { Icon, Row, Col, Button }
+  }
 </script>
 
 
 <style scoped>
-img{
-      width: 24px;
-      /* padding-left: 20px; */
+
+.header-row{
+  width: 90%;
+  margin: 0 auto;
 }
 
-Button{
-  color: blue;
-  margin:2px 20px 0 20px ;
-  padding-right: 30px;
-  padding-left: 30px;
+.logo {
+height:90px;
+margin-left: 2em;
 }
- .auth {
-    background: #FFFFFF;
-    padding: 10px 30px 10px 30px;
-    border-radius: 10px;
-    border: 1px solid #2f80ed;
-    color: #2f80ed;
-  }
 
-.auth:hover {
+
+.register {
+  border: 1px solid #fefefe;
+  margin-right: 2em;
   color: #2f80ed;
 }
-  .auth1 {
-    background: #2f80ed;
-    color: #FFFFFF;
-    padding: 13px 30px 13px 30px;
-    border-radius: 10px;
+
+.register:hover {
+  border: 1px solid #2f80ed;
+}
+
+.login {
+  margin-left: 2em;
+  border: 1px solid #2f80ed;
+  background: #2f80ed;
+  color: white;
+}
+
+
+
+.auth {
+    padding: 10px 30px 10px 30px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 800;
   }
+
 .header-nav{
   padding: 15px 40px 10px 40px;
 }

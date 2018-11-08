@@ -4,22 +4,10 @@
         <Content>
           <div class="landing-img">
             <section>
-                <Row class="header-row" type="flex" justify="space-between" align="middle">
-                  <Col class="brand">
-                    <router-link to="/"><img class="logo" src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" ></router-link>
-                  </Col>
-                  <Col class="header-button">
-                    <!--<Button ghost shape="circle"  @click="displayModal=true">Sign-in</Button>-->
-                    <router-link to="/creators/apply" class="auth">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <router-link to="/creators/login" class="auth1">Login</router-link>
-
-                    <!--<Button class="btn register" type="default" shape="circle" @click="displayModal=true" ghost>Register</Button>
-                    <Button class="btn login" type="primary" shape="circle"  @click="displayModal=true">Login</Button>-->
-                  </Col>
-                </Row>
+                <Header />
                 <div class="head-content">
                   <h4>Interactive stories from the global community</h4>
-                  <p class="second">Connecting jounalists to the people</p>         
+                  <p class="second">Connecting creators to the people</p>         
                 </div>
                 <Icon class="dropdown-icon" type="android-arrow-dropdown-circle"></Icon>                       
             </section>
@@ -94,10 +82,11 @@ import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
 // import WithFooter from '../../layouts/WithFooter';
 import { mapState, mapActions, mapGetters } from 'vuex';
 import { page } from 'vue-analytics';
+import Header from '@/components/HeaderGeneral'
 
 
 export default {
-  components: { Button, Modal, Layout, Icon, Row, Content, Col},
+  components: { Button, Modal, Layout, Icon, Row, Content, Col, Header },
   computed: {
     ...mapState([
       'general'
@@ -385,11 +374,6 @@ export default {
 
   }
 
-  .header-row{
-    width: 90%;
-    margin: 0 auto;
-  }
-
   .landing-img > section{
     color: #FFFFFF;
     padding-top: .4rem; 
@@ -405,31 +389,7 @@ export default {
     margin-top: 6%;
   }
 
-  .logo {
-  height:90px;
-  margin-left: 2em;
-  }
-
-  .header-button {
-    font-size: 14px;
-  }
-
-  .header-button .btn {
-    width: 9em;
-    font-size: 1em;
-  }
-
-  .register {
-    
-    border: 2px solid;
-    margin-right: 2em;
-    
-
-  }
-  .login {
-    margin-left: 2em;
-    border: 2px solid #2d8cf0;
-  }
+  
 
   .imap {
     position: relative; 
