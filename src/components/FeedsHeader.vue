@@ -3,7 +3,7 @@
     <!-- <router-link class ="logo-wrapper" to="/"><img src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" style="width:40px;height:50px" alt="" id="lead"> &nbsp; -->
     <router-link to="/"><span id="header-text">Bloverse</span>
     </router-link>
-    <router-link to="/journalist" id="write">Write</router-link>
+    <router-link to="/creators" id="write">Write</router-link>
 
 
     <!-- <Row id="catrow" :gutter="40" type="flex" justify="center" >

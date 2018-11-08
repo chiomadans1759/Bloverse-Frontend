@@ -19,7 +19,7 @@
           <FeedCard :post="post"  />
         </Col>
       </template>
-      <h1 v-else><br />Awww!!! This place is empty<br /><br /></h1>
+      <h1 v-else><br />Awww!!! This place is empty<br /><br /> Are you a journalist? Click <router-link to="/creators">here to start writing for Bloverse</router-link></h1>
     </Row>
   </section>
 </template>
