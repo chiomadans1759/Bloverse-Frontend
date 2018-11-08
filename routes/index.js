@@ -32,10 +32,9 @@ import PostDisplay from '../src/views/PostDisplay.vue';
 const routes = [
   { path: '/', component: BaseFeeds,
     children: [
-      //{ path: '', component: PostFeeds },
-      { path: '', redirect: '/creators' },
-      //{ path: 'posts', redirect: '/' },
-      //{ path: 'posts/:slug', component: PostDisplay }
+      { path: '', component: PostFeeds },
+      { path: 'posts', redirect: '/' },
+      { path: 'posts/:slug', component: PostDisplay }
     ]
   },
   {
@@ -66,10 +65,10 @@ const routes = [
       },
     ]
   },
-  //{ path: '/faq/:person', component: FrequentlyAskedQuestions },
-  //{ path: '/rules/:person', component: HouseRules },
-  //{ path: '/guides', component: PublishGuide },
-  //{ path: '/ranking/:person', component: RankingSystem },
+  { path: '/faq/:person', component: FrequentlyAskedQuestions },
+  { path: '/rules/:person', component: HouseRules },
+  { path: '/guides', component: PublishGuide },
+  { path: '/ranking/:person', component: RankingSystem },
   { path: '/admin', component: BaseAdmin,
     children: [
       { path: '', redirect: 'dashboard' },
