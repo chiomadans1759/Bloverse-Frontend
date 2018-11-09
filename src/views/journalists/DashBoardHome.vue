@@ -39,7 +39,11 @@
             </Col>
           </Row>
           <div id="map-wrapper">
-            <div ref="activityMap" class="map"></div>
+           <GChart
+              type="GeoChart"
+              :data="chartData"
+              :options="chartOptions"
+          />
           </div>
         </Card>
       </Col>
@@ -80,14 +84,14 @@
   import DashboardStatDisplayCard from '../../components/JournalistStatDisplayCard.vue';
   import lang from 'iview/dist/locale/en-US';
   import { mapState } from 'vuex';
-
+  import { GChart } from 'vue-google-charts';
   // configure language
   locale(lang);
 
   
   export default {
     components: {
-      Row, Col, Card, Select, Option, Avatar, 
+      Row, Col, Card, Select, Option, Avatar, GChart,  
       StatCard: DashboardStatDisplayCard,
       Icon
     },
@@ -105,21 +109,6 @@
     },
     mounted: async function(){
       await this.getMyMetrics();
-      let mapElement = this.$refs.activityMap;
-      var map = new Datamap({element: mapElement,
-        fills: {
-          defaultFill: '#C4C4C4',
-        },
-        geographyConfig: {
-          highlightFillColor: '#2F80ED',
-          highlightBorderColor: '#2F80ED',
-          highlightBorderWidth: 4,
-          highlightBorderOpacity: 2,
-          popupTemplate: function(geography, data) { //this function should just return a string
-          return '<div class="hoverinfo stat-info"><p class="country"><strong>' + geography.properties.name + '</strong></p><p class="views">1200 page views</p></div>';
-        },
-        }
-      });
     }
   } 
 </script>
@@ -160,7 +149,8 @@
 
   #map-wrapper {
     margin-top: 20px;
-    height: 300px;
+    height: 250px;
+    width: 400px;
   }
 
   #entities-wrapper {
