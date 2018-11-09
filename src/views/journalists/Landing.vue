@@ -68,7 +68,8 @@
                   <GChart
                     type="GeoChart"
                     :data="chartData"
-                    :options="chartOptions"
+                    ref="chartData"
+                    :resizeDebounce="500"
                     id="maps"
                   />
             </Col>
@@ -91,27 +92,21 @@ import Header from '@/components/HeaderGeneral'
 
 export default {
   components: { Button, Modal, Layout, Icon, Row, Content, Col, Header, GChart },
-  data () {
-    return {
-      // Array will be automatically processed with visualization.arrayToDataTable function
-      chartData: [
-        ['Country', 'views',],
-        ['Nigeria', 65],
-        ['Kenya', 10],
-        ['France', 11],
-        ['India', 3]
-      ],
-      chartOptions: {
-        chart: {
-          title: 'Country Views'
-        }
-      }
-    }
-  },
+    
   computed: {
     ...mapState([
       'general'
-    ])
+    ]),
+    chartData(){
+      let newData =  [['Country', 'views']];
+      let countries = this.general.metrics.views.countries;
+      Object.keys(countries).forEach(country => {
+        newData.push([country, countries[country]])
+      })
+
+      return newData;
+      
+    }
   },
   methods: {
     ...mapActions([
@@ -121,7 +116,9 @@ export default {
   mounted:
     async function(){
     await this.getGeneralMetrics();
-  }
+     console.log(this.general.metrics);
+    }
+
 };
 </script>
 <style scoped>

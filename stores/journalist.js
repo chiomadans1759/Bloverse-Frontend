@@ -108,5 +108,8 @@ export default {
     articles(state){
       return state.metrics.publishedArticles;
     }
+    // countries(state){
+    //   return state.metrics.country;
+    // }
   }
 }
