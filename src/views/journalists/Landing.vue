@@ -62,14 +62,17 @@
                                     <p> description</p>
                             </i-Col>
                         </Row>   -->
-          <!-- <Row class="section-4" type="flex" justify="space-around" >
+          <Row class="section-4" type="flex" justify="space-around" >
             <Col class="map-section" span="20">
               <span class="underline"> Active Regions</span>
-              <div class="imap">
-                  <div ref="bubbles" style=" margin-top: -70px; width: 100%; height: 100%;"></div>
-              </div>  
+                  <GChart
+                    type="GeoChart"
+                    :data="chartData"
+                    :options="chartOptions"
+                    id="maps"
+                  />
             </Col>
-          </Row> -->
+          </Row> 
         </Content>
       </Layout>
     </div>
@@ -82,11 +85,29 @@ import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
 // import WithFooter from '../../layouts/WithFooter';
 import { mapState, mapActions, mapGetters } from 'vuex';
 import { page } from 'vue-analytics';
+import { GChart } from 'vue-google-charts';
 import Header from '@/components/HeaderGeneral'
 
 
 export default {
-  components: { Button, Modal, Layout, Icon, Row, Content, Col, Header },
+  components: { Button, Modal, Layout, Icon, Row, Content, Col, Header, GChart },
+  data () {
+    return {
+      // Array will be automatically processed with visualization.arrayToDataTable function
+      chartData: [
+        ['Country', 'views',],
+        ['Nigeria', 65],
+        ['Kenya', 10],
+        ['France', 11],
+        ['India', 3]
+      ],
+      chartOptions: {
+        chart: {
+          title: 'Country Views'
+        }
+      }
+    }
+  },
   computed: {
     ...mapState([
       'general'
@@ -100,261 +121,7 @@ export default {
   mounted:
     async function(){
     await this.getGeneralMetrics();
-    let mapp = this.$refs.bubbles;
-    var bubble_map = new Datamap({
-      element: mapp,
-      geographyConfig: {
-        popupOnHover: true,
-        highlightOnHover: true
-      },
-      fills: {
-        defaultFill: '#ABDDA4',
-        USA: 'blue',
-        CAN: 'yellow',
-        NIG: 'purple',
-        ITA: 'orange',
-        RUS: 'red'
-      }
-  });
-  bubble_map.bubbles([
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'BRA',
-      country: 'Brazil',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'EGY',
-      country: 'Egypt',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'FRA',
-      country: 'France',
-      number: 30,
-      fillKey: 'NIG',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'IND',
-      country: 'India',
-      number: 30,
-      fillKey: 'ITA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'ITA',
-      country: 'Italy',
-      number: 30,
-      fillKey: 'RUS',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'MLI',
-      country: 'Mali',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'MLT',
-      country: 'Malta',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'ZMB',
-      country: 'Zambia',
-      number: 30,
-      fillKey: 'NIG',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'QAT',
-      country: 'Qatar',
-      number: 30,
-      fillKey: 'ITA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'USA',
-      country: 'United State of America',
-      number: 30,
-      fillKey: 'RUS',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'MCO',
-      country: 'Mexico',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'ARG',
-      country: 'Argentina',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'BEL',
-      country: 'Belgium',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'BRA',
-      country: 'Brazil',
-      number: 30,
-      fillKey: 'RUS',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'RUS',
-      country: 'Russia',
-      number: 30,
-      fillKey: 'ITA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'FJI',
-      country: 'Fiji',
-      number: 30,
-      fillKey: 'NIG',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'FIN',
-      country: 'Finland',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'GEO',
-      country: 'Georgia',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'KEN',
-      country: 'Kenya',
-      number: 30,
-      fillKey: 'RUS',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'KWT',
-      country: 'Kuwait',
-      number: 30,
-      fillKey: 'ITA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'BOL',
-      country: 'Bolivia',
-      number: 30,
-      fillKey: 'NIG',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'MNE',
-      country: 'Mongolia',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'AUS',
-      country: 'Australia',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'GRL',
-      country: 'GreenLand',
-      number: 30,
-      fillKey: 'RUS',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'PER',
-      country: 'Peru',
-      number: 30,
-      fillKey: 'ITA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'RWA',
-      country: 'Rwanda',
-      number: 30,
-      fillKey: 'NIG',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'COG',
-      country: 'Congo',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'MAR',
-      country: 'Morocco',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalists',
-      radius: 5,
-      number: 10,
-      country: 'Canada',
-      centered: 'CAN',
-      fillKey: 'ITA'
-    }
-  ], {
-    popupTemplate: function(geo, data) {
-      return '<div class="hoverinfo">' + data.number + ' Journalists in '  + data.country + ''
-    }
-  })
-              }
+  }
 };
 </script>
 <style scoped>
@@ -391,26 +158,31 @@ export default {
 
   
 
-  .imap {
-    position: relative; 
-    margin:0 auto; 
-    width: 700px; 
-    height: 500px;
+  #maps {
+   top: 10%;
+   left: 10%; 
+   width: 700px; 
+   height: 500px;
+   position: relative;
   }
 
   @media screen and (max-width: 680px){
-    .imap {
+    #maps {
       width: 350px; 
+      top: 0%;
+      left: 0%;
+      position: relative;
     }
   }
 
   @media screen and (min-width: 681px)  and (max-width: 780px){
-    .imap {
-      width: 600px; 
+    #maps {
+      width: 600px;
+      top: 0%;
+      left: 0%; 
+      position: relative;
     }
   }
-
-
 
   .head-content {
     font-size: 16px;
@@ -570,7 +342,7 @@ export default {
     /* border: 1px solid green; */
     background: white;
     border-radius: 4px;
-    margin-top: 50px;
+  
   }
   
   #getStarted {
