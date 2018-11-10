@@ -33,7 +33,7 @@
         <Col :sm="11" :xs="24">
           <FormItem prop="phone" :error="errors.phone">
               <Input class="my-input" v-model="applicant.phone" placeholder="Digits after code here ">
-                <Select v-model="code" slot="prepend" style="width: 80px">
+                <Select v-model="code" slot="prepend" style="width: 80px" filterable>
                   <Option class="country-dropdown"  v-for="(countryFlag, index) in countryFlags" :value="countryFlag.code" :key="index">
                       <img :src="countryFlag.imgURL" style="height:15px"/>    {{ countryFlag.code }}              
                   </Option>
