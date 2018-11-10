@@ -31,9 +31,9 @@
           </FormItem>
         </Col>
         <Col :sm="11" :xs="24">
-          <FormItem prop="phone" :error="errors.phone">
-              <Input class="my-input" v-model="applicant.phone" placeholder="Digits after code here ">
-                <Select v-model="code" slot="prepend" style="width: 80px">
+          <FormItem prop="phone" :error="errors.phoneNumber">
+              <Input class="my-input" v-model="applicant.phoneNumber" placeholder="Digits after code here ">
+                <Select v-model="applicant.phoneCode" slot="prepend" style="width: 80px">
                   <Option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
                       <img :src="val.imgURL" style="height:15px"/>    {{ val.code }}              
                   </Option>
@@ -110,7 +110,7 @@ export default {
           { required: true, message: 'Email cannot be blank', trigger: 'blur' },
           { type: 'email', message: 'The email is not valid', trigger: 'blur' }
         ],
-        phone: [
+        phoneNumber: [
           { required: true, message: 'Phone cannot be blank', trigger: 'blur' }
         ],
         linkedIn: [
@@ -166,7 +166,6 @@ export default {
       
       this.$refs.applyForm.validate(async (valid) => {
         if (valid) {
-          this.applicant.phone = this.code + '' + this.applicant.phone;
           let applied = await this.apply();
 
           if(applied === true) this.handleSuccess();
@@ -185,7 +184,7 @@ export default {
         first_name: 'firstName', 
         last_name: 'lastName', 
         email: 'email', 
-        phone_number: 'phone', 
+        phone_number: 'phoneNumber', 
         linkedin_url: 'linkedIn', 
         twitter_url: 'twitter', 
         articles: 'articles', 
@@ -212,8 +211,8 @@ export default {
     ]),
 
   },
-  mounted: async function(){ 
-    console.log(this.general)
+  mounted: function(){ 
+    this.applicant.phoneCode = '+1';
   }
 }
 </script>

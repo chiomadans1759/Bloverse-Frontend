@@ -20,7 +20,9 @@ export default {
           return { errors: response.data };
       }
     },
-    async apply ({state}){
+    async apply ({state, commit}){
+      let phone = state.applicant.phoneCode + state.applicant.phoneNumber;
+      commit('setApplicant', {phone});
       let response = await Api.post('applicants/', state.applicant)
       switch(response.statusCode){
         case 201:
