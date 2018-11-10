@@ -20,8 +20,20 @@ export default {
       switch(response.statusCode){
         case 200:
           categories = response.data && response.data.categories;
+
+          categories = categories.sort((a, b) => {
+            if (a.name > b.name) return 1;
+            if (a.name == b.name) return 0;
+            if (a.name < b.name) return -1;
+          })
+
           response = await Api.get('countries/');
           countries = response.data && response.data.countries;
+          countries = countries.sort((a, b) => {
+            if (a.name > b.name) return 1;
+            if (a.name == b.name) return 0;
+            if (a.name < b.name) return -1;
+          })
           commit('setCountries', countries);
           commit('setCategories', categories);
           return true;

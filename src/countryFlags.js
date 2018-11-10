@@ -1,5 +1,4 @@
-const data = {
- countryData:[
+const countryData = [
     {
         imgURL: require("./assets/australia.svg"),
         code:  "+61"
@@ -77,6 +76,5 @@ const data = {
         code: "+1"
     }
 ]
-}
 
-export default data;
+export default countryData;

@@ -33,9 +33,9 @@
         <Col :sm="11" :xs="24">
           <FormItem prop="phone" :error="errors.phone">
               <Input class="my-input" v-model="applicant.phone" placeholder="Digits after code here ">
-                <Select v-model="code" slot="prepend" style="width: 80px" filterable>
-                  <Option class="country-dropdown"  v-for="(countryFlag, index) in countryFlags" :value="countryFlag.code" :key="index">
-                      <img :src="countryFlag.imgURL" style="height:15px"/>    {{ countryFlag.code }}              
+                <Select v-model="code" slot="prepend" style="width: 80px">
+                  <Option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
+                      <img :src="val.imgURL" style="height:15px"/>    {{ val.code }}              
                   </Option>
                 </Select>
               </Input>
@@ -87,7 +87,7 @@
 
 <script>
   import BaseAuthentication from '../../layouts/BaseAuthentication';
-  import countryFlag from '../../countryFlags.js';
+  import countryFlags from '../../countryFlags.js';
   import { Form, FormItem, Row, Col, Input, Select,Option, Checkbox, Modal, Alert, Button } from 'iview';
   import { mapState, mapActions } from 'vuex';
   //import Utility from '../../Utility.js';
@@ -95,7 +95,6 @@ export default {
   components: { Form, FormItem, Row, Col, Input, Select, Option,Checkbox, Modal, Alert, Button, BaseAuthentication, },
   data: function(){
     return {
-      countryFlags : countryFlag.countryData,
       isSuccess: false,
       serverResponse: {},
       errors: {},
@@ -140,6 +139,15 @@ export default {
     }
   },
   computed: {
+    countriesCodeFlag() {
+      let sorted = countryFlags.sort((a, b) => {
+        if (a.code > b.code) return 1;
+        if (a.code == b.code) return 0;
+        if (a.code < b.code) return -1;
+      })
+
+      return sorted;
+    },
     applicant: {
       get(){
         return this.$store.state.auth.applicant;
