@@ -9,7 +9,7 @@
         </template>
         <template v-else>
           Already Registered?
-          <span slot="desc">It looks like you have been previously registrered. Click <router-link to="/journalist/login">here to login</router-link></span>
+          <span slot="desc">It looks like you have been previously registrered. Click <router-link to="/creators/login">here to login</router-link></span>
         </template>
         
 
