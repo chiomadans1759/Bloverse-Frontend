@@ -40,10 +40,11 @@
           </Row>
           <div id="map-wrapper">
            <GChart
-              type="GeoChart"
-              :data="chartData"
-              :options="chartOptions"
-          />
+                    type="GeoChart"
+                    :data="chartData"
+                    ref="chartData"
+                    :resizeDebounce="500"
+                  />
           </div>
         </Card>
       </Col>
@@ -99,8 +100,18 @@
 
       ...mapState([
         'general'
-      ])
-    },
+      ]),
+       chartData(){
+      let newData =  [['Country', 'views']];
+      let countries = this.general.metrics.views.countries;
+      Object.keys(countries).forEach(country => {
+        newData.push([country, countries[country]])
+      })
+
+      return newData;
+      
+    }
+  },
     computed:{
       ...mapGetters(['views', 'articles'])
     },
