@@ -51,7 +51,7 @@
       </FormItem>
       
       <FormItem prop="twitter" :error="errors.twitter">
-        <Input class="my-input" v-model="applicant.twitter" placeholder="Twitter profle username"  >
+        <Input class="my-input" v-model="applicant.twitter" placeholder="Twitter profile username"  >
             <Select slot="prepend" style="width: 200px" disabled label="https://twitter.com/" prop="url"> </Select>
         </input>
       </FormItem>
