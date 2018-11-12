@@ -44,7 +44,7 @@
       ]),
       logOut(){
         if(this.clearSession())
-          this.$router.push('/journalist/login');
+          this.$router.push('/creators/login');
       },
       handleIconClick(){
         this.collapsed = !this.collapsed

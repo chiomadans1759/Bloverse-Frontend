@@ -79,11 +79,13 @@ new Vue({
 
 
 router.beforeEach((to, from, next) => {
-  const onlyAuth = to.matched.some(record=>record.meta.auth)
+  const onlyAuth = to.matched.some(record => record.meta.auth)
+  console.log(onlyAuth)
   const onlyJournalist = to.matched.some(record=>record.meta.journalist)
   const onlyAdmin = to.matched.some(record=>record.meta.admin)
   LoadingBar.start();
   if(onlyAuth){
+    console.log('Start for only auth');
     if(store.getters.isAuthenticated){
       if(onlyJournalist && store.getters.isAJournalist)
         next()
@@ -95,7 +97,7 @@ router.beforeEach((to, from, next) => {
     else{
       let nextUrl = to.fullPath
       if(onlyJournalist)
-        next({path: '/journalist/login', params: { nextUrl }})
+        next({path: '/creators/login', params: { nextUrl }})
       else if(onlyAdmin)
         next({path: '/admin/login', params: { nextUrl }})
       else
@@ -106,7 +108,7 @@ router.beforeEach((to, from, next) => {
     if(store.getters.allowedToRegister === true)
       next()
     else{
-      next({path: '/journalist/verify'})
+      next({path: '/creators/verify'})
     }
   }else
     next();

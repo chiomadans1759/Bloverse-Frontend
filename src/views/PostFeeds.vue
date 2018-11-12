@@ -19,7 +19,11 @@
           <FeedCard :post="post"  />
         </Col>
       </template>
-      <h1 v-else><br />Awww!!! This place is empty<br /><br /> Are you a journalist? Click <router-link to="/creators">here to start writing for Bloverse</router-link></h1>
+      <h1 class="landing"v-else>
+        <span>Coming Soon!</span>
+        <br /> 
+        Are you a journalist? Click <router-link to="/creators">here to start writing for Bloverse</router-link>
+      </h1>
     </Row>
   </section>
 </template>
@@ -58,6 +62,17 @@
   text-transform: uppercase;
   font-weight: 500;
   margin-left: 50px;
+}
+
+.landing{
+ text-align:center;
+ margin-top:120px;
+}
+
+
+.landing span{
+ font-weight: 800;
+ font-size:70px;  
 }
 
 @media only screen and (max-width: 600px) {

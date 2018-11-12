@@ -92,7 +92,7 @@
           if(success){
             this.$Message.success('Registration successfull, You are being redirected to login')
             let username = this.auth.loggedInUser.userName;
-            this.$router.push(`/journalist/${username}/dashboard`)
+            this.$router.push(`/creators/${username}/dashboard`)
           }
         }
         else

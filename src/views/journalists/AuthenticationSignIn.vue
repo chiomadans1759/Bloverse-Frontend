@@ -87,7 +87,7 @@ export default {
           if(success === true){
             this.$Message.success('You have been successfully logged in');
             let username = this.auth.loggedInUser.userName;
-            this.$router.push(`/journalist/${username}/dashboard`)
+            this.$router.push(`/creators/${username}/dashboard`)
           }else
             this.$Message.error('Username and password does not match');
         }else{
