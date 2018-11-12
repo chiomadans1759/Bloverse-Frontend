@@ -46,29 +46,38 @@
         
       <FormItem prop="linkedIn" :error="errors.linkedIn">
         <Input class="my-input" v-model="applicant.linkedIn" placeholder="Linkedln profile username"  >
-             <Select slot="prepend" style="width: 200px" placeholder="Select linkedIn profile url" prop="url">
-                <Option value="secured">https://www.linkedin.com/</Option>
-                <Option value="not-secured">http://www.linkedin.com/</Option> 
-            </Select>
+            <Select slot="prepend" style="width: 200px" disabled label="https://www.linkedin.com/" prop="url"> </Select>
         </input>
       </FormItem>
       
       <FormItem prop="twitter" :error="errors.twitter">
         <Input class="my-input" v-model="applicant.twitter" placeholder="Twitter profle username"  >
-            <Select slot="prepend" style="width: 200px" placeholder="Select Twitter profile url" prop="url">
-                    <Option value="secured">https://twitter.com/</Option>
-                    <Option value="not-secured">http://twitter.com/</Option> 
+            <Select slot="prepend" style="width: 200px" disabled label="https://twitter.com/" prop="url"> </Select>
+        </input>
+      </FormItem>
+       <FormItem prop="articles" :error="errors.articles">
+        <Input class="my-input" v-model="applicant.articles[0]" placeholder="Link to written article one">
+            <Select slot="prepend" style="width: 150px" placeholder="Choose Security Level" prop="url">
+                    <Option value="secured">https://</Option> 
+                    <Option value="secured">http://</Option>
             </Select>
         </input>
       </FormItem>
-      <FormItem prop="articles" :error="errors.articles">
-        <Input class="my-input" v-model="applicant.articles[0]" placeholder="Link to written article one"  />
+      <FormItem>
+        <Input class="my-input" v-model="applicant.articles[1]" placeholder="Link to written article two">
+            <Select slot="prepend" style="width: 150px" placeholder="Choose Security Level" prop="url">
+                    <Option value="secured">https://</Option> 
+                    <Option value="secured">http://</Option>
+            </Select>
+        </input>
       </FormItem>
       <FormItem>
-        <Input class="my-input" v-model="applicant.articles[1]" placeholder="Link to written article two"  />
-      </FormItem>
-      <FormItem>
-        <Input class="my-input" v-model="applicant.articles[2]" placeholder="Link to written article three"  />
+        <Input class="my-input" v-model="applicant.articles[2]" placeholder="Link to written article three" >
+            <Select slot="prepend" style="width: 150px" placeholder="Choose Security Level" prop="url">
+                    <Option value="secured">https://</Option> 
+                    <Option value="secured">http://</Option>
+            </Select>
+        </input>
       </FormItem>
       <Row type="flex" justify="space-between">
         <Col :sm="11" :xs="24">
@@ -275,6 +284,7 @@ export default {
   flex-direction: row;
   font-size: 18px;
   margin-top: 12px;
+  text-align:center;
 }
 #login-link{
   color:#2F80ED;
