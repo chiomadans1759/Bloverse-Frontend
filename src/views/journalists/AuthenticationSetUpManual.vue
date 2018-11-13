@@ -74,11 +74,11 @@
       ])
     },
     watch: {
-      'user.firstName': function(val){
-        this.setUsername();
+      'user.firstName': async function(val){
+        await this.generateUsername();
       },
-      'user.lastName': function(val){
-        this.setUsername();
+      'user.lastName': async function(val){
+        await this.generateUsername();
       }
     },
     methods:{
@@ -98,16 +98,14 @@
         else
           this.$Message.error('Something went wrong');
       },
-      ...mapMutations([
-        'setUsername'
-      ]),
       ...mapActions([
         'registerJournalist',
-        'login'
+        'login',
+        'generateUsername'
       ])
     },
-    mounted(){
-      this.setUsername();
+    async mounted(){
+      await this.generateUsername();
     }
   }
 //       LoadingIcon, DisplayImage 
