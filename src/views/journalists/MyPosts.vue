@@ -16,7 +16,7 @@
   </Row>
    <div v-else class="showposts">
     <h2>This Place looks empty !</h2><br />
-    <router-link :to="`/journalist/${auth.loggedInUser.userName}/posts/create`" id="showbutton">Create Posts Here</router-link>
+    <router-link :to="`/creators/${auth.loggedInUser.userName}/posts/create`" id="showbutton">Create Posts Here</router-link>
     </div>
   </div>
 </template>
