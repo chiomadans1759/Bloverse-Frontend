@@ -1,5 +1,5 @@
 <template>
-  <BaseAuthentication>
+  <BaseAuthentication >
     <Col :sm="18" :md="10" :xs="22" class="auth-section">
       <Modal
        v-model="isSuccess"
@@ -9,8 +9,9 @@
         <p>Your application has been sent to bloverse. A message will be sent to your mail to continue the verification and approval process in 48hrs.</p>
         <div slot="footer"></div>
       </Modal>
-    <h1 id="page-title">Apply</h1> 
-    <Form ref="applyForm" :model="applicant" class="auth-form" :rules="validateApplication">
+    
+    <Form ref="applyForm" :model="applicant" class="auth-form container" :rules="validateApplication">
+      <h1 id="page-title">Apply</h1> 
       <h3 id="form-instruction">Fill the form below to apply as a content provider on Bloverse</h3>
       <Row type="flex" justify="space-between">
         <Col :sm="11" :xs="24">
@@ -33,7 +34,7 @@
         <Col :sm="11" :xs="24">
           <FormItem prop="phone" :error="errors.phoneNumber">
               <Input class="my-input" v-model="applicant.phoneNumber" placeholder="Digits after code here ">
-                <Select v-model="applicant.phoneCode" slot="prepend" style="width: 80px">
+                <Select v-model="applicant.phoneCode" slot="prepend" style="width: 60px">
                   <Option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
                       <img :src="val.imgURL" style="height:15px"/>    {{ val.code }}              
                   </Option>
@@ -42,20 +43,25 @@
           </FormItem>
         </Col>
       </Row>
+        
       <FormItem prop="linkedIn" :error="errors.linkedIn">
-        <Input class="my-input" v-model="applicant.linkedIn" placeholder="Linkedln profle link*"  />
+        <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username"  >
+            <span slot="prepend">https://www.linkedin.com/in/</span>
+        </input>
       </FormItem>
+      
       <FormItem prop="twitter" :error="errors.twitter">
-        <Input class="my-input" v-model="applicant.twitter" placeholder="Twitter profle link*"  />
+        <Input class="my-input" v-model="applicant.twitterUsername" placeholder="Twitter profile username"  >
+            <span slot="prepend">https://www.twitter.com/</span>
+        </input>
       </FormItem>
-      <FormItem prop="articles" :error="errors.articles">
-        <Input class="my-input" v-model="applicant.articles[0]" placeholder="Link to written article one*"  />
-      </FormItem>
-      <FormItem>
-        <Input class="my-input" v-model="applicant.articles[1]" placeholder="Link to written article two"  />
-      </FormItem>
-      <FormItem>
-        <Input class="my-input" v-model="applicant.articles[2]" placeholder="Link to written article three"  />
+       <FormItem prop="articles" :error="errors.articles" v-for="(value, index)  in 3" :key="value">
+        <Input class="my-input" v-model="applicant.articleURLs[index]" placeholder="Link to written article">
+            <Select slot="prepend" v-model="applicant.articleProtocols[index]" style="width: 80px">
+              <Option value="https://">https://</Option> 
+              <Option value="http://">http://</Option>
+            </Select>
+        </input>
       </FormItem>
       <Row type="flex" justify="space-between">
         <Col :sm="11" :xs="24">
@@ -77,7 +83,7 @@
         <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
       </FormItem>-->
       <Button class="my-btn btn-secondary" long @click.prevent="handleSubmit">SUBMIT</Button>
-        <div id="login-here">already have an account?<br> 
+        <div id="login-here">Already have an account?<br> 
           <router-link id="login-link" to="login"> Log in here </router-link>
         </div>
     </Form>
@@ -113,22 +119,11 @@ export default {
         phoneNumber: [
           { required: true, message: 'Phone cannot be blank', trigger: 'blur' }
         ],
-        linkedIn: [
-          { required: true, message: 'You must Provide a linkedIn URL', trigger: 'blur' },
-          { type: 'url', message: 'Please enter a valid URL', trigger: 'blur' }
-        ],
-        twitter: [
-          { required: true, message: 'You must Provide a twitter profile URL', trigger: 'blur' },
-          { type: 'url', message: 'Please enter a valid URL', trigger: 'blur' }
-        ],
         countryId: [
           { required: true, type: 'integer', message: 'You must choose a country', trigger: 'change' }
         ],
         categoryId: [
           { required: true, type: 'integer', message: 'You must choose a category', trigger: 'change' }
-        ],
-        articles: [
-          { required: true, type: 'array', min: 1, message: 'You must provide link to at least one post', trigger: 'blur' }, // BUG!!! Type URL cannot be used while type array is already in use
         ],
         /*terms: [
           {
@@ -163,7 +158,6 @@ export default {
   methods: {
     handleSubmit: function() {
       this.errors = {}; // reset error
-      
       this.$refs.applyForm.validate(async (valid) => {
         if (valid) {
           let applied = await this.apply();
@@ -211,8 +205,9 @@ export default {
     ]),
 
   },
-  mounted: function(){ 
+  created: function(){ 
     this.applicant.phoneCode = '+1';
+    this.applicant.articleProtocols = ['https://', 'https://', 'https://']
   }
 }
 </script>
@@ -268,6 +263,5 @@ export default {
 }
 .country-code{
   display:flex;
-  
 }
 </style>
