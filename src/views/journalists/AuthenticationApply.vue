@@ -34,7 +34,7 @@
         <Col :sm="11" :xs="24">
           <FormItem prop="phone" :error="errors.phoneNumber">
               <Input class="my-input" v-model="applicant.phoneNumber" placeholder="Digits after code here ">
-                <Select v-model="applicant.phoneCode" slot="prepend" style="width: 80px">
+                <Select v-model="applicant.phoneCode" slot="prepend" style="width: 60px">
                   <Option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
                       <img :src="val.imgURL" style="height:15px"/>    {{ val.code }}              
                   </Option>
@@ -45,37 +45,21 @@
       </Row>
         
       <FormItem prop="linkedIn" :error="errors.linkedIn">
-        <Input class="my-input" v-model="applicant.linkedIn" placeholder="Linkedln profile username"  >
-            <Select slot="prepend" style="width: 200px" disabled label="https://www.linkedin.com/" prop="url"> </Select>
+        <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username"  >
+            <span slot="prepend">https://www.linkedin.com/in/</span>
         </input>
       </FormItem>
       
       <FormItem prop="twitter" :error="errors.twitter">
-        <Input class="my-input" v-model="applicant.twitter" placeholder="Twitter profile username"  >
-            <Select slot="prepend" style="width: 200px" disabled label="https://twitter.com/" prop="url"> </Select>
+        <Input class="my-input" v-model="applicant.twitterUsername" placeholder="Twitter profile username"  >
+            <span slot="prepend">https://www.twitter.com/</span>
         </input>
       </FormItem>
-       <FormItem prop="articles" :error="errors.articles">
-        <Input class="my-input" v-model="applicant.articles[0]" placeholder="Link to written article one">
-            <Select slot="prepend" style="width: 150px" placeholder="Choose Security Level" prop="url">
-                    <Option value="secured">https://</Option> 
-                    <Option value="secured">http://</Option>
-            </Select>
-        </input>
-      </FormItem>
-      <FormItem>
-        <Input class="my-input" v-model="applicant.articles[1]" placeholder="Link to written article two">
-            <Select slot="prepend" style="width: 150px" placeholder="Choose Security Level" prop="url">
-                    <Option value="secured">https://</Option> 
-                    <Option value="secured">http://</Option>
-            </Select>
-        </input>
-      </FormItem>
-      <FormItem>
-        <Input class="my-input" v-model="applicant.articles[2]" placeholder="Link to written article three" >
-            <Select slot="prepend" style="width: 150px" placeholder="Choose Security Level" prop="url">
-                    <Option value="secured">https://</Option> 
-                    <Option value="secured">http://</Option>
+       <FormItem prop="articles" :error="errors.articles" v-for="(value, index)  in 3" :key="value">
+        <Input class="my-input" v-model="applicant.articleURLs[index]" placeholder="Link to written article">
+            <Select slot="prepend" v-model="applicant.articleProtocols[index]" style="width: 80px">
+              <Option value="https://">https://</Option> 
+              <Option value="http://">http://</Option>
             </Select>
         </input>
       </FormItem>
@@ -135,22 +119,11 @@ export default {
         phoneNumber: [
           { required: true, message: 'Phone cannot be blank', trigger: 'blur' }
         ],
-        linkedIn: [
-          { required: false, message: 'You must Provide a linkedIn URL', trigger: 'blur' },
-          { type: 'url', message: 'Please enter a valid URL', trigger: 'blur' },
-        ],
-        twitter: [
-          { required: false, message: 'You must Provide a twitter profile URL', trigger: 'blur' },
-          { type: 'url', message: 'Please enter a valid URL', trigger: 'blur' }
-        ],
         countryId: [
           { required: true, type: 'integer', message: 'You must choose a country', trigger: 'change' }
         ],
         categoryId: [
           { required: true, type: 'integer', message: 'You must choose a category', trigger: 'change' }
-        ],
-        articles: [
-          { required: false, type: 'array', min: 1, message: 'You must provide link to at least one post', trigger: 'blur' }, // BUG!!! Type URL cannot be used while type array is already in use
         ],
         /*terms: [
           {
@@ -185,7 +158,6 @@ export default {
   methods: {
     handleSubmit: function() {
       this.errors = {}; // reset error
-      
       this.$refs.applyForm.validate(async (valid) => {
         if (valid) {
           let applied = await this.apply();
@@ -233,8 +205,9 @@ export default {
     ]),
 
   },
-  mounted: function(){ 
+  created: function(){ 
     this.applicant.phoneCode = '+1';
+    this.applicant.articleProtocols = ['https://', 'https://', 'https://']
   }
 }
 </script>
@@ -284,21 +257,11 @@ export default {
   flex-direction: row;
   font-size: 18px;
   margin-top: 12px;
-  text-align:center;
 }
 #login-link{
   color:#2F80ED;
 }
 .country-code{
   display:flex;
-}
-h3{
-  text-align:center;
-  }
-.container{
-  background-color: rgba(200, 191, 216, 0.685);
-  padding: 1rem 3rem;
-  box-shadow: 0 15px 10px rgb(185, 181, 181);
-  border-radius: 10px;
 }
 </style>
