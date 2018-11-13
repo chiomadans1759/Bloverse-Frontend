@@ -4,7 +4,7 @@ export default {
   state: {
     jwt: null,
     newUser: { imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg' },
-    applicant: { articles: [] },
+    applicant: { articleURLs: [] },
     loggedInUser: null,
     shouldRegister: false
   },
@@ -22,7 +22,12 @@ export default {
     },
     async apply ({state, commit}){
       let phone = state.applicant.phoneCode + state.applicant.phoneNumber;
-      commit('setApplicant', {phone});
+      let linkedIn = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`
+      let twitter = `https://www.twitter.com/${state.applicant.twitterUsername}`
+      let articles = state.applicant.articleURLs.map((article, index)=>{
+        return `${state.applicant.articleProtocols[index]}${article}`
+      })
+      commit('setApplicant', { phone, twitter, linkedIn, articles });
       let response = await Api.post('applicants/', state.applicant)
       switch(response.statusCode){
         case 201:
