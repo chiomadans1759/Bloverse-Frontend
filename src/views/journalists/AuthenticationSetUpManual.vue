@@ -35,7 +35,7 @@
     </section>
   </Col>
   </BaseAuthentication>
-</template>
+</template>import Vue froimport Vue from 'vue';m 'vue';
 
 
 
@@ -74,15 +74,15 @@
       ])
     },
     watch: {
-      'user.firstName': function(val){
+      'user.firstName': (val) => {
         this.setUsername();
       },
-      'user.lastName': function(val){
+      'user.lastName': (val) => {
         this.setUsername();
       }
     },
     methods:{
-      updateCurrentPage: function(newPage) {
+      updateCurrentPage: (newPage) => {
         this.currentPage = newPage;
       },
       completeSetup: async function(){
