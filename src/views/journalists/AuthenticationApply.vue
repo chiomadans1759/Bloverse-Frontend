@@ -32,13 +32,12 @@
         </Col>
         <Col :sm="11" :xs="24">
           <FormItem prop="phone" :error="errors.phoneNumber">
-              <Input class="my-input" v-model="applicant.phoneNumber" placeholder="Digits after code here ">
-                <Select v-model="applicant.phoneCode" slot="prepend" style="width: 60px">
-                  <Option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
-                      <img :src="val.imgURL" style="height:15px"/>    {{ val.code }}              
-                  </Option>
-                </Select>
-              </Input>
+              <select v-model="applicant.phoneCode" class="code-dropdown">
+              <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
+                 <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
+              </option>
+            </select>
+             <input class="my-input" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
           </FormItem>
         </Col>
       </Row>
@@ -65,16 +64,14 @@
       <Row type="flex" justify="space-between">
         <Col :sm="11" :xs="24">
           <FormItem prop="countryId" :error="errors.countryId">
-            <Select class="my-select" placeholder="Country*" v-model="applicant.countryId" filterable>
-              <Option  v-for="item in general.countries" :value="item.id" :key="item.id">{{ item.name }}</Option>
-            </Select>
+           <v-select :options="optionCountry" label="name" placeholder="Country*" class="my-select" v-model="applicant.countryId">
+            </v-select>
           </FormItem>
         </Col>
         <Col :sm="11" :xs="24">
           <FormItem prop="categoryId" :error="errors.categoryId">
-            <Select class="my-select" placeholder="Category*" v-model="applicant.categoryId" filterable>
-              <Option  v-for="item in general.categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
-            </Select>
+            <v-select :options="category" label="name" placeholder="Category*" class="my-select" v-model="applicant.categoryId">
+            </v-select>
           </FormItem>
         </Col>
       </Row>
@@ -93,11 +90,12 @@
 <script>
   import BaseAuthentication from '../../layouts/BaseAuthentication';
   import countryFlags from '../../countryFlags.js';
-  import { Form, FormItem, Row, Col, Input, Select,Option, Checkbox, Modal, Alert, Button } from 'iview';
+  import { Form, FormItem, Row, Col, Input, Checkbox, Modal, Alert, Button } from 'iview';
   import { mapState, mapActions } from 'vuex';
+  import vSelect from 'vue-select';
   //import Utility from '../../Utility.js';
 export default {
-  components: { Form, FormItem, Row, Col, Input, Select, Option,Checkbox, Modal, Alert, Button, BaseAuthentication, },
+  components: { Form, FormItem, Row, Col, Input,Checkbox, Modal, Alert, Button, BaseAuthentication, vSelect },
   data: function(){
     return {
       isSuccess: false,
@@ -150,6 +148,16 @@ export default {
         this.$store.commit('setApplicant', props);
       }
     },
+    optionCountry(){
+     return this.general.countries;
+    },
+    category(){
+      return this.general.categories;
+    },
+    // phoneCode(){
+    //   return this.countriesCodeFlag;
+    //   console.log(phoneCode)
+    // },
     ...mapState([
       'general',
     ])
@@ -262,5 +270,10 @@ export default {
 }
 .country-code{
   display:flex;
+}
+.code-dropdown{
+  width: 80px;
+  height: 36px;
+  background: #fff;
 }
 </style>
