@@ -6,7 +6,6 @@
       <Row>
         <Col span="6"><p id="feedsTitle">Happening Now</p></Col>
         <Col span="4" style="margin-left: 20px;">
-
             <v-select :options="general.categories" label="name" placeholder="Category*" class="my-select" v-model="category">
             </v-select>
             </Col>
@@ -20,7 +19,7 @@
           <FeedCard :post="post"  />
         </Col>
       </template>
-      <p v-else>Oops!!! We cannot find a post for {{categoryName}} in {{countryName}}</p>
+      <p class = "noMatch" v-else>Oops!!! We cannot find a post for {{categoryName}} in {{countryName}}</p>
       </template>
       <h1 class="landing" v-else>
         <span>Coming Soon!</span>
@@ -111,7 +110,11 @@
  margin-top:120px;
 }
 
-
+.noMatch{
+  text-align:center;
+  font-size:1.5rem;
+  padding-top:4rem;
+}
 .landing span{
  font-weight: 800;
  font-size:70px;  
