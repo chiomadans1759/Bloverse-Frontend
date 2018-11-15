@@ -91,12 +91,12 @@
 <script>
   import BaseAuthentication from '../../layouts/BaseAuthentication';
   import countryFlags from '../../countryFlags.js';
-  import { Form, FormItem, Row, Col, Input, Checkbox, Modal, Alert, Button } from 'iview';
+  import { Form, FormItem, Row, Col, Input, Checkbox, Modal, Alert, Button, Select, Option } from 'iview';
   import { mapState, mapActions } from 'vuex';
   import vSelect from 'vue-select';
   //import Utility from '../../Utility.js';
 export default {
-  components: { Form, FormItem, Row, Col, Input,Checkbox, Modal, Alert, Button, BaseAuthentication, vSelect },
+  components: { Form, FormItem, Row, Col, Input,Checkbox, Modal, Alert, Button, BaseAuthentication, vSelect, Select, Option },
   data: function(){
     return {
       isSuccess: false,

@@ -63,6 +63,20 @@ export default {
           return { errors: response.data };
       }
     },
+    async generateUsername({state, commit, dispatch}){
+      let username = `${state.newUser.firstName}.${state.newUser.lastName}`.toLowerCase();
+      username = await dispatch('validateUsername', { username, count: 1 })
+      commit('setUsername', username);
+    },
+    async validateUsername({dispatch}, { username, count }){
+      let response = await Api.get('journalists?username='+username)
+      if(response.data.journalists.length > 0){
+        username+=count;
+        count++;
+        dispatch('validateUsername', { username, count });
+      }  
+      return username;
+    },
     clearSession({commit}) {
       commit('setJwt', null);
       commit('setLoggedInUser', null);
@@ -93,8 +107,8 @@ export default {
       else
         localStorage.removeItem('loggedInUser');
     },
-    setUsername(state){
-      state.newUser.username = `${state.newUser.firstName}.${state.newUser.lastName}`.toLowerCase();
+    setUsername(state, username){
+      state.newUser.username = username;
     },
     setShouldRegister(state, value){
       state.shouldRegister = value;
