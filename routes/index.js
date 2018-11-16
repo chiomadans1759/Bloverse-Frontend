@@ -20,6 +20,7 @@ import FrequentlyAskedQuestions from '../src/views/DocsFAQ.vue';
 import HouseRules from '../src/views/DocsHouseRules.vue';
 import RankingSystem from '../src/views/DocsRankingSystem.vue';
 import PublishGuide from '../src/views/DocsPublishGuide.vue';
+import NotFound from '../src/views/NotFound.vue';
 
 import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
@@ -27,7 +28,7 @@ import BaseAdmin from '../src/layouts/BlankBase.vue';
 
 import BaseFeeds from '../src/layouts/BaseFeeds.vue';
 import PostFeeds from '../src/views/PostFeeds.vue';
-import PostDisplay from '../src/views/PostDisplay.vue';
+import PostDisplay from '../src/views/PostDisplay.vue'; 
 
 const routes = [
   { path: '/', component: BaseFeeds,
@@ -81,6 +82,7 @@ const routes = [
       { path: 'login', component: AdminLogin }
     ]
   },
+  { path: "*", component: NotFound }
 ]
 
 
