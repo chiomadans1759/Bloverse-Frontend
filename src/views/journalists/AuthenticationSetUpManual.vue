@@ -35,7 +35,7 @@
     </section>
   </Col>
   </BaseAuthentication>
-</template>
+</template>import Vue froimport Vue from 'vue';m 'vue';
 
 
 
@@ -82,7 +82,7 @@
       }
     },
     methods:{
-      updateCurrentPage: function(newPage) {
+      updateCurrentPage: (newPage) => {
         this.currentPage = newPage;
       },
       completeSetup: async function(){

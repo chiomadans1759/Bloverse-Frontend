@@ -1,4 +1,5 @@
-import Vue from 'vue';
+// import Vue from 'vue';
+import store from '../stores';
 
 
 import BaseDashBoard from '../src/layouts/BaseDashBoard.vue';
@@ -43,22 +44,56 @@ const routes = [
       { path: '', component: JournalistLanding },
       { path: 'apply', component: JournalistApply },
       { path: 'login', component: JournalistSignIn },
-      { path: 'register', component: JournalistSetUp, meta: { acceptedApplicant: true } },
-      { path: 'setup', component: JournalistManualSetUp, meta: { acceptedApplicant: true } },
+      { path: 'register', component: JournalistSetUp, beforeEnter(to, from, next){
+        if(store.getters.isAuthenticated){
+          next()
+        } else {
+          next('creators/verify')
+        }
+        
+      }},
+      { path: 'setup', component: JournalistManualSetUp, beforeEnter(to, from, next){
+        if(store.getters.isAuthenticated){
+          next()
+        } else {
+          next('creators/verify')
+        }
+        
+      }
+    },
       { path: 'verify', component: JournalistVerify },
-      { path: ':username', component: BaseDashBoard,
+      { path: ':username', component: BaseDashBoard, beforeEnter(to, from, next){
+        if(store.getters.isAJournalist){
+          next()
+        } else {
+          next('creators/login')
+        }
+        
+      },
         meta: {
           journalist: true,
           auth: true
         },
         children: [
           { path: '', component: MyProfile },
-          { path: 'dashboard', component: DashBoardHome },
+          { path: 'dashboard', component: DashBoardHome, beforeEnter(to, from, next){
+            if(store.getters.isAJournalist){
+              next()
+            } else {
+              next('creators/login')
+            }
+           }
+          },
           { path: 'posts', component: BasePost,
+          
             children: [
               { path: '', component: MyPosts },
               { path: 'create', component: CreatePost },
-              { path: ':slug/edit', component: CreatePost }
+              { path: ':slug/edit', component: CreatePost,
+                meta: {
+                  auth: true
+                }, 
+            }
             ]
           }
         ]
@@ -76,7 +111,7 @@ const routes = [
         meta: {
           admin: true,
           auth: true
-        }
+        },
       },
       { path: 'login', component: AdminLogin }
     ]

@@ -13,6 +13,7 @@ import App from './App.vue'
 // import lang from 'iview/dist/locale/en-US';
 
 import 'iview/dist/styles/iview.css';
+import auth from '../stores/auth';
 var SocialSharing = require('vue-social-sharing');
 
 
@@ -74,10 +75,6 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-
-
-
-
 router.beforeEach((to, from, next) => {
   const onlyAuth = to.matched.some(record => record.meta.auth)
   console.log(onlyAuth)
@@ -113,6 +110,7 @@ router.beforeEach((to, from, next) => {
   }else
     next();
 });
+
 
 ga('set', 'page', router.currentRoute.path);
 ga('send', 'pageview');

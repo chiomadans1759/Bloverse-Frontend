@@ -120,7 +120,7 @@ export default {
       return state.loggedInUser !== null;
     },
     isAnAdmin(state){
-      return state.loggedInUser.type === 'Admin';
+      return state.loggedInUser.type =='Admin';
     },
     isAJournalist(state){
       return state.loggedInUser.type === 'journalist';
