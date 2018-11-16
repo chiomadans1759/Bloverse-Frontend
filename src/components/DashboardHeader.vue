@@ -23,7 +23,7 @@
 
 <script>
   import { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem } from 'iview';
-  import { mapMutations, mapState, mapActions } from 'vuex'
+  import { mapMutations, mapState, mapActions } from 'vuex' // eslint-disable-line
   export default {
     components: { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem },
     data(){
@@ -53,7 +53,6 @@
 
       //...mapMutations(['clearSession']),
     }
-     
   }
 </script>
 

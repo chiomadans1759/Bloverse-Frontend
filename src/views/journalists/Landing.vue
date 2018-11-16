@@ -84,8 +84,8 @@
 <script>
 import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
 // import WithFooter from '../../layouts/WithFooter';
-import { mapState, mapActions, mapGetters } from 'vuex';
-import { page } from 'vue-analytics';
+import { mapState, mapActions, mapGetters } from 'vuex'; // eslint-disable-line
+import { page } from 'vue-analytics'; // eslint-disable-line
 import { GChart } from 'vue-google-charts';
 import Header from '@/components/HeaderGeneral'
 
@@ -116,7 +116,6 @@ export default {
   mounted:
     async function(){
     await this.getGeneralMetrics();
-     console.log(this.general.metrics);
     }
 
 };

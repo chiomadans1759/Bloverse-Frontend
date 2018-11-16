@@ -1,13 +1,13 @@
 <template>
-  <div>
-  	<slot></slot>
-  	<!--<TheFooter />-->
-  </div>
+<div>
+  <slot></slot>
+  <!--<TheFooter />-->
+</div>
 </template>
 
 <script>
-  import TheFooter from '../components/TheFooter'
-  export default {
-  	components: { TheFooter }
-  }
+import TheFooter from "../components/TheFooter";
+export default {
+  components: { TheFooter }
+};
 </script>

@@ -19,7 +19,7 @@ class Api {
         data = error.response.data.data;
         message = error.response.data.message;
       }else{
-        console.log(error);
+        return error;
       }
       
     }
@@ -39,13 +39,12 @@ class Api {
       statusText = response.data.status;
     }catch(error){
       if(error.response){
-        console.log(error.response)
         statusCode = error.response.status;
         statusText = error.response.data.status;
         data = error.response.data.data;
         message = error.response.data.message;
       }else{
-        console.log(error);
+        return error;
       }
       
     }
@@ -69,7 +68,7 @@ class Api {
         data = error.response.data.data;
         message = error.response.data.message;
       }else{
-        console.log(error);
+        return error;
       }
       
     }

@@ -1,47 +1,48 @@
 <template>
-  <Col :md="22" :xs="24">
-    <Row type="flex" justify="space-between" align="middle">
-      <Col :md="8" :xs="24" id="photo-wrapper">
-        <DisplayPhoto :value="user.imageUrl" :canEdit="true" height="200px" width="50%" />
-      </Col>
-      <Col :md="12" :xs="24">
-        <Form ref="stepTwoForm" :model="user" :rules="validateUserFields">
-          <FormItem prop="username">
-            <Input class="my-input" v-model="user.username" readonly placeholder="Username*" />
-          </FormItem>
-          <Row type="flex" justify="space-between">
-            <Col :md="11" :xs="24">
-              <FormItem prop="password">
-                <Input class="my-input" type="password" v-model="user.password" placeholder="Password*" />
-              </FormItem>
-            </Col>
-            <Col :md="11" :xs="24">
-              <FormItem prop="confirmPassword" :error="passwordError">
-                <Input class="my-input" type="password" v-model="user.confirmPassword" placeholder="Confirm Password*" /> 
-              </FormItem>
-            </Col>
-          </Row>
-          <FormItem prop="gender">
-            <Select class="my-select" v-model="user.gender">  
-              <Option v-for="item in genders" :value="item.value" :key="item.value">{{ item.label }}</Option>
-            </Select>
-          </FormItem>
-          <FormItem prop="about">
-            <Input class="my-input" v-model="user.about" type="textarea" :rows="6" placeholder="About..." />
-          </FormItem>
-          <FormItem>
-            <Button class="my-btn btn-main" long @click="submitUser">SAVE</Button>
-          </FormItem>
-        </Form>
-      </Col>
-      
-    </Row>
-  </Col>
+<div>
+<Col :md="22" :xs="24">
+  <Row type="flex" justify="space-between" align="middle">
+    <Col :md="8" :xs="24" id="photo-wrapper">
+      <DisplayPhoto :value="user.imageUrl" :canEdit="true" height="200px" width="50%" />
+    </Col>
+    <Col :md="12" :xs="24">
+      <Form ref="stepTwoForm" :model="user" :rules="validateUserFields">
+        <FormItem prop="username">
+          <Input class="my-input" v-model="user.username" readonly placeholder="Username*" />
+        </FormItem>
+        <Row type="flex" justify="space-between">
+          <Col :md="11" :xs="24">
+            <FormItem prop="password">
+              <Input class="my-input" type="password" v-model="user.password" placeholder="Password*" />
+            </FormItem>
+          </Col>
+          <Col :md="11" :xs="24">
+            <FormItem prop="confirmPassword" :error="passwordError">
+              <Input class="my-input" type="password" v-model="user.confirmPassword" placeholder="Confirm Password*" /> 
+            </FormItem>
+          </Col>
+        </Row>
+        <FormItem prop="gender">
+          <Select class="my-select" v-model="user.gender">  
+            <Option v-for="item in genders" :value="item.value" :key="item.value">{{ item.label }}</Option>
+          </Select>
+        </FormItem>
+        <FormItem prop="about">
+          <Input class="my-input" v-model="user.about" type="textarea" :rows="6" placeholder="About..." />
+        </FormItem>
+        <FormItem>
+          <Button class="my-btn btn-main" long @click="submitUser">SAVE</Button>
+        </FormItem>
+      </Form>
+    </Col>
+  </Row>
+</Col>
+</div>
 </template>
 
 <script>
   import { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem } from 'iview';
-  import { mapState } from 'vuex';
+  import { mapState } from 'vuex'; // eslint-disable-line
   import DisplayPhoto from './DisplayImage'
   export default {
     components: { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem, DisplayPhoto },

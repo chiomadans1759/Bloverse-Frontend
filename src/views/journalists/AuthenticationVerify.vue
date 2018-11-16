@@ -30,77 +30,75 @@
 </template>
 
 <script >
-  import {Row, Col, Button, Input, Form, FormItem, Alert } from 'iview';
-  import BaseAuthentication from '../../layouts/BaseAuthentication';
-  import Hashids from 'hashids';
-  import { mapActions, mapState, mapMutations } from 'vuex'
+import { Row, Col, Button, Input, Form, FormItem, Alert } from "iview";
+import BaseAuthentication from "../../layouts/BaseAuthentication";
+import Hashids from "hashids";
+import { mapActions, mapState, mapMutations } from "vuex";
 
-
-  let hashids = new Hashids("SG.AKa2vomKT26KSV9yNHf-HQ.e-", 16);
-  export default {
-  	components: {Row, Col, Button, Input, Form, FormItem, Alert, BaseAuthentication },
-  	data () {
-      return {
-        token: null,
-        processing: false,
-        alert: {
-          show: false,
-          type: 'info'
-        }
+let hashids = new Hashids("SG.AKa2vomKT26KSV9yNHf-HQ.e-", 16);
+export default {
+  components: {
+    Row,
+    Col,
+    Button,
+    Input,
+    Form,
+    FormItem,
+    Alert,
+    BaseAuthentication
+  },
+  data() {
+    return {
+      token: null,
+      processing: false,
+      alert: {
+        show: false,
+        type: "info"
       }
+    };
+  },
+  computed: {
+    ...mapState(["auth", "general"])
+  },
+  methods: {
+    getIdFromToken: function() {
+      //Unhash a Toekn(hashed ID) and return the ID
+      let idArray = hashids.decode(this.token);
+      return idArray[0];
     },
-    computed: {
-      ...mapState([
-        'auth',
-        'general'
-      ])
-    },   
-    methods: {
-      getIdFromToken: function(){
-        //Unhash a Toekn(hashed ID) and return the ID
-        let idArray = hashids.decode(this.token);
-        return idArray[0];
-      },
-      isApplicantAccepted(){
-        return this.auth.applicant.status === 2;
-      },
-      verifyToken: async function(){
-        this.processing = true;
-        if (this.token) {
-          const id = this.getIdFromToken();
-          await this.getApplicantById(id);
-          if(this.auth.applicant && this.isApplicantAccepted()){
-            let hadRegistered = await this.applicantHasRegistered();
-            if(hadRegistered)
-              this.alert.type = 'info';
-            else{
-              this.setShouldRegister(true);
-              this.alert.type = 'success';
-              this.$router.push('register')
-            }             
-            this.alert.show = true;
-          }  
-          else
-            this.$Message.error('Invalid Token'); 
-        } else {
-            this.$Message.error('You did not supply a token!');
-        }
-        this.processing = false;
-      },
+    isApplicantAccepted() {
+      return this.auth.applicant.status === 2;
+    },
+    verifyToken: async function() {
+      this.processing = true;
+      if (this.token) {
+        const id = this.getIdFromToken();
+        await this.getApplicantById(id);
+        if (this.auth.applicant && this.isApplicantAccepted()) {
+          let hadRegistered = await this.applicantHasRegistered();
+          if (hadRegistered) this.alert.type = "info";
+          else {
+            this.setShouldRegister(true);
+            this.alert.type = "success";
+            this.$router.push("register");
+          }
+          this.alert.show = true;
+        } else this.$Message.error("Invalid Token");
+      } else {
+        this.$Message.error("You did not supply a token!");
+      }
+      this.processing = false;
+    },
 
-      ...mapActions([
-        'getApplicantById',
-        'applicantHasRegistered'
-      ]),
-      ...mapMutations(['setShouldRegister'])
-    },
+    ...mapActions(["getApplicantById", "applicantHasRegistered"]),
+    ...mapMutations(["setShouldRegister"])
   }
+};
 </script>
 
 
 <style scoped>
-.token{
+.token {
   padding-top: 150px;
 }
-
 </style>

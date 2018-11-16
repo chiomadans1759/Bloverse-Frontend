@@ -2,19 +2,9 @@
   <div>
     <Modal v-model="publishModal">
       <Alert type="success">Success</Alert>
-      <!--<div v-if="modal.status === 'error'">
-        <ul>
-          <li v-for="(errors, field) in modal.data">
-            {{field}}
-            <ul>
-             <li v-for="err in errors">{{err}}</li>  
-            </ul>
-          </li>
-        </ul>
-      </div>-->
       <div>
         <p>Your post has been successfully published</p>
-         <div class="posts">
+        <div class="posts">
           <vue-goodshare-facebook
             :page_url="url"
             has_icon
@@ -58,7 +48,7 @@
               type="text" />
           <DatePicker v-model="post.duration" id="keypoint" type="date" placement="bottom-end" placeholder="Time Taken" style="width: 100%"></DatePicker>
             <Select placeholder="Device Used"  id="keypoint" v-model="post.deviceType">
-           <Option  v-for="item in deviceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            <Option  v-for="item in deviceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
           </Select>
         </Card>
         <Card class="keypoints" v-else>
@@ -86,7 +76,6 @@
             <Button id="btn-publish" :disabled="post.is_published" @click="handleProcessPost(true)">Publish</Button>
           </Col>
         </Row>
-
       </Col>
 
       <Col span="10">
@@ -103,130 +92,151 @@
 </template>
 
 <script>
-  import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker } from 'iview';
-  import { mapState, mapActions, mapMutations } from 'vuex'
-  import { VueEditor } from "vue2-editor";
-  import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
-  import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
+import {
+  Row,
+  Col,
+  Card,
+  Input,
+  Upload,
+  Icon,
+  Button,
+  Select,
+  Option,
+  Modal,
+  Alert,
+  DatePicker
+} from "iview";
+import { mapState, mapActions, mapMutations } from "vuex";
+import { VueEditor } from "vue2-editor";
+import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
+import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
 
-  import DisplayImage from './DisplayImage';
+import DisplayImage from "./DisplayImage";
 
-  export default {
-    components: {
-      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, VueGoodshareFacebook, VueGoodshareTwitter, VueEditor, DisplayImage, DatePicker
-    },
-    props: ['isTravel'],
-    data: function(){
-      return {
-        publishModal: false,
-        isNewImage: false,
-        deviceList: [
-            {
-                value: 'IPhone',
-                label: 'IPhone'
-            },
-            {
-                value: 'Samsung',
-                label: 'Samsung'
-            },
-            {
-                value: 'Techno',
-                label: 'Techno'
-            },
-            {
-                value: 'Huawei',
-                label: 'Huawei'
-            },
-            {
-                value: 'Infinix',
-                label: 'Infinix'
-            },
-            {
-                value: 'Gionee',
-                label: 'Gionee'
-            },
-             {
-                value: 'Nokia',
-                label: 'Nokia'
-            },
-            {
-                value: 'Huawei',
-                label: 'Huawei'
-            },
-            {
-
-                value: 'ZTE',
-                label: 'ZTE'
-            },
-            {
-                value: 'Lenovo',
-                label: 'Lenovo'
-            },
-            {
-                value: 'LG',
-                label: 'LG'
-            }
-
-        ],
-      };
-      
-    },
-    computed: {
-      post: {
-        get(){
-          return this.$store.state.journalist.post;
+export default {
+  components: {
+    Row,
+    Col,
+    Card,
+    Input,
+    Upload,
+    Icon,
+    Button,
+    Select,
+    Option,
+    Modal,
+    Alert,
+    VueGoodshareFacebook,
+    VueGoodshareTwitter,
+    VueEditor,
+    DisplayImage,
+    DatePicker
+  },
+  props: ["isTravel"],
+  data: function() {
+    return {
+      publishModal: false,
+      isNewImage: false,
+      deviceList: [
+        {
+          value: "IPhone",
+          label: "IPhone"
         },
-        set(props){
-          this.$store.commit('setPost', props);
+        {
+          value: "Samsung",
+          label: "Samsung"
+        },
+        {
+          value: "Techno",
+          label: "Techno"
+        },
+        {
+          value: "Huawei",
+          label: "Huawei"
+        },
+        {
+          value: "Infinix",
+          label: "Infinix"
+        },
+        {
+          value: "Gionee",
+          label: "Gionee"
+        },
+        {
+          value: "Nokia",
+          label: "Nokia"
+        },
+        {
+          value: "Huawei",
+          label: "Huawei"
+        },
+        {
+          value: "ZTE",
+          label: "ZTE"
+        },
+        {
+          value: "Lenovo",
+          label: "Lenovo"
+        },
+        {
+          value: "LG",
+          label: "LG"
         }
+      ]
+    };
+  },
+  computed: {
+    post: {
+      get() {
+        return this.$store.state.journalist.post;
       },
-      url(){
-        return `https://bloverse-frontend.herokuapp.com/posts/${this.post.slug}`;
-      },
+      set(props) {
+        this.$store.commit("setPost", props);
+      }
+    },
+    url() {
+      return `https://bloverse-frontend.herokuapp.com/posts/${this.post.slug}`;
+    },
 
-      ...mapState([
-        'general',
-        'auth',
-      ])
-    },
-    methods: {
-      ...mapActions([
-        'processPost'
-      ]),
-      ...mapMutations([
-        'setPost'
-      ]),
-      handleProcessPost: async function(shouldPublish=false){
-        if(this.post.imageUrl){
-          let success = await this.processPost({shouldPublish, shouldUploadImage: this.isNewImage});
-          if(success){
-            this.$Message.success("Post successfully saved");
-            this.publishModal = shouldPublish;
-          }else
-            this.$Message.error("Something went wrong");
-        }else
-          this.$Message.error("You must select an image");
-      }
-    },
-    watch: {
-      'post.imageUrl': function(val){
-        this.isNewImage = true;
-      }
-    },
-    mounted(){
-      if(this.isTravel){
-          this.setPost({category: 7, country: this.auth.loggedInUser.country.id}),
-
-          this.autocomplete = new google.maps.places.Autocomplete(
-            (this.$refs.autocomplete),
-              {types: ['geocode']}
-          );
-      }else{
-        this.setPost({category: this.auth.loggedInUser.category.id, country: this.auth.loggedInUser.country.id})
-      }
+    ...mapState(["general", "auth"])
+  },
+  methods: {
+    ...mapActions(["processPost"]),
+    ...mapMutations(["setPost"]),
+    handleProcessPost: async function(shouldPublish = false) {
+      if (this.post.imageUrl) {
+        let success = await this.processPost({
+          shouldPublish,
+          shouldUploadImage: this.isNewImage
+        });
+        if (success) {
+          this.$Message.success("Post successfully saved");
+          this.publishModal = shouldPublish;
+        } else this.$Message.error("Something went wrong");
+      } else this.$Message.error("You must select an image");
     }
+  },
+  watch: {
+    "post.imageUrl": function(val) { // eslint-disable-line
+      this.isNewImage = true;
+    }
+  },
+  mounted() {
+    if (this.isTravel) {
+      this.setPost({ category: 7, country: this.auth.loggedInUser.country.id }),
+        (this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line
+          this.$refs.autocomplete,
+          { types: ["geocode"] }
+        ));
+    } else {
+      this.setPost({
+        category: this.auth.loggedInUser.category.id,
+        country: this.auth.loggedInUser.country.id
+      });
+    }
+  }
 
-        /*let { data, status } = await this.createOrUpdatePost();
+  /*let { data, status } = await this.createOrUpdatePost();
         status = status === 403 ? 401 : status; //Convert 403 response error to 401;
 
         switch(status){
@@ -301,75 +311,69 @@
         
         
       },*/
-    
-  }
-
+};
 </script>
 
 
 <style scoped>
-  #create-post {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 120vh;
-  }
+#create-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120vh;
+}
 
-  #display-post #image {
-    width: 100%;
-    height: auto;
-  }
+#display-post #image {
+  width: 100%;
+  height: auto;
+}
 
-  #display-post #title {
-    padding: 0 1.5rem;
-    margin-bottom: 2rem;
-  }
+#display-post #title {
+  padding: 0 1.5rem;
+  margin-bottom: 2rem;
+}
 
-  #display-post #body {
-    padding: 0 1.5rem;
-    margin-top: 2rem;
-  }
-
-
+#display-post #body {
+  padding: 0 1.5rem;
+  margin-top: 2rem;
+}
 </style>
 
 
 <style>
-  #upload-post-image .ivu-upload-drag {
-    display: flex;
-    width: 200px;
-    height: 200px;
-  }
+#upload-post-image .ivu-upload-drag {
+  display: flex;
+  width: 200px;
+  height: 200px;
+}
 
-  .ivu-btn {
-    font-size: 18px;
-    width: 200px;
-    font-weight: bold;
-    line-height: 21px
-  }
+.ivu-btn {
+  font-size: 18px;
+  width: 200px;
+  font-weight: bold;
+  line-height: 21px;
+}
 
-  #btn-draft {
-    background-color: white;
-    color: var(--primary);
-  }
+#btn-draft {
+  background-color: white;
+  color: var(--primary);
+}
 
-  #btn-publish {
-    background-color: var(--primary);
-    color: white;
-  }
+#btn-publish {
+  background-color: var(--primary);
+  color: white;
+}
 
-  .red-border {
-    border: 1px solid red;
-  }
+.red-border {
+  border: 1px solid red;
+}
 
-
-  .keypoints .ivu-input-wrapper {
-    margin: .5rem 0;
-  }
-  .posts 
-  {
-    position: relative;
-  }
+.keypoints .ivu-input-wrapper {
+  margin: 0.5rem 0;
+}
+.posts {
+  position: relative;
+}
 </style>
 
 
