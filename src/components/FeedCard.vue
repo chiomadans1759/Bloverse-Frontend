@@ -2,17 +2,13 @@
   <router-link :to="`posts/${post.slug}`">
   <div class="container">
     <Card class="feed-card">
-      <div id="sectionWidth">
-        <Avatar icon="person" /> &nbsp; <span>John Doez <p style="float: right; margin-top: 5px;">{{ new Date() | moment("dddd, MMMM Do YYYY") }}</p></span>
+      <div id="sectionWidth" type="flex" justify="space-around">
+        <Avatar icon="person" /> &nbsp; <span>John Doe<p style="float: right; margin-top: 5px;">{{myDate}}</p></span>
       </div>
       <img :src="imageUrl" />
-      <!-- Display post keypoints
-      <ul>
-        <li>{{post.keyPoints}}</li>
-      </ul> -->
       <h2 id="category"><p>{{category}}</p></h2>
       <h2 id="title"><p>{{post.title}}</p></h2>
-      <footer type="flex" justify="space-around">
+      <footer type="flex" justify="space-around" id="postFooter">
         <Icon type="md-eye" /> {{post.views}}
         <Icon type="md-text" style="margin-left: 15px;" /> 54
        
@@ -25,7 +21,6 @@
 <script >
   import { Card, Avatar, Icon } from 'iview';
   import { mapState } from 'vuex';
-  require('vue-moment');
   export default {
     name: 'FeedCard',
     props: { post: Object},
@@ -38,7 +33,40 @@
        category(){
         const postCategory = this.general.categories.find( category => category.id === this.post.category);
         return postCategory.name;
-       }, 
+       },
+       myDate(date){
+
+        var seconds = Math.floor(((new Date().getTime()/1000) - date))
+
+        var interval = Math.floor(seconds / 31556952);
+
+        if (interval > 1) {
+          return interval + " years";
+        }
+        interval = Math.floor(seconds / 2592000);
+        if (interval > 1) {
+          return interval + " months";
+        }
+        interval = Math.floor(seconds / 86400);
+        if (interval > 1) {
+          return interval + " days";
+        }
+        interval = Math.floor(seconds / 3600);
+        if (interval > 1) {
+          return interval + " hours";
+        }
+        interval = Math.floor(seconds / 60);
+        if (interval > 1) {
+          return interval + " minutes";
+        }
+        return Math.floor(seconds) + " seconds";
+        var aDay = 24*60*60*1000;
+      console.log(timeSince(new Date(Date.now()-aDay)));
+      console.log(timeSince(new Date(Date.now()-aDay*2)));
+      return myDate;
+      }
+
+  
     },
     filters: {
       summarize: function (value) {
@@ -100,6 +128,10 @@
     height: 6vh;
     margin: 5px;
   }
+  #postFooter{
+    bottom: 0;
+    position: absolute;
+  }
 </style>
 
 
@@ -111,6 +143,5 @@
     padding: 0px;
     width:100%;
  
-
   }
 </style>

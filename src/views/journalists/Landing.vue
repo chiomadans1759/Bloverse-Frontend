@@ -62,7 +62,7 @@
                                     <p> description</p>
                             </i-Col>
                         </Row>   -->
-          <Row class="section-4" type="flex" justify="space-around" >
+          <!-- <Row class="section-4" type="flex" justify="space-around" >
             <Col class="map-section" span="20">
               <span class="underline"> Active Regions</span>
                   <GChart
@@ -73,7 +73,7 @@
                     id="maps"
                   />
             </Col>
-          </Row> 
+          </Row>  -->
         </Content>
       </Layout>
     </div>
@@ -86,27 +86,27 @@ import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
 // import WithFooter from '../../layouts/WithFooter';
 import { mapState, mapActions, mapGetters } from 'vuex'; // eslint-disable-line
 import { page } from 'vue-analytics'; // eslint-disable-line
-import { GChart } from 'vue-google-charts';
+// import { GChart } from 'vue-google-charts'; 
 import Header from '@/components/HeaderGeneral'
 
 
 export default {
-  components: { Button, Modal, Layout, Icon, Row, Content, Col, Header, GChart },
+  components: { Button, Modal, Layout, Icon, Row, Content, Col, Header },
     
   computed: {
     ...mapState([
       'general'
     ]),
-    chartData(){
-      let newData =  [['Country', 'views']];
-      let countries = this.general.metrics.views.countries;
-      Object.keys(countries).forEach(country => {
-        newData.push([country, countries[country]])
-      })
+    // chartData(){
+    //   let newData =  [['Country', 'views']];
+    //   let countries = this.general.metrics.views.countries;
+    //   Object.keys(countries).forEach(country => {
+    //     newData.push([country, countries[country]])
+    //   })
 
-      return newData;
+    //   return newData;
       
-    }
+    // }
   },
   methods: {
     ...mapActions([
