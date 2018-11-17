@@ -27,7 +27,7 @@
 
 <script>
   import { Icon } from 'iview';
-  import lang from 'iview/dist/locale/en-US';
+  import lang from 'iview/dist/locale/en-US'; // eslint-disable-line
 
 
   export default {

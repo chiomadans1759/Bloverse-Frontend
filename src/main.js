@@ -13,7 +13,7 @@ import App from './App.vue'
 // import lang from 'iview/dist/locale/en-US';
 
 import 'iview/dist/styles/iview.css';
-import auth from '../stores/auth';
+import auth from '../stores/auth'; // eslint-disable-line
 var SocialSharing = require('vue-social-sharing');
 
 
@@ -26,7 +26,6 @@ Vue.prototype.$http = axios;
 Vue.prototype.$Message = Message;
 Vue.prototype.$Loading = LoadingBar;
 
-
 Vue.use(VueRouter);
 Vue.use(SocialSharing);
 Vue.use(require('vue-moment'));
@@ -36,7 +35,6 @@ Vue.use(require('vue-moment'));
 })*/
 
 Vue.config.productionTip = false
-
 
 // Routing logic
 const router = new VueRouter({
@@ -55,8 +53,6 @@ Vue.filter('firstToUpper', (value) => {
   value = value.toString();
   return value.charAt(0).toUpperCase() + value.substr(1);
 }); 
-
-
 
 new Vue({
   router,
@@ -78,12 +74,11 @@ new Vue({
 
 router.beforeEach((to, from, next) => {
   const onlyAuth = to.matched.some(record => record.meta.auth)
-  console.log(onlyAuth)
   const onlyJournalist = to.matched.some(record=>record.meta.journalist)
   const onlyAdmin = to.matched.some(record=>record.meta.admin)
   LoadingBar.start();
   if(onlyAuth){
-    console.log('Start for only auth');
+    // This should start for only auth
     if(store.getters.isAuthenticated){
       if(onlyJournalist && store.getters.isAJournalist)
         next()
@@ -113,11 +108,10 @@ router.beforeEach((to, from, next) => {
 });
 
 
-ga('set', 'page', router.currentRoute.path);
-ga('send', 'pageview');
-
-router.afterEach(( to, from, next) => {
-  ga('set', 'page', to.path);
-  ga('send', 'pageview');
+ga('set', 'page', router.currentRoute.path); // eslint-disable-line
+ga('send', 'pageview'); // eslint-disable-line
+router.afterEach((to, from, next) => { // eslint-disable-line
+  ga('set', 'page', to.path); // eslint-disable-line
+  ga('send', 'pageview'); // eslint-disable-line
   LoadingBar.finish();
 });

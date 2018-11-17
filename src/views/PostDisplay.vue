@@ -11,7 +11,7 @@
     <router-link v-if="isLoggedIn" :to="`/journalist/${auth.loggedInUser.userName}/posts`"> <Icon type="ios-arrow-round-back" /> Back to Dashboard</router-link>
     <h2 class="border">{{general.currentPost.title}}</h2>
     <ul class="summary-feed">
-      <li v-for="point in general.currentPost.keypoint">{{point}}</li>
+      <li v-for="point in general.currentPost.keypoint" :key="point.id">{{point}}</li>
     </ul>
     <img class="main-image" :src="general.currentPost.image_url" />
     <p class="main-body" v-html="general.currentPost.body"></p>    

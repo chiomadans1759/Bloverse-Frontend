@@ -200,7 +200,6 @@ export default {
         this.errors[varClient] = fieldErrors[0];
         // BUG !!!! Currently it sets the message but doesn't display the error message unless when a field is edited 
       })
-      console.log(this.errors)
       this.$Message.error('Some Forms fields were not filled correctly!');
     },
     handleSuccess(){

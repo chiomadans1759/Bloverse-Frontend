@@ -1,5 +1,6 @@
 <template>
-<Col :md="14" :xs="24">
+<div>
+  <Col :md="14" :xs="24">
   <Form id="form-setup-one" ref="stepOneForm" :model="user" :rules="validateUserFields">
     <FormItem prop="firstName">
       <Input class="my-input" v-model="user.firstName" placeholder="First name*" />
@@ -25,8 +26,8 @@
     </FormItem>
   </Form>
   <Button long class="my-btn btn-secondary" @click="toNext">NEXT</Button>
-</Col>
-
+  </Col>
+</div>
 </template>
 
 <script>

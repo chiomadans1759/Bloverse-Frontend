@@ -33,7 +33,7 @@
 
 <script>
   import { mapState, mapActions } from 'vuex'
-  import { Row, Col, Card, Select, Option } from 'iview';
+  import { Row, Col, Card, Select, Option } from 'iview'; // eslint-disable-line
   import FeedCard from '../components/FeedCard.vue';
   import Loading from '../components/Loading.vue';
   import vSelect from 'vue-select';
@@ -73,13 +73,13 @@
       },
     },
     watch: {
-      category: async function(val){
+      category: async function(val){ // eslint-disable-line
         
         let category = this.category ? this.category.id : ''
         let country = this.country ? this.country.id : ''
         await this.getAllPublishedPosts({category, country});
       },
-      country: async function(val){
+      country: async function(val){ // eslint-disable-line
         let category = this.category ? this.category.id : ''
         let country = this.country ? this.country.id : ''
         await this.getAllPublishedPosts({category, country});
@@ -106,8 +106,8 @@
 }
 
 .landing{
- text-align:center;
- margin-top:120px;
+  text-align:center;
+  margin-top:120px;
 }
 
 .noMatch{
@@ -116,8 +116,8 @@
   padding-top:4rem;
 }
 .landing span{
- font-weight: 800;
- font-size:70px;  
+  font-weight: 800;
+  font-size:70px;  
 }
 
 @media only screen and (max-width: 600px) {
