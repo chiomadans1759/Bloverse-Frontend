@@ -29,6 +29,7 @@ Vue.prototype.$Loading = LoadingBar;
 
 Vue.use(VueRouter);
 Vue.use(SocialSharing);
+Vue.use(require('vue-moment'));
 /*Vue.use(VueAnalytics, {
   id: 'UA-127172964-2',
   router

@@ -41,13 +41,15 @@
         </Card> 
       </Row>
     </section>
-    <Form>
+    <div id="bottom"></div>
+    </Col>
+    <!-- <Form>
       <FormItem id="input">
         <Input v-model="newComment"  id="searchbox2" type="textarea" :rows="5" placeholder="Reply to this post with  a comment"> </Input>
       </FormItem>
     </Form>
-    <Button type="success" id="btn-comment" long>Show Comments</Button>
-  </Col>
+    <Button type="success" id="btn-comment" long>Show Comments</Button> -->
+
 
 </Row>
 
@@ -213,15 +215,8 @@ text-align: justify;
    
   }
   #input{
-margin-top: 50px;
-
-
-
+    margin-top: 50px;
   }
-
-
-    
-
   #trendtoday {
     margin-top: 40px;
   }
@@ -231,7 +226,9 @@ margin-top: 50px;
   #trendmonth {
       margin-top: 40px;
   }
-   
+ #bottom {
+   margin-bottom: 3rem;
+ }  
 
 
 </style>

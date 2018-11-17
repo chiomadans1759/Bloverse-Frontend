@@ -3,9 +3,13 @@
   <div class="container">
     <Card class="feed-card">
       <div id="sectionWidth">
-        <Avatar icon="person" /> &nbsp; <span>John Doe <p style="float: right; margin-top: 5px;">3 hours ago</p></span>
+        <Avatar icon="person" /> &nbsp; <span>John Doez <p style="float: right; margin-top: 5px;">{{ new Date() | moment("dddd, MMMM Do YYYY") }}</p></span>
       </div>
       <img :src="imageUrl" />
+      <!-- Display post keypoints
+      <ul>
+        <li>{{post.keyPoints}}</li>
+      </ul> -->
       <h2 id="category"><p>{{category}}</p></h2>
       <h2 id="title"><p>{{post.title}}</p></h2>
       <footer type="flex" justify="space-around">
@@ -21,7 +25,7 @@
 <script >
   import { Card, Avatar, Icon } from 'iview';
   import { mapState } from 'vuex';
-
+  require('vue-moment');
   export default {
     name: 'FeedCard',
     props: { post: Object},
@@ -31,10 +35,10 @@
         return this.post.image_url;
       },
       ...mapState(['general']),
-      category(){
+       category(){
         const postCategory = this.general.categories.find( category => category.id === this.post.category);
         return postCategory.name;
-       }
+       }, 
     },
     filters: {
       summarize: function (value) {
