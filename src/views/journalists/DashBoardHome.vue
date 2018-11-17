@@ -39,7 +39,7 @@
             </Col>
           </Row>
           <div id="map-wrapper">
-           <GChart
+          <GChart
                     type="GeoChart"
                     :data="chartData"
                     ref="chartData"
@@ -51,7 +51,7 @@
       <Col :sm="8">
         <Card id="trending-card">
           <h2 slot="title" class="title">Trending</h2>
-               <Row type="flex" justify="space-around">
+              <Row type="flex" justify="space-around">
             <Col span="10">
               <Select v-model="categories" placeholder="Categories" id="categories">
                 <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
@@ -101,7 +101,7 @@
       ...mapState([
         'general'
       ]),
-       chartData(){
+      chartData(){
       let newData =  [['Country', 'views']];
       let countries = this.general.metrics.views.countries;
       Object.keys(countries).forEach(country => {
@@ -110,11 +110,9 @@
 
       return newData;
       
-    }
-  },
-    computed:{
-      ...mapGetters(['views', 'articles'])
     },
+    ...mapGetters(['views', 'articles'])
+  },
     methods: {
       ...mapActions(['getMyMetrics'])
     },

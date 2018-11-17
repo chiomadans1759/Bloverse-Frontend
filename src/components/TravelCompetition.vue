@@ -177,7 +177,7 @@
         'general',
         'auth',
       ]),
-      url() {
+      url() { // eslint-disable-line
         
       }
     },
@@ -201,14 +201,14 @@
       }
     },
     watch: {
-      'post.imageUrl': function(val){
+      'post.imageUrl': function(val){ // eslint-disable-line
         this.isNewImage = true;
       }
     },
     mounted(){
       this.setPost({category: 7, country: this.auth.loggedInUser.country.id}),
 
-        this.autocomplete = new google.maps.places.Autocomplete(
+        this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line
         (this.$refs.autocomplete),
           {types: ['geocode']}
     );

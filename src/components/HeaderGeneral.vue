@@ -12,25 +12,23 @@
  </nav>
 </template>
 <script >
- import { Icon, Row, Col, Button } from 'iview';
-  export default {
-  	components: { Icon, Row, Col, Button }
-  }
+import { Icon, Row, Col, Button } from "iview";
+export default {
+  components: { Icon, Row, Col, Button }
+};
 </script>
 
 
 <style scoped>
-
-.header-row{
+.header-row {
   width: 90%;
   margin: 0 auto;
 }
 
 .logo {
-height:90px;
-margin-left: 2em;
+  height: 90px;
+  margin-left: 2em;
 }
-
 
 .register {
   border: 1px solid #fefefe;
@@ -49,16 +47,14 @@ margin-left: 2em;
   color: white;
 }
 
-
-
 .auth {
-    padding: 10px 30px 10px 30px;
-    border-radius: 100px;
-    font-size: 14px;
-    font-weight: 800;
-  }
+  padding: 10px 30px 10px 30px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 800;
+}
 
-.header-nav{
+.header-nav {
   padding: 15px 40px 10px 40px;
 }
 </style>

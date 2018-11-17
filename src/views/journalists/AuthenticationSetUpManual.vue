@@ -8,7 +8,7 @@
           <Step content="Verify Previous Info"></Step>
           <Step id="last" title="Final" content="Personalize your account"></Step>
         </Steps> -->
-       <div class="steps">
+      <div class="steps">
           <div class=container> 
             <div class="step-count"> 
               <div class="content " id="myDiv1" :class="{ active: currentPage === 1 }">
@@ -48,7 +48,7 @@
   import PageTwo from '../../components/SetUpStepTwo.vue';
 
   import { Steps, Step, Row, Col, } from 'iview';
-  import { mapMutations, mapActions, mapState } from 'vuex';
+  import { mapMutations, mapActions, mapState } from 'vuex'; // eslint-disable-line
 
   
 
@@ -74,10 +74,10 @@
       ])
     },
     watch: {
-      'user.firstName': async function(val){
+      'user.firstName': async function(val){ // eslint-disable-line
         await this.generateUsername();
       },
-      'user.lastName': async function(val){
+      'user.lastName': async function(val){ // eslint-disable-line
         await this.generateUsername();
       }
     },

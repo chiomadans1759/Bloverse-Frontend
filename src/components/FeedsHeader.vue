@@ -20,7 +20,7 @@
 
 <script>
   import { Row, Col, Input, Select, Option } from 'iview'
-  import { mapState, mapMutations } from 'vuex'
+  import { mapState, mapMutations } from 'vuex' // eslint-disable-line
 
   export default {
     components: { Row, Col, Input, Select, Option },
