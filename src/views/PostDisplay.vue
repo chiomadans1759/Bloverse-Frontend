@@ -215,17 +215,8 @@ text-align: justify;
    
   }
   #input{
-<<<<<<< HEAD
     margin-top: 50px;
   }
-=======
-margin-top: 50px;
-
-
-  }
-    
-
->>>>>>> chore(eslint): configure eslint
   #trendtoday {
     margin-top: 40px;
   }
@@ -235,12 +226,9 @@ margin-top: 50px;
   #trendmonth {
       margin-top: 40px;
   }
-<<<<<<< HEAD
  #bottom {
    margin-bottom: 3rem;
  }  
-=======
->>>>>>> chore(eslint): configure eslint
 
 
 </style>
