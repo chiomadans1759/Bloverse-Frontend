@@ -107,7 +107,14 @@ const routes = [
   { path: '/ranking/:person', component: RankingSystem },
   { path: '/admin', component: BaseAdmin,
     children: [
-      { path: '', redirect: 'dashboard' },
+      { path: '', redirect: 'dashboard', beforeEnter(to, from, next){
+        if(store.getters.isAnAdmin){
+          next()
+        } else {
+          next('admin/login')
+        }
+       }
+      },
       { path: 'dashboard', component: AdminHome, 
         meta: {
           admin: true,
