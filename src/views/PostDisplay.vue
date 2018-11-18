@@ -57,41 +57,41 @@
 
 
 <script>
-  import { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button} from 'iview';
-  import { mapGetters, mapState, mapActions } from 'vuex';
-  import { Facebook, Twitter, Linkedin} from 'vue-socialmedia-share';
+import { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button} from 'iview';
+import { mapGetters, mapState, mapActions } from 'vuex';
+import { Facebook, Twitter, Linkedin} from 'vue-socialmedia-share';
 
-  import Loading from '../components/Loading.vue';
+import Loading from '../components/Loading.vue';
 
-  export default {
-      components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button, Facebook, Twitter, Linkedin, Loading},
-      data: function(){
-          return {
-             newComment: '',
-             //url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
-          }
-      },
-      computed: {
-        url(){
-          return `https://bloverse-frontend.herokuapp.com/posts/${this.general.currentPost.slug}`;
-        },
-        ...mapState([
-          'general',
-          'auth'
-        ]),
-        ...mapGetters(['isLoggedIn'])
-      },
-      methods: {
-        ...mapActions(['getPostBySlug'])
-      },
-      async created () {
-        // fetch the data when the view is created and the data is
-        // already being observed
-        let { slug } = this.$route.params
-        await this.getPostBySlug({slug});
-      }
-      
+export default {
+  components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button, Facebook, Twitter, Linkedin, Loading},
+  data: function(){
+    return {
+      newComment: '',
+      //url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
+    }
+  },
+  computed: {
+    url(){
+      return `https://bloverse-frontend.herokuapp.com/posts/${this.general.currentPost.slug}`;
+    },
+    ...mapState([
+      'general',
+      'auth'
+    ]),
+    ...mapGetters(['isLoggedIn'])
+  },
+  methods: {
+    ...mapActions(['getPostBySlug'])
+  },
+  async created () {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    let { slug } = this.$route.params
+    await this.getPostBySlug({slug});
   }
+      
+}
 
 
 </script>
@@ -215,8 +215,17 @@ text-align: justify;
    
   }
   #input{
+<<<<<<< HEAD
     margin-top: 50px;
   }
+=======
+margin-top: 50px;
+
+
+  }
+    
+
+>>>>>>> chore(eslint): configure eslint
   #trendtoday {
     margin-top: 40px;
   }
@@ -226,9 +235,12 @@ text-align: justify;
   #trendmonth {
       margin-top: 40px;
   }
+<<<<<<< HEAD
  #bottom {
    margin-bottom: 3rem;
  }  
+=======
+>>>>>>> chore(eslint): configure eslint
 
 
 </style>

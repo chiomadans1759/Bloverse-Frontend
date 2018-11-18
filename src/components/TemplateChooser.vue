@@ -27,11 +27,11 @@
   </div>
 </template>
 <script>
-  import { Row, Col, Layout } from 'iview';
+import { Row, Col, Layout } from 'iview';
 
-  export default {
-    components: { Row, Col, Layout },
-  }
+export default {
+  components: { Row, Col, Layout },
+}
 </script>
 
 <style scoped>

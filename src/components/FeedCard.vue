@@ -19,6 +19,7 @@
 </template>
 
 <script >
+<<<<<<< HEAD
   import { Card, Avatar, Icon } from 'iview';
   import { mapState } from 'vuex';
   export default {
@@ -65,14 +66,32 @@
       }
 
   
+=======
+import { Card, Avatar, Icon } from 'iview';
+import { mapState } from 'vuex';
+
+export default {
+  name: 'FeedCard',
+  props: { post: Object},
+  components: { Card, Avatar, Icon },
+  computed: {
+    imageUrl: function(){
+      return this.post.image_url;
+>>>>>>> chore(eslint): configure eslint
     },
-    filters: {
-      summarize: function (value) {
-        if (!value) return ''
-        return value.substring(0, 60)
-      }
+    ...mapState(['general']),
+    category(){
+      const postCategory = this.general.categories.find( category => category.id === this.post.category);
+      return postCategory.name;
+    }
+  },
+  filters: {
+    summarize: function (value) {
+      if (!value) return ''
+      return value.substring(0, 60)
     }
   }
+}
 </script>
 
 <style scoped>

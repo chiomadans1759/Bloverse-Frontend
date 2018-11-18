@@ -88,12 +88,12 @@
 </template>
 
 <script>
-  import BaseAuthentication from '../../layouts/BaseAuthentication';
-  import countryFlags from '../../countryFlags.js';
-  import { Form, FormItem, Row, Col, Input, Checkbox, Modal, Alert, Button, Select, Option } from 'iview';
-  import { mapState, mapActions } from 'vuex';
-  import vSelect from 'vue-select';
-  //import Utility from '../../Utility.js';
+import { Form, FormItem, Row, Col, Input, Checkbox, Modal, Alert, Button, Select, Option } from 'iview';
+import { mapState, mapActions } from 'vuex';
+import vSelect from 'vue-select';
+import countryFlags from '../../countryFlags.js';
+import BaseAuthentication from '../../layouts/BaseAuthentication';
+//import Utility from '../../Utility.js';
 export default {
   components: { Form, FormItem, Row, Col, Input,Checkbox, Modal, Alert, Button, BaseAuthentication, vSelect, Select, Option },
   data: function(){
@@ -149,7 +149,7 @@ export default {
       }
     },
     optionCountry(){
-     return this.general.countries;
+      return this.general.countries;
     },
     category(){
       return this.general.categories;

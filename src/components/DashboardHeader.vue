@@ -22,38 +22,39 @@
 </template>
 
 <script>
-  import { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem } from 'iview';
-  import { mapMutations, mapState, mapActions } from 'vuex' // eslint-disable-line
-  export default {
-    components: { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem },
-    data(){
-      return {
-        collapsed: false
-      }
-    },
-    computed: {
-      ...mapState(['auth']),
-      name(){
-        let { firstName, lastName } = this.auth.loggedInUser; 
-        return firstName + ' ' +  lastName;
-      }
-    },
-    methods: {
-      ...mapActions([
-        'clearSession'
-      ]),
-      logOut(){
-        if(this.clearSession())
-          this.$router.push('/creators/login');
-      },
-      handleIconClick(){
-        this.collapsed = !this.collapsed
-        this.$emit('collapsed', this.collapsed)
-      }
+import { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem } from 'iview';
+import { mapState, mapActions } from 'vuex'
 
-      //...mapMutations(['clearSession']),
+export default {
+  components: { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem },
+  data(){
+    return {
+      collapsed: false
     }
+  },
+  computed: {
+    ...mapState(['auth']),
+    name(){
+      let { firstName, lastName } = this.auth.loggedInUser; 
+      return firstName + ' ' + lastName;
+    }
+  },
+  methods: {
+    ...mapActions([
+      'clearSession'
+    ]),
+    logOut(){
+      if(this.clearSession())
+        this.$router.push('/creators/login');
+    },
+    handleIconClick(){
+      this.collapsed = !this.collapsed
+      this.$emit('collapsed', this.collapsed)
+    }
+
+    //...mapMutations(['clearSession']),
   }
+}
 </script>
 
 <style>

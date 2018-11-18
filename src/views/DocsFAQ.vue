@@ -24,25 +24,25 @@
 
 
 <script>
-  import { Row, Col, Input } from 'iview';
-  import BaseDocs from '../layouts/BaseDocs.vue';
-  import data from '../data.js';
+import { Row, Col, Input } from 'iview';
+import BaseDocs from '../layouts/BaseDocs.vue';
+import data from '../data.js';
 
-  export default {
-    components: { BaseDocs, Row, Col, Input },
-    data: function(){
-      return {
-        questions: data.faq[this.$route.params.person]
-      }
-    },
-    watch: {
-      '$route' (to, from) { // eslint-disable-line
-        // react to route changes...
-        this.questions = data.faq[to.params.person]
-      }
+export default {
+  components: { BaseDocs, Row, Col, Input },
+  data: function(){
+    return {
+      questions: data.faq[this.$route.params.person]
     }
-
+  },
+  watch: {
+    '$route' (to, from) {
+      // react to route changes...
+      this.questions = data.faq[to.params.person]
+    }
   }
+
+}
 
 </script>
 

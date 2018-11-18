@@ -31,35 +31,35 @@
 </template>
 
 <script>
-  import { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem } from 'iview';
+import { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem } from 'iview';
 
-  import { mapState } from 'vuex';
+import { mapState } from 'vuex';
 
-  export default {
-    props: { user: Object },
-    components: { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem },
-    data: function(){
-      return {
-        validateUserFields: {
-          firstName: [
-            {required: true, message: 'First name cannot be empty', trigger: 'blur' },
-          ],
-          lastName: [
-            { required: true, message: 'Last name cannot be empty', trigger: 'blur' },
-          ]
-        }
+export default {
+  props: { user: Object },
+  components: { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem },
+  data: function(){
+    return {
+      validateUserFields: {
+        firstName: [
+          {required: true, message: 'First name cannot be empty', trigger: 'blur' },
+        ],
+        lastName: [
+          { required: true, message: 'Last name cannot be empty', trigger: 'blur' },
+        ]
       }
-    },
-    computed: {
-      ...mapState([
-         // map this.count to store.state.count
-         'general'
-       ]),
-    },
-    methods: {
-      toNext(){
-        this.$emit('toNext');
-       /* this.$refs.stepOneForm.validate(valid=> {
+    }
+  },
+  computed: {
+    ...mapState([
+      // map this.count to store.state.count
+      'general'
+    ]),
+  },
+  methods: {
+    toNext(){
+      this.$emit('toNext');
+      /* this.$refs.stepOneForm.validate(valid=> {
           if(valid){
             this.$emit('toNext');
           }else{
@@ -68,9 +68,9 @@
           
         })*/
         
-      }
-    },
-  }
+    }
+  },
+}
 </script>
 
 

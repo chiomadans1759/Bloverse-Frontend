@@ -32,7 +32,7 @@ export default {
     };
   },
   watch: {
-    $route(to, from) { // eslint-disable-line
+    $route(to, from) { 
       // react to route changes...
       this.rules = data.rules[to.params.person];
     }

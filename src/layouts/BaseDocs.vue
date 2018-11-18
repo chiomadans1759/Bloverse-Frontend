@@ -25,16 +25,16 @@
 
 
 <script>
-  import WithHeader from './WithHeader'
-  import { Row, Col } from 'iview';
-  export default {
-    props: ['title', 'about'],
-    components: { Row, Col, WithHeader }
-  }
+import { Row, Col } from 'iview';
+import WithHeader from './WithHeader'
+
+export default {
+  props: ['title', 'about'],
+  components: { Row, Col, WithHeader }
+}
 
 
 </script>
-
 
 
 <style scoped>

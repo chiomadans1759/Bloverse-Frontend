@@ -16,17 +16,18 @@
 </template>
 
 <script>
-  import { Layout, Icon, Sider } from 'iview';
-  import DashboardHeader from '../components/DashboardHeader.vue';
-  import DashboardSidebarLinks from '../components/DashboardSideBarLinks.vue';
-  export default {
-    data () {
-      return {
-        isCollapsed: true
-      }
-    },
-    components: { Layout, Icon, Sider, DashboardHeader, DashboardSidebarLinks },
-  }
+import { Layout, Icon, Sider } from 'iview';
+import DashboardHeader from '../components/DashboardHeader.vue';
+import DashboardSidebarLinks from '../components/DashboardSideBarLinks.vue';
+
+export default {
+  data () {
+    return {
+      isCollapsed: true
+    }
+  },
+  components: { Layout, Icon, Sider, DashboardHeader, DashboardSidebarLinks },
+}
 
 </script>
 

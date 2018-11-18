@@ -97,125 +97,122 @@
 </template>
 
 <script>
-  import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker } from 'iview';
-  import { mapState, mapActions, mapMutations } from 'vuex'
-  import { VueEditor } from "vue2-editor";
-  // import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
-  // import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
-  import DisplayImage from './DisplayImage';
+import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker } from 'iview';
+import { mapState, mapActions, mapMutations } from 'vuex'
+import { VueEditor } from "vue2-editor";
+// import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
+// import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
+import DisplayImage from './DisplayImage';
 
-  export default {
-    components: {
-      Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker, VueEditor, DisplayImage
-    },
-    data: function(){
-      return {
-         publishModal: false,
-         isNewImage: false,
-                deviceList: [
-                    {
-                        value: 'IPhone',
-                        label: 'IPhone'
-                    },
-                    {
-                        value: 'Samsung',
-                        label: 'Samsung'
-                    },
-                    {
-                        value: 'Techno',
-                        label: 'Techno'
-                    },
-                    {
-                        value: 'Huawei',
-                        label: 'Huawei'
-                    },
-                    {
-                        value: 'Infinix',
-                        label: 'Infinix'
-                    },
-                    {
-                        value: 'Gionee',
-                        label: 'Gionee'
-                    },
-                    {
-                        value: 'Nokia',
-                        label: 'Nokia'
-                    },
-                    {
-                        value: 'Huawei',
-                        label: 'Huawei'
-                    },
-                    {
-
-                        value: 'ZTE',
-                        label: 'ZTE'
-                    },
-                    {
-                        value: 'Lenovo',
-                        label: 'Lenovo'
-                    },
-                    {
-                        value: 'LG',
-                        label: 'LG'
-                    }
-
-                ], 
-      };
-      
-    },
-    computed: {
-      post: {
-        get(){
-          return this.$store.state.journalist.post;
+export default {
+  components: {
+    Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker, VueEditor, DisplayImage
+  },
+  data: function(){
+    return {
+      publishModal: false,
+      isNewImage: false,
+      deviceList: [
+        {
+          value: 'IPhone',
+          label: 'IPhone'
         },
-        set(props){
-          this.$store.commit('setPost', props);
+        {
+          value: 'Samsung',
+          label: 'Samsung'
+        },
+        {
+          value: 'Techno',
+          label: 'Techno'
+        },
+        {
+          value: 'Huawei',
+          label: 'Huawei'
+        },
+        {
+          value: 'Infinix',
+          label: 'Infinix'
+        },
+        {
+          value: 'Gionee',
+          label: 'Gionee'
+        },
+        {
+          value: 'Nokia',
+          label: 'Nokia'
+        },
+        {
+          value: 'Huawei',
+          label: 'Huawei'
+        },
+        {
+
+          value: 'ZTE',
+          label: 'ZTE'
+        },
+        {
+          value: 'Lenovo',
+          label: 'Lenovo'
+        },
+        {
+          value: 'LG',
+          label: 'LG'
         }
+
+      ], 
+    };
+      
+  },
+  computed: {
+    post: {
+      get(){
+        return this.$store.state.journalist.post;
       },
-
-      ...mapState([
-        'general',
-        'auth',
-      ]),
-      url() { // eslint-disable-line
-        
+      set(props){
+        this.$store.commit('setPost', props);
       }
     },
-    methods: {
-      ...mapActions([
-        'processPost'
-      ]),
-      ...mapMutations([
-        'setPost'
-      ]),
-      handleProcessPost: async function(shouldPublish=false){
-        if(this.post.imageUrl){
-          let success = await this.processPost({shouldPublish, shouldUploadImage: this.isNewImage});
-          if(success){
-            this.$Message.success("Post successfully saved");
-            this.publishModal = shouldPublish;
-          }else
-            this.$Message.error("Something went wrong");
+
+    ...mapState([
+      'general',
+      'auth',
+    ]),
+  },
+  methods: {
+    ...mapActions([
+      'processPost'
+    ]),
+    ...mapMutations([
+      'setPost'
+    ]),
+    handleProcessPost: async function(shouldPublish=false){
+      if(this.post.imageUrl){
+        let success = await this.processPost({shouldPublish, shouldUploadImage: this.isNewImage});
+        if(success){
+          this.$Message.success("Post successfully saved");
+          this.publishModal = shouldPublish;
         }else
-          this.$Message.error("You must select an image");
-      }
-    },
-    watch: {
-      'post.imageUrl': function(val){ // eslint-disable-line
-        this.isNewImage = true;
-      }
-    },
-    mounted(){
-      this.setPost({category: 7, country: this.auth.loggedInUser.country.id}),
+          this.$Message.error("Something went wrong");
+      }else
+        this.$Message.error("You must select an image");
+    }
+  },
+  watch: {
+    'post.imageUrl': function(val){
+      this.isNewImage = true;
+    }
+  },
+  mounted(){
+    this.setPost({category: 7, country: this.auth.loggedInUser.country.id}),
 
-        this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line
-        (this.$refs.autocomplete),
-          {types: ['geocode']}
+    this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
+      (this.$refs.autocomplete),
+      {types: ['geocode']}
     );
   },
     
 
-        /*let { data, status } = await this.createOrUpdatePost();
+  /*let { data, status } = await this.createOrUpdatePost();
         status = status === 403 ? 401 : status; //Convert 403 response error to 401;
 
         switch(status){
@@ -291,7 +288,7 @@
         
       },*/
     
-  }
+}
 
 </script>
 
@@ -408,7 +405,6 @@ mounted: async function(){
       console.log(error);
     }
   }
-  
   
   
 }

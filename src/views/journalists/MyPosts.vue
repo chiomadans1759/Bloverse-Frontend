@@ -23,42 +23,42 @@
 
 
 <script>
-  import { Row, Col, Icon } from 'iview';
-  import { mapState, mapActions } from 'vuex'
+import { Row, Col, Icon } from 'iview';
+import { mapState, mapActions } from 'vuex'
 
-  import PostCard from '../../components/PostCard.vue';
-  import Loading from '../../components/Loading';
-  export default {
-    components: { Row, Col, PostCard, Icon, Loading },
-    computed: {
-      ...mapState([
-        'journalist',
-        'general',
-        'auth'
-      ]),
+import PostCard from '../../components/PostCard.vue';
+import Loading from '../../components/Loading';
 
-      showPosts: function () {
-        return this.journalist.posts.length > 0
-      }
-    },
-    async created () {
-        // fetch the data when the view is created and the data is
-        // already being observed
-      await this.getMyPosts()
-    },
-    watch: {
-      // call again the method if the route changes
-      '$route': 'getMyPosts'
-    },
-    methods: {
-      ...mapActions([
-        'getMyPosts'
-      ])
+export default {
+  components: { Row, Col, PostCard, Icon, Loading },
+  computed: {
+    ...mapState([
+      'journalist',
+      'general',
+      'auth'
+    ]),
+
+    showPosts: function () {
+      return this.journalist.posts.length > 0
     }
+  },
+  async created () {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    await this.getMyPosts()
+  },
+  watch: {
+    // call again the method if the route changes
+    '$route': 'getMyPosts'
+  },
+  methods: {
+    ...mapActions([
+      'getMyPosts'
+    ])
   }
+}
 
 </script>
-
 
 
 <style>

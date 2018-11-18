@@ -6,27 +6,28 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
-  import LoadingIcon from './components/Loading';
-  export default {
-    name: 'app',
-    components: { LoadingIcon },
-    data(){
-      return {
-        loading: true
-      }
-    },
-    methods: {
-      ...mapActions([
-        'setGeneralData'
-      ])
-    },
-    async created(){
-      let loaded = await this.setGeneralData();
-      this.loading = !loaded;
-      //this.loading = false;
+import { mapActions } from 'vuex'
+import LoadingIcon from './components/Loading';
+
+export default {
+  name: 'app',
+  components: { LoadingIcon },
+  data(){
+    return {
+      loading: true
     }
+  },
+  methods: {
+    ...mapActions([
+      'setGeneralData'
+    ])
+  },
+  async created(){
+    let loaded = await this.setGeneralData();
+    this.loading = !loaded;
+    //this.loading = false;
   }
+}
 </script>
 
 <style>

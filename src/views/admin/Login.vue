@@ -24,61 +24,61 @@
 </template>
 
 <script>
-  import { Row, Col, Form, Icon, Button, Input, FormItem } from 'iview';
-  import { mapActions } from 'vuex';
+import { Row, Col, Form, Icon, Button, Input, FormItem } from 'iview';
+import { mapActions } from 'vuex';
 
-  export default {
-    components: {
-      Row, Col, Form, Icon, Button, Input, FormItem,
-    },
-    data() {
-      return {
-        user: {
-          email: null,
-          password: null,
-        },
-        logInRules: {
-          email: [
-            { required: true, message: 'Email field is required', trigger: 'blur' },
-            { type: 'email', message: 'Please enter a valid email' },
-          ],
-          password: [
-            { required: true, message: 'Please fill in the password.', trigger: 'blur' },
-            {
-              type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur',
-            },
-          ],
-        },
-        serverResponse: null,
-      };
-    },
-    methods: {
-      handleSubmit() {
-        this.$refs.logInForm.validate(async (valid) => {
-          if (valid) {
-            let loggedIn = await this.login(this.user);
-            if(loggedIn === true)
-              this.handleSuccess()
-            else
-              this.handleError();
-          } else {
-            this.$Message.error('There is an error in your input!');
-          }
-        });
+export default {
+  components: {
+    Row, Col, Form, Icon, Button, Input, FormItem,
+  },
+  data() {
+    return {
+      user: {
+        email: null,
+        password: null,
       },
-      handleSuccess(){
-        this.$Message.success('You have been successfully logged in, system is redirecting to dashboard...');
-        this.$router.push('/admin');
+      logInRules: {
+        email: [
+          { required: true, message: 'Email field is required', trigger: 'blur' },
+          { type: 'email', message: 'Please enter a valid email' },
+        ],
+        password: [
+          { required: true, message: 'Please fill in the password.', trigger: 'blur' },
+          {
+            type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur',
+          },
+        ],
       },
-      handleError(){
-        this.user.password = null;
-        this.$Message.error('Username or Password does not match');
-      },
-      ...mapActions([
-        'login'
-      ]),
+      serverResponse: null,
+    };
+  },
+  methods: {
+    handleSubmit() {
+      this.$refs.logInForm.validate(async (valid) => {
+        if (valid) {
+          let loggedIn = await this.login(this.user);
+          if(loggedIn === true)
+            this.handleSuccess()
+          else
+            this.handleError();
+        } else {
+          this.$Message.error('There is an error in your input!');
+        }
+      });
     },
-  }
+    handleSuccess(){
+      this.$Message.success('You have been successfully logged in, system is redirecting to dashboard...');
+      this.$router.push('/admin');
+    },
+    handleError(){
+      this.user.password = null;
+      this.$Message.error('Username or Password does not match');
+    },
+    ...mapActions([
+      'login'
+    ]),
+  },
+}
 </script>
 
 <style>

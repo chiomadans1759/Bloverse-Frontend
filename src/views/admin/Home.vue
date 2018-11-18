@@ -48,12 +48,11 @@
 </template>
 
 <script>
-import DisplayApplicants from "../../components/DisplayApplicantsTable.vue";
-import store from "../../../stores"; // eslint-disable-line
-import Loading from "../../components/Loading";
 import { mapActions, mapGetters, mapState } from "vuex";
-
 import { Row, Col, Card, Layout, Header, Button } from "iview";
+import DisplayApplicants from "../../components/DisplayApplicantsTable.vue";
+import Loading from "../../components/Loading";
+
 export default {
   data() {
     return {

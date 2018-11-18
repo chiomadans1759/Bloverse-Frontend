@@ -54,11 +54,11 @@
 </template>
 
 <script>
-  import { Row, Col, Icon } from 'iview';
+import { Row, Col, Icon } from 'iview';
 
-  export default {
-    components: { Row, Col, Icon }
-  }
+export default {
+  components: { Row, Col, Icon }
+}
 </script>
 
 

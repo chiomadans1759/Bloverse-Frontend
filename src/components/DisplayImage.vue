@@ -21,6 +21,7 @@
 <script >
 import { Icon } from "iview";
 import ImageChooser from "./ImageChooser.vue";
+
 export default {
   props: ["value", "canEdit", "alt", "height", "width"],
   components: { ImageChooser, Icon },

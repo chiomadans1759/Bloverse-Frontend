@@ -80,28 +80,27 @@
 
 
 <script>
-  import { Row, Col, Card, Select, Option, locale, Avatar, Icon } from 'iview';
-  import { mapActions, mapGetters } from 'vuex';
-  import DashboardStatDisplayCard from '../../components/JournalistStatDisplayCard.vue';
-  import lang from 'iview/dist/locale/en-US';
-  import { mapState } from 'vuex';
-  import { GChart } from 'vue-google-charts';
-  // configure language
-  locale(lang);
+import { Row, Col, Card, Select, Option, locale, Avatar, Icon } from 'iview';
+import { mapActions, mapGetters, mapState } from 'vuex';
+import lang from 'iview/dist/locale/en-US';
+import { GChart } from 'vue-google-charts';
+import DashboardStatDisplayCard from '../../components/JournalistStatDisplayCard.vue';
+// configure language
+locale(lang);
 
   
-  export default {
-    components: {
-      Row, Col, Card, Select, Option, Avatar, GChart,  
-      StatCard: DashboardStatDisplayCard,
-      Icon
-    },
-    computed: {
+export default {
+  components: {
+    Row, Col, Card, Select, Option, Avatar, GChart,  
+    StatCard: DashboardStatDisplayCard,
+    Icon
+  },
+  computed: {
 
-      ...mapState([
-        'general'
-      ]),
-      chartData(){
+    ...mapState([
+      'general'
+    ]),
+    chartData(){
       let newData =  [['Country', 'views']];
       let countries = this.general.metrics.views.countries;
       Object.keys(countries).forEach(country => {
@@ -113,13 +112,13 @@
     },
     ...mapGetters(['views', 'articles'])
   },
-    methods: {
-      ...mapActions(['getMyMetrics'])
-    },
-    mounted: async function(){
-      await this.getMyMetrics();
-    }
-  } 
+  methods: {
+    ...mapActions(['getMyMetrics'])
+  },
+  mounted: async function(){
+    await this.getMyMetrics();
+  }
+} 
 </script>
 
 
@@ -238,7 +237,6 @@
   .stat-info .country {
     font-weight: bold;
   }
-
 
 
 </style>

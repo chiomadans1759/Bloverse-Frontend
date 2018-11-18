@@ -41,67 +41,67 @@
 </template>
 
 <script>
-  import { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem } from 'iview';
-  import { mapState } from 'vuex'; // eslint-disable-line
-  import DisplayPhoto from './DisplayImage'
-  export default {
-    components: { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem, DisplayPhoto },
-    props: { user: Object },
-    data: function(){
-      return {
-        genders: [
-          {
-            value: 1,
-            label: 'MALE'
-          },
-          {
-            value: 2,
-            label: 'FEMALE'
-          }
-        ],
-        validateUserFields: {
-          username: [
-            {required: true, message: 'Choose a username', trigger: 'blur' },
-          ],
-          password: [
-            { required: true, message: 'Provide a password you can remember', trigger: 'blur' },
-          ],
-          confirmPassword: [
-            { required: true, message: 'Type your password Again', trigger: 'blur' },
-          ],
-          gender: [
-            { required: true, type: 'integer', message: 'You have to choose a gender', trigger: 'blur' },
-          ],
-          about: [
-            { required: true, message: 'Tell us about yourself', trigger: 'blur' },
-          ]
-        },
+import { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem } from 'iview';
+import DisplayPhoto from './DisplayImage'
 
-      }
-    },
-    computed: {
-      passwordError: function(){
-        if(this.user.confirmPassword){
-          if(this.user.confirmPassword !== this.user.password){
-            return 'Passwords do not match'
-          }
+export default {
+  components: { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem, DisplayPhoto },
+  props: { user: Object },
+  data: function(){
+    return {
+      genders: [
+        {
+          value: 1,
+          label: 'MALE'
+        },
+        {
+          value: 2,
+          label: 'FEMALE'
         }
-        return null;
+      ],
+      validateUserFields: {
+        username: [
+          {required: true, message: 'Choose a username', trigger: 'blur' },
+        ],
+        password: [
+          { required: true, message: 'Provide a password you can remember', trigger: 'blur' },
+        ],
+        confirmPassword: [
+          { required: true, message: 'Type your password Again', trigger: 'blur' },
+        ],
+        gender: [
+          { required: true, type: 'integer', message: 'You have to choose a gender', trigger: 'blur' },
+        ],
+        about: [
+          { required: true, message: 'Tell us about yourself', trigger: 'blur' },
+        ]
       },
-    },
-    methods: {
-      submitUser(){
-        this.$refs.stepTwoForm.validate( async (valid) => {
-          if(valid){
-            this.$emit('done');
-          }else{
-            this.$Message.error('This is an error in the form');
-          }
-        })
-        
+
+    }
+  },
+  computed: {
+    passwordError: function(){
+      if(this.user.confirmPassword){
+        if(this.user.confirmPassword !== this.user.password){
+          return 'Passwords do not match'
+        }
       }
+      return null;
+    },
+  },
+  methods: {
+    submitUser(){
+      this.$refs.stepTwoForm.validate( async (valid) => {
+        if(valid){
+          this.$emit('done');
+        }else{
+          this.$Message.error('This is an error in the form');
+        }
+      })
+        
     }
   }
+}
 </script>
 
 <style>
