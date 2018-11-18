@@ -10,13 +10,13 @@
   </section>
 </template>
 
- <script>
-  import FeedsHeader from '../components/FeedsHeader.vue'
-  import TheFooter from '../components/TheFooter.vue';
+<script>
+import FeedsHeader from '../components/FeedsHeader.vue'
+import TheFooter from '../components/TheFooter.vue';
 
-  export default {
-    components: { FeedsHeader, TheFooter },
-  }
+export default {
+  components: { FeedsHeader, TheFooter },
+}
   
 </script>
 

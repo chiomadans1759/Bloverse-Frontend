@@ -30,10 +30,11 @@
 
 
 <script>
-  import { Spin, Icon } from 'iview';
-  export default {
-    props: ['message'],
-    components: { Spin, Icon }
-  }
+import { Spin, Icon } from 'iview';
+
+export default {
+  props: ['message'],
+  components: { Spin, Icon }
+}
 
 </script>

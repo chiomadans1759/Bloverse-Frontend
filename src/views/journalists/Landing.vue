@@ -115,7 +115,7 @@ export default {
   },
   mounted:
     async function(){
-    await this.getGeneralMetrics();
+      await this.getGeneralMetrics();
     }
 
 };
@@ -151,7 +151,6 @@ export default {
     font-size: 35px;
     margin-top: 6%;
   }
-
   
 
   #maps {

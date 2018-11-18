@@ -36,36 +36,36 @@
 
 
 <script>
-  import { Card , Row, Col, Icon } from 'iview';
-  import { mapState } from 'vuex';
-  export default {
-    props: ['post'],
-    components: { Card, Row, Col, Icon },
-    computed: {
-      imageUrl: function(){
-        return this.post.image_url;
-      },
-      route(){
-        let url;
-        if(this.post.is_published)
-          url = `/posts/${this.post.slug}`
-        else
-          url = `/journalist/${this.auth.loggedInUser.userName}/posts/${this.post.slug}/edit`
+import { Card , Row, Col, Icon } from 'iview';
+import { mapState } from 'vuex';
 
-        return url;
-      },
-      ...mapState(['auth']) 
+export default {
+  props: ['post'],
+  components: { Card, Row, Col, Icon },
+  computed: {
+    imageUrl: function(){
+      return this.post.image_url;
     },
-    filters: {
-      summarize: function (value) {
-        if (!value) return ''
-        return value.substring(0, 60)
-      }
+    route(){
+      let url;
+      if(this.post.is_published)
+        url = `/posts/${this.post.slug}`
+      else
+        url = `/journalist/${this.auth.loggedInUser.userName}/posts/${this.post.slug}/edit`
+
+      return url;
+    },
+    ...mapState(['auth']) 
+  },
+  filters: {
+    summarize: function (value) {
+      if (!value) return ''
+      return value.substring(0, 60)
     }
   }
+}
 
 </script>
-
 
 
 <style scoped>

@@ -24,7 +24,6 @@
       </Col>
     </Row>
     
-    
       
     <section class="auth-form">
       <h3 id="form-instruction">Fill the form below to become journalist on Bloverse</h3>
@@ -38,82 +37,71 @@
 </template>import Vue froimport Vue from 'vue';m 'vue';
 
 
-
-
-
-
 <script>
-  import BaseAuthentication from '../../layouts/BaseAuthentication';
-  import PageOne from '../../components/SetUpStepOne.vue';
-  import PageTwo from '../../components/SetUpStepTwo.vue';
-
-  import { Steps, Step, Row, Col, } from 'iview';
-  import { mapMutations, mapActions, mapState } from 'vuex'; // eslint-disable-line
-
+import { Steps, Step, Row, Col, } from 'iview';
+import { mapActions, mapState } from 'vuex';
+import BaseAuthentication from '../../layouts/BaseAuthentication';
+import PageOne from '../../components/SetUpStepOne.vue';
+import PageTwo from '../../components/SetUpStepTwo.vue';
   
 
-  export default {
+export default {
   //     props: ['value', 'linkedIn'],
-    components: { PageOne, PageTwo, Steps, Step, Row, Col, BaseAuthentication },
-    data: function(){
-      return {
-        currentPage: 1,
+  components: { PageOne, PageTwo, Steps, Step, Row, Col, BaseAuthentication },
+  data: function(){
+    return {
+      currentPage: 1,
+    }
+  },
+  computed: {
+    user: {
+      get(){
+        return this.$store.state.auth.newUser;
+      },
+      set(props){
+        this.$store.commit('setNewUser', props);
       }
     },
-    computed: {
-      user: {
-        get(){
-          return this.$store.state.auth.newUser;
-        },
-        set(props){
-          this.$store.commit('setNewUser', props);
-        }
-      },
-      ...mapState([
-        'auth'
-      ])
+    ...mapState([
+      'auth'
+    ])
+  },
+  watch: {
+    'user.firstName': async function(val){
+      await this.generateUsername();
     },
-    watch: {
-      'user.firstName': async function(val){ // eslint-disable-line
-        await this.generateUsername();
-      },
-      'user.lastName': async function(val){ // eslint-disable-line
-        await this.generateUsername();
-      }
-    },
-    methods:{
-      updateCurrentPage: (newPage) => {
-        this.currentPage = newPage;
-      },
-      completeSetup: async function(){
-        let success = await this.registerJournalist()
-        if(success){
-          success = await this.login(this.user)
-          if(success){
-            this.$Message.success('Registration successfull, You are being redirected to login')
-            let username = this.auth.loggedInUser.userName;
-            this.$router.push(`/creators/${username}/dashboard`)
-          }
-        }
-        else
-          this.$Message.error('Something went wrong');
-      },
-      ...mapActions([
-        'registerJournalist',
-        'login',
-        'generateUsername'
-      ])
-    },
-    async mounted(){
+    'user.lastName': async function(val){
       await this.generateUsername();
     }
+  },
+  methods:{
+    updateCurrentPage: (newPage) => {
+      this.currentPage = newPage;
+    },
+    completeSetup: async function(){
+      let success = await this.registerJournalist()
+      if(success){
+        success = await this.login(this.user)
+        if(success){
+          this.$Message.success('Registration successfull, You are being redirected to login')
+          let username = this.auth.loggedInUser.userName;
+          this.$router.push(`/creators/${username}/dashboard`)
+        }
+      }
+      else
+        this.$Message.error('Something went wrong');
+    },
+    ...mapActions([
+      'registerJournalist',
+      'login',
+      'generateUsername'
+    ])
+  },
+  async mounted(){
+    await this.generateUsername();
   }
+}
 //       LoadingIcon, DisplayImage 
- 
-
- 
-
-
 
 
 </script>
@@ -186,7 +174,6 @@
   background:white;
   color: blue;
   } */
- 
 
 
 .content .active{

@@ -8,6 +8,7 @@
 
 <script>
 import { Select, Option } from "iview";
+
 export default {
   components: { Select, Option },
   props: { row: Object },

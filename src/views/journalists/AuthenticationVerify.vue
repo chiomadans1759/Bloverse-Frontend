@@ -11,7 +11,6 @@
           Already Registered?
           <span slot="desc">It looks like you have been previously registrered. Click <router-link to="/creators/login">here to login</router-link></span>
         </template>
-        
 
         
       </Alert>
@@ -31,9 +30,9 @@
 
 <script >
 import { Row, Col, Button, Input, Form, FormItem, Alert } from "iview";
-import BaseAuthentication from "../../layouts/BaseAuthentication";
 import Hashids from "hashids";
 import { mapActions, mapState, mapMutations } from "vuex";
+import BaseAuthentication from "../../layouts/BaseAuthentication";
 
 let hashids = new Hashids("SG.AKa2vomKT26KSV9yNHf-HQ.e-", 16);
 export default {

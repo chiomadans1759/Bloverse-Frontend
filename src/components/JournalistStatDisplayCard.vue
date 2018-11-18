@@ -26,18 +26,16 @@
 </template>
 
 <script>
-  import { Icon } from 'iview';
-  import lang from 'iview/dist/locale/en-US'; // eslint-disable-line
+import { Icon } from 'iview';
 
+export default {
+  components: {
+    Icon
+  },
 
-  export default {
-      components: {
-      Icon
-    },
+  props: ['variant', 'title', 'stats'],
 
-    props: ['variant', 'title', 'stats'],
-
-  }
+}
   
 </script>
 

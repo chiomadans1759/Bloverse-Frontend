@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "node server.js",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -21,6 +22,7 @@
     "node-sass": "^4.9.3",
     "prettyjson": "^1.2.1",
     "sass-loader": "^7.1.0",
+    "serve-static": "^1.13.2",
     "vue": "^2.5.17",
     "vue-analytics": "^5.16.0",
     "vue-goodshare": "^1.1.0",
@@ -36,28 +38,11 @@
     "@vue/cli-plugin-babel": "^3.0.1",
     "@vue/cli-plugin-eslint": "^3.0.1",
     "@vue/cli-service": "^3.0.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^1.1.4",
+    "lint-staged": "^8.0.5",
     "vue-template-compiler": "^2.5.17"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {
-      "vue/no-parsing-error": [
-        2,
-        {
-          "x-invalid-end-tag": false
-        }
-      ]
-    },
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
   },
   "postcss": {
     "plugins": {
@@ -68,5 +53,13 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+    "lint-staged": {
+      "*.js": [
+        "eslint"
+      ],
+      "*.vue": [
+        "eslint"
+      ]
+    }
 }

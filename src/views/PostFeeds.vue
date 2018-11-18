@@ -32,69 +32,70 @@
 
 
 <script>
-  import { mapState, mapActions } from 'vuex'
-  import { Row, Col, Card, Select, Option } from 'iview'; // eslint-disable-line
-  import FeedCard from '../components/FeedCard.vue';
-  import Loading from '../components/Loading.vue';
-  import vSelect from 'vue-select';
-  export default {
-    data: function() {
-      return {
-        category: '',
-        country: ''
-      }
-    },
-    name: 'FeedsSection',
-    components: { Row, Col, Card, FeedCard, Loading, vSelect },
-    computed: {
-      ...mapState([
-        'general'
-      ]),
-      categoryName(){
-        if(this.category){
-          let category = this.general.categories.find(cat => cat.id == this.category.id)
-          return category.name;
-        }
+import { mapState, mapActions } from 'vuex'
+import { Row, Col, Card } from 'iview';
+import vSelect from 'vue-select';
+import FeedCard from '../components/FeedCard.vue';
+import Loading from '../components/Loading.vue';
 
-        return 'all categories'
-        
-      },
-      countryName(){
-        if(this.country){
-          let country = this.general.countries.find(cou => cou.id == this.country.id)
-          return country.name;
-        }
-
-        return 'all countries'
-        
-      },
-      postExists(){
-        return this.general.publishedPosts.length > 0;
-      },
-    },
-    watch: {
-      category: async function(val){ // eslint-disable-line
-        
-        let category = this.category ? this.category.id : ''
-        let country = this.country ? this.country.id : ''
-        await this.getAllPublishedPosts({category, country});
-      },
-      country: async function(val){ // eslint-disable-line
-        let category = this.category ? this.category.id : ''
-        let country = this.country ? this.country.id : ''
-        await this.getAllPublishedPosts({category, country});
+export default {
+  data: function() {
+    return {
+      category: '',
+      country: ''
+    }
+  },
+  name: 'FeedsSection',
+  components: { Row, Col, Card, FeedCard, Loading, vSelect },
+  computed: {
+    ...mapState([
+      'general'
+    ]),
+    categoryName(){
+      if(this.category){
+        let category = this.general.categories.find(cat => cat.id == this.category.id)
+        return category.name;
       }
+
+      return 'all categories'
+        
     },
-    methods: {
-      ...mapActions(['getAllPublishedPosts'])
+    countryName(){
+      if(this.country){
+        let country = this.general.countries.find(cou => cou.id == this.country.id)
+        return country.name;
+      }
+
+      return 'all countries'
+        
     },
-    async created () {
-      // fetch the data when the view is created and the data is
-      // already being observed
-      let { category, country } = this;
+    postExists(){
+      return this.general.publishedPosts.length > 0;
+    },
+  },
+  watch: {
+    category: async function(val){
+        
+      let category = this.category ? this.category.id : ''
+      let country = this.country ? this.country.id : ''
+      await this.getAllPublishedPosts({category, country});
+    },
+    country: async function(val){
+      let category = this.category ? this.category.id : ''
+      let country = this.country ? this.country.id : ''
       await this.getAllPublishedPosts({category, country});
     }
+  },
+  methods: {
+    ...mapActions(['getAllPublishedPosts'])
+  },
+  async created () {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    let { category, country } = this;
+    await this.getAllPublishedPosts({category, country});
   }
+}
 </script>
 
 <style>

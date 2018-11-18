@@ -33,7 +33,7 @@ export default {
     };
   },
   watch: {
-    $route(to, from) { // eslint-disable-line
+    $route(to, from) {
       // react to route changes...
       this.ranks = data.ranking[to.params.person];
     }

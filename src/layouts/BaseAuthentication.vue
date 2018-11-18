@@ -7,14 +7,15 @@
 </template>
 
 <script>
-  import { Row } from 'iview';
-  import WithHeader from './WithHeader';
-  export default {
-    components: {
-      WithHeader,
-      Row
-    }
+import { Row } from 'iview';
+import WithHeader from './WithHeader';
+
+export default {
+  components: {
+    WithHeader,
+    Row
   }
+}
 </script>
 
 

@@ -13,7 +13,7 @@ import App from './App.vue'
 // import lang from 'iview/dist/locale/en-US';
 
 import 'iview/dist/styles/iview.css';
-import auth from '../stores/auth'; // eslint-disable-line
+
 var SocialSharing = require('vue-social-sharing');
 
 
@@ -106,11 +106,10 @@ router.beforeEach((to, from, next) => {
     next();
 });
 
-
-ga('set', 'page', router.currentRoute.path); // eslint-disable-line
-ga('send', 'pageview'); // eslint-disable-line
-router.afterEach((to, from, next) => { // eslint-disable-line
-  ga('set', 'page', to.path); // eslint-disable-line
-  ga('send', 'pageview'); // eslint-disable-line
+ga('set', 'page', router.currentRoute.path); // eslint-disable-line no-undef
+ga('send', 'pageview'); // eslint-disable-line no-undef
+router.afterEach((to, from, next) => { // eslint-disable-line no-unused-vars
+  ga('set', 'page', to.path); // eslint-disable-line no-undef
+  ga('send', 'pageview'); // eslint-disable-line no-undef
   LoadingBar.finish();
 });

@@ -30,17 +30,16 @@
 </template>
 
 
-
 <script>
 import Vue from "vue";
+import { Row, Col, Table, Input, Page, Select, Option, Button } from "iview";
+import { mapState, mapGetters, mapActions } from "vuex";
 import TableExpand from "./JournalistMoreDetails.vue";
 import SelectStatus from "./SelectJournalistStatus.vue";
 
+
 // Registers Dropdown to select a new status globally
 Vue.component("SelectStatus", SelectStatus);
-
-import { Row, Col, Table, Input, Page, Select, Option, Button } from "iview";
-import { mapState, mapGetters, mapActions } from "vuex";
 
 export default {
   name: "MyTable",

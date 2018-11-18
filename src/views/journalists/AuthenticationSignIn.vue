@@ -40,17 +40,14 @@
 </template>
 
 
-
-
-
-
 <script>
   
-  import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
-  import { mapActions, mapState } from 'vuex';
+import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
+import { mapActions, mapState } from 'vuex';
 
 
-  import BaseAuthentication from '../../layouts/BaseAuthentication';
+import BaseAuthentication from '../../layouts/BaseAuthentication';
+
 export default {
   components: { Button, Row, Col, Icon, Input, Form, FormItem, BaseAuthentication },
   data: function(){
