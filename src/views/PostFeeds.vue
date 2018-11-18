@@ -5,7 +5,7 @@
       <template v-if="postExists || category || country">
       <Row>
         <Col span="6"><p id="feedsTitle">Happening Now</p></Col>
-        <Col span="4" style="margin-left: 20px;">
+        <Col span="4" style="margin-left: 20px;" id="feedsOptions">
             <v-select :options="general.categories" label="name" placeholder="Category*" class="my-select" v-model="category">
             </v-select>
             </Col>
@@ -102,7 +102,8 @@
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 500;
-  margin-left: 50px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .landing{
@@ -121,6 +122,24 @@
 }
 
 @media only screen and (max-width: 600px) {
+  #feedsOptions{
+    display: flex;
+    flex-direction: column;
+  }
+   #feedsTitle{
+     display: flex;
+     justify-content: space-between;
+  }
   
 }
+ @media screen and (min-width: 375px)  and (max-width: 780px){
+    #feedsOptions{
+    display: flex;
+    flex-direction: column;
+  }
+  #feedsTitle{
+     display: flex;
+  }
+  
+ }
 </style>
