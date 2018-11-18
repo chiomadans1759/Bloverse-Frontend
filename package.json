@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "node server.js",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -39,6 +40,8 @@
     "@vue/cli-service": "^3.0.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "husky": "^1.1.4",
+    "lint-staged": "^8.0.5",
     "vue-template-compiler": "^2.5.17"
   },
   "postcss": {
@@ -50,5 +53,13 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+    "lint-staged": {
+      "*.js": [
+        "eslint"
+      ],
+      "*.vue": [
+        "eslint"
+      ]
+    }
 }
