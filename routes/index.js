@@ -2,14 +2,14 @@
 import store from '../stores';
 
 
+import BlankBase from '../src/layouts/BlankBase.vue';
+
 import BaseDashBoard from '../src/layouts/BaseDashBoard.vue';
 import MyProfile from '../src/views/journalists/MyProfile.vue';
 import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
-import BasePost from '../src/layouts/BlankBase.vue';
 import MyPosts from '../src/views/journalists/MyPosts.vue';
 import CreatePost from '../src/views/journalists/CreatePost.vue';
 
-import BaseJournalist from '../src/layouts/BlankBase.vue';
 import JournalistLanding from '../src/views/journalists/Landing.vue';
 import JournalistApply from '../src/views/journalists/AuthenticationApply.vue';
 import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
@@ -25,7 +25,6 @@ import NotFound from '../src/views/NotFound.vue';
 
 import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
-import BaseAdmin from '../src/layouts/BlankBase.vue';
 
 import BaseFeeds from '../src/layouts/BaseFeeds.vue';
 import PostFeeds from '../src/views/PostFeeds.vue';
@@ -40,7 +39,7 @@ const routes = [
     ]
   },
   {
-    path: '/creators', component: BaseJournalist,
+    path: '/creators', component: BlankBase,
     children: [
       { path: '', component: JournalistLanding },
       { path: 'apply', component: JournalistApply },
@@ -61,7 +60,7 @@ const routes = [
         }
         
       }
-    },
+      },
       { path: 'verify', component: JournalistVerify },
       { path: ':username', component: BaseDashBoard, beforeEnter(to, from, next){
         if(store.getters.isAJournalist){
@@ -71,33 +70,33 @@ const routes = [
         }
         
       },
-        meta: {
-          journalist: true,
-          auth: true
-        },
-        children: [
-          { path: '', component: MyProfile },
-          { path: 'dashboard', component: DashBoardHome, beforeEnter(to, from, next){
-            if(store.getters.isAJournalist){
-              next()
-            } else {
-              next('creators/login')
-            }
-           }
-          },
-          { path: 'posts', component: BasePost,
-          
-            children: [
-              { path: '', component: MyPosts },
-              { path: 'create', component: CreatePost },
-              { path: ':slug/edit', component: CreatePost,
-                meta: {
-                  auth: true
-                }, 
-            }
-            ]
+      meta: {
+        journalist: true,
+        auth: true
+      },
+      children: [
+        { path: '', component: MyProfile },
+        { path: 'dashboard', component: DashBoardHome, beforeEnter(to, from, next){
+          if(store.getters.isAJournalist){
+            next()
+          } else {
+            next('creators/login')
           }
-        ]
+        }
+        },
+        { path: 'posts', component: BlankBase,
+          
+          children: [
+            { path: '', component: MyPosts },
+            { path: 'create', component: CreatePost },
+            { path: ':slug/edit', component: CreatePost,
+              meta: {
+                auth: true
+              }, 
+            }
+          ]
+        }
+      ]
       },
     ]
   },
@@ -105,7 +104,7 @@ const routes = [
   { path: '/rules/:person', component: HouseRules },
   { path: '/guides', component: PublishGuide },
   { path: '/ranking/:person', component: RankingSystem },
-  { path: '/admin', component: BaseAdmin,
+  { path: '/admin', component: BlankBase,
     children: [
       { path: '', redirect: 'dashboard', beforeEnter(to, from, next){
         if(store.getters.isAnAdmin){
@@ -113,7 +112,7 @@ const routes = [
         } else {
           next('admin/login')
         }
-       }
+      }
       },
       { path: 'dashboard', component: AdminHome, 
         meta: {
@@ -124,10 +123,13 @@ const routes = [
       { path: 'login', component: AdminLogin }
     ]
   },
+  { path: '/web', component: BlankBase, // All pages for the new user features should reside here
+    children: [
+      { path: 'login'}
+    ]
+  },
   { path: "*", component: NotFound }
 ]
-
-
 
 
 export default routes;
