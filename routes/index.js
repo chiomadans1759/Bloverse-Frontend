@@ -3,6 +3,7 @@ import store from '../stores';
 
 
 import BlankBase from '../src/layouts/BlankBase.vue';
+import BaseConsumer from '../src/layouts/BaseConsumer.vue';
 
 import BaseDashBoard from '../src/layouts/BaseDashBoard.vue';
 import MyProfile from '../src/views/journalists/MyProfile.vue';
@@ -29,6 +30,8 @@ import AdminHome from '../src/views/admin/Home.vue';
 import BaseFeeds from '../src/layouts/BaseFeeds.vue';
 import PostFeeds from '../src/views/PostFeeds.vue';
 import PostDisplay from '../src/views/PostDisplay.vue'; 
+
+import SelectCountry from '../src/views/consumers/SelectCountry.vue';
 
 const routes = [
   { path: '/', component: BaseFeeds,
@@ -123,9 +126,10 @@ const routes = [
       { path: 'login', component: AdminLogin }
     ]
   },
-  { path: '/web', component: BlankBase, // All pages for the new user features should reside here
+  { path: '/web', component: BaseConsumer, // All pages for the new user features should reside here
     children: [
-      { path: 'login'}
+      { path: 'login'},
+      { path: 'country', component: SelectCountry }
     ]
   },
   { path: "*", component: NotFound }
