@@ -64,13 +64,13 @@
       <Row type="flex" justify="space-between">
         <Col :sm="11" :xs="24">
           <FormItem prop="countryId" :error="errors.countryId">
-           <v-select :options="optionCountry" label="name" placeholder="Country*" class="my-select" v-model="applicant.countryId">
+           <v-select :options="optionCountry" label="name" placeholder="Country*" class="my-select" v-model="countryId">
             </v-select>
           </FormItem>
         </Col>
         <Col :sm="11" :xs="24">
           <FormItem prop="categoryId" :error="errors.categoryId">
-            <v-select :options="category" label="name" placeholder="Category*" class="my-select" v-model="applicant.categoryId">
+            <v-select :options="category" label="name" placeholder="Category*" class="my-select" v-model="categoryId">
             </v-select>
           </FormItem>
         </Col>
@@ -98,6 +98,8 @@ export default {
   components: { Form, FormItem, Row, Col, Input,Checkbox, Modal, Alert, Button, BaseAuthentication, vSelect, Select, Option },
   data: function(){
     return {
+      categoryId: '',
+      countryId: '',
       isSuccess: false,
       serverResponse: {},
       errors: {},
@@ -180,7 +182,7 @@ export default {
     },
     handleError(errors){
       let fieldErrors, varClient;
-      
+
       let clientServer = { 
         first_name: 'firstName', 
         last_name: 'lastName', 
@@ -195,10 +197,8 @@ export default {
       Object.keys(errors).forEach((field)=>{
         fieldErrors = errors[field]; //get the server errors for a field
         varClient = clientServer[field]; // get the variable name on front end from the client server map
-        
         /* This should set the error for a formItem and also cause the validation state of the form change to error while it also displays the message */
-        this.errors[varClient] = fieldErrors[0];
-        // BUG !!!! Currently it sets the message but doesn't display the error message unless when a field is edited 
+        this.$set(this.errors, varClient, fieldErrors[0])
       })
       this.$Message.error('Some Forms fields were not filled correctly!');
     },
@@ -214,6 +214,15 @@ export default {
   created: function(){ 
     this.applicant.phoneCode = '+1';
     this.applicant.articleProtocols = ['https://', 'https://', 'https://']
+  },
+  watch: {
+    countryId (value) {
+      this.$store.commit('setApplicantIds', { name: 'countryId', value: value.id });
+    },
+
+    categoryId (value) {
+      this.$store.commit('setApplicantIds', { name: 'categoryId', value: value.id });
+    }
   }
 }
 </script>
