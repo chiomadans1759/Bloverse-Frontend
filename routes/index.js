@@ -30,6 +30,9 @@ import BaseFeeds from '../src/layouts/BaseFeeds.vue';
 import PostFeeds from '../src/views/PostFeeds.vue';
 import PostDisplay from '../src/views/PostDisplay.vue'; 
 
+ 
+import ConsumerSignIn from '../src/views/consumers/ConsumerSignIn.vue';
+
 const routes = [
   { path: '/', component: BaseFeeds,
     children: [
@@ -124,10 +127,10 @@ const routes = [
     ]
   },
   { path: '/web', component: BlankBase, // All pages for the new user features should reside here
-    children: [
-      { path: 'login'}
+    children: [ 
     ]
   },
+  { path: '/login', component: ConsumerSignIn },
   { path: "*", component: NotFound }
 ]
 
