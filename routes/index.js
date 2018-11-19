@@ -128,7 +128,6 @@ const routes = [
   },
   { path: '/web', component: BaseConsumer, // All pages for the new user features should reside here
     children: [
-      { path: 'login'},
       { path: 'country', component: SelectCountry }
     ]
   },
