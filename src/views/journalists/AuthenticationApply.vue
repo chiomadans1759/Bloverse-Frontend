@@ -63,14 +63,14 @@
       </FormItem>
       <Row type="flex" justify="space-between">
         <Col :sm="11" :xs="24">
-          <FormItem prop="countryId" :error="errors.countryId">
-           <v-select :options="optionCountry" label="name" placeholder="Country*" class="my-select" v-model="applicant.countryId">
+          <FormItem prop="country" :error="errors.countryId">
+           <v-select :options="general.countries" label="name" placeholder="Country*" class="my-select" v-model="applicant.country">
             </v-select>
           </FormItem>
         </Col>
         <Col :sm="11" :xs="24">
-          <FormItem prop="categoryId" :error="errors.categoryId">
-            <v-select :options="category" label="name" placeholder="Category*" class="my-select" v-model="applicant.categoryId">
+          <FormItem prop="category" :error="errors.categoryId">
+            <v-select :options="general.categories" label="name" placeholder="Category*" class="my-select" v-model="applicant.category">
             </v-select>
           </FormItem>
         </Col>
@@ -116,10 +116,10 @@ export default {
         phoneNumber: [
           { required: true, message: 'Phone cannot be blank', trigger: 'blur' }
         ],
-        countryId: [
+        country: [
           { required: true, type: 'object', message: 'You must choose a country', trigger: 'change' }
         ],
-        categoryId: [
+        category: [
           { required: true, type: 'object', message: 'You must choose a category', trigger: 'change' }
         ],
         /*terms: [
@@ -147,12 +147,6 @@ export default {
       set(props){
         this.$store.commit('setApplicant', props);
       }
-    },
-    optionCountry(){
-      return this.general.countries;
-    },
-    category(){
-      return this.general.categories;
     },
     // phoneCode(){
     //   return this.countriesCodeFlag;
