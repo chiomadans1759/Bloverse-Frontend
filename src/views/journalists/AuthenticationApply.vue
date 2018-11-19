@@ -117,10 +117,10 @@ export default {
           { required: true, message: 'Phone cannot be blank', trigger: 'blur' }
         ],
         countryId: [
-          { required: true, type: 'integer', message: 'You must choose a country', trigger: 'change' }
+          { required: true, type: 'object', message: 'You must choose a country', trigger: 'change' }
         ],
         categoryId: [
-          { required: true, type: 'integer', message: 'You must choose a category', trigger: 'change' }
+          { required: true, type: 'object', message: 'You must choose a category', trigger: 'change' }
         ],
         /*terms: [
           {
@@ -180,7 +180,7 @@ export default {
     },
     handleError(errors){
       let fieldErrors, varClient;
-      
+
       let clientServer = { 
         first_name: 'firstName', 
         last_name: 'lastName', 
@@ -195,10 +195,8 @@ export default {
       Object.keys(errors).forEach((field)=>{
         fieldErrors = errors[field]; //get the server errors for a field
         varClient = clientServer[field]; // get the variable name on front end from the client server map
-        
         /* This should set the error for a formItem and also cause the validation state of the form change to error while it also displays the message */
-        this.errors[varClient] = fieldErrors[0];
-        // BUG !!!! Currently it sets the message but doesn't display the error message unless when a field is edited 
+        this.$set(this.errors, varClient, fieldErrors[0])
       })
       this.$Message.error('Some Forms fields were not filled correctly!');
     },
@@ -214,7 +212,7 @@ export default {
   created: function(){ 
     this.applicant.phoneCode = '+1';
     this.applicant.articleProtocols = ['https://', 'https://', 'https://']
-  }
+  },
 }
 </script>
 
