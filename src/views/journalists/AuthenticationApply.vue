@@ -64,13 +64,13 @@
       <Row type="flex" justify="space-between">
         <Col :sm="11" :xs="24">
           <FormItem prop="countryId" :error="errors.countryId">
-           <v-select :options="optionCountry" label="name" placeholder="Country*" class="my-select" v-model="countryId">
+           <v-select :options="optionCountry" label="name" placeholder="Country*" class="my-select" v-model="applicant.countryId">
             </v-select>
           </FormItem>
         </Col>
         <Col :sm="11" :xs="24">
           <FormItem prop="categoryId" :error="errors.categoryId">
-            <v-select :options="category" label="name" placeholder="Category*" class="my-select" v-model="categoryId">
+            <v-select :options="category" label="name" placeholder="Category*" class="my-select" v-model="applicant.categoryId">
             </v-select>
           </FormItem>
         </Col>
@@ -98,8 +98,6 @@ export default {
   components: { Form, FormItem, Row, Col, Input,Checkbox, Modal, Alert, Button, BaseAuthentication, vSelect, Select, Option },
   data: function(){
     return {
-      categoryId: '',
-      countryId: '',
       isSuccess: false,
       serverResponse: {},
       errors: {},
@@ -119,10 +117,10 @@ export default {
           { required: true, message: 'Phone cannot be blank', trigger: 'blur' }
         ],
         countryId: [
-          { required: true, type: 'integer', message: 'You must choose a country', trigger: 'change' }
+          { required: true, type: 'object', message: 'You must choose a country', trigger: 'change' }
         ],
         categoryId: [
-          { required: true, type: 'integer', message: 'You must choose a category', trigger: 'change' }
+          { required: true, type: 'object', message: 'You must choose a category', trigger: 'change' }
         ],
         /*terms: [
           {
@@ -215,15 +213,6 @@ export default {
     this.applicant.phoneCode = '+1';
     this.applicant.articleProtocols = ['https://', 'https://', 'https://']
   },
-  watch: {
-    countryId (value) {
-      this.$store.commit('setApplicantIds', { name: 'countryId', value: value.id });
-    },
-
-    categoryId (value) {
-      this.$store.commit('setApplicantIds', { name: 'categoryId', value: value.id });
-    }
-  }
 }
 </script>
 

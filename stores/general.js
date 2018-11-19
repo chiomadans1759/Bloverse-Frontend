@@ -51,7 +51,7 @@ export default {
       commit('setLoading', true);
       response = await Api.get('applicants/', true);
       switch (response.statusCode) {
-      case 200:
+      case 200: // eslint-disable-line no-case-declarations
         //removes admin from applicants
         let onlyApplicants = response.data.applicants.filter(applicant => applicant.id !== 1);
 
