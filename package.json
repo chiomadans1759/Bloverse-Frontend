@@ -54,12 +54,12 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-    "lint-staged": {
-      "*.js": [
-        "eslint"
-      ],
-      "*.vue": [
-        "eslint"
-      ]
-    }
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ],
+    "*.vue": [
+      "eslint"
+    ]
+  }
 }

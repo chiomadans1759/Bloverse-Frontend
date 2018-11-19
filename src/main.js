@@ -3,7 +3,9 @@ import axios from 'axios';
 import { locale, Message, LoadingBar } from 'iview';
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
+import moment from 'moment'
 import store from '../stores';
+
 //import VueAnalytics from 'vue-analytics';
 
 
@@ -51,7 +53,11 @@ Vue.filter('firstToUpper', (value) => {
   if (!value) return '';
   value = value.toString();
   return value.charAt(0).toUpperCase() + value.substr(1);
-}); 
+});
+
+Vue.filter('customizedTime', (value)=>{
+  return moment(value).fromNow()
+})
 
 new Vue({
   router,

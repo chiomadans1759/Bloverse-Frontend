@@ -3,7 +3,7 @@
   <div class="container">
     <Card class="feed-card">
       <div id="sectionWidth" type="flex" justify="space-around">
-        <Avatar icon="person" /> &nbsp; <span>John Doe<p style="float: right; margin-top: 5px;">{{myDate}}</p></span>
+        <Avatar icon="person" /> &nbsp; <span>John Doe<p style="float: right; margin-top: 5px;">{{post.published | customizedTime}}</p></span>
       </div>
       <img :src="imageUrl" />
       <h2 id="category"><p>{{category}}</p></h2>
@@ -22,6 +22,7 @@
 import { Card, Avatar, Icon } from "iview";
 import { mapState } from "vuex";
 
+
 export default {
   name: "FeedCard",
   props: { post: Object },
@@ -37,34 +38,6 @@ export default {
       );
       return postCategory.name;
     },
-    myDate(date) {
-      var seconds = Math.floor(new Date().getTime() / 1000 - date);
-
-      var interval = Math.floor(seconds / 31556952);
-
-      if (interval > 1) {
-        return interval + " years";
-      }
-      interval = Math.floor(seconds / 2592000);
-      if (interval > 1) {
-        return interval + " months";
-      }
-      interval = Math.floor(seconds / 86400);
-      if (interval > 1) {
-        return interval + " days";
-      }
-      interval = Math.floor(seconds / 3600);
-      if (interval > 1) {
-        return interval + " hours";
-      }
-      interval = Math.floor(seconds / 60);
-      if (interval > 1) {
-        return interval + " minutes";
-      }
-      return Math.floor(seconds) + " seconds";
-      var aDay = 24 * 60 * 60 * 1000; // eslint-disable-line no-unreachable
-      return aDay;
-    }
   },
   filters: {
     summarize: function(value) {
