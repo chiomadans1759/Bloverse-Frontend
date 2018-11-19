@@ -6,6 +6,7 @@
         <Avatar icon="person" /> &nbsp; <span>John Doe<p style="float: right; margin-top: 5px;">{{post.published | customizedTime}}</p></span>
       </div>
       <img :src="imageUrl" />
+      <!-- {{post}} -->
       <h2 id="category"><p>{{category}}</p></h2>
       <h2 id="title"><p>{{post.title}}</p></h2>
       <footer type="flex" justify="space-around" id="postFooter">
@@ -22,7 +23,6 @@
 import { Card, Avatar, Icon } from "iview";
 import { mapState } from "vuex";
 
-
 export default {
   name: "FeedCard",
   props: { post: Object },
@@ -37,7 +37,7 @@ export default {
         category => category.id === this.post.category
       );
       return postCategory.name;
-    },
+    }
   },
   filters: {
     summarize: function(value) {
