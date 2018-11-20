@@ -6,7 +6,7 @@
                             <p><span>Bloverse</span> </br>Interactive stories from the global community</p> 
                 </Col>
                 
-                <Col :md="12" :sm="24"  :xs="18">
+                <Col :md="12" :sm="24"  :xs="22">
                         <Col offset="4" :sm="12" :md="16" :xs="18" class="auth-section" >
                                 <h1 id="page-title">Sign in</h1>
                                 <p class="join">Join Bloverse today.</p>                 
