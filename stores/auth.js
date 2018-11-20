@@ -27,8 +27,8 @@ export default {
       let articles = state.applicant.articleURLs.map((article, index) => {
         return `${state.applicant.articleProtocols[index]}${article}`
       })
-      let categoryId = state.applicant.categoryId.id;
-      let countryId = state.applicant.countryId.id;
+      let categoryId = state.applicant.category.id;
+      let countryId = state.applicant.country.id;
       commit('setApplicant', { phone, twitter, linkedIn, articles });
       let response = await Api.post('applicants/', {
         ...state.applicant,
