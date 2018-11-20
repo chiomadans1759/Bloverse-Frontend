@@ -63,14 +63,14 @@
       </FormItem>
       <Row type="flex" justify="space-between">
         <Col :sm="11" :xs="24">
-          <FormItem prop="countryId" :error="errors.countryId">
-           <v-select :options="optionCountry" label="name" placeholder="Country*" class="my-select" v-model="applicant.countryId">
+          <FormItem prop="country" :error="errors.countryId">
+           <v-select :options="general.countries" label="name" placeholder="Country*" class="my-select" v-model="applicant.country">
             </v-select>
           </FormItem>
         </Col>
         <Col :sm="11" :xs="24">
-          <FormItem prop="categoryId" :error="errors.categoryId">
-            <v-select :options="category" label="name" placeholder="Category*" class="my-select" v-model="applicant.categoryId">
+          <FormItem prop="category" :error="errors.categoryId">
+            <v-select :options="general.categories" label="name" placeholder="Category*" class="my-select" v-model="applicant.category">
             </v-select>
           </FormItem>
         </Col>
@@ -116,11 +116,11 @@ export default {
         phoneNumber: [
           { required: true, message: 'Phone cannot be blank', trigger: 'blur' }
         ],
-        countryId: [
-          { required: true, type: 'integer', message: 'You must choose a country', trigger: 'change' }
+        country: [
+          { required: true, type: 'object', message: 'You must choose a country', trigger: 'change' }
         ],
-        categoryId: [
-          { required: true, type: 'integer', message: 'You must choose a category', trigger: 'change' }
+        category: [
+          { required: true, type: 'object', message: 'You must choose a category', trigger: 'change' }
         ],
         /*terms: [
           {
@@ -148,12 +148,6 @@ export default {
         this.$store.commit('setApplicant', props);
       }
     },
-    optionCountry(){
-      return this.general.countries;
-    },
-    category(){
-      return this.general.categories;
-    },
     // phoneCode(){
     //   return this.countriesCodeFlag;
     //   console.log(phoneCode)
@@ -180,7 +174,7 @@ export default {
     },
     handleError(errors){
       let fieldErrors, varClient;
-      
+
       let clientServer = { 
         first_name: 'firstName', 
         last_name: 'lastName', 
@@ -195,10 +189,8 @@ export default {
       Object.keys(errors).forEach((field)=>{
         fieldErrors = errors[field]; //get the server errors for a field
         varClient = clientServer[field]; // get the variable name on front end from the client server map
-        
         /* This should set the error for a formItem and also cause the validation state of the form change to error while it also displays the message */
-        this.errors[varClient] = fieldErrors[0];
-        // BUG !!!! Currently it sets the message but doesn't display the error message unless when a field is edited 
+        this.$set(this.errors, varClient, fieldErrors[0])
       })
       this.$Message.error('Some Forms fields were not filled correctly!');
     },
@@ -214,7 +206,7 @@ export default {
   created: function(){ 
     this.applicant.phoneCode = '+1';
     this.applicant.articleProtocols = ['https://', 'https://', 'https://']
-  }
+  },
 }
 </script>
 
