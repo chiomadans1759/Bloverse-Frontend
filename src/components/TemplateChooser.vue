@@ -12,7 +12,7 @@
       <Col  @click.native="$emit('selectTemplate', 'travel')" class="" :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
         <img src="https://res.cloudinary.com/di11juunm/image/upload/v1538047817/paper21.png" class="paper1 paper3">
          <div>
-          <p class="page">Travel Competition</p>
+          <p class="page">Photo Contenst</p>
         </div>
       </Col>
       <Col class="notAllowed" :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
@@ -27,45 +27,43 @@
   </div>
 </template>
 <script>
-import { Row, Col, Layout } from 'iview';
+import { Row, Col, Layout } from "iview";
 
 export default {
-  components: { Row, Col, Layout },
-}
+  components: { Row, Col, Layout }
+};
 </script>
 
 <style scoped>
-  #image {
-    margin-top: 30px;
-  }
+#image {
+  margin-top: 30px;
+}
 
-  .second {
-    margin-left: -10px;
-  }
+.second {
+  margin-left: -10px;
+}
 
-  .page {
-    text-align: center;
+.page {
+  text-align: center;
+}
 
-  }
-
-  .page1 {
-    margin-left: -90px;
-    margin-top: 30px;
-  }
+.page1 {
+  margin-left: -90px;
+  margin-top: 30px;
+}
 
 .paper3:hover {
-  -webkit-transform:scale(1.1);
-  -ms-transform:scale(1.1);
-  transform:scale(1.1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
   cursor: pointer;
   transition: 1s ease;
-  box-shadow:#9e9e9e69;
+  box-shadow: #9e9e9e69;
   border-radius: 5px;
 }
 
-.notAllowed:hover{
-  cursor: not-allowed
+.notAllowed:hover {
+  cursor: not-allowed;
 }
-
 </style>
 

@@ -3,17 +3,19 @@
   <div class="container">
     <Card class="feed-card">
       <div id="sectionWidth" type="flex" justify="space-around">
-        <Avatar icon="person" /> &nbsp; <span>John Doe<p style="float: right; margin-top: 5px;">{{post.published | customizedTime}}</p></span>
+        <Avatar :src="post.author.image_url"/> &nbsp; <span>{{post.author.first_name}} {{post.author.last_name}}<p style="float: right; margin-top: 5px;">{{post.published | customizedTime}}</p></span>
       </div>
       <img :src="imageUrl" />
-      <!-- {{post}} -->
+      
+      
       <h2 id="category"><p>{{category}}</p></h2>
       <h2 id="title"><p>{{post.title}}</p></h2>
       <footer type="flex" justify="space-around" id="postFooter">
         <Icon type="md-eye" /> {{post.views}}
         <Icon type="md-text" style="margin-left: 15px;" /> 54
-       
+       <b style="float:right">{{postDate}}</b>
       </footer>
+      
     </Card>
   </div>
   </router-link>
@@ -27,6 +29,11 @@ export default {
   name: "FeedCard",
   props: { post: Object },
   components: { Card, Avatar, Icon },
+  data() {
+    return {
+      postDate: ""
+    };
+  },
   computed: {
     imageUrl: function() {
       return this.post.image_url;
@@ -37,6 +44,17 @@ export default {
         category => category.id === this.post.category
       );
       return postCategory.name;
+    }
+  },
+  mounted() {
+    this.formatDate();
+  },
+  methods: {
+    formatDate() {
+      var mydate = new Date(this.post.published);
+      // var mydate = new Date('2014-04-03');
+      // console.log(mydate.toDateString());
+      this.postDate = mydate.toDateString();
     }
   },
   filters: {
@@ -68,12 +86,15 @@ export default {
   border: 1px block #ddd;
   cursor: pointer;
 }
-footer {
+/* footer {
   position: absolute;
   bottom: 0;
   margin: 20px;
+} */
+footer {
+  margin-top: 6%;
+  padding: 0px 20px;
 }
-
 #category {
   margin-top: 20px;
   color: #2f80ed;
@@ -97,10 +118,10 @@ footer {
   height: 6vh;
   margin: 5px;
 }
-#postFooter {
+/* #postFooter {
   bottom: 0;
   position: absolute;
-}
+} */
 </style>
 
 
@@ -111,5 +132,11 @@ footer {
   border-radius: 20px;
   padding: 0px;
   width: 100%;
+}
+.ivu-row {
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  margin-right: 0px !important;
 }
 </style>
