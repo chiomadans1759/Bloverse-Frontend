@@ -13,7 +13,7 @@
       <footer type="flex" justify="space-around" id="postFooter">
         <Icon type="md-eye" /> {{post.views}}
         <Icon type="md-text" style="margin-left: 15px;" /> 54
-       <b style="float:right">{{postDate}}</b>
+       <!-- <b style="float:right">{{postDate}}</b> -->
       </footer>
       
     </Card>
@@ -29,11 +29,11 @@ export default {
   name: "FeedCard",
   props: { post: Object },
   components: { Card, Avatar, Icon },
-  data() {
-    return {
-      postDate: ""
-    };
-  },
+  // data() {
+  //   return {
+  //     postDate: ""
+  //   };
+  // },
   computed: {
     imageUrl: function() {
       return this.post.image_url;
@@ -46,17 +46,17 @@ export default {
       return postCategory.name;
     }
   },
-  mounted() {
-    this.formatDate();
-  },
-  methods: {
-    formatDate() {
-      var mydate = new Date(this.post.published);
-      // var mydate = new Date('2014-04-03');
-      // console.log(mydate.toDateString());
-      this.postDate = mydate.toDateString();
-    }
-  },
+  // mounted() {
+  //   this.formatDate();
+  // },
+  // methods: {
+  //   formatDate() {
+  //     var mydate = new Date(this.post.published);
+  //     // var mydate = new Date('2014-04-03');
+  //     // console.log(mydate.toDateString());
+  //     this.postDate = mydate.toDateString();
+  //   }
+  // },
   filters: {
     summarize: function(value) {
       if (!value) return "";
@@ -86,15 +86,15 @@ export default {
   border: 1px block #ddd;
   cursor: pointer;
 }
-/* footer {
+footer {
   position: absolute;
   bottom: 0;
   margin: 20px;
-} */
-footer {
+}
+/* footer {
   margin-top: 6%;
   padding: 0px 20px;
-}
+} */
 #category {
   margin-top: 20px;
   color: #2f80ed;
@@ -118,10 +118,10 @@ footer {
   height: 6vh;
   margin: 5px;
 }
-/* #postFooter {
+#postFooter {
   bottom: 0;
   position: absolute;
-} */
+}
 </style>
 
 
