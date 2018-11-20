@@ -32,6 +32,7 @@ import PostFeeds from '../src/views/PostFeeds.vue';
 import PostDisplay from '../src/views/PostDisplay.vue'; 
 
 import SelectCountry from '../src/views/consumers/SelectCountry.vue';
+import SelectCategory from '../src/views/consumers/SelectCategory.vue';
 
 const routes = [
   { path: '/', component: BaseFeeds,
@@ -128,7 +129,9 @@ const routes = [
   },
   { path: '/web', component: BaseConsumer, // All pages for the new user features should reside here
     children: [
-      { path: 'country', component: SelectCountry }
+      { path: 'country', component: SelectCountry },
+      { path: 'category', component: SelectCategory }
+
     ]
   },
   { path: "*", component: NotFound }
