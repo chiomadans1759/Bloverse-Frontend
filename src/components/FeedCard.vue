@@ -13,6 +13,7 @@
       <footer type="flex" justify="space-around" id="postFooter">
         <Icon type="md-eye" /> {{post.views}}
         <Icon type="md-text" style="margin-left: 15px;" /> 54
+        <!-- resolved date already -->
        <!-- <b style="float:right">{{postDate}}</b> -->
       </footer>
       
