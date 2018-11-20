@@ -20,22 +20,17 @@
       </section>
     </section>
   </WithHeader>
-
 </template>
 
 
 <script>
-import { Row, Col } from 'iview';
-import WithHeader from './WithHeader'
-
-export default {
-  props: ['title', 'about'],
-  components: { Row, Col, WithHeader }
-}
-
-
+  import WithHeader from './WithHeader'
+  import { Row, Col } from 'iview';
+  export default {
+    props: ['title', 'about'],
+    components: { Row, Col, WithHeader }
+  }
 </script>
-
 
 <style scoped>
   #doc-section {
@@ -64,7 +59,6 @@ export default {
 
 
   @media screen and (max-width:801px){
-
     #doc-section-header {
       padding: 2.5rem 4rem;
     }

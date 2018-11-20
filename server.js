@@ -8,8 +8,9 @@ let app;
 app = express();
 app.use(history());
 
-app.use(serveStatic(path.join(__dirname, '/dist')))
+// app.use(serveStatic(path.join(__dirname, '/dist')))
+app.use(serveStatic(path.join(__dirname, '/public')))
 
 var port = process.env.PORT || 5001;
 app.listen(port);
-console.log('server started '+ port); // eslint-disable-line no-console
+console.log('server started at: '+ port);
