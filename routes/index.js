@@ -31,6 +31,8 @@ import BaseFeeds from '../src/layouts/BaseFeeds.vue';
 import PostFeeds from '../src/views/PostFeeds.vue';
 import PostDisplay from '../src/views/PostDisplay.vue'; 
 
+ 
+import ConsumerSignIn from '../src/views/consumers/ConsumerSignIn.vue';
 import SelectCountry from '../src/views/consumers/SelectCountry.vue';
 
 const routes = [
@@ -131,6 +133,7 @@ const routes = [
       { path: 'country', component: SelectCountry }
     ]
   },
+  { path: '/login', component: ConsumerSignIn },
   { path: "*", component: NotFound }
 ]
 
