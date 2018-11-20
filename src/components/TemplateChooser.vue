@@ -12,7 +12,7 @@
       <Col  @click.native="$emit('selectTemplate', 'travel')" class="" :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
         <img src="https://res.cloudinary.com/di11juunm/image/upload/v1538047817/paper21.png" class="paper1 paper3">
          <div>
-          <p class="page">Photo Contenst</p>
+          <p class="page">Photo Contest</p>
         </div>
       </Col>
       <Col class="notAllowed" :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
