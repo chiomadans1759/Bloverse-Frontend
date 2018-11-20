@@ -30,6 +30,7 @@
         </div>
       </div>
     </Modal>
+    <!-- <h3>HHHHHHHHHHHHHHHHHHHHHHHHH</h3> -->
     <Row type="flex" justify="space-between">
       <Col span="13" id="create-post">
         <Row  type="flex"  justify="space-between">
@@ -55,7 +56,7 @@
               type="text" />
           <DatePicker v-model="post.duration" id="keypoint" type="date" placement="bottom-end" placeholder="Time Taken" style="width: 100%"></DatePicker>
             <Select placeholder="Device Used"  id="keypoint" v-model="post.deviceType">
-           <Option  v-for="item in deviceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+           <Option  v-for="item in deviceList" :value="item.value" :key="item.id">{{ item.label }}</Option>
           </Select>
         </Card>
 
@@ -97,120 +98,142 @@
 </template>
 
 <script>
-import { Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker } from 'iview';
-import { mapState, mapActions, mapMutations } from 'vuex'
+import {
+  Row,
+  Col,
+  Card,
+  Input,
+  Upload,
+  Icon,
+  Button,
+  Select,
+  Option,
+  Modal,
+  Alert,
+  DatePicker
+} from "iview";
+import { mapState, mapActions, mapMutations } from "vuex";
 import { VueEditor } from "vue2-editor";
 // import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
 // import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
-import DisplayImage from './DisplayImage';
+import DisplayImage from "./DisplayImage";
 
 export default {
   components: {
-    Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, DatePicker, VueEditor, DisplayImage
+    Row,
+    Col,
+    Card,
+    Input,
+    Upload,
+    Icon,
+    Button,
+    Select,
+    Option,
+    Modal,
+    Alert,
+    DatePicker,
+    VueEditor,
+    DisplayImage
   },
-  data: function(){
+  data: function() {
     return {
       publishModal: false,
       isNewImage: false,
       deviceList: [
         {
-          value: 'IPhone',
-          label: 'IPhone'
+          id: 1,
+          value: "IPhone",
+          label: "IPhone"
         },
         {
-          value: 'Samsung',
-          label: 'Samsung'
+          id: 2,
+          value: "Samsung",
+          label: "Samsung"
         },
         {
-          value: 'Techno',
-          label: 'Techno'
+          id: 3,
+          value: "Techno",
+          label: "Techno"
         },
-        {
-          value: 'Huawei',
-          label: 'Huawei'
-        },
-        {
-          value: 'Infinix',
-          label: 'Infinix'
-        },
-        {
-          value: 'Gionee',
-          label: 'Gionee'
-        },
-        {
-          value: 'Nokia',
-          label: 'Nokia'
-        },
-        {
-          value: 'Huawei',
-          label: 'Huawei'
-        },
-        {
 
-          value: 'ZTE',
-          label: 'ZTE'
+        {
+          id: 4,
+          value: "Infinix",
+          label: "Infinix"
         },
         {
-          value: 'Lenovo',
-          label: 'Lenovo'
+          id: 5,
+          value: "Gionee",
+          label: "Gionee"
         },
         {
-          value: 'LG',
-          label: 'LG'
+          id: 6,
+          value: "Nokia",
+          label: "Nokia"
+        },
+        {
+          id: 7,
+          value: "Huawei",
+          label: "Huawei"
+        },
+        {
+          id: 8,
+          value: "ZTE",
+          label: "ZTE"
+        },
+        {
+          id: 9,
+          value: "Lenovo",
+          label: "Lenovo"
+        },
+        {
+          id: 10,
+          value: "LG",
+          label: "LG"
         }
-
-      ], 
+      ]
     };
-      
   },
   computed: {
     post: {
-      get(){
+      get() {
         return this.$store.state.journalist.post;
       },
-      set(props){
-        this.$store.commit('setPost', props);
+      set(props) {
+        this.$store.commit("setPost", props);
       }
     },
 
-    ...mapState([
-      'general',
-      'auth',
-    ]),
+    ...mapState(["general", "auth"])
   },
   methods: {
-    ...mapActions([
-      'processPost'
-    ]),
-    ...mapMutations([
-      'setPost'
-    ]),
-    handleProcessPost: async function(shouldPublish=false){
-      if(this.post.imageUrl){
-        let success = await this.processPost({shouldPublish, shouldUploadImage: this.isNewImage});
-        if(success){
+    ...mapActions(["processPost"]),
+    ...mapMutations(["setPost"]),
+    handleProcessPost: async function(shouldPublish = false) {
+      if (this.post.imageUrl) {
+        let success = await this.processPost({
+          shouldPublish,
+          shouldUploadImage: this.isNewImage
+        });
+        if (success) {
           this.$Message.success("Post successfully saved");
           this.publishModal = shouldPublish;
-        }else
-          this.$Message.error("Something went wrong");
-      }else
-        this.$Message.error("You must select an image");
+        } else this.$Message.error("Something went wrong");
+      } else this.$Message.error("You must select an image");
     }
   },
   watch: {
-    'post.imageUrl': function(val){
+    "post.imageUrl": function(val) {
       this.isNewImage = true;
     }
   },
-  mounted(){
-    this.setPost({category: 7, country: this.auth.loggedInUser.country.id}),
-
-    this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
-      (this.$refs.autocomplete),
-      {types: ['geocode']}
-    );
-  },
-    
+  mounted() {
+    this.setPost({ category: 7, country: this.auth.loggedInUser.country.id }),
+      (this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
+        this.$refs.autocomplete,
+        { types: ["geocode"] }
+      ));
+  }
 
   /*let { data, status } = await this.createOrUpdatePost();
         status = status === 403 ? 401 : status; //Convert 403 response error to 401;
@@ -287,105 +310,99 @@ export default {
         
         
       },*/
-    
-}
-
+};
 </script>
 
 
 <style scoped>
-  #create-post {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 120vh;
-    margin-bottom: 30px;
-  }
+#create-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120vh;
+  margin-bottom: 30px;
+}
 
-  #display-post #image {
-    width: 100%;
-    height: auto;
-  }
+#display-post #image {
+  width: 100%;
+  height: auto;
+}
 
-  #display-post #title {
-    padding: 0 1.5rem;
-    margin-bottom: 2rem;
-  }
+#display-post #title {
+  padding: 0 1.5rem;
+  margin-bottom: 2rem;
+}
 
-  #display-post #body {
-    padding: 0 1.5rem;
-    margin-top: 2rem;
-  }
-
-
+#display-post #body {
+  padding: 0 1.5rem;
+  margin-top: 2rem;
+}
 </style>
 
 
 <style>
-  #upload-post-image .ivu-upload-drag {
-    display: flex;
-    width: 200px;
-    height: 200px;
-  }
+#upload-post-image .ivu-upload-drag {
+  display: flex;
+  width: 200px;
+  height: 200px;
+}
 
-  .ivu-btn {
-    font-size: 18px;
-    width: 200px;
-    font-weight: bold;
-    line-height: 21px
-  }
-  .rows {
-    padding:14px;
-  }
+.ivu-btn {
+  font-size: 18px;
+  width: 200px;
+  font-weight: bold;
+  line-height: 21px;
+}
+.rows {
+  padding: 14px;
+}
 
-  #btn-draft {
-    background-color: white;
-    color: var(--primary);
-  }
+#btn-draft {
+  background-color: white;
+  color: var(--primary);
+}
 
-  #btn-publish {
-    background-color: var(--primary);
-    color: white;
-  }
+#btn-publish {
+  background-color: var(--primary);
+  color: white;
+}
 
-  #keypoint {
-    margin-bottom:25px;
-  }
+#keypoint {
+  margin-bottom: 25px;
+}
 
-  .red-border {
-    border: 1px solid red;
-  }
+.red-border {
+  border: 1px solid red;
+}
 
+.key-points .ivu-input-wrapper {
+  margin: 0.5rem 0;
+}
 
-  .key-points .ivu-input-wrapper {
-    margin: .5rem 0;
-  }
+.key-points {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  height: 35vh;
+}
 
-  .key-points {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    height: 35vh;
-  }
+.image {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
-  .image {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+.posts {
+  position: relative;
+}
 
-  .posts 
-  {
-    position: relative;
-  }
-
-  .search-location {
-    width: 100%;
-    margin-bottom:25px;
-    height: 30px;
-    color: black;
-    border: 1px solid #DCDCDC;
-    border-radius: 2px;
-    padding-left: 9px;
-    font-size: 13px;
+.search-location {
+  width: 100%;
+  margin-bottom: 25px;
+  height: 30px;
+  color: black;
+  border: 1px solid #dcdcdc;
+  border-radius: 2px;
+  padding-left: 9px;
+  font-size: 13px;
 }
 </style>
 
