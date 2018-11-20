@@ -4,21 +4,16 @@
             <Col span="6">
                 <facebook-login class="button"
                 appId="416283189263206"
-                @login="onLogin"
-                @logout="onLogout"
-                @sdk-loaded="sdkLoaded">
+                @login="onFBLogin"
+                @logout="onFBLogout"
+                @sdk-loaded="FBsdkLoaded">
                 </facebook-login>
             </Col>
 
             <Col>
-                <!-- Errors -->
-                <div v-if=response class="text-red"><p>{{response}}</p></div>
-
-                <!-- login Button -->
-                <a id="signin-button" v-on:click="googleAuth">
-                <i class="fa fa-google-plus-official fa-3x"></i>
+                <Button v-on:click="googleAuth">
                     Sign in with Google
-                </a>
+                </Button>
             </Col>
         </Row>
     </main>
@@ -36,42 +31,45 @@ export default {
     },
     data() {
         return {
-            isConnected: false,
-            name: '',
-            email: '',
-            personalID: '',
-            FB: undefined,
-            section: 'Login',
-            loading: '',
-            response: ''
+            FB: {
+                isConnected: false,
+                name: '',
+                email: '',
+                personalID: '',
+                ready: undefined
+            },
+            Google: {
+                loading: '',
+                response: ''
+            }
         }
     },
     methods: {
-        getUserData() {
-            this.FB.api('/me', 'GET', { fields: 'id,name,email' },
+        getFBUserData() {
+            this.FB.ready.api('/me', 'GET', { fields: 'id, name, email' },
                 userInformation => {
-                    this.personalID = userInformation.id;
-                    this.email = userInformation.email;
-                    this.name = userInformation.name;
+                    this.FB.personalID = userInformation.id;
+                    this.FB.email = userInformation.email;
+                    this.FB.name = userInformation.name;
                 }
             )
         },
 
-        sdkLoaded(payload) {
-            this.isConnected = payload.isConnected
-            this.FB = payload.FB
+        FBsdkLoaded(payload) {
+            this.FB.isConnected = payload.isConnected
+            this.FB.ready = payload.FB
             if (this.isConnected) {
-                this.getUserData()
+                this.getFBUserData()
             }
         },
 
-        onLogin() {
-            this.isConnected = true
-            this.getUserData()
+        onFBLogin() {
+            this.FB.isConnected = true
+            this.getFBUserData()
         },
 
-        onLogout() {
-            this.isConnected = false
+        onFBLogout() {
+            this.FB.isConnected = false
         },
 
         googleAuth() {
