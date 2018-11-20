@@ -19,7 +19,7 @@
             </div>                
         </template>
         <div class="footer">
-           <ConsumerFooter /> 
+           <ConsumerLoginFooter/> 
        </div>
     </section>    
 </template>
@@ -28,12 +28,12 @@
   
 import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
 import { mapState } from 'vuex'; 
-import ConsumerFooter from '../../components/ConsumerFooter.vue';
+import ConsumerLoginFooter from '../../components/ConsumerLoginFooter.vue';
  
 import BlankBase from '../../layouts/BlankBase';
  
 export default {
-  components: { Button, Row, Col, Icon, Input, Form, FormItem, BlankBase, ConsumerFooter},
+  components: { Button, Row, Col, Icon, Input, Form, FormItem, BlankBase, ConsumerLoginFooter},
   data: function(){
     return {      
       user: {
