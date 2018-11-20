@@ -1,23 +1,21 @@
 <template>
     <section class="country-section">
         <p id="regText">Choose your region</p>
-       <Row type="flex" justify="space-between" class="country-wrapper">
-            <Col class="entity" v-for="i in 15" :key="i" span="8">
-              <router-link to="">
-                <Card id="card-wrapper"></Card>
-              </router-link>
+       <Row >
+            <Col>
+              <CountrySelect />
             </Col>
-
-          </Row>
+        </Row>
 
     </section>
 </template>
 
 <script>
 import { Row, Col, Card } from 'iview';
+import CountrySelect from '../../components/CountrySelect.vue';
 
 export default {
-  components: { Row, Col, Card }
+  components: { Row, Col, Card, CountrySelect }
     
 }
 </script>
@@ -25,19 +23,26 @@ export default {
 <style>
 .country-wrapper {
     margin: auto;
-    width: 980px;
+    width: 80%;
 }
 #regText {
     font-size: 24px;
     line-height: 28px;
     font-weight: bold;
     color: #4F4F4F;
-    margin: 4rem 0 2rem 10rem;
+    margin: 4rem 0 2rem 8rem;
 
 }
-#card-wrapper {
-    height:100px;
-    width: 300px;
-    margin-bottom: 35px;
+
+
+@media screen and (max-width: 360px) {
+  #regText {
+   margin: 4rem 0 2rem 5rem;
+  }
+}
+@media screen and (max-width: 600px) {
+    #regText {
+   margin: 4rem 0 2rem 5rem;
+  }
 }
 </style>
