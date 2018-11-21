@@ -22,7 +22,6 @@
                                   @logout="onFBLogout"
                                   @sdk-loaded="FBsdkLoaded" long>
                                 </facebook-login>
-                                <!-- <Button class="btn-social my-btn" id="btn-facebook" long> Sign up with Facebook</Button>  -->
                         </Col>
                 </col>
             </div>                
