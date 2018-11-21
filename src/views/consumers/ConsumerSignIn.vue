@@ -10,10 +10,19 @@
                         <Col offset="4" :sm="12" :md="16" :xs="18" class="auth-section" >
                                 <h1 id="page-title">Sign in</h1>
                                 <p class="join">Join Bloverse today.</p>                 
-                                <Button class="btn-social my-btn" id="btn-google" long> 
+                                <Button class="btn-social my-btn" id="btn-google" long @click="googleAuth"> 
                                     <Icon id="google-icon" type=logo-google /> Sign up with Google
                                 </Button>
-                                <Button class="btn-social my-btn" id="btn-facebook" long> Sign up with Facebook</Button> 
+                                <facebook-login
+                                  id="btn-fb"
+                                  loginLabel="Sign up with Facebook"
+                                  logoutLabel="Sign out with Facebook"
+                                  appId="416283189263206"
+                                  @login="onFBLogin"
+                                  @logout="onFBLogout"
+                                  @sdk-loaded="FBsdkLoaded" long>
+                                </facebook-login>
+                                <!-- <Button class="btn-social my-btn" id="btn-facebook" long> Sign up with Facebook</Button>  -->
                         </Col>
                 </col>
             </div>                
@@ -25,15 +34,17 @@
 </template>
 
 <script>
-  
+import Vue from 'vue'
+
 import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
 import { mapState } from 'vuex'; 
 import ConsumerLoginFooter from '../../components/ConsumerLoginFooter.vue';
  
 import BlankBase from '../../layouts/BlankBase';
- 
+import facebookLogin from '@/components/fb-auth/fb.vue';
+
 export default {
-  components: { Button, Row, Col, Icon, Input, Form, FormItem, BlankBase, ConsumerLoginFooter},
+  components: { Button, Row, Col, Icon, Input, Form, FormItem, BlankBase, ConsumerLoginFooter, facebookLogin},
   data: function(){
     return {      
       user: {
@@ -51,8 +62,50 @@ export default {
             type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur',
           },
         ],
-      }
+      },
+      fb_connected: false,
+      fb_user_name: '',
+      fb_user_email: '',
+      fb_personal_id: '',
+      FB: undefined
+    }
+  },
+  methods: {
+    getFBUserData() {
+      this.FB.api('/me', 'GET', { fields: 'id, name, email' },
+        userInformation => {
+          this.fb_personal_id = userInformation.id;
+          this.fb_user_email = userInformation.email;
+          this.fb_user_name = userInformation.name;
+          alert('User successfully signed in with Facebook')
+        }
+      )
+    },
 
+    FBsdkLoaded(payload) {
+      this.fb_connected = payload.isConnected
+      this.FB = payload.FB
+      if (this.fb_connected) {
+          this.getFBUserData()
+      }
+    },
+
+    onFBLogin() {
+        this.fb_connected = true
+        this.getFBUserData()
+    },
+
+    onFBLogout() {
+        this.fb_connected = false
+    },
+
+    googleAuth() {
+        Vue.googleAuth().signIn((googleUser) => { 
+          console.log(googleUser)
+          alert('User successfully signed in with Google')
+        }, (error) => {
+          console.log(error)
+        })
     }
   },
   computed: {
@@ -87,6 +140,8 @@ export default {
   .my-btn{
     margin-bottom:30px;
     padding:10px 0;
+    height: 3rem;
+    border: none;
   }
   .container{
     padding:0;
