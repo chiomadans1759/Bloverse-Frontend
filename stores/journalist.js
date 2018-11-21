@@ -41,8 +41,9 @@ export default {
       switch (response.statusCode) {
       case 200:
       case 201: {
+        // eslint-disable-next-line
         let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published: isPublished = false, slug, location, duration, device_type } = response.data.post;
-        let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, location, duration, device_type};
+        let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, location, duration, device_type };
         commit('setPost', updatedPost);
         commit('clearPost')
         return true;
@@ -63,7 +64,6 @@ export default {
       formData.append('upload_preset', cloudinary.uploadPreset);
       formData.append('folder', 'bloverse');
       const resp = await axios.post(clUrl, formData);
-      // console.log(resp.data.secure_url);
       return resp.data.secure_url;
     },
     async getMyPosts({ commit, rootState }) {
