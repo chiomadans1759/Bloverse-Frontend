@@ -5,8 +5,8 @@
             <Col>
               <CountrySelect />
             </Col>
-            <Col>
-
+            <Col id="select-button">
+                <Button type="primary">SUBMIT</Button>
             </Col>
 
         </Row>
@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import { Row, Col, Card } from 'iview';
+import { Row, Col, Card, Button} from 'iview';
 import CountrySelect from '../../components/CountrySelect.vue';
 
 export default {
-  components: { Row, Col, Card, CountrySelect }
+  components: { Row, Col, Card, Button, CountrySelect }
     
 }
 </script>
@@ -36,6 +36,11 @@ export default {
     color: #4F4F4F;
     margin: 4rem 0 2rem 7rem;
 
+}
+#register-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 
