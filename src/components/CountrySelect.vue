@@ -58,5 +58,17 @@ export default {
     margin-left: 95%;
     margin-top: 10px;
 }
+@media screen and (max-width: 360px) {
+#position-circle {
+    margin-left: 95%;
+    margin-top: 2px;
+ }
+}
+@media screen and (max-width: 600px) {
+  #position-circle {
+    margin-left: 95%;
+    margin-top: 2px;
+ }
+}
 </style>
 
