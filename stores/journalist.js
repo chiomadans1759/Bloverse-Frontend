@@ -1,5 +1,5 @@
-import Api from '../src/utils/Api';
 import axios from 'axios';
+import Api from '../src/utils/Api';
 
 export default {
   state: {
@@ -86,42 +86,45 @@ export default {
       }
 
       switch (response.statusCode) {
-        case 200:
-        case 201:
-          let {
-            id,
-            title,
-            body,
-            keypoint: keyPoints,
-            image_url: imageUrl,
-            category,
-            country,
-            is_published: isPublished = false,
-            slug,
-            location,
-            duration,
-            device_type
-          } = response.data.post;
-          let updatedPost = {
-            id,
-            keyPoints,
-            imageUrl,
-            title,
-            body,
-            category,
-            country,
-            isPublished,
-            slug,
-            location,
-            duration,
-            device_type
-          };
-          commit('setPost', updatedPost);
-          return true;
-        default:
-          return false;
+      case 200:
+      case 201:{
+        let {
+          id,
+          title,
+          body,
+          keypoint: keyPoints,
+          image_url: imageUrl,
+          category,
+          country,
+          is_published: isPublished = false,
+          slug,
+          location,
+          duration,
+          device_type
+        } = response.data.post;
+        let updatedPost = {
+          id,
+          keyPoints,
+          imageUrl,
+          title,
+          body,
+          category,
+          country,
+          isPublished,
+          slug,
+          location,
+          duration,
+          device_type
+        };
+        
+        commit('setPost', updatedPost);
+        
+        return true;
       }
-
+      default:
+        return false;
+      
+      }
     },
     async doUpload({
       state
@@ -137,7 +140,7 @@ export default {
       formData.append('upload_preset', cloudinary.uploadPreset);
       formData.append('folder', 'bloverse');
       const resp = await axios.post(clUrl, formData);
-      console.log(resp.data.secure_url);
+      // console.log(resp.data.secure_url);
       return resp.data.secure_url;
     },
     async getMyPosts({
