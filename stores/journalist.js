@@ -40,43 +40,15 @@ export default {
 
       switch (response.statusCode) {
       case 200:
-      case 201:{
-        let {
-          id,
-          title,
-          body,
-          keypoint: keyPoints,
-          image_url: imageUrl,
-          category,
-          country,
-          is_published: isPublished = false,
-          slug,
-          location,
-          duration,
-          device_type
-        } = response.data.post;
-        let updatedPost = {
-          id,
-          keyPoints,
-          imageUrl,
-          title,
-          body,
-          category,
-          country,
-          isPublished,
-          slug,
-          location,
-          duration,
-          device_type
-        };
-        
+      case 201: {
+        let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published: isPublished = false, slug, location, duration, device_type } = response.data.post;
+        let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, location, duration, device_type};
         commit('setPost', updatedPost);
-
+        commit('clearPost')
         return true;
       }
       default:
-        return false;
-      
+        return { errors: response };
       }
     },
     async doUpload({ state }) {
@@ -128,7 +100,9 @@ export default {
         keyPoints: [{ index: 1, value: '', }, { index: 2, value: '' }, { index: 3, value: '' }],
         body: '',
         title: '',
-        imageUrl: ''
+        imageUrl: '',
+        deviceType: '',
+        location: ''
       }
     },
     setMyMetrics(state, metrics) {
@@ -137,10 +111,10 @@ export default {
   },
   getters: {
     isCreatingBasicPost(state) {
-      return (state.post.title || state.post.body) && state.post.keyPoints.length > 0
+      return (state.post.title || state.post.body) && state.post.keypoints && state.post.keyPoints.length > 0
     },
     isCreatingTravelPost(state) {
-      return (state.post.title || state.post.body) && state.post.deviceType
+      return (state.post.title || state.post.body) && state.post.deviceType && state.post.location
     },
     views(state) {
       return state.metrics && state.metrics.views;

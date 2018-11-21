@@ -33,14 +33,14 @@
             </Select>
           </Col>
           <Col :sm="11">
-            <Select v-model="post.country" placeholder="Choose Country">
+            <Select v-model="post.country" placeholder="Choose Country" :disabled="isTravel">
               <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{item.name}}</Option>
             </Select>
           </Col>
         </Row>
         
         <Card class="key-points" v-if="isTravel">
-            <input v-model="post.location" ref="autocomplete" placeholder="Location" class="search-location" onfocus="value=''" />
+          <input v-model="post.location" ref="autocomplete" placeholder="Location" class="search-location" />
           <FormItem prop="duration">
             <DatePicker v-model="post.duration" id="keypoint" type="date" placement="bottom-end" placeholder="Time Taken" style="width: 100%"></DatePicker>
           </FormItem>
@@ -239,7 +239,7 @@ export default {
             let success = await this.processPost({
               shouldPublish,
               shouldUploadImage: this.isNewImage
-            });
+            });       
             this.isPublishing = false
             if (success === true) {
               this.$Message.success("Post successfully saved");
@@ -279,16 +279,21 @@ export default {
   mounted() {
     if (this.isTravel) {
       this.setPost({ category: 7, country: this.auth.loggedInUser.country.id }),
-      this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
+      (this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
         this.$refs.autocomplete,
         { types: ["geocode"] }
-      );
+      ));
     } else {
       this.setPost({
         category: this.auth.loggedInUser.category.id,
         country: this.auth.loggedInUser.country.id
       });
     }
+
+    this.autocomplete.addListener('place_changed', () => {
+      let place = this.autocomplete.getPlace();
+      this.post.location = place.formatted_address;
+    });
   }
 
   /*let { data, status } = await this.createOrUpdatePost();

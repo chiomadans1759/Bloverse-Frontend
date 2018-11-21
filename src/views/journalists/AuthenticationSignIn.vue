@@ -56,8 +56,8 @@ export default {
     return {
       isSubmitting: false,
       user: {
-        email: 'aniekan.inynag@bloverse.com',
-        password: 'pass123'
+        email: '',
+        password: ''
       },
       loginValidate: {
         email: [
