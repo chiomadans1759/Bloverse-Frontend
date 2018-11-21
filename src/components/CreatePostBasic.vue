@@ -150,10 +150,7 @@ export default {
           value: "Techno",
           label: "Techno"
         },
-        {
-          value: "Huawei",
-          label: "Huawei"
-        },
+
         {
           value: "Infinix",
           label: "Infinix"
@@ -217,17 +214,17 @@ export default {
     }
   },
   watch: {
-    "post.imageUrl": function() { 
+    "post.imageUrl": function() {
       this.isNewImage = true;
     }
   },
   mounted() {
     if (this.isTravel) {
       this.setPost({ category: 7, country: this.auth.loggedInUser.country.id }),
-      (this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
-        this.$refs.autocomplete,
-        { types: ["geocode"] }
-      ));
+        (this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
+          this.$refs.autocomplete,
+          { types: ["geocode"] }
+        ));
     } else {
       this.setPost({
         category: this.auth.loggedInUser.category.id,
