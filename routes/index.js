@@ -31,7 +31,7 @@ import BaseFeeds from '../src/layouts/BaseFeeds.vue';
 import PostFeeds from '../src/views/PostFeeds.vue';
 import PostDisplay from '../src/views/PostDisplay.vue'; 
 
- 
+import ConsumerLandingPage from '../src/views/consumers/ConsumerLandingPage.vue'; 
 import ConsumerSignIn from '../src/views/consumers/ConsumerSignIn.vue';
 import SelectCountry from '../src/views/consumers/SelectCountry.vue';
 
@@ -130,7 +130,8 @@ const routes = [
   },
   { path: '/web', component: BaseConsumer, // All pages for the new user features should reside here
     children: [
-      { path: 'country', component: SelectCountry }
+      { path: 'country', component: SelectCountry },
+      { path: '', component: ConsumerLandingPage }
     ]
   },
   { path: '/login', component: ConsumerSignIn },
