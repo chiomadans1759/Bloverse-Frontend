@@ -118,7 +118,7 @@ export default {
         };
         
         commit('setPost', updatedPost);
-        
+
         return true;
       }
       default:

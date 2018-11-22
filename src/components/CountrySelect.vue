@@ -38,7 +38,7 @@ export default {
     margin-bottom: 20px
 }
 #card-img {
-    height: 144px;
+    height: 142px;
     margin-top: -40px;
     margin-left: -20px;
 
@@ -48,11 +48,11 @@ export default {
     font-size: 20px;
 }
 #card-wrapper {
-    height: 100px;
+    height: 96px;
 }
 #country-name {
     margin-top: -30%;
-    margin-left: 60%;
+    margin-left: 58%;
 }
 #position-circle {
     margin-left: 95%;
@@ -69,6 +69,5 @@ export default {
     margin-left: 95%;
     margin-top: -5px;
  }
-}
-</style>
+}</style>
 
