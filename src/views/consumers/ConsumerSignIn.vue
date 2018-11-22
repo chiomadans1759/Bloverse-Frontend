@@ -85,26 +85,25 @@ export default {
       this.fb_connected = payload.isConnected
       this.FB = payload.FB
       if (this.fb_connected) {
-          this.getFBUserData()
+        this.getFBUserData()
       }
     },
 
     onFBLogin() {
-        this.fb_connected = true
-        this.getFBUserData()
+      this.fb_connected = true
+      this.getFBUserData()
     },
 
     onFBLogout() {
-        this.fb_connected = false
+      this.fb_connected = false
     },
 
     googleAuth() {
-        Vue.googleAuth().signIn((googleUser) => { 
-          console.log(googleUser)
-          alert('User successfully signed in with Google')
-        }, (error) => {
-          console.log(error)
-        })
+      Vue.googleAuth().signIn((googleUser) => { 
+        alert('User successfully signed in with Google')
+      }, (error) => {
+        // console.log(error)
+      })
     }
   },
   computed: {

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios';
 import { locale, Message, LoadingBar } from 'iview';
+import GoogleAuth from 'vue-google-authenticator'
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
 import moment from 'moment'
@@ -18,8 +19,6 @@ import 'iview/dist/styles/iview.css';
 
 var SocialSharing = require('vue-social-sharing');
 
-// Google authenticator library
-import GoogleAuth from 'vue-google-authenticator'
 Vue.use(GoogleAuth, { client_id: '966117903311-1fk401e4fiks3u34nsputljh7smgckor.apps.googleusercontent.com' })
 Vue.googleAuth().load()
 Vue.googleAuth().directAccess()

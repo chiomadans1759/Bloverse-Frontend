@@ -29,8 +29,6 @@ import AdminHome from '../src/views/admin/Home.vue';
 
 import BaseFeeds from '../src/layouts/BaseFeeds.vue';
 import PostFeeds from '../src/views/PostFeeds.vue';
-import PostDisplay from '../src/views/PostDisplay.vue'; 
-
  
 import ConsumerSignIn from '../src/views/consumers/ConsumerSignIn.vue';
 import SelectCountry from '../src/views/consumers/SelectCountry.vue';
