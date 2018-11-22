@@ -8,6 +8,9 @@
             <Col id="select-button">
                 <Button type="primary">SUBMIT</Button>
             </Col>
+            <Col id="select-button">
+                <Button type="primary">SUBMIT</Button>
+            </Col>
 
         </Row>
 
