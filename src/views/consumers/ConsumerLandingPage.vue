@@ -1,39 +1,118 @@
 <template> 
       <section>
           <div class = "container"> 
-              <Col :sm="24" :md="6" :xs="24" class = "box1">
-                   <div>
-                       Sidebar Menu Here
+              <Col  :md="6" :sm="24" :xs="24"  class="menu">
+                   <div class = "box1">   
+                    <ul>
+                      <li>Feeds</li>
+                      <li>Categories
+                          <ul>
+                              <li><i class="fas fa-tv"> </i>Entertainment</li>
+                              <li><i class="fas fa-business-time"> </i>Business</li>
+                              <li><i class="far fa-futbol"> </i>Sports</li>
+                              <li><i class="far fa-lightbulb"> </i>Technology</li>
+                              <li><i class="far fa-thumbs-up"> </i>Politics</li>
+                              <li><i class="far fa-handshake"> </i>Relationships</li>
+                              <li><i class="fas fa-medkit"></i>Health</li>
+                              <li><i class="fas fa-user-graduate"></i>Education</li> 
+                              <li><i class="fas fa-glasses"> </i>Fashion</li>
+                              <li><i class="fab fa-gratipay"> </i>Lifestyle</li>
+                              <li><i class="far fa-calendar-alt"> </i>Events</li>
+                              <li><i class="far fa-grin-squint-tears"> </i>Comedy</li>
+                              <li><i class="fas fa-plane-departure"> </i>Travel</li>
+                          </ul>
+                      </li>
+                  </ul>
                    </div>
               </Col> 
-              <Col :sm="24" :md="12" :xs="24" class = "box2">
+              <Col :sm="24" :md="12" :xs="24"   class = "box2">
                   <div class ="center-content">
-                       <div class = "center-content-header">
-                            <Col class = "avarter" :sm="4" :md="4" :xs="4">
+                       <Row class = "center-content-header" type="flex" justify="space-between" align="middle">
+                            <Col class ="collapse-menu" :sm="2" :xs="2" ><p>&#9776;</p> </Col>
+                            <Col :md="4" :sm="4" :xs="4" >
                                 <div class = "avarter-wrap">
                                     <img src ="./../../assets/punch.png"/>
                                 </div>
                             </Col>
-                            <Col :sm="4" :md="4" :xs="4"><p class="para1">Seyi Femi</p></Col>
-                            <Col :sm="16" :md="16" :xs="16"><p class="para2">3 hours ago</p></Col>
-                        </div>
-                        <div class="content-image">
+                            <Col :md="4" :sm="4" :xs="4"><p class="para1">Seyi Femi</p></Col>
+                            <Col :sm="14" :xs="14" :md="16" ><p class="para2">3 hours ago</p></Col>
+                        </Row>
+                        <Row class="content-image">
                             <img src ="./../../assets/landingPage.jpg"/>
-                        </div>
-                        <div class ="center-content-footer">
-                           <p class="para3">We are confident of winning Osun gov election - PDP</p>
-                           <p class="para4"><i class="fa fa-heart"></i> 235 
-                                <span class = "span1"><i class="fa fa-comment"></i> 45</span>
-                                <span class = "span2"><i class="fa fa-reply"></i></span>
-                                <span class = "span3"><i class="fa fa-ellipsis-v"></i></span>
-                           </p>
-                        </div>
+                        </Row>
+                        <Row class ="center-content-footer">
+                           <Row class="para3">We are confident of winning Osun gov election - PDP</Row>
+                           <Row class="para4">
+                               <Col class="icon1">
+                                    <i class="fa fa-heart"><span> 235 </span></i> 
+                                    <i class="fab fa-twitch"><span> 45</span></i>
+                               </Col> 
+                               <Col class="icon2">
+                                    <i class="fa fa-reply"></i>
+                                    <i class="fa fa-ellipsis-v"></i>
+                               </Col>  
+                           </Row>
+                        </Row>
                   </div>
+                  <div class ="center-content">
+                       <Row class = "center-content-header" type="flex" justify="space-between" align="middle">
+                            <Col :md="4" >
+                                <div class = "avarter-wrap">
+                                    <img src ="./../../assets/punch.png"/>
+                                </div>
+                            </Col>
+                            <Col :md="4" ><p class="para1">Seyi Femi</p></Col>
+                            <Col :sm="16" :md="16" :xs="16"><p class="para2">3 hours ago</p></Col>
+                        </Row>
+                        <Row class="content-image">
+                            <img src ="./../../assets/landingPage.jpg"/>
+                        </Row>
+                        <Row class ="center-content-footer">
+                           <Row class="para3">We are confident of winning Osun gov election - PDP</Row>
+                           <Row class="para4">
+                               <Col class="icon1">
+                                    <i class="fa fa-heart"><span> 235 </span></i> 
+                                    <i class="fab fa-twitch"><span> 45</span></i>
+                               </Col> 
+                               <Col class="icon2">
+                                    <i class="fa fa-reply"></i>
+                                    <i class="fa fa-ellipsis-v"></i>
+                               </Col>  
+                           </Row>
+                        </Row>
+                  </div>
+                  <div class ="center-content">
+                       <Row class = "center-content-header" type="flex" justify="space-between" align="middle">
+                            <Col :md="4" :sm="4" :xs="4" >
+                                <div class = "avarter-wrap">
+                                    <img src ="./../../assets/punch.png"/>
+                                </div>
+                            </Col>
+                            <Col :md="4" :sm="4" :xs="4" ><p class="para1"> Seyi Femi</p></Col>
+                            <Col :sm="16" :md="16" :xs="16"><p class="para2">3 hours ago</p></Col>
+                        </Row>
+                        <Row class="content-image">
+                            <img src ="./../../assets/landingPage.jpg"/>
+                        </Row>
+                        <Row class ="center-content-footer">
+                           <Row class="para3">We are confident of winning Osun gov election - PDP</Row>
+                           <Row class="para4">
+                               <Col class="icon1">
+                                    <i class="fa fa-heart"><span> 235 </span></i> 
+                                    <i class="fab fa-twitch"><span> 45</span></i>
+                               </Col> 
+                               <Col class="icon2">
+                                    <i class="fa fa-reply"></i>
+                                    <i class="fa fa-ellipsis-v"></i>
+                               </Col>  
+                           </Row>
+                        </Row>
+                  </div>
+            
               </Col>
-              <Col :sm="24" :md="6" :xs="24" class = "box3">
-                    <div class ="box2-content">
-                       
-                    </div>
+              <Col  :md="6" :sm="24" :xs="24" class = "box3" type="flex" align="middle" > 
+                    <Row class ="box3-content" offset ="4" :sm="24" :md="16" :xs="24"></Row>
+                    <Row class ="box3-content" offset ="4" :sm="24" :md="16" :xs="24"></Row>
               </Col>
           </div>
       </section>   
@@ -53,28 +132,41 @@ export default {
   /*  .container > div{ 
         border: 1px #ccc solid;
    } */
-
+    .container{        
+        width:100%;
+    }
     .box1{  
-        
-    }  
+       margin-top:1.5rem;
+       margin-left:5rem;  
+    }
+    .box1 ul li{
+        list-style-type: none;
+        padding-top:.4rem;
+        font-size:1rem;
+        color:#333333;
+        display:block;
+    }
+    .box1 i{
+        width:2rem;    
+        color:#333333;
+    }   
     .box2{ 
         display:flex;
-        
+        flex-direction:column;  
     }
-    .box3{  
-    }
+   
     .center-content{ 
         border:1px solid #ccc;
-        flex:1;  
+        margin-top:1.5rem;         
+        border-radius:5px; 
+        flex:1; 
+        width:100%;
     }
     .center-content-header{ 
-        height:80px;
-        display:flex;
-        overflow:hidden; 
-        align-items:center;
-        width:100%;        
+        height:80px;         
     }
-     .avarter{           
+     .collapse-menu{
+         display:none;
      }
       .avarter-wrap{  
          width:3rem;
@@ -83,7 +175,7 @@ export default {
          text-align: center;  
          padding:.5rem 0;          
          border-radius: 50%; 
-         margin:3rem;      
+         margin-left:2rem;      
      }
        .avarter-wrap img{  
          width:35px;
@@ -94,7 +186,8 @@ export default {
         font-weight:800;
         }
     .para2{ 
-        text-align:right; 
+        text-align:right;
+        padding-right:2rem; 
         color:#9c9c9c;
         }
     .content-image{
@@ -104,8 +197,7 @@ export default {
         flex:1;
     }
     .center-content-footer{ 
-        height:120px; 
-        overflow:hidden; 
+        height:120px;  
         align-items:center;
         width:100%;        
     }
@@ -118,26 +210,103 @@ export default {
         font-weight:800;
         font-size: 1rem;
         padding-left: 2rem;
-        padding-bottom: 2rem;   
+        padding-bottom: 2rem;
+        display:flex;  
+        margin-top:2rem; 
         }
-    .span1{
-        padding: 0 20px;
+    
+     .box3{                
+        align-items: center; 
     }
-    .span2{
-        text-align:right;
-        padding-left:55%;
+    .icon1{
+        flex:5;  
+        color: #333333;         
+        align-items: left; 
     }
-    .span3{
-        padding: 0 3rem;
-        text-align:right;
+    .icon1 span{
+        font-size:12px;
+        text-align:center;        
     }
-    .box2-content{
+    .fa-heart{
+        padding-right:1.5rem;
+    }
+    .fa-reply {
+        padding-right:2rem; 
+    }
+     .icon2{
+        flex:1;            
+        color: #333333;
+    }
+    .box3-content{
         border: 1px solid #ccc; 
-        height:10rem;
-        width:60%;    
+        height:20rem;
+        width:70%;
+        margin:1.5rem 0 1rem 0;
+        border-radius:5px;   
     }
     
 @media only screen and (max-width: 600px) {
+      .box1 ul li{ 
+        font-size:.7rem; 
+    }
+      .box1 i{
+        width:1.5rem;     
+    }
+      .box1{  
+       margin-top:1.5rem;
+       margin-left:3rem;  
+    }
+     .center-content{  
+        margin-top:.5rem;         
+        border-radius:1px;  
+    }
+    .container{ 
+        display:flex;
+        flex-direction:column;  
+    }
+     .content-image img{ 
+        background-size: contain;
+        width:5rem;
+    }
+      .avarter-wrap{  
+         width:2rem;
+         height:2rem;   
+         padding-top:.12rem;   
+         margin-left:1rem;      
+     }
+       .avarter-wrap img{  
+         width:25px;
+         height:10px;               
+     }
+       .center-content-footer{ 
+        height:100px;       
+    }
+     .para3{  
+        font-size: .7rem;
+        padding: 1.2rem 0 1rem 1rem; 
+     }
+     .para4{   
+        padding-left: 1rem; 
+        }
+    .icon1{
+        flex:2;  
+        color: #333333;         
+        align-items: left; 
+    }
+     .collapse-menu {
+        display:block; 
+        color: #333333; 
+        font-size:1.5rem;
+        text-align:right;
+        cursor: pointer;
+        margin:0;
+    }
+     .box1 {
+        display: none;
+    }
+    .collapse-menu:hover .box1 {
+        display: block;
+    }
     
 }
 
