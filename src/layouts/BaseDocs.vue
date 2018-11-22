@@ -20,7 +20,6 @@
       </section>
     </section>
   </WithHeader>
-
 </template>
 
 
@@ -35,7 +34,6 @@ export default {
 
 
 </script>
-
 
 <style scoped>
   #doc-section {

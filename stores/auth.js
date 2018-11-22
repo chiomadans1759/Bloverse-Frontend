@@ -24,9 +24,13 @@ export default {
       let phone = state.applicant.phoneCode + state.applicant.phoneNumber;
       let linkedIn = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`
       let twitter = `https://www.twitter.com/${state.applicant.twitterUsername}`
-      let articles = state.applicant.articleURLs.map((article, index) => {
-        return `${state.applicant.articleProtocols[index]}${article}`
-      })
+      let articles;
+      if(state.applicant.articleURLs.length > 0){
+        articles = state.applicant.articleURLs.map((article, index) => {
+          return `${state.applicant.articleProtocols[index]}${article}`
+        })
+      }
+      
       let categoryId = state.applicant.category.id;
       let countryId = state.applicant.country.id;
       commit('setApplicant', { phone, twitter, linkedIn, articles });
