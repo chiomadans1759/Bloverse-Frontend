@@ -5,17 +5,24 @@
             <Col>
               <CountrySelect />
             </Col>
+            <Col id="select-button">
+                <Button type="primary" id="btn-style">Next</Button>
+            </Col>
+            <Col>
+                <RecentlyRead />
+            </Col>
         </Row>
 
     </section>
 </template>
 
 <script>
-import { Row, Col, Card } from 'iview';
+import { Row, Col, Card, Button } from 'iview';
 import CountrySelect from '../../components/CountrySelect.vue';
+import RecentlyRead from '../../components/RecentlyRead.vue';
 
 export default {
-  components: { Row, Col, Card, CountrySelect }
+  components: { Row, Col, Card, Button, CountrySelect, RecentlyRead }
     
 }
 </script>
@@ -33,7 +40,15 @@ export default {
     margin: 4rem 0 2rem 8rem;
 
 }
-
+#select-button {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+#btn-style {
+    font-size: 15px;
+}
 
 @media screen and (max-width: 360px) {
   #regText {
