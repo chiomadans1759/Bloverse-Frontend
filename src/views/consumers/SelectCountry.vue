@@ -9,7 +9,7 @@
                 <Button type="primary" id="btn-style">Next</Button>
             </Col>
             <Col>
-                <RecentlyRead />
+                <RecentComments />
             </Col>
         </Row>
 
@@ -19,10 +19,10 @@
 <script>
 import { Row, Col, Card, Button } from 'iview';
 import CountrySelect from '../../components/CountrySelect.vue';
-import RecentlyRead from '../../components/RecentlyRead.vue';
+import RecentComments from '../../components/RecentComments.vue';
 
 export default {
-  components: { Row, Col, Card, Button, CountrySelect, RecentlyRead }
+  components: { Row, Col, Card, Button, CountrySelect, RecentComments }
     
 }
 </script>
