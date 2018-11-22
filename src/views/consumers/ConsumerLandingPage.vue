@@ -1,29 +1,39 @@
 <template> 
       <section>
           <div class = "container"> 
-              <Col  :md="6" :sm="8" :xs="24">
-                   <div class = "box1">   
-                    <ul>
-                      <li>Feeds</li>
-                      <li>Categories
-                          <ul>
-                              <li><i class="fas fa-tv"> </i>Entertainment</li>
-                              <li><i class="fas fa-business-time"> </i>Business</li>
-                              <li><i class="far fa-futbol"> </i>Sports</li>
-                              <li><i class="far fa-lightbulb"> </i>Technology</li>
-                              <li><i class="far fa-thumbs-up"> </i>Politics</li>
-                              <li><i class="far fa-handshake"> </i>Relationships</li>
-                              <li><i class="fas fa-medkit"></i>Health</li>
-                              <li><i class="fas fa-user-graduate"></i>Education</li> 
-                              <li><i class="fas fa-glasses"> </i>Fashion</li>
-                              <li><i class="fab fa-gratipay"> </i>Lifestyle</li>
-                              <li><i class="far fa-calendar-alt"> </i>Events</li>
-                              <li><i class="far fa-grin-squint-tears"> </i>Comedy</li>
-                              <li><i class="fas fa-plane-departure"> </i>Travel</li>
-                          </ul>
-                      </li>
-                  </ul>
-                   </div>
+             <Col :md="6" :sm="8" :xs="24" >  
+                <Col class ="side-menu">
+                    <div class = "box1">   
+                        <ul>
+                        <li>Feeds</li>
+                        <li>Categories
+                            <ul>
+                                <li><i class="fas fa-tv"> </i>Entertainment</li>
+                                <li><i class="fas fa-business-time"> </i>Business</li>
+                                <li><i class="far fa-futbol"> </i>Sports</li>
+                                <li><i class="far fa-lightbulb"> </i>Technology</li>
+                                <li><i class="far fa-thumbs-up"> </i>Politics</li>
+                                <li><i class="far fa-handshake"> </i>Relationships</li>
+                                <li><i class="fas fa-medkit"></i>Health</li>
+                                <li><i class="fas fa-user-graduate"></i>Education</li> 
+                                <li><i class="fas fa-glasses"> </i>Fashion</li>
+                                <li><i class="fab fa-gratipay"> </i>Lifestyle</li>
+                                <li><i class="far fa-calendar-alt"> </i>Events</li>
+                                <li><i class="far fa-grin-squint-tears"> </i>Comedy</li>
+                                <li><i class="fas fa-plane-departure"> </i>Travel</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </div>
+                    
+                    <div class ="side-bar-div">
+                        <RecentlyRead/>  
+                    </div>
+                    
+                    <div  > 
+                        <RecentComments/> 
+                    </div>
+                </Col>
               </Col> 
               <Col :sm="16" :md="12" :xs="24"   class = "box2">
                   <div class ="center-content">
@@ -120,10 +130,11 @@
 
 <script>
 import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
-//import ConsumerLoginFooter from '../../components/ConsumerLoginFooter.vue';
+import RecentComments from '../../components/RecentComments.vue';
+import RecentlyRead from '../../components/RecentlyRead.vue';
     
 export default {
-  components: { Button, Row, Col, Icon, Input, Form, FormItem}
+  components: { Button, Row, Col, Icon, Input, Form, FormItem, RecentComments, RecentlyRead}
 }
 </script>
 
@@ -135,9 +146,18 @@ export default {
     .container{        
         width:100%;
     }
+    .side-menu{
+        display:flex;
+        flex-direction:column;        
+        margin-left:3rem;
+        margin-right:1rem;   
+    }
+     .side-bar-div{
+         padding:0;
+         margin:0;
+     }
     .box1{  
-       margin-top:1.5rem;
-       margin-left:5rem;  
+       margin-top:1.5rem; 
     }
     .box1 ul li{
         list-style-type: none;
@@ -182,6 +202,7 @@ export default {
          height:12px;  
          vertical-align:middle;             
      }
+    
     .para1{ 
         font-weight:800;
         }

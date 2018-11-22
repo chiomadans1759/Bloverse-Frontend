@@ -33,16 +33,6 @@ export default {
     line-height: 28px;
     font-weight: bold;
     color: #4F4F4F;
-<<<<<<< HEAD
-    margin: 4rem 0 2rem 8rem;
-
-}
-
-
-@media screen and (max-width: 360px) {
-  #regText {
-   margin: 4rem 0 2rem 5rem;
-=======
     margin: 4rem 0 2rem 7rem;
 
 }
@@ -59,16 +49,11 @@ export default {
 @media screen and (max-width: 360px) {
   #regText {
    margin: 4rem 0 2rem 3rem;
->>>>>>> dev
   }
 }
 @media screen and (max-width: 600px) {
     #regText {
-<<<<<<< HEAD
-   margin: 4rem 0 2rem 5rem;
-=======
    margin: 4rem 0 2rem 3rem;
->>>>>>> dev
   }
 }
 </style>
