@@ -1,7 +1,7 @@
 <template> 
       <section>
           <div class = "container"> 
-              <Col  :md="6" :sm="24" :xs="24"  class="menu">
+              <Col  :md="6" :sm="8" :xs="24">
                    <div class = "box1">   
                     <ul>
                       <li>Feeds</li>
@@ -25,7 +25,7 @@
                   </ul>
                    </div>
               </Col> 
-              <Col :sm="24" :md="12" :xs="24"   class = "box2">
+              <Col :sm="16" :md="12" :xs="24"   class = "box2">
                   <div class ="center-content">
                        <Row class = "center-content-header" type="flex" justify="space-between" align="middle">
                             <Col class ="collapse-menu" :sm="2" :xs="2" ><p>&#9776;</p> </Col>
@@ -159,11 +159,11 @@ export default {
         border:1px solid #ccc;
         margin-top:1.5rem;         
         border-radius:5px; 
-        flex:1; 
-        width:100%;
+        flex:1;
+        height:31.25rem;  
     }
     .center-content-header{ 
-        height:80px;         
+        height:5rem;         
     }
      .collapse-menu{
          display:none;
@@ -192,12 +192,13 @@ export default {
         }
     .content-image{
        display: flex;
+       height:18.75rem;
     }
     .content-image img{ 
         flex:1;
     }
     .center-content-footer{ 
-        height:120px;  
+        height:7.5rem;  
         align-items:center;
         width:100%;        
     }
@@ -249,6 +250,9 @@ export default {
       .box1 ul li{ 
         font-size:.7rem; 
     }
+      .center-content{  
+        margin-top:1rem; 
+    }
       .box1 i{
         width:1.5rem;     
     }
@@ -256,18 +260,14 @@ export default {
        margin-top:1.5rem;
        margin-left:3rem;  
     }
-     .center-content{  
-        margin-top:.5rem;         
-        border-radius:1px;  
-    }
+    
     .container{ 
         display:flex;
-        flex-direction:column;  
+        flex-direction:column; 
+        width:90%; 
+        margin:auto; 
     }
-     .content-image img{ 
-        background-size: contain;
-        width:5rem;
-    }
+    
       .avarter-wrap{  
          width:2rem;
          height:2rem;   
@@ -278,9 +278,7 @@ export default {
          width:25px;
          height:10px;               
      }
-       .center-content-footer{ 
-        height:100px;       
-    }
+     
      .para3{  
         font-size: .7rem;
         padding: 1.2rem 0 1rem 1rem; 
@@ -293,6 +291,10 @@ export default {
         color: #333333;         
         align-items: left; 
     }
+    
+      .content-image{  
+        height:50%;
+    }
      .collapse-menu {
         display:block; 
         color: #333333; 
@@ -301,13 +303,51 @@ export default {
         cursor: pointer;
         margin:0;
     }
+     .center-content{ 
+        border:1px solid #ccc;
+        margin-top:.7rem;         
+        border-radius:5px; 
+        flex:1;
+        height:18.75rem;  
+    }
+    .center-content-header{ 
+        height:20%;         
+    } 
+    .center-content-footer{ 
+        height:30%;       
+    }
      .box1 {
         display: none;
     }
-    .collapse-menu:hover .box1 {
-        display: block;
+    .box3 {
+        display: none;
+    }   
+}
+
+@media only screen and (max-width: 840px) {
+   .box3 {
+        display: none;
     }
-    
+    .container{    
+        width:98%;  
+    }
+    .content-image img{ 
+        flex:1;
+        width:10px;
+    }
+      .content-image{  
+        height:55%;
+    }
+     
+     .center-content{ 
+        height:26.75rem;  
+    }
+    .center-content-header{ 
+        height:17%;         
+    } 
+    .center-content-footer{ 
+        height:28%; 
+}
 }
 
 </style>
