@@ -58,10 +58,6 @@ export default {
     margin-left: 95%;
     margin-top: 10px;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 @media screen and (max-width: 360px) {
 #position-circle {
     margin-left: 95%;
