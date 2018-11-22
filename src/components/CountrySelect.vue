@@ -38,7 +38,11 @@ export default {
     margin-bottom: 20px
 }
 #card-img {
+<<<<<<< HEAD
     height: 144px;
+=======
+    height: 142px;
+>>>>>>> dev
     margin-top: -40px;
     margin-left: -20px;
 
@@ -48,15 +52,38 @@ export default {
     font-size: 20px;
 }
 #card-wrapper {
+<<<<<<< HEAD
     height: 100px;
 }
 #country-name {
     margin-top: -30%;
     margin-left: 60%;
+=======
+    height: 96px;
+}
+#country-name {
+    margin-top: -30%;
+    margin-left: 58%;
+>>>>>>> dev
 }
 #position-circle {
     margin-left: 95%;
     margin-top: 10px;
 }
+<<<<<<< HEAD
 </style>
+=======
+@media screen and (max-width: 360px) {
+#position-circle {
+    margin-left: 95%;
+    margin-top: -5px;
+ }
+}
+@media screen and (max-width: 600px) {
+  #position-circle {
+    margin-left: 95%;
+    margin-top: -5px;
+ }
+}</style>
+>>>>>>> dev
 

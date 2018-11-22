@@ -20,6 +20,8 @@ export default {
       switch (response.statusCode) {
       case 200:
         categories = response.data && response.data.categories;
+        //Adds an object to select all categories to array 
+        categories.unshift({id:'',name:'All'});
 
         categories = categories.sort((a, b) => {
           if (a.name > b.name) return 1;
@@ -29,6 +31,8 @@ export default {
 
         response = await Api.get('countries/');
         countries = response.data && response.data.countries;
+        //Adds an object to select all countries array 
+        countries.unshift({id:'',name:'All'});
         countries = countries.sort((a, b) => {
           if (a.name > b.name) return 1;
           if (a.name == b.name) return 0;
