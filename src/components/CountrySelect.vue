@@ -39,8 +39,7 @@ export default {
 }
 #card-img {
     height: 142px;
-    margin-top: -40px;
-    margin-left: -20px;
+    margin-top: -24px;
 
 }
 #icon-circle {
@@ -55,18 +54,18 @@ export default {
     margin-left: 58%;
 }
 #position-circle {
-    margin-left: 95%;
+    margin-left: 90%;
     margin-top: 10px;
 }
 @media screen and (max-width: 360px) {
 #position-circle {
-    margin-left: 95%;
+    margin-left: 90%;
     margin-top: -5px;
  }
 }
 @media screen and (max-width: 600px) {
   #position-circle {
-    margin-left: 95%;
+    margin-left: 90%;
     margin-top: -5px;
  }
 }</style>
