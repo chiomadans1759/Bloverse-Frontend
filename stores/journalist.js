@@ -87,7 +87,7 @@ export default {
 
       switch (response.statusCode) {
       case 200:
-      case 201: {
+      case 201:{
         let {
           id,
           title,
@@ -116,13 +116,15 @@ export default {
           duration,
           device_type
         };
+        
         commit('setPost', updatedPost);
+
         return true;
       }
       default:
         return false;
+      
       }
-
     },
     async doUpload({
       state

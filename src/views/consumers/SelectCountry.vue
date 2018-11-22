@@ -37,7 +37,7 @@ export default {
     line-height: 28px;
     font-weight: bold;
     color: #4F4F4F;
-    margin: 4rem 0 2rem 8rem;
+    margin: 4rem 0 2rem 7rem;
 
 }
 #select-button {
@@ -52,12 +52,12 @@ export default {
 
 @media screen and (max-width: 360px) {
   #regText {
-   margin: 4rem 0 2rem 5rem;
+   margin: 4rem 0 2rem 3rem;
   }
 }
 @media screen and (max-width: 600px) {
     #regText {
-   margin: 4rem 0 2rem 5rem;
+   margin: 4rem 0 2rem 3rem;
   }
 }
 </style>
