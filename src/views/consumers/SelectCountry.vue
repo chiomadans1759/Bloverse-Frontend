@@ -8,9 +8,6 @@
             <Col id="select-button">
                 <Button type="primary" id="btn-style">Next</Button>
             </Col>
-            <Col>
-                <RecentComments />
-            </Col>
         </Row>
 
     </section>

@@ -40,19 +40,15 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-
 .header-nav {
    background: #F2F2F2;
    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.25);
-
 }
 .header-row {
  width: 90%;
  margin: 0 auto;
  padding:3px;
-
 }
-
 #headerText {
     font-size: 30px;
     font-weight:  bold;
@@ -61,25 +57,21 @@ export default {
     color: rgb(25, 109, 235);
 }
 #home-icon {
-
    color: #363C44;
    font-size: 18px;
    line-height: 16px;
 }
 #home-icon1 {
-
    color: #2F80ED;
    font-size: 18px;
    line-height: 16px;
 }
-
 #tIcon {
    color: #2F80ED;
 }
 #headerWrite {
    font-size: 18px;
    color: #222222;
-
 }
 #userIcon{
    height: 16px;
@@ -90,7 +82,6 @@ export default {
    display: flex;
    justify-content: space-between;
 }
-
 @media screen and (max-width: 360px) {
   #country-select {
     width: 100px;
