@@ -129,10 +129,10 @@ const routes = [
   },
   { path: '/web', component: BaseConsumer, // All pages for the new user features should reside here
     children: [
-      { path: '/login', component: ConsumerSignIn },
-      { path: 'country', component: SelectCountry }
+      { path: '/country', component: SelectCountry }
     ]
   },
+  { path: '/login', component: ConsumerSignIn },
   { path: "*", component: NotFound }
 ]
 
