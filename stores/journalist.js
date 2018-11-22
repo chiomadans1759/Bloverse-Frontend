@@ -4,9 +4,8 @@ import Api from '../src/utils/Api';
 export default {
   state: {
     posts: null,
-    post: { keyPoints: [{ index: 1, value: '', }, { index: 2, value: '' }, { index: 3, value: '' }] },
+    post: { keyPoints: [{ index: 1, value: '', status: 1 }] },
     metrics: {},
-
   },
   actions: {
     async processPost({ commit, rootState, state, dispatch }, params) {
@@ -97,7 +96,7 @@ export default {
     },
     clearPost(state) {
       state.post = {
-        keyPoints: [{ index: 1, value: '', }, { index: 2, value: '' }, { index: 3, value: '' }],
+        keyPoints: [{ index: 1, value: '', status: 1 }],
         body: '',
         title: '',
         imageUrl: '',

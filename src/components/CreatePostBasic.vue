@@ -51,9 +51,27 @@
             </Select>
           </FormItem>
         </Card>
+
         <Card class="keypoints" v-else>
-          <FormItem v-for="(keypoint, index) in post.keyPoints" :key="index" :prop="`keyPoints.${index}.value`" :rules="{ required: true, message: `Keypoint ${index} cannot be empty.`, trigger: 'blur' }">
-            <Input :placeholder="`Keypoint ${index}`" v-model="keypoint.value" size="large" />
+          <FormItem
+          v-for="(keypoint, index) in post.keyPoints" 
+          :key="index" 
+          :prop="`keyPoints.${index}.value`" 
+          :rules="{required: true, message: 'Keypoint cannot be empty', trigger: 'blur' }"
+          >
+            <Row>
+              <Col span="12">
+                <Input type="text" v-model="keypoint.value" placeholder="Enter keypoint..."/>
+              </Col>
+              <Button class="delete-btn" @click="handleRemove(index)">Delete</Button>
+            </Row>
+          </FormItem>
+          <FormItem>
+            <Row>
+              <Col span="12">
+                <Button type="dashed" long @click="handleAdd" icon="md-add">Add keypoint</Button>
+              </Col>
+            </Row>
           </FormItem>
         </Card>
         <FormItem prop="title" :error="errors.title">
@@ -138,25 +156,39 @@ export default {
     DisplayImage,
     DatePicker,
     Form,
-    FormItem,
+    FormItem
   },
   props: ["isTravel"],
   data: function() {
     return {
-      index: 1,
       errors: {},
       validatePostForm: {
         deviceType: [
-          { required: true, type: 'string', message: 'You must choose a device', trigger: 'change' }
+          {
+            required: true,
+            type: "string",
+            message: "You must choose a device",
+            trigger: "change"
+          }
         ],
         location: [
-          { required: true, type: 'array', message: 'The location is required', trigger: 'blur' }
+          {
+            required: true,
+            type: "array",
+            message: "The location is required",
+            trigger: "blur"
+          }
         ],
         duration: [
-          { required: true, type: 'date', message: 'Please select a date', trigger: 'change' }
+          {
+            required: true,
+            type: "date",
+            message: "Please select a date",
+            trigger: "change"
+          }
         ],
         title: [
-          { required: true, message: 'The title is required', trigger: 'blur' }
+          { required: true, message: "The title is required", trigger: "blur" }
         ]
       },
       isPublishing: false,
@@ -223,53 +255,63 @@ export default {
     ...mapMutations(["setPost"]),
     handleProcessPost: async function(shouldPublish = false) {
       this.errors = {};
-      if(this.isTravel) {
-        if(this.post.location === '') {
+      if (this.isTravel) {
+        if (this.post.location === "") {
           return this.$Message.error("You must select a location");
         }
         this.post.location = this.$refs.autocomplete.value;
       }
-      this.$refs.basicCreatePostForm.validate(async (valid) => {
+      this.$refs.basicCreatePostForm.validate(async valid => {
         if (valid) {
           if (!this.post.body || !this.post.body.trim()) {
-            return this.$Message.error("Body cannot be empty")
-          }
+            return this.$Message.error("Body cannot be empty");
+          } 
           if (this.post.imageUrl) {
-            this.isPublishing = true
+            this.isPublishing = true;
             let success = await this.processPost({
               shouldPublish,
               shouldUploadImage: this.isNewImage
-            });       
-            this.isPublishing = false
+            });
+            this.isPublishing = false;
             if (success === true) {
               this.$Message.success("Post successfully saved");
               this.publishModal = shouldPublish;
-            } 
-            if(success.errors) {
+            }
+            if (success.errors) {
               this.handleError(success.errors);
               this.$Message.error("Something went wrong");
             }
           } else this.$Message.error("You must select an image");
         } else {
-          return this.$Message.error("Some fields have not been filled.")
+          return this.$Message.error("Some fields have not been filled.");
         }
-      })
+      });
     },
-    handleError(errors){
+    handleError(errors) {
       let fieldErrors, varClient;
 
-      let clientServer = { 
-        message: 'title', 
+      let clientServer = {
+        message: "title"
       };
 
-      if(!this.isTravel) {
-        Object.keys(errors).forEach((field)=>{
-          fieldErrors = errors[field];
-          varClient = clientServer[field];
-          this.$set(this.errors, varClient, fieldErrors)
-        });
-      }
+      Object.keys(errors).forEach(field => {
+        fieldErrors = errors[field];
+        varClient = clientServer[field];
+        this.$set(this.errors, varClient, fieldErrors);
+      });
     },
+    handleAdd () {
+      this.index++;
+      this.post.keyPoints.push({
+        value: '',
+        index: this.index,
+        status: 1
+      });
+    },
+    handleRemove (index) {
+      this.index--;
+      this.post.keyPoints.pop();
+    }
   },
   watch: {
     "post.imageUrl": function() {
@@ -278,22 +320,22 @@ export default {
   },
   mounted() {
     if (this.isTravel) {
-      this.setPost({ category: 7, country: this.auth.loggedInUser.country.id }),
-      (this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
+      this.setPost({ category: 7, country: this.auth.loggedInUser.country.id });
+      this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
         this.$refs.autocomplete,
         { types: ["geocode"] }
-      ));
+      );
+
+      this.autocomplete.addListener("place_changed", () => {
+        let place = this.autocomplete.getPlace();
+        this.post.location = place.formatted_address;
+      });
     } else {
       this.setPost({
         category: this.auth.loggedInUser.category.id,
         country: this.auth.loggedInUser.country.id
       });
     }
-
-    this.autocomplete.addListener('place_changed', () => {
-      let place = this.autocomplete.getPlace();
-      this.post.location = place.formatted_address;
-    });
   }
 
   /*let { data, status } = await this.createOrUpdatePost();
@@ -381,6 +423,19 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   min-height: 120vh;
+}
+
+.search-location {
+  width: 100%;
+  padding: 0.3rem 1.25rem;
+  margin-bottom: 1.2rem;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.delete-btn {
+  margin: 0.6em;
+  width: 10rem;
 }
 
 #display-post #image {
