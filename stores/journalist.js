@@ -4,24 +4,14 @@ import Api from '../src/utils/Api';
 export default {
   state: {
     posts: null,
-    post: {
-      keyPoints: []
-    },
+    post: { keyPoints: [{ index: 1, value: '', status: 1 }] },
     metrics: {},
-
   },
   actions: {
-    async processPost({
-      commit,
-      rootState,
-      state,
-      dispatch
-    }, params) {
+    async processPost({ commit, rootState, state, dispatch }, params) {
       if (params.shouldUploadImage) {
         let newUrl = await dispatch('doUpload');
-        commit('setPost', {
-          imageUrl: newUrl
-        });
+        commit('setPost', { imageUrl: newUrl });
       }
       // The commented codes on this section are for implementing travelCompetition posts
       let userId = rootState.auth.loggedInUser.id;
@@ -29,52 +19,14 @@ export default {
 
       let postId;
 
-      if (state.post.category == 7) {
-        let {
-          id,
-          title,
-          location,
-          duration,
-          deviceType: device_type,
-          imageUrl: image_url,
-          category,
-          country,
-          body
-        } = state.post;
+      if (state.post.category === 7) {
+        let { id, title, location, duration, deviceType: device_type, imageUrl: image_url, category, country, body } = state.post;
         postId = id;
-        payload = {
-          id,
-          title,
-          location,
-          duration,
-          device_type,
-          image_url,
-          category,
-          country,
-          body,
-          is_published: params.shouldPublish
-        };
+        payload = { id, title, location, duration, device_type, image_url, category, country, body, is_published: params.shouldPublish };
       } else {
-        let {
-          id,
-          title,
-          body,
-          keyPoints: keypoint,
-          imageUrl: image_url,
-          category,
-          country
-        } = state.post;
+        let { id, title, body, keyPoints: keypoint, imageUrl: image_url, category, country } = state.post;
         postId = id;
-        payload = {
-          id,
-          keypoint,
-          image_url,
-          title,
-          body,
-          category,
-          country,
-          is_published: params.shouldPublish
-        };
+        payload = { id, keypoint: keypoint.map(point => point.value), image_url, title, body, category, country, is_published: params.shouldPublish };
       }
 
       let response;
@@ -87,48 +39,19 @@ export default {
 
       switch (response.statusCode) {
       case 200:
-      case 201:{
-        let {
-          id,
-          title,
-          body,
-          keypoint: keyPoints,
-          image_url: imageUrl,
-          category,
-          country,
-          is_published: isPublished = false,
-          slug,
-          location,
-          duration,
-          device_type
-        } = response.data.post;
-        let updatedPost = {
-          id,
-          keyPoints,
-          imageUrl,
-          title,
-          body,
-          category,
-          country,
-          isPublished,
-          slug,
-          location,
-          duration,
-          device_type
-        };
-        
+      case 201: {
+        // eslint-disable-next-line
+        let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published: isPublished = false, slug, location, duration, device_type } = response.data.post;
+        let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, location, duration, device_type };
         commit('setPost', updatedPost);
-
+        commit('clearPost')
         return true;
       }
       default:
-        return false;
-      
+        return { errors: response };
       }
     },
-    async doUpload({
-      state
-    }) {
+    async doUpload({ state }) {
       const cloudinary = {
         uploadPreset: 'pspvcsig',
         apiKey: '967987814344437',
@@ -140,28 +63,19 @@ export default {
       formData.append('upload_preset', cloudinary.uploadPreset);
       formData.append('folder', 'bloverse');
       const resp = await axios.post(clUrl, formData);
-      // console.log(resp.data.secure_url);
       return resp.data.secure_url;
     },
-    async getMyPosts({
-      commit,
-      rootState
-    }) {
+    async getMyPosts({ commit, rootState }) {
       let userId = rootState.auth.loggedInUser.id;
       commit('setLoading', true, {
         root: true
       });
       let response = await Api.get('journalists/' + userId + '/posts/', true);
       commit('setPosts', response.data.posts);
-      commit('setLoading', false, {
-        root: true
-      });
+      commit('setLoading', false, { root: true });
 
     },
-    async getMyMetrics({
-      commit,
-      rootState
-    }) {
+    async getMyMetrics({ commit, rootState }) {
       let userId = rootState.auth.loggedInUser.id;
       commit('setLoading', true, {
         root: true
@@ -175,16 +89,19 @@ export default {
   },
   mutations: {
     setPost(state, props) {
-      state.post = { ...state.post,
-        ...props
-      };
+      state.post = { ...state.post, ...props };
     },
     setPosts(state, props) {
       state.posts = props
     },
     clearPost(state) {
       state.post = {
-        keyPoints: []
+        keyPoints: [{ index: 1, value: '', status: 1 }],
+        body: '',
+        title: '',
+        imageUrl: '',
+        deviceType: '',
+        location: ''
       }
     },
     setMyMetrics(state, metrics) {
@@ -193,16 +110,16 @@ export default {
   },
   getters: {
     isCreatingBasicPost(state) {
-      return (state.post.title || state.post.body) && state.post.keyPoints.length > 0
+      return (state.post.title || state.post.body) && state.post.keypoints && state.post.keyPoints.length > 0
     },
     isCreatingTravelPost(state) {
-      return (state.post.title || state.post.body) && state.post.deviceType
+      return (state.post.title || state.post.body) && state.post.deviceType && state.post.location
     },
-    // views(state){
-    //   return state.metrics.views;
-    // },
+    views(state) {
+      return state.metrics && state.metrics.views;
+    },
     articles(state) {
-      return state.metrics.publishedArticles;
+      return state.metrics && state.metrics.publishedArticles;
     }
     // countries(state){
     //   return state.metrics.country;
