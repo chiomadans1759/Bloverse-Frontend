@@ -135,7 +135,7 @@ export default {
     },
     isAnAdmin(state) {
       if (state.loggedInUser) {
-        return state.loggedInUser.type == 'Admin';
+        return state.loggedInUser.type === 'Admin';
       }
       return false;
     },
