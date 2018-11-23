@@ -61,7 +61,8 @@
 
         <DisplayImage v-model="post.imageUrl" height="200px" width="50%" :can-edit="true" />
 
-        <vue-editor v-model="post.body" style="background: white;"></vue-editor>
+        <!-- <vue-editor v-model="post.body" style="background: white;"></vue-editor> -->
+        <tinymce class="form-control required" v-model="post.body"></tinymce>
 
         <br />
 
@@ -112,6 +113,7 @@ import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
 import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
 
 import DisplayImage from "./DisplayImage";
+import Tinymce from "./Tinymce";
 
 export default {
   components: {
@@ -130,7 +132,8 @@ export default {
     VueGoodshareTwitter,
     VueEditor,
     DisplayImage,
-    DatePicker
+    DatePicker,
+    Tinymce
   },
   props: ["isTravel"],
   data: function() {
