@@ -116,7 +116,7 @@ export default {
   },
   computed: {
     url() {
-      return `https://bloverse-frontend.herokuapp.com/posts/${
+      return `http://staging.bloverse.com/posts/${
         this.general.currentPost.slug
       }`;
     },

@@ -159,12 +159,16 @@ export default {
       commit,
       rootState
     }) {
+      // debugger;
       let userId = rootState.auth.loggedInUser.id;
       commit('setLoading', true, {
         root: true
       });
-      let response = await Api.get(`metrics/journalists/${userId}`);
+
+      let response = await Api.get(`metrics/journalists/${userId}/`);
       commit('setMyMetrics', response.data);
+      // debugger;
+      console.log(response.data)
       commit('setLoading', false, {
         root: true
       });
@@ -195,9 +199,16 @@ export default {
     isCreatingTravelPost(state) {
       return (state.post.title || state.post.body) && state.post.deviceType
     },
-    // views(state){
-    //   return state.metrics.views;
-    // },
+    views(state) {
+      return state.metrics.views;
+    },
+    datas(state) {
+      return {
+        countryRank:state.metrics.countryRank,
+        categoryRank:state.metrics.categoryRank,
+        point:state.metrics.points
+      }
+    },
     articles(state) {
       return state.metrics.publishedArticles;
     }

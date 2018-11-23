@@ -9,18 +9,19 @@
       <div  class="sub-analysis">
         <div>
           <span :style="{color: 'var(--primary)'}">{{stats.today}}&nbsp;&nbsp;</span>
-          <span style="color: grey;">Today</span> 
+          <span style="color: grey;">{{stats.type1}}</span> 
         </div>
         <hr :style="{margin: '.2rem 0'}" />
         <div>
           <span :style="{color: 'var(--primary)'}">{{stats.week}}&nbsp;&nbsp;</span>
-          <span style="color: grey;">This week</span>
+          <span style="color: grey;">{{stats.type2}}</span>
         </div>
       </div>
     </div>
     <div class="total">
       <span :style="{color: '#333333', fontWeight: 'bold', fontSize: '20px'}">Total {{title}}</span>
-      <span   :style="{fontWeight: 'bold', fontSize: '20px'}">{{stats.total}}</span>
+      <span v-if="variant === 'secondary'"  :style="{fontWeight: 'bold', fontSize: '20px'}">{{stats.points}}</span>
+      <span v-if="variant !== 'secondary'"  :style="{fontWeight: 'bold', fontSize: '20px'}">{{stats.total}}</span>
     </div>
   </div>
 </template>
