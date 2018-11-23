@@ -6,20 +6,20 @@
               <CountrySelect />
             </Col>
             <Col id="select-button">
-                <Button type="primary">SUBMIT</Button>
+                <Button type="primary" id="btn-style">Next</Button>
             </Col>
-
         </Row>
 
     </section>
 </template>
 
 <script>
-import { Row, Col, Card, Button} from 'iview';
+import { Row, Col, Card, Button } from 'iview';
 import CountrySelect from '../../components/CountrySelect.vue';
+import RecentComments from '../../components/RecentComments.vue';
 
 export default {
-  components: { Row, Col, Card, Button, CountrySelect }
+  components: { Row, Col, Card, Button, CountrySelect, RecentComments }
     
 }
 </script>
@@ -37,12 +37,15 @@ export default {
     margin: 4rem 0 2rem 7rem;
 
 }
-#register-button {
+#select-button {
+    margin-top: 80px;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-bottom: 40px;
 }
-
+#btn-style {
+    font-size: 15px;
+}
 
 @media screen and (max-width: 360px) {
   #regText {
