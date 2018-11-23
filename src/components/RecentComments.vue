@@ -1,7 +1,7 @@
 <template>
     <Row>
         <Col>
-          <Card id="Recent">
+          <Card id="recent">
             <p  id="title-recent">
               Recently Commented
                <span id="comment-icon">
@@ -64,46 +64,46 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-    #Recent {
-         border: 1px solid#E0E0E0;  
-        margin-top:2rem;
-        border-radius:5px;
-        height:fit-content;
+    #recent {
+      border: 1px solid#E0E0E0;  
+      margin-top:2rem;
+      border-radius:5px;
+      height:fit-content;
     }
     #comment-icon {
       color: rgb(104, 162, 236);  
-        right:0; 
-        padding-right:2rem;
-        display:inline;
-        padding-top:0;
-        position:absolute;        
-        font-size: 2rem;
+      right:0; 
+      padding-right:2rem;
+      display:inline;
+      padding-top:0;
+      position:absolute;        
+      font-size: 2rem;
     }
      #title-recent{  
-        font-family: 'Roboto', sans-serif;
-        font-size: 1rem; 
-        color: #4F4F4F; 
-        font-weight:800;
-        background-color:#E0E0E0;
-        margin:0;
-        padding:2rem;
-        height:4rem;
-        display:flex;
-        align-items: center;         
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem; 
+      color: #4F4F4F; 
+      font-weight:800;
+      background-color:#E0E0E0;
+      margin:0;
+      padding:2rem;
+      height:4rem;
+      display:flex;
+      align-items: center;         
     }
     #read-list {
-     list-style-type: none;
-     padding:1rem 0;
+      list-style-type: none;
+      padding:1rem 0;
     }
     #comment-text{ 
-    font-size:.8rem; 
+      font-size:.8rem; 
       font-weight: 700;
       color:#4F4F4F;
       padding-left:1rem;
       padding-right:.4rem;      
-     list-style-type: none;  
+      list-style-type: none;  
     }
-      #comment-items{   
+    #comment-items{   
       padding:.4rem 0;    
     }
     #read-comments {
@@ -114,6 +114,24 @@ export default {
       padding-left:1.3rem;
       align-items: center
     }
-     
+@media only screen and (max-width: 840px) {
+    #title-recent{   
+      font-size: .9rem;   
+      padding:2rem .5rem;    
+    }
+    #comment-icon {    
+      padding-right:1rem;         
+      font-size: 1.8rem;       
+    }
+    #comment-text{ 
+      font-size:.7rem; 
+      padding:0;  
+      padding-left:.4rem;   
+    }
+    #read-comments { 
+      padding-left:1rem; 
+      font-size:.6rem;
+    }
+  }
 </style>
 

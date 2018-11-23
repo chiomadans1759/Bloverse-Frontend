@@ -1,7 +1,7 @@
 <template> 
       <section>
           <div class = "container"> 
-             <Col :md="6" :sm="8" :xs="24" >  
+             <Col :md="6" :sm="8" :xs="24"  class ="side-bar">  
                 <Col class ="side-menu">
                     <div class = "box1">   
                         <ul>
@@ -26,11 +26,11 @@
                     </ul>
                     </div>
                     
-                    <div class ="side-bar-div">
+                    <div>
                         <RecentlyRead/>  
                     </div>
                     
-                    <div  > 
+                    <div > 
                         <RecentComments/> 
                     </div>
                 </Col>
@@ -152,10 +152,7 @@ export default {
         margin-left:3rem;
         margin-right:1rem;   
     }
-     .side-bar-div{
-         padding:0;
-         margin:0;
-     }
+     
     .box1{  
        margin-top:1.5rem; 
     }
@@ -337,7 +334,7 @@ export default {
     .center-content-footer{ 
         height:30%;       
     }
-     .box1 {
+     .side-bar {
         display: none;
     }
     .box3 {
@@ -355,6 +352,9 @@ export default {
     .content-image img{ 
         flex:1;
         width:10px;
+    }
+     .side-menu{        
+        margin-left:2rem;   
     }
       .content-image{  
         height:55%;

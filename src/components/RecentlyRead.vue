@@ -1,7 +1,7 @@
 <template>
     <Row>
         <Col>
-          <Card id="Recent">
+          <Card id="recent">
             <p  id="title-recent">
               Recently read
               <span   id="news-icon" >
@@ -63,33 +63,32 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-    #Recent {
-        border: 1px solid#E0E0E0;  
-        margin-top:2rem;
-        border-radius:5px;
-        height:fit-content;
+    #recent {
+      border: 1px solid#E0E0E0;  
+      margin-top:2rem;
+      border-radius:5px;
+      height:fit-content;
     }
     #news-icon { 
-        color: rgb(104, 162, 236);  
-        right:0; 
-        padding-right:2rem;
-        display:inline;
-        padding-top:0;
-        position:absolute;        
-        font-size: 2rem;       
+      color: rgb(104, 162, 236);  
+      right:0; 
+      padding-right:2rem;
+      display:inline;
+      padding-top:0;
+      position:absolute;        
+      font-size: 2rem;       
     }
     #title-recent{  
-        font-family: 'Roboto', sans-serif;
-        font-size: 1rem; 
-        color: #4F4F4F; 
-        font-weight:800;
-        background-color:#E0E0E0;
-        margin:0;
-        padding:2rem;
-        height:4rem;
-        display:flex;
-        align-items: center; 
-        
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem; 
+      color: #4F4F4F; 
+      font-weight:800;
+      background-color:#E0E0E0;
+      margin:0;
+      padding:2rem;
+      height:4rem;
+      display:flex;
+      align-items: center;   
     }
     #read-list {
       list-style-type: none;
@@ -114,5 +113,25 @@ export default {
       height:35px;
       margin-left:1rem;
     }
+
+@media only screen and (max-width: 840px) {
+    #title-recent{     
+      padding:2rem .5rem;      
+    }
+    #news-icon {    
+      padding-right:1rem;         
+      font-size: 1.8rem;       
+    }
+    #item-image{
+      width:30px;
+      height:30px;
+      margin-left:.5rem;
+    }
+    #read-text{      
+      font-size:.7rem;  
+      padding-left:1rem;
+      padding-right:.4rem;
+    }
+  }
 </style>
 
