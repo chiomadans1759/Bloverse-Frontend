@@ -3,15 +3,15 @@
         <Col>
           <Card id="card-Recent">
             <p slot="title" id="title-i">
-              Recently read
+              Recently Commented
             </p>
             <span slot="extra" >
-               <i class="far fa-newspaper" id="news-icon"></i>
+                <i class="far fa-comments" id="comment-icon"></i>
             </span>
             <ul id="read-list">
-                <li id ="read-items" v-for="item in randomMovieList" :key="item.id">            
-                  <img id="item-image"  :src="item.imgURL" />
-                    <p id="read-text">{{ item.name }}</p>
+                <li id ="comment-items" v-for="item in randomMovieList" :key="item.id">            
+                    <p id="comment-text">{{ item.name }}</p>
+                    <p id="read-comments">{{item.comment}}</p>
                 </li>    
             </ul>
           </Card>
@@ -30,28 +30,29 @@ export default {
       randomMovieList: [
         {
           id: 1,
-          name: 'We are confident of winning Osun gov election - PDP',
-          imgURL: require("./.././assets/punch.png")
+          name: 'We are confident of winning Osun gov...',
+          comment:  '- Only God will help us'
+ 
         },
         {
           id: 2,
-          name: 'We are confident of winning Osun gov election - PDP',
-          imgURL: require("./.././assets/punch.png")
+          name: 'We are confident of winning Osun gov...',
+          comment:  '- Only God will help us'
         },
         {
           id: 3,
-          name: 'We are confident of winning Osun gov election - PDP',
-          imgURL: require("./.././assets/punch.png")
+          name: 'We are confident of winning Osun gov...',
+          comment:  '- Only God will help us'
         },
         {
           id: 4,
-          name: 'We are confident of winning Osun gov election - PDP',
-          imgURL: require("./.././assets/punch.png")
+          name: 'We are confident of winning Osun gov...',
+          comment:  '- Only God will help us'
         },
         {
           id: 5,
-          name: 'We are confident of winning Osun gov election - PDP',
-          imgURL: require("./.././assets/punch.png")
+          name: 'We are confident of winning Osun gov...',
+          comment:  '- Only God will help us'
         }
       ],
     }
@@ -67,9 +68,8 @@ export default {
         width: 310px;
         border: 1px solid #F2F2F2;
     }
-    #news-icon {
+    #comment-icon {
         font-size: 35px;
-        transform: rotate(45deg);
         color: #2F80ED;
         margin-top: 20px;
     }
@@ -87,19 +87,17 @@ export default {
       list-style-type: none;
    
     }
-    #read-text{
-      
-      font-size:16px;
-       width: 200px;
-       font-weight: 500;
+    #comment-text{ 
+      font-size:14px;
        
     }
-    #read-items {
+    #read-comments {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       margin-bottom: 15px;
-      align-items: center
+      align-items: center;
+      color: rgb(199, 196, 196);
     }
     #item-image{
       width:45px;

@@ -32,6 +32,7 @@ Vue.prototype.$IVIEW = {};
 Vue.prototype.$http = axios;
 Vue.prototype.$Message = Message;
 Vue.prototype.$Loading = LoadingBar;
+Vue.prototype.$BASE_URL = process.env.VUE_APP_URL
 
 Vue.use(VueRouter);
 Vue.use(SocialSharing);
@@ -83,42 +84,14 @@ new Vue({
 }).$mount('#app')
 
 router.beforeEach((to, from, next) => {
-  const onlyAuth = to.matched.some(record => record.meta.auth)
-  const onlyJournalist = to.matched.some(record=>record.meta.journalist)
-  const onlyAdmin = to.matched.some(record=>record.meta.admin)
   LoadingBar.start();
-  if(onlyAuth){
-    // This should start for only auth
-    if(store.getters.isAuthenticated){
-      if(onlyJournalist && store.getters.isAJournalist)
-        next()
-      else if(onlyAdmin && store.getters.isAnAdmin)
-        next()
-      else
-        next({path: '/'})
-    }
-    else{
-      let nextUrl = to.fullPath
-      if(onlyJournalist)
-        next({path: '/creators/login', params: { nextUrl }})
-      else if(onlyAdmin)
-        next({path: '/admin/login', params: { nextUrl }})
-      else
-        next({path: '/'})
-    }
-  }
-  else if(to.matched.some(record=>record.meta.acceptedApplicant)){
-    if(store.getters.allowedToRegister === true)
-      next()
-    else{
-      next({path: '/creators/verify'})
-    }
-  }else
-    next();
+  next()
 });
 
 ga('set', 'page', router.currentRoute.path); // eslint-disable-line no-undef
 ga('send', 'pageview'); // eslint-disable-line no-undef
+
+
 router.afterEach((to, from, next) => { // eslint-disable-line no-unused-vars
   ga('set', 'page', to.path); // eslint-disable-line no-undef
   ga('send', 'pageview'); // eslint-disable-line no-undef
