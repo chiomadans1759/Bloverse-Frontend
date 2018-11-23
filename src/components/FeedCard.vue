@@ -13,7 +13,6 @@
       <footer type="flex" justify="space-around" id="postFooter">
         <Icon type="md-eye" /> {{post.views}}
         <Icon type="md-text" style="margin-left: 15px;" /> 54
-
       </footer>
       
     </Card>
@@ -29,7 +28,6 @@ export default {
   name: "FeedCard",
   props: { post: Object },
   components: { Card, Avatar, Icon },
-
   computed: {
     imageUrl: function() {
       return this.post.image_url;
@@ -42,7 +40,6 @@ export default {
       return postCategory.name;
     }
   },
-
   filters: {
     summarize: function(value) {
       if (!value) return "";
