@@ -1,9 +1,14 @@
 import Vue from 'vue'
 import axios from 'axios';
-import { locale, Message, LoadingBar } from 'iview';
+import {
+  locale,
+  Message,
+  LoadingBar
+} from 'iview';
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
 import moment from 'moment'
+import VueHead from 'vue-head'
 import store from '../stores';
 
 //import VueAnalytics from 'vue-analytics';
@@ -30,6 +35,7 @@ Vue.prototype.$Loading = LoadingBar;
 
 Vue.use(VueRouter);
 Vue.use(SocialSharing);
+Vue.use(VueHead)
 /*Vue.use(VueAnalytics, {
   id: 'UA-127172964-2',
   router
@@ -55,7 +61,7 @@ Vue.filter('firstToUpper', (value) => {
   return value.charAt(0).toUpperCase() + value.substr(1);
 });
 
-Vue.filter('customizedTime', (value)=>{
+Vue.filter('customizedTime', (value) => {
   return moment(value).fromNow()
 })
 
@@ -79,36 +85,50 @@ new Vue({
 
 router.beforeEach((to, from, next) => {
   const onlyAuth = to.matched.some(record => record.meta.auth)
-  const onlyJournalist = to.matched.some(record=>record.meta.journalist)
-  const onlyAdmin = to.matched.some(record=>record.meta.admin)
+  const onlyJournalist = to.matched.some(record => record.meta.journalist)
+  const onlyAdmin = to.matched.some(record => record.meta.admin)
   LoadingBar.start();
-  if(onlyAuth){
+  if (onlyAuth) {
     // This should start for only auth
-    if(store.getters.isAuthenticated){
-      if(onlyJournalist && store.getters.isAJournalist)
+    if (store.getters.isAuthenticated) {
+      if (onlyJournalist && store.getters.isAJournalist)
         next()
-      else if(onlyAdmin && store.getters.isAnAdmin)
+      else if (onlyAdmin && store.getters.isAnAdmin)
         next()
       else
-        next({path: '/'})
-    }
-    else{
+        next({
+          path: '/'
+        })
+    } else {
       let nextUrl = to.fullPath
-      if(onlyJournalist)
-        next({path: '/creators/login', params: { nextUrl }})
-      else if(onlyAdmin)
-        next({path: '/admin/login', params: { nextUrl }})
+      if (onlyJournalist)
+        next({
+          path: '/creators/login',
+          params: {
+            nextUrl
+          }
+        })
+      else if (onlyAdmin)
+        next({
+          path: '/admin/login',
+          params: {
+            nextUrl
+          }
+        })
       else
-        next({path: '/'})
+        next({
+          path: '/'
+        })
     }
-  }
-  else if(to.matched.some(record=>record.meta.acceptedApplicant)){
-    if(store.getters.allowedToRegister === true)
+  } else if (to.matched.some(record => record.meta.acceptedApplicant)) {
+    if (store.getters.allowedToRegister === true)
       next()
-    else{
-      next({path: '/creators/verify'})
+    else {
+      next({
+        path: '/creators/verify'
+      })
     }
-  }else
+  } else
     next();
 });
 
