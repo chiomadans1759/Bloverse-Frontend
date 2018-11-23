@@ -3,14 +3,14 @@
     <h3 class="page_intro_name">Dashboard</h3>
     <Row :gutter="32" id="stat-wrapper">
       <Col :sm="8">
-        <stat-card variant="fade" title="views" id="stat-point1" :stats="{ today: views.today, week: views.week, total: views.total ,type1:'Today' , type2:'This Week'}" />
+        <stat-card variant="fade" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week' ,'Articles']}" />
       </Col>
       <Col :sm="8">
-        <stat-card variant="primary" title="published" id="stat-point2" :stats="{ today: articles.today, week: articles.week, total: articles.total , type1:'Today' , type2:'This Week'}" />
+        <stat-card variant="primary" title="published" id="stat-point2" :stats="{ key:[articles.today, articles.week,  articles.total ] , value:[ 'Today' ,'This Week' ,'Articles']}" />
       </Col>
       <Col :sm="8">
       <!-- {{views}} -->
-        <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ today: `${datas.categoryRank[0]} of ${datas.categoryRank[1]}`, week: `${datas.countryRank[0]} of ${datas.countryRank[1]}`, points: datas.point , type1:'Category' , type2:'Country'}" />
+        <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ key:[`${datas.categoryRank[0]} of ${datas.categoryRank[1]}`, `${datas.countryRank[0]} of ${datas.countryRank[1]}` , `${datas.point}`] , value:['Category' ,'Country' , 'Ranking']}" />
       </Col>
     </Row>
 
@@ -114,7 +114,7 @@ export default {
 
       return newData;
     },
-    ...mapGetters(["views", "articles" , "datas"])
+    ...mapGetters(["views", "articles", "datas"])
   },
   methods: {
     ...mapActions(["getMyMetrics"])
@@ -197,13 +197,13 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
-.page_intro_name{
+.page_intro_name {
   /* margin-top:3%; */
 
-    margin-top: 3%;
-    font-weight: 100;
-    font-size: 18px;
-    margin-bottom: 1%;
+  margin-top: 3%;
+  font-weight: 100;
+  font-size: 18px;
+  margin-bottom: 1%;
 }
 
 .entity-pix {
