@@ -1,4 +1,5 @@
 <template>
+
 <Loading v-if="general.loading" message="Getting Feeds" />
 <Row id="display-post" type="flex" v-else justify="space-between">
   <Col class="share-links" :sm="2">
@@ -24,6 +25,8 @@
     <twitter :url="url" scale="2"></twitter>
     <linkedin :url="url" scale="2"></linkedin> -->
   </Col>
+  <!-- {{url}} -->
+  
   <Col class="main-feed" :sm="20">
     <router-link v-if="isLoggedIn" :to="`/journalist/${auth.loggedInUser.userName}/posts`"> <Icon type="ios-arrow-round-back" /> Back to Dashboard</router-link>
     <h2 class="border">{{general.currentPost.title}}</h2>
@@ -111,12 +114,15 @@ export default {
   data: function() {
     return {
       newComment: ""
+      // postDetails: {}
       //url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
     };
   },
+
   computed: {
     url() {
-      return `${this.$BASE_URL}/posts/${this.general.currentPost.slug}`;
+      return `${this.$BASE_URL}posts/${this.general.currentPost.slug}`;
+      // console.log(this.$BASE_URL);
     },
     ...mapState(["general", "auth"]),
     ...mapGetters(["isLoggedIn"])
@@ -124,11 +130,71 @@ export default {
   methods: {
     ...mapActions(["getPostBySlug"])
   },
+
   async created() {
     // fetch the data when the view is created and the data is
     // already being observed
+
     let { slug } = this.$route.params;
     await this.getPostBySlug({ slug });
+    // this.postDetails = this.general.currentPost;
+    // console.log(this.postDetails);
+  },
+  head: {
+    // const this = self,
+    title: function() {
+      return {
+        inner: `${this.general.currentPost.title}`
+      };
+    },
+    // Meta tags
+    meta: function() {
+      return [
+        { name: "application-name", content: "Bloverse" },
+        {
+          name: "description",
+          content: "A platform for journalist",
+          id: "desc"
+        }, // id to replace intead of create element
+        // ...
+        // Twitter
+        { name: "twitter:title", content: `${this.general.currentPost.title}` },
+        // with shorthand
+        { n: "twitter:description", c: `${this.general.currentPost.body}` },
+        // ...
+        // Google+ / Schema.org
+        { itemprop: "name", content: `${this.general.currentPost.title}` },
+        {
+          itemprop: "description",
+          content: `${this.general.currentPost.body}`
+        },
+        // ...
+        // Facebook / Open Graph
+        // { property: 'fb:app_id', content: '123456789' },
+        { property: "og:title", content: `${this.general.currentPost.title}` },
+        {
+          property: "og:description",
+          content: `${this.general.currentPost.body}`
+        },
+        // with shorthand
+        { p: "og:image", c: `${this.general.currentPost.image_url}` }
+        // ...
+      ];
+      // link tags
+    }
+    // link: [
+    //   { rel: "author", href: "author", undo: false }, // undo property - not to remove the element
+    //   {
+    //     rel: "icon",
+    //     href:
+    //       "https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png",
+    //     type: "image/png"
+    //   }
+    //   ]
+
+    // with shorthand
+    //   { r: 'icon', h: 'path/to/icon-32.png', sz: '32x32', t: 'image/png' },
+    // ...
   }
 };
 </script>

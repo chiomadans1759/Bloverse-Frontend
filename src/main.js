@@ -5,6 +5,7 @@ import axios from 'axios';
 //   Message,
 //   LoadingBar
 // } from 'iview';
+import VueHead from 'vue-head'
 import {
   locale,
   Message,
@@ -34,7 +35,7 @@ Vue.use(GoogleAuth, {
 })
 Vue.googleAuth().load()
 Vue.googleAuth().directAccess()
-
+Vue.use(VueHead)
 
 // configure language
 locale(lang);
