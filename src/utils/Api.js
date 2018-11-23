@@ -1,5 +1,5 @@
 import axios from 'axios';
-import store from '../../stores';
+import store from "../../stores";
 
 let API_URL = process.env.VUE_APP_API
 class Api {
@@ -7,6 +7,7 @@ class Api {
     let response, statusCode, statusText, data, message, config;
     try {
       config = { headers: {'Authorization': `Token ${store.state.auth.jwt}`}};
+      //store.commit('setLoading', true)
       response = requireAuth ? await axios.get(API_URL + url, config) : await axios.get(API_URL + url)
       statusCode = response.status;
       data = response.data.data;
@@ -23,13 +24,14 @@ class Api {
       }
       
     }
-
+    //store.commit('setLoading', false)
     return { statusCode, statusText, data, message }
     
   }
 
 
   static async post(url, payload, requireAuth=false) {
+    store.commit('setLoading', true)
     let response, statusCode, statusText, data, message;
     try {
       let config = { headers: {'Authorization': `Token ${store.state.auth.jwt}`}};
@@ -48,12 +50,13 @@ class Api {
       }
       
     }
-
+    store.commit('setLoading', false)
     return { statusCode, statusText, data, message }
     
   }
 
   static async put(url, payload={}, requireAuth=false){
+    store.commit('setLoading', true)
     let response, statusCode, statusText, data, message;
     try {
       let config = { headers: {'Authorization': `Token ${store.state.auth.jwt}`}};
@@ -72,7 +75,7 @@ class Api {
       }
       
     }
-
+    store.commit('setLoading', false)
     return { statusCode, statusText, data, message }
   }
 

@@ -126,9 +126,7 @@ export default {
       
       }
     },
-    async doUpload({
-      state
-    }) {
+    async doUpload({state, commit}) {
       const cloudinary = {
         uploadPreset: 'pspvcsig',
         apiKey: '967987814344437',
@@ -139,38 +137,20 @@ export default {
       formData.append('file', state.post.imageUrl);
       formData.append('upload_preset', cloudinary.uploadPreset);
       formData.append('folder', 'bloverse');
+      commit('setLoading', true, {root: true});
       const resp = await axios.post(clUrl, formData);
-      // console.log(resp.data.secure_url);
+      commit('setLoading', false, {root: true});
       return resp.data.secure_url;
     },
-    async getMyPosts({
-      commit,
-      rootState
-    }) {
+    async getMyPosts({commit, rootState}) {
       let userId = rootState.auth.loggedInUser.id;
-      commit('setLoading', true, {
-        root: true
-      });
       let response = await Api.get('journalists/' + userId + '/posts/', true);
       commit('setPosts', response.data.posts);
-      commit('setLoading', false, {
-        root: true
-      });
-
     },
-    async getMyMetrics({
-      commit,
-      rootState
-    }) {
+    async getMyMetrics({commit, rootState}) {
       let userId = rootState.auth.loggedInUser.id;
-      commit('setLoading', true, {
-        root: true
-      });
       let response = await Api.get(`metrics/journalists/${userId}`);
       commit('setMyMetrics', response.data);
-      commit('setLoading', false, {
-        root: true
-      });
     }
   },
   mutations: {
