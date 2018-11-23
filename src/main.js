@@ -27,6 +27,7 @@ Vue.prototype.$IVIEW = {};
 Vue.prototype.$http = axios;
 Vue.prototype.$Message = Message;
 Vue.prototype.$Loading = LoadingBar;
+Vue.prototype.$BASE_URL = process.env.VUE_APP_URL
 
 Vue.use(VueRouter);
 Vue.use(SocialSharing);
@@ -114,6 +115,8 @@ router.beforeEach((to, from, next) => {
 
 ga('set', 'page', router.currentRoute.path); // eslint-disable-line no-undef
 ga('send', 'pageview'); // eslint-disable-line no-undef
+
+
 router.afterEach((to, from, next) => { // eslint-disable-line no-unused-vars
   ga('set', 'page', to.path); // eslint-disable-line no-undef
   ga('send', 'pageview'); // eslint-disable-line no-undef

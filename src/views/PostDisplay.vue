@@ -63,6 +63,7 @@ import { Facebook, Twitter, Linkedin} from 'vue-socialmedia-share';
 
 import Loading from '../components/Loading.vue';
 
+
 export default {
   components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button, Facebook, Twitter, Linkedin, Loading},
   data: function(){
@@ -73,7 +74,7 @@ export default {
   },
   computed: {
     url(){
-      return `https://bloverse-frontend.herokuapp.com/posts/${this.general.currentPost.slug}`;
+      return `${this.$BASE_URL}/posts/${this.general.currentPost.slug}`;
     },
     ...mapState([
       'general',
