@@ -23,6 +23,7 @@ import DashboardSidebarLinks from '../components/DashboardSideBarLinks.vue';
 export default {
   data () {
     return {
+      currentPath: '',
       isCollapsed: true
     }
   },

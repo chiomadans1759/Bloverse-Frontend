@@ -116,9 +116,7 @@ export default {
   },
   computed: {
     url() {
-      return `http://staging.bloverse.com/posts/${
-        this.general.currentPost.slug
-      }`;
+      return `${this.$BASE_URL}/posts/${this.general.currentPost.slug}`;
     },
     ...mapState(["general", "auth"]),
     ...mapGetters(["isLoggedIn"])

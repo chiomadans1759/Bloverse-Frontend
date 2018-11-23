@@ -1,14 +1,17 @@
-import Api from '../src/utils/Api';
 import axios from 'axios';
+import Api from '../src/utils/Api';
 
 export default {
   state: {
     posts: null,
     post: {
-      keyPoints: []
+      keyPoints: [{
+        index: 1,
+        value: '',
+        status: 1
+      }]
     },
     metrics: {},
-
   },
   actions: {
     async processPost({
@@ -29,7 +32,7 @@ export default {
 
       let postId;
 
-      if (state.post.category == 7) {
+      if (state.post.category === 7) {
         let {
           id,
           title,
@@ -67,7 +70,7 @@ export default {
         postId = id;
         payload = {
           id,
-          keypoint,
+          keypoint: keypoint.map(point => point.value),
           image_url,
           title,
           body,
@@ -88,40 +91,45 @@ export default {
       switch (response.statusCode) {
         case 200:
         case 201:
-          let {
-            id,
-            title,
-            body,
-            keypoint: keyPoints,
-            image_url: imageUrl,
-            category,
-            country,
-            is_published: isPublished = false,
-            slug,
-            location,
-            duration,
-            device_type
-          } = response.data.post;
-          let updatedPost = {
-            id,
-            keyPoints,
-            imageUrl,
-            title,
-            body,
-            category,
-            country,
-            isPublished,
-            slug,
-            location,
-            duration,
-            device_type
-          };
-          commit('setPost', updatedPost);
-          return true;
+          {
+            // eslint-disable-next-line
+            let {
+              id,
+              title,
+              body,
+              keypoint: keyPoints,
+              image_url: imageUrl,
+              category,
+              country,
+              is_published: isPublished = false,
+              slug,
+              location,
+              duration,
+              device_type
+            } = response.data.post;
+            let updatedPost = {
+              id,
+              keyPoints,
+              imageUrl,
+              title,
+              body,
+              category,
+              country,
+              isPublished,
+              slug,
+              location,
+              duration,
+              device_type
+            };
+            commit('setPost', updatedPost);
+            commit('clearPost')
+            return true;
+          }
         default:
-          return false;
+          return {
+            errors: response
+          };
       }
-
     },
     async doUpload({
       state
@@ -137,7 +145,6 @@ export default {
       formData.append('upload_preset', cloudinary.uploadPreset);
       formData.append('folder', 'bloverse');
       const resp = await axios.post(clUrl, formData);
-      console.log(resp.data.secure_url);
       return resp.data.secure_url;
     },
     async getMyPosts({
@@ -159,7 +166,6 @@ export default {
       commit,
       rootState
     }) {
-      // debugger;
       let userId = rootState.auth.loggedInUser.id;
       commit('setLoading', true, {
         root: true
@@ -185,7 +191,16 @@ export default {
     },
     clearPost(state) {
       state.post = {
-        keyPoints: []
+        keyPoints: [{
+          index: 1,
+          value: '',
+          status: 1
+        }],
+        body: '',
+        title: '',
+        imageUrl: '',
+        deviceType: '',
+        location: ''
       }
     },
     setMyMetrics(state, metrics) {
@@ -194,23 +209,26 @@ export default {
   },
   getters: {
     isCreatingBasicPost(state) {
-      return (state.post.title || state.post.body) && state.post.keyPoints.length > 0
+      return (state.post.title || state.post.body) && state.post.keypoints && state.post.keyPoints.length > 0
     },
     isCreatingTravelPost(state) {
-      return (state.post.title || state.post.body) && state.post.deviceType
+      return (state.post.title || state.post.body) && state.post.deviceType && state.post.location
+    },
+    views(state) {
+      return state.metrics && state.metrics.views;
     },
     views(state) {
       return state.metrics.views;
     },
     datas(state) {
       return {
-        countryRank:state.metrics.countryRank,
-        categoryRank:state.metrics.categoryRank,
-        point:state.metrics.points
+        countryRank: state.metrics.countryRank,
+        categoryRank: state.metrics.categoryRank,
+        point: state.metrics.points
       }
     },
     articles(state) {
-      return state.metrics.publishedArticles;
+      return state.metrics && state.metrics.publishedArticles;
     }
     // countries(state){
     //   return state.metrics.country;

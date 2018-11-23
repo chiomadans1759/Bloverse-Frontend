@@ -1,10 +1,16 @@
 import Vue from 'vue'
 import axios from 'axios';
+// import {
+//   locale,
+//   Message,
+//   LoadingBar
+// } from 'iview';
 import {
   locale,
   Message,
   LoadingBar
 } from 'iview';
+import GoogleAuth from 'vue-google-authenticator'
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
 import moment from 'moment'
@@ -23,6 +29,12 @@ import 'iview/dist/styles/iview.css';
 
 
 
+Vue.use(GoogleAuth, {
+  client_id: '966117903311-1fk401e4fiks3u34nsputljh7smgckor.apps.googleusercontent.com'
+})
+Vue.googleAuth().load()
+Vue.googleAuth().directAccess()
+
 
 // configure language
 locale(lang);
@@ -32,6 +44,7 @@ Vue.prototype.$IVIEW = {};
 Vue.prototype.$http = axios;
 Vue.prototype.$Message = Message;
 Vue.prototype.$Loading = LoadingBar;
+Vue.prototype.$BASE_URL = process.env.VUE_APP_URL
 
 Vue.use(VueRouter);
 Vue.use(SocialSharing);
@@ -82,7 +95,9 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => { <<
+  <<
+  << < HEAD
   const onlyAuth = to.matched.some(record => record.meta.auth)
   const onlyJournalist = to.matched.some(record => record.meta.journalist)
   const onlyAdmin = to.matched.some(record => record.meta.admin)
@@ -128,11 +143,19 @@ router.beforeEach((to, from, next) => {
       })
     }
   } else
-    next();
+    next(); ===
+  ===
+  =
+  LoadingBar.start();
+  next() >>>
+    >>>
+    > 74 a449cc0b860995abeb3a73582a9c89967f56ee
 });
 
 ga('set', 'page', router.currentRoute.path); // eslint-disable-line no-undef
 ga('send', 'pageview'); // eslint-disable-line no-undef
+
+
 router.afterEach((to, from, next) => { // eslint-disable-line no-unused-vars
   ga('set', 'page', to.path); // eslint-disable-line no-undef
   ga('send', 'pageview'); // eslint-disable-line no-undef
