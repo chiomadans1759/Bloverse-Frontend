@@ -95,61 +95,9 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-router.beforeEach((to, from, next) => { <<
-  <<
-  << < HEAD
-  const onlyAuth = to.matched.some(record => record.meta.auth)
-  const onlyJournalist = to.matched.some(record => record.meta.journalist)
-  const onlyAdmin = to.matched.some(record => record.meta.admin)
+router.beforeEach((to, from, next) => {
   LoadingBar.start();
-  if (onlyAuth) {
-    // This should start for only auth
-    if (store.getters.isAuthenticated) {
-      if (onlyJournalist && store.getters.isAJournalist)
-        next()
-      else if (onlyAdmin && store.getters.isAnAdmin)
-        next()
-      else
-        next({
-          path: '/'
-        })
-    } else {
-      let nextUrl = to.fullPath
-      if (onlyJournalist)
-        next({
-          path: '/creators/login',
-          params: {
-            nextUrl
-          }
-        })
-      else if (onlyAdmin)
-        next({
-          path: '/admin/login',
-          params: {
-            nextUrl
-          }
-        })
-      else
-        next({
-          path: '/'
-        })
-    }
-  } else if (to.matched.some(record => record.meta.acceptedApplicant)) {
-    if (store.getters.allowedToRegister === true)
-      next()
-    else {
-      next({
-        path: '/creators/verify'
-      })
-    }
-  } else
-    next(); ===
-  ===
-  =
-  LoadingBar.start();
-  next() >>>
-    >>>
-    > 74 a449cc0b860995abeb3a73582a9c89967f56ee
+  next()
 });
 
 ga('set', 'page', router.currentRoute.path); // eslint-disable-line no-undef
