@@ -94,6 +94,7 @@ import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share";
 
 import Loading from "../components/Loading.vue";
 
+
 export default {
   components: {
     Row,
