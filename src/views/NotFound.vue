@@ -23,8 +23,7 @@ export default {
 <style>
 .p1{
   font-size:10rem;
-  text-align:center;
-  padding:100px;
+  text-align:center; 
   font-weight:800;
   padding-bottom:0;
 }
@@ -34,6 +33,13 @@ export default {
 }
 
 @media only screen and (max-width: 600px) {
-  
+.p1{
+  font-size:6rem;
+  padding-top:35%;   
+}
+.p2{ 
+  font-size:1rem;
+  padding:1rem 1rem;
+}
 }
 </style>

@@ -16,10 +16,9 @@
 <script>
 import { Row, Col, Card, Button } from 'iview';
 import CountrySelect from '../../components/CountrySelect.vue';
-import RecentComments from '../../components/RecentComments.vue';
 
 export default {
-  components: { Row, Col, Card, Button, CountrySelect, RecentComments }
+  components: { Row, Col, Card, Button, CountrySelect }
     
 }
 </script>

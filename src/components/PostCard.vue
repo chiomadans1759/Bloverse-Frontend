@@ -51,7 +51,7 @@ export default {
       if(this.post.is_published)
         url = `/posts/${this.post.slug}`
       else
-        url = `/journalist/${this.auth.loggedInUser.userName}/posts/${this.post.slug}/edit`
+        url = `/creators/${this.auth.loggedInUser.userName}/posts/${this.post.slug}/edit`
 
       return url;
     },

@@ -31,7 +31,6 @@ class Api {
 
 
   static async post(url, payload, requireAuth=false) {
-    store.commit('setLoading', true)
     let response, statusCode, statusText, data, message;
     try {
       let config = { headers: {'Authorization': `Token ${store.state.auth.jwt}`}};
@@ -50,13 +49,10 @@ class Api {
       }
       
     }
-    store.commit('setLoading', false)
-    return { statusCode, statusText, data, message }
-    
+    return { statusCode, statusText, data, message } 
   }
 
   static async put(url, payload={}, requireAuth=false){
-    store.commit('setLoading', true)
     let response, statusCode, statusText, data, message;
     try {
       let config = { headers: {'Authorization': `Token ${store.state.auth.jwt}`}};
@@ -75,7 +71,6 @@ class Api {
       }
       
     }
-    store.commit('setLoading', false)
     return { statusCode, statusText, data, message }
   }
 

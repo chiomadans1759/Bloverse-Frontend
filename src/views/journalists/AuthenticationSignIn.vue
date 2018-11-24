@@ -28,7 +28,9 @@
       <Input class="my-input" type="password" v-model="user.password" placeholder="Password*"/>
     </FormItem>
     <FormItem>
-      <Button class="my-btn btn-main" @click="handleLogin" long>LOG IN</Button>
+      <Button class="my-btn btn-main" :disabled="this.isSubmitting" @click="handleLogin" long>
+        {{ isSubmitting ? 'Submitting...' : 'LOG IN' }}
+      </Button>
     </FormItem>
   </Form>
   
@@ -52,6 +54,7 @@ export default {
   components: { Button, Row, Col, Icon, Input, Form, FormItem, BaseAuthentication },
   data: function(){
     return {
+      isSubmitting: false,
       user: {
         email: '',
         password: ''
@@ -80,13 +83,19 @@ export default {
     handleLogin: function(){
       this.$refs.loginForm.validate(async valid=>{
         if(valid){
+          this.isSubmitting = true;
           let success = await this.login(this.user)
+          this.isSubmitting = false;
           if(success === true){
             this.$Message.success('You have been successfully logged in');
             let username = this.auth.loggedInUser.userName;
             this.$router.push(`/creators/${username}/dashboard`)
           }else
-            this.$Message.error('Username and password does not match');
+            this.$Message.error({
+              content: 'Username and password does not match',
+              duration: 5,
+              closable: true
+            });
         }else{
           this.$Message.error('Some fields were not filled');
         }
