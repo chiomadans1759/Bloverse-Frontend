@@ -9,19 +9,17 @@
                     <p>{{category.name}}</p> <ion-icon name="checkmark-circle-outline"></ion-icon>
                 </div>
                 </Card>
-                
             </Col>
-           
-          </Row>
- <button id="show-home-feed">Show Home Feed</button>
+        </Row>
+          <Button id="show-home-feed">Show Home Feed</Button>
     </section>
 </template>
 
 <script>
-import { Row, Col, Card } from 'iview';
+import { Row, Col, Card, Button } from 'iview';
 
 export default {
-  components: { Row, Col, Card } ,  
+  components: { Row, Col, Card, Button } ,  
 
   data () {
     return {
