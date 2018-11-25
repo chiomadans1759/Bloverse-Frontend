@@ -36,12 +36,14 @@ import SelectCategory from '../src/views/consumers/SelectCategory.vue';
 import ConsumerModal from '../src/views/consumers/ConsumerModal.vue';
 import PostDisplay from '../src/views/PostDisplay.vue';
 
+
 const routes = [
   { path: '/', component: BaseFeeds,
     children: [
       { path: '', component: PostFeeds },
       { path: 'posts', redirect: '/' },
       { path: 'posts/:slug', component: PostDisplay }
+    
     ]
   },
   {
