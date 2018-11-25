@@ -5,18 +5,16 @@ export default {
   state: {
     posts: null,
     post: {
-      keyPoints: []
+      keyPoints: [{
+        index: 1,
+        value: '',
+        status: 1
+      }]
     },
     metrics: {},
-
   },
   actions: {
-    async processPost({
-      commit,
-      rootState,
-      state,
-      dispatch
-    }, params) {
+    async processPost({commit, rootState, state, dispatch}, params) {
       if (params.shouldUploadImage) {
         let newUrl = await dispatch('doUpload');
         commit('setPost', {
@@ -29,7 +27,7 @@ export default {
 
       let postId;
 
-      if (state.post.category == 7) {
+      if (state.post.category === 7) {
         let {
           id,
           title,
@@ -67,7 +65,7 @@ export default {
         postId = id;
         payload = {
           id,
-          keypoint,
+          keypoint: keypoint.map(point => point.value),
           image_url,
           title,
           body,
@@ -87,8 +85,10 @@ export default {
 
       switch (response.statusCode) {
       case 200:
-      case 201:{
-        let {
+      case 201:
+      {
+        // eslint-disable-next-line
+            let {
           id,
           title,
           body,
@@ -116,19 +116,17 @@ export default {
           duration,
           device_type
         };
-        
         commit('setPost', updatedPost);
-
+        commit('clearPost')
         return true;
       }
       default:
-        return false;
-      
+        return {
+          errors: response
+        };
       }
     },
-    async doUpload({
-      state
-    }) {
+    async doUpload({state, commit}) {
       const cloudinary = {
         uploadPreset: 'pspvcsig',
         apiKey: '967987814344437',
@@ -139,38 +137,20 @@ export default {
       formData.append('file', state.post.imageUrl);
       formData.append('upload_preset', cloudinary.uploadPreset);
       formData.append('folder', 'bloverse');
+      commit('setLoading', true, {root: true});
       const resp = await axios.post(clUrl, formData);
-      // console.log(resp.data.secure_url);
+      commit('setLoading', false, {root: true});
       return resp.data.secure_url;
     },
-    async getMyPosts({
-      commit,
-      rootState
-    }) {
+    async getMyPosts({commit, rootState}) {
       let userId = rootState.auth.loggedInUser.id;
-      commit('setLoading', true, {
-        root: true
-      });
       let response = await Api.get('journalists/' + userId + '/posts/', true);
       commit('setPosts', response.data.posts);
-      commit('setLoading', false, {
-        root: true
-      });
-
     },
-    async getMyMetrics({
-      commit,
-      rootState
-    }) {
+    async getMyMetrics({commit, rootState}) {
       let userId = rootState.auth.loggedInUser.id;
-      commit('setLoading', true, {
-        root: true
-      });
       let response = await Api.get(`metrics/journalists/${userId}`);
       commit('setMyMetrics', response.data);
-      commit('setLoading', false, {
-        root: true
-      });
     }
   },
   mutations: {
@@ -184,7 +164,16 @@ export default {
     },
     clearPost(state) {
       state.post = {
-        keyPoints: []
+        keyPoints: [{
+          index: 1,
+          value: '',
+          status: 1
+        }],
+        body: '',
+        title: '',
+        imageUrl: '',
+        deviceType: '',
+        location: ''
       }
     },
     setMyMetrics(state, metrics) {
@@ -193,16 +182,23 @@ export default {
   },
   getters: {
     isCreatingBasicPost(state) {
-      return (state.post.title || state.post.body) && state.post.keyPoints.length > 0
+      return (state.post.title || state.post.body) && state.post.keypoints && state.post.keyPoints.length > 0
     },
     isCreatingTravelPost(state) {
-      return (state.post.title || state.post.body) && state.post.deviceType
+      return (state.post.title || state.post.body) && state.post.deviceType && state.post.location
     },
-    // views(state){
-    //   return state.metrics.views;
-    // },
+    views(state) {
+      return state.metrics && state.metrics.views;
+    },
+    datas(state) {
+      return {
+        countryRank: state.metrics.countryRank,
+        categoryRank: state.metrics.categoryRank,
+        point: state.metrics.points
+      }
+    },
     articles(state) {
-      return state.metrics.publishedArticles;
+      return state.metrics && state.metrics.publishedArticles;
     }
     // countries(state){
     //   return state.metrics.country;
