@@ -1,6 +1,6 @@
 
 <template>
-	<textarea v-model="value"></textarea>
+  <textarea v-model="value"></textarea>
 </template>
 
 <script>
@@ -17,7 +17,6 @@ export default {
     var oldSetup=options.setup||function(){};
     
     options.setup=function(editor){
-
       //Decorate origni one
       oldSetup(editor);
       
@@ -37,9 +36,87 @@ export default {
         vm.allowSetContent=false;
       })
     };
+    tinymce.PluginManager.add('twitter_url', function(editor, url) { // eslint-disable-line no-undef
+      var icon_url='https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-twitter-s.png';
+
+      editor.on('init', function (args) {
+        this.editor_id = args.target.id;
+
+      });
+      editor.addButton('twitter_url',
+        {
+          text:false,
+          icon: true,
+          image:icon_url,
+
+          onclick: function () {
+
+            editor.windowManager.open({
+              title: 'Twitter Embed',
+
+              body: [
+                { type: 'textbox',
+                  size: 40,
+                  height: '100px',
+                  name: 'twitter',
+                  label: 'twitter'
+                }
+              ],
+              onsubmit: function(e) {
+
+                var tweetEmbedCode = e.data.twitter;
+                          
+
+                $.ajax({ // eslint-disable-line no-undef
+                  url: "https://publish.twitter.com/oembed?url="+tweetEmbedCode,
+                  dataType: "jsonp",
+                  async: false,
+                  success: function(data){
+                    // $("#embedCode").val(data.html);
+                    // $("#preview").html(data.html)
+                    tinyMCE.activeEditor.insertContent( // eslint-disable-line no-undef
+                      '<div class="div_border" contenteditable="false">' +
+                                            '<img class="twitter-embed-image" src="'+icon_url+'" alt="image" />'
+                                            +data.html+
+                                        '</div>');
+
+                  },
+                  error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                      msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                      msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                      msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                      msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                      msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                      msg = 'Ajax request aborted.';
+                    } else {
+                      msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                  },
+                });
+                // setTimeout(function() {
+                //  // console.log($('iframe').contentWindow);
+                //  var iframe = document.getElementById('#mce_36_ifr');
+                //     iframe.contentWindow.twttr.widgets.load();
+
+                // }, 1000)
+              }
+            });
+          }
+        });
+    });
+
     
     tinymce.init(options).then(function(editors){ // eslint-disable-line no-undef
       vm.editor=editors[0];
+      vm.setup(vm.editor);
     })
   },
   watch:{
@@ -54,20 +131,34 @@ export default {
   },
   data(){
     return{
+      editor_id:'',
       tinymceOptions:{
         selector: 'textarea',
         height: 200,
+        theme: 'modern',
         menubar: true,
         plugins: [
           'advlist autolink lists link image charmap print preview hr anchor pagebreak',
           'searchreplace wordcount visualblocks visualchars code fullscreen',
           'insertdatetime media nonbreaking save table contextmenu directionality',
-          'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'
+          'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc twitter_url'
         ],
         toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-        toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
+        toolbar2: 'print preview media | forecolor backcolor emoticons | codesample | twitter_url',
+    
+        valid_elements : '+*[*]',
 
-
+        extended_valid_elements: "+iframe[width|height|name|align|class|frameborder|allowfullscreen|allow|src|*]," +
+      "script[language|type|async|src|charset]" +
+      "img[*]" +
+      "embed[width|height|name|flashvars|src|bgcolor|align|play|loop|quality|allowscriptaccess|type|pluginspage]" +
+      "blockquote[dir|style|cite|class|id|lang|onclick|ondblclick"
+      +"|onkeydown|onkeypress|onkeyup|onmousedown|onmousemove|onmouseout"
+      +"|onmouseover|onmouseup|title]",
+        content_css: ['css/main.css?' + new Date().getTime(),
+          '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+          '//www.tinymce.com/css/codepen.min.css'
+        ],
         image_title: true, 
         // enable automatic uploads of images represented by blob or data URIs
         automatic_uploads: true,
@@ -75,15 +166,15 @@ export default {
         // images_upload_url: 'postAcceptor.php',
         // here we add custom filepicker only to Image dialog
         file_picker_types: 'image', 
-          
+      
         file_picker_callback: function(cb, value, meta) {
           var input = document.createElement('input');
           input.setAttribute('type', 'file');
           input.setAttribute('accept', 'image/*');
-
+    
           input.onchange = function() {
             var file = this.files[0];
-             
+         
             var reader = new FileReader();
             reader.onload = function () {
               // Note: Now we need to register the blob in TinyMCEs image blob
@@ -102,6 +193,17 @@ export default {
           input.click();
         }
       }
+    }
+  },
+  methods:{
+    setup: function (editor) {
+      // console.log(editor);
+          
+      editor.on('init', function (args) {
+        this.editor_id = args.target.id;
+        // console.log(this.editor_id);
+      });
+      // console.log(this.editor_id);
     }
   }
 
