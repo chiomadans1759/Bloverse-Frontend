@@ -67,7 +67,7 @@ export default {
 }
 .main-feed-card{
   position: relative;
-  width:90%;
+  width:95%;
   height:450px;
   background:white;
 margin:20px auto;
