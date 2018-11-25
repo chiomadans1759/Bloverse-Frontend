@@ -20,10 +20,11 @@
         </div>
       </div>
       <div slot="footer">
-        <router-link :to="`/journalist/${auth.loggedInUser.userName}/posts`" >Go to all Post <Icon type="md-arrow-round-forward" /></router-link>
+        <router-link :to="`/creators/${auth.loggedInUser.userName}/posts`" >Go to all Post <Icon type="md-arrow-round-forward" /></router-link>
       </div>
     </Modal>
-    <Row type="flex" justify="space-between">
+    <Form :model="post" ref="basicCreatePostForm" :rules="validatePostForm">
+      <Row type="flex" justify="space-between">
       <Col span="13" id="create-post">
         <Row  type="flex"  justify="space-between">
           <Col :sm="11">
@@ -32,32 +33,50 @@
             </Select>
           </Col>
           <Col :sm="11">
-            <Select v-model="post.country" placeholder="Choose Country">
+            <Select v-model="post.country" placeholder="Choose Country" :disabled="isTravel">
               <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{item.name}}</Option>
             </Select>
           </Col>
         </Row>
         
         <Card class="key-points" v-if="isTravel">
-              <input
-              v-model="post.location"
-              ref="autocomplete" 
-              placeholder="Location" 
-              class="search-location"
-              onfocus="value = ''" 
-              type="text" />
-          <DatePicker v-model="post.duration" id="keypoint" type="date" placement="bottom-end" placeholder="Time Taken" style="width: 100%"></DatePicker>
+          <input v-model="post.location" ref="autocomplete" placeholder="Location" class="search-location" />
+          <FormItem prop="duration">
+            <DatePicker v-model="post.duration" id="keypoint" type="date" placement="bottom-end" placeholder="Time Taken" style="width: 100%"></DatePicker>
+          </FormItem>
+
+          <FormItem prop="deviceType">
             <Select placeholder="Device Used"  id="keypoint" v-model="post.deviceType">
-            <Option  v-for="item in deviceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-          </Select>
+              <Option  v-for="item in deviceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
+          </FormItem>
         </Card>
+
         <Card class="keypoints" v-else>
-          <Input placeholder="Key point one" v-model="post.keyPoints[0]" size="large"></Input>
-          <Input placeholder="Key point two" v-model="post.keyPoints[1]" size="large"></Input>
-          <Input placeholder="Key point three" v-model="post.keyPoints[2]" size="large"></Input>
-          
+          <FormItem
+          v-for="(keypoint, index) in post.keyPoints" 
+          :key="index" 
+          :prop="`keyPoints.${index}.value`" 
+          :rules="{required: true, message: 'Keypoint cannot be empty', trigger: 'blur' }"
+          >
+            <Row>
+              <Col span="12">
+                <Input type="text" v-model="keypoint.value" placeholder="Enter keypoint..."/>
+              </Col>
+              <Button class="delete-btn" @click="handleRemove(index)">Delete</Button>
+            </Row>
+          </FormItem>
+          <FormItem>
+            <Row>
+              <Col span="12">
+                <Button type="dashed" long @click="handleAdd" icon="md-add">Add keypoint</Button>
+              </Col>
+            </Row>
+          </FormItem>
         </Card>
-        <Input placeholder="Heading" v-model="post.title" size="large"></Input>
+        <FormItem prop="title" :error="errors.title">
+          <Input placeholder="Heading" v-model="post.title" />
+        </FormItem>
 
         <DisplayImage v-model="post.imageUrl" height="200px" width="50%" :can-edit="true" />
 
@@ -74,7 +93,9 @@
             </Button>
           </Col>
           <Col>
-            <Button id="btn-publish" :disabled="post.is_published" @click="handleProcessPost(true)">Publish</Button>
+            <Button id="btn-publish" :disabled="post.is_published || this.isPublishing" @click="handleProcessPost(true)">
+              {{ isPublishing ? 'Publishing ...' : 'Publish' }}
+            </Button>
           </Col>
         </Row>
       </Col>
@@ -88,6 +109,7 @@
         </Card>
       </Col>
     </Row>
+    </Form>
   </div>
   
 </template>
@@ -105,6 +127,8 @@ import {
   Option,
   Modal,
   Alert,
+  Form,
+  FormItem,
   DatePicker
 } from "iview";
 import { mapState, mapActions, mapMutations } from "vuex";
@@ -133,11 +157,44 @@ export default {
     VueEditor,
     DisplayImage,
     DatePicker,
-    Tinymce
+    Tinymce,
+    Form,
+    FormItem
   },
   props: ["isTravel"],
   data: function() {
     return {
+      errors: {},
+      validatePostForm: {
+        deviceType: [
+          {
+            required: true,
+            type: "string",
+            message: "You must choose a device",
+            trigger: "change"
+          }
+        ],
+        location: [
+          {
+            required: true,
+            type: "array",
+            message: "The location is required",
+            trigger: "blur"
+          }
+        ],
+        duration: [
+          {
+            required: true,
+            type: "date",
+            message: "Please select a date",
+            trigger: "change"
+          }
+        ],
+        title: [
+          { required: true, message: "The title is required", trigger: "blur" }
+        ]
+      },
+      isPublishing: false,
       publishModal: false,
       isNewImage: false,
       deviceList: [
@@ -167,10 +224,6 @@ export default {
           label: "Nokia"
         },
         {
-          value: "Huawei",
-          label: "Huawei"
-        },
-        {
           value: "ZTE",
           label: "ZTE"
         },
@@ -195,7 +248,7 @@ export default {
       }
     },
     url() {
-      return `${this.$BASE_URL}/posts/${this.post.slug}`;
+      return `${this.$BASE_URL}posts/${this.post.slug}`;
     },
 
     ...mapState(["general", "auth"])
@@ -204,16 +257,63 @@ export default {
     ...mapActions(["processPost"]),
     ...mapMutations(["setPost"]),
     handleProcessPost: async function(shouldPublish = false) {
-      if (this.post.imageUrl) {
-        let success = await this.processPost({
-          shouldPublish,
-          shouldUploadImage: this.isNewImage
-        });
-        if (success) {
-          this.$Message.success("Post successfully saved");
-          this.publishModal = shouldPublish;
-        } else this.$Message.error("Something went wrong");
-      } else this.$Message.error("You must select an image");
+      this.errors = {};
+      if (this.isTravel) {
+        if (this.post.location === "") {
+          return this.$Message.error("You must select a location");
+        }
+        this.post.location = this.$refs.autocomplete.value;
+      }
+      this.$refs.basicCreatePostForm.validate(async valid => {
+        if (valid) {
+          if (!this.post.body || !this.post.body.trim()) {
+            return this.$Message.error("Body cannot be empty");
+          } 
+          if (this.post.imageUrl) {
+            this.isPublishing = true;
+            let success = await this.processPost({
+              shouldPublish,
+              shouldUploadImage: this.isNewImage
+            });
+            this.isPublishing = false;
+            if (success === true) {
+              this.$Message.success("Post successfully saved");
+              this.publishModal = shouldPublish;
+            }
+            if (success.errors) {
+              this.handleError(success.errors);
+              this.$Message.error("Something went wrong");
+            }
+          } else this.$Message.error("You must select an image");
+        } else {
+          return this.$Message.error("Some fields have not been filled.");
+        }
+      });
+    },
+    handleError(errors) {
+      let fieldErrors, varClient;
+
+      let clientServer = {
+        message: "title"
+      };
+
+      Object.keys(errors).forEach(field => {
+        fieldErrors = errors[field];
+        varClient = clientServer[field];
+        this.$set(this.errors, varClient, fieldErrors);
+      });
+    },
+    handleAdd () {
+      this.index++;
+      this.post.keyPoints.push({
+        value: '',
+        index: this.index,
+        status: 1
+      });
+    },
+    handleRemove (index) {
+      this.index--;
+      this.post.keyPoints.pop();
     }
   },
   watch: {
@@ -223,11 +323,16 @@ export default {
   },
   mounted() {
     if (this.isTravel) {
-      this.setPost({ category: 7, country: this.auth.loggedInUser.country.id }),
+      this.setPost({ category: 7, country: this.auth.loggedInUser.country.id });
       this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
         this.$refs.autocomplete,
         { types: ["geocode"] }
       );
+
+      this.autocomplete.addListener("place_changed", () => {
+        let place = this.autocomplete.getPlace();
+        this.post.location = place.formatted_address;
+      });
     } else {
       this.setPost({
         category: this.auth.loggedInUser.category.id,
@@ -321,6 +426,19 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   min-height: 120vh;
+}
+
+.search-location {
+  width: 100%;
+  padding: 0.3rem 1.25rem;
+  margin-bottom: 1.2rem;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.delete-btn {
+  margin: 0.6em;
+  width: 10rem;
 }
 
 #display-post #image {

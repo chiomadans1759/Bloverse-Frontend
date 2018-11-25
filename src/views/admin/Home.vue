@@ -13,8 +13,7 @@
           </Row>
       </Header>
     </Layout>
-    <Loading v-if="general.loading" message="Loading Applicant Details..." />
-    <div id="admin-body" v-else>
+    <div id="admin-body">
       <Row type="flex" justify="space-around" style="padding:20px; margin:20px" >
           <Col span="6" class="status">
               <a href=#>
@@ -51,7 +50,6 @@
 import { mapActions, mapGetters, mapState } from "vuex";
 import { Row, Col, Card, Layout, Header, Button } from "iview";
 import DisplayApplicants from "../../components/DisplayApplicantsTable.vue";
-import Loading from "../../components/Loading";
 
 export default {
   data() {
@@ -66,8 +64,7 @@ export default {
     Layout,
     Header,
     Button,
-    DisplayApplicants,
-    Loading
+    DisplayApplicants
   },
   computed: {
     stats: function() {

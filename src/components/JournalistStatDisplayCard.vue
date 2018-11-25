@@ -5,22 +5,23 @@
       <Icon type="md-stats" style="font-size: 25px; transform: scale(1.5,1);" id="icon-style" />
     </div>
     <div class="analysis">
-      <p style="color: black; font-size: 15px;">Articles</p>
+      <p style="color: black; font-size: 15px;">{{stats.value[2]}}</p>
       <div  class="sub-analysis">
         <div>
-          <span :style="{color: 'var(--primary)'}">{{stats.today}}&nbsp;&nbsp;</span>
-          <span style="color: grey;">Today</span> 
+          <span :style="{color: 'var(--primary)'}">{{stats.key[0]}}&nbsp;&nbsp;</span>
+          <span style="color: grey;">{{stats.value[0]}}</span> 
         </div>
         <hr :style="{margin: '.2rem 0'}" />
         <div>
-          <span :style="{color: 'var(--primary)'}">{{stats.week}}&nbsp;&nbsp;</span>
-          <span style="color: grey;">This week</span>
+          <span :style="{color: 'var(--primary)'}">{{stats.key[1]}}&nbsp;&nbsp;</span>
+          <span style="color: grey;">{{stats.value[1]}}</span>
         </div>
       </div>
     </div>
     <div class="total">
       <span :style="{color: '#333333', fontWeight: 'bold', fontSize: '20px'}">Total {{title}}</span>
-      <span   :style="{fontWeight: 'bold', fontSize: '20px'}">{{stats.total}}</span>
+      <span   :style="{fontWeight: 'bold', fontSize: '20px'}">{{stats.key[2]}}</span>
+      <!-- <span v-if="variant !== 'secondary'"  :style="{fontWeight: 'bold', fontSize: '20px'}">{{stats.total}}</span> -->
     </div>
   </div>
 </template>

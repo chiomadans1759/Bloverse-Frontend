@@ -1,7 +1,6 @@
 <template>
   <section class="my-section">
-    <Loading v-if="general.loading" message="Getting Feeds" id="bloading" />
-    <Row :gutter="24" class="body" v-else :style="{marginTop: '50px', marginBottom: '50px'}">
+    <Row :gutter="24" class="body" :style="{marginTop: '50px', marginBottom: '50px'}">
       <template v-if="postExists || category || country">
       <Row>
         <Col span="6"><p id="feedsTitle">Happening Now</p></Col>
@@ -36,7 +35,6 @@ import { mapState, mapActions } from 'vuex'
 import { Row, Col, Card } from 'iview';
 import vSelect from 'vue-select';
 import FeedCard from '../components/FeedCard.vue';
-import Loading from '../components/Loading.vue';
 
 export default {
   data: function() {
@@ -46,7 +44,7 @@ export default {
     }
   },
   name: 'FeedsSection',
-  components: { Row, Col, Card, FeedCard, Loading, vSelect },
+  components: { Row, Col, Card, FeedCard, vSelect },
   computed: {
     ...mapState([
       'general'
@@ -75,7 +73,6 @@ export default {
   },
   watch: {
     category: async function(val){
-        
       let category = this.category ? this.category.id : ''
       let country = this.country ? this.country.id : ''
       await this.getAllPublishedPosts({category, country});

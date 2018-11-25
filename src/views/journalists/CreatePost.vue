@@ -13,10 +13,9 @@ import { mapGetters, mapActions, mapState, mapMutations } from 'vuex';
 
 import TemplateChooser from '../../components/TemplateChooser.vue';
 import BasicCreatePost from '../../components/CreatePostBasic.vue';
-import TravelCreatePost from '../../components/TravelCompetition.vue';
 
 export default {
-  components: { TemplateChooser, BasicCreatePost, TravelCreatePost, Button },
+  components: { TemplateChooser, BasicCreatePost, Button },
   data(){
     return {
       selectedTemplate: null
@@ -27,7 +26,7 @@ export default {
       'isCreatingBasicPost',
       'isCreatingTravelPost'
     ]),
-    ...mapState(['journalist'])
+    ...mapState(['journalist', 'auth'])
   },
   methods: {
     ...mapActions(['getMyPosts']),
@@ -52,8 +51,18 @@ export default {
       this.selectedTemplate = 'basic';
     else if(this.isCreatingTravelPost)
       this.selectedTemplate = 'travel';
-  }  
-}
+  },
+  mounted() {
+    if (this.isTravel) {
+      this.setPost({ category: '', country: '' });
+    } else {
+      this.setPost({
+        category: '',
+        country: ''
+      });
+    }
+  }
+};
 </script>
 
 <style>
