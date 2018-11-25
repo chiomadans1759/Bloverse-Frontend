@@ -97,7 +97,7 @@ export default {
     #read-text{      
       font-size:.8rem; 
       font-weight: 700;
-      color:#4F4F4F;
+      color:rgb(99, 98, 98);
       padding-left:1rem;
       padding-right:.4rem;
     }
