@@ -245,7 +245,7 @@ export default {
       }
     },
     url() {
-      return `${this.$BASE_URL}/posts/${this.post.slug}`;
+      return `${this.$BASE_URL}posts/${this.post.slug}`;
     },
 
     ...mapState(["general", "auth"])
