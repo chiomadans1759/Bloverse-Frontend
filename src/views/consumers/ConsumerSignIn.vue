@@ -2,12 +2,12 @@
      <section >       
         <template>
             <div class = "container"> 
-                <Col :sm="24" :md="12" :xs="24" class="image">               
+                <Col :sm="12" :md="12" :xs="24" class="image">               
                             <p><span>Bloverse</span> </br>Interactive stories from the global community</p> 
                 </Col>
                 
-                <Col :md="12" :sm="24"  :xs="22">
-                        <Col offset="4" :sm="12" :md="16" :xs="18" class="auth-section" >
+                <Col :md="12" :sm="12"  :xs="24">
+                        <Col offset="4" :sm="16" :md="16" :xs="16" class="auth-section" >
                                 <h1 id="page-title">Sign in</h1>
 
                                 <p class="join">Join Bloverse today.</p>   
@@ -28,11 +28,13 @@
                                 </facebook-login>
                         </Col>
                 </col>
-            </div>                
+                <Col :md="24" :sm="24"  :xs="24" class="footer">
+                  <ConsumerLoginFooter/> 
+                </Col>
+            </div> 
+                           
         </template>
-        <div class="footer">
-           <ConsumerLoginFooter/> 
-       </div>
+        
     </section>    
 </template>
 
@@ -116,19 +118,6 @@ export default {
 
 
 <style scoped>
-  #register-here{
-    display:flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    font-size: 18px;
-    margin-top: 12px;
-    text-align: center;
-  }
-
-  #register-link{
-    color:#2F80ED;
-  }
-  
   .join{
     font-size:17px;
     font-weight:600;
@@ -142,10 +131,13 @@ export default {
   }
   .container{
     padding:0;
-    margin:0;    
-    overflow:hidden;     
+    margin:0;            
     height:90vh; 
   }
+  .footer{ 
+    height:10vh; 
+    font-size:1rem;
+    }
   .image{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./../../assets/signin.jpg);
     background-repeat: no-repeat;
@@ -170,9 +162,23 @@ export default {
 }
 
 @media only screen and (max-width: 600px) {
-   .container{    
-    overflow:auto;   
+    .container{ 
+     height:90vh;       
   }
+  .footer{
+    height:10vh;
+  }
+ 
+}
+@media only screen and (max-width: 840px) {
+  .container{ 
+     height:87vh;        
+  }
+  .footer{
+    height:13vh;
+    padding:auto 0;
+  }
+ 
 }
 
 </style>

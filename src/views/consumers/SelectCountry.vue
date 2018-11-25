@@ -14,6 +14,7 @@
 </template>
 
 <script>
+
 import { Row, Col, Card, Button } from "iview";
 import CountrySelect from "../../components/CountrySelect.vue";
 
@@ -24,7 +25,8 @@ export default {
       this.$router.push("/web/category");
     }
   }
-};
+}
+
 </script>
 
 <style>

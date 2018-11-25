@@ -43,7 +43,6 @@ export default {
         return true;
       }
       return false;
-      //commit('setState', { categories, countries });
     },
     async getGeneralMetrics({ commit }) {
       const response = await Api.get('metrics/general/');
@@ -52,15 +51,12 @@ export default {
     },
     async getAllApplicants({ commit }) {
       let response;
-      commit('setLoading', true);
       response = await Api.get('applicants/', true);
       switch (response.statusCode) {
       case 200: // eslint-disable-line no-case-declarations
         //removes admin from applicants
         let onlyApplicants = response.data.applicants.filter(applicant => applicant.id !== 1);
-
         commit('setApplicants', onlyApplicants);
-        commit('setLoading', false);
         return true;
       }
 
@@ -69,12 +65,10 @@ export default {
 
     async getAllJournalists({ commit }) {
       let response;
-      commit('setLoading', true);
       response = await Api.get('journalists/');
       switch (response.statusCode) {
       case 200:
         commit('setJournalists', response.data.journalists);
-        commit('setLoading', false);
         return true;
       }
 
@@ -100,16 +94,12 @@ export default {
       return response.statusCode === 200;
     },
     async getAllPublishedPosts({ commit }, { category, country }) {
-      commit('setLoading', true);
       let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`)
       commit('setPublishedPosts', response.data.posts);
-      commit('setLoading', false);
     },
     async getPostBySlug({ commit }, { slug }) {
-      commit('setLoading', true);
       let response = await Api.get(`posts?slug=${slug}`)
       commit('setCurrentPost', response.data.posts[0]);
-      commit('setLoading', false);
     }
   },
   mutations: {
