@@ -1,7 +1,6 @@
 <template>
   <section class="main-feed-section">
-    <Loading v-if="general.loading" message="Getting Feeds" id="bloading" />
-    <div class="feed-body" v-else >
+    <div class="feed-body">
       <template v-if="postExists || category || country">
       <div id="feedcontainer">
         <div class="category-area">
@@ -40,7 +39,6 @@ import { mapState, mapActions } from 'vuex'
 import { Row, Col, Card } from 'iview';
 import vSelect from 'vue-select';
 import FeedCard from '../components/FeedCard.vue';
-import Loading from '../components/Loading.vue';
 
 export default {
   data: function() {
@@ -50,7 +48,7 @@ export default {
     }
   },
   name: 'FeedsSection',
-  components: { Row, Col, Card, FeedCard, Loading, vSelect },
+  components: { Row, Col, Card, FeedCard, vSelect },
   computed: {
     ...mapState([
       'general'
@@ -79,7 +77,6 @@ export default {
   },
   watch: {
     category: async function(val){
-        
       let category = this.category ? this.category.id : ''
       let country = this.country ? this.country.id : ''
       await this.getAllPublishedPosts({category, country});
@@ -171,6 +168,19 @@ export default {
    font-size: 18px;
    text-transform: capitalize
 
+}
+.landing{
+  text-align:center;
+  margin-top:120px;
+}
+.noMatch{
+  text-align:center;
+  font-size:1.5rem;
+  padding-top:4rem;
+}
+.landing span{
+  font-weight: 800;
+  font-size:70px;  
 }
 #feedcontainer .v-select.single .selected-tag{
   color:#2f80ed;

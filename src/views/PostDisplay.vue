@@ -1,7 +1,5 @@
 <template>
-
-<Loading v-if="general.loading" message="Getting Feeds" />
-<div id="postdisplaycontainer" v-else>
+<div id="postdisplaycontainer">
    <div class="main-feed">
     <router-link v-if="isLoggedIn" :to="`/journalist/${auth.loggedInUser.userName}/posts`"> <Icon type="ios-arrow-round-back" /> Back to Dashboard</router-link>
     <h2 class="border">{{general.currentPost.title}}</h2>
@@ -67,53 +65,21 @@
 
 
 <script>
-import {
-  Row,
-  Col,
-  Card,
-  Input,
-  Select,
-  Option,
-  Icon,
-  FormItem,
-  Form,
-  Button
-} from "iview";
-import { mapGetters, mapState, mapActions } from "vuex";
-import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share";
 
-import Loading from "../components/Loading.vue";
-
+import { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button} from 'iview';
+import { mapGetters, mapState, mapActions } from 'vuex';
+import { Facebook, Twitter, Linkedin} from 'vue-socialmedia-share';
 
 export default {
-  components: {
-    Row,
-    Col,
-    Card,
-    Input,
-    Select,
-    Option,
-    Icon,
-    FormItem,
-    Form,
-    Button,
-    Facebook,
-    Twitter,
-    Linkedin,
-    Loading
-  },
-  data: function() {
+  components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button, Facebook, Twitter, Linkedin },
+  data: function(){
     return {
-      newComment: ""
-      // postDetails: {}
-      //url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
-    };
+      newComment: '',
+    }
   },
-
   computed: {
-    url() {
+    url(){
       return `${this.$BASE_URL}posts/${this.general.currentPost.slug}`;
-      // console.log(this.$BASE_URL);
     },
     ...mapState(["general", "auth"]),
     ...mapGetters(["isLoggedIn"])
@@ -121,7 +87,6 @@ export default {
   methods: {
     ...mapActions(["getPostBySlug"])
   },
-
   async created() {
     // fetch the data when the view is created and the data is
     // already being observed

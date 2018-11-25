@@ -1,21 +1,19 @@
 <template>
   <div id="app">
-    <LoadingIcon v-if="loading" />
+    <LoadingIcon v-if="general.loading" />
     <router-view v-else />
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import LoadingIcon from './components/Loading';
 
 export default {
   name: 'app',
   components: { LoadingIcon },
-  data(){
-    return {
-      loading: true
-    }
+  computed: {
+    ...mapState(['general'])
   },
   methods: {
     ...mapActions([
@@ -23,9 +21,7 @@ export default {
     ])
   },
   async created(){
-    let loaded = await this.setGeneralData();
-    this.loading = !loaded;
-    //this.loading = false;
+    await this.setGeneralData();
   }
 }
 </script>
