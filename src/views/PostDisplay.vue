@@ -23,7 +23,7 @@
     </div>
   </social-sharing>
     <img class="main-image" :src="general.currentPost.image_url" />
-    <div id="main-body-section">
+    <div id="main-body-section-area">
     <div class="main-body" v-html="general.currentPost.body"></div>    
     </div>
     <section id="trendweek">
@@ -208,7 +208,7 @@ align-content: center
   width:100%;
 }
 .main-body > *{
-  display: flex;
+  
 }
 
 @media screen and (max-width: 360px) {
