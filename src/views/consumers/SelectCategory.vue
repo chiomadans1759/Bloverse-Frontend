@@ -1,12 +1,16 @@
 <template>
     <section class="category-section">
         <h1 id="cat-text">Choose your Interest</h1>
-       <Row class="category-wrapper" gutter="20">
-            <Col class="categories"  v-for="category in categories" :key="category" :sm="24" :md="8">
-                <Card id="category-content">
+        
+        <Row class="category-wrapper" :gutter="20">
+          <Col class="categories" v-for="category in categories" :key="category" :sm="24" :md="8">
+            <div @click="addToCategories(category.name)" style="cursor: pointer;">
+              <Card id="category-content">
                 <img :src="category.imgURL" alt="">
                 <div id="category-info">
-                    <p>{{category.name}}</p> <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <p>{{category.name}}</p> 
+                    <ion-icon name="checkmark-circle-outline"
+                              v-show="$store.state.consumers.selectedCategories.includes(category.name)"></ion-icon>
                 </div>
                 </Card>
             </Col>
@@ -17,10 +21,10 @@
 
 <script>
 import { Row, Col, Card, Button } from 'iview';
+import { mapActions } from 'vuex';
 
 export default {
   components: { Row, Col, Card, Button } ,  
-
   data () {
     return {
       categories: [
@@ -71,7 +75,11 @@ export default {
       ]
     }
   },
-
+  methods: {
+    ...mapActions([
+      'addToCategories'
+    ])
+  }
 }
 
 </script>
@@ -88,15 +96,15 @@ export default {
  margin: 30px 0;
 }
 #category-content {
-
-height: 300px;
-margin-bottom: 20px;
-background: #353b48;
-border-radius: 10px;
-color:white;
-display: flex;
-flex-direction: column;
-justify-content: flex-end;
+  cursor: pointer;
+  height: 300px;
+  margin-bottom: 20px;
+  background: #353b48;
+  border-radius: 10px;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .ivu-card-body{
 padding:0% !important;
