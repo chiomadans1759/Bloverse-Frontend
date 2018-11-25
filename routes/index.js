@@ -38,105 +38,188 @@ import SelectCountry from '../src/views/consumers/SelectCountry.vue';
 import SelectCategory from '../src/views/consumers/SelectCategory.vue';
 import ConsumerModal from '../src/views/consumers/ConsumerModal.vue';
 
-const routes = [
-  { path: '/', component: BaseFeeds,
-    children: [
-      { path: '', component: PostFeeds },
-      { path: 'posts', redirect: '/' },
-      { path: 'posts/:slug', component: PostDisplay }
-    ]
+const routes = [{
+  path: '/',
+  component: BaseFeeds,
+  children: [{
+    path: '',
+    component: PostFeeds
   },
   {
-    path: '/creators', component: BlankBase,
-    children: [
-      { path: '', component: JournalistLanding },
-      { path: 'apply', component: JournalistApply },
-      { path: 'login', component: JournalistSignIn },
-      { path: 'register', component: JournalistSetUp, beforeEnter(to, from, next){
-        if(store.getters.allowedToRegister){
-          next()
-        } else {
-          next('creators/verify')
-        }
-        
-      }},
-      { path: 'setup', component: JournalistManualSetUp, beforeEnter(to, from, next){
-        if(store.getters.allowedToRegister){
-          next()
-        } else {
-          next('creators/verify')
-        }
-        
+    path: 'posts',
+    redirect: '/'
+  },
+  {
+    path: 'posts/:slug',
+    component: PostDisplay
+  }
+  ]
+},
+{
+  path: '/creators',
+  component: BlankBase,
+  children: [{
+    path: '',
+    component: JournalistLanding
+  },
+  {
+    path: 'apply',
+    component: JournalistApply
+  },
+  {
+    path: 'login',
+    component: JournalistSignIn,
+    beforeEnter(to, from, next) {
+      // if (store.state.login.sub.token) {
+      if (localStorage.getItem('jwt')) {
+        store.state.auth.jwt = localStorage.getItem('jwt')
+        next(`creators/${store.state.auth.loggedInUser.userName}/dashboard`)
+        // console.log(store.state.)
+      } else {
+        next()
       }
+    },
+  },
+  {
+    path: 'register',
+    component: JournalistSetUp,
+    // beforeEnter(to, from, next) {
+    //   if (store.getters.isAuthenticated) {
+    //     next()
+    //   } else {
+    //     next('creators/verify')
+    //   }
+
+    // },
+    beforeEnter(to, from, next) {
+      // if (store.state.login.sub.token) {
+      if (localStorage.getItem('jwt')) {
+        store.state.auth.jwt = localStorage.getItem('token')
+        next()
+      } else {
+        next('creators/verify')
+      }
+    },
+  },
+  {
+    path: 'setup',
+    component: JournalistManualSetUp,
+    beforeEnter(to, from, next) {
+      if (store.getters.isAuthenticated) {
+        next()
+      } else {
+        next('creators/verify')
+      }
+
+    }
+  },
+  {
+    path: 'verify',
+    component: JournalistVerify
+  },
+  {
+    path: ':username', component: BaseDashBoard,
+    beforeEnter(to, from, next) {
+      // if (store.state.login.sub.token) {
+      if (localStorage.getItem('jwt')) {
+        next()
+      } else {
+        next('creators/login')
+      }
+    },
+    meta: {
+      journalist: true,
+      auth: true
+    },
+    children: [{
+      path: '',
+      component: MyProfile
+    },
+    {
+      path: 'dashboard',
+      component: DashBoardHome,
+      // beforeEnter(to, from, next) {
+      //   if (store.getters.isAJournalist) {
+      //     next()
+      //   } else {
+      //     next('creators/login')
+      //   }
+      // }
+    },
+    {
+      path: 'posts',
+      component: BlankBase,
+
+      children: [{
+        path: '',
+        component: MyPosts
       },
-      { path: 'verify', component: JournalistVerify },
-      { path: ':username', component: BaseDashBoard, beforeEnter(to, from, next){
-        if(store.getters.isAJournalist){
+      {
+        path: 'create',
+        component: CreatePost
+      },
+      {
+        path: ':slug/edit',
+        component: CreatePost,
+        meta: {
+          auth: true
+        },
+      }
+      ]
+    }
+    ]
+  },
+  ]
+},
+{
+  path: '/faq/:person',
+  component: FrequentlyAskedQuestions
+},
+{
+  path: '/rules/:person',
+  component: HouseRules
+},
+{
+  path: '/guides',
+  component: PublishGuide
+},
+{
+  path: '/ranking/:person',
+  component: RankingSystem
+},
+{
+  path: '/admin',
+  component: BlankBase,
+  children: [
+    { path: '', redirect: 'dashboard',
+      beforeEnter(to, from, next) {
+        if (store.getters.isAnAdmin) {
           next()
         } else {
-          next('creators/login')
+          next('admin/login')
         }
-        
-      },
-      meta: {
-        journalist: true,
-        auth: true
-      },
-      children: [
-        { path: '', component: MyProfile },
-        { path: 'dashboard', component: DashBoardHome, beforeEnter(to, from, next){
-          if(store.getters.isAJournalist){
-            next()
-          } else {
-            next('creators/login')
-          }
-        }
-        },
-        { path: 'posts', component: BlankBase,       
-          children: [
-            { path: '', component: MyPosts },
-            { path: 'create', component: CreatePost },
-            { path: ':slug/edit', component: CreatePost,
-              meta: {
-                auth: true
-              }, 
-            }
-          ]
-        }
-      ]
-      },
-    ]
-  },
-  { path: '/faq/:person', component: FrequentlyAskedQuestions },
-  { path: '/rules/:person', component: HouseRules },
-  { path: '/guides', component: PublishGuide },
-  { path: '/ranking/:person', component: RankingSystem },
-  { path: '/admin', component: BlankBase,
-    children: [
-      { path: '', redirect: 'dashboard' },
-      { path: 'dashboard', component: AdminHome, 
-        beforeEnter(to, from, next){
-          if(store.getters.isAnAdmin){
-            next()
-          } else {
-            next('admin/login')
-          }
-        }
-      },
-      { path: 'login', component: AdminLogin }
-    ]
-  },
-  { path: '/web', component: BaseConsumer, // All pages for the new user features should reside here
-    children: [
-      { path: 'country', component: SelectCountry },
-      { path: '', component: ConsumerLandingPage },
-      { path: 'category', component: SelectCategory },
-      { path: 'modal', component: ConsumerModal}
-
-    ]
-  },
-  { path: '/login', component: ConsumerSignIn },
-  { path: "*", component: NotFound }
+      }
+    },
+    { path: 'dashboard', component: AdminHome },
+    { path: 'login', component: AdminLogin }
+  ]
+},
+{ path: '/web', component: BaseConsumer, // All pages for the new user features should reside here
+  children: [
+    { path: 'country', component: SelectCountry },
+    { path: '', component: ConsumerLandingPage },
+    { path: 'category', component: SelectCategory },
+    { path: 'modal', component: ConsumerModal }
+  ]
+},
+{
+  path: '/login',
+  component: ConsumerSignIn
+},
+{
+  path: "*",
+  component: NotFound
+}
 ]
 
 
