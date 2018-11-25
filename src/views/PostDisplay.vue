@@ -1,6 +1,5 @@
 <template>
-<Loading v-if="general.loading" message="Getting Feeds" />
-<Row id="display-post" type="flex" v-else justify="space-between">
+<Row id="display-post" type="flex" justify="space-between">
   <Col class="share-links" :sm="2">
   <ion-icon name="heart-empty" style="font-size: 30px;"></ion-icon>
   <social-sharing :url="url" :title="general.currentPost.title" :quote="general.currentPost.body" :description="general.currentPost.body" :media="general.currentPost.image_url" hashtags="bloverse" inline-template>
@@ -24,6 +23,8 @@
     <twitter :url="url" scale="2"></twitter>
     <linkedin :url="url" scale="2"></linkedin> -->
   </Col>
+  <!-- {{url}} -->
+  
   <Col class="main-feed" :sm="20">
     <router-link v-if="isLoggedIn" :to="`/journalist/${auth.loggedInUser.userName}/posts`"> <Icon type="ios-arrow-round-back" /> Back to Dashboard</router-link>
     <h2 class="border">{{general.currentPost.title}}</h2>
@@ -74,49 +75,21 @@
 
 
 <script>
-import {
-  Row,
-  Col,
-  Card,
-  Input,
-  Select,
-  Option,
-  Icon,
-  FormItem,
-  Form,
-  Button
-} from "iview";
-import { mapGetters, mapState, mapActions } from "vuex";
-import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share";
 
-import Loading from "../components/Loading.vue";
+import { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button} from 'iview';
+import { mapGetters, mapState, mapActions } from 'vuex';
+import { Facebook, Twitter, Linkedin} from 'vue-socialmedia-share';
 
 export default {
-  components: {
-    Row,
-    Col,
-    Card,
-    Input,
-    Select,
-    Option,
-    Icon,
-    FormItem,
-    Form,
-    Button,
-    Facebook,
-    Twitter,
-    Linkedin,
-    Loading
-  },
-  data: function() {
+  components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button, Facebook, Twitter, Linkedin },
+  data: function(){
     return {
-      newComment: ""
-      //url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
-    };
+      newComment: '',
+    }
   },
   computed: {
-    url() {
-      return `${this.$BASE_URL}/posts/${this.general.currentPost.slug}`;
+    url(){
+      return `${this.$BASE_URL}posts/${this.general.currentPost.slug}`;
     },
     ...mapState(["general", "auth"]),
     ...mapGetters(["isLoggedIn"])
@@ -127,8 +100,67 @@ export default {
   async created() {
     // fetch the data when the view is created and the data is
     // already being observed
+
     let { slug } = this.$route.params;
     await this.getPostBySlug({ slug });
+    // this.postDetails = this.general.currentPost;
+    // console.log(this.postDetails);
+  },
+  head: {
+    // const this = self,
+    title: function() {
+      return {
+        inner: `${this.general.currentPost.title}`
+      };
+    },
+    // Meta tags
+    meta: function() {
+      return [
+        { name: "application-name", content: "Bloverse" },
+        {
+          name: "description",
+          content: "A platform for journalist",
+          id: "desc"
+        }, // id to replace intead of create element
+        // ...
+        // Twitter
+        { name: "twitter:title", content: `${this.general.currentPost.title}` },
+        // with shorthand
+        { n: "twitter:description", c: `${this.general.currentPost.body}` },
+        // ...
+        // Google+ / Schema.org
+        { itemprop: "name", content: `${this.general.currentPost.title}` },
+        {
+          itemprop: "description",
+          content: `${this.general.currentPost.body}`
+        },
+        // ...
+        // Facebook / Open Graph
+        // { property: 'fb:app_id', content: '123456789' },
+        { property: "og:title", content: `${this.general.currentPost.title}` },
+        {
+          property: "og:description",
+          content: `${this.general.currentPost.body}`
+        },
+        // with shorthand
+        { p: "og:image", c: `${this.general.currentPost.image_url}` }
+        // ...
+      ];
+      // link tags
+    }
+    // link: [
+    //   { rel: "author", href: "author", undo: false }, // undo property - not to remove the element
+    //   {
+    //     rel: "icon",
+    //     href:
+    //       "https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png",
+    //     type: "image/png"
+    //   }
+    //   ]
+
+    // with shorthand
+    //   { r: 'icon', h: 'path/to/icon-32.png', sz: '32x32', t: 'image/png' },
+    // ...
   }
 };
 </script>
