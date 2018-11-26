@@ -13,6 +13,7 @@
                               v-show="$store.state.consumers.selectedCategories.includes(category.name)"></ion-icon>
                 </div>
                 </Card>
+            </div>
             </Col>
         </Row>
           <Button id="show-home-feed">Show Home Feed</Button>

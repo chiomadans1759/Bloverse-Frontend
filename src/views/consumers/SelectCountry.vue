@@ -54,8 +54,7 @@ export default {
   margin-top: 2rem;
 }
 #submit-countries {
-
-  font-size: 20px;
+  font-size: 15px;
 }
 
 @media screen and (max-width: 360px) {
