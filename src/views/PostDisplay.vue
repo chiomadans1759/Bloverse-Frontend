@@ -65,22 +65,54 @@
 
 
 <script>
-
-import { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button} from 'iview';
-import { mapGetters, mapState, mapActions } from 'vuex';
-import { Facebook, Twitter, Linkedin} from 'vue-socialmedia-share';
+import {
+  Row,
+  Col,
+  Card,
+  Input,
+  Select,
+  Option,
+  Icon,
+  FormItem,
+  Form,
+  Button
+} from "iview";
+import { mapGetters, mapState, mapActions } from "vuex";
+import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share";
 
 export default {
-  components: { Row, Col, Card, Input, Select, Option, Icon, FormItem, Form, Button, Facebook, Twitter, Linkedin },
-  data: function(){
+  components: {
+    Row,
+    Col,
+    Card,
+    Input,
+    Select,
+    Option,
+    Icon,
+    FormItem,
+    Form,
+    Button,
+    Facebook,
+    Twitter,
+    Linkedin
+  },
+  data: function() {
     return {
-      newComment: '',
-    }
+      newComment: "",
+      postDetails: {}
+      //url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
+    };
   },
   computed: {
-    url(){
+    url() {
       return `${this.$BASE_URL}posts/${this.general.currentPost.slug}`;
     },
+    // titleTemplate: titleChunk => {
+    //   // If undefined or blank then we don't need the hyphen
+    //   return titleChunk
+    //     ? `${this.general.currentPost.title} - Site Title`
+    //     : "Site Title";
+    // },
     ...mapState(["general", "auth"]),
     ...mapGetters(["isLoggedIn"])
   },
@@ -93,160 +125,193 @@ export default {
 
     let { slug } = this.$route.params;
     await this.getPostBySlug({ slug });
-    // this.postDetails = this.general.currentPost;
+    this.postDetails = this.general.currentPost;
     // console.log(this.postDetails);
   },
-  head: {
-    // const this = self,
-    title: function() {
-      return {
-        inner: `${this.general.currentPost.title}`
-      };
-    },
-    // Meta tags
-    meta: function() {
-      return [
-        { name: "application-name", content: "Bloverse" },
+
+  metaInfo() {
+    return {
+      title: this.general.currentPost.title,
+      meta: [
+        { charset: "utf-8" },
         {
+          vmid: "description",
           name: "description",
-          content: "A platform for journalist",
-          id: "desc"
-        }, // id to replace intead of create element
-        // ...
-        // Twitter
-        { name: "twitter:title", content: `${this.general.currentPost.title}` },
-        // with shorthand
-        { n: "twitter:description", c: `${this.general.currentPost.body}` },
-        // ...
-        // Google+ / Schema.org
-        { itemprop: "name", content: `${this.general.currentPost.title}` },
-        {
-          itemprop: "description",
-          content: `${this.general.currentPost.body}`
+          content: this.general.currentPost.body
         },
-        // ...
-        // Facebook / Open Graph
-        // { property: 'fb:app_id', content: '123456789' },
-        { property: "og:title", content: `${this.general.currentPost.title}` },
+        {
+          property: "og:title",
+          content: this.general.currentPost.title,
+          vmid: "og:title"
+        },
         {
           property: "og:description",
-          content: `${this.general.currentPost.body}`
+          content: this.general.currentPost.body,
+          vmid: "og:description"
         },
-        // with shorthand
-        { p: "og:image", c: `${this.general.currentPost.image_url}` }
-        // ...
-      ];
-      // link tags
-    }
-    // link: [
-    //   { rel: "author", href: "author", undo: false }, // undo property - not to remove the element
-    //   {
-    //     rel: "icon",
-    //     href:
-    //       "https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png",
-    //     type: "image/png"
-    //   }
-    //   ]
-
-    // with shorthand
-    //   { r: 'icon', h: 'path/to/icon-32.png', sz: '32x32', t: 'image/png' },
-    // ...
+        {
+          property: "og:image",
+          content: this.general.currentPost.image_url,
+          vmid: "og:image"
+        },
+        {
+          property: "twitter:title",
+          content: this.general.currentPost.title,
+          vmid: "twitter:title"
+        },
+        {
+          property: "twitter:description",
+          content: this.general.currentPost.body,
+          vmid: "twitter:description"
+        }
+      ]
+    };
   }
+
+  // head: {
+  //   // const this = self,
+  //   title: function() {
+  //     return {
+  //       inner: `${this.general.currentPost.title}`
+  //     };
+  //   },
+  //   // Meta tags
+  //   meta: function() {
+  //     return [
+  //       { name: "application-name", content: "Bloverse" },
+  //       {
+  //         name: "description",
+  //         content: "A platform for journalist",
+  //         id: "desc"
+  //       }, // id to replace intead of create element
+  //       // ...
+  //       // Twitter
+  //       { name: "twitter:title", content: `${this.general.currentPost.title}` },
+  //       // with shorthand
+  //       { n: "twitter:description", c: `${this.general.currentPost.body}` },
+  //       // ...
+  //       // Google+ / Schema.org
+  //       { itemprop: "name", content: `${this.general.currentPost.title}` },
+  //       {
+  //         itemprop: "description",
+  //         content: `${this.general.currentPost.body}`
+  //       },
+  //       // ...
+  //       // Facebook / Open Graph
+  //       // { property: 'fb:app_id', content: '123456789' },
+  //       { property: "og:title", content: `${this.general.currentPost.title}` },
+  //       {
+  //         property: "og:description",
+  //         content: `${this.general.currentPost.body}`
+  //       },
+  //       // with shorthand
+  //       { p: "og:image", c: `${this.general.currentPost.image_url}` }
+  //       // ...
+  //     ];
+  //     // link tags
+  //   }
+  //   // link: [
+  //   //   { rel: "author", href: "author", undo: false }, // undo property - not to remove the element
+  //   //   {
+  //   //     rel: "icon",
+  //   //     href:
+  //   //       "https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png",
+  //   //     type: "image/png"
+  //   //   }
+  //   //   ]
+
+  //   // with shorthand
+  //   //   { r: 'icon', h: 'path/to/icon-32.png', sz: '32x32', t: 'image/png' },
+  //   // ...
+  // }
 };
 </script>
 <style>
-#postdisplaycontainer{
-display: flex;
-flex-direction: column;
-width:50%;
-margin:auto;
-padding: 10px;
-justify-content: center;
-align-content: center
-
+#postdisplaycontainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  justify-content: center;
+  align-content: center;
 }
-.main-image{
+.main-image {
   width: 100%;
-  height:450px;
+  height: 450px;
   object-fit: cover;
   object-position: 50%;
-  border:2px solid #95a5a6;
-
+  border: 2px solid #95a5a6;
 }
 
-.main-feed h2{
+.main-feed h2 {
   font-size: 2rem;
 }
-.summary-feed{
+.summary-feed {
   margin-top: 15px;
 }
-.summary-feed li{
-
+.summary-feed li {
   font-size: 1.2rem;
   color: #333333;
   list-style: none;
   font-weight: 600;
   padding: 8px 0;
-  
 }
-.summary-feed li::before{
-  content: "\2022"; 
-  color: #C4C4C4; 
-  font-weight: bold; 
-  display: inline-block; 
-  width: 1em; 
+.summary-feed li::before {
+  content: "\2022";
+  color: #c4c4c4;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
 }
-.share-links{
-  width:50%;
+.share-links {
+  width: 50%;
   margin: 20px 0;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.main-body{
+.main-body {
   padding: 20px 40px;
-  width:100%;
+  width: 100%;
 }
-.main-body > *{
-  
+.main-body > * {
 }
 
 @media screen and (max-width: 360px) {
-#postdisplaycontainer{
-   width:100%;
-   text-align: justify
-}
-.border{
-  text-align: center
-}
-.share-links{
-  width:100%;
-  justify-content: space-evenly
-}
-.main-image{
-  object-fit: contain;
-  object-position: center;
-  height:50%
-}
+  #postdisplaycontainer {
+    width: 100%;
+    text-align: justify;
+  }
+  .border {
+    text-align: center;
+  }
+  .share-links {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .main-image {
+    object-fit: contain;
+    object-position: center;
+    height: 50%;
+  }
 }
 @media screen and (max-width: 600px) {
-#postdisplaycontainer{
-    width:100%;
-       text-align: justify
+  #postdisplaycontainer {
+    width: 100%;
+    text-align: justify;
+  }
+  .border {
+    text-align: center;
+  }
+  .share-links {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .main-image {
+    object-fit: contain;
+    object-position: center;
+    height: 50%;
+  }
 }
-.border{
-  text-align: center
-}
-.share-links{
-  width:100%;
-  justify-content: space-evenly
-}
-.main-image{
-  object-fit:contain;
-  object-position: center;
-  height:50%
-}
-}
-
-
 </style>
