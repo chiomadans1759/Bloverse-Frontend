@@ -35,94 +35,11 @@
                     </div>
                 </Col>
               </Col> 
-              <Col :sm="16" :md="12" :xs="24"   class = "box2">
-                  <div class ="center-content">
-                       <Row class = "center-content-header" type="flex" justify="space-between" align="middle">
-                            <Col class ="collapse-menu" :sm="2" :xs="2" ><p>&#9776;</p> </Col>
-                            <Col :md="4" :sm="4" :xs="4" >
-                                <div class = "avarter-wrap">
-                                    <img src ="./../../assets/punch.png"/>
-                                </div>
-                            </Col>
-                            <Col :md="4" :sm="4" :xs="4"><p class="para1">Seyi Femi</p></Col>
-                            <Col :sm="14" :xs="14" :md="16" ><p class="para2">3 hours ago</p></Col>
-                        </Row>
-                        <Row class="content-image">
-                            <img src ="./../../assets/landingPage.jpg"/>
-                        </Row>
-                        <Row class ="center-content-footer">
-                           <Row class="para3">We are confident of winning Osun gov election - PDP</Row>
-                           <Row class="para4">
-                               <Col class="icon1">
-                                    <i class="fa fa-heart"><span> 235 </span></i> 
-                                    <i class="fab fa-twitch"><span> 45</span></i>
-                               </Col> 
-                               <Col class="icon2">
-                                    <i class="fa fa-reply"></i>
-                                    <i class="fa fa-ellipsis-v"></i>
-                               </Col>  
-                           </Row>
-                        </Row>
-                  </div>
-                  <div class ="center-content">
-                       <Row class = "center-content-header" type="flex" justify="space-between" align="middle">
-                            <Col :md="4" >
-                                <div class = "avarter-wrap">
-                                    <img src ="./../../assets/punch.png"/>
-                                </div>
-                            </Col>
-                            <Col :md="4" ><p class="para1">Seyi Femi</p></Col>
-                            <Col :sm="16" :md="16" :xs="16"><p class="para2">3 hours ago</p></Col>
-                        </Row>
-                        <Row class="content-image">
-                            <img src ="./../../assets/landingPage.jpg"/>
-                        </Row>
-                        <Row class ="center-content-footer">
-                           <Row class="para3">We are confident of winning Osun gov election - PDP</Row>
-                           <Row class="para4">
-                               <Col class="icon1">
-                                    <i class="fa fa-heart"><span> 235 </span></i> 
-                                    <i class="fab fa-twitch"><span> 45</span></i>
-                               </Col> 
-                               <Col class="icon2">
-                                    <i class="fa fa-reply"></i>
-                                    <i class="fa fa-ellipsis-v"></i>
-                               </Col>  
-                           </Row>
-                        </Row>
-                  </div>
-                  <div class ="center-content">
-                       <Row class = "center-content-header" type="flex" justify="space-between" align="middle">
-                            <Col :md="4" :sm="4" :xs="4" >
-                                <div class = "avarter-wrap">
-                                    <img src ="./../../assets/punch.png"/>
-                                </div>
-                            </Col>
-                            <Col :md="4" :sm="4" :xs="4" ><p class="para1"> Seyi Femi</p></Col>
-                            <Col :sm="16" :md="16" :xs="16"><p class="para2">3 hours ago</p></Col>
-                        </Row>
-                        <Row class="content-image">
-                            <img src ="./../../assets/landingPage.jpg"/>
-                        </Row>
-                        <Row class ="center-content-footer">
-                           <Row class="para3">We are confident of winning Osun gov election - PDP</Row>
-                           <Row class="para4">
-                               <Col class="icon1">
-                                    <i class="fa fa-heart"><span> 235 </span></i> 
-                                    <i class="fab fa-twitch"><span> 45</span></i>
-                               </Col> 
-                               <Col class="icon2">
-                                    <i class="fa fa-reply"></i>
-                                    <i class="fa fa-ellipsis-v"></i>
-                               </Col>  
-                           </Row>
-                        </Row>
-                  </div>
-            
+              <Col>
+                  <ConsumersFeeds/>   
               </Col>
-              <Col  :md="6" :sm="24" :xs="24" class = "box3" type="flex" align="middle" > 
-                    <Row class ="box3-content" offset ="4" :sm="24" :md="16" :xs="24"></Row>
-                    <Row class ="box3-content" offset ="4" :sm="24" :md="16" :xs="24"></Row>
+              <Col>
+                  <ConsumersAdverts/>
               </Col>
           </div>
       </section>   
@@ -132,9 +49,12 @@
 import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
 import RecentComments from '../../components/RecentComments.vue';
 import RecentlyRead from '../../components/RecentlyRead.vue';
+import ConsumersFeeds from '../../components/ConsumersFeeds.vue';
+import ConsumersAdverts from '../../components/ConsumersAdverts.vue';
     
 export default {
-  components: { Button, Row, Col, Icon, Input, Form, FormItem, RecentComments, RecentlyRead}
+  components: { 
+    Button, Row, Col, Icon, Input, Form, FormItem, RecentComments, RecentlyRead, ConsumersFeeds, ConsumersAdverts}
 }
 </script>
 
@@ -337,6 +257,7 @@ export default {
      .side-bar {
         display: none;
     }
+        
     .box3 {
         display: none;
     }   
