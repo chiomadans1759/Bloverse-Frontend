@@ -49,6 +49,7 @@ export default {
  margin: 0 auto;
  padding:3px;
 }
+
 #headerText {
     font-size: 30px;
     font-weight:  bold;
@@ -66,6 +67,7 @@ export default {
    font-size: 18px;
    line-height: 16px;
 }
+
 #tIcon {
    color: #2F80ED;
 }
