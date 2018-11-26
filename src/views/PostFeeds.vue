@@ -27,7 +27,7 @@
       <h1 class="landing" v-else>
         <span>Coming Soon!</span>
         <br /> 
-        Are you a journalist? Click <router-link to="/creators">here to start writing for Bloverse</router-link>
+        Are you a Content Creator? Click <router-link to="/creators">here to start writing for Bloverse</router-link>
       </h1>
     </div>
   </section>
