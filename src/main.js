@@ -11,6 +11,7 @@ import VueRouter from 'vue-router';
 import moment from 'moment'
 import VueHead from 'vue-head'
 import store from '../stores';
+import Meta from 'vue-meta'
 
 //import VueAnalytics from 'vue-analytics';
 
@@ -43,7 +44,8 @@ Vue.prototype.$BASE_URL = process.env.VUE_APP_URL
 
 Vue.use(VueRouter);
 Vue.use(SocialSharing);
-Vue.use(VueHead)
+Vue.use(VueHead);
+Vue.use(Meta);
 /*Vue.use(VueAnalytics, {
   id: 'UA-127172964-2',
   router

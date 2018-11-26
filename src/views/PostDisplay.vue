@@ -94,7 +94,6 @@ import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share";
 
 import Loading from "../components/Loading.vue";
 
-
 export default {
   components: {
     Row,
@@ -114,8 +113,8 @@ export default {
   },
   data: function() {
     return {
-      newComment: ""
-      // postDetails: {}
+      newComment: "",
+      postDetails: {}
       //url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
     };
   },
@@ -125,6 +124,12 @@ export default {
       return `${this.$BASE_URL}posts/${this.general.currentPost.slug}`;
       // console.log(this.$BASE_URL);
     },
+    // titleTemplate: titleChunk => {
+    //   // If undefined or blank then we don't need the hyphen
+    //   return titleChunk
+    //     ? `${this.general.currentPost.title} - Site Title`
+    //     : "Site Title";
+    // },
     ...mapState(["general", "auth"]),
     ...mapGetters(["isLoggedIn"])
   },
@@ -138,65 +143,105 @@ export default {
 
     let { slug } = this.$route.params;
     await this.getPostBySlug({ slug });
-    // this.postDetails = this.general.currentPost;
+    this.postDetails = this.general.currentPost;
     // console.log(this.postDetails);
   },
-  head: {
-    // const this = self,
-    title: function() {
-      return {
-        inner: `${this.general.currentPost.title}`
-      };
-    },
-    // Meta tags
-    meta: function() {
-      return [
-        { name: "application-name", content: "Bloverse" },
+
+  metaInfo() {
+    return {
+      title: this.general.currentPost.title,
+      meta: [
+        { charset: "utf-8" },
         {
+          vmid: "description",
           name: "description",
-          content: "A platform for journalist",
-          id: "desc"
-        }, // id to replace intead of create element
-        // ...
-        // Twitter
-        { name: "twitter:title", content: `${this.general.currentPost.title}` },
-        // with shorthand
-        { n: "twitter:description", c: `${this.general.currentPost.body}` },
-        // ...
-        // Google+ / Schema.org
-        { itemprop: "name", content: `${this.general.currentPost.title}` },
-        {
-          itemprop: "description",
-          content: `${this.general.currentPost.body}`
+          content: this.general.currentPost.body
         },
-        // ...
-        // Facebook / Open Graph
-        // { property: 'fb:app_id', content: '123456789' },
-        { property: "og:title", content: `${this.general.currentPost.title}` },
+        {
+          property: "og:title",
+          content: this.general.currentPost.title,
+          vmid: "og:title"
+        },
         {
           property: "og:description",
-          content: `${this.general.currentPost.body}`
+          content: this.general.currentPost.body,
+          vmid: "og:description"
         },
-        // with shorthand
-        { p: "og:image", c: `${this.general.currentPost.image_url}` }
-        // ...
-      ];
-      // link tags
-    }
-    // link: [
-    //   { rel: "author", href: "author", undo: false }, // undo property - not to remove the element
-    //   {
-    //     rel: "icon",
-    //     href:
-    //       "https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png",
-    //     type: "image/png"
-    //   }
-    //   ]
-
-    // with shorthand
-    //   { r: 'icon', h: 'path/to/icon-32.png', sz: '32x32', t: 'image/png' },
-    // ...
+        {
+          property: "og:image",
+          content: this.general.currentPost.image_url,
+          vmid: "og:image"
+        },
+        {
+          property: "twitter:title",
+          content: this.general.currentPost.title,
+          vmid: "twitter:title"
+        },
+        {
+          property: "twitter:description",
+          content: this.general.currentPost.body,
+          vmid: "twitter:description"
+        }
+      ]
+    };
   }
+
+  // head: {
+  //   // const this = self,
+  //   title: function() {
+  //     return {
+  //       inner: `${this.general.currentPost.title}`
+  //     };
+  //   },
+  //   // Meta tags
+  //   meta: function() {
+  //     return [
+  //       { name: "application-name", content: "Bloverse" },
+  //       {
+  //         name: "description",
+  //         content: "A platform for journalist",
+  //         id: "desc"
+  //       }, // id to replace intead of create element
+  //       // ...
+  //       // Twitter
+  //       { name: "twitter:title", content: `${this.general.currentPost.title}` },
+  //       // with shorthand
+  //       { n: "twitter:description", c: `${this.general.currentPost.body}` },
+  //       // ...
+  //       // Google+ / Schema.org
+  //       { itemprop: "name", content: `${this.general.currentPost.title}` },
+  //       {
+  //         itemprop: "description",
+  //         content: `${this.general.currentPost.body}`
+  //       },
+  //       // ...
+  //       // Facebook / Open Graph
+  //       // { property: 'fb:app_id', content: '123456789' },
+  //       { property: "og:title", content: `${this.general.currentPost.title}` },
+  //       {
+  //         property: "og:description",
+  //         content: `${this.general.currentPost.body}`
+  //       },
+  //       // with shorthand
+  //       { p: "og:image", c: `${this.general.currentPost.image_url}` }
+  //       // ...
+  //     ];
+  //     // link tags
+  //   }
+  //   // link: [
+  //   //   { rel: "author", href: "author", undo: false }, // undo property - not to remove the element
+  //   //   {
+  //   //     rel: "icon",
+  //   //     href:
+  //   //       "https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png",
+  //   //     type: "image/png"
+  //   //   }
+  //   //   ]
+
+  //   // with shorthand
+  //   //   { r: 'icon', h: 'path/to/icon-32.png', sz: '32x32', t: 'image/png' },
+  //   // ...
+  // }
 };
 </script>
 
