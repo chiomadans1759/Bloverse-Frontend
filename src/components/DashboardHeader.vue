@@ -29,6 +29,7 @@ export default {
   components: { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem },
   data(){
     return {
+      rotateIcon: '',
       collapsed: false
     }
   },
