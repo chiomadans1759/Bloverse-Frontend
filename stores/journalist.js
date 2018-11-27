@@ -149,7 +149,7 @@ export default {
     },
     async getMyMetrics({commit, rootState}) {
       let userId = rootState.auth.loggedInUser.id;
-      let response = await Api.get(`metrics/journalists/${userId}`);
+      let response = await Api.get(`metrics/journalists/${userId}/`);
       commit('setMyMetrics', response.data);
     }
   },
