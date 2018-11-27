@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export default {
   state: {
     selectedCountries: [],
@@ -30,27 +28,6 @@ export default {
       } else {
         state.selectedCategories.push(payload);
       }
-    },
-
-    async setFeedCategories(state) {
-      try {
-        let res = await axios.get('http://demo4155374.mockable.io/categories');
-        state.feedCategories = res.data
-      } catch (e) {
-        // console.log(e);
-      }
-    },
-
-    setRecentComments() {
-
-    },
-
-    setRecentlyReads() {
-
-    },
-
-    setRecentlyCommented() {
-
     }
   },
   actions: {
@@ -60,22 +37,6 @@ export default {
 
     addToCategories(context, payload) {
       context.commit('setConsumerCategory', payload);
-    },
-
-    getFeedCategories(context) {
-      context.commit('setFeedCategories');
-    },
-
-    getRecentComments(context) {
-      context.commit('setRecentComments');
-    },
-
-    getRecentlyReads(context) {
-      context.commit('setRecentlyReads');
-    },
-
-    getRecentlyCommented(context) {
-      context.commit('setRecentlyCommented');
     }
   }
 }
