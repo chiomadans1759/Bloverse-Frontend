@@ -35,10 +35,10 @@
                     </div>
                 </Col>
               </Col> 
-              <Col>
+              <Col :sm="16" :md="12" :xs="24" >
                   <ConsumersFeeds/>   
               </Col>
-              <Col>
+              <Col :md="6" :sm="24" :xs="24">
                   <ConsumersAdverts/>
               </Col>
           </div>
@@ -58,11 +58,7 @@ export default {
 }
 </script>
 
-<style scoped>
-   
-  /*  .container > div{ 
-        border: 1px #ccc solid;
-   } */
+<style scoped> 
     .container{        
         width:100%;
     }
@@ -257,7 +253,7 @@ export default {
      .side-bar {
         display: none;
     }
-        
+
     .box3 {
         display: none;
     }   

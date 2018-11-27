@@ -1,6 +1,6 @@
 <template>
   <Row>
-    <Col :sm="16" :md="12" :xs="24"   class = "box2">
+    <Col class = "box2">
         <div class ="center-content">
             <Row class = "center-content-header" type="flex" justify="space-between" align="middle">
                 <Col class ="collapse-menu" :sm="2" :xs="2" ><p>&#9776;</p> </Col>

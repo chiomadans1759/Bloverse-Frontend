@@ -1,6 +1,6 @@
 <template>
     <Row>
-        <Col  :md="6" :sm="24" :xs="24" class = "box3" type="flex" align="middle" > 
+        <Col class = "box3" type="flex" align="middle" > 
             <Row class ="box3-content" offset ="4" :sm="24" :md="16" :xs="24"></Row>
             <Row class ="box3-content" offset ="4" :sm="24" :md="16" :xs="24"></Row>
         </Col>
@@ -8,7 +8,7 @@
 </template>
  
 <script >
-import { Icon, Row, Col } from "iview"; 
+import { Icon, Row, Col} from "iview"; 
 
 export default {
   components: { Icon, Row, Col}
