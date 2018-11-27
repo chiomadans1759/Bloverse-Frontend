@@ -25,15 +25,19 @@
                 <p id="article-list">Articles</p>
                 <p id="horizon-line"></p>
             </Col>
+            <Col>
+                  <ConsumersFeeds /> 
+            </Col>
         </Row>
     </section>
 </template>
 
 <script>
 import { Row, Col, Button } from 'iview';
+import ConsumersFeeds from '../../components/ConsumersFeeds.vue';
 
 export default {
-  components: { Row, Col, Button }
+  components: { Row, Col, Button, ConsumersFeeds }
     
 }
 </script>
