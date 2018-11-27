@@ -10,7 +10,8 @@
                 <div id="category-info">
                     <p>{{category.name}}</p> 
                     <ion-icon name="checkmark-circle-outline"
-                              v-show="$store.state.consumers.selectedCategories.includes(category.name)"></ion-icon>
+                              v-show="$store.state.consumers.selectedCategories.includes(category.name)">
+                    </ion-icon>
                 </div>
               </Card>
             </div>
