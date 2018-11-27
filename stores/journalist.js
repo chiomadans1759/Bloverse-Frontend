@@ -5,16 +5,12 @@ export default {
   state: {
     posts: null,
     post: {
-      keyPoints: [{
-        index: 1,
-        value: '',
-        status: 1
-      }]
+      keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }]
     },
     metrics: {},
   },
   actions: {
-    async processPost({commit, rootState, state, dispatch}, params) {
+    async processPost({ commit, rootState, state, dispatch }, params) {
       if (params.shouldUploadImage) {
         let newUrl = await dispatch('doUpload');
         commit('setPost', {
@@ -126,7 +122,7 @@ export default {
         };
       }
     },
-    async doUpload({state, commit}) {
+    async doUpload({ state, commit }) {
       const cloudinary = {
         uploadPreset: 'pspvcsig',
         apiKey: '967987814344437',
@@ -137,17 +133,17 @@ export default {
       formData.append('file', state.post.imageUrl);
       formData.append('upload_preset', cloudinary.uploadPreset);
       formData.append('folder', 'bloverse');
-      commit('setLoading', true, {root: true});
+      commit('setLoading', true, { root: true });
       const resp = await axios.post(clUrl, formData);
-      commit('setLoading', false, {root: true});
+      commit('setLoading', false, { root: true });
       return resp.data.secure_url;
     },
-    async getMyPosts({commit, rootState}) {
+    async getMyPosts({ commit, rootState }) {
       let userId = rootState.auth.loggedInUser.id;
       let response = await Api.get('journalists/' + userId + '/posts/', true);
       commit('setPosts', response.data.posts);
     },
-    async getMyMetrics({commit, rootState}) {
+    async getMyMetrics({ commit, rootState }) {
       let userId = rootState.auth.loggedInUser.id;
       let response = await Api.get(`metrics/journalists/${userId}/`);
       commit('setMyMetrics', response.data);
@@ -155,7 +151,8 @@ export default {
   },
   mutations: {
     setPost(state, props) {
-      state.post = { ...state.post,
+      state.post = {
+        ...state.post,
         ...props
       };
     },
@@ -164,11 +161,7 @@ export default {
     },
     clearPost(state) {
       state.post = {
-        keyPoints: [{
-          index: 1,
-          value: '',
-          status: 1
-        }],
+        keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }],
         body: '',
         title: '',
         imageUrl: '',
@@ -182,7 +175,7 @@ export default {
   },
   getters: {
     isCreatingBasicPost(state) {
-      return (state.post.title || state.post.body) && state.post.keypoints && state.post.keyPoints.length > 0
+      return (state.post.title || state.post.body) && state.post.keyPoints && state.post.keyPoints.length > 0
     },
     isCreatingTravelPost(state) {
       return (state.post.title || state.post.body) && state.post.deviceType && state.post.location
