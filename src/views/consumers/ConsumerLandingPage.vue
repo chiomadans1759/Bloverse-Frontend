@@ -35,10 +35,10 @@
                     </div>
                 </Col>
               </Col> 
-              <Col>
-                  <ConsumersFeeds/>   
+              <Col v-for="i in 3" :key="i" :sm="6" :md="12" :xs="24">
+                  <ConsumersFeedsCard/>   
               </Col>
-              <Col>
+              <Col :md="6" :sm="24" :xs="24" style="margin:auto'">
                   <ConsumersAdverts/>
               </Col>
           </div>
@@ -49,12 +49,12 @@
 import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
 import RecentComments from '../../components/RecentComments.vue';
 import RecentlyRead from '../../components/RecentlyRead.vue';
-import ConsumersFeeds from '../../components/ConsumersFeeds.vue';
+import ConsumersFeedsCard from '../../components/ConsumersFeedsCard.vue';
 import ConsumersAdverts from '../../components/ConsumersAdverts.vue';
     
 export default {
   components: { 
-    Button, Row, Col, Icon, Input, Form, FormItem, RecentComments, RecentlyRead, ConsumersFeeds, ConsumersAdverts}
+    Button, Row, Col, Icon, Input, Form, FormItem, RecentComments, RecentlyRead, ConsumersFeedsCard, ConsumersAdverts}
 }
 </script>
 

@@ -31,7 +31,7 @@
 
 <script >
 import { Card, Avatar, Icon } from "iview";
-import { mapState,} from "vuex";
+import { mapState } from "vuex";
 
 export default {
   name: "FeedCard",
@@ -70,7 +70,7 @@ export default {
   width:95%;
   height:450px;
   background:white;
-margin:20px auto;
+  margin:20px auto;
   box-shadow: 0 20px 20px rgba(0,0,0,.08);
   white-space: normal;  
   color:#333;

@@ -1,12 +1,12 @@
 <template>
     <section class="position-content">
-        <Row type="flex" justify="center">
+`        <Row type="flex" justify="center">
             <Col span="4">
                 <div class="profile-img">
                     <p id="circle"></p>
                 </div>
                     </Col>
-                    <Col id="profile-container"  span="8">
+                    <Col id="profile-container" :sm="16" :md="12" :xs="24" >
                         <div class="profile-content">
                              <h1>Seyi Femi</h1>
                              <Button id="profile-button" type="default">Follow</Button>
@@ -20,24 +20,26 @@
                         
             </Col>
         </Row>
-        <Row  type="flex" justify="center">
-            <Col span="12">
+        <Row type="flex" justify="center">
+            <Col span="16">
                 <p id="article-list">Articles</p>
                 <p id="horizon-line"></p>
             </Col>
-            <Col>
-                  <ConsumersFeeds /> 
-            </Col>
         </Row>
+        <div>
+            <div  v-for="i in 4" :key="i" id="card-directions">
+                  <ConsumersFeedsCard /> 
+            </div>
+        </div>
     </section>
 </template>
 
 <script>
 import { Row, Col, Button } from 'iview';
-import ConsumersFeeds from '../../components/ConsumersFeeds.vue';
+import ConsumersFeedsCard from '../../components/ConsumersFeedsCard.vue';
 
 export default {
-  components: { Row, Col, Button, ConsumersFeeds }
+  components: { Row, Col, Button, ConsumersFeedsCard }
     
 }
 </script>
@@ -53,8 +55,7 @@ export default {
 }
     .position-content{ 
         margin-top:2.5rem;         
-        border-radius:5px; 
-        height:31.25rem; 
+      
 }
 
     #profile-title {
@@ -98,7 +99,6 @@ export default {
     }
     .profile-content{
         display: flex;
-        justify-content: space-between;
         width: 90%
         /* padding:15px 45px 15px 0 */
     }
@@ -115,21 +115,16 @@ export default {
 }
 
     #profile-button{
-        width:140px;
-        font-size: 18px
-
+        width:120px;
+        font-size: 15px;
+        margin-left: 4rem;
     }
-
-    @media screen and (max-width: 360px) {
-  .position-content {
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 600px) {
-  .position-content {
-    flex-direction: column;
-  }
-}
+    #card-directions {
+      width:50%;
+      margin: auto;
+    
+     
+    }
       
 </style>
 
