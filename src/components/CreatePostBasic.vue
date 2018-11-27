@@ -56,7 +56,7 @@
           <FormItem 
           v-for="(keypoint, index) in post.keyPoints" 
           :key="index" :prop="`keyPoints.${index}.value`" 
-          :rules="{required: index === 0, message: `Keypoint ${index} cannot be empty.`, trigger: 'change' }"
+          :rules="{required: index === 0, message: 'Please provide at least one keypoint', trigger: 'change' }"
           >
             <Input placeholder="Add a keypoint" v-model="keypoint.value" size="large" />
           </FormItem>
