@@ -1,53 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="google-signin-client_id" content="966117903311-1fk401e4fiks3u34nsputljh7smgckor.apps.googleusercontent.com">
-    <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    
-    <title>bloverse</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <meta http-equiv="Content-Type" content="charset=utf-8" />
+  <meta name="author" content="Bloverse" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+  <meta name="description" content="Bloverse was created with you in mind. Have you ever thought about creating a news blog but then balked at the thought of the effort required?. Well I have good news! At bloverse we leverage state of the art AI techniques to make your life easier and help you on the journey to being an elite content creator">
+  <meta name="keywords" content="bloverse , bloverse.com , software, code, tech, computer , html, css, javascript, websites, website development, web development, design, ui, ux , demzanalytics , code_wonders" />
+  <meta property="og:locale" content="en-US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bloverse" />
+  <meta property="og:description" content="Bloverse was created with you in mind. Have you ever thought about creating a news blog but then balked at the thought of the effort required?. Well I have good news! At bloverse we leverage state of the art AI techniques to make your life easier and help you on the journey to being an elite content creator" />
+  <meta property="og:url" content="http://www.bloverse.com" />
+  <meta property="og:site-name" content="Bloverse" />
+  <meta property="article:publisher" content="Bloverse" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bloverse " />
+  <meta name="twitter:site" content="@bloverse" />
+  <meta name="twitter:domain" content="Bloverse was created with you in mind. Have you ever thought about creating a news blog but then balked at the thought of the effort required?. Well I have good news! At bloverse we leverage state of the art AI techniques to make your life easier and help you on the journey to being an elite content creator" />
+ <meta property="og:image"              content="https://www.thoughtco.com/thmb/iFjK5a3Sndj8IMSefiiE1corABg=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/midsection-of-journalist-holding-microphones-while-writing-on-note-pad-878027776-5ae3885e04d1cf003cf1fce5.jpg" />
+  <meta name="google-signin-client_id" content="966117903311-1fk401e4fiks3u34nsputljh7smgckor.apps.googleusercontent.com">
+  <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+ 
+  <title>bloverse</title>
+</head>
+
+<body>
   <div id="app"></div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.7.4/tinymce.min.js"></script>
   <script src="https://apis.google.com/js/client:platform.js"></script>
   <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-127172964-2', 'auto');
-      ga('send', 'pageview');
-
-
-    </script>
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/5be317dc70ff5a5a3a711432/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
+    ga('create', 'UA-127172964-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+      Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/5be317dc70ff5a5a3a711432/default';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
     })();
-    </script>
-    <!--End of Tawk.to Script-->
-    <noscript>
-      <strong>We're sorry but bloverse doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    
-    <!-- built files will be auto injected -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWWwgiJxX-Kwov9JKfNA2gCbmfU7OiUAE&libraries=places"></script>
-  </body>
+  </script>
+  <!--End of Tawk.to Script-->
+  <noscript>
+    <strong>We're sorry but bloverse doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+
+  <!-- built files will be auto injected -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWWwgiJxX-Kwov9JKfNA2gCbmfU7OiUAE&libraries=places"></script>
+</body>
+
 </html>
