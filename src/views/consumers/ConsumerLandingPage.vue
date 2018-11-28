@@ -16,14 +16,14 @@
               </div>
           </Col>
         </Col> 
-        <Col>
-            <ConsumersFeeds/>   
+        <Col span="12" v-for="i in 3" :key="i">
+            <ConsumersFeedsCard/>   
         </Col>
         <Col>
-            <ConsumersAdverts/>
+            <ConsumersAdverts />
         </Col>
       </div>
-      <general-footer></general-footer>
+         <general-footer></general-footer>
     </main>   
 </template>
 
@@ -32,8 +32,7 @@ import { Button, Row, Col, Icon, Input, Form, FormItem } from "iview";
 import FeedCategories from "../../components/FeedCategories.vue";
 import RecentComments from "../../components/RecentComments.vue";
 import RecentlyRead from "../../components/RecentlyRead.vue";
-import ConsumersFeeds from "../../components/ConsumersFeeds.vue";
-import ConsumersAdverts from "../../components/ConsumersAdverts.vue";
+import ConsumersFeedsCard from "../../components/ConsumersFeedsCard.vue";
 import GeneralFooter from "../../components/TheFooter.vue";
 
 export default {
@@ -48,8 +47,7 @@ export default {
     FeedCategories,
     RecentComments,
     RecentlyRead,
-    ConsumersFeeds,
-    ConsumersAdverts,
+    ConsumersFeedsCard,
     GeneralFooter
   }
 };
