@@ -1,6 +1,6 @@
 <template>
-    <Button type="button" @click="buttonClicked" long>
-        <Icon id="facebook-icon" type=logo-facebook /> {{getButtonText}}
+    <Button type="button" @click="buttonClicked">
+      <Icon id="facebook-icon" type="logo-facebook" /> {{getButtonText}}
     </Button>
 </template>
 
@@ -111,8 +111,7 @@ export default {
           this.isWorking = false
           this.isConnected = false
           this.$emit('logout', response)
-        }
-        )
+        })
     }
   }
 }

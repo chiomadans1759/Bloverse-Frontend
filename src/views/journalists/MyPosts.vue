@@ -37,7 +37,7 @@ export default {
     ]),
 
     showPosts: function () {
-      return this.journalist.posts.length > 0
+      return this.journalist.posts && this.journalist.posts.length > 0
     }
   },
   async created () {

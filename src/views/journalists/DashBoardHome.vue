@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="page_intro_name">Dashboard</h3>
-    <Row :gutter="32" id="stat-wrapper">
+    <Row :gutter="32" id="stat-wrapper" v-if="show">
       <Col :sm="8">
         <stat-card variant="fade" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week' ,'Articles']}" />
       </Col>
@@ -14,7 +14,7 @@
       </Col>
     </Row>
 
-    <Row :gutter="32">
+    <Row :gutter="32" v-if="show">
       <Col :sm="16">
         <Card id="map-card">
           <h2 slot="title" class="title">Total Visits</h2>
@@ -26,17 +26,17 @@
           <Row :gutter="16" id="select-wrapper">
             <Col span="8">
               <Select placeholder="Region" v-model="region">
-                <Option >No item yet</Option>
+                <Option value="">No item yet</Option>
               </Select>
             </Col>
             <Col span="8">
               <Select placeholder="Subregion" v-model="subRegion">
-                <Option >No item yet</Option>
+                <Option value="">No item yet</Option>
               </Select>
             </Col>
             <Col span="8">
               <Select placeholder="Country" v-model="country">
-                <Option >No item yet</Option>
+                <Option value="">No item yet</Option>
               </Select>
             </Col>
           </Row>
@@ -54,7 +54,7 @@
       <Col :sm="8">
         <Card id="trending-card">
           <h2 slot="title" class="title">Trending</h2>
-              <Row type="flex" justify="space-around">
+              <Row type="flex" justify="center">
             <Col span="10">
               <Select v-model="categories" placeholder="Categories" id="categories">
                 <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
@@ -66,7 +66,7 @@
               </Select>
             </Col>
           </Row>
-          <Row type="flex" :gutter="16" justify="left" id="entities-wrapper">
+          <Row type="flex" :gutter="16" justify="center" id="entities-wrapper">
             <Col :sm="4" class="entity" v-for="i in 9" :key="i">
               <router-link to="/entity">
                 <Avatar src="https://res.cloudinary.com/naera/image/upload/v1530033169/bloverse/ca6df9c3826fa48bf487c553b4a8fb62.jpg" />
@@ -103,6 +103,15 @@ export default {
     StatCard: DashboardStatDisplayCard,
     Icon
   },
+  data(){
+    return {
+      show: false,
+      region: '',
+      subRegion: '',
+      country: '',
+      categories: '',
+    }
+  },
   computed: {
     ...mapState(["general"]),
     chartData() {
@@ -120,7 +129,10 @@ export default {
     ...mapActions(["getMyMetrics"])
   },
   mounted: async function() {
+   
     await this.getMyMetrics();
+    this.show = true;
+
   }
 };
 </script>

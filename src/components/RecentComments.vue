@@ -12,7 +12,7 @@
             <ul id="read-list">
                 <li id ="comment-items" v-for="item in randomMovieList" :key="item.id">            
                     <p id="comment-text">{{ item.name }}</p>
-                    <p id="read-comments">{{item.comment}}</p>
+                    <p id="read-comments">{{ item.comment }}</p>
                 </li>    
             </ul>
           </Card>

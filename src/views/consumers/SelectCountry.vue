@@ -7,7 +7,7 @@
             </Col>
 
             <Col id="select-button">
-                <Button @click="goToCat" type="primary" id="submit-countries">SUBMIT</Button>
+                <Button @click="goToCat" type="primary" id="submit-countries">Next</Button>
             </Col>
         </Row>
     </section>
@@ -51,10 +51,10 @@ export default {
 }
 #select-button {
   text-align: center;
+  margin-top: 2rem;
 }
-#select-button button {
-  margin-top: 3rem;
-  height: 3rem;
+#submit-countries {
+  font-size: 15px;
 }
 
 @media screen and (max-width: 360px) {
