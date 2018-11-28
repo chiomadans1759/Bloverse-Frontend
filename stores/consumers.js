@@ -1,7 +1,11 @@
 export default {
   state: {
     selectedCountries: [],
-    selectedCategories: []
+    selectedCategories: [],
+    feedCategories: {},
+    recentlyReadFeeds: {},
+    RecentComments: {},
+    postsFeed: {}
   },
   mutations: {
     setConsumerCountry(state, payload) {
