@@ -35,13 +35,13 @@
             <Col :sm="7" class="section-2-description">
               <Icon class="section-2-icon" type="ios-create" md="md-create"></Icon>
               <h2>{{general.metrics.journalists}}</h2>
-              <p> Content providers have joined </p>
+              <p> Content creators</p>
             </Col>
 
             <Col :sm="7" class="section-2-description">
                 <Icon class="section-2-icon" type="ios-people"></Icon>
                 <h2>{{general.metrics.views.total}}</h2>
-                <p>Unique visitors have accessed the site </p>
+                <p>Unique visitors</p>
             </Col>
           </Row>
                      <!-- <Row class="section-3" type="flex" justify="space-around">

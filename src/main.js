@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios';
 import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { locale, Message, LoadingBar } from 'iview';
 import GoogleAuth from 'vue-google-authenticator'
 import lang from 'iview/dist/locale/en-US';

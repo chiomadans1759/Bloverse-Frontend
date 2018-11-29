@@ -67,7 +67,13 @@
 
         <DisplayImage v-model="post.imageUrl" height="200px" width="50%" :can-edit="true" />
 
-        <tinymce class="form-control required" v-model="post.body"></tinymce>
+        <div class="row">
+          <div class="col-md-12">
+            <tinymce class="form-control required" v-model="post.body"></tinymce>
+
+          </div>
+        </div>
+        
 
         <br />
 
