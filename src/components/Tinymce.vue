@@ -155,9 +155,9 @@ export default {
       "blockquote[dir|style|cite|class|id|lang|onclick|ondblclick"
       +"|onkeydown|onkeypress|onkeyup|onmousedown|onmousemove|onmouseout"
       +"|onmouseover|onmouseup|title]",
-        content_css: ['css/main.css?' + new Date().getTime(),
+        content_css: [
           '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-          '//www.tinymce.com/css/codepen.min.css'
+          '//www.tinymce.com/css/codepen.min.css',
         ],
         image_title: true, 
         // enable automatic uploads of images represented by blob or data URIs
