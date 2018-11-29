@@ -1,69 +1,75 @@
 <template>
   <header id="feeds-header">
-    <!-- <router-link class ="logo-wrapper" to="/"><img src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" style="width:40px;height:50px" alt="" id="lead"> &nbsp; -->
-    <!-- <router-link to="/"><span id="header-text">Bloverse</span>
-    </router-link> -->
-    <router-link to="/"><img class="logo" src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" style="height:50px"></router-link>
-    <router-link to="/creators" id="write">Create Content</router-link>
-
-
-    <!-- <Row id="catrow" :gutter="40" type="flex" justify="center" >
-      <Col><p>Entertainment</p> </Col>
-      <Col><p>Business</p> </Col>
-      <Col><p>Sport</p></Col>
-      <Col><p>Technology</p></Col>
-      <Col><p>Politics</p></Col>
-      <Col><p>Health</p> </Col>
-    </Row> -->
+    <Row class="feeds-row" type="flex" justify="space-between" align="middle">
+      <Col>
+     <router-link to="/" class="router-link"><img class="logo" src="./../assets/Asset 1.svg" style="height:50px" /><span id="logo-text">bloverse</span></router-link>
+     </Col>
+     <span class="button-links">
+     <router-link to="/creators/login" id="login-button">login</router-link>
+     <router-link to="/creators" id="create-button">create content</router-link>
+     </span> 
+     
+    </Row>
   </header>
 </template>
 
-
 <script>
-import { Row, Col, Input, Select, Option } from "iview";
-import { mapState } from "vuex";
+import { Row, Col } from 'iview';
 
 export default {
-  components: { Row, Col, Input, Select, Option },
-  computed: {
-    ...mapState(["general"])
-  }
-};
+  components: {Row, Col}
+  
+}
 </script>
 
-
 <style>
-@import url("https://fonts.googleapis.com/css?family=Raleway");
-/* #feeds-header {
-  margin-bottom:30px; */
-#feeds-header {
-  background-color: #fff;
-  padding: 10px 15px;
-  border-bottom: 2px solid rgb(236, 230, 230);
-  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19); */
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
+
+.feeds-row {
+ width: 90%;
+ margin: 0 auto;
+ padding:3px;
+}
+.router-link {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+.button-links {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+#feeds-header {
+  background-color: #F5F5F5;
+}
+#logo-text {
+  font-size: 32px;
+  font-family: 'Comfortaa', cursive;
+  color: #096DD9;
+  margin-left: 1rem;
+  font-weight: 500;
+}
+#login-button {
+  font-family: 'Montserrat', sans-serif;
+  border: 1px inset #096DD9;
+  color: #096DD9;
+  margin-top: 1rem;
+  font-size: 14px;
+  padding :5px 10px;
+  text-transform: uppercase; 
+  border-radius: 4px;
+  text-align: center;
+  margin-right:2rem;
+}
+#create-button {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to right, #096DD9 40%, #07b1e0 100%);
+  color: #fff;
+  margin-top: 1rem;
+  font-size: 14px;
+  padding :5px 10px;
+  text-transform: uppercase; 
+  border-radius: 4px;
+  text-align: center;
 }
 
-#write {
-  color: #2f80ed;
-  font-size: 20px;
-  border: 2px solid #2f80ed;
-  margin-right: 20px;
-  padding: 5px 10px 5px 10px;
-  border-radius: 10px;
-}
-
-#write:hover {
-  color: #2f80ed;
-}
-
-#header-text {
-  font-size: 40px;
-  font-weight: bold;
-  letter-spacing: 3px;
-  font-family: "Raleway", sans-serif;
-  color: rgb(25, 109, 235);
-}
 </style>
+
