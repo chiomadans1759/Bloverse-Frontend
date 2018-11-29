@@ -29,13 +29,13 @@ import AdminHome from '../src/views/admin/Home.vue';
 import BaseFeeds from '../src/layouts/BaseFeeds.vue';
 import PostFeeds from '../src/views/PostFeeds.vue';
 import PostDisplay from '../src/views/PostDisplay.vue'; 
-
-import ConsumerLandingPage from '../src/views/consumers/ConsumerLandingPage.vue'; 
  
 import ConsumerSignIn from '../src/views/consumers/ConsumerSignIn.vue';
 import SelectCountry from '../src/views/consumers/SelectCountry.vue';
 import SelectCategory from '../src/views/consumers/SelectCategory.vue';
 import ConsumerModal from '../src/views/consumers/ConsumerModal.vue';
+import ConsumerLandingPage from '../src/views/consumers/ConsumerLandingPage.vue';
+import ConsumersTrending from '../src/views/consumers/ConsumersTrending.vue';
 import ConsumerProfile from '../src/views/consumers/ConsumerProfile.vue';
 
 const routes = [{
@@ -210,7 +210,8 @@ const routes = [{
     { path: 'country', component: SelectCountry },
     { path: 'category', component: SelectCategory },
     { path: 'modal', component: ConsumerModal },
-    { path: 'profile', component: ConsumerProfile}
+    { path: 'profile', component: ConsumerProfile},
+    { path: 'trending', component: ConsumersTrending }
   ]
 },
 {

@@ -14,7 +14,7 @@
               <div> 
                   <RecentComments/> 
               </div>
-          </Col>
+         </Col>
         </Col> 
         <Col span="12" v-for="i in 3" :key="i">
             <ConsumersFeedsCard/>   
