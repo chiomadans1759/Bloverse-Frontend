@@ -1,6 +1,6 @@
 <template>
   <Header id="header">
-    <Icon @click.native="handleIconClick" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
+    <Icon @click.native="handleIconClick" class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
     <Row id="items-wrapper" type="flex" justify="space-between" align="middle">
       <Col><Icon type="navicon-round" color="#E0E0E0"></Icon></Col>
       <Col></Col>
@@ -29,6 +29,7 @@ export default {
   components: { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem },
   data(){
     return {
+      rotateIcon: '',
       collapsed: false
     }
   },

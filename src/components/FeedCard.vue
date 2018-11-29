@@ -12,7 +12,6 @@
       <img :src="imageUrl" />
       </div>
       <ul class="summary-cards">
-        <h2 id="keypoints">Keypoints</h2>
       <li id="summary-cards-content" v-for="point in post.keypoint" :key="point.id">{{point}}</li>
       </ul>
 
@@ -31,7 +30,7 @@
 
 <script >
 import { Card, Avatar, Icon } from "iview";
-import { mapState,} from "vuex";
+import { mapState } from "vuex";
 
 export default {
   name: "FeedCard",
@@ -70,7 +69,7 @@ export default {
   width:95%;
   height:450px;
   background:white;
-margin:20px auto;
+  margin:20px auto;
   box-shadow: 0 20px 20px rgba(0,0,0,.08);
   white-space: normal;  
   color:#333;
@@ -87,24 +86,20 @@ margin:20px auto;
 }
 .summary-cards{
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
+  height: 45%;
+  width: 88%;
   opacity: 0;
   transition: .5s ease;
-  background: white;
- 
-  font-size: 1rem;
+  background: rgba(26, 25, 25, 0.452);
+  margin-top: 8.2rem;
 }
 #summary-cards-content{
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid rgb(236, 230, 230);
   padding: 15px 15px;
   text-align: left;
+  color: #ffffff;
+  font-size: 12px;
 }
 .main-feed-card:hover .summary-cards {
   
@@ -157,28 +152,6 @@ margin:20px auto;
     justify-content: space-between;
     padding: 10px
   
-}
-@media screen and (max-width: 600px) {
-.card-container{
-  width:100%;
-  margin:auto
-}
-.main-feed-card{
-  width:90%
-}
-
-}
-
-
-@media screen and (max-width: 360px) {
-.card-container{
-  width:100%;
-  margin:auto
-}
-.main-feed-card{
-  width:90%
-}
-
 }
 
 </style>

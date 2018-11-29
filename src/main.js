@@ -9,8 +9,8 @@ import moment from 'moment'
 import SocialSharing from 'vue-social-sharing';
 import VueHead from 'vue-head'
 
+import Meta from 'vue-meta';
 import store from '../stores';
-import Meta from 'vue-meta'
 
 //import VueAnalytics from 'vue-analytics';
 

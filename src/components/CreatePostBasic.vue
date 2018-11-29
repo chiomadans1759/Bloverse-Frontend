@@ -53,25 +53,12 @@
         </Card>
 
         <Card class="keypoints" v-else>
-          <FormItem
+          <FormItem 
           v-for="(keypoint, index) in post.keyPoints" 
-          :key="index" 
-          :prop="`keyPoints.${index}.value`" 
-          :rules="{required: true, message: 'Keypoint cannot be empty', trigger: 'blur' }"
+          :key="index" :prop="`keyPoints.${index}.value`" 
+          :rules="{required: index === 0, message: 'Please provide at least one keypoint', trigger: 'change' }"
           >
-            <Row>
-              <Col span="12">
-                <Input type="text" v-model="keypoint.value" placeholder="Enter keypoint..."/>
-              </Col>
-              <Button class="delete-btn" @click="handleRemove(index)">Delete</Button>
-            </Row>
-          </FormItem>
-          <FormItem>
-            <Row>
-              <Col span="12">
-                <Button type="dashed" long @click="handleAdd" icon="md-add">Add keypoint</Button>
-              </Col>
-            </Row>
+            <Input placeholder="Add a keypoint" v-model="keypoint.value" size="large" />
           </FormItem>
         </Card>
         <FormItem prop="title" :error="errors.title">
@@ -80,7 +67,6 @@
 
         <DisplayImage v-model="post.imageUrl" height="200px" width="50%" :can-edit="true" />
 
-        <!-- <vue-editor v-model="post.body" style="background: white;"></vue-editor> -->
         <tinymce class="form-control required" v-model="post.body"></tinymce>
 
         <br />
@@ -302,18 +288,6 @@ export default {
         varClient = clientServer[field];
         this.$set(this.errors, varClient, fieldErrors);
       });
-    },
-    handleAdd () {
-      this.index++;
-      this.post.keyPoints.push({
-        value: '',
-        index: this.index,
-        status: 1
-      });
-    },
-    handleRemove (index) {
-      this.index--;
-      this.post.keyPoints.pop();
     }
   },
   watch: {

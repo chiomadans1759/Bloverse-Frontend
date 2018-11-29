@@ -54,34 +54,31 @@ export default {
 
 #country-card {
   cursor: pointer;
-  padding: 0px !important;
   width: 100%;
-  height: 10rem !important;
+  height: 6rem !important;
+  margin-top: -10px;
 }
 
 #card-img {
-  height: 10rem !important;
+  height: 8rem !important;
+  margin-top: -25px;
 }
 
 #card-img img {
-  width: 100% !important;
-  height: 100% !important;
+  height: 145px;
 }
 
 #country-name {
-  float: right;
-  width: 40% !important;
-  height: 100% !important;
-  height: 10rem !important;
-  padding-top: 4rem;
+  padding-top: 1rem;
+  padding-left: 6rem;
 }
 
 #icon-circle {
-  float: right;
-  margin-top: 2rem;
-  margin-right: 1rem;
+  margin-left: 4rem ;
   font-size: 24px;
   color: #2f80ed;
 }
+
+
 </style>
 

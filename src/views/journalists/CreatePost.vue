@@ -1,10 +1,14 @@
 <template>
   <div v-if="selectedTemplate !== null">
-    <Button id="btn-back" icon="ios-arrow-back" @click="clearCurrentPost" type="error">Back to Choose Template</Button>
-    <BasicCreatePost :isTravel="selectedTemplate === 'travel'" />
+    <Button
+      id="btn-back"
+      icon="ios-arrow-back"
+      @click="clearCurrentPost"
+      type="error"
+    >Back to Choose Template</Button>
+    <BasicCreatePost :isTravel="selectedTemplate === 'travel'"/>
   </div>
-  <TemplateChooser v-else @selectTemplate="selectedTemplate=$event" />
-  
+  <TemplateChooser v-else @selectTemplate="selectedTemplate=$event"/>
 </template>
 
 <script>
@@ -22,14 +26,14 @@ export default {
     }
   },
   computed: {
+    ...mapState(['journalist', 'auth', 'general']),
     ...mapGetters([
       'isCreatingBasicPost',
       'isCreatingTravelPost'
     ]),
-    ...mapState(['journalist', 'auth'])
   },
   methods: {
-    ...mapActions(['getMyPosts']),
+    ...mapActions(['getPostBySlug']),
     ...mapMutations(['setPost', 'clearPost']),
     clearCurrentPost(){
       this.clearPost();
@@ -40,10 +44,10 @@ export default {
     let currentPost;
     if(this.$route.params.slug){
       //if(this.journalist.posts.length < 1)
-      await this.getMyPosts();
-      currentPost = await this.journalist.posts.find(post => post.slug === this.$route.params.slug);
-      let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published:isPublished=false, slug } = currentPost;
-      let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug };
+      await this.getPostBySlug(this.$route.params);
+      currentPost = this.general.currentPost
+      let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published:isPublished=false, slug, device_type: deviceType, location } = currentPost;
+      let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, deviceType, location };
       this.setPost(updatedPost);
     }
 
