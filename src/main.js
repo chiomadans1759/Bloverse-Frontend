@@ -1,10 +1,16 @@
 import Vue from 'vue'
 import axios from 'axios';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { locale, Message, LoadingBar } from 'iview';
 import GoogleAuth from 'vue-google-authenticator'
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
 import moment from 'moment'
+import SocialSharing from 'vue-social-sharing';
+import VueHead from 'vue-head'
+
+import Meta from 'vue-meta';
 import store from '../stores';
 
 //import VueAnalytics from 'vue-analytics';
@@ -17,9 +23,9 @@ import App from './App.vue'
 
 import 'iview/dist/styles/iview.css';
 
-var SocialSharing = require('vue-social-sharing');
-
-Vue.use(GoogleAuth, { client_id: '966117903311-1fk401e4fiks3u34nsputljh7smgckor.apps.googleusercontent.com' })
+Vue.use(GoogleAuth, {
+  client_id: '966117903311-1fk401e4fiks3u34nsputljh7smgckor.apps.googleusercontent.com'
+})
 Vue.googleAuth().load()
 Vue.googleAuth().directAccess()
 
@@ -32,9 +38,12 @@ Vue.prototype.$IVIEW = {};
 Vue.prototype.$http = axios;
 Vue.prototype.$Message = Message;
 Vue.prototype.$Loading = LoadingBar;
+Vue.prototype.$BASE_URL = process.env.VUE_APP_URL
 
 Vue.use(VueRouter);
 Vue.use(SocialSharing);
+Vue.use(VueHead);
+Vue.use(Meta);
 /*Vue.use(VueAnalytics, {
   id: 'UA-127172964-2',
   router
@@ -60,7 +69,7 @@ Vue.filter('firstToUpper', (value) => {
   return value.charAt(0).toUpperCase() + value.substr(1);
 });
 
-Vue.filter('customizedTime', (value)=>{
+Vue.filter('customizedTime', (value) => {
   return moment(value).fromNow()
 })
 
@@ -83,42 +92,14 @@ new Vue({
 }).$mount('#app')
 
 router.beforeEach((to, from, next) => {
-  const onlyAuth = to.matched.some(record => record.meta.auth)
-  const onlyJournalist = to.matched.some(record=>record.meta.journalist)
-  const onlyAdmin = to.matched.some(record=>record.meta.admin)
   LoadingBar.start();
-  if(onlyAuth){
-    // This should start for only auth
-    if(store.getters.isAuthenticated){
-      if(onlyJournalist && store.getters.isAJournalist)
-        next()
-      else if(onlyAdmin && store.getters.isAnAdmin)
-        next()
-      else
-        next({path: '/'})
-    }
-    else{
-      let nextUrl = to.fullPath
-      if(onlyJournalist)
-        next({path: '/creators/login', params: { nextUrl }})
-      else if(onlyAdmin)
-        next({path: '/admin/login', params: { nextUrl }})
-      else
-        next({path: '/'})
-    }
-  }
-  else if(to.matched.some(record=>record.meta.acceptedApplicant)){
-    if(store.getters.allowedToRegister === true)
-      next()
-    else{
-      next({path: '/creators/verify'})
-    }
-  }else
-    next();
+  next()
 });
 
 ga('set', 'page', router.currentRoute.path); // eslint-disable-line no-undef
 ga('send', 'pageview'); // eslint-disable-line no-undef
+
+
 router.afterEach((to, from, next) => { // eslint-disable-line no-unused-vars
   ga('set', 'page', to.path); // eslint-disable-line no-undef
   ga('send', 'pageview'); // eslint-disable-line no-undef

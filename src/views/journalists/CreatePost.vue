@@ -1,10 +1,14 @@
 <template>
   <div v-if="selectedTemplate !== null">
-    <Button id="btn-back" icon="ios-arrow-back" @click="clearCurrentPost" type="error">Back to Choose Template</Button>
-    <BasicCreatePost :isTravel="selectedTemplate === 'travel'" />
+    <Button
+      id="btn-back"
+      icon="ios-arrow-back"
+      @click="clearCurrentPost"
+      type="error"
+    >Back to Choose Template</Button>
+    <BasicCreatePost :isTravel="selectedTemplate === 'travel'"/>
   </div>
-  <TemplateChooser v-else @selectTemplate="selectedTemplate=$event" />
-  
+  <TemplateChooser v-else @selectTemplate="selectedTemplate=$event"/>
 </template>
 
 <script>
@@ -13,24 +17,23 @@ import { mapGetters, mapActions, mapState, mapMutations } from 'vuex';
 
 import TemplateChooser from '../../components/TemplateChooser.vue';
 import BasicCreatePost from '../../components/CreatePostBasic.vue';
-import TravelCreatePost from '../../components/TravelCompetition.vue';
 
 export default {
-  components: { TemplateChooser, BasicCreatePost, TravelCreatePost, Button },
+  components: { TemplateChooser, BasicCreatePost, Button },
   data(){
     return {
       selectedTemplate: null
     }
   },
   computed: {
+    ...mapState(['journalist', 'auth', 'general']),
     ...mapGetters([
       'isCreatingBasicPost',
       'isCreatingTravelPost'
     ]),
-    ...mapState(['journalist'])
   },
   methods: {
-    ...mapActions(['getMyPosts']),
+    ...mapActions(['getPostBySlug']),
     ...mapMutations(['setPost', 'clearPost']),
     clearCurrentPost(){
       this.clearPost();
@@ -41,10 +44,10 @@ export default {
     let currentPost;
     if(this.$route.params.slug){
       //if(this.journalist.posts.length < 1)
-      await this.getMyPosts();
-      currentPost = await this.journalist.posts.find(post => post.slug === this.$route.params.slug);
-      let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published:isPublished=false, slug } = currentPost;
-      let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug };
+      await this.getPostBySlug(this.$route.params);
+      currentPost = this.general.currentPost
+      let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published:isPublished=false, slug, device_type: deviceType, location } = currentPost;
+      let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, deviceType, location };
       this.setPost(updatedPost);
     }
 
@@ -52,8 +55,18 @@ export default {
       this.selectedTemplate = 'basic';
     else if(this.isCreatingTravelPost)
       this.selectedTemplate = 'travel';
-  }  
-}
+  },
+  mounted() {
+    if (this.isTravel) {
+      this.setPost({ category: '', country: '' });
+    } else {
+      this.setPost({
+        category: '',
+        country: ''
+      });
+    }
+  }
+};
 </script>
 
 <style>

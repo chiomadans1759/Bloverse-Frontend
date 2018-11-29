@@ -9,18 +9,22 @@
                 <Col :md="12" :sm="12"  :xs="24">
                         <Col offset="4" :sm="16" :md="16" :xs="16" class="auth-section" >
                                 <h1 id="page-title">Sign in</h1>
-                                <p class="join">Join Bloverse today.</p>                 
+
+                                <p class="join">Join Bloverse today.</p>   
+
                                 <Button class="btn-social my-btn" id="btn-google" long @click="googleAuth"> 
                                     <Icon id="google-icon" type=logo-google /> Sign up with Google
                                 </Button>
+
                                 <facebook-login
                                   id="btn-fb"
                                   loginLabel="Sign up with Facebook"
                                   logoutLabel="Sign out with Facebook"
                                   appId="416283189263206"
                                   @login="onFBLogin"
-                                  @logout="onFBLogout"
-                                  @sdk-loaded="FBsdkLoaded" long>
+                                  @sdk-loaded="FBsdkLoaded"
+                                  @logout="onFBLogout" 
+                                  long>
                                 </facebook-login>
                         </Col>
                 </col>
@@ -65,9 +69,6 @@ export default {
         ],
       },
       fb_connected: false,
-      fb_user_name: '',
-      fb_user_email: '',
-      fb_personal_id: '',
       FB: undefined
     }
   },
@@ -75,10 +76,9 @@ export default {
     getFBUserData() {
       this.FB.api('/me', 'GET', { fields: 'id, name, email' },
         userInformation => {
-          this.fb_personal_id = userInformation.id;
-          this.fb_user_email = userInformation.email;
-          this.fb_user_name = userInformation.name;
-          alert('User successfully signed in with Facebook')
+          let data = { access_token: userInformation.id, login_type: 'Facebook' };
+          this.$store.dispatch('consumerLogin', data);
+          this.$router.push('/web/country');
         }
       )
     },
@@ -86,9 +86,6 @@ export default {
     FBsdkLoaded(payload) {
       this.fb_connected = payload.isConnected
       this.FB = payload.FB
-      if (this.fb_connected) {
-        this.getFBUserData()
-      }
     },
 
     onFBLogin() {
@@ -102,9 +99,11 @@ export default {
 
     googleAuth() {
       Vue.googleAuth().signIn((googleUser) => { 
-        alert('User successfully signed in with Google')
+        let data = { access_token: googleUser.Zi.access_token, login_type: 'Google' };
+        this.$store.dispatch('consumerLogin', data);
+        this.$router.push('/web/country');
       }, (error) => {
-        // console.log(error)
+        alert("Sorry we couldn't authenticate you, kindly refresh the browser and try again");
       })
     }
   },

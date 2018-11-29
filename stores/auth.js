@@ -6,7 +6,8 @@ export default {
     newUser: { imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg' },
     applicant: { articleURLs: [] },
     loggedInUser: null,
-    shouldRegister: false
+    shouldRegister: false,
+    consumerLoginData: {},
   },
   actions: {
     async login({ commit, state }, params) {
@@ -20,6 +21,11 @@ export default {
         return { errors: response.data };
       }
     },
+
+    async consumerLogin(context, payload) {
+      context.commit('setConsumerLoginData', payload);
+    },
+
     async apply({ state, commit }) {
       let phone = state.applicant.phoneCode + state.applicant.phoneNumber;
       let linkedIn = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`
@@ -91,9 +97,13 @@ export default {
       commit('setJwt', null);
       commit('setLoggedInUser', null);
       return true;
-    },
+    }
   },
   mutations: {
+    setConsumerLoginData(state, payload) {
+      state.consumerLoginData = payload
+    },
+
     setApplicant(state, props) {
       state.applicant = { ...state.applicant, ...props };
     },
@@ -135,7 +145,7 @@ export default {
     },
     isAnAdmin(state) {
       if (state.loggedInUser) {
-        return state.loggedInUser.type == 'Admin';
+        return state.loggedInUser.type === 'Admin';
       }
       return false;
     },

@@ -7,11 +7,11 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "node server.js",
-    "heroku-postbuild": "npm run build",
-    "precommit": "lint-staged"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "^3.3.7",
     "connect-history-api-fallback": "^1.5.0",
     "dotenv": "^6.1.0",
     "express": "^4.16.3",
@@ -26,8 +26,10 @@
     "vue": "^2.5.17",
     "vue-analytics": "^5.16.0",
     "vue-goodshare": "^1.1.0",
-    "vue-google-charts": "^0.3.2",
     "vue-google-authenticator": "^1.0.3",
+    "vue-google-charts": "^0.3.2",
+    "vue-head": "^2.1.0",
+    "vue-meta": "^1.5.5",
     "vue-router": "^3.0.1",
     "vue-select": "^2.5.1",
     "vue-social-sharing": "^2.3.3",
@@ -62,5 +64,10 @@
     "*.vue": [
       "eslint"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

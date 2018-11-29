@@ -3,7 +3,7 @@
         <section class="trending-section">
         <h1 id="trending-text">Trending</h1>
         <ul class="trending-wrapper">
-                <li :id="`trending-item${i}`"  v-for="(category, i) in categories" :key="category">
+                <li :style="{gridArea: 'col'+i}"  v-for="(category, i) in categories" :key="category">
                     <Card id="trending-content">
                         <img :src="category.imgURL" alt="Trending-image">
                             <div id="trending-note">
@@ -104,51 +104,12 @@ export default {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas: 
-         "one one one one two two two two three three three three"
-         "four four four four four four four four five five five five"
-         "six six six six seven seven seven seven seven seven seven seven"
-         "eight eight eight eight eight eight nine nine nine nine nine nine"
-         "ten ten ten ten ten eleven eleven eleven eleven eleven eleven eleven";
+         "col0 col0 col0 col0 col1 col1 col1 col1 col2 col2 col2 col2"
+         "col3 col3 col3 col3 col3 col3 col3 col3 col4 col4 col4 col4"
+         "col5 col5 col5 col5 col6 col6 col6 col6 col6 col6 col6 col6"
+         "col7 col7 col7 col7 col7 col7 col8 col8 col8 col8 col8 col8"
+         "col9 col9 col9 col9 col9 col10 col10 col10 col10 col10 col10 col10";
     grid-gap: 2rem;
-}
-
-#trending-item0 {
-    grid-area: one
-}
-
-#trending-item1 {
-    grid-area: two
-}
-
-#trending-item2 {
-    grid-area: three
-}
-
-#trending-item3 {
-    grid-area: four
-}
-
-#trending-item4 {
-    grid-area: five
-}
-
-#trending-item5 {
-    grid-area: six
-}
-#trending-item6 {
-    grid-area: seven
-}
-#trending-item7 {
-    grid-area: eight
-} 
-#trending-item8 {
-    grid-area: nine
-}
-#trending-item9 {
-    grid-area: ten
-}
-#trending-item10 {
-    grid-area: eleven
 }
 
 #trending-text {
@@ -206,17 +167,17 @@ ul li{
     .trending-wrapper {  
         grid-template-columns: repeat(1, 1fr);
         grid-template-areas: 
-            "one"
-            "two"
-            "three"
-            "four"
-            "five"
-            "six"
-            "seven"
-            "eight"
-            "nine"
-            "ten"
-            "eleven"; 
+            "col0"
+            "col1"
+            "col2"
+            "col3"
+            "col4"
+            "col5"
+            "col6"
+            "col7"
+            "col8"
+            "col9"
+            "col10"; 
     } 
     .trending-section {
         margin:1rem auto;
