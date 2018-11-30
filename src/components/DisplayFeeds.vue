@@ -16,26 +16,23 @@
 
 <script >
 import { Row, Col, vSelect, Card, Avatar, Icon } from "iview";
-import { mapActions} from "vuex";
-import FeedCard from './FeedCard.vue'
+import { mapActions } from "vuex";
+import FeedCard from "./FeedCard.vue";
 
 export default {
-  name: 'Displayfeeds',
+  name: "Displayfeeds",
   components: { Row, Col, Card, vSelect, Avatar, Icon, FeedCard },
   methods: {
-    ...mapActions([
-      'getAllPublishedPosts'
-    ])
+    ...mapActions(["getAllPublishedPosts"])
   },
   async created() {
-    await this.getAllPublishedPosts({ category: '', country: '' });
+    await this.getAllPublishedPosts({ category: "", country: "" });
   }
 };
 </script>
 
 <style>
-#feedcard-container{
-
- }
+#feedcard-container {
+}
 </style>
 

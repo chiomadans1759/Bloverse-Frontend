@@ -7,7 +7,6 @@ export default {
     applicant: { articleURLs: [] },
     loggedInUser: null,
     shouldRegister: false,
-    consumerLoginData: {},
   },
   actions: {
     async login({ commit, state }, params) {
@@ -22,24 +21,29 @@ export default {
       }
     },
 
-    async consumerLogin(context, payload) {
-      context.commit('setConsumerLoginData', payload);
-    },
-
     async apply({ state, commit }) {
-      let phone = state.applicant.phoneCode + state.applicant.phoneNumber;
-      let linkedIn = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`
-      let twitter = `https://www.twitter.com/${state.applicant.twitterUsername}`
-      let articles;
-      if(state.applicant.articleURLs.length > 0){
-        articles = state.applicant.articleURLs.map((article, index) => {
-          return `${state.applicant.articleProtocols[index]}${article}`
-        })
-      }
-      
       let categoryId = state.applicant.category.id;
       let countryId = state.applicant.country.id;
-      commit('setApplicant', { phone, twitter, linkedIn, articles });
+
+      const applicant = {
+        phone: state.applicant.phoneCode + state.applicant.phoneNumber,
+      }
+
+      if (state.applicant.linkedInUsername) {
+        applicant.linkedIn = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`
+      }
+
+      if (state.applicant.twitterUsername) {
+        applicant.twitter = `https://www.twitter.com/${state.applicant.twitterUsername}`;
+      }
+
+      if (state.applicant.articleURLs.length > 0) {
+        applicant.articles = state.applicant.articleURLs.map((article, index) => {
+          return `${state.applicant.articleProtocols[index]}${article}`
+        });
+      }
+
+      commit('setApplicant', applicant);
       let response = await Api.post('applicants/', {
         ...state.applicant,
         countryId,
@@ -100,32 +104,25 @@ export default {
     }
   },
   mutations: {
-    setConsumerLoginData(state, payload) {
-      state.consumerLoginData = payload
-    },
-
     setApplicant(state, props) {
       state.applicant = { ...state.applicant, ...props };
     },
     clearApplicant(state) {
-      state.applicant = null;
+      state.applicant = { 
+        articleURLs: [],  
+        phoneNumber: '',
+        linkedInUsername: '',
+        twitterUsername: ''
+      };
     },
     setNewUser(state, props) {
       state.newUser = { ...state.newUser, ...props };
     },
     setJwt(state, jwt) {
       state.jwt = jwt
-      if (jwt)
-        localStorage.setItem('jwt', jwt);
-      else
-        localStorage.removeItem('jwt');
     },
     setLoggedInUser(state, user) {
       state.loggedInUser = user;
-      if (user)
-        localStorage.setItem('loggedInUser', JSON.stringify(user));
-      else
-        localStorage.removeItem('loggedInUser');
     },
     setUsername(state, username) {
       state.newUser.username = username;
@@ -155,8 +152,9 @@ export default {
       }
       return false;
     },
-    allowedToRegister(state) {
+    isAllowedToRegister(state) {
       return state.shouldRegister;
     }
   }
 }
+
