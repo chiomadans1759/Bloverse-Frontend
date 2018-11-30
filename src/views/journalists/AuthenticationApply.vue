@@ -37,7 +37,7 @@
                  <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
               </option>
             </select>
-             <input class="my-input" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
+             <input class="my-input" type="number" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
           </FormItem>
         </Col>
       </Row>
@@ -201,7 +201,6 @@ export default {
     ...mapActions([
       'apply'
     ]),
-
   },
   created: function(){ 
     this.applicant.phoneCode = '+1';
