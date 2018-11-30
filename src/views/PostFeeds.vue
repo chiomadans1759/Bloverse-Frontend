@@ -46,15 +46,15 @@
             <ul class="list-inline" id="layout-select">
               <li class="lTrendingCardist-inline-item">
                 <a href="#"
-                  :class="{'active': general.activeFeedLayout == 'Grid'}"
-                  @click.prevent="toggleLayout('Grid')">
+                  :class="{'active': general.activeFeedLayout == 'grid'}"
+                  @click.prevent="toggleLayout('grid')">
                   <i class="fa fa-th-large"></i>
                 </a>
               </li>
               <li class="list-inline-item">
                 <a href="#"
-                  :class="{'active': general.activeFeedLayout == 'Stack'}" 
-                  @click.prevent="toggleLayout('Stack')">
+                  :class="{'active': general.activeFeedLayout == 'stack'}" 
+                  @click.prevent="toggleLayout('stack')">
                   <i class="fa fa-laptop"></i>
                 </a>
               </li>

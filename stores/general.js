@@ -5,7 +5,7 @@ export default {
     categories: null,
     countries: null,
     activeCategory: 'All',
-    activeFeedLayout: 'Grid',
+    activeFeedLayout: 'grid',
     applicants: [],
     publishedPosts: [],
     currentPost: {},

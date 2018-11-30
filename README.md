@@ -1,4 +1,4 @@
-# bloverse
+# Bloverse
 This web application is a content creation platform for users to create a blog for themselves. 
 
 <br />
@@ -25,8 +25,7 @@ This web application is a content creation platform for users to create a blog f
 6. Create a `.env` file in the root directory of the application. Example of the content of a `.env` file is shown in the `.env.example`
 7. To start the application run `npm run serve` for development
 8. To compile and minify for production run `npm run build`
-9. To lint files run `npm run lint`
-10.To lint and also fix the files by using the eslint config run `npm run lint --fix`
+9. To lint files run `npm run lint` or To lint and also fix the files by using the eslint config run `npm run lint --fix`
 
 ## Support or Contribution
 For any suggestions or contributions please do not hesistate to contact the owners of this repository.

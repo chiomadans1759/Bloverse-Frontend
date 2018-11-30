@@ -2,20 +2,20 @@
   <div>
     <h3 class="page_intro_name">Dashboard</h3>
     <Row :gutter="32" id="stat-wrapper" v-if="show">
-      <Col :sm="8">
+      <Col :sm="8" :xs="24">
         <stat-card variant="fade" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week' ,'Articles']}" />
       </Col>
-      <Col :sm="8">
+      <Col :sm="8" :xs="24">
         <stat-card variant="primary" title="published" id="stat-point2" :stats="{ key:[articles.today, articles.week,  articles.total ] , value:[ 'Today' ,'This Week' ,'Articles']}" />
       </Col>
-      <Col :sm="8">
+      <Col :sm="8" :xs="24">
       <!-- {{views}} -->
         <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ key:[`${datas.categoryRank[0]} of ${datas.categoryRank[1]}`, `${datas.countryRank[0]} of ${datas.countryRank[1]}` , `${datas.point}`] , value:['Category' ,'Country' , 'Ranking']}" />
       </Col>
     </Row>
 
     <Row :gutter="32" v-if="show">
-      <Col :sm="16">
+      <Col :sm="16" :xs="24">
         <Card id="map-card">
           <h2 slot="title" class="title">Total Visits</h2>
           <span slot="extra">
@@ -278,5 +278,24 @@ export default {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1rem 0.7rem;
+}
+@media screen and (max-width: 360px) {
+#stat-wrapper stat-card{
+width:100%
+}
+#map-card{
+  display: none;
+ border:1px solid blue
+}
+
+}
+  @media screen and (max-width: 600px) {
+#stat-wrapper stat-card{
+  width:100%
+}
+#map-card{
+  display:none;
+  border:1px solid blue
+}
 }
 </style>

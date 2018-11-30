@@ -32,7 +32,7 @@ export default {
     return {
       categories: [
         {
-          imgURL: require('./../../assets/trending/tech.jpg'),
+          imgURL:require('./../../assets/trending/tech.jpg'),
           name: "Technology",
           note: "FBI forces suspect to unlock iPhone X with Face ID"
         },
