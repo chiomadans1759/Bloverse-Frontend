@@ -1,15 +1,15 @@
 <template>
   <WithFooter>
-    <Header />
+    <AuthHeader />
     <slot></slot>
   </WithFooter>
 </template>
 
 <script>
-import Header from '../components/HeaderGeneral.vue';
+import AuthHeader from '../components/AuthHeader.vue';
 import WithFooter from './WithFooter.vue';
 
 export default {
-  components: { Header, WithFooter }
+  components: { AuthHeader, WithFooter }
 }
 </script>
