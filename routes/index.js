@@ -10,12 +10,13 @@ import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
 import MyPosts from '../src/views/journalists/MyPosts.vue';
 import CreatePost from '../src/views/journalists/CreatePost.vue';
 
-import JournalistLanding from '../src/views/journalists/Landing.vue';
+// import JournalistLanding from '../src/views/journalists/Landing.vue';
 import JournalistApply from '../src/views/journalists/AuthenticationApply.vue';
 import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
 import JournalistManualSetUp from '../src/views/journalists/AuthenticationSetUpManual.vue';
 import JournalistSignIn from '../src/views/journalists/AuthenticationSignIn.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
+import NewJournalistLanding from '../src/views/journalists/NewJournalistLanding.vue';
 
 import FrequentlyAskedQuestions from '../src/views/DocsFAQ.vue';
 import HouseRules from '../src/views/DocsHouseRules.vue';
@@ -38,194 +39,82 @@ import ConsumerLandingPage from '../src/views/consumers/ConsumerLandingPage.vue'
 import ConsumersTrending from '../src/views/consumers/ConsumersTrending.vue';
 import ConsumerProfile from '../src/views/consumers/ConsumerProfile.vue';
 
-
-import NewJournalistLanding from '../src/views/journalists/NewJournalistLanding.vue';
-
-const routes = [{
-  path: '/',
-  component: BaseFeeds,
-  children: [{
-    path: '',
-    component: PostFeeds
-  },
+const routes = [
   {
-    path: 'posts',
-    redirect: '/'
-  },
-  {
-    path: 'posts/:slug',
-    component: PostDisplay
-  }
-  ]
-},
-{
-  path: '/creators',
-  component: BlankBase,
-  children: [{
-    path: '',
-    component: JournalistLanding
-  },
-  {
-    path: 'apply',
-    component: JournalistApply
-  },
-  {
-    path: 'login',
-    component: JournalistSignIn,
-    beforeEnter(to, from, next) {
-      // if (store.state.login.sub.token) {
-      if (localStorage.getItem('jwt')) {
-        store.state.auth.jwt = localStorage.getItem('jwt')
-        next(`creators/${store.state.auth.loggedInUser.userName}/dashboard`)
-        // console.log(store.state.)
-      } else {
-        next()
-      }
-    },
-  },
-  {
-    path: 'register',
-    component: JournalistSetUp,
-    // beforeEnter(to, from, next) {
-    //   if (store.getters.isAuthenticated) {
-    //     next()
-    //   } else {
-    //     next('creators/verify')
-    //   }
-
-    // },
-    beforeEnter(to, from, next) {
-      // if (store.state.login.sub.token) {
-      if (localStorage.getItem('jwt')) {
-        store.state.auth.jwt = localStorage.getItem('token')
-        next()
-      } else {
-        next('creators/verify')
-      }
-    },
-  },
-  {
-    path: 'setup',
-    component: JournalistManualSetUp,
-    beforeEnter(to, from, next) {
-      if (store.getters.isAuthenticated) {
-        next()
-      } else {
-        next('creators/verify')
-      }
-
-    }
-  },
-  {
-    path: 'verify',
-    component: JournalistVerify
-  },
-  {
-    path: ':username', component: BaseDashBoard,
-    beforeEnter(to, from, next) {
-      // if (store.state.login.sub.token) {
-      if (localStorage.getItem('jwt')) {
-        next()
-      } else {
-        next('creators/login')
-      }
-    },
-    meta: {
-      journalist: true,
-      auth: true
-    },
-    children: [{
-      path: '',
-      component: MyProfile
-    },
-    {
-      path: 'dashboard',
-      component: DashBoardHome,
-      // beforeEnter(to, from, next) {
-      //   if (store.getters.isAJournalist) {
-      //     next()
-      //   } else {
-      //     next('creators/login')
-      //   }
-      // }
-    },
-    {
-      path: 'posts',
-      component: BlankBase,
-
-      children: [{
-        path: '',
-        component: MyPosts
-      },
-      {
-        path: 'create',
-        component: CreatePost
-      },
-      {
-        path: ':slug/edit',
-        component: CreatePost,
-        meta: {
-          auth: true
-        },
-      }
-      ]
-    }
+    path: '/', component: BaseFeeds,
+    children: [ 
+      { path: '', component: PostFeeds },
+      { path: 'posts', redirect: '/' },
+      { path: 'posts/:slug', component: PostDisplay }
     ]
   },
-  ]
-},
-{
-  path: '/faq/:person',
-  component: FrequentlyAskedQuestions
-},
-{
-  path: '/rules/:person',
-  component: HouseRules
-},
-{
-  path: '/guides',
-  component: PublishGuide
-},
-{
-  path: '/ranking/:person',
-  component: RankingSystem
-},
-{
-  path: '/admin',
-  component: BlankBase,
-  children: [
-    { path: '', redirect: 'dashboard',
-      beforeEnter(to, from, next) {
-        if (store.getters.isAnAdmin) {
-          next()
-        } else {
-          next('admin/login')
+  
+  {
+    path: '/creators',
+    component: BlankBase,
+    children: [
+    //   { path: 'new', component: JournalistLanding },
+      { path: '/creators', component: NewJournalistLanding},
+      { path: 'apply', component: JournalistApply },
+      { path: 'login', component: JournalistSignIn },
+      { path: 'register', component: JournalistSetUp,
+        beforeEnter(to, from, next) {
+          if (store.getters.isAllowedToRegister) {
+            next()
+          } else {
+            next('creators/verify')
+          }
+        },
+      },
+      { path: 'setup', component: JournalistManualSetUp,
+        beforeEnter(to, from, next) {
+          if (store.getters.isAllowedToRegister) {
+            next()
+          } else {
+            next('creators/verify')
+          }
         }
-      }
-    },
-    { path: 'dashboard', component: AdminHome },
-    { path: 'login', component: AdminLogin }
-  ]
-},
-{ path: '/web', component: BaseConsumer, // All pages for the new user features should reside here
-  children: [
-    { path: '', component: ConsumerLandingPage },
-    { path: 'country', component: SelectCountry },
-    { path: 'category', component: SelectCategory },
-    { path: 'modal', component: ConsumerModal },
-    { path: 'profile', component: ConsumerProfile},
-    { path: 'trending', component: ConsumersTrending},
-    { path: 'new', component: NewJournalistLanding}
-  ]
-},
-{
-  path: '/login',
-  component: ConsumerSignIn
-},
-{
-  path: "*",
-  component: NotFound
-}
+      },
+      { path: 'verify', component: JournalistVerify },
+      { path: ':username', component: BaseDashBoard, meta: { journalist: true, auth: true },
+        children: [
+          { path: '', component: MyProfile
+          },
+          { path: 'dashboard', component: DashBoardHome },
+          { path: 'posts', component: BlankBase,
+            children: [
+              { path: '', component: MyPosts },
+              { path: 'create', component: CreatePost },
+              { path: ':slug/edit', component: CreatePost }
+            ]
+          }
+        ]
+      },
+    ]
+  },
+  { path: '/faq/:person', component: FrequentlyAskedQuestions },
+  { path: '/rules/:person', component: HouseRules },
+  { path: '/guides', component: PublishGuide },
+  { path: '/ranking/:person', component: RankingSystem },
+  { path: '/admin', component: BlankBase,
+    children: [
+      { path: '', redirect: 'dashboard' },
+      { path: 'dashboard', component: AdminHome },
+      { path: 'login', component: AdminLogin }
+    ]
+  },
+  { path: '/web', component: BaseConsumer, // All pages for the new user features should reside here
+    children: [
+      { path: '', component: ConsumerLandingPage },
+      { path: 'country', component: SelectCountry },
+      { path: 'category', component: SelectCategory },
+      { path: 'modal', component: ConsumerModal },
+      { path: 'profile', component: ConsumerProfile},
+      { path: 'trending', component: ConsumersTrending }
+    ]
+  },
+  { path: '/login', component: ConsumerSignIn },
+  { path: "*", component: NotFound }
 ]
 
 

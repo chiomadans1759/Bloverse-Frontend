@@ -2,17 +2,17 @@
   <div>
     <FeedsHeader />
     <router-view></router-view>
-    <!-- <TheFooter /> -->
+    <FeedsFooter/>
   </div>
   
 </template>
 
 <script>
 import FeedsHeader from '../components/FeedsHeader.vue'
-import TheFooter from '../components/TheFooter.vue';
+import FeedsFooter from '../components/FeedsFooter.vue';
 
 export default {
-  components: { FeedsHeader, TheFooter },
+  components: { FeedsHeader, FeedsFooter },
 }
   
 </script>

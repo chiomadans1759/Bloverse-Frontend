@@ -6,7 +6,7 @@
      </Col>
      <span class="button-links">
      <router-link to="/creators/login" id="login-button">login</router-link>
-     <router-link to="/creators" id="create-button">create content</router-link>
+     <router-link to="/creators/apply" id="apply-button">apply</router-link>
      </span> 
      
     </Row>
@@ -59,7 +59,7 @@ export default {
   text-align: center;
   margin-right:2rem;
 }
-#create-button {
+#apply-button {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(to right, #096DD9 40%, #07b1e0 100%);
   color: #fff;

@@ -1,67 +1,80 @@
 <template> 
-    <main>
-      <Row class="container1"> 
-        <Col :md="12" :sm="8" :xs="24" class="left">
-            <Col offset="5" :md="14" :sm="14" :xs="16" class="left-contain">
-                <p>Interactive stories from the global community <br/><span>Connecting creators to the people</span></p>
-                <button>GET STARTED</button>
-            </Col>
-        </Col>  
-           
-        <Col :md="12" :sm="24" :xs="24" class ="right">  
-            <img :src="require('./../../assets/jlanding.jpg')" alt="Journalists Landing"> 
-        </Col>   
+<div class ="layout">
+    <Layout>
+        <Content>
+            <div class="general"> 
+                <HeaderGeneral/> 
+                <Row class="container1"> 
+                    <Col :md="12" :sm="8" :xs="24" class="left">
+                        <Col offset="5" :md="14" :sm="14" :xs="16" class="left-contain">
+                            <p>Interactive stories from the global community <br/><span>Connecting creators to the people</span></p>
+                            <button>GET STARTED</button>
+                        </Col>
+                    </Col>  
+                    
+                    <Col :md="12" :sm="24" :xs="24" class ="right">  
+                        <img :src="require('./../../assets/jlanding.jpg')" alt="Journalists Landing"> 
+                    </Col>   
 
-      </Row>
+                </Row>
 
-      <Row class="container2"> 
-        <Col :md="12" :sm="8" :xs="24" class="left2">
-            <Col offset="10" :md="14" :sm="14" :xs="16" class="left-contain2"> 
-                <video class="video" controls>
-                    <source src="./../../assets/intro.mp4" type="video/mp4"> 
-                        Your browser does not support HTML5 video.
-                </video> 
-            </Col> 
-        </Col>  
-           
-        <Col :md="12" :sm="24" :xs="24" class ="right2"> 
-            <Col offset="2" :md="11" :sm="14" :xs="16" class="right-contain2">
-                <h2>About Us</h2>
-                <p>Bloverse was created with you in mind. Have you ever thought of creating a news blog but then balked at the thought of the effort.</p>
-                <router-link tag="know-more" to="/web">
-                    <a>Know More</a>
-                </router-link>
-            </Col>             
-        </Col>  
-       </Row>
-       <Row class="container3"> 
-            <Col :md="8" :sm="8" :xs="8">
-                <h1>156K</h1>
-                <p>ARTICLES POSTED</p>
-            </Col> 
-            <Col :md="8" :sm="8" :xs="8" class="center">
-                <h1>7K</h1>
-                <p>CONTENT PROVIDERS</p>
-            </Col> 
-            <Col :md="8" :sm="8" :xs="8">
-                <h1>100K</h1>
-                <p>VISITORS</p>
-            </Col>   
-       </Row>
-    </main>   
+                <Row class="container2"> 
+                    <Col :md="12" :sm="8" :xs="24" class="left2">
+                        <Col offset="10" :md="14" :sm="14" :xs="16" class="left-contain2"> 
+                            <video class="video" controls>
+                                <source src="./../../assets/intro.mp4" type="video/mp4"> 
+                                    Your browser does not support HTML5 video.
+                            </video> 
+                        </Col> 
+                    </Col>  
+                    
+                    <Col :md="12" :sm="24" :xs="24" class ="right2"> 
+                        <Col offset="2" :md="11" :sm="14" :xs="16" class="right-contain2">
+                            <h2>About Us</h2>
+                            <p>Bloverse was created with you in mind. Have you ever thought of creating a news blog but then balked at the thought of the effort.</p>
+                            <router-link tag="know-more" to="/web">
+                                <a>Know More</a>
+                            </router-link>
+                        </Col>             
+                    </Col>  
+                </Row>
+                <Row class="container3"> 
+                        <Col :md="8" :sm="8" :xs="8">
+                            <h1>156K</h1>
+                            <p>ARTICLES POSTED</p>
+                        </Col> 
+                        <Col :md="8" :sm="8" :xs="8" class="center">
+                            <h1>7K</h1>
+                            <p>CONTENT PROVIDERS</p>
+                        </Col> 
+                        <Col :md="8" :sm="8" :xs="8">
+                            <h1>100K</h1>
+                            <p>VISITORS</p>
+                        </Col>   
+                </Row>
+        <FeedsFooter/>
+            </div>
+       </Content>
+    </Layout>
+    </div> 
 </template>
 
 <script>
-import { Button, Row, Col, Icon, Input, Form} from "iview"; 
+import { Button, Row, Col, Icon, Input, Form, Content, Layout, Header} from "iview";
+import HeaderGeneral from '../../components/HeaderGeneral.vue'; 
+import FeedsFooter from '../../components/FeedsFooter.vue'; 
 
 export default {
   components: {
-    Button, Row, Col, Icon, Input, Form,  
+    Button, Row, Col, Icon, Input, Form, Content, Layout, Header, HeaderGeneral, FeedsFooter
   }
 };
 </script>
 
 <style scoped> 
+    .general{
+  z-index: 10;
+    }
     .container1{
         width:100%; 
         display:flex;
@@ -72,7 +85,7 @@ export default {
         background-image: linear-gradient(rgb(2, 9, 110), rgba(4, 37, 128)); 
     }
     .left-contain{
-        margin-top:15%;         
+        margin-top:18%;         
     }
     .left p{
         font-size:4rem;
@@ -81,6 +94,7 @@ export default {
         padding:2rem 0;
         line-height: 1.2;
         font-weight: 200;
+        opacity: .7;
     }
     .left span{
         font-size:1.5rem; 
@@ -91,7 +105,7 @@ export default {
         border: none;
         padding: .8rem 2rem;
         background-color: #fff;  
-        margin-top:4rem; 
+        margin-top:3rem; 
         }   
     .right{
         background-color:#000;
@@ -131,6 +145,7 @@ export default {
         border-radius: 10px;
         height:100%;
         object-fit: cover;
+        box-shadow: 2px 2px 20px 2px #888888;
     }
      .container3{ 
         display:flex; 
