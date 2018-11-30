@@ -20,7 +20,7 @@
               <li class="list-inline-item" v-for="category in filteredCatList" :key="category.id">
                 <a href="#" 
                   :class="{ 'active': category.name == $store.state.general.activeCategory }"
-                  @click.prevent="filterCategory(category.id, category.name)">
+                  @click.prevent="filterCategory(category.id, category.name)" style="font-family: 'Montserrat', sans-serif;">
                   {{category.name}}
                 </a>
               </li>

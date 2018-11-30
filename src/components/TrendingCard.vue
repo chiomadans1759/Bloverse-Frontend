@@ -3,8 +3,8 @@
     <h4 style="font-family: 'Montserrat', sans-serif; margin-top: 4rem; font-weight: bold;">Top Stories</h4>
     <Row class="trending" >
         
-            <carousel :navigation-enabled="true" paginationActiveColor="#096DD9" :per-page=4 >
-                <slide v-for="i in 8" :key="i">
+            <carousel :navigation-enabled="true" paginationActiveColor="#096DD9" :perPageCustom="[[768, 3], [1024, 4], [600, 2], [300,1]]" autoplayTimeout=2000  easing>
+                <slide v-for="i in 16" :key="i" id="slider">
                     <Col>
                     <Card style="width:276px;">
                         <div style="text-align:left">
@@ -79,10 +79,11 @@ export default {
            font-size: 12px;
         }
 
-       .VueCarousel-inner {
-        display: flex !important;
-        box-sizing:border-box;
-        text-align:center;
-        
+</style>
+
+<style>
+.VueCarousel-wrapper{
+    width: 90vw;
 }
 </style>
+
