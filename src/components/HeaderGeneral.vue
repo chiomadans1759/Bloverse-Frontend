@@ -2,11 +2,11 @@
   <nav>
     <Row class="header-row" type="flex" justify="space-between" align="middle">
       <Col class="brand">
-        <router-link to="/"><img class="logo" src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" ></router-link>
+        <router-link to="/"><img class="logo" src="./../assets/Asset 1.svg" style="height:50px" ><span id="l-text">bloverse</span></router-link>
       </Col>
       <Col class="header-button">
-        <router-link to="/creators/apply" class="auth register">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-        <router-link to="/creators/login" class="auth login">Login</router-link>
+       <router-link to="/creators/login" id="j-button">login</router-link>
+        <router-link to="/creators" id="c-button">create content</router-link>
       </Col>
     </Row>
  </nav>
@@ -26,36 +26,36 @@ export default {
   margin: 0 auto;
 }
 
-.logo {
-  height: 90px;
-  margin-left: 2em;
+#l-text {
+  font-size: 32px;
+  font-family: 'Comfortaa', cursive;
+  color: #fff;
+  margin-left: 1rem;
+  font-weight: 500;
 }
-
-.register {
-  border: 1px solid #fefefe;
-  margin-right: 2em;
-  color: #2f80ed;
-}
-
-.register:hover {
-  border: 1px solid #2f80ed;
-}
-
-.login {
-  margin-left: 2em;
-  border: 1px solid #2f80ed;
-  background: #2f80ed;
-  color: white;
-}
-
-.auth {
-  padding: 10px 30px 10px 30px;
-  border-radius: 100px;
+#j-button {
+  font-family: 'Montserrat', sans-serif;
+  border: 1px inset #ffffff;
+  color: #ffffff;
+  margin-top: 1rem;
   font-size: 14px;
-  font-weight: 800;
+  padding :5px 10px;
+  text-transform: uppercase; 
+  border-radius: 4px;
+  text-align: center;
+  margin-right:2rem;
 }
 
-.header-nav {
-  padding: 15px 40px 10px 40px;
+#c-button {
+  font-family: 'Montserrat', sans-serif;
+  background: #ffffff;
+  color: #096DD9;
+  margin-top: 1rem;
+  font-size: 14px;
+  padding :5px 10px;
+  text-transform: uppercase; 
+  border-radius: 4px;
+  text-align: center;
 }
+
 </style>
