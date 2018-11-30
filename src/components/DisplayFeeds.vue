@@ -1,12 +1,12 @@
 <template>
   <main>
-    <Row id="card-rows" gutter="32" v-if="general.activefeedlayout = 'Grid'">
+    <Row id="card-rows" gutter="32" v-show="$store.state.general.activeFeedLayout == 'grid'">
       <Col :xs="24" :sm="12" :md="8"  v-for="post in $store.state.general.publishedPosts" :key="post.id">
         <FeedCard :post="post"  />
       </Col>
     </Row>
 
-    <Row id="card-rows" gutter="32" v-if="general.activefeedlayout = 'Stack'">
+    <Row id="card-rows" gutter="32" v-show="$store.state.general.activeFeedLayout == 'stack'">
       <Col :xs="24" :sm="12" :md="20"  v-for="post in $store.state.general.publishedPosts" :key="post.id">
         <FeedCard :post="post"  />
       </Col>
