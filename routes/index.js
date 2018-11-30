@@ -38,6 +38,9 @@ import ConsumerLandingPage from '../src/views/consumers/ConsumerLandingPage.vue'
 import ConsumersTrending from '../src/views/consumers/ConsumersTrending.vue';
 import ConsumerProfile from '../src/views/consumers/ConsumerProfile.vue';
 
+
+import NewJournalistLanding from '../src/views/journalists/NewJournalistLanding.vue';
+
 const routes = [{
   path: '/',
   component: BaseFeeds,
@@ -211,7 +214,8 @@ const routes = [{
     { path: 'category', component: SelectCategory },
     { path: 'modal', component: ConsumerModal },
     { path: 'profile', component: ConsumerProfile},
-    { path: 'trending', component: ConsumersTrending }
+    { path: 'trending', component: ConsumersTrending},
+    { path: 'new', component: NewJournalistLanding}
   ]
 },
 {
