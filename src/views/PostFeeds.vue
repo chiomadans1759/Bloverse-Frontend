@@ -1,17 +1,17 @@
 <template>
   <main>
     <section class="container">
-
+     <display-feeds></display-feeds>
     </section>
   </main>
 </template>
 
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState,} from 'vuex'
 import { Row, Col, Card } from 'iview';
 import vSelect from 'vue-select';
-import FeedCard from '../components/FeedCard.vue';
+import DisplayFeeds from '@/components/DisplayFeeds.vue';
 
 export default {
   data: function() {
@@ -21,7 +21,7 @@ export default {
     }
   },
   name: 'FeedsSection',
-  components: { Row, Col, Card, FeedCard, vSelect },
+  components: { Row, Col, Card, vSelect, DisplayFeeds },
   computed: {
     ...mapState([
       'general'
@@ -59,15 +59,6 @@ export default {
       let country = this.country ? this.country.id : ''
       await this.getAllPublishedPosts({category, country});
     }
-  },
-  methods: {
-    ...mapActions(['getAllPublishedPosts'])
-  },
-  async created () {
-    // fetch the data when the view is created and the data is
-    // already being observed
-    let { category, country } = this;
-    await this.getAllPublishedPosts({category, country});
   }
 }
 </script>
@@ -78,9 +69,10 @@ main {
   width: 100%;
   background-color: #f5f5f5;
   min-height: 100vh;
+ 
 }
 
 .container {
-  background-color: black;
+ 
 }
 </style>

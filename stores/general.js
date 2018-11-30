@@ -94,8 +94,8 @@ export default {
       return response.statusCode === 200;
     },
     async getAllPublishedPosts({ commit }, { category, country }) {
-      let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`)
-      commit('setPublishedPosts', response.data.posts);
+      let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
+      commit('setPublishedPosts', response.data.posts); 
     },
     async getPostBySlug({ commit }, { slug }) {
       let response = await Api.get(`posts?slug=${slug}`)
