@@ -82,7 +82,7 @@ const routes = [
             children: [
               { path: '', component: MyPosts },
               { path: 'create', component: CreatePost },
-              { path: ':slug/edit', component: CreatePost, meta: { auth: true } }
+              { path: ':slug/edit', component: CreatePost }
             ]
           }
         ]
