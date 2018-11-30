@@ -1,19 +1,15 @@
 <template>
   <header id="feeds-header">
-    <div class="container">
-      <Row type="flex" justify="space-between" align="middle">
-        <Col>
-          <router-link to="/" class="router-link">
-            <img class="logo" src="./../assets/Asset 1.svg" style="height: 40px" />
-            <span id="logo-text">bloverse</span>
-          </router-link>
-        </Col>
-        <span class="button-links">
-          <router-link to="/creators/login" id="login-button">login</router-link>
-          <router-link to="/creators" id="create-button">create content</router-link>
-        </span> 
-      </Row>
-    </div>
+    <Row class="feeds-row" type="flex" justify="space-between" align="middle">
+      <Col>
+     <router-link to="/" class="router-link"><img class="logo" src="./../assets/Asset 1.svg" style="height:50px" /><span id="logo-text">bloverse</span></router-link>
+     </Col>
+     <span class="button-links">
+     <router-link to="/creators/login" id="login-button">login</router-link>
+     <router-link to="/creators/apply" id="apply-button">apply</router-link>
+     </span> 
+     
+    </Row>
   </header>
 </template>
 
@@ -29,11 +25,6 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 
-#feeds-header {
-  height: 10rem;
-  padding-top: 2rem;
-}
-
 .feeds-row {
  width: 90%;
  margin: 0 auto;
@@ -42,16 +33,13 @@ export default {
 .router-link {
   display: flex;
 }
-
 .button-links {
   display: flex;
   margin-bottom: 0.5rem;
 }
-
 #feeds-header {
   background-color: #F5F5F5;
 }
-
 #logo-text {
   font-size: 32px;
   font-family: 'Comfortaa', cursive;
@@ -59,7 +47,6 @@ export default {
   margin-left: 1rem;
   font-weight: 500;
 }
-
 #login-button {
   font-family: 'Montserrat', sans-serif;
   border: 1px inset #096DD9;
@@ -72,7 +59,7 @@ export default {
   text-align: center;
   margin-right:2rem;
 }
-#create-button {
+#apply-button {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(to right, #096DD9 40%, #07b1e0 100%);
   color: #fff;
