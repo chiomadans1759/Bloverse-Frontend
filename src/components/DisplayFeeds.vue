@@ -1,13 +1,17 @@
 <template>
-<main>
-  <Row id="card-rows" gutter="32">
+  <main>
+    <Row id="card-rows" gutter="32" v-if="general.activefeedlayout = 'Grid'">
+      <Col :xs="24" :sm="12" :md="8"  v-for="post in $store.state.general.publishedPosts" :key="post.id">
+        <FeedCard :post="post"  />
+      </Col>
+    </Row>
 
-       <Col :xs="24" :sm="12" :md="8"  v-for="post in $store.state.general.publishedPosts" :key="post.id">
-         <FeedCard :post="post"  />
-       </Col>
-       </Row>
-general.activefeedlayout = grid
-</main>
+    <Row id="card-rows" gutter="32" v-if="general.activefeedlayout = 'Stack'">
+      <Col :xs="24" :sm="12" :md="20"  v-for="post in $store.state.general.publishedPosts" :key="post.id">
+        <FeedCard :post="post"  />
+      </Col>
+    </Row>
+  </main>
 </template>
 
 <script >
