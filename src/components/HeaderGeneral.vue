@@ -24,6 +24,10 @@ export default {
 .header-row {
   width: 90%;
   margin: 0 auto;
+  background: transparent;
+  z-index: 2;
+  position: absolute; 
+  padding:2rem 0 0 5rem;
 }
 
 #l-text {

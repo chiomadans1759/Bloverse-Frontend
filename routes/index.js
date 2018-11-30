@@ -10,12 +10,13 @@ import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
 import MyPosts from '../src/views/journalists/MyPosts.vue';
 import CreatePost from '../src/views/journalists/CreatePost.vue';
 
-import JournalistLanding from '../src/views/journalists/Landing.vue';
+// import JournalistLanding from '../src/views/journalists/Landing.vue';
 import JournalistApply from '../src/views/journalists/AuthenticationApply.vue';
 import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
 import JournalistManualSetUp from '../src/views/journalists/AuthenticationSetUpManual.vue';
 import JournalistSignIn from '../src/views/journalists/AuthenticationSignIn.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
+import NewJournalistLanding from '../src/views/journalists/NewJournalistLanding.vue';
 
 import FrequentlyAskedQuestions from '../src/views/DocsFAQ.vue';
 import HouseRules from '../src/views/DocsHouseRules.vue';
@@ -47,11 +48,13 @@ const routes = [
       { path: 'posts/:slug', component: PostDisplay }
     ]
   },
+  
   {
     path: '/creators',
     component: BlankBase,
     children: [
-      { path: '', component: JournalistLanding },
+    //   { path: 'new', component: JournalistLanding },
+      { path: '/creators', component: NewJournalistLanding},
       { path: 'apply', component: JournalistApply },
       { path: 'login', component: JournalistSignIn },
       { path: 'register', component: JournalistSetUp,
