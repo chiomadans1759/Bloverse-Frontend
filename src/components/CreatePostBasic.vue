@@ -23,9 +23,10 @@
         <router-link :to="`/creators/${auth.loggedInUser.userName}/posts`" >Go to all Post <Icon type="md-arrow-round-forward" /></router-link>
       </div>
     </Modal>
+    <div id="mobile">
     <Form :model="post" ref="basicCreatePostForm" :rules="validatePostForm">
       <Row type="flex" justify="space-between">
-      <Col span="13" id="create-post">
+      <Col :sm="13"  id="create-post">
         <Row  type="flex"  justify="space-between">
           <Col :sm="11">
             <Select v-model="post.category" placeholder="Choose Category" :disabled="isTravel">
@@ -65,7 +66,7 @@
           <Input placeholder="Heading" v-model="post.title" />
         </FormItem>
 
-        <DisplayImage v-model="post.imageUrl" height="200px" width="50%" :can-edit="true" />
+        <DisplayImage v-model="post.imageUrl" height="200px" width="80%" :can-edit="true" />
 
         <div class="row">
           <div class="col-md-12">
@@ -77,14 +78,14 @@
 
         <br />
 
-        <Row type="flex" justify="space-between">
-          <Col>
+        <Row  id="every" type="flex" justify="space-between">
+          <Col :sm="10" >
             <Button id="btn-draft" @click="handleProcessPost()">
               <span v-if="post.id">Save Changes</span>
               <span v-else>Save as draft</span>
             </Button>
           </Col>
-          <Col>
+          <Col :sm="10">
             <Button id="btn-publish" :disabled="post.is_published || this.isPublishing" @click="handleProcessPost(true)">
               {{ isPublishing ? 'Publishing ...' : 'Publish' }}
             </Button>
@@ -92,7 +93,7 @@
         </Row>
       </Col>
 
-      <Col span="10">
+      <Col id=otherside :sm="10">
         <Card id="display-post">
           <h2 id="title">{{post.title}}</h2>
           <DisplayImage :value="post.imageUrl" height="200px" width="100%" :can-edit="false" />
@@ -101,7 +102,9 @@
         </Card>
       </Col>
     </Row>
+
     </Form>
+    </div>
   </div>
   
 </template>
@@ -401,6 +404,9 @@ export default {
 
 
 <style scoped>
+#otherside{
+ 
+}
 #create-post {
   display: flex;
   flex-direction: column;
@@ -435,6 +441,38 @@ export default {
   padding: 0 1.5rem;
   margin-top: 2rem;
 }
+ @media screen and (max-width: 360px) {
+#mobile{
+  border:1px solid red;
+  display:flex;
+  flex-direction: column;
+  
+}
+#every{
+  display:flex;
+  flex-direction: column;
+}
+ }
+  @media screen and (max-width: 600px) {
+#mobile{
+  border:1px solid red;
+  display:flex;
+  flex-direction: column
+}
+#every{
+  display:flex;
+  flex-direction: column;
+  
+}
+#btn-draft{
+  width:100%;
+  margin-bottom:5px
+}
+#btn-publish{
+  width:100%;
+  margin-bottom:10px
+}
+  }
 </style>
 
 

@@ -1,11 +1,12 @@
 <template>
 <main>
   <Row id="card-rows" gutter="32">
-       <Col :xs="24" :sm="8"  v-for="post in $store.state.general.publishedPosts" :key="post.id">
+
+       <Col :xs="24" :sm="12" :md="8"  v-for="post in $store.state.general.publishedPosts" :key="post.id">
          <FeedCard :post="post"  />
        </Col>
        </Row>
-
+general.activefeedlayout = grid
 </main>
 </template>
 
