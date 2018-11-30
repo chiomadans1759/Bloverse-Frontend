@@ -56,7 +56,7 @@ const routes = [
       { path: 'login', component: JournalistSignIn },
       { path: 'register', component: JournalistSetUp,
         beforeEnter(to, from, next) {
-          if (store.getters.isAuthenticated) {
+          if (store.getters.isAllowedToRegister) {
             next()
           } else {
             next('creators/verify')
@@ -65,7 +65,7 @@ const routes = [
       },
       { path: 'setup', component: JournalistManualSetUp,
         beforeEnter(to, from, next) {
-          if (store.getters.isAuthenticated) {
+          if (store.getters.isAllowedToRegister) {
             next()
           } else {
             next('creators/verify')
@@ -95,15 +95,7 @@ const routes = [
   { path: '/ranking/:person', component: RankingSystem },
   { path: '/admin', component: BlankBase,
     children: [
-      { path: '', redirect: 'dashboard',
-        beforeEnter(to, from, next) {
-          if (store.getters.isAnAdmin) {
-            next()
-          } else {
-            next('admin/login')
-          }
-        }
-      },
+      { path: '', redirect: 'dashboard' },
       { path: 'dashboard', component: AdminHome },
       { path: 'login', component: AdminLogin }
     ]
