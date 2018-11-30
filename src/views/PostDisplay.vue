@@ -9,8 +9,8 @@
             <div class="container">
               <small class="img-descrip">This is a description of the picture above</small>
               <h3 class="post-cat">{{category}}</h3>
-              <h1 class="border">{{general.currentPost.title}}</h1>
-              <ul class="summary-feed">
+              <h1 class="post-title">{{general.currentPost.title}}</h1>
+              <ul class="post-keypoints">
                 <li v-for="point in general.currentPost.keypoint" :key="point.id">{{point}}</li>
               </ul>
             </div>
