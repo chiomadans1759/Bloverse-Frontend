@@ -25,6 +25,7 @@
     "serve-static": "^1.13.2",
     "vue": "^2.5.17",
     "vue-analytics": "^5.16.0",
+    "vue-carousel": "^0.16.0",
     "vue-goodshare": "^1.1.0",
     "vue-google-authenticator": "^1.0.3",
     "vue-google-charts": "^0.3.2",

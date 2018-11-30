@@ -24,6 +24,7 @@ export default {
 .header-row {
   width: 90%;
   margin: 0 auto;
+  padding: 3px;
 }
 
 #l-text {
@@ -52,7 +53,7 @@ export default {
   color: #096DD9;
   margin-top: 1rem;
   font-size: 14px;
-  padding :5px 10px;
+  padding :7px 10px;
   text-transform: uppercase; 
   border-radius: 4px;
   text-align: center;

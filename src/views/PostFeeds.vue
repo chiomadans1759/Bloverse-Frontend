@@ -1,5 +1,8 @@
 <template>
   <main>
+    <section class="container" >
+      <TrendingCard />
+    </section>
     <section class="container">
      <display-feeds></display-feeds>
     </section>
@@ -8,10 +11,11 @@
 
 
 <script>
-import { mapState,} from 'vuex'
+import { mapState } from 'vuex'
 import { Row, Col, Card } from 'iview';
 import vSelect from 'vue-select';
 import DisplayFeeds from '@/components/DisplayFeeds.vue';
+import TrendingCard from '../components/TrendingCard.vue';
 
 export default {
   data: function() {
@@ -21,7 +25,7 @@ export default {
     }
   },
   name: 'FeedsSection',
-  components: { Row, Col, Card, vSelect, DisplayFeeds },
+  components: { Row, Col, Card, vSelect, DisplayFeeds, TrendingCard },
   computed: {
     ...mapState([
       'general'
@@ -72,7 +76,4 @@ main {
  
 }
 
-.container {
- 
-}
 </style>
