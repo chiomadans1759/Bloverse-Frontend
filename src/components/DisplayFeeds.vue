@@ -6,8 +6,8 @@
       </Col>
     </Row>
 
-    <Row id="card-rows" gutter="32" v-if="general.activeFeedLayout == 'stack'">
-      <Col :xs="24" :sm="12" :md="20"  v-for="post in general.publishedPosts" :key="post.id">
+    <Row type="flex" justify="center" v-if="general.activeFeedLayout == 'stack'">
+      <Col :xs="24" :sm="20" :md="14"  v-for="post in general.publishedPosts" :key="post.id">
         <FeedCard :post="post"  />
       </Col>
     </Row>

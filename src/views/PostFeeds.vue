@@ -42,7 +42,7 @@
           <div class="col-md-2">
             <ul class="list-inline" id="layout-select">
               <li class="list-inline-item">
-                <a href="#"
+                <a  href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
                   @click.prevent="toggleLayout('grid')">
                   <i class="fa fa-th-large"></i>
@@ -185,7 +185,7 @@ main {
   border-bottom: none;
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 767px) {
   .category-list #layout-select {
     display: none;
   }
