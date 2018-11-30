@@ -6,7 +6,7 @@
       </Col>
       <Col class="header-button">
        <router-link to="/creators/login" id="j-button">login</router-link>
-        <router-link to="/creators" id="c-button">create content</router-link>
+        <router-link to="/creators/apply" id="c-button">apply</router-link>
       </Col>
     </Row>
  </nav>
