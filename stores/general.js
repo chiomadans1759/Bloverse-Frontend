@@ -4,6 +4,8 @@ export default {
   state: {
     categories: null,
     countries: null,
+    activeCategory: 'All',
+    activeFeedLayout: 'grid',
     applicants: [],
     publishedPosts: [],
     currentPost: {},

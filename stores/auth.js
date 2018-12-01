@@ -22,20 +22,33 @@ export default {
     },
 
     async apply({ state, commit }) {
-      let phone = state.applicant.phoneCode + state.applicant.phoneNumber;
-      let linkedIn = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`
-      let twitter = `https://www.twitter.com/${state.applicant.twitterUsername}`
-      let articles;
-      if(state.applicant.articleURLs.length > 0){
-        articles = state.applicant.articleURLs.map((article, index) => {
-          return `${state.applicant.articleProtocols[index]}${article}`
-        })
-      }
-      
       let categoryId = state.applicant.category.id;
       let countryId = state.applicant.country.id;
-      commit('setApplicant', { phone, twitter, linkedIn, articles });
-      let response = await Api.post('applicants/', { ...state.applicant, countryId, categoryId })
+
+      const applicant = {
+        phone: state.applicant.phoneCode + state.applicant.phoneNumber,
+      }
+
+      if (state.applicant.linkedInUsername) {
+        applicant.linkedIn = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`
+      }
+
+      if (state.applicant.twitterUsername) {
+        applicant.twitter = `https://www.twitter.com/${state.applicant.twitterUsername}`;
+      }
+
+      if (state.applicant.articleURLs.length > 0) {
+        applicant.articles = state.applicant.articleURLs.map((article, index) => {
+          return `${state.applicant.articleProtocols[index]}${article}`
+        });
+      }
+
+      commit('setApplicant', applicant);
+      let response = await Api.post('applicants/', {
+        ...state.applicant,
+        countryId,
+        categoryId
+      })
       switch (response.statusCode) {
       case 201:
         return true;
@@ -95,7 +108,12 @@ export default {
       state.applicant = { ...state.applicant, ...props };
     },
     clearApplicant(state) {
-      state.applicant = null;
+      state.applicant = { 
+        articleURLs: [],  
+        phoneNumber: '',
+        linkedInUsername: '',
+        twitterUsername: ''
+      };
     },
     setNewUser(state, props) {
       state.newUser = { ...state.newUser, ...props };
@@ -139,3 +157,4 @@ export default {
     }
   }
 }
+
