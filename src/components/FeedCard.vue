@@ -10,18 +10,42 @@
           <h2 id="feed-category"><p>{{category}}</p></h2> 
           <div id="body-start">
         <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>
-        <div id="body-mid">
-      <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
-        <span id="author-area">{{post.author.first_name}} {{post.author.last_name}} <i class="fas fa-circle"></i> <p>{{post.published | customizedTime}}</p></span>
-        </div>
+       
         </div>
         </div>
         <div id="card-footer">
-          {{post.views}} Views
+           <div id="body-mid">
+        <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
+        <span id ="author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
+        </div>
+        <div id="views">
+           <i class="far fa-eye"></i> {{post.views}}
+           </div>
         </div>
         
       </div>
       
+    </div>
+
+    <div id="photo-contest">
+      <div id="contest-container">
+        <img id="contest-image" :src="post.image_url" >
+        <div id="contest-info">
+          <div id="info-top">
+            <p></p>
+          </div>
+           <div id="card-footer">
+           <div id="body-mid">
+        <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
+        <span id ="contest-author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
+        </div>
+        <div id="views">
+           <i class="far fa-eye"></i> {{post.views}}
+           </div>
+        </div>
+
+        </div>
+      </div>
     </div>
   </router-link>
 </template>
@@ -66,7 +90,8 @@ export default {
    background: white;
    border:1px solid rgba(0, 0, 0, 0.15);
    border-radius:4px;
-   font-family: 'Montserrat'
+   font-family: 'Montserrat';
+   
  }
  #feed-category p {
    color:rgba(53, 53, 53, 1) !important;
@@ -110,16 +135,13 @@ export default {
   opacity:0.8;
   font-size: 14px
 }
-#author-area i{
-  font-size: 4px;
-  color: rgba(0, 0, 0, 0.15);
-bottom:2px;
-position: relative;
-padding:0 6px;
+#views{
+color:black;
+opacity: 0.85;
 
 }
 #author-area p{
-  display:inline-block;
+ 
     color: black;
     opacity: 0.45;
     font-size: 10px;
@@ -127,11 +149,11 @@ padding:0 6px;
 }
 #card-footer{
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   font-size: 14px;
   margin-top: 15px;
   color:black;
-  opacity: 0.65;
+  align-items: center
 }
 #card-body{
  
@@ -139,6 +161,34 @@ padding:0 6px;
   justify-content: space-between;
   flex-direction: column
 
+}
+
+#contest-container #contest-image{
+width:100%;
+height:414px;
+object-fit: cover;
+position: relative;
+opacity:0.8;
+
+}
+#contest-container {
+  background-image: linear-gradient(#2c5364,#203A43,#0F2027 );
+  color:rgba(255, 255, 255, 0.856);
+   font-family: 'Montserrat';
+
+}
+#contest-author-area{
+   color:white;
+  opacity:0.8;
+  font-size: 14px
+}
+#contest-author-area p{
+  color:white;
+  
+    font-size: 10px;
+    text-transform: uppercase}
+#contest-image{
+    border-radius: 2px;
 }
  </style>
 
