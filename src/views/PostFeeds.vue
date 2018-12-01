@@ -38,7 +38,9 @@
               <div class="row">
                 <div class="col-md-6" v-for="cat in other_cats" :key="cat.id">
                   <li>
-                    <a href="#" @click.prevent="filterCategory(cat.id, cat.name)">{{cat.name}}</a>
+                    <a href="#" 
+                    @click.prevent="filterCategory(cat.id, cat.name)"
+                    :class="{ 'active': cat.name == $store.state.general.activeCategory }">{{cat.name}}</a>
                   </li>
                 </div>
               </div>
@@ -221,7 +223,9 @@ export default {
   line-height: 8px;
 }
 
+.dropdown-card a.active,
 .dropdown-card a:hover {
   color: #2f80ed;
+  text-decoration: none !important;
 }
 </style>
