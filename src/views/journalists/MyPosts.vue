@@ -1,6 +1,5 @@
 <template>
-  <Loading v-if="general.loading" message="Loading your posts" />
-  <div v-else>
+  <div>
    <Row type="flex" justify="end">
     <Col>
       <Icon :style="{ marginRight: '1rem'}" type="android-apps"></Icon>
@@ -27,10 +26,9 @@ import { Row, Col, Icon } from 'iview';
 import { mapState, mapActions } from 'vuex'
 
 import PostCard from '../../components/PostCard.vue';
-import Loading from '../../components/Loading';
 
 export default {
-  components: { Row, Col, PostCard, Icon, Loading },
+  components: { Row, Col, PostCard, Icon },
   computed: {
     ...mapState([
       'journalist',
@@ -39,7 +37,7 @@ export default {
     ]),
 
     showPosts: function () {
-      return this.journalist.posts.length > 0
+      return this.journalist.posts && this.journalist.posts.length > 0
     }
   },
   async created () {

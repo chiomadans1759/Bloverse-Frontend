@@ -1,15 +1,16 @@
 <template>
     <Row>
         <Col>
-          <Card id="card-Recent">
-            <p slot="title" id="title-i">
+          <Card id="recent">
+            <p  id="title-recent">
               Recently read
-            </p>
-            <span slot="extra" >
-               <i class="far fa-newspaper" id="news-icon"></i>
+              <span   id="news-icon" >
+               <i class="far fa-newspaper"></i>
             </span>
+            </p>
+            
             <ul id="read-list">
-                <li id ="read-items" v-for="item in randomMovieList" :key="item.id">            
+                <li id ="reads-items" v-for="item in randomMovieList" :key="item.id">            
                   <img id="item-image"  :src="item.imgURL" />
                     <p id="read-text">{{ item.name }}</p>
                 </li>    
@@ -31,27 +32,27 @@ export default {
         {
           id: 1,
           name: 'We are confident of winning Osun gov election - PDP',
-          imgURL: require("./.././assets/punch.png")
+          imgURL: require("./.././assets/punch2.png")
         },
         {
           id: 2,
           name: 'We are confident of winning Osun gov election - PDP',
-          imgURL: require("./.././assets/punch.png")
+          imgURL: require("./.././assets/punch2.png")
         },
         {
           id: 3,
           name: 'We are confident of winning Osun gov election - PDP',
-          imgURL: require("./.././assets/punch.png")
+          imgURL: require("./.././assets/punch2.png")
         },
         {
           id: 4,
           name: 'We are confident of winning Osun gov election - PDP',
-          imgURL: require("./.././assets/punch.png")
+          imgURL: require("./.././assets/punch2.png")
         },
         {
           id: 5,
           name: 'We are confident of winning Osun gov election - PDP',
-          imgURL: require("./.././assets/punch.png")
+          imgURL: require("./.././assets/punch2.png")
         }
       ],
     }
@@ -59,51 +60,78 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-    #card-Recent {
-        height: 450px;
-        width: 310px;
-        border: 1px solid #F2F2F2;
+    #recent {
+      border: 1px solid#E0E0E0;  
+      margin-top:2rem;
+      border-radius:5px;
+      height:fit-content;
     }
-    #news-icon {
-        font-size: 35px;
-        transform: rotate(45deg);
-        color: #2F80ED;
-        margin-top: 20px;
+    #news-icon { 
+      color: rgb(104, 162, 236);  
+      right:0; 
+      padding-right:2rem;
+      display:inline;
+      padding-top:0;
+      position:absolute;        
+      font-size: 2rem;       
     }
-    #title-i {
-        width: 310px;
-        height: 50px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 18px;
-        line-height: 21px;
-        color: #4F4F4F;
-        margin-top: 30px;
-        
+    #title-recent{  
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem; 
+      color: #4F4F4F; 
+      font-weight:800;
+      background-color:#E0E0E0;
+      margin:0;
+      padding:2rem;
+      height:4rem;
+      display:flex;
+      align-items: center;   
     }
     #read-list {
       list-style-type: none;
-   
+      padding:1rem 0;
     }
-    #read-text{
-      
-      font-size:16px;
-       width: 200px;
-       font-weight: 500;
-       
+    #read-text{      
+      font-size:.8rem; 
+      font-weight: 700;
+      color:rgb(99, 98, 98);
+      padding-left:1rem;
+      padding-right:.4rem;
     }
-    #read-items {
+    #reads-items {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      margin-bottom: 15px;
+      padding: .5rem 0;
       align-items: center
     }
     #item-image{
-      width:45px;
-      height:45px
+      width:35px;
+      height:35px;
+      margin-left:1rem;
     }
+
+@media only screen and (max-width: 840px) {
+    #title-recent{     
+      padding:2rem .5rem;      
+    }
+    #news-icon {    
+      padding-right:1rem;         
+      font-size: 1.8rem;       
+    }
+    #item-image{
+      width:30px;
+      height:30px;
+      margin-left:.5rem;
+    }
+    #read-text{      
+      font-size:.7rem;  
+      padding-left:1rem;
+      padding-right:.4rem;
+    }
+  }
 </style>
 

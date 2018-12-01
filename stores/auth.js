@@ -6,7 +6,7 @@ export default {
     newUser: { imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg' },
     applicant: { articleURLs: [] },
     loggedInUser: null,
-    shouldRegister: false
+    shouldRegister: false,
   },
   actions: {
     async login({ commit, state }, params) {
@@ -20,6 +20,7 @@ export default {
         return { errors: response.data };
       }
     },
+
     async apply({ state, commit }) {
       let phone = state.applicant.phoneCode + state.applicant.phoneNumber;
       let linkedIn = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`
@@ -34,11 +35,7 @@ export default {
       let categoryId = state.applicant.category.id;
       let countryId = state.applicant.country.id;
       commit('setApplicant', { phone, twitter, linkedIn, articles });
-      let response = await Api.post('applicants/', {
-        ...state.applicant,
-        countryId,
-        categoryId
-      })
+      let response = await Api.post('applicants/', { ...state.applicant, countryId, categoryId })
       switch (response.statusCode) {
       case 201:
         return true;
@@ -91,7 +88,7 @@ export default {
       commit('setJwt', null);
       commit('setLoggedInUser', null);
       return true;
-    },
+    }
   },
   mutations: {
     setApplicant(state, props) {
@@ -105,17 +102,9 @@ export default {
     },
     setJwt(state, jwt) {
       state.jwt = jwt
-      if (jwt)
-        localStorage.setItem('jwt', jwt);
-      else
-        localStorage.removeItem('jwt');
     },
     setLoggedInUser(state, user) {
       state.loggedInUser = user;
-      if (user)
-        localStorage.setItem('loggedInUser', JSON.stringify(user));
-      else
-        localStorage.removeItem('loggedInUser');
     },
     setUsername(state, username) {
       state.newUser.username = username;
@@ -145,7 +134,7 @@ export default {
       }
       return false;
     },
-    allowedToRegister(state) {
+    isAllowedToRegister(state) {
       return state.shouldRegister;
     }
   }

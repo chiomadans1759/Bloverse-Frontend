@@ -1,17 +1,18 @@
 <template>
     <Row>
         <Col>
-          <Card id="card-Recent">
-            <p slot="title" id="title-i">
+          <Card id="recent">
+            <p  id="title-recent">
               Recently Commented
+               <span id="comment-icon">
+                <i class="far fa-comments" ></i>
+              </span>
             </p>
-            <span slot="extra" >
-                <i class="far fa-comments" id="comment-icon"></i>
-            </span>
+           
             <ul id="read-list">
                 <li id ="comment-items" v-for="item in randomMovieList" :key="item.id">            
                     <p id="comment-text">{{ item.name }}</p>
-                    <p id="read-comments">{{item.comment}}</p>
+                    <p id="read-comments">{{ item.comment }}</p>
                 </li>    
             </ul>
           </Card>
@@ -60,48 +61,77 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-    #card-Recent {
-        height: 450px;
-        width: 310px;
-        border: 1px solid #F2F2F2;
+    #recent {
+      border: 1px solid#E0E0E0;  
+      margin-top:2rem;
+      border-radius:5px;
+      height:fit-content;
     }
     #comment-icon {
-        font-size: 35px;
-        color: #2F80ED;
-        margin-top: 20px;
+      color: rgb(104, 162, 236);  
+      right:0; 
+      padding-right:2rem;
+      display:inline;
+      padding-top:0;
+      position:absolute;        
+      font-size: 2rem;
     }
-    #title-i {
-        width: 310px;
-        height: 50px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 18px;
-        line-height: 21px;
-        color: #4F4F4F;
-        margin-top: 30px;
-        
+     #title-recent{  
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem; 
+      color: #4F4F4F; 
+      font-weight:800;
+      background-color:#E0E0E0;
+      margin:0;
+      padding:2rem;
+      height:4rem;
+      display:flex;
+      align-items: center;         
     }
     #read-list {
       list-style-type: none;
-   
+      padding:1rem 0;
     }
     #comment-text{ 
-      font-size:14px;
-       
+      font-size:.8rem; 
+      font-weight: 700;
+      color:#4F4F4F;
+      padding-left:1rem;
+      padding-right:.4rem;      
+      list-style-type: none;  
+    }
+    #comment-items{   
+      padding:.4rem 0;    
     }
     #read-comments {
-      display: flex;
+      display: flex;      
+      color:rgb(190, 182, 182);
       flex-direction: row;
       justify-content: space-between;
-      margin-bottom: 15px;
-      align-items: center;
-      color: rgb(199, 196, 196);
+      padding-left:1.3rem;
+      align-items: center
     }
-    #item-image{
-      width:45px;
-      height:45px
+@media only screen and (max-width: 840px) {
+    #title-recent{   
+      font-size: .9rem;   
+      padding:2rem .5rem;    
     }
+    #comment-icon {    
+      padding-right:1rem;         
+      font-size: 1.8rem;       
+    }
+    #comment-text{ 
+      font-size:.7rem; 
+      padding:0;  
+      padding-left:.4rem;   
+    }
+    #read-comments { 
+      padding-left:1rem; 
+      font-size:.6rem;
+    }
+  }
 </style>
 

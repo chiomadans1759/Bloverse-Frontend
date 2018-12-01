@@ -1,6 +1,6 @@
 <template>
   <router-link :to="route">
-    <Card id="post-card" @click.native="processClick">
+    <Card id="post-card">
       <Row type="flex" justify="space-between">
         <Col span="8">
           <img :src="imageUrl" />
@@ -62,6 +62,9 @@ export default {
       if (!value) return ''
       return value.substring(0, 60)
     }
+  },
+  methods: {
+    
   }
 }
 

@@ -5,21 +5,12 @@ export default {
   state: {
     posts: null,
     post: {
-      keyPoints: [{
-        index: 1,
-        value: '',
-        status: 1
-      }]
+      keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }]
     },
     metrics: {},
   },
   actions: {
-    async processPost({
-      commit,
-      rootState,
-      state,
-      dispatch
-    }, params) {
+    async processPost({ commit, rootState, state, dispatch }, params) {
       if (params.shouldUploadImage) {
         let newUrl = await dispatch('doUpload');
         commit('setPost', {
@@ -89,51 +80,49 @@ export default {
       }
 
       switch (response.statusCode) {
-        case 200:
-        case 201:
-          {
-            // eslint-disable-next-line
+      case 200:
+      case 201:
+      {
+        // eslint-disable-next-line
             let {
-              id,
-              title,
-              body,
-              keypoint: keyPoints,
-              image_url: imageUrl,
-              category,
-              country,
-              is_published: isPublished = false,
-              slug,
-              location,
-              duration,
-              device_type
-            } = response.data.post;
-            let updatedPost = {
-              id,
-              keyPoints,
-              imageUrl,
-              title,
-              body,
-              category,
-              country,
-              isPublished,
-              slug,
-              location,
-              duration,
-              device_type
-            };
-            commit('setPost', updatedPost);
-            commit('clearPost')
-            return true;
-          }
-        default:
-          return {
-            errors: response
-          };
+          id,
+          title,
+          body,
+          keypoint: keyPoints,
+          image_url: imageUrl,
+          category,
+          country,
+          is_published: isPublished = false,
+          slug,
+          location,
+          duration,
+          device_type
+        } = response.data.post;
+        let updatedPost = {
+          id,
+          keyPoints,
+          imageUrl,
+          title,
+          body,
+          category,
+          country,
+          isPublished,
+          slug,
+          location,
+          duration,
+          device_type
+        };
+        commit('setPost', updatedPost);
+        commit('clearPost')
+        return true;
+      }
+      default:
+        return {
+          errors: response
+        };
       }
     },
-    async doUpload({
-      state
-    }) {
+    async doUpload({ state, commit }) {
       const cloudinary = {
         uploadPreset: 'pspvcsig',
         apiKey: '967987814344437',
@@ -144,45 +133,26 @@ export default {
       formData.append('file', state.post.imageUrl);
       formData.append('upload_preset', cloudinary.uploadPreset);
       formData.append('folder', 'bloverse');
+      commit('setLoading', true, { root: true });
       const resp = await axios.post(clUrl, formData);
+      commit('setLoading', false, { root: true });
       return resp.data.secure_url;
     },
-    async getMyPosts({
-      commit,
-      rootState
-    }) {
+    async getMyPosts({ commit, rootState }) {
       let userId = rootState.auth.loggedInUser.id;
-      commit('setLoading', true, {
-        root: true
-      });
       let response = await Api.get('journalists/' + userId + '/posts/', true);
       commit('setPosts', response.data.posts);
-      commit('setLoading', false, {
-        root: true
-      });
-
     },
-    async getMyMetrics({
-      commit,
-      rootState
-    }) {
+    async getMyMetrics({ commit, rootState }) {
       let userId = rootState.auth.loggedInUser.id;
-      commit('setLoading', true, {
-        root: true
-      });
-
       let response = await Api.get(`metrics/journalists/${userId}/`);
       commit('setMyMetrics', response.data);
-      // debugger;
-      console.log(response.data)
-      commit('setLoading', false, {
-        root: true
-      });
     }
   },
   mutations: {
     setPost(state, props) {
-      state.post = { ...state.post,
+      state.post = {
+        ...state.post,
         ...props
       };
     },
@@ -191,11 +161,7 @@ export default {
     },
     clearPost(state) {
       state.post = {
-        keyPoints: [{
-          index: 1,
-          value: '',
-          status: 1
-        }],
+        keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }],
         body: '',
         title: '',
         imageUrl: '',
@@ -209,16 +175,13 @@ export default {
   },
   getters: {
     isCreatingBasicPost(state) {
-      return (state.post.title || state.post.body) && state.post.keypoints && state.post.keyPoints.length > 0
+      return (state.post.title || state.post.body) && state.post.keyPoints && state.post.keyPoints.length > 0
     },
     isCreatingTravelPost(state) {
       return (state.post.title || state.post.body) && state.post.deviceType && state.post.location
     },
     views(state) {
       return state.metrics && state.metrics.views;
-    },
-    views(state) {
-      return state.metrics.views;
     },
     datas(state) {
       return {
