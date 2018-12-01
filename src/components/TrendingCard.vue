@@ -83,7 +83,7 @@ export default {
 
 <style>
 .VueCarousel-wrapper{
-    width: 90vw;
+    width: 90vw !important;
 }
 </style>
 
