@@ -43,37 +43,7 @@
                 <h2>{{general.metrics.views.total}}</h2>
                 <p>Unique visitors</p>
             </Col>
-          </Row>
-                     <!-- <Row class="section-3" type="flex" justify="space-around">
-                        <div class="section-3-header"> <span class="underline">Top Journalists</span> </div> 
-                            <i-Col span="6" class="section-3-content">
-                                <img src="images/person1.jpeg" width=100px height=100px>
-                                <h2> White Guy </h2>
-                                <p> description</p>
-                            </i-Col>
-                            <i-Col span="6" class="section-3-content">
-                                    <img src="images/person2.jpeg" width=100px height=100px>
-                                    <h2> White Lady </h2>
-                                    <p> description</p>
-                            </i-Col>
-                            <i-Col span="6" class="section-3-content">
-                                    <img src="images/person4.jpeg" width=100px height=100px>
-                                    <h2> Black Guy </h2>
-                                    <p> description</p>
-                            </i-Col>
-                        </Row>   -->
-          <!-- <Row class="section-4" type="flex" justify="space-around" >
-            <Col class="map-section" span="20">
-              <span class="underline"> Active Regions</span>
-                  <GChart
-                    type="GeoChart"
-                    :data="chartData"
-                    ref="chartData"
-                    :resizeDebounce="500"
-                    id="maps"
-                  />
-            </Col>
-          </Row>  -->
+          </Row>   
         </Content>
       </Layout>
     </div>

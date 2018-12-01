@@ -1,5 +1,8 @@
 <template>
   <main class="post-feeds">
+    <section class="container" >
+      <TrendingCard />
+    </section>
     <section class="container">
       <div class="category-list">
         <div class="row">
@@ -20,8 +23,9 @@
                 <a
                   href="#"
                   :class="{ 'active': category.name == $store.state.general.activeCategory }"
-                  @click.prevent="filterCategory(category.id, category.name)"
-                >{{category.name}}</a>
+                  @click.prevent="filterCategory(category.id, category.name)" style="font-family: 'Montserrat', sans-serif;">
+                  {{category.name}}
+                </a>
               </li>
               <li class="list-inline-item">
                 <a href="#" @click.prevent="showMoreCats">
@@ -43,21 +47,17 @@
 
           <div class="col-md-2">
             <ul class="list-inline" id="layout-select">
-              <li class="list-inline-item">
-                <a
-                  href="#"
+              <li class="lTrendingCardist-inline-item">
+                <a href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
-                  @click.prevent="toggleLayout('grid')"
-                >
+                  @click.prevent="toggleLayout('grid')">
                   <i class="fa fa-th-large"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a
-                  href="#"
-                  :class="{'active': general.activeFeedLayout == 'stack'}"
-                  @click.prevent="toggleLayout('stack')"
-                >
+                <a href="#"
+                  :class="{'active': general.activeFeedLayout == 'stack'}" 
+                  @click.prevent="toggleLayout('stack')">
                   <i class="fa fa-laptop"></i>
                 </a>
               </li>
@@ -71,16 +71,15 @@
 </template>
 
 <script>
-// import { mapState, mapActions } from 'vuex'
-// import { Row, Col, Card } from 'iview';
-import { mapState } from "vuex";
-import { Row, Col, Card } from "iview";
-import vSelect from "vue-select";
-import DisplayFeeds from "@/components/DisplayFeeds.vue";
+import { mapState,} from 'vuex'
+import { Row, Col, Card } from 'iview';
+import vSelect from 'vue-select';
+import DisplayFeeds from '@/components/DisplayFeeds.vue';
+import TrendingCard from '../components/TrendingCard.vue';
 
 export default {
-  name: "FeedsSection",
-  components: { Row, Col, Card, vSelect, DisplayFeeds },
+  name: 'FeedsSection',
+  components: { Row, Col, Card, vSelect, DisplayFeeds, TrendingCard },
   data() {
     return {
       show_more: false,
@@ -124,15 +123,6 @@ export default {
       return "all categories";
     },
 
-    countryName() {
-      if (this.country) {
-        let country = this.general.countries.find(
-          cou => cou.id == this.country.id
-        );
-        return country.name;
-      }
-    },
-
     filteredCatList() {
       if (this.$store.state.general.categories) {
         return this.$store.state.general.categories.slice(0, 4);
@@ -146,10 +136,11 @@ export default {
 .post-feeds {
   margin: 0 auto;
   width: 100%;
+  overflow-x: hidden !important;
   background-color: #f5f5f5;
   min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
 }
 
 .category-list {
@@ -187,6 +178,10 @@ export default {
 
 .category-list #layout-select {
   float: right;
+}
+
+#layout-select a {
+  color: #aaaaaa;
 }
 
 #layout-select a:hover,

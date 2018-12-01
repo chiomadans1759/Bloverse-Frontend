@@ -39,8 +39,9 @@ export default {
 }
 
 .author-card .card-header-title {
-  font-size: 18px;
+  font-size: 17px;
   text-transform: capitalize;
+  color: #666666;
 }
 
 .author-card .card-body {

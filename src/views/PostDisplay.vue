@@ -12,6 +12,10 @@
           <br>
 
           <post-social-share></post-social-share>
+
+          <br />
+
+          <related-posts></related-posts>
         </div>
       </div>
     </div>
@@ -36,6 +40,7 @@ import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share";
 import PostDetails from "@/components/PostDetails.vue";
 import AuthorCard from "@/components/AuthorCard.vue";
 import PostSocialShare from "@/components/PostSocialShare";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export default {
   components: {
@@ -54,7 +59,8 @@ export default {
     Linkedin,
     PostDetails,
     AuthorCard,
-    PostSocialShare
+    PostSocialShare,
+    RelatedPosts
   },
   data: function() {
     return {
@@ -63,6 +69,7 @@ export default {
       //url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
     };
   },
+
   computed: {
     url() {
       return `${this.$BASE_URL}posts/${this.general.currentPost.slug}`;
@@ -88,6 +95,7 @@ export default {
   methods: {
     ...mapActions(["getPostBySlug"])
   },
+
   async created() {
     // fetch the data when the view is created and the data is
     // already being observed
