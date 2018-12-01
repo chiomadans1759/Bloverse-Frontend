@@ -49,10 +49,7 @@ const routes = [{
         path: 'posts',
         redirect: '/'
       },
-      {
-        path: 'postss/:slug',
-        component: PostDisplay
-      }
+      // { path: 'posts/:slug', component: PostDisplay }
     ]
   },
   {
