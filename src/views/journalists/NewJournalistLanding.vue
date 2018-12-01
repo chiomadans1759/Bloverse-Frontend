@@ -32,23 +32,23 @@
                         <Col offset="2" :md="11" :sm="14" :xs="16" class="right-contain2">
                             <h2>About Us</h2>
                             <p>Bloverse was created with you in mind. Have you ever thought of creating a news blog but then balked at the thought of the effort.</p>
-                            <router-link tag="know-more" to="/web">
-                                <a>Know More</a>
+                            <router-link  to="#" style="font-family: 'Montserrat', sans-serif;">
+                               Know More
                             </router-link>
                         </Col>             
                     </Col>  
                 </Row>
                 <Row class="container3"> 
                         <Col :md="8" :sm="8" :xs="8">
-                            <h1>156K</h1>
+                            <h1>{{general.metrics.publishedPost}}</h1>
                             <p>ARTICLES POSTED</p>
                         </Col> 
                         <Col :md="8" :sm="8" :xs="8" class="center">
-                            <h1>7K</h1>
+                            <h1>{{general.metrics.journalists}}</h1>
                             <p>CONTENT PROVIDERS</p>
                         </Col> 
                         <Col :md="8" :sm="8" :xs="8">
-                            <h1>100K</h1>
+                            <h1>{{general.metrics.views.total}}</h1>
                             <p>VISITORS</p>
                         </Col>   
                 </Row>
@@ -61,19 +61,36 @@
 
 <script>
 import { Button, Row, Col, Icon, Input, Form, Content, Layout, Header} from "iview";
+import { mapState, mapActions } from 'vuex';
 import HeaderGeneral from '../../components/HeaderGeneral.vue'; 
 import FeedsFooter from '../../components/FeedsFooter.vue'; 
 
 export default {
   components: {
     Button, Row, Col, Icon, Input, Form, Content, Layout, Header, HeaderGeneral, FeedsFooter
-  }
+  },
+  computed: {
+    ...mapState([
+      'general'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'getGeneralMetrics'
+    ])
+  },
+  mounted:
+    async function(){
+      await this.getGeneralMetrics();
+    }
 };
 </script>
 
 <style scoped> 
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
     .general{
-  z-index: 10;
+        z-index: 10;
     }
     .container1{
         width:100%; 
@@ -95,9 +112,11 @@ export default {
         line-height: 1.2;
         font-weight: 200;
         opacity: .7;
+        font-family: 'Montserrat', sans-serif;
     }
     .left span{
         font-size:1.5rem; 
+        font-family: 'Montserrat', sans-serif;
     }
    .left button{ 
         border-radius:2px; 
@@ -106,6 +125,7 @@ export default {
         padding: .8rem 2rem;
         background-color: #fff;  
         margin-top:3rem; 
+        font-family: 'Montserrat', sans-serif;
         }   
     .right{
         background-color:#000;
@@ -138,7 +158,8 @@ export default {
     }
      .right-contain2 p{
         font-size:15px; 
-        margin:2rem 0;     
+        margin:2rem 0;    
+        font-family: 'Montserrat', sans-serif; 
     } 
     .video{
         width:100%;
@@ -159,8 +180,10 @@ export default {
         font-weight:600;
         opacity: 6;
         text-align: center;
+        font-family: 'Montserrat', sans-serif;
     }
     .container3 p{
+        font-family: 'Montserrat', sans-serif;
         font-size:1.3rem;
         line-height:1;
         color:black;

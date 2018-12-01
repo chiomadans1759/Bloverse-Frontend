@@ -1,5 +1,8 @@
 <template>
   <main>
+    <section class="container" >
+      <TrendingCard />
+    </section>
     <section class="container">
       <div class="category-list">
         <div class="row">
@@ -17,7 +20,7 @@
               <li class="list-inline-item" v-for="category in filteredCatList" :key="category.id">
                 <a href="#" 
                   :class="{ 'active': category.name == $store.state.general.activeCategory }"
-                  @click.prevent="filterCategory(category.id, category.name)">
+                  @click.prevent="filterCategory(category.id, category.name)" style="font-family: 'Montserrat', sans-serif;">
                   {{category.name}}
                 </a>
               </li>
@@ -41,7 +44,7 @@
 
           <div class="col-md-2">
             <ul class="list-inline" id="layout-select">
-              <li class="list-inline-item">
+              <li class="lTrendingCardist-inline-item">
                 <a href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
                   @click.prevent="toggleLayout('grid')">
@@ -66,16 +69,15 @@
 
 
 <script>
-// import { mapState, mapActions } from 'vuex'
-// import { Row, Col, Card } from 'iview';
 import { mapState,} from 'vuex'
 import { Row, Col, Card } from 'iview';
 import vSelect from 'vue-select';
 import DisplayFeeds from '@/components/DisplayFeeds.vue';
+import TrendingCard from '../components/TrendingCard.vue';
 
 export default {
   name: 'FeedsSection',
-  components: { Row, Col, Card, vSelect, DisplayFeeds },
+  components: { Row, Col, Card, vSelect, DisplayFeeds, TrendingCard },
   data() {
     return {
       show_more: false,
@@ -115,13 +117,6 @@ export default {
 
       return 'all categories'
         
-    },
-    
-    countryName(){
-      if(this.country){
-        let country = this.general.countries.find(cou => cou.id == this.country.id)
-        return country.name;
-      }
     },
 
     filteredCatList() {

@@ -28,7 +28,7 @@ export default {
 .feeds-row {
  width: 90%;
  margin: 0 auto;
- padding:3px;
+ padding:3*98px;
 }
 .router-link {
   display: flex;
