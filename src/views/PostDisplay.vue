@@ -210,4 +210,10 @@ export default {
   padding-bottom: 10rem;
   font-family: "Montserrat", sans-serif;
 }
+
+@media only screen and (max-width: 980px) {
+  .col-md-4 {
+    padding-top: 2rem;
+  }
+}
 </style>
