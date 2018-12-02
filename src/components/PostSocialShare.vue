@@ -32,7 +32,7 @@ export default {
         FB.ui({ // eslint-disable-line no-undef
           method: 'share',
           display: 'popup',
-          href: 'https://developers.facebook.com/docs/',
+          href: 'http://localhost:8080/posts/title-of-post',
         }, function(response){});
         break;
       default:
