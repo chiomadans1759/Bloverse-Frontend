@@ -87,7 +87,7 @@ export default {
         }
       }
       return null;
-    },
+    }
   },
   methods: {
     submitUser(){
@@ -98,7 +98,6 @@ export default {
           this.$Message.error('This is an error in the form');
         }
       })
-        
     }
   }
 }
