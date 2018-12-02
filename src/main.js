@@ -27,6 +27,9 @@ import App from './App.vue'
 
 import 'iview/dist/styles/iview.css';
 
+import '@fortawesome/fontawesome-pro/css/all.css'
+import '@fortawesome/fontawesome-pro/js/all.js'
+
 Vue.use(GoogleAuth, {
   client_id: '966117903311-1fk401e4fiks3u34nsputljh7smgckor.apps.googleusercontent.com'
 })

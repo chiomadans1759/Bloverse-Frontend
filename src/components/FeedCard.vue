@@ -29,7 +29,7 @@
               </span>
           </div>
           <span style="padding-top: 1rem;">
-          <i class="far fa-eye" style="padding-right: 1rem"></i>{{post.views}}
+          <i class="fal fa-eye"></i>&nbsp;&nbsp;{{post.views}}
           </span>
           </div>
       </div>
