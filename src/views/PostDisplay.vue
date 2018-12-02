@@ -7,6 +7,7 @@
         </div>
 
         <div class="col-md-4">
+          <!-- <loading /> -->
           <author-card :author="general.currentPost.author"></author-card>
 
           <br>
@@ -37,6 +38,7 @@ import {
 } from "iview";
 import { mapGetters, mapState, mapActions } from "vuex";
 import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share";
+import Loading from "@/components/Loading";
 import PostDetails from "@/components/PostDetails.vue";
 import AuthorCard from "@/components/AuthorCard.vue";
 import PostSocialShare from "@/components/PostSocialShare";
@@ -57,6 +59,7 @@ export default {
     Facebook,
     Twitter,
     Linkedin,
+    Loading,
     PostDetails,
     AuthorCard,
     PostSocialShare,
