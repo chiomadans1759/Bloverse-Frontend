@@ -8,17 +8,17 @@
       <div class="right">
         <ul class="list-inline">
           <li>
-            <a href>
+            <a href="#">
               <i class="fa fa-facebook-f"></i>
             </a>
           </li>
           <li>
-            <a href>
+            <a href="#">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a href>
+            <a href="#">
               <i class="fa fa-linkedin-in"></i>
             </a>
           </li>
@@ -30,10 +30,7 @@
 
 <script>
 export default {
-  name: "post-social-share",
-  props: {
-    author: Object
-  }
+  name: "post-social-share"
 };
 </script>
 
@@ -57,6 +54,10 @@ export default {
 .right {
   float: right;
   width: 60%;
+}
+
+.right ul li a {
+  font-size: 13px;
 }
 </style>
 
