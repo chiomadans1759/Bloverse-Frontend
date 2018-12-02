@@ -2,7 +2,11 @@ import Vue from 'vue'
 import axios from 'axios';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { locale, Message, LoadingBar } from 'iview';
+import {
+  locale,
+  Message,
+  LoadingBar
+} from 'iview';
 import GoogleAuth from 'vue-google-authenticator'
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
@@ -23,12 +27,15 @@ import App from './App.vue'
 
 import 'iview/dist/styles/iview.css';
 
+import '@fortawesome/fontawesome-pro/css/all.css'
+import '@fortawesome/fontawesome-pro/js/all.js'
+
 Vue.use(GoogleAuth, {
   client_id: '966117903311-1fk401e4fiks3u34nsputljh7smgckor.apps.googleusercontent.com'
 })
 Vue.googleAuth().load()
 Vue.googleAuth().directAccess()
-
+Vue.use(VueHead)
 
 // configure language
 locale(lang);

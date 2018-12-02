@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 
 #feeds-header {
@@ -78,7 +78,7 @@ export default {
   color: #fff;
   margin-top: 1rem;
   font-size: 14px;
-  padding :5px 10px;
+  padding :7px 10px;
   text-transform: uppercase; 
   border-radius: 4px;
   text-align: center;

@@ -11,11 +11,17 @@
       <div class="steps">
           <div class=container> 
             <div class="step-count"> 
-              <div class="content " id="myDiv1" :class="{ active: currentPage === 1 }">
+              <div class="content" 
+                    id="myDiv1" 
+                    :class="{ active: currentPage === 1 }"
+                    @click="updateCurrentPage(1)">
                 <p> 1 </p>
               </div>
               
-              <div class="content" id="myDiv2" :class="{ active: currentPage === 2 }"> 
+              <div class="content" 
+                    id="myDiv2" 
+                    :class="{ active: currentPage === 2 }"
+                    @click="updateCurrentPage(2)"> 
                 <p> 2 </p>
               </div>
             </div>
@@ -34,7 +40,7 @@
     </section>
   </Col>
   </BaseAuthentication>
-</template>import Vue froimport Vue from 'vue';m 'vue';
+</template>
 
 
 <script>
@@ -58,6 +64,7 @@ export default {
       get(){
         return this.$store.state.auth.newUser;
       },
+      
       set(props){
         this.$store.commit('setNewUser', props);
       }
@@ -67,17 +74,19 @@ export default {
     ])
   },
   watch: {
-    'user.firstName': async function(val){
+    'user.firstName': async (val) => {
       await this.generateUsername();
     },
-    'user.lastName': async function(val){
+
+    'user.lastName': async (val) => {
       await this.generateUsername();
     }
   },
   methods:{
-    updateCurrentPage: (newPage) => {
+    updateCurrentPage(newPage){
       this.currentPage = newPage;
     },
+
     completeSetup: async function(){
       let success = await this.registerJournalist()
       if(success){
@@ -91,6 +100,7 @@ export default {
       else
         this.$Message.error('Something went wrong');
     },
+
     ...mapActions([
       'registerJournalist',
       'login',
@@ -101,114 +111,111 @@ export default {
     await this.generateUsername();
   }
 }
-//       LoadingIcon, DisplayImage 
-
-
 </script>
+
 <style scoped>
+#form-instruction {
+  text-align: center;
+  margin-bottom: 3rem !important;
+}
 
-  #form-instruction {
-    text-align: center;
-    margin-bottom: 3rem !important;
-  }
+section.auth-form {
+  margin-top: 6rem;
+}
 
-  section.auth-form {
-    margin-top: 6rem;
-  }
+#step {
+  display: flex;
+  justify-content: space-between;
+  
+}
 
-  #step {
-    display: flex;
-    justify-content: space-between;
-    
-  }
+#step > * {
+  flex-grow: 2;
+}
 
-  #step > * {
-    flex-grow: 2;
-  }
-
-  #step > #last {
-    width: auto !important;
-  }
+#step > #last {
+  width: auto !important;
+}
 
 .image-upload{
-     width: 180px;
-    background: #f1f1f1db;
-    /* height: 50%; */
-    height: 180px;
-    margin-top: 5px;
-    border-radius: 100px;
-    /* border: 1px solid grey; */
-    text-align: center;
+    width: 180px;
+  background: #f1f1f1db;
+  /* height: 50%; */
+  height: 180px;
+  margin-top: 5px;
+  border-radius: 100px;
+  /* border: 1px solid grey; */
+  text-align: center;
 }
 
- /* steps style */ 
- #container{
-  margin-top:30px
+/* steps style */ 
+#container{
+margin-top:30px
 }
 .container{
-  width: 100%;
-  height: 3px;
+width: 100%;
+height: 3px;
 /*   background: red; */
-  border: 1px solid #2D9CDB;
-  margin: 10px auto;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-around;
-  z-index:1;
+border: 1px solid #2D9CDB;
+margin: 10px auto;
+border-radius: 5px;
+display: flex;
+justify-content: space-around;
+z-index:1;
 }
 
 .step-count{
-  width:100%;
-  display: flex;
-  justify-content: space-around;
-  position: absolute;
-  top: -10px
+width:100%;
+display: flex;
+justify-content: space-around;
+position: absolute;
+top: -10px
 }
 
 /* p{
-  width: 20px;
-  height: 20px;
-  border: 1px solid blue;
-  text-align: center;
-  border-radius: 100%;
-  background:white;
-  color: blue;
-  } */
+width: 20px;
+height: 20px;
+border: 1px solid blue;
+text-align: center;
+border-radius: 100%;
+background:white;
+color: blue;
+} */
 
 
 .content .active{
-  color: white;
-  background: #2D9CDB;
+color: white;
+background: #2D9CDB;
 }
 
 .content{
-  width: 40px;
-  height: 50px;
-  border: 1px solid #2D9CDB;
-  text-align: center;
-  display: flex;
-  flex-item: center;
-  border-radius: 50%;
-  background: white;
-  color: #2D9CDB
+width: 40px;
+height: 50px;
+border: 1px solid #2D9CDB;
+text-align: center;
+display: flex;
+flex-item: center;
+border-radius: 50%;
+background: white;
+color: #2D9CDB
 }
 
 .active{
-  color: white;
-  background: #2D9CDB
+color: white;
+background: #2D9CDB
 }
 
 p{
-  margin: auto
+margin: auto
 }
 
 button{
-  width: 100px;
-  padding: 5px;
-  border: none;
-  border-radius: 4px;
-  background: blue;
-  color: white;
+width: 100px;
+padding: 5px;
+border: none;
+border-radius: 4px;
+background: blue;
+color: white;
 }
 
 @media (max-width: 992px){
@@ -216,7 +223,5 @@ button{
     display: block;
     width: 70%;
   }
-
 }
-
 </style>

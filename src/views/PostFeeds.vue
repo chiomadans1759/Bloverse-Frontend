@@ -1,23 +1,29 @@
 <template>
-  <main>
+  <main class="post-feeds">
+    <section class="container" >
+      <TrendingCard />
+    </section>
     <section class="container">
       <div class="category-list">
         <div class="row">
           <div class="col-md-2">
-            <v-select :options="general.countries" 
-                      label="name" placeholder="Select country" 
-                      class="my-select" 
-                      v-model="country" 
-                      id="country-select">
-            </v-select>
+            <v-select
+              :options="general.countries"
+              label="name"
+              placeholder="Select country"
+              class="my-select"
+              v-model="country"
+              id="country-select"
+            ></v-select>
           </div>
 
           <div class="col-md-8">
             <ul class="list-inline cat-list">
               <li class="list-inline-item" v-for="category in filteredCatList" :key="category.id">
-                <a href="#" 
+                <a
+                  href="#"
                   :class="{ 'active': category.name == $store.state.general.activeCategory }"
-                  @click.prevent="filterCategory(category.id, category.name)">
+                  @click.prevent="filterCategory(category.id, category.name)" style="font-family: 'Montserrat', sans-serif;">
                   {{category.name}}
                 </a>
               </li>
@@ -32,7 +38,9 @@
               <div class="row">
                 <div class="col-md-6" v-for="cat in other_cats" :key="cat.id">
                   <li>
-                    <a href="#" @click.prevent="filterCategory(cat.id, cat.name)">{{cat.name}}</a>
+                    <a href="#" 
+                    @click.prevent="filterCategory(cat.id, cat.name)"
+                    :class="{ 'active': cat.name == $store.state.general.activeCategory }">{{cat.name}}</a>
                   </li>
                 </div>
               </div>
@@ -45,56 +53,57 @@
                 <a  href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
                   @click.prevent="toggleLayout('grid')">
-                  <i class="fa fa-th-large"></i>
+                  <i class="fal fa-grip-horizontal fa-1x"></i>
                 </a>
               </li>
               <li class="list-inline-item">
                 <a href="#"
                   :class="{'active': general.activeFeedLayout == 'stack'}" 
                   @click.prevent="toggleLayout('stack')">
-                  <i class="fa fa-laptop"></i>
+                  <i class="far fa-laptop fa-1x"></i>
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
-     <display-feeds></display-feeds>
+      <display-feeds></display-feeds>
     </section>
   </main>
 </template>
 
-
 <script>
-// import { mapState, mapActions } from 'vuex'
-// import { Row, Col, Card } from 'iview';
 import { mapState,} from 'vuex'
 import { Row, Col, Card } from 'iview';
 import vSelect from 'vue-select';
 import DisplayFeeds from '@/components/DisplayFeeds.vue';
+import TrendingCard from '../components/TrendingCard.vue';
 
 export default {
   name: 'FeedsSection',
-  components: { Row, Col, Card, vSelect, DisplayFeeds },
+  components: { Row, Col, Card, vSelect, DisplayFeeds, TrendingCard },
   data() {
     return {
       show_more: false,
       other_cats: {},
       country: {}
-    }
+    };
   },
   methods: {
     showMoreCats() {
       this.other_cats = this.$store.state.general.categories.slice(4);
-      if(this.show_more == false) {
+      if (this.show_more == false) {
         this.show_more = true;
-      }else if(this.show_more == true) {
+      } else if (this.show_more == true) {
         this.show_more = false;
       }
     },
 
     filterCategory(id, name) {
-      this.$store.dispatch('getAllPublishedPosts', { category: id, country: '' });
+      this.$store.dispatch("getAllPublishedPosts", {
+        category: id,
+        country: ""
+      });
       this.$store.state.general.activeCategory = name;
     },
 
@@ -103,43 +112,37 @@ export default {
     }
   },
   computed: {
-    ...mapState([
-      'general'
-    ]),
-    
-    categoryName(){
-      if(this.category){
-        let category = this.general.categories.find(cat => cat.id == this.category.id)
+    ...mapState(["general"]),
+
+    categoryName() {
+      if (this.category) {
+        let category = this.general.categories.find(
+          cat => cat.id == this.category.id
+        );
         return category.name;
       }
 
-      return 'all categories'
-        
-    },
-    
-    countryName(){
-      if(this.country){
-        let country = this.general.countries.find(cou => cou.id == this.country.id)
-        return country.name;
-      }
+      return "all categories";
     },
 
     filteredCatList() {
-      if(this.$store.state.general.categories) {
+      if (this.$store.state.general.categories) {
         return this.$store.state.general.categories.slice(0, 4);
       }
     }
   }
-}
+};
 </script>
 
 <style scoped>
-main {
+.post-feeds {
   margin: 0 auto;
   width: 100%;
+  overflow-x: hidden !important;
   background-color: #f5f5f5;
   min-height: 100vh;
- 
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 10rem;
 }
 
 .category-list {
@@ -147,7 +150,7 @@ main {
 }
 
 .category-list select {
-  background: #E4E4E4;
+  background: #e4e4e4;
   border-radius: 0px;
 }
 
@@ -167,7 +170,7 @@ main {
 
 .category-list .list-inline .list-inline-item a.active,
 .category-list .list-inline .list-inline-item a:hover {
-  border-bottom: 3px solid #2F80ED;
+  border-bottom: 3px solid #2f80ed;
   text-decoration: none !important;
 }
 
@@ -177,6 +180,10 @@ main {
 
 .category-list #layout-select {
   float: right;
+}
+
+#layout-select a {
+  color: #aaaaaa;
 }
 
 #layout-select a:hover,
@@ -216,7 +223,9 @@ main {
   line-height: 8px;
 }
 
+.dropdown-card a.active,
 .dropdown-card a:hover {
-  color: #2F80ED;
+  color: #2f80ed;
+  text-decoration: none !important;
 }
 </style>
