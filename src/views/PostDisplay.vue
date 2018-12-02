@@ -8,13 +8,9 @@
 
         <div class="col-md-4">
           <author-card :author="general.currentPost.author"></author-card>
-
           <br>
-
           <post-social-share></post-social-share>
-
           <br />
-
           <related-posts></related-posts>
         </div>
       </div>
