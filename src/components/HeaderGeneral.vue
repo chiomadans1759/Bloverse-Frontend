@@ -32,6 +32,7 @@ export default {
 
 #l-text {
   font-size: 32px;
+  margin-top: 1rem;
   font-family: 'Comfortaa', cursive;
   color: #fff;
   margin-left: 1rem;
@@ -56,7 +57,7 @@ export default {
   color: #096DD9;
   margin-top: 1rem;
   font-size: 14px;
-  padding :5px 10px;
+  padding :7px 10px;
   text-transform: uppercase; 
   border-radius: 4px;
   text-align: center;

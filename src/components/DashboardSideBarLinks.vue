@@ -37,6 +37,7 @@ export default {
   flex-direction: column;
   height: 240px;
   justify-content: space-between;
+
 }
 
 .links-wrapper .router-link-active {
@@ -75,5 +76,57 @@ export default {
   margin-top: -40px;
   margin-left: 20px;
   font-size: 15px;
+}
+@media screen and (max-width: 360px) {
+  .ivu-layout-sider-collapsed{
+  /* width: 0px !important; 
+min-width: 0px !important;
+max-width: 0px !important;
+flex:0 0 0px !important;  */
+}  
+.ivu-layout-sider{
+/* border:1px solid red;
+width: 100px !important; 
+min-width: 30% !important;
+max-width: 50% !important;
+flex:0 0 100px !important;  */
+
+}
+#sidebar{
+/* border:1px solid red;
+width: 100px !important; 
+min-width: 30px !important;
+max-width: 50px !important;
+flex:0 0 100px !important;  */
+}
+.links-wrapper span{
+display: none
+}
+#content{
+  padding: 1rem 2rem !important;
+}
+
+}
+  @media screen and (max-width: 600px) {
+
+.ivu-layout-sider-collapsed{
+  /* width: 0px !important; 
+min-width: 0px !important;
+max-width: 0px !important;
+flex:0 0 0px !important;  */
+}  
+#sidebar{
+
+width: 0px !important;
+min-width: 0px !important; 
+flex:0 0 45px !important; 
+}
+
+.links-wrapper span{
+display: none
+}
+#content{
+  padding: 1rem 2rem !important;
+}
 }
 </style>
