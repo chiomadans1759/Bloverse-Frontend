@@ -70,5 +70,10 @@ export default {
 .post-content {
   padding: 3rem 0rem;
 }
+@media only screen and (max-width: 980px) {
+ .card{
+   margin-top: 3rem;
+  }
+}
 </style>
 
