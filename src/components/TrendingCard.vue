@@ -1,8 +1,7 @@
 <template>
     <div>
     <h4 style="font-family: 'Montserrat', sans-serif; margin-top: 4rem; font-weight: bold;">Top Stories</h4>
-    <Row class="trending" >
-        
+        <Row class="trending" >
             <carousel paginationActiveColor="#096DD9" paginationColor="#95C8D8" :perPageCustom="[[768, 3], [1024, 4], [600, 2], [300,1]]" autoplay="true"  easing>
                 <slide v-for="i in 16" :key="i" id="slider">
                     <Col>
@@ -22,7 +21,7 @@
                 </slide>
             </carousel>
         
-    </Row>
+        </Row>
     </div>
 </template>
 
