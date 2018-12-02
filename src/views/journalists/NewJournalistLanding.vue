@@ -90,11 +90,11 @@ export default {
 </script>
 
 <style scoped> 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 
-    .general{
-        z-index: 10;
-    }
+     body{
+        font-family: 'Comfortaa', cursive; 
+     }
     .container1{
         width:100%; 
         display:flex;
