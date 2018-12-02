@@ -25,6 +25,7 @@
 <script>
 export default {
   name: "post-social-share",
+  props: ['slug'],
   methods: {
     doShare(media){
       switch(media){
@@ -32,7 +33,7 @@ export default {
         FB.ui({ // eslint-disable-line no-undef
           method: 'share',
           display: 'popup',
-          href: 'http://staging.bloverse.com/posts/title-of-post',
+          href: `${this.$BASE_URL}/redirect/${this.slug}`,
         }, function(response){});
         break;
       default:
