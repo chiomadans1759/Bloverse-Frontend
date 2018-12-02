@@ -14,7 +14,7 @@ app.use(serveStatic(path.join(__dirname, '/dist'), {
   "index": false
 }))
 
-app.get('/posts/:slug', function (req, res) {
+app.get('/redirect/:uri', function (req, res) {
   res.sendFile(__dirname + '/dist/post.html')
 })
 
