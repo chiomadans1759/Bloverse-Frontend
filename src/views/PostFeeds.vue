@@ -14,6 +14,7 @@
               class="my-select"
               v-model="country"
               id="country-select"
+              @input="filterCountry"
             ></v-select>
           </div>
 
@@ -22,7 +23,7 @@
               <li class="list-inline-item" v-for="category in filteredCatList" :key="category.id">
                 <a
                   href="#"
-                  :class="{ 'active': category.name == $store.state.general.activeCategory }"
+                  :class="{ 'active': category.name == $store.state.general.activeCategory.name }"
                   @click.prevent="filterCategory(category.id, category.name)" style="font-family: 'Montserrat', sans-serif;">
                   {{category.name}}
                 </a>
@@ -40,7 +41,7 @@
                   <li>
                     <a href="#" 
                     @click.prevent="filterCategory(cat.id, cat.name)"
-                    :class="{ 'active': cat.name == $store.state.general.activeCategory }">{{cat.name}}</a>
+                    :class="{ 'active': cat.name == $store.state.general.activeCategory.name }">{{cat.name}}</a>
                   </li>
                 </div>
               </div>
@@ -86,7 +87,8 @@ export default {
     return {
       show_more: false,
       other_cats: {},
-      country: {}
+      country: {},
+      current_category: ""
     };
   },
   methods: {
@@ -99,12 +101,20 @@ export default {
       }
     },
 
+    filterCountry(id) {
+      this.$store.dispatch("getAllPublishedPosts", {
+        category: this.general.activeCategory.id,
+        country: this.country.id
+      });
+    },
+
     filterCategory(id, name) {
+      this.current_category = id;
       this.$store.dispatch("getAllPublishedPosts", {
         category: id,
         country: ""
       });
-      this.$store.state.general.activeCategory = name;
+      this.general.activeCategory = { id, name };
     },
 
     toggleLayout(layout) {
