@@ -134,7 +134,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .post-feeds {
   margin: 0 auto;
   width: 100%;
