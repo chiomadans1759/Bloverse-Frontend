@@ -56,7 +56,7 @@ const routes = [
     //   { path: 'new', component: JournalistLanding },
       { path: '/creators', component: NewJournalistLanding},
       { path: 'apply', component: JournalistApply },
-      { path: 'login', component: JournalistSignIn },
+      { path: 'login', name: 'creator-login', component: JournalistSignIn },
       { path: 'register', component: JournalistSetUp,
         beforeEnter(to, from, next) {
           if (store.getters.isAllowedToRegister) {
@@ -78,9 +78,16 @@ const routes = [
       { path: 'verify', component: JournalistVerify },
       { path: ':username', component: BaseDashBoard, meta: { journalist: true, auth: true },
         children: [
-          { path: '', component: MyProfile
+          { path: '', component: MyProfile},
+          { path: 'dashboard', name: 'journalist-dashboard', component: DashBoardHome,beforeEnter(to, from, next) {
+            if (store.getters.isAJournalist) {
+              next();
+            } else {
+              next({name: 'creator-login'});
+            }
+        
+          }
           },
-          { path: 'dashboard', component: DashBoardHome },
           { path: 'posts', component: BlankBase,
             children: [
               { path: '', component: MyPosts },
@@ -99,7 +106,16 @@ const routes = [
   { path: '/admin', component: BlankBase,
     children: [
       { path: '', redirect: 'dashboard' },
-      { path: 'dashboard', component: AdminHome },
+      { path: 'dashboard', component: AdminHome, meta: { admin: true, auth: true },beforeEnter(to, from, next) {
+        if (store.getters.isAnAdmin) {
+          next();
+        } else {
+            
+          next('/admin/login');
+        }
+        next();
+      }
+      },
       { path: 'login', component: AdminLogin }
     ]
   },

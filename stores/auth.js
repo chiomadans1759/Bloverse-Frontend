@@ -1,12 +1,37 @@
 import Api from '../src/utils/Api';
+import {getLocalUser,getJWT, shouldRegister} from "@/utils/UserAuth";
+
+
+var objCodec = require('object-encode');
+var SimpleCrypto = require("simple-crypto-js").default;
+
+var _secretKey = "some-unique-key";
+var simpleCrypto = new SimpleCrypto(_secretKey);
+var bloverseOps = ')*myNewAWESOME-mmbloverseOps254@%^&%';
+
+let user = null;
+let localJWT = null;
+if(getLocalUser() == null){
+  user = null;
+}else{
+  user = objCodec.decode_object(getLocalUser(), 'base64', bloverseOps );
+}
+
+if(getJWT() == null){
+  localJWT = null;
+}else{
+  localJWT = simpleCrypto.decrypt(getJWT());
+  
+}
+
 
 export default {
   state: {
-    jwt: null,
+    jwt: localJWT,
     newUser: { imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg' },
     applicant: { articleURLs: [] },
-    loggedInUser: null,
-    shouldRegister: false,
+    loggedInUser: user,
+    shouldRegister: shouldRegister(),
   },
   actions: {
     async login({ commit, state }, params) {
@@ -97,9 +122,11 @@ export default {
       }
       return username;
     },
-    clearSession({ commit }) {
-      commit('setJwt', null);
-      commit('setLoggedInUser', null);
+    clearSession({ commit, state }) {
+      localStorage.removeItem("jwt");
+      localStorage.removeItem("loggedInUser");
+      state.jwt = null;
+      state.loggedInUser = null;
       return true;
     }
   },
@@ -120,9 +147,11 @@ export default {
     },
     setJwt(state, jwt) {
       state.jwt = jwt
+      localStorage.setItem("jwt", JSON.stringify(simpleCrypto.encrypt(state.jwt)));
     },
     setLoggedInUser(state, user) {
       state.loggedInUser = user;
+      localStorage.setItem("loggedInUser", JSON.stringify(objCodec.encode_object( state.loggedInUser, 'base64', bloverseOps )));
     },
     setUsername(state, username) {
       state.newUser.username = username;
