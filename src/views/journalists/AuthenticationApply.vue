@@ -34,7 +34,7 @@
           <FormItem prop="phone" :error="errors.phoneNumber">
               <select v-model="applicant.phoneCode" class="code-dropdown">
               <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
-                 <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
+                 <img :src="val.imgURL" style="height:15px; background:url"/> {{ val.code }}   
               </option>
             </select>
              <input class="my-input" type="number" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
@@ -209,11 +209,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.auth-section{
+  width:100%;
+}
 .country-dropdown{
  display: flex;
  justify-content: space-between; 
- align-items: center
+ align-items: center; 
 }
 #success-modal .ivu-modal-body {
   display: flex;
