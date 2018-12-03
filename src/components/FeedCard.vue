@@ -1,5 +1,5 @@
 <template>
-  <a :href="`posts/${post.slug}`">
+  <router-link :to="`posts/${post.slug}`">
     <div class="card-container">
       <div id="card-hero">
         <img id="post-image" :src="post.image_url">
@@ -16,19 +16,25 @@
               </p>
             </h2>
             <div id="body-mid">
-              <Avatar id="author-image" :src="post.author.image_url"/>&nbsp;&nbsp;
-              <span id="author-area">
-                {{post.author.first_name}} {{post.author.last_name}}
-                <i class="fas fa-circle"></i>
-                <p>{{post.published | customizedTime}}</p>
-              </span>
+              
             </div>
           </div>
         </div>
-        <div id="card-footer">{{post.views}} Views</div>
+        <div id="card-footer">
+          <div style="display: flex;">
+          <Avatar id="author-image" :src="post.author.image_url"/>&nbsp;&nbsp;
+              <span id="author-area">
+                {{post.author.first_name}} {{post.author.last_name}}
+                <p>{{post.published | customizedTime}}</p>
+              </span>
+          </div>
+          <span style="padding-top: 1rem;">
+          <i class="fal fa-eye"></i>&nbsp;&nbsp;{{post.views}}
+          </span>
+          </div>
       </div>
     </div>
-  </a>
+  </router-link>
 </template>
 <script>
 import { Row, Col, vSelect, Card, Avatar, Icon } from "iview";
@@ -101,27 +107,18 @@ export default {
   align-items: center;
 }
 #author-area {
-  color: black;
-  opacity: 0.8;
   font-size: 14px;
-}
-#author-area i {
-  font-size: 4px;
-  color: rgba(0, 0, 0, 0.15);
-  bottom: 2px;
-  position: relative;
-  padding: 0 6px;
+  display: grid;
 }
 #author-area p {
-  display: inline-block;
-  color: black;
+  color: #1f1e1e;
   opacity: 0.45;
   font-size: 10px;
   text-transform: uppercase;
 }
 #card-footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   font-size: 14px;
   margin-top: 15px;
   color: black;

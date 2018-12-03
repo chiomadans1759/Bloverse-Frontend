@@ -15,12 +15,12 @@
       <Input class="my-input" v-model="user.phone" readonly placeholder="Phone*" />
     </FormItem>
     <FormItem>
-      <Select class="my-select" placeholder="Category*" v-model="user.categoryId" disabled>  
+      <Select class="my-select" placeholder="Category*" v-model="user.categoryId">  
         <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
       </Select>
     </FormItem>
     <FormItem>
-      <Select class="my-select" placeholder="Country*" v-model="user.countryId" disabled>  
+      <Select class="my-select" placeholder="Country*" v-model="user.countryId">  
         <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{ item.name }}</Option>
       </Select>
     </FormItem>
@@ -67,9 +67,8 @@ export default {
           }
           
         })*/
-        
     }
-  },
+  }
 }
 </script>
 

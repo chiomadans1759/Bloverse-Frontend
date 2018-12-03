@@ -5,7 +5,7 @@
             <div class="general"> 
                 <HeaderGeneral/> 
                 <Row class="container1"> 
-                    <Col :md="12" :sm="8" :xs="24" class="left">
+                    <Col :md="12" :sm="0" :xs="0" class="left">
                         <Col offset="5" :md="14" :sm="14" :xs="16" class="left-contain">
                             <p>Interactive stories from the global community <br/><span>Connecting creators to the people</span></p>
                             <button>GET STARTED</button>
@@ -13,23 +13,26 @@
                     </Col>  
                     
                     <Col :md="12" :sm="24" :xs="24" class ="right">  
-                        <img :src="require('./../../assets/jlanding.jpg')" alt="Journalists Landing"> 
+                        <img :src="require('./../../assets/jlanding.jpg')" alt="Journalists Landing">
+                        <Col offset="1" :md="0" :sm="22" :xs="22" class="right-text">
+                            <p>Interactive stories from the global community <br/><span>Connecting creators to the people</span></p>
+                            <button>GET STARTED</button>
+                        </Col> 
                     </Col>   
 
                 </Row>
 
                 <Row class="container2"> 
-                    <Col :md="12" :sm="8" :xs="24" class="left2">
-                        <Col offset="10" :md="14" :sm="14" :xs="16" class="left-contain2"> 
-                            <video class="video" controls>
-                                <source src="./../../assets/intro.mp4" type="video/mp4"> 
-                                    Your browser does not support HTML5 video.
-                            </video> 
+                    <Col :md="12" :sm="10" :xs="24" class="left2">
+                        <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2"> 
+                            <iframe 
+                                src="https://www.youtube.com/embed/EjRM4DMdnGw">                           
+                            </iframe>
                         </Col> 
                     </Col>  
                     
-                    <Col :md="12" :sm="24" :xs="24" class ="right2"> 
-                        <Col offset="2" :md="11" :sm="14" :xs="16" class="right-contain2">
+                    <Col :md="12" :sm="14" :xs="24" class ="right2"> 
+                        <Col offset="2" :md="11" :sm="20" :xs="20" class="right-contain2">
                             <h2>About Us</h2>
                             <p>Bloverse was created with you in mind. Have you ever thought of creating a news blog but then balked at the thought of the effort.</p>
                             <router-link  to="#" style="font-family: 'Montserrat', sans-serif;">
@@ -87,11 +90,11 @@ export default {
 </script>
 
 <style scoped> 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 
-    .general{
-        z-index: 10;
-    }
+     body{
+        font-family: 'Comfortaa', cursive; 
+     }
     .container1{
         width:100%; 
         display:flex;
@@ -131,7 +134,8 @@ export default {
         background-color:#000;
         height:100%;
     }
-   
+    
+      
     .right img{
         width:100%;
         height:100%;
@@ -139,6 +143,7 @@ export default {
         object-position: 50%;
         position: absolute;
         opacity: 0.5;
+        background-size: cover;
         border-radius: 10px;
         top:0; 
     } 
@@ -146,13 +151,15 @@ export default {
         display:flex; 
         background-color: rgb(230, 221, 221);
     }
-    .left-contain2{
+    .left-contain2{ 
         margin-top:8%;
-        height:80%; 
+        height:80%;
+        float:right;
     }
     .right2{ 
         height:50vh;
     }
+     
     .right-contain2{
         margin-top:12%;         
     }
@@ -161,7 +168,7 @@ export default {
         margin:2rem 0;    
         font-family: 'Montserrat', sans-serif; 
     } 
-    .video{
+    iframe{
         width:100%;
         border-radius: 10px;
         height:100%;
@@ -171,7 +178,7 @@ export default {
      .container3{ 
         display:flex; 
         background-color: rgb(230, 221, 221);
-        height:fit-content;
+        height:fit-content; 
     }
     .container3 h1{
         font-size:3rem;
@@ -197,4 +204,87 @@ export default {
         border-right:2px solid #ccc;
         border-left:2px solid #ccc;
     }
+
+
+@media screen and (max-width: 840px) {
+    .right-text{  
+        text-align: center;        
+        margin-top:25%;         
+    }
+    .right-text p{ 
+        color:#fff;         
+        font-size:3rem; 
+        font-weight: 800;        
+    }
+    .right-text span{        
+        font-size:2rem;
+        font-weight: 100;
+    }
+    .right-text button{ 
+        border-radius:2px; 
+        color: rgb(12, 54, 243); 
+        border: none;
+        padding: .8rem 2rem;
+        background-color: #fff;  
+        margin-top:2rem; 
+    } 
+    .right2{ 
+        height:30vh;
+    }
+    .right-contain2{
+        margin-top:7%;         
+    }
+    .container3 > div{ 
+        margin:4rem 0;
+    }
+}
+@media screen and (max-width: 603px) {
+    .right-text{          
+        margin-top:50%;         
+    }
+    .right-text p{      
+        font-size:2.5rem;         
+    }
+    .right-text span{        
+        font-size:1.5rem; 
+    } 
+    .container2{ 
+        flex-direction:column; 
+    }
+    .right2 .left2{ 
+        height: fit-content;
+    }
+    .left-contain2{     
+        float:left;
+    }
+    .container3 > div{ 
+        margin:1rem 0 4rem 0;
+    }
+    .container3 h1{
+        font-size:2rem; 
+    }
+    .container3 p{
+        font-size:1rem; 
+    }
+    .right-contain2{
+        margin-top:7%; 
+        height: fit-content;        
+    }
+    .right-contain2 p{
+        font-size:1.2rem; 
+        margin:1rem 0;     
+    } 
+}
+@media screen and (max-width: 322px) {
+    .right-contain2 p{
+        font-size:1.3rem;
+        margin:.5rem 0;       
+    }
+    .right-contain2 h2{
+        font-size:2rem;     
+    } 
+    .right-text{          
+        margin-top:70%;         
+    }
+}
 </style>

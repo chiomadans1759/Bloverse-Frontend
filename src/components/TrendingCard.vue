@@ -1,14 +1,13 @@
 <template>
     <div>
     <h4 style="font-family: 'Montserrat', sans-serif; margin-top: 4rem; font-weight: bold;">Top Stories</h4>
-    <Row class="trending" >
-        
-            <carousel :navigation-enabled="true" paginationActiveColor="#096DD9" :perPageCustom="[[768, 3], [1024, 4], [600, 2], [300,1]]" autoplayTimeout=2000  easing>
+        <Row class="trending" >
+            <carousel paginationActiveColor="#096DD9" paginationColor="#95C8D8" :perPageCustom="[[768, 3], [1024, 3], [600, 2], [300,1]]" autoplay="true"  easing>
                 <slide v-for="i in 16" :key="i" id="slider">
                     <Col>
-                    <Card style="width:276px;">
+                    <Card style="width:350px;">
                         <div style="text-align:left">
-                            <img src="./../assets/trending/business.jpg" style="height:210px; width: 275px;">
+                            <img src="./../assets/trending/business.jpg" style="height:210px; width: 350px;">
                         </div>
                         <div>
                             <p id="category-name">Category</p>
@@ -22,7 +21,7 @@
                 </slide>
             </carousel>
         
-    </Row>
+        </Row>
     </div>
 </template>
 
@@ -75,15 +74,16 @@ export default {
            color: #ffffff;
            font-family: 'Montserrat', sans-serif;
            bottom: 7%;
-           left: 30%;
+           left: 20%;
            font-size: 12px;
+           float: left;
         }
 
 </style>
 
 <style>
 .VueCarousel-wrapper{
-    width: 90vw;
+    width: 90vw !important;
 }
 </style>
 
