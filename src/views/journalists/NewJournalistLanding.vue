@@ -32,7 +32,7 @@
                     </Col>  
                     
                     <Col :md="12" :sm="14" :xs="24" class ="right2"> 
-                        <Col offset="2" :md="11" :sm="20" :xs="20" class="right-contain2">
+                        <Col offset="2" :md="12" :sm="20" :xs="20" class="right-contain2">
                             <h2>About Us</h2>
                             <p>Bloverse was created with you in mind. Have you ever thought of creating a news blog but then balked at the thought of the effort.</p>
                             <router-link  to="#" style="font-family: 'Montserrat', sans-serif;">
@@ -172,6 +172,8 @@ export default {
         width:100%;
         border-radius: 10px;
         height:100%;
+        overflow:hidden;
+        border: none !important;
         object-fit: cover;
         box-shadow: 2px 2px 20px 2px #888888;
     }
