@@ -2,6 +2,7 @@
     .demo-spin-icon-load{
         animation: ani-demo-spin 3s linear infinite;
     }
+    
     @keyframes ani-demo-spin {
         from { transform: rotate(0deg);}
         50%  { transform: rotate(180deg);}
@@ -30,5 +31,4 @@ export default {
   props: ['message'],
   components: { Spin, Icon }
 }
-
 </script>

@@ -53,14 +53,14 @@
                 <a href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
                   @click.prevent="toggleLayout('grid')">
-                  <i class="fa fa-th-large"></i>
+                  <i class="fal fa-grip-horizontal fa-1x"></i>
                 </a>
               </li>
               <li class="list-inline-item">
                 <a href="#"
                   :class="{'active': general.activeFeedLayout == 'stack'}" 
                   @click.prevent="toggleLayout('stack')">
-                  <i class="fa fa-laptop"></i>
+                  <i class="far fa-laptop fa-1x"></i>
                 </a>
               </li>
             </ul>
