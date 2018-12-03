@@ -30,8 +30,8 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 
 #feeds-header {
-  height: 10rem;
-  padding-top: 2rem;
+  height: 8rem;
+  padding-top: 1rem;
 }
 
 .feeds-row {
