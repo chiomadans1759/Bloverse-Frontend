@@ -32,7 +32,7 @@ app.get('/redirect/:uri', async function (req, res) {
     else
       keypointString = `Captured ${moment(duration, "YYYY-MM-DD").fromNow()} in ${location} using a ${device_type}`
     
-    author = `${author.first_name} ${author.lastname}`
+    author = `${author.first_name} ${author.last_name}`
     res.render('post', { baseUrl: process.env.VUE_APP_URL, keypointString, title, slug, image_url, author })
   }catch(err){
     console.log('Something went wrong with fetching post and rendering') // eslint-disable-line no-console
