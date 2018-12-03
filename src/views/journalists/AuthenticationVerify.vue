@@ -1,21 +1,20 @@
 <template>
-  <BaseAuthentication>
+  <BaseAuthentication class="auth-verify">
     <Col :md="10" :xs="23" class="auth-section">
-      <h1 id="page-title">Verify Your Token</h1>
       <Alert :type="alert.type" v-if="alert.show" show-icon>
         <template v-if="alert.type === 'success'">
           Verified!!!
           <span slot="desc">You have been verified, system is redirecting... </span>
         </template>
+
         <template v-else>
           Already Registered?
           <span slot="desc">It looks like you have been previously registrered. Click <router-link to="/creators/login">here to login</router-link></span>
         </template>
-
-        
       </Alert>
 
       <Form ref="tokenForm" class="auth-form" v-else>
+        <h1 id="page-title">Verify Your Token</h1>
         <FormItem required>
           <Input  v-model="token" placeholder="Enter token here" class="my-input" />
         </FormItem>
@@ -25,7 +24,6 @@
       </Form>
     </Col>
   </BaseAuthentication>
- 
 </template>
 
 <script >
@@ -97,6 +95,37 @@ export default {
 
 
 <style scoped>
+.auth-verify {
+  background-color: #f5f5f5;
+  border: 1px solid #eeeeee;
+  height: 100vh;
+  width: 100vw;
+}
+
+.auth-section {
+  padding-top: 5rem;
+}
+
+.auth-form {
+  background-color: #ffffff;
+  padding: 5rem 10rem 3rem;
+}
+
+.auth-form button {
+  border: 1px solid #2f80ed;
+  background-color: #2f80ed;
+  color: #ffffff;
+}
+
+#page-title {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.auth-form button:disabled {
+  opacity: 0.7;
+}
+
 .token {
   padding-top: 150px;
 }
