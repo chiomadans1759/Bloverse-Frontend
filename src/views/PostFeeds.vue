@@ -4,7 +4,7 @@
       <TrendingCard />
     </section>
     <section class="container">
-      <div class="category-list">
+      <div class="post-feeds-category" id="post-feeds-category">
         <div class="row">
           <div class="col-md-2">
             <v-select
@@ -14,6 +14,7 @@
               class="my-select"
               v-model="country"
               id="country-select"
+              @input="filterCountry"
             ></v-select>
           </div>
 
@@ -22,7 +23,7 @@
               <li class="list-inline-item" v-for="category in filteredCatList" :key="category.id">
                 <a
                   href="#"
-                  :class="{ 'active': category.name == $store.state.general.activeCategory }"
+                  :class="{ 'active': category.name == $store.state.general.activeCategory.name }"
                   @click.prevent="filterCategory(category.id, category.name)" style="font-family: 'Montserrat', sans-serif;">
                   {{category.name}}
                 </a>
@@ -40,7 +41,7 @@
                   <li>
                     <a href="#" 
                     @click.prevent="filterCategory(cat.id, cat.name)"
-                    :class="{ 'active': cat.name == $store.state.general.activeCategory }">{{cat.name}}</a>
+                    :class="{ 'active': cat.name == $store.state.general.activeCategory.name }">{{cat.name}}</a>
                   </li>
                 </div>
               </div>
@@ -86,7 +87,8 @@ export default {
     return {
       show_more: false,
       other_cats: {},
-      country: {}
+      country: {},
+      current_category: ""
     };
   },
   methods: {
@@ -99,17 +101,38 @@ export default {
       }
     },
 
+    filterCountry(id) {
+      this.$store.dispatch("getAllPublishedPosts", {
+        category: this.general.activeCategory.id,
+        country: this.country.id
+      });
+    },
+
     filterCategory(id, name) {
+      this.current_category = id;
       this.$store.dispatch("getAllPublishedPosts", {
         category: id,
         country: ""
       });
-      this.$store.state.general.activeCategory = name;
+      this.general.activeCategory = { id, name };
     },
 
     toggleLayout(layout) {
       this.$store.state.general.activeFeedLayout = layout;
+    },
+
+    stickyCat() {
+      let cat_section = document.getElementById("post-feeds-category");
+      let sticky = cat_section.offsetTop;
+      if (window.pageYOffset >= sticky) {
+        cat_section.classList.add("post-feeds-category-sticky");
+      } else if(window.pageYOffset < sticky) {
+        cat_section.classList.remove("post-feeds-category-sticky");
+      }
     }
+  },
+  created() {
+    window.onscroll = () => { this.stickyCat() };
   },
   computed: {
     ...mapState(["general"]),
@@ -145,40 +168,53 @@ export default {
   padding-bottom: 10rem;
 }
 
-.category-list {
+.post-feeds-category {
   margin: 3rem 0rem;
 }
 
-.category-list select {
+.post-feeds-category-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 7rem;
+  background-color: #ffffff;
+  padding: 1rem 10rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.post-feeds-category select {
   background: #e4e4e4;
   border-radius: 0px;
 }
 
-.category-list .list-inline {
+.post-feeds-category .list-inline {
   padding-top: 1rem;
 }
 
-.category-list .list-inline .list-inline-item {
+.post-feeds-category .list-inline .list-inline-item {
   margin-right: 1rem;
 }
 
-.category-list .list-inline .list-inline-item a {
+.post-feeds-category .list-inline .list-inline-item a {
   color: #aaaaaa;
   font-size: 14px;
   text-transform: capitalize;
 }
 
-.category-list .list-inline .list-inline-item a.active,
-.category-list .list-inline .list-inline-item a:hover {
+.post-feeds-category .list-inline .list-inline-item a.active,
+.post-feeds-category .list-inline .list-inline-item a:hover {
   border-bottom: 3px solid #2f80ed;
   text-decoration: none !important;
 }
 
-.category-list .list-inline .list-inline-item:last-child a:hover {
+.post-feeds-category .list-inline .list-inline-item:last-child a:hover {
   border-bottom: none;
 }
 
-.category-list #layout-select {
+.post-feeds-category #layout-select {
   float: right;
 }
 
@@ -192,8 +228,28 @@ export default {
   border-bottom: none;
 }
 
-@media only screen and (max-width: 767px) {
-  .category-list #layout-select {
+@media only screen and (max-width: 980px) {
+  .post-feeds-category-sticky {
+    height: 12rem;
+    padding: 1rem;
+  }
+
+  .post-feeds-category .v-select .dropdown-toggle {
+    border: 0px !important;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 0px;
+  }
+
+  .post-feeds-category .cat-list {
+    margin-top: 1.5rem;
+  }
+
+  .post-feeds-category .list-inline .list-inline-item {
+    margin-right: 0.5rem;
+  }
+
+
+  .post-feeds-category #layout-select {
     display: none;
   }
 }
