@@ -14,15 +14,20 @@
     <meta property="og:title" content="#{title}" />
     <meta property="og:description" content="#{keypointString}" />
     <meta property="og:image" content="#{image_url}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="fb:app_id" content="1818159268248375" />
+    <meta property="article:author" content="#{author}" />
+    <meta property="article:publisher" content="The Bloverse" />
 
     <title>Bloverse</title>
 
 </head>
 <body>
-   <p>Redirecting to <a href="#{baseUrl}posts/#{slug}">#{baseUrl}redirect/#{slug}</a></p> 
-   <script>
-        // Will perform redirect to the vue page here
-   </script>
+  <p>Redirecting to <a href="#{baseUrl}posts/#{slug}">#{baseUrl}redirect/#{slug}</a></p> 
+  script.
+    // Will perform redirect to the vue page here
+    window.location = '/posts/#{slug}';
 </body>
 
 </html>

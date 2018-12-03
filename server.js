@@ -26,13 +26,14 @@ app.get('/redirect/:uri', async function (req, res) {
     const resp = await axios.get(`${process.env.VUE_APP_API}posts?slug=${req.params.uri}`)
     post = resp.data.data && resp.data.data.posts[0];
 
-    let { keypoint, title, slug, image_url, duration, location, device_type } = post;
+    let { keypoint, title, slug, image_url, duration, location, device_type, author } = post;
     if(keypoint)
       keypointString = keypoint.join('. ')
     else
       keypointString = `Captured ${moment(duration, "YYYY-MM-DD").fromNow()} in ${location} using a ${device_type}`
-
-    res.render('post', { baseUrl: process.env.VUE_APP_URL, keypointString, title, slug, image_url })
+    
+    author = `${author.first_name} ${author.lastname}`
+    res.render('post', { baseUrl: process.env.VUE_APP_URL, keypointString, title, slug, image_url, author })
   }catch(err){
     console.log('Something went wrong with fetching post and rendering') // eslint-disable-line no-console
     return;
