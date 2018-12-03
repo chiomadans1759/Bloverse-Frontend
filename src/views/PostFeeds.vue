@@ -49,8 +49,8 @@
 
           <div class="col-md-2">
             <ul class="list-inline" id="layout-select">
-              <li class="lTrendingCardist-inline-item">
-                <a href="#"
+              <li class="list-inline-item">
+                <a  href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
                   @click.prevent="toggleLayout('grid')">
                   <i class="fal fa-grip-horizontal fa-1x"></i>
@@ -192,7 +192,7 @@ export default {
   border-bottom: none;
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 767px) {
   .category-list #layout-select {
     display: none;
   }
