@@ -8,19 +8,13 @@
       <div class="right">
         <ul class="list-inline">
           <li>
-            <a href="#">
-              <i class="fa fa-facebook-f"></i>
-            </a>
+            <button @click="doShare('facebook')">Facebook</button>
           </li>
           <li>
-            <a href="#">
-              <i class="fa fa-twitter"></i>
-            </a>
+            <button>Twitter</button>
           </li>
           <li>
-            <a href="#">
-              <i class="fa fa-linkedin-in"></i>
-            </a>
+            <button>LinkedIn</button>
           </li>
         </ul>
       </div>
@@ -30,7 +24,23 @@
 
 <script>
 export default {
-  name: "post-social-share"
+  name: "post-social-share",
+  props: ['slug'],
+  methods: {
+    doShare(media){
+      switch(media){
+      case 'facebook':
+        FB.ui({ // eslint-disable-line no-undef
+          method: 'share',
+          display: 'popup',
+          href: `${this.$BASE_URL}/redirect/${this.slug}`,
+        }, function(response){});
+        break;
+      default:
+        alert('Funtionality not available')
+      }
+    }
+  }
 };
 </script>
 

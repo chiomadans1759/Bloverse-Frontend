@@ -1,5 +1,5 @@
 <template>
-  <a :href="`posts/${post.slug}`">
+  <router-link :to="`posts/${post.slug}`">
     <div class="card-container">
       <div id="card-hero">
         <img id="post-image" :src="post.image_url">
@@ -34,7 +34,7 @@
           </div>
       </div>
     </div>
-  </a>
+  </router-link>
 </template>
 <script>
 import { Row, Col, vSelect, Card, Avatar, Icon } from "iview";
