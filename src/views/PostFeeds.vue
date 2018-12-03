@@ -4,7 +4,7 @@
       <TrendingCard />
     </section>
     <section class="container">
-      <div class="category-list">
+      <div class="post-feeds-category" id="post-feeds-category">
         <div class="row">
           <div class="col-md-2">
             <v-select
@@ -109,7 +109,20 @@ export default {
 
     toggleLayout(layout) {
       this.$store.state.general.activeFeedLayout = layout;
+    },
+
+    stickyCat() {
+      let cat_section = document.getElementById("post-feeds-category");
+      let sticky = cat_section.offsetTop;
+      if (window.pageYOffset >= sticky) {
+        cat_section.classList.add("post-feeds-category-sticky");
+      } else if(window.pageYOffset < sticky) {
+        cat_section.classList.remove("post-feeds-category-sticky");
+      }
     }
+  },
+  created() {
+    window.onscroll = () => { this.stickyCat() };
   },
   computed: {
     ...mapState(["general"]),
@@ -145,40 +158,53 @@ export default {
   padding-bottom: 10rem;
 }
 
-.category-list {
+.post-feeds-category {
   margin: 3rem 0rem;
 }
 
-.category-list select {
+.post-feeds-category-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 7rem;
+  background-color: #ffffff;
+  padding: 1rem 10rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.post-feeds-category select {
   background: #e4e4e4;
   border-radius: 0px;
 }
 
-.category-list .list-inline {
+.post-feeds-category .list-inline {
   padding-top: 1rem;
 }
 
-.category-list .list-inline .list-inline-item {
+.post-feeds-category .list-inline .list-inline-item {
   margin-right: 1rem;
 }
 
-.category-list .list-inline .list-inline-item a {
+.post-feeds-category .list-inline .list-inline-item a {
   color: #aaaaaa;
   font-size: 14px;
   text-transform: capitalize;
 }
 
-.category-list .list-inline .list-inline-item a.active,
-.category-list .list-inline .list-inline-item a:hover {
+.post-feeds-category .list-inline .list-inline-item a.active,
+.post-feeds-category .list-inline .list-inline-item a:hover {
   border-bottom: 3px solid #2f80ed;
   text-decoration: none !important;
 }
 
-.category-list .list-inline .list-inline-item:last-child a:hover {
+.post-feeds-category .list-inline .list-inline-item:last-child a:hover {
   border-bottom: none;
 }
 
-.category-list #layout-select {
+.post-feeds-category #layout-select {
   float: right;
 }
 
