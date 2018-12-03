@@ -1,3 +1,5 @@
+
+
 <template>
     <footer class="feeds-footer">
         <div class="container">
@@ -12,7 +14,7 @@
                         <p id="links-p"><i class="fas fa-ellipsis-h" id="footer-icon"></i></p>
                     </div>
                 </Col>
-                <Col>
+                <Col class ="copy-write" :xs="24">
                     <p id="year-text">2018 Bloverse. All Right Reserved</p>
                 </Col>
             </Row>
@@ -69,8 +71,12 @@ export default {
 
 @media screen and (max-width: 600px) {
   .feeds-footer {
-    height: 45px;
+    height: 85px;
   }
+  .copy-write {
+    text-align: center;
+    padding-top:.5rem;
+}
 }
 
 </style>

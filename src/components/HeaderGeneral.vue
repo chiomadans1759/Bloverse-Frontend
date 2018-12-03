@@ -34,8 +34,7 @@ export default {
   font-size: 32px;
   margin-top: 1rem;
   font-family: 'Comfortaa', cursive;
-  color: #fff;
-  margin-left: 1rem;
+  color: #fff; 
   font-weight: 500;
 }
 #j-button {
@@ -63,4 +62,16 @@ export default {
   text-align: center;
 }
 
+@media screen and (max-width: 600px) {
+  #l-text {
+  font-size: 2rem; 
+}
+#j-button, #c-button{  
+  font-size: 1rem;  
+} 
+.header-row {
+  width: 95%; 
+  padding:2rem 0 0 1rem;
+} 
+}
 </style>

@@ -83,6 +83,5 @@ export default {
   border-radius: 4px;
   text-align: center;
 }
-
 </style>
 
