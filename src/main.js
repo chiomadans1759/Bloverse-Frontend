@@ -23,6 +23,8 @@ import store from '../stores';
 import routes from '../routes'
 import App from './App.vue'
 
+import {initialize} from '@/utils/general.js';
+
 // import lang from 'iview/dist/locale/en-US';
 
 import 'iview/dist/styles/iview.css';
@@ -61,6 +63,8 @@ const router = new VueRouter({
   routes
 })
 
+initialize(store, router);
+
 Vue.filter('toUpperCase', (value) => {
   if (!value) return '';
   value = value.toString();
@@ -81,21 +85,23 @@ new Vue({
   router,
   store,
   created() {
-    let jwt, loggedInUser;
+    // let jwt, loggedInUser;
 
-    jwt = localStorage.getItem('jwt')
-    loggedInUser = localStorage.getItem('loggedInUser');
-    loggedInUser = loggedInUser && JSON.parse(loggedInUser);
-    const shouldRegister = localStorage.getItem('shouldRegister') || false;
+    // jwt = localStorage.getItem('jwt')
+    // loggedInUser = localocalStorage.getItem('loggedInUser');
+    // loggedInUser = loggedInUser && JSON.parse(loggedInUser);
+    // const shouldRegister = localStorage.getItem('shouldRegister') || false;
 
-    store.commit('setJwt', jwt);
-    store.commit('setLoggedInUser', loggedInUser);
-    store.commit('setShouldRegister', shouldRegister);
+    // store.commit('setJwt', jwt);
+    // store.commit('setLoggedInUser', loggedInUser);
+    // store.commit('setShouldRegister', shouldRegister);
+
   },
   render: h => h(App)
 }).$mount('#app')
 
 router.beforeEach((to, from, next) => {
+  /* eslint-disable */
   LoadingBar.start();
   next()
 });
