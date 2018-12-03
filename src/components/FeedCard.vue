@@ -50,7 +50,7 @@
         <span id ="author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
         </div>
         <div id="views">
-           <i class="far fa-eye"></i> {{post.views}}
+          <i class="fal fa-eye"></i> {{post.views}}
            </div>
         </div>
         

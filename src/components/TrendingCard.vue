@@ -2,12 +2,12 @@
     <div>
     <h4 style="font-family: 'Montserrat', sans-serif; margin-top: 4rem; font-weight: bold;">Top Stories</h4>
         <Row class="trending" >
-            <carousel paginationActiveColor="#096DD9" paginationColor="#95C8D8" :perPageCustom="[[768, 3], [1024, 4], [600, 2], [300,1]]" autoplay="true">
+            <carousel paginationActiveColor="#096DD9" paginationColor="#95C8D8" :perPageCustom="[[768, 3], [1024, 4], [600, 2], [300,1]]" autoplay="true" autoplayTimeout="4000">
                 <slide v-for="i in 12" :key="i" id="slider">
                     <Col>
-                    <Card style="width:285px;">
+                    <Card id="trend-card">
                         <div style="text-align:left">
-                            <img src="./../assets/trending/business.jpg" style="height:210px; width: 285px;">
+                            <img src="./../assets/trending/business.jpg"  id="trend-img">
                         </div>
                         <div>
                             <p id="category-name">Category</p>
@@ -53,6 +53,16 @@ export default {
         text-transform: uppercase;
         }
 
+    #trend-card {
+        width:285px;
+        margin-right: 1rem;
+    }  
+
+    #trend-img {
+        height:210px; 
+        width: 285px;
+    } 
+
     #category-text {
         position: absolute;
         top: 120px;
@@ -84,6 +94,18 @@ export default {
 <style>
 .VueCarousel-wrapper{
     width: 88vw !important;
+}
+@media only screen and (max-width: 767px) {
+    .VueCarousel-wrapper{
+        width: 90vw !important;
+}
+     #trend-card {
+        width:500px;
+    }
+     #trend-img {
+        height:210px; 
+        width: 300px;
+    }   
 }
 
 </style>
