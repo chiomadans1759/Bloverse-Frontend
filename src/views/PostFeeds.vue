@@ -228,8 +228,28 @@ export default {
   border-bottom: none;
 }
 
-@media only screen and (max-width: 767px) {
-  .category-list #layout-select {
+@media only screen and (max-width: 980px) {
+  .post-feeds-category-sticky {
+    height: 12rem;
+    padding: 1rem;
+  }
+
+  .post-feeds-category .v-select .dropdown-toggle {
+    border: 0px !important;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 0px;
+  }
+
+  .post-feeds-category .cat-list {
+    margin-top: 1.5rem;
+  }
+
+  .post-feeds-category .list-inline .list-inline-item {
+    margin-right: 0.5rem;
+  }
+
+
+  .post-feeds-category #layout-select {
     display: none;
   }
 }
