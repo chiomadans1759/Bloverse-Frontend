@@ -2,12 +2,12 @@
     <div>
     <h4 style="font-family: 'Montserrat', sans-serif; margin-top: 4rem; font-weight: bold;">Top Stories</h4>
         <Row class="trending" >
-            <carousel paginationActiveColor="#096DD9" paginationColor="#95C8D8" :perPageCustom="[[768, 3], [1024, 3], [600, 2], [300,1]]" autoplay="true"  easing>
-                <slide v-for="i in 16" :key="i" id="slider">
+            <carousel paginationActiveColor="#096DD9" paginationColor="#95C8D8" :perPageCustom="[[768, 3], [1024, 4], [600, 2], [300,1]]" autoplay="true">
+                <slide v-for="i in 12" :key="i" id="slider">
                     <Col>
-                    <Card style="width:350px;">
+                    <Card style="width:285px;">
                         <div style="text-align:left">
-                            <img src="./../assets/trending/business.jpg" style="height:210px; width: 350px;">
+                            <img src="./../assets/trending/business.jpg" style="height:210px; width: 285px;">
                         </div>
                         <div>
                             <p id="category-name">Category</p>
@@ -83,7 +83,8 @@ export default {
 
 <style>
 .VueCarousel-wrapper{
-    width: 90vw !important;
+    width: 88vw !important;
 }
+
 </style>
 
