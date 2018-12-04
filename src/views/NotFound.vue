@@ -1,45 +1,143 @@
 <template>
-  <section >
-      <div>
-        <FeedsHeader /> 
-      </div> 
-      <template>
-        <p class ="p1">404</p>
-        <p class="p2">Oops! The page you are looking for could not be found or does not exist</p>
-      </template>
-  </section>
+    <main class="container">
+        <Row id="not-found-container">
+          <Col>
+            <img src="./../assets/image.svg" alt="" id="err-img">
+          </Col>
+          <Col>
+            <div id="not-found-text">
+              <h3>404</h3>
+                <span id="err-text">
+                  <h6>Whoops!</h6>
+                  <p>We can’t find the page you are looking for</p>
+                </span>
+              <router-link to="/" id="err-btn">return</router-link>
+            </div>
+          </Col>
+        </Row>
+    </main>
 </template>
 
 <script>
-import FeedsHeader from '../components/FeedsHeader.vue'
-import TheFooter from '../components/TheFooter.vue';
+import { Row, Col } from 'iview';
 
 export default {
-  components: { FeedsHeader, TheFooter },
-}
+  components: {Row, Col}
   
+}
 </script>
 
-<style>
-.p1{
-  font-size:10rem;
-  text-align:center; 
-  font-weight:800;
-  padding-bottom:0;
-}
-.p2{
-  text-align:center;
-  font-size:1.5rem;
-}
+<style scoped>
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 
-@media only screen and (max-width: 600px) {
-.p1{
-  font-size:6rem;
-  padding-top:35%;   
-}
-.p2{ 
-  font-size:1rem;
-  padding:1rem 1rem;
-}
-}
+  #not-found-container{
+    display: flex;
+    top: 20rem;
+    justify-content: space-between
+  }
+
+  #not-found-text {
+    display: grid;
+    grid-gap: 1rem;
+  }
+
+  #not-found-text h3 {
+    font-size: 64px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+  }
+
+  #err-text {
+    display: grid;
+    grid-gap: 1rem;
+  }
+
+  #err-img {
+    height: 200px;
+  }
+
+  #err-text h6 {
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  #err-text p{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  #err-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #096DD9;
+    border: 1px solid #096DD9;
+    padding: 1rem;
+    width: 9rem;
+    border-radius: 0.5rem;
+  }
+
+  @media only screen and (max-width: 767px) {
+    #not-found-container {
+      display: flex;
+      flex-direction: column;
+      top: 13rem;
+      margin-left: 9rem;
+     
+    }
+
+    #err-text p {
+    margin-left: -8rem;
+    width: 100vw;
+    }
+
+    #err-text h6 {
+      margin-left: 3rem;
+    }
+
+    #not-found-text h3 {
+    margin-top: 2rem;
+    margin-left: 3rem;
+    }
+
+    #err-btn {
+      margin-left: 4.5rem;
+    }
+
+
+  }
+
+  @media only screen and (max-width: 360px) {
+    #not-found-container {
+      display: flex;
+      flex-direction: column;
+      top: 5rem;
+      margin-left: 7rem;
+     
+    }
+
+    #err-text p {
+    margin-left: -4rem;
+    width: 100vw;
+    font-size: 12px;
+    }
+
+    #err-text h6 {
+      margin-left: 3rem;
+    }
+
+    #not-found-text h3 {
+    margin-top: 2rem;
+    font-size: 32px;
+    margin-left: 6rem;
+    }
+
+    #err-btn {
+      margin-left: 4.5rem;
+    }
+
+
+  }
+
+
 </style>

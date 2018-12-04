@@ -1,9 +1,9 @@
 <template> 
      <section >       
         <template>
-            <div class = "container"> 
+            <div class = "login-container"> 
                 <Col :sm="12" :md="12" :xs="24" class="image">               
-                            <p><span>Bloverse</span> </br>Interactive stories from the global community</p> 
+                      <p><span>Bloverse</span> </br>Interactive stories from the global community</p> 
                 </Col>
                 
                 <Col :md="12" :sm="12"  :xs="24">
@@ -12,7 +12,7 @@
 
                                 <p class="join">Join Bloverse today.</p>   
 
-                                <Button class="btn-social my-btn" id="btn-google" long @click="googleAuth"> 
+                                <Button class="btn-social button" id="btn-google" long @click="googleAuth"> 
                                     <Icon id="google-icon" type=logo-google /> Sign up with Google
                                 </Button>
 
@@ -123,13 +123,13 @@ export default {
     font-weight:600;
     padding-bottom:16px;
   }
-  .my-btn{
-    margin-bottom:30px;
-    padding:10px 0;
-    height: 3rem;
-    border: none;
+  .button{
+    margin-bottom:30px !important;
+    padding:10px 0 !important;
+    height: 3rem !important;
+    border: none !important;
   }
-  .container{
+  .login-container{
     padding:0;
     margin:0;            
     height:90vh; 
@@ -154,7 +154,7 @@ export default {
 }
   
 .image span {
-    font-size:3rem;
+    font-size:6rem;
     font-weight: 500;
 }
 .auth-section{
@@ -162,7 +162,7 @@ export default {
 }
 
 @media only screen and (max-width: 600px) {
-    .container{ 
+    .login-container{ 
      height:90vh;       
   }
   .footer{
@@ -171,7 +171,7 @@ export default {
  
 }
 @media only screen and (max-width: 840px) {
-  .container{ 
+  .login-container{ 
      height:87vh;        
   }
   .footer{

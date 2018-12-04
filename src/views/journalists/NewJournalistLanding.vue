@@ -32,7 +32,7 @@
                     </Col>  
                     
                     <Col :md="12" :sm="14" :xs="24" class ="right2"> 
-                        <Col offset="2" :md="11" :sm="20" :xs="20" class="right-contain2">
+                        <Col offset="2" :md="12" :sm="20" :xs="20" class="right-contain2">
                             <h2>About Us</h2>
                             <p>Bloverse was created with you in mind. Have you ever thought of creating a news blog but then balked at the thought of the effort.</p>
                             <router-link  to="#" style="font-family: 'Montserrat', sans-serif;">
@@ -55,11 +55,11 @@
                             <p>VISITORS</p>
                         </Col>   
                 </Row>
-        <FeedsFooter/>
-            </div>
+            <FeedsFooter/>
+          </div>
        </Content>
     </Layout>
-    </div> 
+  </div> 
 </template>
 
 <script>
@@ -93,8 +93,9 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 
      body{
-        font-family: 'Comfortaa', cursive; 
-     }
+        font-family: 'Comfortaa', cursive;  
+
+     } 
     .container1{
         width:100%; 
         display:flex;
@@ -163,7 +164,7 @@ export default {
     .right-contain2{
         margin-top:12%;         
     }
-     .right-contain2 p{
+    .right-contain2 p{
         font-size:15px; 
         margin:2rem 0;    
         font-family: 'Montserrat', sans-serif; 
@@ -172,13 +173,15 @@ export default {
         width:100%;
         border-radius: 10px;
         height:100%;
+        overflow:hidden;
+        border: none !important;
         object-fit: cover;
         box-shadow: 2px 2px 20px 2px #888888;
     }
      .container3{ 
         display:flex; 
         background-color: rgb(230, 221, 221);
-        height:fit-content; 
+        height:fit-content;
     }
     .container3 h1{
         font-size:3rem;
@@ -233,14 +236,17 @@ export default {
     }
     .right-contain2{
         margin-top:7%;         
-    }
+    } 
     .container3 > div{ 
-        margin:4rem 0;
+        margin:1rem 0 7rem 0;
     }
 }
 @media screen and (max-width: 603px) {
     .right-text{          
         margin-top:50%;         
+    }
+    .left{
+        display:none;
     }
     .right-text p{      
         font-size:2.5rem;         
@@ -258,7 +264,7 @@ export default {
         float:left;
     }
     .container3 > div{ 
-        margin:1rem 0 4rem 0;
+        margin:1rem 0 8rem 0;
     }
     .container3 h1{
         font-size:2rem; 
@@ -285,6 +291,12 @@ export default {
     } 
     .right-text{          
         margin-top:70%;         
+    }
+    .left{
+        display:none;
+    }
+    .container3 > div{ 
+        margin:1rem 0 8rem 0;
     }
 }
 </style>
