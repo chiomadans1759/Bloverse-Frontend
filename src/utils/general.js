@@ -5,7 +5,7 @@ export function initialize(store, router){
     const requiresAuth = to.matched.some(record => record.meta.auth);
     const isJournalist = to.matched.some(record => record.meta.journalist);
     const isAdmin = to.matched.some(record => record.meta.admin);
-    const currentUser = !!store.state.auth.loggedInUser;
+    const currentUser = store.state.auth.loggedInUser;
 
     
     if(requiresAuth){
@@ -24,7 +24,7 @@ export function initialize(store, router){
       }
     }else{
       if(to.path == '/creators/login' && store.getters.isAJournalist){
-        if(currentUser){
+        if(!!currentUser){
            next({path: `/creators/${currentUser.userName}/dashboard`});
          }else{
            next('/creators/login')
