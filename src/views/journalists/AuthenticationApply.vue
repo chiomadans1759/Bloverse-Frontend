@@ -1,5 +1,6 @@
 <template>
   <BaseAuthentication >
+  <Row type="flex" justify="center">
     <Col :sm="18" :md="10" :xs="22" class="auth-section">
       <Modal
        v-model="isSuccess"
@@ -84,6 +85,7 @@
         </div>
     </Form>
    </Col>
+   </Row>
   </BaseAuthentication>
 </template>
 
