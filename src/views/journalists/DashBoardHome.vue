@@ -133,6 +133,7 @@ export default {
     await this.getMyMetrics();
     this.show = true;
 
+
   }
 };
 </script>

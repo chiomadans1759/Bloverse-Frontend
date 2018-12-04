@@ -10,6 +10,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-pro": "^5.5.0",
     "axios": "^0.18.0",
     "bootstrap": "^3.3.7",
     "connect-history-api-fallback": "^1.5.0",
@@ -19,10 +20,11 @@
     "hashids": "^1.1.4",
     "iview": "^3.1.1",
     "moment": "^2.22.2",
-    "node-sass": "^4.9.3",
+    "object-encode": "^1.0.2",
     "prettyjson": "^1.2.1",
-    "sass-loader": "^7.1.0",
+    "pug": "^2.0.3",
     "serve-static": "^1.13.2",
+    "simple-crypto-js": "^2.0.2",
     "vue": "^2.5.17",
     "vue-analytics": "^5.16.0",
     "vue-carousel": "^0.16.0",
@@ -46,6 +48,9 @@
     "eslint-plugin-import": "^2.14.0",
     "husky": "^1.1.4",
     "lint-staged": "^8.0.5",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "vue-template-compiler": "^2.5.17"
   },
   "postcss": {

@@ -1,91 +1,91 @@
 <template>
-  <BaseAuthentication >
-  <Row type="flex" justify="center">
-    <Col :sm="18" :md="10" :xs="22" class="auth-section">
-      <Modal
-       v-model="isSuccess"
-       :width="726"
-       id="success-modal">
+  <BaseAuthentication>
+    <div class="main-apply">
+      <Modal v-model="isSuccess" :width="726" id="success-modal">
         <Alert type="success">Success!</Alert>
-        <p>Your application has been sent to bloverse. A message will be sent to your mail to continue the verification and approval process in 48hrs.</p>
+        <p>
+          Your application has been sent to bloverse. A message will be sent to your mail to 
+          continue the verification and approval process in 48hrs.
+        </p>
         <div slot="footer"></div>
       </Modal>
-    <h1 id="page-title">Apply</h1> 
-    <Form ref="applyForm" :model="applicant" class="auth-form container" :rules="validateApplication">
-      <h3 id="form-instruction">Fill the form below to apply as a content provider on Bloverse</h3>
-      <Row type="flex" justify="space-between">
-        <Col :sm="11" :xs="24">
-          <FormItem prop="firstName" :error="errors.firstName">
-            <Input class="my-input" v-model="applicant.firstName" placeholder="First name*"  />
-          </FormItem>
-        </Col>
-        <Col :sm="11" :xs="24">
-          <FormItem prop="lastName" :error="errors.lastName">
-            <Input class="my-input" v-model="applicant.lastName" placeholder="Last name*" />
-          </FormItem>
-        </Col>
-      </Row>
-      <Row type="flex" justify="space-between">
-        <Col :sm="11" :xs="24">
-          <FormItem prop="email" :error="errors.email">
-            <Input class="my-input" v-model="applicant.email" placeholder="Email*"  />
-          </FormItem>
-        </Col>
-        <Col :sm="11" :xs="24">
-          <FormItem prop="phone" :error="errors.phoneNumber">
-              <select v-model="applicant.phoneCode" class="code-dropdown">
-              <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
-                 <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
-              </option>
-            </select>
-             <input class="my-input" type="number" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
-          </FormItem>
-        </Col>
-      </Row>
+
+
+      <h1 id="page-title">Apply</h1> 
+      <Form ref="applyForm" :model="applicant" class="auth-form container" :rules="validateApplication">
+        <h3 id="form-instruction">Fill the form below to apply as a content provider on Bloverse</h3>
+        <Row type="flex" justify="space-between">
+          <Col :sm="11" :xs="24">
+            <FormItem prop="firstName" :error="errors.firstName">
+              <Input class="my-input" v-model="applicant.firstName" placeholder="First name*"  />
+            </FormItem>
+          </Col>
+          <Col :sm="11" :xs="24">
+            <FormItem prop="lastName" :error="errors.lastName">
+              <Input class="my-input" v-model="applicant.lastName" placeholder="Last name*" />
+            </FormItem>
+          </Col>
+        </Row>
+        <Row type="flex" justify="space-between">
+          <Col :sm="11" :xs="24">
+            <FormItem prop="email" :error="errors.email">
+              <Input class="my-input" v-model="applicant.email" placeholder="Email*"  />
+            </FormItem>
+          </Col>
+          <Col :sm="11" :xs="24">
+            <FormItem prop="phone" :error="errors.phoneNumber">
+                <select v-model="applicant.phoneCode" class="code-dropdown">
+                <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
+                  <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
+                </option>
+              </select>
+              <input class="my-input" type="number" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
+            </FormItem>
+          </Col>
+        </Row>
+          
+        <FormItem prop="linkedIn" :error="errors.linkedIn">
+          <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username"  >
+              <span slot="prepend">https://www.linkedin.com/in/</span>
+          </input>
+        </FormItem>
         
-      <FormItem prop="linkedIn" :error="errors.linkedIn">
-        <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username"  >
-            <span slot="prepend">https://www.linkedin.com/in/</span>
-        </input>
-      </FormItem>
-      
-      <FormItem prop="twitter" :error="errors.twitter">
-        <Input class="my-input" v-model="applicant.twitterUsername" placeholder="Twitter profile username"  >
-            <span slot="prepend">https://www.twitter.com/</span>
-        </input>
-      </FormItem>
-       <FormItem prop="articles" :error="errors.articles" v-for="(value, index)  in 3" :key="value">
-        <Input class="my-input" v-model="applicant.articleURLs[index]" placeholder="Link to written article">
-            <Select slot="prepend" v-model="applicant.articleProtocols[index]" style="width: 80px">
-              <Option value="https://">https://</Option> 
-              <Option value="http://">http://</Option>
-            </Select>
-        </input>
-      </FormItem>
-      <Row type="flex" justify="space-between">
-        <Col :sm="11" :xs="24">
-          <FormItem prop="country" :error="errors.countryId">
-           <v-select :options="general.countries" label="name" placeholder="Country*" class="my-select" v-model="applicant.country">
-            </v-select>
-          </FormItem>
-        </Col>
-        <Col :sm="11" :xs="24">
-          <FormItem prop="category" :error="errors.categoryId">
-            <v-select :options="general.categories" label="name" placeholder="Category*" class="my-select" v-model="applicant.category">
-            </v-select>
-          </FormItem>
-        </Col>
-      </Row>
-      <!--<FormItem prop="terms">
-        <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
-      </FormItem>-->
-      <Button class="my-btn btn-secondary" long @click.prevent="handleSubmit">SUBMIT</Button>
-        <div id="login-here">Already have an account?<br> 
-          <router-link id="login-link" to="login"> Log in here </router-link>
-        </div>
-    </Form>
-   </Col>
-   </Row>
+        <FormItem prop="twitter" :error="errors.twitter">
+          <Input class="my-input" v-model="applicant.twitterUsername" placeholder="Twitter profile username"  >
+              <span slot="prepend">https://www.twitter.com/</span>
+          </input>
+        </FormItem>
+        <FormItem prop="articles" :error="errors.articles" v-for="(value, index)  in 3" :key="value">
+          <Input class="my-input" v-model="applicant.articleURLs[index]" placeholder="Link to written article">
+              <Select slot="prepend" v-model="applicant.articleProtocols[index]" style="width: 80px">
+                <Option value="https://">https://</Option> 
+                <Option value="http://">http://</Option>
+              </Select>
+          </input>
+        </FormItem>
+        <Row type="flex" justify="space-between">
+          <Col :sm="11" :xs="24">
+            <FormItem prop="country" :error="errors.countryId">
+            <v-select :options="general.countries" label="name" placeholder="Country*" class="my-select" v-model="applicant.country">
+              </v-select>
+            </FormItem>
+          </Col>
+          <Col :sm="11" :xs="24">
+            <FormItem prop="category" :error="errors.categoryId">
+              <v-select :options="general.categories" label="name" placeholder="Category*" class="my-select" v-model="applicant.category">
+              </v-select>
+            </FormItem>
+          </Col>
+        </Row>
+        <!--<FormItem prop="terms">
+          <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
+        </FormItem>-->
+        <Button class="my-btn btn-secondary" long @click.prevent="handleSubmit">SUBMIT</Button>
+          <div id="login-here">Already have an account?<br> 
+            <router-link id="login-link" to="login"> Log in here </router-link>
+          </div>
+      </Form>
+    </div>
   </BaseAuthentication>
 </template>
 
@@ -212,16 +212,33 @@ export default {
 </script>
 
 <style>
-.country-dropdown{
- display: flex;
- justify-content: space-between; 
- align-items: center
+.main-apply {
+  padding: 5rem 0rem;
 }
+
+#page-title {
+  text-align: center;
+  margin: 1rem 0rem 3rem;
+  text-transform: uppercase;
+}
+
+.auth-form {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.country-dropdown{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center
+}
+
 #success-modal .ivu-modal-body {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 #success-modal .ivu-alert {
   text-align: center;
   width: 80%;
@@ -230,11 +247,13 @@ export default {
   background-color: white;
   color: #6FCF97;
 }
+
 #success-modal p {
   font-size: 18px;
   margin: 1rem 0 3rem; 
   color: #828282;
 }
+
 @media screen and (min-width:768px) {
   #success-modal p {
     width: 80%;
@@ -250,6 +269,7 @@ export default {
   padding-left:20px;
   font-size:14px;
 }
+
 #login-here{
   display:flex;
   justify-content: flex-end;
@@ -257,12 +277,15 @@ export default {
   font-size: 18px;
   margin-top: 12px;
 }
+
 #login-link{
   color:#2F80ED;
 }
+
 .country-code{
   display:flex;
 }
+
 .code-dropdown{
   width: 80px;
   height: 36px;

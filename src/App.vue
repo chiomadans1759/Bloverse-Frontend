@@ -37,6 +37,7 @@ export default {
 :root {
   --primary: #2F80ED;
 }
+
 body{
   margin: 0px;
 }

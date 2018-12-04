@@ -1,25 +1,30 @@
 <template>
-  <main>
+  <main class="post-feeds">
     <section class="container" >
       <TrendingCard />
     </section>
     <section class="container">
-      <div class="category-list">
+      <div class="post-feeds-category" id="post-feeds-category">
         <div class="row">
           <div class="col-md-2">
-            <v-select :options="general.countries" 
-                      label="name" placeholder="Select country" 
-                      class="my-select" 
-                      v-model="country" 
-                      id="country-select">
-            </v-select>
+            <v-select
+              :options="general.countries"
+              label="name"
+              placeholder="Select country"
+              class="my-select"
+              v-model="country"
+              id="country-select"
+              v-if="allow"
+              @input="filterCountry"
+            ></v-select>
           </div>
 
           <div class="col-md-8">
             <ul class="list-inline cat-list">
               <li class="list-inline-item" v-for="category in filteredCatList" :key="category.id">
-                <a href="#" 
-                  :class="{ 'active': category.name == $store.state.general.activeCategory }"
+                <a
+                  href="#"
+                  :class="{ 'active': category.name == $store.state.general.activeCategory.name }"
                   @click.prevent="filterCategory(category.id, category.name)" style="font-family: 'Montserrat', sans-serif;">
                   {{category.name}}
                 </a>
@@ -35,7 +40,9 @@
               <div class="row">
                 <div class="col-md-6" v-for="cat in other_cats" :key="cat.id">
                   <li>
-                    <a href="#" @click.prevent="filterCategory(cat.id, cat.name)">{{cat.name}}</a>
+                    <a href="#" 
+                    @click.prevent="filterCategory(cat.id, cat.name)"
+                    :class="{ 'active': cat.name == $store.state.general.activeCategory.name }">{{cat.name}}</a>
                   </li>
                 </div>
               </div>
@@ -44,29 +51,28 @@
 
           <div class="col-md-2">
             <ul class="list-inline" id="layout-select">
-              <li class="lTrendingCardist-inline-item">
-                <a href="#"
+              <li class="list-inline-item">
+                <a  href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
                   @click.prevent="toggleLayout('grid')">
-                  <i class="fa fa-th-large"></i>
+                  <i class="fal fa-grip-horizontal fa-1x"></i>
                 </a>
               </li>
               <li class="list-inline-item">
                 <a href="#"
                   :class="{'active': general.activeFeedLayout == 'stack'}" 
                   @click.prevent="toggleLayout('stack')">
-                  <i class="fa fa-laptop"></i>
+                  <i class="far fa-laptop fa-1x"></i>
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
-     <display-feeds></display-feeds>
+      <display-feeds></display-feeds>
     </section>
   </main>
 </template>
-
 
 <script>
 import { mapState,} from 'vuex'
@@ -78,100 +84,153 @@ import TrendingCard from '../components/TrendingCard.vue';
 export default {
   name: 'FeedsSection',
   components: { Row, Col, Card, vSelect, DisplayFeeds, TrendingCard },
+  watch: {
+    general : {
+      handler:function (newItem) {
+        this.allow = true;
+      },
+      deep:true
+    }
+  
+  },
   data() {
     return {
+      allow: false,
       show_more: false,
       other_cats: {},
-      country: {}
-    }
+      country: {},
+      current_category: ""
+    };
   },
   methods: {
     showMoreCats() {
       this.other_cats = this.$store.state.general.categories.slice(4);
-      if(this.show_more == false) {
+      if (this.show_more == false) {
         this.show_more = true;
-      }else if(this.show_more == true) {
+      } else if (this.show_more == true) {
         this.show_more = false;
       }
     },
 
+    filterCountry(id) {
+      this.$store.dispatch("getAllPublishedPosts", {
+        category: this.general.activeCategory.id,
+        country: this.country.id
+      });
+    },
+
     filterCategory(id, name) {
-      this.$store.dispatch('getAllPublishedPosts', { category: id, country: '' });
-      this.$store.state.general.activeCategory = name;
+      this.current_category = id;
+      this.$store.dispatch("getAllPublishedPosts", {
+        category: id,
+        country: ""
+      });
+      this.general.activeCategory = { id, name };
     },
 
     toggleLayout(layout) {
       this.$store.state.general.activeFeedLayout = layout;
+    },
+
+    stickyCat() {
+      let cat_section = document.getElementById("post-feeds-category");
+      let sticky = cat_section.offsetTop;
+      if (window.pageYOffset >= sticky) {
+        cat_section.classList.add("post-feeds-category-sticky");
+      } else if(window.pageYOffset < sticky) {
+        cat_section.classList.remove("post-feeds-category-sticky");
+      }
     }
   },
+  created() {
+    window.onscroll = () => { this.stickyCat() };
+  },
   computed: {
-    ...mapState([
-      'general'
-    ]),
-    
-    categoryName(){
-      if(this.category){
-        let category = this.general.categories.find(cat => cat.id == this.category.id)
+    ...mapState(["general"]),
+
+    categoryName() {
+      if (this.category) {
+        let category = this.general.categories.find(
+          cat => cat.id == this.category.id
+        );
         return category.name;
       }
 
-      return 'all categories'
-        
+      return "all categories";
     },
 
     filteredCatList() {
-      if(this.$store.state.general.categories) {
+      if (this.$store.state.general.categories) {
         return this.$store.state.general.categories.slice(0, 4);
       }
     }
   }
-}
+};
 </script>
 
-<style scoped>
-main {
+<style scoped lang="scss">
+.post-feeds {
   margin: 0 auto;
   width: 100%;
+  overflow-x: hidden !important;
   background-color: #f5f5f5;
   min-height: 100vh;
- 
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 10rem;
 }
 
-.category-list {
+.post-feeds-category {
   margin: 3rem 0rem;
 }
 
-.category-list select {
-  background: #E4E4E4;
+.post-feeds-category-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 7rem;
+  background-color: #f5f5f5;
+  padding: 1rem 10rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.post-feeds-category select {
+  background: #e4e4e4;
   border-radius: 0px;
 }
 
-.category-list .list-inline {
+.post-feeds-category .list-inline {
   padding-top: 1rem;
 }
 
-.category-list .list-inline .list-inline-item {
+.post-feeds-category .list-inline .list-inline-item {
   margin-right: 1rem;
 }
 
-.category-list .list-inline .list-inline-item a {
+.post-feeds-category .list-inline .list-inline-item a {
   color: #aaaaaa;
   font-size: 14px;
   text-transform: capitalize;
 }
 
-.category-list .list-inline .list-inline-item a.active,
-.category-list .list-inline .list-inline-item a:hover {
-  border-bottom: 3px solid #2F80ED;
+.post-feeds-category .list-inline .list-inline-item a.active,
+.post-feeds-category .list-inline .list-inline-item a:hover {
+  border-bottom: 3px solid #2f80ed;
   text-decoration: none !important;
 }
 
-.category-list .list-inline .list-inline-item:last-child a:hover {
+.post-feeds-category .list-inline .list-inline-item:last-child a:hover {
   border-bottom: none;
 }
 
-.category-list #layout-select {
+.post-feeds-category #layout-select {
   float: right;
+}
+
+#layout-select a {
+  color: #aaaaaa;
 }
 
 #layout-select a:hover,
@@ -181,7 +240,27 @@ main {
 }
 
 @media only screen and (max-width: 980px) {
-  .category-list #layout-select {
+  .post-feeds-category-sticky {
+    height: 12rem;
+    padding: 1rem;
+  }
+
+  .post-feeds-category .v-select .dropdown-toggle {
+    border: 0px !important;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 0px;
+  }
+
+  .post-feeds-category .cat-list {
+    margin-top: 1.5rem;
+  }
+
+  .post-feeds-category .list-inline .list-inline-item {
+    margin-right: 0.5rem;
+  }
+
+
+  .post-feeds-category #layout-select {
     display: none;
   }
 }
@@ -211,7 +290,9 @@ main {
   line-height: 8px;
 }
 
+.dropdown-card a.active,
 .dropdown-card a:hover {
-  color: #2F80ED;
+  color: #2f80ed;
+  text-decoration: none !important;
 }
 </style>

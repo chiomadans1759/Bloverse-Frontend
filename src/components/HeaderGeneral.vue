@@ -2,7 +2,7 @@
   <nav>
     <Row class="header-row" type="flex" justify="space-between" align="middle">
       <Col class="brand">
-        <router-link to="/"><img class="logo" src="./../assets/Asset 1.svg" style="height:50px" ><span id="l-text">bloverse</span></router-link>
+        <router-link to="/"><img class="logo" src="./../assets/Logo - White.svg" style="height:50px; margin-bottom: 1rem;" ><span id="l-text">bloverse</span></router-link>
       </Col>
       <Col class="header-button">
        <router-link to="/creators/login" id="j-button">login</router-link>
@@ -34,8 +34,7 @@ export default {
   font-size: 32px;
   margin-top: 1rem;
   font-family: 'Comfortaa', cursive;
-  color: #fff;
-  margin-left: 1rem;
+  color: #fff; 
   font-weight: 500;
 }
 #j-button {
@@ -63,4 +62,16 @@ export default {
   text-align: center;
 }
 
+@media screen and (max-width: 600px) {
+  #l-text {
+  font-size: 2rem; 
+}
+#j-button, #c-button{  
+  font-size: 1rem;  
+} 
+.header-row {
+  width: 95%; 
+  padding:2rem 0 0 1rem;
+} 
+}
 </style>
