@@ -20,42 +20,38 @@
         </div>
       </div>
     </div> -->
+ 
+        <div class="card-container">
+          <div id="card-hero">
+            <img id="post-image" :src="post.image_url">
+          </div>
+          <div id="body-container">
+            <div id="card-body">
+              <h2 id="feed-category">
+                <p>{{category}}</p>
+              </h2>
+              <div id="body-start">
+            <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>
+          
+            </div>
+            </div>
+            <div id="card-footer">
+              <div id="body-mid">
+            <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
+            <span id ="author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
+            </div>
+            <div id="views">
+              <i class="fal fa-eye"></i> {{post.views}}
+              </div>
+            </div>
+            
+          </div>
+          <div class="card-container2"> 
+            <h1>Some texts here</h1> 
+        </div>
+        </div>
 
-    <!-- <div class="img-container" v-if="post.category == 7">
-      <img :src="post.image_url" alt="">
-      <div class="bottom-left">Bottom Left</div>
-      <div class="top-left">Top Left</div>
-      <div class="top-right">Top Right</div>
-      <div class="bottom-right">Bottom Right</div>
-      <div class="centered">Centered</div>
-    </div> -->
-
-    <div class="card-container">
-      <div id="card-hero">
-        <img id="post-image" :src="post.image_url">
-      </div>
-      <div id="body-container">
-        <div id="card-body">
-          <h2 id="feed-category">
-            <p>{{category}}</p>
-          </h2>
-          <div id="body-start">
-        <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>
-       
-        </div>
-        </div>
-        <div id="card-footer">
-           <div id="body-mid">
-        <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
-        <span id ="author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
-        </div>
-        <div id="views">
-          <i class="fal fa-eye"></i> {{post.views}}
-           </div>
-        </div>
-        
-      </div>
-    </div>
+         
   </router-link>
 </template>
 
@@ -91,8 +87,9 @@ export default {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
-
+ 
 .card-container {
+  position: relative;
   height: 414px;
   margin-top: 32px;
   background: white;
@@ -100,7 +97,23 @@ export default {
   border-radius: 4px;
   font-family: 'Montserrat';
 }
-
+.card-container2 {
+  height: 414px; 
+  background: rgb(5, 1, 1);
+  border: 1px solid rgba(168, 25, 25, 0.15);
+  border-radius: 4px;
+  font-family: 'Montserrat';
+  opacity: 0;  
+  position: absolute; 
+  top: 0; 
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  transition: .5s ease; 
+}
+.card-container:hover .card-container2 {
+  opacity: 1; 
+}
 #feed-category p {
   color:rgba(53, 53, 53, 1) !important;
   font-size: 10px;
