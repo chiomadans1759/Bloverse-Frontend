@@ -1,7 +1,8 @@
 import axios from 'axios';
 import store from "../../stores";
 
-let API_URL = process.env.VUE_APP_API
+// let API_URL = process.env.VUE_APP_API
+let API_URL = 'https://devapi-bloverse.herokuapp.com/v1/'
 class Api {
   static async get(url, requireAuth=false) {
     let response, statusCode, statusText, data, message, config;

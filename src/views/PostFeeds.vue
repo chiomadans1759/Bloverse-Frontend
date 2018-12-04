@@ -180,7 +180,7 @@ export default {
   width: 100%;
   z-index: 1000;
   height: 7rem;
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   padding: 1rem 10rem;
   border-bottom: 1px solid #eeeeee;
 }
