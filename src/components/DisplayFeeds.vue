@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style>
-#feedcard-container {
+#feedcard-container { 
 }
 </style>
 

@@ -83,5 +83,22 @@ export default {
   border-radius: 4px;
   text-align: center;
 }
+@media screen and (max-width: 600px) {
+  #logo-text {
+  font-size: 2rem;
+  margin-left: 0rem; 
+}
+#create-button, #login-button{  
+  font-size: 1rem;  
+} 
+.header-row {
+  width: 95%; 
+  padding:2rem 0 0 1rem;
+} 
+.feeds-row {
+  width: 90%;
+  padding:2rem 0 0 1rem;
+}
+}
 </style>
 

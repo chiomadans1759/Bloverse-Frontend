@@ -1,10 +1,8 @@
-
-
 <template>
     <footer class="feeds-footer">
         <div class="container">
             <Row type="flex" justify="space-between" align="middle">
-                <Col>
+                <Col :sm ="12" :md ="12" :xs="24">
                     <div id="footer-links">
                         <p style="font-size: 14px; opacity: 85%;  font-family: 'Comfortaa', cursive;">bloverse </p>
                         <span id="vr-line"></span>
@@ -14,7 +12,7 @@
                         <p id="links-p"><i class="fas fa-ellipsis-h" id="footer-icon"></i></p>
                     </div>
                 </Col>
-                <Col class ="copy-write" :xs="24">
+                <Col class ="copy-write" :sm ="12" :md ="12" :xs="24">
                     <p id="year-text">2018 Bloverse. All Right Reserved</p>
                 </Col>
             </Row>
@@ -51,10 +49,10 @@ export default {
     margin-left: 1rem;
     margin-top: 6px;
 
-}
+} 
 #footer-links{
     display: flex;
-   justify-content: space-between;
+    justify-content: space-between;
 }
 
 #links-p{
@@ -67,15 +65,16 @@ export default {
 #year-text {
     font-family: 'Comfortaa', cursive;
     font-size: 10px;
+    text-align: right;
 }
 
 @media screen and (max-width: 600px) {
   .feeds-footer {
     height: 85px;
-  }
-  .copy-write {
+  } 
+  #year-text { 
     text-align: center;
-    padding-top:.5rem;
+    padding-top:1rem;
 }
 }
 

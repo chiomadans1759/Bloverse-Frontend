@@ -264,7 +264,7 @@ export default {
         float:left;
     }
     .container3 > div{ 
-        margin:1rem 0 8rem 0;
+        margin:1rem 0 10rem 0;
     }
     .container3 h1{
         font-size:2rem; 
@@ -296,7 +296,7 @@ export default {
         display:none;
     }
     .container3 > div{ 
-        margin:1rem 0 8rem 0;
+        margin:1rem 0 10rem 0;
     }
 }
 </style>
