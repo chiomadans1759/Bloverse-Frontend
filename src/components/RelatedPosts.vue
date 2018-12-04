@@ -1,7 +1,9 @@
 <template>
+<div>
+  <h3 class="card-header-title">Related Topics</h3>
   <div class="related-posts-card">
     <div class="card-header">
-      <h1 class="card-header-title">Related Posts</h1>
+      
     </div>
 
     <div class="card-body">
@@ -86,6 +88,7 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -95,16 +98,22 @@ export default {
 </script>
 
 <style scoped>
+.card-header-title{
+  font-size: 16px;
+  padding-bottom: 20px;
+  font-weight: bold;
+  
+}
 .related-posts-card {
   background-color: #ffffff;
   border: 1px solid #eeeeee;
   min-height: 17rem;
 }
 
-.related-posts-card .card-header {
+/* .related-posts-card .card-header {
   border-bottom: 1px solid #eeeeee;
   padding: 1rem 2rem;
-}
+} */
 
 .related-posts-card .card-header-title {
   font-size: 17px;

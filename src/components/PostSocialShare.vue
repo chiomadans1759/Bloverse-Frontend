@@ -16,9 +16,9 @@
       </symbol> -->
     </svg>
 
-    <div class="row">
+    <div class="row share-card">
       <div class="col-xs-4 left">
-        <h3>Share on:</h3>
+        <h3>Share on</h3>
       </div>
 
       <div class="col-xs-8 right">
@@ -79,11 +79,12 @@ export default {
 .social-share-card {
   background-color: #ffffff;
   border: 1px solid #eeeeee;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
+  border-radius: 4px;
 }
 
 .left h3 {
-  font-size: 16px;
+  font-size: 14px;
   color: #666666;
   margin-top: 1rem;
 }
@@ -107,6 +108,9 @@ button {
 
 .social-icon use#linkedin {
   fill: #0077b5;
+}
+.share-card h3{
+padding-left: 14px;
 }
 </style>
 
