@@ -10,12 +10,15 @@ This web application is a content creation platform for users to create a blog f
 # Table of Contents
 - [Technology Stack](#technology-stack)
 - [Installation](#installation)
+- [Testing](#testing)
 - [Support or Contribution](#Support~Contribution)
 
 ## Technology Stack
 - Vue
 - Vuex
-- NodeJS.
+- NodeJS
+- Jest
+- Vue Test Utils
 
 ## Installation
 1. Install [`Node JS`](https://nodejs.org/en/).
@@ -26,6 +29,10 @@ This web application is a content creation platform for users to create a blog f
 7. To start the application run `npm run serve` for development
 8. To compile and minify for production run `npm run build`
 9. To lint files run `npm run lint` or To lint and also fix the files by using the eslint config run `npm run lint --fix`
+
+## Testing
+**Unit tests** - Run `npm test` on the terminal while within the **project root directory**. Unit testing is achieved through the use of `jest` and `@vue/test-utils` package. 
+`jest` is a test runner developed by Facebook, aiming to deliver a battery-included unit testing solution and `Vue Test Utils` is the official unit testing utility library for Vue.js.
 
 ## Support or Contribution
 For any suggestions or contributions please do not hesistate to contact the owners of this repository.
