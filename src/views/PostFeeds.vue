@@ -14,6 +14,7 @@
               class="my-select"
               v-model="country"
               id="country-select"
+              v-if="allow"
               @input="filterCountry"
             ></v-select>
           </div>
@@ -83,8 +84,18 @@ import TrendingCard from '../components/TrendingCard.vue';
 export default {
   name: 'FeedsSection',
   components: { Row, Col, Card, vSelect, DisplayFeeds, TrendingCard },
+  watch: {
+    general : {
+      handler:function (newItem) {
+        this.allow = true;
+      },
+      deep:true
+    }
+  
+  },
   data() {
     return {
+      allow: false,
       show_more: false,
       other_cats: {},
       country: {},

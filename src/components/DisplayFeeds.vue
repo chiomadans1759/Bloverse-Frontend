@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Row id="card-rows" gutter="32" v-if="general.activeFeedLayout == 'grid'">
+    <Row id="card-rows" :gutter="32" v-if="general.activeFeedLayout == 'grid'">
       <Col :xs="24" :sm="12" :md="8"  v-for="post in general.publishedPosts" :key="post.id">
         <FeedCard :post="post"  />
       </Col>
