@@ -1,8 +1,7 @@
 <template>
   <main class="post-feeds">
-    <section class="container" >
-      <TrendingCard />
-    </section>
+    <TrendingCard />
+    
     <section class="container">
       <div class="post-feeds-category" id="post-feeds-category">
         <div class="row">
@@ -79,7 +78,7 @@ import { mapState,} from 'vuex'
 import { Row, Col, Card } from 'iview';
 import vSelect from 'vue-select';
 import DisplayFeeds from '@/components/DisplayFeeds.vue';
-import TrendingCard from '../components/TrendingCard.vue';
+import TrendingCard from '@/components/TrendingCard.vue';
 
 export default {
   name: 'FeedsSection',
@@ -191,7 +190,7 @@ export default {
   z-index: 1000;
   height: 5rem;
   background-color: #f5f5f5;
-  padding: 1rem 10rem;
+  padding: 1rem 7.5rem;
   border-bottom: 1px solid #eeeeee;
 }
 
