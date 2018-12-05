@@ -134,10 +134,9 @@ export default {
 
     stickyCat() {
       let cat_section = document.getElementById("post-feeds-category");
-      let sticky = cat_section.offsetTop;
-      if (window.pageYOffset >= sticky) {
+      if (window.pageYOffset >= 586) {
         cat_section.classList.add("post-feeds-category-sticky");
-      } else if(window.pageYOffset < sticky) {
+      } else if(window.pageYOffset < 586) {
         cat_section.classList.remove("post-feeds-category-sticky");
       }
     }
@@ -190,7 +189,7 @@ export default {
   margin-top: 0;
   width: 100%;
   z-index: 1000;
-  height: 7rem;
+  height: 5rem;
   background-color: #f5f5f5;
   padding: 1rem 10rem;
   border-bottom: 1px solid #eeeeee;
