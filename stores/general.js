@@ -5,7 +5,7 @@ export default {
     categories: null,
     countries: null,
     activeCategory: {
-      id: 1,
+      id: '',
       name: 'All'
     },
     activeFeedLayout: 'grid',

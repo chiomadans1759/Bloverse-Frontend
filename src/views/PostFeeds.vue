@@ -98,7 +98,9 @@ export default {
       allow: false,
       show_more: false,
       other_cats: {},
-      country: {},
+      country: {
+        id: ''
+      },
       current_category: ""
     };
   },
@@ -114,7 +116,7 @@ export default {
 
     filterCountry(id) {
       this.$store.dispatch("getAllPublishedPosts", {
-        category: this.general.activeCategory.id,
+        category: this.general.activeCategory.id || '',
         country: this.country.id
       });
     },
