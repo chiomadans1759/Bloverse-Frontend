@@ -1,57 +1,79 @@
 <template>
-  <router-link :to="`posts/${post.slug}`">
-    <!-- <div id="photo-contest" v-if="post.category == 7">
-      <div id="contest-container">
-        <img id="contest-image" :src="post.image_url" >
-        <div id="contest-info">
-          <div id="info-top">
-            <p></p>
+  <router-link :to="`posts/${post.slug}`"> 
+    <div class="card-container" id="photo-contest" v-if="post.category == 7">
+      <div id="card-hero">
+        <img id="post-image" :src="post.image_url">
+      </div>
+      <div id="body-container">
+        <div id="card-body">
+          <h2 id="feed-travel-competition">
+            <p>{{category}}</p>
+          </h2>
+          <div id="body-start">
+              <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>          
           </div>
-           <div id="card-footer">
-           <div id="body-mid">
+        </div>
+        <div id="card-footer">
+          <div id="body-mid">
         <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
-        <span id ="contest-author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
+        <span id ="author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
         </div>
         <div id="views">
-           <i class="far fa-eye"></i> {{post.views}}
-           </div>
-        </div>
-
-        </div>
+          <i class="fal fa-eye"></i> {{post.views}}
+          </div>
+        </div>            
       </div>
-    </div> -->
- 
-        <div class="card-container">
-          <div id="card-hero">
-            <img id="post-image" :src="post.image_url">
-          </div>
-          <div id="body-container">
-            <div id="card-body">
-              <h2 id="feed-category">
-                <p>{{category}}</p>
-              </h2>
-              <div id="body-start">
-            <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>
-          
-            </div>
-            </div>
-            <div id="card-footer">
-              <div id="body-mid">
-            <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
-            <span id ="author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
-            </div>
-            <div id="views">
-              <i class="fal fa-eye"></i> {{post.views}}
-              </div>
-            </div>
-            
-          </div>
-          <div class="card-container2"> 
-            <h1>Some texts here</h1> 
+      <div class="card-container2"> 
+        <div class="card-overlay">
+          <h4>Hawkers in the darkness</h4></br>
+          <p>
+            <i class="fas fa-camera-retro"></i> Samsung Galaxy S9+ 
+            </br><span> <i class="fas fa-map-marker-alt"></i> Victoria Island, &nbsp;Lagos</span>
+          </p> 
         </div>
-        </div>
+        <h5>READ STORY</h5>
+      </div>
+    </div>
 
-         
+    <div class="card-container" v-else>
+      <div id="card-hero">
+        <img id="post-image" :src="post.image_url">
+      </div>
+      <div id="body-container">
+        <div id="card-body">
+          <h2 id="feed-category">
+            <p>{{category}}</p>
+          </h2>
+          <div id="body-start">
+        <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>
+      
+        </div>
+        </div>
+        <div id="card-footer">
+          <div id="body-mid">
+        <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
+        <span id ="author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
+        </div>
+        <div id="views">
+          <i class="fal fa-eye"></i> {{post.views}}
+          </div>
+        </div>
+        
+      </div>
+      <div class="card-container22"> 
+        <div class="card-general-hover">
+          <h4>30 Crazy facts about colors that will blow your mind</h4></br>
+          <ul>Keypoints
+              <li>After early screening of Aquaman, staring Jason momoe, critiques seem pretty pleased.</li>
+              <li>Gizmodo's Germain Lussier called Aquaman's a big, fun , wild ride.</li>
+              <li>Others like writter-director Ben meckler even called it an "Undersea Star Wars" </li>
+          </ul>
+        </div>
+          <div id="hover-top-border">
+            <h5>READ STORY</h5>
+          </div>
+      </div>
+    </div>
   </router-link>
 </template>
 
@@ -87,7 +109,9 @@ export default {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
- 
+.photo-contest-para{
+  color:blue !important;
+} 
 .card-container {
   position: relative;
   height: 414px;
@@ -98,8 +122,56 @@ export default {
   font-family: 'Montserrat';
 }
 .card-container2 {
-  height: 414px; 
-  background: rgb(5, 1, 1);
+  background-image: url("./../assets/landingPage.jpg"); 
+  height: 414px;  
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+  font-family: 'Montserrat';
+  opacity:0;  
+  position: absolute; 
+  top: 0; 
+  bottom: 0;
+  left: 0;
+  right: 0;    
+  transition: .5s ease; 
+}
+.card-overlay{
+  height: 100%;
+  width:100%;
+  background: #000;
+  opacity: .8;
+}
+.card-container2 h5{
+  position:absolute;
+  bottom:3rem;
+  right:3rem;  
+  font-weight: 800;
+  color:blue;
+}
+.card-container2 div{ 
+  color: #fff; 
+}
+.card-container2 h4{  
+  font-weight:800;
+  padding:2rem;
+}
+.card-container2 p{  
+  font-weight:200;
+  padding:2rem;
+  line-height: 2.5;
+  font-size:1.6rem;
+}
+.card-container2 .fa-camera-retro, .fa-map-marker-alt{  
+   margin-right:10px;
+   opacity: .3;
+}
+.card-container:hover .card-container2 { 
+  opacity:1; 
+}  
+.card-container22 {
+  height: 414px;  
   border: 1px solid rgba(168, 25, 25, 0.15);
   border-radius: 4px;
   font-family: 'Montserrat';
@@ -111,14 +183,41 @@ export default {
   right: 0; 
   transition: .5s ease; 
 }
-.card-container:hover .card-container2 {
-  opacity: 1; 
+.card-container22 h5{  
+  text-align: right;
+  color:blue; 
+  padding:2rem;
+  font-weight:800; 
 }
-#feed-category p {
-  color:rgba(53, 53, 53, 1) !important;
-  font-size: 10px;
-  text-transform: uppercase;
+.card-container22 div{ 
+  color: #000; 
 }
+.card-container22 ul{
+  font-size:1.4rem;
+  margin-left:2rem;
+}
+.card-container22 ul li{
+  list-style-type:disc;
+  margin-left:2.5rem;
+  margin-top:1rem;
+  list-style-position: outside;
+}
+#hover-top-border{
+  border-top:1px solid #ccc;
+  position:absolute;
+  bottom:0; 
+  height:6rem;
+  width:100%;
+}
+.card-general-hover h4{  
+  font-weight:100;
+  padding:2rem;
+  line-height:2.5rem;
+} 
+.card-container:hover .card-container22 {
+  opacity: 1;  
+  background-color: #fff;
+} 
 
 #post-image {
   width: 100%;
@@ -132,6 +231,13 @@ export default {
   color: rgba(53, 53, 53, 1) !important;
   font-size: 10px;
   text-transform: uppercase;
+}
+#feed-travel-competition p {
+  color:blue !important;
+  font-size: 10px;
+  font-weight:800;
+  text-transform: uppercase;
+  text-decoration: none; 
 }
 
 #card-title p {
