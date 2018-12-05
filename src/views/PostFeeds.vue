@@ -1,8 +1,7 @@
 <template>
   <main class="post-feeds">
-    <section class="container" >
-      <TrendingCard />
-    </section>
+    <TrendingCard />
+    
     <section class="container">
       <div class="post-feeds-category" id="post-feeds-category">
         <div class="row">
@@ -79,7 +78,7 @@ import { mapState,} from 'vuex'
 import { Row, Col, Card } from 'iview';
 import vSelect from 'vue-select';
 import DisplayFeeds from '@/components/DisplayFeeds.vue';
-import TrendingCard from '../components/TrendingCard.vue';
+import TrendingCard from '@/components/TrendingCard.vue';
 
 export default {
   name: 'FeedsSection',
@@ -98,7 +97,9 @@ export default {
       allow: false,
       show_more: false,
       other_cats: {},
-      country: {},
+      country: {
+        id: ''
+      },
       current_category: ""
     };
   },
@@ -114,7 +115,7 @@ export default {
 
     filterCountry(id) {
       this.$store.dispatch("getAllPublishedPosts", {
-        category: this.general.activeCategory.id,
+        category: this.general.activeCategory.id || '',
         country: this.country.id
       });
     },
@@ -134,10 +135,9 @@ export default {
 
     stickyCat() {
       let cat_section = document.getElementById("post-feeds-category");
-      let sticky = cat_section.offsetTop;
-      if (window.pageYOffset >= sticky) {
+      if (window.pageYOffset >= 586) {
         cat_section.classList.add("post-feeds-category-sticky");
-      } else if(window.pageYOffset < sticky) {
+      } else if(window.pageYOffset < 586) {
         cat_section.classList.remove("post-feeds-category-sticky");
       }
     }
@@ -190,9 +190,9 @@ export default {
   margin-top: 0;
   width: 100%;
   z-index: 1000;
-  height: 7rem;
+  height: 5rem;
   background-color: #f5f5f5;
-  padding: 1rem 10rem;
+  padding: 1rem 7.5rem;
   border-bottom: 1px solid #eeeeee;
 }
 

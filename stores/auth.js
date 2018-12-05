@@ -1,5 +1,5 @@
 import Api from '../src/utils/Api';
-import {getLocalUser,getJWT, shouldRegister} from "@/utils/UserAuth";
+import {getLocalUser,getJWT} from "@/utils/UserAuth";
 
 
 var objCodec = require('object-encode');
@@ -31,7 +31,7 @@ export default {
     newUser: { imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg' },
     applicant: { articleURLs: [] },
     loggedInUser: user,
-    shouldRegister: shouldRegister(),
+    shouldRegister: false,
   },
   actions: {
     async login({ commit, state }, params) {
@@ -158,7 +158,6 @@ export default {
     },
     setShouldRegister(state, value) {
       state.shouldRegister = value;
-      localStorage.setItem('shouldRegister', value);
     },
 
     setApplicantIds(state, { name, value }) {

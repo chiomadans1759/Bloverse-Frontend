@@ -1,11 +1,15 @@
 <template>
   <main class="card">
+    <div class="card-header">
+       <h3 class="post-cat">{{category}}</h3>
+     <h3 class="date-cat">2 days ago</h3>
+    </div>
+    
     <img class="post-img" :src="general.currentPost.image_url">
-
+      
     <div class="container">
       <small class="img-descrip">This is a description of the picture above</small>
-      <h3 class="post-cat">{{category}}</h3>
-      <h1 class="post-title">{{general.currentPost.title}}</h1>
+      <h1 class="post-title mt-4">{{general.currentPost.title}}</h1>
       <ul class="post-keypoints">
         <li v-for="point in general.currentPost.keypoint" :key="point.id">{{point}}</li>
       </ul>
@@ -40,6 +44,15 @@ export default {
 .card {
   background-color: #ffffff;
   border: 1px solid #eeeeee;
+  padding:16px 24px 0;
+  margin-top: 15px;
+  border-radius: 4px
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
 }
 
 .post-img {
@@ -55,9 +68,19 @@ export default {
 }
 
 .post-cat {
-  margin: 3rem 0rem 1.5rem;
   color: #666666;
-  font-size: 14px;
+  font-size: 12px;
+  padding-bottom: 16px;
+  text-transform: uppercase;
+  font-weight: bold
+}
+
+.date-cat {
+  color: #aaaaaa;
+  font-size: 10px;
+  padding-bottom: 16px;
+  text-transform: uppercase;
+  font-weight: bold
 }
 
 .post-keypoints li {
@@ -70,6 +93,7 @@ export default {
 .post-content {
   padding: 3rem 0rem;
 }
+
 @media only screen and (max-width: 980px) {
  .card{
    margin-top: 3rem;

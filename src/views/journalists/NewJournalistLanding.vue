@@ -50,7 +50,7 @@
                             <h1>{{general.metrics.journalists}}</h1>
                             <p>CONTENT PROVIDERS</p>
                         </Col> 
-                        <Col :md="8" :sm="8" :xs="8">
+                        <Col :md="8" :sm="8" :xs="8" v-if="show">
                             <h1>{{general.metrics.views.total}}</h1>
                             <p>VISITORS</p>
                         </Col>   
@@ -72,6 +72,11 @@ export default {
   components: {
     Button, Row, Col, Icon, Input, Form, Content, Layout, Header, HeaderGeneral, FeedsFooter
   },
+  data(){
+    return {
+      show: false
+    }
+  },
   computed: {
     ...mapState([
       'general'
@@ -85,6 +90,7 @@ export default {
   mounted:
     async function(){
       await this.getGeneralMetrics();
+      this.show = true;
     }
 };
 </script>
