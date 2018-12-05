@@ -4,7 +4,6 @@
         <Row class="trending" >
             <carousel paginationActiveColor="#096DD9" paginationColor="#95C8D8" :perPageCustom="[[768, 3], [1024, 4], [600, 2], [300,1]]" :autoplay="true" autoplayTimeout="4000">
                 <slide v-for="i in 12" :key="i" id="slider">
-
                     <Col>
                     <Card id="trend-card">
                         <div style="text-align:left">
@@ -110,4 +109,3 @@ export default {
 }
 
 </style>
-
