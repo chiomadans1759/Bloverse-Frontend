@@ -9,7 +9,7 @@
       
     <div class="container">
       <small class="img-descrip">This is a description of the picture above</small>
-      <h1 class="post-title">{{general.currentPost.title}}</h1>
+      <h1 class="post-title mt-4">{{general.currentPost.title}}</h1>
       <ul class="post-keypoints">
         <li v-for="point in general.currentPost.keypoint" :key="point.id">{{point}}</li>
       </ul>
@@ -48,11 +48,13 @@ export default {
   margin-top: 15px;
   border-radius: 4px
 }
-.card-header{
+
+.card-header {
   display: flex;
   justify-content: space-between;
   align-items: center
 }
+
 .post-img {
   width: 100%;
   height: 398px;
@@ -63,18 +65,17 @@ export default {
 .img-descrip {
   color: #aaaaaa;
   font-size: 11px;
-  border:1px solid red
 }
 
 .post-cat {
- 
   color: #666666;
   font-size: 12px;
   padding-bottom: 16px;
   text-transform: uppercase;
   font-weight: bold
 }
-.date-cat{
+
+.date-cat {
   color: #aaaaaa;
   font-size: 10px;
   padding-bottom: 16px;
@@ -92,6 +93,7 @@ export default {
 .post-content {
   padding: 3rem 0rem;
 }
+
 @media only screen and (max-width: 980px) {
  .card{
    margin-top: 3rem;
