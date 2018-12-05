@@ -18,9 +18,18 @@
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <title>Bloverse</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130020413-1"></script>
 </head>
 
 <body>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-130020413-1');
+  </script>
   <div id="app"></div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 

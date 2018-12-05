@@ -15,7 +15,7 @@ This web application is a content creation platform for users to create a blog f
 ## Technology Stack
 - Vue
 - Vuex
-- NodeJS
+- NodeJS.
 
 ## Installation
 1. Install [`Node JS`](https://nodejs.org/en/).
