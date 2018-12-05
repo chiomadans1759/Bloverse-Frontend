@@ -4,24 +4,24 @@
         <Row class="trending" >
             <carousel paginationActiveColor="#096DD9" paginationColor="#95C8D8" :perPageCustom="[[768, 3], [1024, 4], [600, 2], [300,1]]" :autoplay="true" autoplayTimeout="4000">
                 <slide v-for="i in 12" :key="i" id="slider">
-
                     <Col>
-                    <Card id="trend-card">
-                        <div style="text-align:left">
-                            <img src="./../assets/trending/business.jpg"  id="trend-img">
-                        </div>
-                        <div>
-                            <p id="category-name">Category</p>
-                            <p id="category-text">I took a break from mum guilt for the day</p>
-                             <Avatar shape="square" id="avatarr"/>
-                             <span id="user-name"> John Doe </span>
-                            <!-- <p>A high quality UI Toolkit based on Vue.js</p> -->
-                        </div>     
-                    </Card>
+                        <Card id="trend-card">
+                            <div style="text-align:left">
+                                <img src="./../assets/trending/business.jpg"  id="trend-img">
+                            </div>
+                            <div>
+                                <p id="category-name">Category</p>
+                                <p class="text-bold" id="category-text">
+                                    I took a break from mum guilt for the day
+                                </p>
+                                <Avatar shape="square" id="avatarr"/>
+                                <span id="user-name"> John Doe </span>
+                                <!-- <p>A high quality UI Toolkit based on Vue.js</p> -->
+                            </div>     
+                        </Card>
                     </Col>
                 </slide>
             </carousel>
-        
         </Row>
     </div>
 </template>
@@ -38,76 +38,77 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-    .trending {
-        margin-top: 3rem;
-        display: flex;
-        justify-content: space-between;
-    }
+.trending {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
 
-    #category-name {
-        font-size: 10px;
-        font-family: 'Montserrat', sans-serif;
-        position: absolute;
-        top: 8px;
-        left: 16px;
-        color: #ffffff;
-        text-transform: uppercase;
-        }
+#category-name {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 5rem;
+    left: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
 
-    #trend-card {
-        width:285px;
-        margin-right: 1rem;
-    }  
+#trend-card {
+    width:285px;
+    margin-right: 1rem;
+}  
 
-    #trend-img {
-        height:210px; 
-        width: 285px;
-    } 
+#trend-img {
+    height:210px; 
+    width: 285px;
+} 
 
-    #category-text {
-        position: absolute;
-        top: 120px;
-        right: 16px;
-        left: 16px;
-        color: #ffffff;
-        font-size: 12px;
-        font-family: 'Montserrat', sans-serif;
-        }
+#category-text {
+    position: absolute;
+    top: 110px;
+    right: 16px;
+    left: 16px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
 
-        #avatarr {
-            position: absolute;
-            bottom: 10px;
-            left: 16px;
-        }
+#avatarr {
+    position: absolute;
+    bottom: 10px;
+    left: 16px;
+}
 
-        #user-name {
-           position: absolute;
-           color: #ffffff;
-           font-family: 'Montserrat', sans-serif;
-           bottom: 7%;
-           left: 20%;
-           font-size: 12px;
-           float: left;
-        }
-
+#user-name {
+    position: absolute;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    bottom: 7%;
+    left: 20%;
+    font-size: 12px;
+    float: left;
+}
 </style>
 
 <style>
 .VueCarousel-wrapper{
     width: 88vw !important;
 }
+
 @media only screen and (max-width: 767px) {
     .VueCarousel-wrapper{
         width: 90vw !important;
-}
+    }
+
      #trend-card {
         width:500px;
     }
+
      #trend-img {
         height:210px; 
         width: 300px;
     }   
 }
-
 </style>
 
