@@ -1,5 +1,5 @@
 <template>
-    <div>
+<div>
     <h4 style="font-family: 'Montserrat', sans-serif; margin-top: 4rem; font-weight: bold;">Top Stories</h4>
         <Row class="trending" >
             <carousel paginationActiveColor="#096DD9" paginationColor="#95C8D8" :perPageCustom="[[768, 3], [1024, 4], [600, 2], [300,1]]" :autoplay="true" autoplayTimeout="4000">

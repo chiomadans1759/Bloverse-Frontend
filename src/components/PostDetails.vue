@@ -63,7 +63,6 @@ export default {
 .img-descrip {
   color: #aaaaaa;
   font-size: 11px;
-  border:1px solid red
 }
 
 .post-cat {

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="img-carousel">
   <h3 class="card-header-title">Related Topics</h3>
   <div class="related-posts-card">
     <div class="card-header">
@@ -88,16 +88,49 @@
       </div>
     </div>
   </div>
+  <div>
+    <div class="related-card">
+    <h4 style="font-family: 'Montserrat', sans-serif; margin-top: 4rem; font-weight: bold;">Related Topics</h4>
+        <Row class="trending" >
+            <carousel paginationActiveColor="#096DD9" paginationColor="#95C8D8" :perPageCustom="[[1024, 4],[768, 3], [600, 2], [300,1]]" :autoplay="true" :autoplayTimeout=4000>
+                <slide v-for="i in 12" :key="i" id="slider">
+
+                    <Col>
+                    <Card id="trend-card">
+                        <div style="text-align:left">
+                            <img src="./../assets/trending/business.jpg"  id="trend-img">
+                        </div>
+                        <div>
+                            <p id="category-name">Category</p>
+                            <p id="category-text">I took a break from mum guilt for the day</p>
+                             <Avatar shape="square" id="avatarr"/>
+                             <span id="user-name"> John Doe </span>
+                            <!-- <p>A high quality UI Toolkit based on Vue.js</p> -->
+                        </div>     
+                    </Card>
+                    </Col>
+                </slide>
+            </carousel>
+        </Row>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { Row, Col, Card, Avatar } from 'iview';
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
-  name: "related-posts"
-};
+  name: 'related-posts',
+  components: { Row, Col, Card, Carousel, Slide, Avatar },
+}
 </script>
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 .card-header-title{
   font-size: 16px;
   padding-bottom: 20px;
@@ -150,5 +183,65 @@ export default {
 .related-posts-card .post p {
   color: #666666;
   font-size: 13px;
+}
+  .trending {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #category-name {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+    }
+
+    #trend-card {
+      width:285px;
+      margin-right: 1rem;
+    }  
+
+    #trend-img {
+      height:210px; 
+      width: 285px;
+    } 
+
+    #category-text {
+      position: absolute;
+      top: 120px;
+      right: 16px;
+      left: 16px;
+      color: #ffffff;
+      font-size: 12px;
+      font-family: 'Montserrat', sans-serif;
+      }
+
+      #avatarr {
+        position: absolute;
+        bottom: 10px;
+        left: 16px;
+        }
+
+      #user-name {
+        position: absolute;
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        bottom: 7%;
+        left: 20%;
+        font-size: 12px;
+        float: left;
+        }
+
+@media only screen and (min-width: 767px) {
+
+  .related
+
+  .img-carousel {
+    display: none;
+  }
 }
 </style>
