@@ -13,9 +13,9 @@
         <slide v-for="i in 12" :key="i" id="slider">
           <Col>
             <Card id="trend-card">
-							<div class="trend-img">
-								<img src="./../assets/trending/business.jpg">
-							</div>
+				<div class="trend-img">
+					<img src="./../assets/trending/business.jpg">
+				</div>
               <div>
                 <p id="category-name">Category</p>
                 <p class="text-bold" id="category-text">I took a break from mum guilt for the day</p>

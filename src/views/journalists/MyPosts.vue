@@ -1,34 +1,38 @@
 <template>
   <div>
-   <Row type="flex" justify="end">
-    <Col>
-      <Icon :style="{ marginRight: '1rem'}" type="android-apps"></Icon>
-    </Col>
-    <Col>
-      <Icon type="android-apps"></Icon>
-    </Col>
-  </Row>
-  <Row type="flex" justify="space-between" v-if="showPosts">
-    <Col v-for="post in journalist.posts" :md="11" :key="post.id">
-      <PostCard :post="post" />
-    </Col>
-  </Row>
-   <div v-else class="showposts">
-    <h2>This Place looks empty !</h2><br />
-    <router-link :to="`/creators/${auth.loggedInUser.userName}/posts/create`" id="showbutton">Create Posts Here</router-link>
+    <div id="all-posts">
+      <div class="row no-gutter" id="posts-tabs">
+        <div class="col-xs-6 active pt-1">
+            <p class="text-uppercase">all posts</p>
+        </div>
+        <div class="col-xs-6 pt-1">
+            <p class="text-uppercase">all drafts</p>
+        </div>
+  </div>
     </div>
+      <Row type="flex" style="left: 90%;">
+        <Col>
+          <DraftCard />
+        </Col>
+      </Row>
+      <Row type="flex" justify="space-between" v-if="showPosts"  :gutter="16">
+        <Col v-for="post in journalist.posts" :key="post.id" :sm="24" :md="8">
+          <FeedCard :post="post" style="height: 414px; width: " />
+        </Col>
+      </Row>
   </div>
 </template>
 
 
 <script>
-import { Row, Col, Icon } from 'iview';
+import { Row, Col, Button, Card } from 'iview';
 import { mapState, mapActions } from 'vuex'
 
-import PostCard from '../../components/PostCard.vue';
+import FeedCard from '../../components/FeedCard.vue';
+import DraftCard from '@/components/DraftCard.vue'
 
 export default {
-  components: { Row, Col, PostCard, Icon },
+  components: { Row, Col, FeedCard, Button, Card, DraftCard },
   computed: {
     ...mapState([
       'journalist',
@@ -78,5 +82,38 @@ export default {
   border-radius: 5px;
   font-family: 'Open Sans', sans-serif;
 }
+
+.mypost-container {
+  margin: 0 auto;
+  width: 70%;
+  overflow-x: hidden !important;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 10rem;
+}
+
+#all-posts #posts-tabs {
+  margin: 0 auto;
+  width: 35%;
+  height: 3rem;
+  background-color: #ffffff;
+  border: 1px solid #096DD9;
+  border-radius: 4px;
+}
+#all-posts #posts-tabs .col-xs-6 {
+  height: 100%;
+  color:#096DD9;
+  cursor: pointer;
+}
+#all-posts #posts-tabs .col-xs-6 p {
+  text-align: center;
+}
+#all-posts #posts-tabs .active,
+#all-posts #posts-tabs .col-xs-6:hover {
+  color: #ffffff;
+  background:#096DD9;
+}
+
 
 </style>
