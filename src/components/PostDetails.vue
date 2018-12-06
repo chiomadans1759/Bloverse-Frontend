@@ -1,7 +1,7 @@
   <template>
   <main class="card">
     <div class="card-header">
-       <h3 class="post-cat">{{category}}</h3>
+       <h3 class="post-cat" v-if="show">{{category.name}}</h3>
      <h3 class="date-cat">2 days ago</h3>
     </div>
     
@@ -25,6 +25,16 @@ import { mapState } from "vuex";
 
 export default {
   name: "post-details",
+  data(){
+    return{
+      show: false
+    }
+  },
+  watch:{
+    category(){
+      this.show = true;
+    }
+  },
   computed: {
     ...mapState(["general"]),
 
@@ -33,7 +43,7 @@ export default {
         const postCategory = this.general.categories.find(
           category => category.id === this.general.currentPost.category
         );
-        return postCategory.name;
+        return postCategory;
       }
     }
   }
