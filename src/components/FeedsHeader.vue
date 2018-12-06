@@ -32,14 +32,14 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 
 #feeds-header {
-  height: 8rem;
+  height: 6rem;
   padding-top: 1rem;
 }
 
 .feeds-row {
  width: 90%;
  margin: 0 auto;
- padding:3px;
+ padding: 3px;
 }
 .router-link {
   display: flex;
