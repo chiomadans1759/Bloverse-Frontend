@@ -26,35 +26,35 @@ export default {
       response = await Api.get('categories/');
 
       switch (response.statusCode) {
-        case 200:
-          categories = response.data && response.data.categories;
-          //Adds an object to select all categories to array 
-          categories.unshift({
-            id: '',
-            name: 'All'
-          });
+      case 200:
+        categories = response.data && response.data.categories;
+        //Adds an object to select all categories to array 
+        categories.unshift({
+          id: '',
+          name: 'All'
+        });
 
-          categories = categories.sort((a, b) => {
-            if (a.name > b.name) return 1;
-            if (a.name == b.name) return 0;
-            if (a.name < b.name) return -1;
-          })
+        categories = categories.sort((a, b) => {
+          if (a.name > b.name) return 1;
+          if (a.name == b.name) return 0;
+          if (a.name < b.name) return -1;
+        })
 
-          response = await Api.get('countries/');
-          countries = response.data && response.data.countries;
-          //Adds an object to select all countries array 
-          countries.unshift({
-            id: '',
-            name: 'All'
-          });
-          countries = countries.sort((a, b) => {
-            if (a.name > b.name) return 1;
-            if (a.name == b.name) return 0;
-            if (a.name < b.name) return -1;
-          })
-          commit('setCountries', countries);
-          commit('setCategories', categories);
-          return true;
+        response = await Api.get('countries/');
+        countries = response.data && response.data.countries;
+        //Adds an object to select all countries array 
+        countries.unshift({
+          id: '',
+          name: 'All'
+        });
+        countries = countries.sort((a, b) => {
+          if (a.name > b.name) return 1;
+          if (a.name == b.name) return 0;
+          if (a.name < b.name) return -1;
+        })
+        commit('setCountries', countries);
+        commit('setCategories', categories);
+        return true;
       }
       return false;
     },
@@ -73,11 +73,11 @@ export default {
       let response;
       response = await Api.get('applicants/', true);
       switch (response.statusCode) {
-        case 200: // eslint-disable-line no-case-declarations
-          //removes admin from applicants
-          let onlyApplicants = response.data.applicants.filter(applicant => applicant.id !== 1);
-          commit('setApplicants', onlyApplicants);
-          return true;
+      case 200: // eslint-disable-line no-case-declarations
+        //removes admin from applicants
+        let onlyApplicants = response.data.applicants.filter(applicant => applicant.id !== 1);
+        commit('setApplicants', onlyApplicants);
+        return true;
       }
 
       return false;
@@ -89,9 +89,9 @@ export default {
       let response;
       response = await Api.get('journalists/');
       switch (response.statusCode) {
-        case 200:
-          commit('setJournalists', response.data.journalists);
-          return true;
+      case 200:
+        commit('setJournalists', response.data.journalists);
+        return true;
       }
 
       return false;

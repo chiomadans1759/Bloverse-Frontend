@@ -20,7 +20,7 @@
               </router-link>
             </li>
             <li class="list-inline-item">
-              <router-link :to="`/creators/${auth.loggedInUser.userName}/posts`" :class="{'active': currentRoute == ''}">
+              <router-link :to="`/creators/${auth.loggedInUser.userName}/posts`" :class="{'active': currentRoute == 'all-posts'}">
                 My Content
               </router-link>
             </li>

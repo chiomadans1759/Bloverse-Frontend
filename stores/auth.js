@@ -47,14 +47,14 @@ export default {
     }, params) {
       let response = await Api.post('authentication/', params)
       switch (response.statusCode) {
-        case 201:
-          commit('setJwt', response.data.token);
-          commit('setLoggedInUser', response.data.user)
-          return true;
-        default:
-          return {
-            errors: response.data
-          };
+      case 201:
+        commit('setJwt', response.data.token);
+        commit('setLoggedInUser', response.data.user)
+        return true;
+      default:
+        return {
+          errors: response.data
+        };
       }
     },
 
@@ -90,12 +90,12 @@ export default {
         categoryId
       })
       switch (response.statusCode) {
-        case 201:
-          return true;
-        default:
-          return {
-            errors: response.data
-          };
+      case 201:
+        return true;
+      default:
+        return {
+          errors: response.data
+        };
       }
     },
     async getApplicantById({
@@ -103,16 +103,16 @@ export default {
     }, id) {
       let response = await Api.get('applicants/' + id + '/')
       switch (response.statusCode) {
-        case 200:
-          commit('setApplicant', response.data.applicant);
-          break;
-        case 404:
-          commit('clearApplicant');
-          break;
-        default:
-          return {
-            errors: response.data
-          };
+      case 200:
+        commit('setApplicant', response.data.applicant);
+        break;
+      case 404:
+        commit('clearApplicant');
+        break;
+      default:
+        return {
+          errors: response.data
+        };
       }
     },
     async applicantHasRegistered({
@@ -127,12 +127,12 @@ export default {
     }) {
       let response = await Api.post('journalists/', state.newUser);
       switch (response.statusCode) {
-        case 201:
-          return true;
-        default:
-          return {
-            errors: response.data
-          };
+      case 201:
+        return true;
+      default:
+        return {
+          errors: response.data
+        };
       }
     },
     async generateUsername({

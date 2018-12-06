@@ -1,4 +1,4 @@
-1<template>
+<template>
   <main class="post-display">
     <div class="container">
       <div class="row">

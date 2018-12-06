@@ -49,7 +49,6 @@
 import { Row, Col, Card, Avatar } from "iview";
 import { Carousel, Slide } from "vue-carousel";
 import { mapActions, mapState } from "vuex";
-import FeedCard from "./FeedCard.vue";
 
 export default {
   name: "TrendingCards",
