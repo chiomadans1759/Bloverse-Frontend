@@ -48,25 +48,6 @@
         </Card>
       </Col>
     </Row>
-    <Row :gutter="32" v-if="show">
-      <div id="trending-card">
-        <div class="trend-heading">
-          <h2 class="title">Trending</h2>
-          <h2 class="title">Lifestyle</h2>
-        </div>
-          <carousel :perPageCustom="[[768, 4], [1024, 6], [600, 3], [300,2]]" paginationActiveColor="#096DD9" paginationColor="#95C8D8">
-            <slide v-for="i in 9" :key="i" style="text-align: center">
-            <router-link to="/entity">
-                <Avatar 
-                  src="https://res.cloudinary.com/naera/image/upload/v1530033169/bloverse/ca6df9c3826fa48bf487c553b4a8fb62.jpg" 
-                  id="trend-avatar" 
-                />
-                <p id="trend-tag">Drake</p>
-              </router-link>
-            </slide>
-          </carousel>
-      </div>
-    </Row>
   </div>
 </template>
 
@@ -165,11 +146,11 @@ export default {
 }
 
 .blue-icon {
-  width: 1.5rem;
-  height: 0.5rem;
+  width: 1rem;
+  height: 1rem;
   background-color: #096DD9;
-  border-radius: 0.5rem;
-  margin-bottom: 2rem;
+  border-radius: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .map-stat-values {
@@ -242,38 +223,6 @@ export default {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1rem 0.7rem;
-}
-
-#trending-card {
-  margin-top: 6rem;
-  height: 30rem;
-  box-shadow: 0  0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
-  border-radius:  0.3125rem;
-  overflow: hidden;
-  background-color: #f5f5f5;
-}
-
-.trend-heading {
-  display: flex;
-  justify-content: space-between;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 2rem;
-  color: #000000;
-  margin: 3rem;
-}
-
-#trend-avatar {
-  margin: 2rem;
-  height: 6rem;
-  width: 6rem;
-  border-radius: 100%;
-}
-
-#trend-tag {
-  color: #000000;
 }
 
 @media screen and (max-width: 360px) {
