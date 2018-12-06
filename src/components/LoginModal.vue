@@ -159,7 +159,7 @@ export default {
 
 #modal-login-button{
     padding:10px 20px;
-background-image: linear-gradient(left, #2F80ED, #003CE1);
+background-image: linear-gradient(to right, #2F80ED, #003CE1);
 border-radius: 4px;
 color:white;
 border:none;
