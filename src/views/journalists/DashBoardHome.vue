@@ -3,78 +3,48 @@
     <h3 class="page_intro_name">Dashboard</h3>
     <Row :gutter="32" id="stat-wrapper" v-if="show">
       <Col :sm="8" :xs="24">
-        <stat-card variant="fade" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week' ,'Articles']}" />
+        <stat-card variant="fade" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week']}" />
       </Col>
       <Col :sm="8" :xs="24">
         <stat-card variant="primary" title="published" id="stat-point2" :stats="{ key:[articles.today, articles.week,  articles.total ] , value:[ 'Today' ,'This Week' ,'Articles']}" />
       </Col>
       <Col :sm="8" :xs="24">
-      <!-- {{views}} -->
         <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ key:[`${datas.categoryRank[0]} of ${datas.categoryRank[1]}`, `${datas.countryRank[0]} of ${datas.countryRank[1]}` , `${datas.point}`] , value:['Category' ,'Country' , 'Ranking']}" />
       </Col>
     </Row>
 
-    <Row :gutter="32" v-if="show">
+    <Row :gutter="32" v-if="show" type="flex" justify="center">
       <Col :sm="16" :xs="24">
         <Card id="map-card">
-          <h2 slot="title" class="title">Total Visits</h2>
-          <span slot="extra">
-            <ion-icon name="add" id="extra-icon"></ion-icon>
-            <ion-icon name="remove" id="extra-icon"></ion-icon>
-            <!-- Zoom out and zoom in for map -->
-          </span>
-          <Row :gutter="16" id="select-wrapper">
-            <Col span="8">
-              <Select placeholder="Region" v-model="region">
-                <Option value="">No item yet</Option>
-              </Select>
-            </Col>
-            <Col span="8">
-              <Select placeholder="Subregion" v-model="subRegion">
-                <Option value="">No item yet</Option>
-              </Select>
-            </Col>
-            <Col span="8">
-              <Select placeholder="Country" v-model="country">
-                <Option value="">No item yet</Option>
-              </Select>
-            </Col>
-          </Row>
-          <div id="map-wrapper">
-          <GChart
-                    type="GeoChart"
-                    :data="chartData"
-                    ref="chartData"
-                    :resizeDebounce="500"
-                    :width="100"
-                  />
+          <div class="map-stat">
+            <div class="map-stat-keys">
+              <h4 class="stat-header">Views</h4>
+              <p v-for="(data, index) in chartData" 
+              :key="index" 
+              v-if="index > 0">
+              <span> {{ data[0] }} </span>
+              </p>
+              <p class="map-stat-total">Total</p>
+            </div>
+            <div class="map-stat-values">
+              <div class="blue-icon"></div>
+              <p v-for="(data, index) in chartData" 
+              :key="index" 
+              v-if="index > 0">
+              <span>{{ data[1] }}</span>
+              </p>
+              <p class="map-stat-total-num">{{ chartData.filter((e, i) => i !== 0).reduce((acc, a) => acc + a[1], 0) }}</p>
+            </div>
           </div>
-        </Card>
-      </Col>
-      <Col :sm="8">
-        <Card id="trending-card">
-          <h2 slot="title" class="title">Trending</h2>
-              <Row type="flex" justify="center">
-            <Col span="10">
-              <Select v-model="categories" placeholder="Categories" id="categories">
-                <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
-              </Select>
-            </Col>
-            <Col span="10">
-              <Select v-model="country" placeholder="Country" id="country">
-                <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{item.name}}</Option>
-              </Select>
-            </Col>
-          </Row>
-          <Row type="flex" :gutter="16" justify="center" id="entities-wrapper">
-            <Col :sm="4" class="entity" v-for="i in 9" :key="i">
-              <router-link to="/entity">
-                <Avatar src="https://res.cloudinary.com/naera/image/upload/v1530033169/bloverse/ca6df9c3826fa48bf487c553b4a8fb62.jpg" />
-                <p>Drake</p>
-              </router-link>
-            </Col>
-
-          </Row>
+          <div id="map-wrapper">
+            <GChart
+              type="GeoChart"
+              :data="chartData"
+              ref="chartData"
+              :resizeDebounce="500"
+              :width="100"
+            />
+          </div>
         </Card>
       </Col>
     </Row>
@@ -87,6 +57,7 @@ import { Row, Col, Card, Select, Option, locale, Avatar, Icon } from "iview";
 import { mapActions, mapGetters, mapState } from "vuex";
 import lang from "iview/dist/locale/en-US";
 import { GChart } from "vue-google-charts";
+import { Carousel, Slide } from 'vue-carousel';
 import DashboardStatDisplayCard from "../../components/JournalistStatDisplayCard.vue";
 // configure language
 locale(lang);
@@ -101,7 +72,9 @@ export default {
     Avatar,
     GChart,
     StatCard: DashboardStatDisplayCard,
-    Icon
+    Icon,
+    Carousel, 
+    Slide
   },
   data(){
     return {
@@ -129,11 +102,8 @@ export default {
     ...mapActions(["getMyMetrics"])
   },
   mounted: async function() {
-   
     await this.getMyMetrics();
     this.show = true;
-
-
   }
 };
 </script>
@@ -141,132 +111,106 @@ export default {
 
 <style scoped>
 #stat-wrapper {
-  margin-bottom: 30px;
+  margin-bottom: 6rem;
   color: #828282;
 }
 
-.title {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  color: #9da19c;
-}
-
-#trending-card {
-  height: 450px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  overflow: hidden;
-}
-
 #map-card {
-  height: 450px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  height: 40rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.3125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-#select-wrapper {
-  width: 80%;
-  margin: auto !important;
+.map-stat {
+  width: 22rem;
+  height: auto;
+  background-color: #F5F5F5;
+  position: absolute;
+  right: 1.25rem;
+  top: 0.9375rem;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-header {
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.blue-icon {
+  width: 1rem;
+  height: 1rem;
+  background-color: #096DD9;
+  border-radius: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.map-stat-values {
+  color: #096DD9;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.map-stat-total {
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+.map-stat-total-num {
+  margin-top: 2rem;
 }
 
 #map-wrapper {
-  /* margin-top: 20px; */
-  height: 250px;
-  margin: 20px auto;
-  width: 400px;
-}
-
-#entities-wrapper {
-  width: 98%;
-  margin: auto !important;
-  /* padding-left: 8px; */
+  height: 25rem;
+  margin: 1.25rem auto;
+  width: 50rem;
 }
 
 #stat-point2 {
-  color: #2f80ed;
+  color: #FFFFFF;
+  background-image: linear-gradient(to right ,#840000, #B10B0B);
+  display: flex;
+  flex-direction: column;
 }
 
 #stat-point3 {
-  color: #6fcf97;
-}
-#stat-point1 {
-  color: #56ccf2;
-}
-
-#extra-icon {
-  font-size: 17px;
-  font-weight: 700;
-  color: #2f80ed;
-  margin-left: 10px;
-  border: 2px solid #2f80ed;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-}
-.entity {
+  color: #FFFFFF;
+  background-image: linear-gradient(to right, #087700,  #368700);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
-.page_intro_name {
-  /* margin-top:3%; */
 
+#stat-point1 {
+  color: #FFFFFF;
+  background-image: linear-gradient(to right, #087700,  #368700);
+  display: flex;
+  flex-direction: column;
+}
+
+.page_intro_name {
   margin-top: 3%;
   font-weight: 100;
-  font-size: 18px;
+  font-size: 2rem;
   margin-bottom: 1%;
 }
 
-.entity-pix {
-  width: 25%;
-  height: 60px;
-  margin-top: 20px;
-}
-
-.entity .ivu-avatar {
-  height: 60px;
-  width: 60px;
-  margin-top: 20px;
-  border-radius: 40px;
-  margin-right: 8px;
-  margin-left: 8px;
-}
-
-.entity p {
-  text-align: center;
-}
-
-.map {
-  height: 100%;
-  max-width: 100%;
-  position: relative;
-  margin: auto;
-  overflow: hidden;
-}
-
-.stat-info {
-  width: 120px;
-  background: #ffffff;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 2px;
-}
-
-.stat-info > p {
-  margin: 0;
-  padding: 0;
-}
-
-.stat-info .country {
-  font-weight: bold;
-}
 .stat-card {
-  padding: 29px !important;
-  height: 180px;
-  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  padding: 1.8125rem !important;
+  height: 20rem;
+  -webkit-box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.3125rem;
   background-color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -280,6 +224,7 @@ export default {
   justify-content: space-between;
   padding: 1rem 0.7rem;
 }
+
 @media screen and (max-width: 360px) {
 #stat-wrapper stat-card{
 width:100%
