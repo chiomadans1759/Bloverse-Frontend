@@ -22,7 +22,6 @@ import { Row, Col } from 'iview';
 
 export default {
   components: {Row, Col}
-  
 }
 </script>
 

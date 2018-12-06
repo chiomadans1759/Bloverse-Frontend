@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style>
-@import url('./assets/stylesheets/utility.scss');
+@import url('assets/stylesheets/utility.scss');
 
 #app {
   font-family: 'Avenir', 'Roboto', Helvetica, Arial, sans-serif;
