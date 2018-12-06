@@ -10,17 +10,17 @@
         <div class="col-md-6" id="menu">
           <ul class="list-inline">
             <li class="list-inline-item">
-              <router-link to="" :class="{'active': currentRoute == 'journalist-dashboard'}">
+              <router-link :to="`/creators/${auth.loggedInUser.userName}/dashboard`" :class="{'active': currentRoute == 'journalist-dashboard'}">
                 Dashboard
               </router-link>
             </li>
             <li class="list-inline-item">
-              <router-link to="" :class="{'active': currentRoute == 'create'}">
+              <router-link :to="`/creators/${auth.loggedInUser.userName}/posts/create`" :class="{'active': currentRoute == 'create'}">
                 Create content
               </router-link>
             </li>
             <li class="list-inline-item">
-              <router-link to="" :class="{'active': currentRoute == ''}">
+              <router-link :to="`/creators/${auth.loggedInUser.userName}/posts`" :class="{'active': currentRoute == ''}">
                 My content
               </router-link>
             </li>
