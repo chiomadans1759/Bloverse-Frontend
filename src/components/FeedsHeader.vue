@@ -29,15 +29,17 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 
 #feeds-header {
-  height: 6rem;
-  padding-top: 1rem;
+  height: 8rem;
+  padding-top: 2rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .feeds-row {
- width: 90%;
- margin: 0 auto;
- padding: 3px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 3px;
 }
+
 .router-link {
   display: flex;
 }
@@ -60,17 +62,17 @@ export default {
 }
 
 #login-button {
-  font-family: 'Montserrat', sans-serif;
-  border: 1px inset #096DD9;
+  border: none;
   color: #096DD9;
   margin-top: 1rem;
   font-size: 14px;
-  padding :5px 10px;
+  padding: 8px 10px 0px;
   text-transform: uppercase; 
   border-radius: 4px;
   text-align: center;
-  margin-right:2rem;
+  margin-right: 2rem;
 }
+
 #create-button {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(to right, #096DD9 40%, #07b1e0 100%);
@@ -82,22 +84,26 @@ export default {
   border-radius: 4px;
   text-align: center;
 }
+
 @media screen and (max-width: 600px) {
   #logo-text {
-  font-size: 2rem;
-  margin-left: 0rem; 
-}
-#create-button, #login-button{  
-  font-size: 1rem;  
-} 
-.header-row {
-  width: 95%; 
-  padding:2rem 0 0 1rem;
-} 
-.feeds-row {
-  width: 90%;
-  padding:2rem 0 0 1rem;
-}
+    font-size: 2rem;
+    margin-left: 0rem; 
+  }
+
+  #create-button, #login-button{  
+    font-size: 1rem;  
+  } 
+
+  .header-row {
+    width: 95%; 
+    padding:2rem 0 0 1rem;
+  }
+
+  .feeds-row {
+    width: 90%;
+    padding:2rem 0 0 1rem;
+  }
 }
 </style>
 
