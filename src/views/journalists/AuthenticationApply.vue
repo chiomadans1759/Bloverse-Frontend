@@ -1,6 +1,6 @@
 <template>
   <BaseAuthentication>
-    <div class="main-apply">
+    <main class="main-apply">
       <Modal v-model="isSuccess" :width="726" id="success-modal">
         <Alert type="success">Success!</Alert>
         <p>
@@ -85,7 +85,7 @@
             <router-link id="login-link" to="login"> Log in here </router-link>
           </div>
       </Form>
-    </div>
+    </main>
   </BaseAuthentication>
 </template>
 
@@ -214,6 +214,7 @@ export default {
 <style>
 .main-apply {
   padding: 5rem 0rem;
+  background: #f5f5f5;
 }
 
 #page-title {
