@@ -11,13 +11,16 @@ export default {
     activeFeedLayout: 'grid',
     applicants: [],
     publishedPosts: [],
+    trendingPost: [],
     currentPost: {},
     journalists: [],
     loading: false,
     metrics: {}
   },
   actions: {
-    async setGeneralData({ commit }) {
+    async setGeneralData({
+      commit
+    }) {
       let response, categories, countries;
 
       response = await Api.get('categories/');
@@ -26,7 +29,10 @@ export default {
       case 200:
         categories = response.data && response.data.categories;
         //Adds an object to select all categories to array 
-        categories.unshift({id:'',name:'All'});
+        categories.unshift({
+          id: '',
+          name: 'All'
+        });
 
         categories = categories.sort((a, b) => {
           if (a.name > b.name) return 1;
@@ -37,7 +43,10 @@ export default {
         response = await Api.get('countries/');
         countries = response.data && response.data.countries;
         //Adds an object to select all countries array 
-        countries.unshift({id:'',name:'All'});
+        countries.unshift({
+          id: '',
+          name: 'All'
+        });
         countries = countries.sort((a, b) => {
           if (a.name > b.name) return 1;
           if (a.name == b.name) return 0;
@@ -49,12 +58,18 @@ export default {
       }
       return false;
     },
-    async getGeneralMetrics({ commit }) {
+    async getGeneralMetrics({
+      commit
+    }) {
       const response = await Api.get('metrics/general/');
-      let { data } = response;
+      let {
+        data
+      } = response;
       commit('setMetrics', data);
     },
-    async getAllApplicants({ commit }) {
+    async getAllApplicants({
+      commit
+    }) {
       let response;
       response = await Api.get('applicants/', true);
       switch (response.statusCode) {
@@ -68,7 +83,9 @@ export default {
       return false;
     },
 
-    async getAllJournalists({ commit }) {
+    async getAllJournalists({
+      commit
+    }) {
       let response;
       response = await Api.get('journalists/');
       switch (response.statusCode) {
@@ -79,7 +96,9 @@ export default {
 
       return false;
     },
-    async rejectAcceptApplicants({ dispatch }, applicants) {
+    async rejectAcceptApplicants({
+      dispatch
+    }, applicants) {
       let processedUsers = [];
       applicants.forEach(async applicant => {
 
@@ -94,15 +113,35 @@ export default {
       return processedUsers;
     },
     async processApplicant(context, applicant) {
-      let { id, status } = applicant;
-      let response = await Api.put('applicants/' + id + '/', { status }, true);
+      let {
+        id,
+        status
+      } = applicant;
+      let response = await Api.put('applicants/' + id + '/', {
+        status
+      }, true);
       return response.statusCode === 200;
     },
-    async getAllPublishedPosts({ commit }, { category = "", country = "" }) {
+    async getAllPublishedPosts({
+      commit
+    }, {
+      category = "",
+      country = ""
+    }) {
       let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
-      commit('setPublishedPosts', response.data.posts); 
+      commit('setPublishedPosts', response.data.posts);
     },
-    async getPostBySlug({ commit }, { slug }) {
+    async getAllTrendingPosts({
+      commit
+    }) {
+      let response = await Api.get(`posts/trending/`);
+      commit('setTrendingPost', response.data.posts);
+    },
+    async getPostBySlug({
+      commit
+    }, {
+      slug
+    }) {
       let response = await Api.get(`posts?slug=${slug}`)
       commit('setCurrentPost', response.data.posts[0]);
     }
@@ -135,6 +174,9 @@ export default {
     },
     setMetrics(state, metrics) {
       state.metrics = metrics
+    },
+    setTrendingPost(state, trending) {
+      state.trendingPost = trending
     }
   },
   getters: {

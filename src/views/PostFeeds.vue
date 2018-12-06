@@ -1,7 +1,7 @@
 <template>
   <main class="post-feeds">
-    <TrendingCard />
-    
+    <TrendingCard/>
+
     <section class="container">
       <div class="post-feeds-category" id="post-feeds-category">
         <div class="row">
@@ -24,9 +24,9 @@
                 <a
                   href="#"
                   :class="{ 'active': category.name == $store.state.general.activeCategory.name }"
-                  @click.prevent="filterCategory(category.id, category.name)" style="font-family: 'Montserrat', sans-serif;">
-                  {{category.name}}
-                </a>
+                  @click.prevent="filterCategory(category.id, category.name)"
+                  style="font-family: 'Montserrat', sans-serif;"
+                >{{category.name}}</a>
               </li>
               <li class="list-inline-item">
                 <a href="#" @click.prevent="showMoreCats">
@@ -39,9 +39,11 @@
               <div class="row">
                 <div class="col-md-6" v-for="cat in other_cats" :key="cat.id">
                   <li>
-                    <a href="#" 
-                    @click.prevent="filterCategory(cat.id, cat.name)"
-                    :class="{ 'active': cat.name == $store.state.general.activeCategory.name }">{{cat.name}}</a>
+                    <a
+                      href="#"
+                      @click.prevent="filterCategory(cat.id, cat.name)"
+                      :class="{ 'active': cat.name == $store.state.general.activeCategory.name }"
+                    >{{cat.name}}</a>
                   </li>
                 </div>
               </div>
@@ -51,16 +53,20 @@
           <div class="col-md-2">
             <ul class="list-inline" id="layout-select">
               <li class="list-inline-item">
-                <a  href="#"
+                <a
+                  href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
-                  @click.prevent="toggleLayout('grid')">
+                  @click.prevent="toggleLayout('grid')"
+                >
                   <i class="fal fa-grip-horizontal fa-1x"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#"
-                  :class="{'active': general.activeFeedLayout == 'stack'}" 
-                  @click.prevent="toggleLayout('stack')">
+                <a
+                  href="#"
+                  :class="{'active': general.activeFeedLayout == 'stack'}"
+                  @click.prevent="toggleLayout('stack')"
+                >
                   <i class="far fa-laptop fa-1x"></i>
                 </a>
               </li>
@@ -74,23 +80,22 @@
 </template>
 
 <script>
-import { mapState,} from 'vuex'
-import { Row, Col, Card } from 'iview';
-import vSelect from 'vue-select';
-import DisplayFeeds from '@/components/DisplayFeeds.vue';
-import TrendingCard from '@/components/TrendingCard.vue';
+import { mapState } from "vuex";
+import { Row, Col, Card } from "iview";
+import vSelect from "vue-select";
+import DisplayFeeds from "@/components/DisplayFeeds.vue";
+import TrendingCard from "@/components/TrendingCard.vue";
 
 export default {
-  name: 'FeedsSection',
+  name: "FeedsSection",
   components: { Row, Col, Card, vSelect, DisplayFeeds, TrendingCard },
   watch: {
-    general : {
-      handler:function (newItem) {
+    general: {
+      handler: function(newItem) {
         this.allow = true;
       },
-      deep:true
+      deep: true
     }
-  
   },
   data() {
     return {
@@ -98,7 +103,7 @@ export default {
       show_more: false,
       other_cats: {},
       country: {
-        id: ''
+        id: ""
       },
       current_category: ""
     };
@@ -115,7 +120,7 @@ export default {
 
     filterCountry(id) {
       this.$store.dispatch("getAllPublishedPosts", {
-        category: this.general.activeCategory.id || '',
+        category: this.general.activeCategory.id || "",
         country: this.country.id
       });
     },
@@ -137,13 +142,15 @@ export default {
       let cat_section = document.getElementById("post-feeds-category");
       if (window.pageYOffset >= 586) {
         cat_section.classList.add("post-feeds-category-sticky");
-      } else if(window.pageYOffset < 586) {
+      } else if (window.pageYOffset < 586) {
         cat_section.classList.remove("post-feeds-category-sticky");
       }
     }
   },
   created() {
-    window.onscroll = () => { this.stickyCat() };
+    window.onscroll = () => {
+      this.stickyCat();
+    };
   },
   computed: {
     ...mapState(["general"]),
@@ -175,7 +182,7 @@ export default {
   overflow-x: hidden !important;
   background-color: #f5f5f5;
   min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding-bottom: 10rem;
 }
 
@@ -258,7 +265,6 @@ export default {
   .post-feeds-category .list-inline .list-inline-item {
     margin-right: 0.5rem;
   }
-
 
   .post-feeds-category #layout-select {
     display: none;

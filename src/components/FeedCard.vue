@@ -1,6 +1,6 @@
 <template>
   <router-link :to="`posts/${post.slug}`"> 
-    <div class="card-container" id="photo-contest" v-if="post.category == 7">
+    <div class="card-container" id="photo-contest" v-if="post.category === 7">
       <div id="card-hero">
         <img id="post-image" :src="post.image_url">
       </div>
@@ -25,13 +25,15 @@
       </div>
       <div class="card-container2"> 
         <div class="card-overlay">
-          <h4>Hawkers in the darkness</h4></br>
+          <h4>{{post.title}}</h4></br>
           <p>
-            <i class="fas fa-camera-retro"></i> Samsung Galaxy S9+ 
-            </br><span> <i class="fas fa-map-marker-alt"></i> Victoria Island, &nbsp;Lagos</span>
+            <i class="fas fa-camera-retro"></i>{{post.device_type}} 
+            </br><span> <i class="fas fa-map-marker-alt"></i>{{post.location}}</span>
           </p> 
         </div>
-        <h5>READ STORY</h5>
+        <router-link :to="`posts/${post.slug}`"> 
+          <h5>READ STORY</h5>
+        </router-link>
       </div>
     </div>
 
@@ -62,16 +64,21 @@
       </div>
       <div class="card-container22"> 
         <div class="card-general-hover">
-          <h4>30 Crazy facts about colors that will blow your mind</h4></br>
+          <h4>{{post.title}}</h4></br>
           <ul>Keypoints
-              <li>After early screening of Aquaman, staring Jason momoe, critiques seem pretty pleased.</li>
-              <li>Gizmodo's Germain Lussier called Aquaman's a big, fun , wild ride.</li>
-              <li>Others like writter-director Ben meckler even called it an "Undersea Star Wars" </li>
+            <li v-if="post.keypoint[0]">{{post.keypoint[0]}}</li>
+            <li v-if="post.keypoint[1]">{{post.keypoint[1]}}</li>
+            <li v-if="post.keypoint[2]">{{post.keypoint[2]}}</li>
+            <p v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]" class="keypoint-text">
+              No keypoint availble for this post
+            </p>
           </ul>
         </div>
-          <div id="hover-top-border">
+        <div id="hover-top-border">
+          <router-link :to="`posts/${post.slug}`"> 
             <h5>READ STORY</h5>
-          </div>
+          </router-link>
+        </div>
       </div>
     </div>
   </router-link>
@@ -392,6 +399,11 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.keypoint-text {
+  margin-top: 5rem;
+  font-weight: bold;
 }
 </style>
 

@@ -1,5 +1,8 @@
 import Api from '../src/utils/Api';
-import {getLocalUser,getJWT} from "@/utils/UserAuth";
+import {
+  getLocalUser,
+  getJWT
+} from "@/utils/UserAuth";
 
 
 var objCodec = require('object-encode');
@@ -11,30 +14,37 @@ var bloverseOps = ')*myNewAWESOME-mmbloverseOps254@%^&%';
 
 let user = null;
 let localJWT = null;
-if(getLocalUser() == null){
+if (getLocalUser() == null) {
   user = null;
-}else{
-  user = objCodec.decode_object(getLocalUser(), 'base64', bloverseOps );
+} else {
+  user = objCodec.decode_object(getLocalUser(), 'base64', bloverseOps);
 }
 
-if(getJWT() == null){
+if (getJWT() == null) {
   localJWT = null;
-}else{
+} else {
   localJWT = simpleCrypto.decrypt(getJWT());
-  
+
 }
 
 
 export default {
   state: {
     jwt: localJWT,
-    newUser: { imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg' },
-    applicant: { articleURLs: [] },
+    newUser: {
+      imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg'
+    },
+    applicant: {
+      articleURLs: []
+    },
     loggedInUser: user,
     shouldRegister: false,
   },
   actions: {
-    async login({ commit, state }, params) {
+    async login({
+      commit,
+      state
+    }, params) {
       let response = await Api.post('authentication/', params)
       switch (response.statusCode) {
       case 201:
@@ -42,11 +52,16 @@ export default {
         commit('setLoggedInUser', response.data.user)
         return true;
       default:
-        return { errors: response.data };
+        return {
+          errors: response.data
+        };
       }
     },
 
-    async apply({ state, commit }) {
+    async apply({
+      state,
+      commit
+    }) {
       let categoryId = state.applicant.category.id;
       let countryId = state.applicant.country.id;
 
@@ -78,10 +93,14 @@ export default {
       case 201:
         return true;
       default:
-        return { errors: response.data };
+        return {
+          errors: response.data
+        };
       }
     },
-    async getApplicantById({ commit }, id) {
+    async getApplicantById({
+      commit
+    }, id) {
       let response = await Api.get('applicants/' + id + '/')
       switch (response.statusCode) {
       case 200:
@@ -91,38 +110,64 @@ export default {
         commit('clearApplicant');
         break;
       default:
-        return { errors: response.data };
+        return {
+          errors: response.data
+        };
       }
     },
-    async applicantHasRegistered({ state }) {
+    async applicantHasRegistered({
+      state
+    }) {
       //Checks if an applicant had previously setup account as user
       let response = await Api.get('journalists?applicant=' + state.applicant.id)
       return response.data.journalists.length > 0;
     },
-    async registerJournalist({ state }) {
+    async registerJournalist({
+      state
+    }) {
       let response = await Api.post('journalists/', state.newUser);
       switch (response.statusCode) {
       case 201:
         return true;
       default:
-        return { errors: response.data };
+        return {
+          errors: response.data
+        };
       }
     },
-    async generateUsername({ state, commit, dispatch }) {
+    async generateUsername({
+      state,
+      commit,
+      dispatch
+    }) {
       let username = `${state.newUser.firstName}.${state.newUser.lastName}`.toLowerCase();
-      username = await dispatch('validateUsername', { username, count: 1 })
+      username = await dispatch('validateUsername', {
+        username,
+        count: 1
+      })
       commit('setUsername', username);
     },
-    async validateUsername({ dispatch }, { username, count }) {
+    async validateUsername({
+      dispatch
+    }, {
+      username,
+      count
+    }) {
       let response = await Api.get('journalists?username=' + username)
       if (response.data.journalists.length > 0) {
         username += count;
         count++;
-        dispatch('validateUsername', { username, count });
+        dispatch('validateUsername', {
+          username,
+          count
+        });
       }
       return username;
     },
-    clearSession({ commit, state }) {
+    clearSession({
+      commit,
+      state
+    }) {
       localStorage.removeItem("jwt");
       localStorage.removeItem("loggedInUser");
       state.jwt = null;
@@ -132,18 +177,22 @@ export default {
   },
   mutations: {
     setApplicant(state, props) {
-      state.applicant = { ...state.applicant, ...props };
+      state.applicant = { ...state.applicant,
+        ...props
+      };
     },
     clearApplicant(state) {
-      state.applicant = { 
-        articleURLs: [],  
+      state.applicant = {
+        articleURLs: [],
         phoneNumber: '',
         linkedInUsername: '',
         twitterUsername: ''
       };
     },
     setNewUser(state, props) {
-      state.newUser = { ...state.newUser, ...props };
+      state.newUser = { ...state.newUser,
+        ...props
+      };
     },
     setJwt(state, jwt) {
       state.jwt = jwt
@@ -151,7 +200,7 @@ export default {
     },
     setLoggedInUser(state, user) {
       state.loggedInUser = user;
-      localStorage.setItem("loggedInUser", JSON.stringify(objCodec.encode_object( state.loggedInUser, 'base64', bloverseOps )));
+      localStorage.setItem("loggedInUser", JSON.stringify(objCodec.encode_object(state.loggedInUser, 'base64', bloverseOps)));
     },
     setUsername(state, username) {
       state.newUser.username = username;
@@ -160,7 +209,10 @@ export default {
       state.shouldRegister = value;
     },
 
-    setApplicantIds(state, { name, value }) {
+    setApplicantIds(state, {
+      name,
+      value
+    }) {
       state.applicant[name] = value;
     }
   },
@@ -185,4 +237,3 @@ export default {
     }
   }
 }
-

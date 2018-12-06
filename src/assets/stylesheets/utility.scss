@@ -16,7 +16,7 @@ $text-display-regular: 20px;
 $text-body-regular: 14px;
 $text-caption-regular: 12px;
 
-.main {
+body {
     background-color: $color-base;
     width: 100vw;
     overflow-x: hidden !important;
@@ -66,10 +66,27 @@ h4 {
     font-weight: bold;
 }
 
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
 /*================ BUTTON STYLES =============*/
 .btn-primary {
     background-color: $color-primary;
     color: $color-white;
+}
+
+.bt-white {
+    background-color: $color-white;
+    color: $color-primary;
 }
 
 /*================ ANCHOR STYLES =============*/
@@ -109,20 +126,20 @@ a:not([href]):not([tabindex]):focus {
     border: 1px solid $color-primary-border;
     border-radius: 4px;
     background-color: #fff;
-    background-clip: border-box
+    background-clip: border-box;
 }
 
 .card-body {
     padding: 1.5rem;
-    flex: 1 1 auto
+    flex: 1 1 auto;
 }
 
 .card-title {
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
 }
 
 .card-subtitle {
-    margin-top: -.5rem
+    margin-top: -.5rem;
 }
 
 .card-header {

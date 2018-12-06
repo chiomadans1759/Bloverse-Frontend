@@ -10,12 +10,27 @@
         :autoplay="true"
         :autoplayTimeout="4000"
       >
-        <slide v-for="i in 12" :key="i" id="slider">
+        <slide v-for="post in general.trendingPost" :key="post.id" id="slider">
           <Col>
             <Card id="trend-card">
-				<div class="trend-img">
-					<img src="./../assets/trending/business.jpg">
-				</div>
+              <div class="trend-img">
+                <img :src="post.image_url">
+              </div>
+              <div>
+                <!-- <p id="category-name">Category</p> -->
+                <p class="text-bold" id="category-text">{{post.title}}</p>
+                <Avatar shape="square" id="avatarr"/>
+                <span id="user-name">{{post.author.first_name}} {{post.author.last_name}}</span>
+              </div>
+            </Card>
+          </Col>
+        </slide>
+        <slide v-for="i in 9" :key="i" id="slider">
+          <Col>
+            <Card id="trend-card">
+              <div class="trend-img">
+                <img src="./../assets/trending/business.jpg">
+              </div>
               <div>
                 <p id="category-name">Category</p>
                 <p class="text-bold" id="category-text">I took a break from mum guilt for the day</p>
@@ -33,9 +48,21 @@
 <script>
 import { Row, Col, Card, Avatar } from "iview";
 import { Carousel, Slide } from "vue-carousel";
+import { mapActions, mapState } from "vuex";
 
 export default {
-  components: { Row, Col, Card, Carousel, Slide, Avatar }
+  name: "TrendingCards",
+
+  components: { Row, Col, Card, Carousel, Slide, Avatar },
+  methods: {
+    ...mapActions(["getAllTrendingPosts"])
+  },
+  async created() {
+    await this.getAllTrendingPosts();
+  },
+  computed: {
+    ...mapState(["general"])
+  }
 };
 </script>
 
@@ -67,13 +94,13 @@ export default {
 .trend-img {
   height: 210px;
   width: 100%;
-	margin: auto;
+  margin: auto;
 }
 
 .trend-img > img {
-	width: 100%;
-	height: 100%;
-	border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
 }
 
 .trend-img::after {
@@ -83,8 +110,8 @@ export default {
   margin-top: -210px;
   height: 100%;
   width: 100%;
-	content: "";
-	border-radius: 4px;
+  content: "";
+  border-radius: 4px;
 }
 
 #category-text {
@@ -100,9 +127,9 @@ export default {
 #avatarr {
   position: absolute;
   bottom: 20px;
-	left: 16px;
-	height: 24px;
-	width: 24px;
+  left: 16px;
+  height: 24px;
+  width: 24px;
 }
 
 #user-name {
