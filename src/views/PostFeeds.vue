@@ -156,7 +156,7 @@ export default {
         return category.name;
       }
 
-      return "all categories";
+      // return "all categories";
     },
 
     filteredCatList() {
@@ -168,7 +168,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .post-feeds {
   margin: 0 auto;
   width: 100%;
@@ -190,7 +190,7 @@ export default {
   margin-top: 0;
   width: 100%;
   z-index: 1000;
-  height: 5rem;
+  height: 7rem;
   background-color: #f5f5f5;
   padding: 1rem 7.5rem;
   border-bottom: 1px solid #eeeeee;
