@@ -9,8 +9,10 @@
           </router-link>
         </Col>
         <span class="button-links">
-          <router-link to="/creators/login" id="login-button">login</router-link>
+          <button @click="$emit('showModal', true)" id="login-button">login</button>
+  
           <router-link to="/creators" id="create-button">create content</router-link>
+
         </span> 
       </Row>
     </div>
