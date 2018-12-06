@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <Row id="draft-container">
-    <h2 style="font-size: 16px; font-family: 'Montserrat', sans-serif; margin-bottom: 2rem; margin-top: 2rem;">Today</h2>
+    <h2>Today</h2>
     <Col v-for="i in 5" :key="i">
       <Card id="draft-card">
         <div style="margin: 1rem;">
@@ -41,6 +41,15 @@ export default {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 2rem;
+}
+
+#draft-container h2 {
+  font-size: 16px; 
+  font-family: 'Montserrat', sans-serif; 
+  margin-bottom: 2rem; 
+  margin-top: 2rem; 
+  flex-direction: flex-start;
+  width: 50%;
 }
 
 

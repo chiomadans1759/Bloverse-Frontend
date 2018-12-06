@@ -1,26 +1,35 @@
 <template>
-  <div>
+  <main>
     <div id="all-posts">
       <div class="row no-gutter" id="posts-tabs">
-        <div class="col-xs-6 active pt-1">
+        <div class="col-xs-6 pt-1" @click="currentSection('postp')" :class="{'active': current_section == 'postp'}">
             <p class="text-uppercase">all posts</p>
         </div>
-        <div class="col-xs-6 pt-1">
+        <div class="col-xs-6 pt-1" @click="currentSection('draft')" :class="{'active': current_section == 'draft'}">
             <p class="text-uppercase">all drafts</p>
         </div>
-  </div>
+      </div>
     </div>
-      <Row type="flex" style="left: 90%;">
-        <Col>
-          <DraftCard />
-        </Col>
-      </Row>
-      <Row type="flex" justify="space-between" v-if="showPosts"  :gutter="16">
-        <Col v-for="post in journalist.posts" :key="post.id" :sm="24" :md="8">
-          <FeedCard :post="post" style="height: 414px; width: " />
-        </Col>
-      </Row>
-  </div>
+
+     <br /><br />
+      <div v-if="showPosts">
+        <Row v-show="current_section == 'draft'" id="draft-container" >
+          <Col>
+            <DraftCard />
+          </Col>
+        </Row>
+
+        <Row v-if="current_section == 'postp'" type="flex" justify="space-between" :gutter="16">
+          <Col v-for="post in journalist.posts" :key="post.id" :sm="24" :md="8">
+            <FeedCard :post="post" style="height: 414px;" />
+          </Col>
+        </Row>
+      </div> 
+      <div class="showposts" v-else>
+        <h2>This Place looks empty !</h2><br />
+        <router-link :to="`/creators/${auth.loggedInUser.userName}/posts/create`" id="showbutton">Create Posts Here</router-link>
+      </div>
+  </main>
 </template>
 
 
@@ -28,10 +37,15 @@
 import { Row, Col, Button, Card } from 'iview';
 import { mapState, mapActions } from 'vuex'
 
-import FeedCard from '../../components/FeedCard.vue';
+import FeedCard from '@/components/FeedCard.vue';
 import DraftCard from '@/components/DraftCard.vue'
 
 export default {
+  data () {
+    return {
+      current_section: 'postp'
+    }
+  },
   components: { Row, Col, FeedCard, Button, Card, DraftCard },
   computed: {
     ...mapState([
@@ -56,7 +70,11 @@ export default {
   methods: {
     ...mapActions([
       'getMyPosts'
-    ])
+    ]),
+
+    currentSection(section) {
+      this.current_section = section;
+    }
   }
 }
 
@@ -108,6 +126,7 @@ export default {
 }
 #all-posts #posts-tabs .col-xs-6 p {
   text-align: center;
+  font-family: "Montserrat", sans-serif;
 }
 #all-posts #posts-tabs .active,
 #all-posts #posts-tabs .col-xs-6:hover {
@@ -115,5 +134,8 @@ export default {
   background:#096DD9;
 }
 
-
+#draft-container {
+  display: flex;
+  align-items: center
+}
 </style>
