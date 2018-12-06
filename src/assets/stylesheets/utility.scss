@@ -121,20 +121,20 @@ a:not([href]):not([tabindex]):focus {
     border: 1px solid $color-primary-border;
     border-radius: 4px;
     background-color: #fff;
-    background-clip: border-box
+    background-clip: border-box;
 }
 
 .card-body {
     padding: 1.5rem;
-    flex: 1 1 auto
+    flex: 1 1 auto;
 }
 
 .card-title {
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
 }
 
 .card-subtitle {
-    margin-top: -.5rem
+    margin-top: -.5rem;
 }
 
 .card-header {

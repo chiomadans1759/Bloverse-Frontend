@@ -1,112 +1,136 @@
 <template>
-  <div>
+  <main id="create-basic-post">
     <Modal v-model="publishModal">
       <Alert type="success">Success</Alert>
       <div>
         <p>Your post has been successfully published</p>
         <div class="posts">
-          <vue-goodshare-facebook
-            :page_url="url"
-            has_icon
-            style="font-size: 25px;"
-          >
-          </vue-goodshare-facebook>
-          <vue-goodshare-twitter
-            :page_url="url"
-            has_icon
-            style="font-size: 25px;"
-          >
-          </vue-goodshare-twitter>
+          <vue-goodshare-facebook :page_url="url" has_icon style="font-size: 25px;"></vue-goodshare-facebook>
+          <vue-goodshare-twitter :page_url="url" has_icon style="font-size: 25px;"></vue-goodshare-twitter>
         </div>
       </div>
       <div slot="footer">
-        <router-link :to="`/creators/${auth.loggedInUser.userName}/posts`" >Go to all Post <Icon type="md-arrow-round-forward" /></router-link>
+        <router-link :to="`/creators/${auth.loggedInUser.userName}/posts`">Go to all Post
+          <Icon type="md-arrow-round-forward"/>
+        </router-link>
       </div>
     </Modal>
+
     <div id="mobile">
-    <Form :model="post" ref="basicCreatePostForm" :rules="validatePostForm">
-      <Row type="flex" justify="space-between">
-      <Col :sm="13"  id="create-post">
-        <Row  type="flex"  justify="space-between">
-          <Col :sm="11">
-            <Select v-model="post.category" placeholder="Choose Category" :disabled="isTravel">
-              <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
-            </Select>
-          </Col>
-          <Col :sm="11">
-            <Select v-model="post.country" placeholder="Choose Country" :disabled="isTravel">
-              <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{item.name}}</Option>
-            </Select>
+      <Form :model="post" ref="basicCreatePostForm" :rules="validatePostForm">
+        <Row type="flex" justify="space-between">
+          <Col :sm="24" id="create-post">
+            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true" />
+
+            <br />
+
+            <FormItem prop="title" :error="errors.title">
+              <Input id="form-control" placeholder="What's your title?" v-model="post.title"/>
+            </FormItem>
+
+            <Row type="flex" justify="space-between">
+              <Col :sm="11">
+                <Select v-model="post.category" placeholder="Choose Category" :disabled="isTravel">
+                  <Option
+                    v-for="item in general.categories"
+                    :value="item.id"
+                    :key="item.id"
+                  >{{item.name}}</Option>
+                </Select>
+              </Col>
+              <Col :sm="11">
+                <Select v-model="post.country" placeholder="Choose Country" :disabled="isTravel">
+                  <Option
+                    v-for="item in general.countries"
+                    :value="item.id"
+                    :key="item.id"
+                  >{{item.name}}</Option>
+                </Select>
+              </Col>
+            </Row>
+
+            <br />
+
+            <section>
+              <div class="key-points" v-if="isTravel">
+                <input v-model="post.location"
+                  ref="autocomplete"
+                  placeholder="Location"
+                  class="search-location">
+
+                <FormItem prop="duration">
+                  <DatePicker
+                    v-model="post.duration"
+                    id="keypoint"
+                    type="date"
+                    placement="bottom-end"
+                    placeholder="Time Taken"
+                    style="width: 100%"
+                  ></DatePicker>
+                </FormItem>
+
+                <FormItem prop="deviceType">
+                  <Select placeholder="Device Used" id="keypoint" v-model="post.deviceType">
+                    <Option
+                      v-for="item in deviceList"
+                      :value="item.value"
+                      :key="item.value"
+                    >{{ item.label }}</Option>
+                  </Select>
+                </FormItem>
+              </div>
+
+              <div class="keypoints" v-else>
+                <FormItem
+                  v-for="(keypoint, index) in post.keyPoints"
+                  :key="index"
+                  :prop="`keyPoints.${index}.value`"
+                  :rules="{required: index === 0, message: 'Please provide at least one keypoint', trigger: 'change' }">
+                  <Input :placeholder="`Keypoint ${index+1}`" v-model="keypoint.value"/>
+                </FormItem>
+              </div>
+            </section>
+
+            <div class="row">
+              <div class="col-md-12">
+                <tinymce class="form-control required" v-model="post.body"></tinymce>
+              </div>
+            </div>
+
+            <br>
+
+            <Row id="every" type="flex" justify="space-between">
+              <Col :sm="6">
+                <Button id="btn-draft" @click="handleProcessPost()" class="text-uppercase">
+                  <span v-if="post.id">Save Changes</span>
+                  <span v-else>Save as draft</span>
+                </Button>
+              </Col>
+              <Col :sm="6">
+                <span>
+                  <a href="#" class="text-uppercase mr-2">Preview</a>
+                </span>
+                <Button
+                  id="btn-publish"
+                  :disabled="post.is_published || this.isPublishing"
+                  @click="handleProcessPost(true)">
+                  {{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}
+                </Button>
+              </Col>
+            </Row>
           </Col>
         </Row>
-        
-        <Card class="key-points" v-if="isTravel">
-          <input v-model="post.location" ref="autocomplete" placeholder="Location" class="search-location" />
-          <FormItem prop="duration">
-            <DatePicker v-model="post.duration" id="keypoint" type="date" placement="bottom-end" placeholder="Time Taken" style="width: 100%"></DatePicker>
-          </FormItem>
+      </Form>
 
-          <FormItem prop="deviceType">
-            <Select placeholder="Device Used"  id="keypoint" v-model="post.deviceType">
-              <Option  v-for="item in deviceList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-            </Select>
-          </FormItem>
-        </Card>
-
-        <Card class="keypoints" v-else>
-          <FormItem 
-          v-for="(keypoint, index) in post.keyPoints" 
-          :key="index" :prop="`keyPoints.${index}.value`" 
-          :rules="{required: index === 0, message: 'Please provide at least one keypoint', trigger: 'change' }"
-          >
-            <Input placeholder="Add a keypoint" v-model="keypoint.value" size="large" />
-          </FormItem>
-        </Card>
-        <FormItem prop="title" :error="errors.title">
-          <Input placeholder="Heading" v-model="post.title" />
-        </FormItem>
-
-        <DisplayImage v-model="post.imageUrl" height="200px" width="80%" :can-edit="true" />
-
-        <div class="row">
-          <div class="col-md-12">
-            <tinymce class="form-control required" v-model="post.body"></tinymce>
-
-          </div>
-        </div>
-        
-
-        <br />
-
-        <Row  id="every" type="flex" justify="space-between">
-          <Col :sm="10" >
-            <Button id="btn-draft" @click="handleProcessPost()">
-              <span v-if="post.id">Save Changes</span>
-              <span v-else>Save as draft</span>
-            </Button>
-          </Col>
-          <Col :sm="10">
-            <Button id="btn-publish" :disabled="post.is_published || this.isPublishing" @click="handleProcessPost(true)">
-              {{ isPublishing ? 'Publishing ...' : 'Publish' }}
-            </Button>
-          </Col>
-        </Row>
-      </Col>
-
-      <Col id=otherside :sm="10">
+      <!-- <Col id="otherside" :sm="10">
         <Card id="display-post">
           <h2 id="title">{{post.title}}</h2>
-          <DisplayImage :value="post.imageUrl" height="200px" width="100%" :can-edit="false" />
-          <p v-html="post.body" id="body">
-          </p>
+          <DisplayImage :value="post.imageUrl" height="200px" width="100%" :can-edit="false"/>
+          <p v-html="post.body" id="body"></p>
         </Card>
-      </Col>
-    </Row>
-
-    </Form>
+      </Col> -->
     </div>
-  </div>
-  
+  </main>
 </template>
 
 <script>
@@ -263,7 +287,7 @@ export default {
         if (valid) {
           if (!this.post.body || !this.post.body.trim()) {
             return this.$Message.error("Body cannot be empty");
-          } 
+          }
           if (this.post.imageUrl) {
             this.isPublishing = true;
             let success = await this.processPost({
@@ -402,12 +426,12 @@ export default {
 };
 </script>
 
-
 <style scoped>
-#otherside{
- 
+#create-basic-post #form-control {
+  height: 3rem !important;
 }
-#create-post {
+
+#create-basic-post {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -441,38 +465,41 @@ export default {
   padding: 0 1.5rem;
   margin-top: 2rem;
 }
- @media screen and (max-width: 360px) {
-#mobile{
-  border:1px solid red;
-  display:flex;
-  flex-direction: column;
-  
-}
-#every{
-  display:flex;
-  flex-direction: column;
-}
- }
-  @media screen and (max-width: 600px) {
-#mobile{
-  border:1px solid red;
-  display:flex;
-  flex-direction: column
-}
-#every{
-  display:flex;
-  flex-direction: column;
-  
-}
-#btn-draft{
-  width:100%;
-  margin-bottom:5px
-}
-#btn-publish{
-  width:100%;
-  margin-bottom:10px
-}
+
+@media screen and (max-width: 360px) {
+  #mobile {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
   }
+  #every {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #mobile {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #every {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #btn-draft {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  #btn-publish {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
 </style>
 
 
@@ -493,11 +520,17 @@ export default {
 #btn-draft {
   background-color: white;
   color: var(--primary);
+  padding: 0px !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 12px;
+  margin-top: 0.5rem;
 }
 
 #btn-publish {
   background-color: var(--primary);
   color: white;
+  width: 50%;
 }
 
 .red-border {

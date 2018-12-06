@@ -15,13 +15,13 @@
               </router-link>
             </li>
             <li class="list-inline-item">
-              <router-link :to="`/creators/${auth.loggedInUser.userName}/posts/create`" :class="{'active': currentRoute == 'create'}">
-                Create content
+              <router-link :to="`/creators/${auth.loggedInUser.userName}/posts/create`" :class="{'active': currentRoute == 'create-post'}">
+                Create Content
               </router-link>
             </li>
             <li class="list-inline-item">
               <router-link :to="`/creators/${auth.loggedInUser.userName}/posts`" :class="{'active': currentRoute == ''}">
-                My content
+                My Content
               </router-link>
             </li>
           </ul>
@@ -107,12 +107,16 @@ export default {
   color: rgba(0, 0, 0, 0.54);
 }
 
+#dashboard-header #author-dropdown #author {
+  float: right;
+}
+
 #dashboard-header #menu li a.active {
   border-bottom: 2px solid #096DD9;
 }
 
-#dashboard-header #author-dropdown #author {
-  float: right;
+#dashboard-header #menu li a:focus {
+  text-decoration: none;
 }
 
 #dashboard-header #author-dropdown img {
