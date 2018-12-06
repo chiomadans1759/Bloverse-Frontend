@@ -1,4 +1,4 @@
-<template>
+  <template>
   <main class="card">
     <div class="card-header">
        <h3 class="post-cat">{{category}}</h3>
