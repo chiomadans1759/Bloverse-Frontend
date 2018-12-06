@@ -33,9 +33,3 @@ export default {
   }
 };
 </script>
-
-<style>
-#feedcard-container { 
-}
-</style>
-
