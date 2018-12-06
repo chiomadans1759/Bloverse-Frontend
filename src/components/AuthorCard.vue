@@ -17,10 +17,25 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
   name: "author-card",
-  props: {
-    author: Object
+  watch:{
+    general: {
+      handler:function (newItem) {
+        this.author = newItem.currentPost.author;
+      },
+      deep:true
+    }
+  },
+  data(){
+    return{
+      author:{}
+    }
+  },
+  computed:{
+    ...mapState(["general"])
   }
 };
 </script>

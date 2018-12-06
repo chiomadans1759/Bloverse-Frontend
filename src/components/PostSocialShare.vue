@@ -31,11 +31,11 @@
             </button>
           </li>
           <li>
-            <button>
+            <a @click="doShare('twitter')" :href="`https://twitter.com/intent/tweet?url=${this.$BASE_URL}redirect/${this.slug}`" data-lang="en" data-show-count="false">
               <svg height="34" width="34" class="social-icon">
                 <use id="twitter" xlink:href="#twitter-icon" />
               </svg>
-            </button>
+            </a>
           </li>
           <li>
             <button>
@@ -64,8 +64,15 @@ export default {
         FB.ui({ // eslint-disable-line no-undef
           method: 'share',
           display: 'popup',
-          href: `${this.$BASE_URL}/redirect/${this.slug}`,
-        }, function(response){});
+          href: `${this.$BASE_URL}redirect/${this.slug}`,
+        }, function(response){
+          // Count facebook share here
+        });
+        break;
+      case 'twitter':
+        twttr.events.bind('tweet', function (event) { // eslint-disable-line no-undef
+          // Count tweet here
+        });
         break;
       default:
         alert('Funtionality not available')

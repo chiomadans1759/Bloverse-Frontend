@@ -138,6 +138,7 @@ export default {
   data: function() {
     return {
       isSubmitting: false,
+      single: false,
       user: {
         email: "",
         password: "",
