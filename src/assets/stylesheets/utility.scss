@@ -16,7 +16,7 @@ $text-display-regular: 20px;
 $text-body-regular: 14px;
 $text-caption-regular: 12px;
 
-.main {
+body {
     background-color: $color-base;
     width: 100vw;
     overflow-x: hidden !important;
@@ -64,6 +64,18 @@ h4 {
 
 .text-bold {
     font-weight: bold;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
 }
 
 /*================ BUTTON STYLES =============*/
