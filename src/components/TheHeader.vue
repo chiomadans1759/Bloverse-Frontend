@@ -1,17 +1,20 @@
 <template>
   <header id="feeds-header">
     <div class="container">
-      <Row type="flex" justify="space-between" align="middle">
-        <Col>
+      <div class="row justify-content-center">
+        <div class="col">
           <router-link to="/" class="router-link">
             <img class="logo" src="./../assets/Asset 1.svg" style="height: 40px" />
           </router-link>
-        </Col>
-        <span class="button-links">
-          <login-button />
-          <router-link to="/creators" id="create-button">create content</router-link>
-        </span> 
-      </Row>
+        </div>
+
+        <div class="col-auto">
+          <login-button class="pt-2 mr-3" />
+          <router-link to="/creators" class="btn btn-primary btn-md text-uppercase">
+            create content
+          </router-link>
+        </div>
+      </div>
     </div>
   </header>
 </template>
@@ -25,85 +28,18 @@ export default {
 }
 </script>
 
-<style scoped>
-@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
+<style lang="scss" scoped>
+@import url('./../assets/css/utility.css');
 
 #feeds-header {
   height: 8rem;
   padding-top: 2rem;
-  font-family: 'Montserrat', sans-serif;
 }
 
-.feeds-row {
-  width: 90%;
-  margin: 0 auto;
-  padding: 3px;
-}
-
-.router-link {
-  display: flex;
-}
-
-.button-links {
-  display: flex;
-  margin-bottom: 0.5rem;
-}
-
-#feeds-header {
-  background-color: #F5F5F5;
-}
-
-#logo-text {
-  font-size: 32px;
-  font-family: 'Comfortaa', cursive;
-  color: #096DD9;
-  margin-left: 1rem;
-  font-weight: 500;
-}
-
-#login-button {
-  border: none;
-  color: #096DD9;
-  margin-top: 1rem;
-  font-size: 14px;
-  padding: 8px 10px 0px;
-  text-transform: uppercase; 
-  border-radius: 4px;
-  text-align: center;
-  margin-right: 2rem;
-}
-
-#create-button {
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(to right, #096DD9 40%, #07b1e0 100%);
-  color: #fff;
-  margin-top: 1rem;
-  font-size: 14px;
-  padding :7px 10px;
-  text-transform: uppercase; 
-  border-radius: 4px;
-  text-align: center;
-}
-
-@media screen and (max-width: 600px) {
-  #logo-text {
-    font-size: 2rem;
-    margin-left: 0rem; 
-  }
-
-  #create-button, #login-button{  
-    font-size: 1rem;  
-  } 
-
-  .header-row {
-    width: 95%; 
-    padding:2rem 0 0 1rem;
-  }
-
-  .feeds-row {
-    width: 90%;
-    padding:2rem 0 0 1rem;
-  }
+.btn-primary {
+  background-color: #096DD9 !important;
+  color: #ffffff;
+  border-radius: 2px;
 }
 </style>
 

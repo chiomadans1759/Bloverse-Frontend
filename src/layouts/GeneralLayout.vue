@@ -16,3 +16,8 @@ export default {
   components: { TheFooter, TheHeader }
 }
 </script>
+
+<style>
+@import url('./../assets/css/utility.css');
+</style>
+

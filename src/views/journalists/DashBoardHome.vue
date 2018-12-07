@@ -1,53 +1,54 @@
 <template>
   <div>
-    <h3 class="page_intro_name">Dashboard</h3>
-    <Row :gutter="32" id="stat-wrapper" v-if="show">
-      <Col :sm="8" :xs="24">
-        <stat-card variant="fade" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week']}" />
-      </Col>
-      <Col :sm="8" :xs="24">
-        <stat-card variant="primary" title="published" id="stat-point2" :stats="{ key:[articles.today, articles.week,  articles.total ] , value:[ 'Today' ,'This Week' ,'Articles']}" />
-      </Col>
-      <Col :sm="8" :xs="24">
-        <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ key:[`${datas.categoryRank[0]} of ${datas.categoryRank[1]}`, `${datas.countryRank[0]} of ${datas.countryRank[1]}` , `${datas.point}`] , value:['Category' ,'Country' , 'Ranking']}" />
-      </Col>
-    </Row>
+    <div class="container">
+      <Row :gutter="32" id="stat-wrapper" v-if="show">
+        <Col :sm="8" :xs="24">
+          <stat-card variant="fade" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week']}" />
+        </Col>
+        <Col :sm="8" :xs="24">
+          <stat-card variant="primary" title="published" id="stat-point2" :stats="{ key:[articles.today, articles.week,  articles.total ] , value:[ 'Today' ,'This Week' ,'Articles']}" />
+        </Col>
+        <Col :sm="8" :xs="24">
+          <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ key:[`${datas.categoryRank[0]} of ${datas.categoryRank[1]}`, `${datas.countryRank[0]} of ${datas.countryRank[1]}` , `${datas.point}`] , value:['Category' ,'Country' , 'Ranking']}" />
+        </Col>
+      </Row>
 
-    <Row :gutter="32" v-if="show" type="flex" justify="center">
-      <Col :sm="16" :xs="24">
-        <Card id="map-card">
-          <div class="map-stat">
-            <div class="map-stat-keys">
-              <h4 class="stat-header">Views</h4>
-              <p v-for="(data, index) in chartData" 
-              :key="index" 
-              v-if="index > 0">
-              <span> {{ data[0] }} </span>
-              </p>
-              <p class="map-stat-total">Total</p>
+      <Row :gutter="32" v-if="show" type="flex" justify="center">
+        <Col :sm="16" :xs="24">
+          <Card id="map-card">
+            <div class="map-stat">
+              <div class="map-stat-keys">
+                <h4 class="stat-header">Views</h4>
+                <p v-for="(data, index) in chartData" 
+                :key="index" 
+                v-if="index > 0">
+                <span> {{ data[0] }} </span>
+                </p>
+                <p class="map-stat-total">Total</p>
+              </div>
+              <div class="map-stat-values">
+                <div class="blue-icon"></div>
+                <p v-for="(data, index) in chartData" 
+                :key="index" 
+                v-if="index > 0">
+                <span>{{ data[1] }}</span>
+                </p>
+                <p class="map-stat-total-num">{{ chartData.filter((e, i) => i !== 0).reduce((acc, a) => acc + a[1], 0) }}</p>
+              </div>
             </div>
-            <div class="map-stat-values">
-              <div class="blue-icon"></div>
-              <p v-for="(data, index) in chartData" 
-              :key="index" 
-              v-if="index > 0">
-              <span>{{ data[1] }}</span>
-              </p>
-              <p class="map-stat-total-num">{{ chartData.filter((e, i) => i !== 0).reduce((acc, a) => acc + a[1], 0) }}</p>
+            <div id="map-wrapper">
+              <GChart
+                type="GeoChart"
+                :data="chartData"
+                ref="chartData"
+                :resizeDebounce="500"
+                :width="100"
+              />
             </div>
-          </div>
-          <div id="map-wrapper">
-            <GChart
-              type="GeoChart"
-              :data="chartData"
-              ref="chartData"
-              :resizeDebounce="500"
-              :width="100"
-            />
-          </div>
-        </Card>
-      </Col>
-    </Row>
+          </Card>
+        </Col>
+      </Row>
+    </div>
   </div>
 </template>
 

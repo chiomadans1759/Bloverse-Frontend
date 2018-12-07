@@ -1,47 +1,218 @@
 <template>
-  <main class="pt-5">
-    <h4 class="mt-5 mb-4 text-bold" id="trend-card-heading">Top Stories</h4>
+  <main class="pt-5" id="trending-card">
+    <h4 class="mb-4 text-bold" id="trend-card-heading">Top Stories</h4>
 
-    <Row class="trending">
-      <carousel
-        paginationActiveColor="#096DD9"
-        paginationColor="#95C8D8"
-        :perPageCustom="[[768, 3], [1024, 4], [600, 2], [300,1]]"
-        :autoplay="true"
-        :autoplayTimeout="4000"
-      >
-        <slide v-for="post in general.trendingPost" :key="post.id" id="slider">
-          <Col>
-            <Card id="trend-card">
-              <div class="trend-img">
-                <img :src="post.image_url">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row no-gutters">
+            <div class="col-3">
+              <div class="card text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
               </div>
-              <div>
-                <!-- <p id="category-name">Category</p> -->
-                <p class="text-bold" id="category-text">{{post.title}}</p>
-                <Avatar shape="square" id="avatarr"/>
-                <span id="user-name">{{post.author.first_name}} {{post.author.last_name}}</span>
+            </div>
+            <div class="col-3">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
               </div>
-            </Card>
-          </Col>
-        </slide>
-        <slide v-for="i in 9" :key="i" id="slider">
-          <Col>
-            <Card id="trend-card">
-              <div class="trend-img">
-                <img src="./../assets/trending/business.jpg">
+            </div>
+            <div class="col-3">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p id="category-name">Category</p>
-                <p class="text-bold" id="category-text">I took a break from mum guilt for the day</p>
-                <Avatar shape="square" id="avatarr"/>
-                <span id="user-name">John Doe</span>
+            </div>
+            <div class="col-3">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
               </div>
-            </Card>
-          </Col>
-        </slide>
-      </carousel>
-    </Row>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row no-gutters">
+            <div class="col-3">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row no-gutters">
+            <div class="col-3">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural.
+                  </p>
+                  <div class="author mt-5">
+                    <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
+                    <span>John Obi</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
   </main>
 </template>
 
@@ -67,99 +238,101 @@ export default {
 </script>
 
 <style scoped>
-.trending {
-  display: flex;
-  justify-content: space-between;
-}
-
-#category-name {
-  font-size: 10px;
-  font-family: "Montserrat", sans-serif;
-  position: absolute;
-  top: 8rem;
-  left: 16px;
-  color: #ffffff;
-  text-transform: uppercase;
+#trending-card {
+  height: auto;
+  margin: 1rem 0rem 5rem;
 }
 
 #trend-card-heading {
-  margin-left: 6%;
+  font-size: 16px;
 }
 
-#trend-card {
-  width: 285px;
-  margin-right: 1rem;
+#trending-card .card {
+  height: 180px;
 }
 
-.trend-img {
-  height: 210px;
-  width: 100%;
-  margin: auto;
-}
-
-.trend-img > img {
-  width: 100%;
-  height: 100%;
-  border-radius: 4px;
-}
-
-.trend-img::after {
-  display: block;
-  position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
-  margin-top: -210px;
-  height: 100%;
-  width: 100%;
-  content: "";
-  border-radius: 4px;
-}
-
-#category-text {
+#trending-card .card::after {
+  display: block !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)) !important;
+  height: 100% !important;
+  content:'\A';
   position: absolute;
-  top: 100px;
-  right: 16px;
-  left: 16px;
-  color: #ffffff;
+  width: 100%; 
+  height: 100%;
+  top: 0; 
+  left: 0;
+}
+
+#trending-card .card img {
+  height: 100%;
+}
+
+#trending-card .carousel-indicators {
+  top: 21rem;
+}
+
+#trending-card .carousel-indicators li {
+  margin: 0rem 1rem;
+  background: #096DD9;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  opacity: 0.6;
+  width: 8px;
+  height: 8px;
+}
+
+#trending-card .carousel-indicators li.active {
+  margin: 0rem 1rem;
+  background: #096DD9;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  margin-top: -2px;
+}
+
+#trending-card .card .card-img-overlay {
+  padding-top: 5rem;
+  z-index: 1;
+}
+
+#trending-card .card .card-img-overlay .card-title {
+  font-size: 13px;
+}
+
+#trending-card .card .card-img-overlay .card-text {
+  font-weight: bold;
   font-size: 14px;
-  font-family: "Montserrat", sans-serif;
 }
 
-#avatarr {
-  position: absolute;
-  bottom: 20px;
-  left: 16px;
-  height: 24px;
+#trending-card .card .card-img-overlay .author img {
   width: 24px;
+  height: 24px;
+  margin-top: -0.3rem;
 }
 
-#user-name {
-  position: absolute;
-  color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-  bottom: 11%;
-  left: 18%;
-  font-size: 12px;
-  float: left;
-}
-</style>
-
-<style>
-.VueCarousel-wrapper {
-  width: 88vw !important;
+#trending-card .carousel-control-prev {
+  margin-top: 7rem;
+  margin-left: -1.5rem; 
+  background-color: #000000;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  background-color: #dddddd;
+  border: 1px solid #aaaaaa;
 }
 
-@media only screen and (max-width: 767px) {
-  .VueCarousel-wrapper {
-    width: 90vw !important;
-  }
+#trending-card .carousel-control-next {
+  margin-top: 7rem;
+  margin-right: -1.5rem; 
+  background-color: #000000;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  background-color: #dddddd;
+  border: 1px solid #aaaaaa;
+}
 
-  #trend-card {
-    width: 500px;
-  }
-
-  #trend-img {
-    height: 210px;
-    width: 300px;
-  }
+#trending-icon .carousel-control-prev-icon {
+  background-color: #ffffff;
 }
 </style>
