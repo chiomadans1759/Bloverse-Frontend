@@ -1,82 +1,86 @@
-<template>
-    <div class="layout">
-      <Layout>
+<template> 
+<div class ="layout">
+    <Layout>
         <Content>
-          <div class="landing-img">
-            <section>
-                <Header />
-                <div class="head-content">
-                  <h4>Interactive stories from the global community</h4>
-                  <p class="second">Connecting creators to the people</p>         
-                </div>
-                <Icon class="dropdown-icon" type="android-arrow-dropdown-circle"></Icon>                       
-            </section>
-          </div>
-          <Row class="section-1" type="flex" justify="space-around">
-            <Col :sm="10" class="section-description">
-                <h2> Get started on Bloverse</h2>
-                <p> Bloverse was created with you in mind. Have you ever thought about creating a news blog but then balked at the thought of the effort required?. Well I have good news! At bloverse we leverage state of the art AI techniques to make your life easier and help you on the journey to being an elite content creator. With our journalist ranking system you can see how you rank compared to others in your circle. The ultimate objective of bloverse is to create a platform with high quality content creators based on feedback from an engaged community. 
-                Excited? You should be! #PressPlay #JoinTheBloverse</p>
-                <Button class="know" type="primary" ><router-link to="/creators/apply" id="getStarted">Get Started</router-link> </Button>
-            </Col>
-            <Col class="section-description" :sm="10">
-                <iframe width="400" height="400"
-                  src="https://www.youtube.com/embed/EjRM4DMdnGw">                           
-               </iframe>
-            </Col>
-          </Row> 
-          <Row class="section-2" type="flex" justify="space-around">
-            <Col :sm="7" class="section-2-description">
-              <Icon class="section-2-icon" type="ios-paper"></Icon>
-              <h2>{{general.metrics.publishedPost}}</h2>
-              <p> Article have been published</p>
-            </Col>
-            
-            <Col :sm="7" class="section-2-description">
-              <Icon class="section-2-icon" type="ios-create" md="md-create"></Icon>
-              <h2>{{general.metrics.journalists}}</h2>
-              <p> Content creators</p>
-            </Col>
+            <div class="general"> 
+                <HeaderGeneral/> 
+                <Row class="container1"> 
+                    <Col :md="12" :sm="0" :xs="0" class="left">
+                        <Col offset="5" :md="14" :sm="14" :xs="16" class="left-contain">
+                            <p>Interactive stories from the global community <br/><span>Connecting creators to the people</span></p>
+                            <button>GET STARTED</button>
+                        </Col>
+                    </Col>  
+                    
+                    <Col :md="12" :sm="24" :xs="24" class ="right">  
+                        <img :src="require('./../../assets/jlanding.jpg')" alt="Journalists Landing">
+                        <Col offset="1" :md="0" :sm="22" :xs="22" class="right-text">
+                            <p>Interactive stories from the global community <br/><span>Connecting creators to the people</span></p>
+                            <button>GET STARTED</button>
+                        </Col> 
+                    </Col>   
 
-            <Col :sm="7" class="section-2-description">
-                <Icon class="section-2-icon" type="ios-people"></Icon>
-                <h2>{{general.metrics.views.total}}</h2>
-                <p>Unique visitors</p>
-            </Col>
-          </Row>   
-        </Content>
-      </Layout>
-    </div>
-  <!-- </WithFooter> -->
-  
+                </Row>
+
+                <Row class="container2"> 
+                    <Col :md="12" :sm="10" :xs="24" class="left2">
+                        <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2"> 
+                            <iframe 
+                                src="https://www.youtube.com/embed/EjRM4DMdnGw">                           
+                            </iframe>
+                        </Col> 
+                    </Col>  
+                    
+                    <Col :md="12" :sm="14" :xs="24" class ="right2"> 
+                        <Col offset="2" :md="12" :sm="20" :xs="20" class="right-contain2">
+                            <h2>About Us</h2>
+                            <p>Bloverse was created with you in mind. Have you ever thought of creating a news blog but then balked at the thought of the effort.</p>
+                            <router-link  to="#" style="font-family: 'Montserrat', sans-serif;">
+                               Know More
+                            </router-link>
+                        </Col>             
+                    </Col>  
+                </Row>
+                <Row class="container3"> 
+                        <Col :md="8" :sm="8" :xs="8">
+                            <h1>{{general.metrics.publishedPost}}</h1>
+                            <p>ARTICLES POSTED</p>
+                        </Col> 
+                        <Col :md="8" :sm="8" :xs="8" class="center">
+                            <h1>{{general.metrics.journalists}}</h1>
+                            <p>CONTENT PROVIDERS</p>
+                        </Col> 
+                        <Col :md="8" :sm="8" :xs="8" v-if="show">
+                            <h1>{{general.metrics.views.total}}</h1>
+                            <p>VISITORS</p>
+                        </Col>   
+                </Row>
+            <TheFooter />
+          </div>
+       </Content>
+    </Layout>
+  </div> 
 </template>
 
 <script>
-import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
-// import WithFooter from '../../layouts/WithFooter';
-import { mapState, mapActions, mapGetters } from 'vuex'; // eslint-disable-line
-import { page } from 'vue-analytics'; // eslint-disable-line
-// import { GChart } from 'vue-google-charts'; 
-import Header from '@/components/HeaderGeneral'
-
+import { Button, Row, Col, Icon, Input, Form, Content, Layout, Header} from "iview";
+import { mapState, mapActions } from 'vuex';
+import HeaderGeneral from '../../components/HeaderGeneral.vue'; 
+import TheFooter from '../../components/TheFooter.vue'; 
 
 export default {
-  components: { Button, Modal, Layout, Icon, Row, Content, Col, Header },
-    
+  components: {
+    Button, Row, Col, Icon, Input, Form, Content, Layout, Header, HeaderGeneral, TheFooter
+  },
+  data(){
+    return {
+      show: false
+    }
+  },
   computed: {
     ...mapState([
       'general'
-    ]),
-    // chartData(){
-    //   let newData =  [['Country', 'views']];
-    //   let countries = this.general.metrics.views.countries;
-    //   Object.keys(countries).forEach(country => {
-    //     newData.push([country, countries[country]])
-    //   })
-
-    //   return newData;
-      
-    // }
+    ])
   },
   methods: {
     ...mapActions([
@@ -86,232 +90,219 @@ export default {
   mounted:
     async function(){
       await this.getGeneralMetrics();
+      this.show = true;
     }
-
 };
 </script>
-<style scoped>
-  * {
-    box-sizing: border-box;
-  }
 
-  .landing-img {
-    background: url("https://res.cloudinary.com/aolfiligre/image/upload/v1533747277/pjimage_1.jpg") no-repeat;
-    width: 100%;
-    height:600px; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-attachment: scroll; 
+<style scoped> 
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 
-  }
+     body{
+        font-family: 'Comfortaa', cursive;  
 
-  .landing-img > section{
-    color: #FFFFFF;
-    padding-top: .4rem; 
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .dropdown-icon {
-    font-size: 35px;
-    margin-top: 6%;
-  }
-  
-
-  #maps {
-   top: 10%;
-   left: 10%; 
-   width: 700px; 
-   height: 500px;
-   position: relative;
-  }
-
-  @media screen and (max-width: 680px){
-    #maps {
-      width: 350px; 
-      top: 0%;
-      left: 0%;
-      position: relative;
+     } 
+    .container1{
+        width:100%; 
+        display:flex;
+        margin:0;
+        height:50rem;
     }
-  }
-
-  @media screen and (min-width: 681px)  and (max-width: 780px){
-    #maps {
-      width: 600px;
-      top: 0%;
-      left: 0%; 
-      position: relative;
+    .left{ 
+        background-image: linear-gradient(rgb(2, 9, 110), rgba(4, 37, 128)); 
     }
-  }
+    .left-contain{
+        margin-top:18%;         
+    }
+    .left p{
+        font-size:4rem;
+        color:#fff;
+        letter-spacing: 2px;
+        padding:2rem 0;
+        line-height: 1.2;
+        font-weight: 200;
+        opacity: .7;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .left span{
+        font-size:1.5rem; 
+        font-family: 'Montserrat', sans-serif;
+    }
+   .left button{ 
+        border-radius:2px; 
+        color: rgb(12, 54, 243); 
+        border: none;
+        padding: .8rem 2rem;
+        background-color: #fff;  
+        margin-top:3rem; 
+        font-family: 'Montserrat', sans-serif;
+        }   
+    .right{
+        background-color:#000;
+        height:100%;
+    }
+    
+      
+    .right img{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+        object-position: 50%;
+        position: absolute;
+        opacity: 0.5;
+        background-size: cover;
+        border-radius: 10px;
+        top:0; 
+    } 
+    .container2{ 
+        display:flex; 
+        background-color: rgb(230, 221, 221);
+    }
+    .left-contain2{ 
+        margin-top:8%;
+        height:80%;
+        float:right;
+    }
+    .right2{ 
+        height:50vh;
+    }
+     
+    .right-contain2{
+        margin-top:12%;         
+    }
+    .right-contain2 p{
+        font-size:15px; 
+        margin:2rem 0;    
+        font-family: 'Montserrat', sans-serif; 
+    } 
+    iframe{
+        width:100%;
+        border-radius: 10px;
+        height:100%;
+        overflow:hidden;
+        border: none !important;
+        object-fit: cover;
+        box-shadow: 2px 2px 20px 2px #888888;
+    }
+     .container3{ 
+        display:flex; 
+        background-color: rgb(230, 221, 221);
+        height:fit-content;
+    }
+    .container3 h1{
+        font-size:3rem;
+        line-height:2;
+        color:black;
+        font-weight:600;
+        opacity: 6;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .container3 p{
+        font-family: 'Montserrat', sans-serif;
+        font-size:1.3rem;
+        line-height:1;
+        color:black;
+        opacity: 6;
+        text-align: center;
+    }
+    .container3 > div{ 
+        margin:8rem 0;
+    }
+    .center{
+        border-right:2px solid #ccc;
+        border-left:2px solid #ccc;
+    }
 
-  .head-content {
-    font-size: 16px;
-  }
 
-  .head-content h4{
-    font-size: 3em;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  .head-content .second{
-    font-size: 1.5em;
-    font-weight: 400;
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  .section-1 {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    /* border:1px solid green; */
-    background: white;
-  }
-  .section-description {
-    /* border:1px solid yellow; */
-    margin: auto;
-    padding: 20px;
-  }
-
-  /* /* .section-description > button {
-    margin-top: 20px;
-    width: 7rem; 
-  } */
-
-  .know {
-
-  padding-left:20px;
-  padding-right:20px;
-  margin-top: 30px;   
-
-
-  }
-
-  .section-description > h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-  }
-
-  iframe {
-    width: 100%;
-    height: 27rem;
-    border: none;
-  }
-
-  .section-2-description {
-    padding: 20px;
-    text-align: center;
-    height: 100%;
-    height: 100%;
-  }
-  .section-2 {
-    color: white;
-    height: 100%;
-    padding: 20px;
-    background: linear-gradient(to right, #2d9cdb 0%, #56ccf2 100%);
-  }
-
-  .section-2-icon {
-    font-size: 45px;
-  }
-
-  .section-2-description > h2 {
-    margin-top: 6px;
-    font-size: 48px;
-    margin-bottom: 6px;
-  }
-
-  .section-2-description > p {
-    font-size: 18px;
-  }
-
-  .section-3 {
-    text-align: center;
-    background: #e5e5e5;
-    /* color: white; */
-    /* padding-bottom: 30px; */
-    /* padding-top: 20px; */
-    /* padding: 20px 20px 30px 30px; */
-  }
-
-  .underline {
-    text-decoration: none;
-    position: relative;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 42px;
-  }
-
-  .underline:after {
-    right: 0;
-    position: absolute;
-    content: "";
-    width: 60%;
-    height: 3px;
-    bottom: -4px;
-    left: 0;
-    margin: 0 auto;
-    background: #2f80ed;
-  }
-
-  .auth {
-    background: transparent;
-    padding: 5px 30px 5px 30px;
-    border-radius: 20px;
-    border: 2px solid #fff;
-  }
-
-  .auth1 {
-    background: #2f80ed;
-    color: #FFFFFF;
-    padding: 5px 30px 5px 30px;
-    border-radius: 20px;
-    border: 2px solid #2f80ed;
-  }
-  .section-3-header {
-    width: 100%;
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
-
-  .section-3-content > img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  .section-3-content > h2 {
-    margin-top: 30px;
-    margin-bottom: 0rem;
-    font-size: 24px;
-  }
-
-  .section-3-content > p {
-    margin-bottom: 30px;
-  }
-
-  .section-4 {
-    /* border: 1px solid green; */
-    width: 100%;
-    padding: 20px;
-    height: 500px;
-    background: white;
-    /* background: #E5E5E5; */
-    text-align: center;
-  }
-  .map-section {
-    /* border: 1px solid green; */
-    background: white;
-    border-radius: 4px;
-  
-  }
-  
-  #getStarted {
-    color: #fff;
-  }
-
+@media screen and (max-width: 840px) {
+    .right-text{  
+        text-align: center;        
+        margin-top:25%;         
+    }
+    .right-text p{ 
+        color:#fff;         
+        font-size:3rem; 
+        font-weight: 800;        
+    }
+    .right-text span{        
+        font-size:2rem;
+        font-weight: 100;
+    }
+    .right-text button{ 
+        border-radius:2px; 
+        color: rgb(12, 54, 243); 
+        border: none;
+        padding: .8rem 2rem;
+        background-color: #fff;  
+        margin-top:2rem; 
+    } 
+    .right2{ 
+        height:30vh;
+    }
+    .right-contain2{
+        margin-top:7%;         
+    } 
+    .container3 > div{ 
+        margin:1rem 0 7rem 0;
+    }
+}
+@media screen and (max-width: 603px) {
+    .right-text{          
+        margin-top:50%;         
+    }
+    .left{
+        display:none;
+    }
+    .right-text p{      
+        font-size:2.5rem;         
+    }
+    .right-text span{        
+        font-size:1.5rem; 
+    } 
+    .container2{ 
+        flex-direction:column; 
+    }
+    .right2 .left2{ 
+        height: fit-content;
+    }
+    .left-contain2{     
+        float:left;
+    }
+    .container3 > div{ 
+        margin:1rem 0 10rem 0;
+    }
+    .container3 h1{
+        font-size:2rem; 
+    }
+    .container3 p{
+        font-size:1rem; 
+    }
+    .right-contain2{
+        margin-top:7%; 
+        height: fit-content;        
+    }
+    .right-contain2 p{
+        font-size:1.2rem; 
+        margin:1rem 0;     
+    } 
+}
+@media screen and (max-width: 322px) {
+    .right-contain2 p{
+        font-size:1.3rem;
+        margin:.5rem 0;       
+    }
+    .right-contain2 h2{
+        font-size:2rem;     
+    } 
+    .right-text{          
+        margin-top:70%;         
+    }
+    .left{
+        display:none;
+    }
+    .container3 > div{ 
+        margin:1rem 0 10rem 0;
+    }
+}
 </style>

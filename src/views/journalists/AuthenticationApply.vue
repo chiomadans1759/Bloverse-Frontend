@@ -1,5 +1,4 @@
 <template>
-  <BaseAuthentication>
     <main class="main-apply">
       <Modal v-model="isSuccess" :width="726" id="success-modal">
         <Alert type="success">Success!</Alert>
@@ -86,7 +85,6 @@
           </div>
       </Form>
     </main>
-  </BaseAuthentication>
 </template>
 
 <script>
@@ -94,10 +92,9 @@ import { Form, FormItem, Row, Col, Input, Checkbox, Modal, Alert, Button, Select
 import { mapState, mapActions } from 'vuex';
 import vSelect from 'vue-select';
 import countryFlags from '../../countryFlags.js';
-import BaseAuthentication from '../../layouts/BaseAuthentication';
 //import Utility from '../../Utility.js';
 export default {
-  components: { Form, FormItem, Row, Col, Input,Checkbox, Modal, Alert, Button, BaseAuthentication, vSelect, Select, Option },
+  components: { Form, FormItem, Row, Col, Input,Checkbox, Modal, Alert, Button, vSelect, Select, Option },
   data: function(){
     return {
       isSuccess: false,

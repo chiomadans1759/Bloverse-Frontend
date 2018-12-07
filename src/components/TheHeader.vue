@@ -5,14 +5,11 @@
         <Col>
           <router-link to="/" class="router-link">
             <img class="logo" src="./../assets/Asset 1.svg" style="height: 40px" />
-            <span id="logo-text">bloverse</span>
           </router-link>
         </Col>
         <span class="button-links">
-          <button @click="$emit('showModal', true)" id="login-button">login</button>
-  
+          <login-button />
           <router-link to="/creators" id="create-button">create content</router-link>
-
         </span> 
       </Row>
     </div>
@@ -21,9 +18,10 @@
 
 <script>
 import { Row, Col } from 'iview';
+import LoginButton from "./LoginButton"
 
 export default {
-  components: {Row, Col}
+  components: { Row, Col, LoginButton }
 }
 </script>
 

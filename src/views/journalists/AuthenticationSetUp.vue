@@ -1,89 +1,225 @@
 <template>
-  <BaseAuthentication>
-<Col :sm="18" :md="10" :xs="22" class="auth-section">
-  <h1 id="page-title">Welcome to Bloverse</h1>
-  <p id="manual-wrapper">
-    <router-link to="setup" class="my-btn btn-main" id="btn-manual"> Continue Setup Manually </router-link>
-  </p>
-  <!-- <h3 id="sub-title">Choose an option to complete your registration</h3>
-  <Row type="flex" justify="space-between" id="btn-social-grp">
-    <Col :sm="11" :xs="24">
-      <Button class="my-btn btn-social" id="btn-google" long> 
-        <Icon id="google-icon" type=logo-google />
-        Google
-      </Button>
-    </Col>
-    <Col :sm="11" :xs="24"> 
-      <Button class="my-btn btn-social" id="btn-facebook" long>Facebook</Button>
-    </Col>
-    <Col :sm="11" :xs="24">
-      <Button class="my-btn btn-social" id="btn-linkedln" long>Linkedln</Button> 
-    </Col>
-    <Col :sm="11" :xs="24">
-      <Button class="my-btn btn-social" id="btn-twitter" long>Twitter</Button>
-    </Col>
-  </Row>
-  <p class="p-or">OR</p>-->
-  
-</Col>
-  </BaseAuthentication>
+  <main class="auth-section">
+    <h2 id="page-title"> Complete your registration </h2>
+    <Row type="flex" justify="center">
+      <Col :md="14" class="steps-container">
+        <!-- <Steps id="step" :current="currentPage">
+          <Step content="Verify Previous Info"></Step>
+          <Step id="last" title="Final" content="Personalize your account"></Step>
+        </Steps> -->
+      <div class="steps">
+          <div class=container> 
+            <div class="step-count"> 
+              <div class="content" 
+                    id="myDiv1" 
+                    :class="{ active: currentPage === 1 }"
+                    @click="updateCurrentPage(1)">
+                <p> 1 </p>
+              </div>
+              
+              <div class="content" 
+                    id="myDiv2" 
+                    :class="{ active: currentPage === 2 }"
+                    @click="updateCurrentPage(2)"> 
+                <p> 2 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Col>
+    </Row>
+    
+      
+    <section class="auth-form">
+      <h3 id="form-instruction">Fill the form below to become journalist on Bloverse</h3>
+      <Row type="flex" justify="center">
+        <PageOne v-if="currentPage===1" :user="user" @toNext="updateCurrentPage(2)" />
+        <PageTwo v-else :user="user" @done="completeSetup" />
+      </Row>
+    </section>
+  </main>
 </template>
 
 
 <script>
-import { Button,Row, Col, Icon } from 'iview';
-import { mapState, mapMutations } from 'vuex';
-import BaseAuthentication from '../../layouts/BaseAuthentication';
+import { Steps, Step, Row, Col, } from 'iview';
+import { mapActions, mapState } from 'vuex';
+
+import PageOne from '../../components/SetUpStepOne.vue';
+import PageTwo from '../../components/SetUpStepTwo.vue';
+  
 
 export default {
-  components: { Button, Row, Col, Icon, BaseAuthentication },
+  //     props: ['value', 'linkedIn'],
+  components: { PageOne, PageTwo, Steps, Step, Row, Col },
+  data: function(){
+    return {
+      currentPage: 1,
+    }
+  },
   computed: {
+    user: {
+      get(){
+        return this.$store.state.auth.newUser;
+      },
+      
+      set(props){
+        this.$store.commit('setNewUser', props);
+      }
+    },
     ...mapState([
       'auth'
     ])
   },
-  methods: {
-    ...mapMutations([
-      'setNewUser'
+  watch: {
+    'user.firstName': async (val) => {
+      await this.generateUsername();
+    },
+
+    'user.lastName': async (val) => {
+      await this.generateUsername();
+    }
+  },
+  methods:{
+    updateCurrentPage(newPage){
+      this.currentPage = newPage;
+    },
+
+    completeSetup: async function(){
+      let success = await this.registerJournalist()
+      if(success){
+        success = await this.login(this.user)
+        if(success){
+          this.$Message.success('Registration successfull, You are being redirected to login')
+          let username = this.auth.loggedInUser.userName;
+          this.$router.push(`/creators/${username}/dashboard`)
+        }
+      }
+      else
+        this.$Message.error('Something went wrong');
+    },
+
+    ...mapActions([
+      'registerJournalist',
+      'login',
+      'generateUsername'
     ])
   },
-  beforeRouteLeave (to, from, next) {
-    // called when the route that renders this component is about to
-    // be navigated away from.
-    // has access to `this` component instance.
-    let { id: applicant, first_name: firstName, last_name: lastName, email, phone_number: phone, category, country } = this.auth.applicant;
-    this.setNewUser({ applicant, firstName, lastName, email, phone, category, country });
-    next();
+  async mounted(){
+    await this.generateUsername();
   }
 }
 </script>
 
-
 <style scoped>
-
-#page-title {
-  font-weight: normal;
-  color: #828282;
-}
-
-#sub-title {
-  font-family: Roboto;
-  font-weight: bold;
-  font-size: 24px;
-  color: #4F4F4F;
+#form-instruction {
   text-align: center;
+  margin-bottom: 3rem !important;
 }
 
-#manual-wrapper {
+section.auth-form {
+  margin-top: 6rem;
+}
+
+#step {
   display: flex;
+  justify-content: space-between;
+  
 }
 
-#btn-manual {
-  flex-grow: 1;
+#step > * {
+  flex-grow: 2;
+}
+
+#step > #last {
+  width: auto !important;
+}
+
+.image-upload{
+    width: 180px;
+  background: #f1f1f1db;
+  /* height: 50%; */
+  height: 180px;
+  margin-top: 5px;
+  border-radius: 100px;
+  /* border: 1px solid grey; */
   text-align: center;
-  padding: .5rem 0;
-  border-radius: 5px;
 }
 
+/* steps style */ 
+#container{
+margin-top:30px
+}
+.container{
+width: 100%;
+height: 3px;
+/*   background: red; */
+border: 1px solid #2D9CDB;
+margin: 10px auto;
+border-radius: 5px;
+display: flex;
+justify-content: space-around;
+z-index:1;
+}
 
+.step-count{
+width:100%;
+display: flex;
+justify-content: space-around;
+position: absolute;
+top: -10px
+}
+
+/* p{
+width: 20px;
+height: 20px;
+border: 1px solid blue;
+text-align: center;
+border-radius: 100%;
+background:white;
+color: blue;
+} */
+
+
+.content .active{
+color: white;
+background: #2D9CDB;
+}
+
+.content{
+width: 40px;
+height: 50px;
+border: 1px solid #2D9CDB;
+text-align: center;
+display: flex;
+flex-item: center;
+border-radius: 50%;
+background: white;
+color: #2D9CDB
+}
+
+.active{
+color: white;
+background: #2D9CDB
+}
+
+p{
+margin: auto
+}
+
+button{
+width: 100px;
+padding: 5px;
+border: none;
+border-radius: 4px;
+background: blue;
+color: white;
+}
+
+@media (max-width: 992px){
+  .steps-container{
+    display: block;
+    width: 70%;
+  }
+}
 </style>

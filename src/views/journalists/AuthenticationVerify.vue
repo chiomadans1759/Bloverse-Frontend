@@ -1,6 +1,5 @@
 <template>
-  <BaseAuthentication class="auth-verify">
-    <Col :md="10" :xs="23" class="auth-section">
+    <main class="auth-section">
       <Alert :type="alert.type" v-if="alert.show" show-icon>
         <template v-if="alert.type === 'success'">
           Verified!!!
@@ -22,15 +21,13 @@
           <Button class="my-btn" :class="{'btn-secondary': token}" @click="verifyToken" long :disabled="!token" :loading="processing"> Submit </Button>
         </FormItem>
       </Form>
-    </Col>
-  </BaseAuthentication>
+    </main>
 </template>
 
 <script >
 import { Row, Col, Button, Input, Form, FormItem, Alert } from "iview";
 import Hashids from "hashids";
 import { mapActions, mapState, mapMutations } from "vuex";
-import BaseAuthentication from "../../layouts/BaseAuthentication";
 
 let hashids = new Hashids("SG.AKa2vomKT26KSV9yNHf-HQ.e-", 16);
 export default {
@@ -41,8 +38,7 @@ export default {
     Input,
     Form,
     FormItem,
-    Alert,
-    BaseAuthentication
+    Alert
   },
   data() {
     return {

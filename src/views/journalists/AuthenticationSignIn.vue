@@ -1,47 +1,25 @@
 <template>
-  <!--<BaseAuthentication>
-<Col :sm="18" :md="10" :xs="22" class="auth-section">
-  <h1 id="page-title">Sign in</h1>
-   <Row type="flex" justify="space-between" id="btn-social-grp">
-    <Col :sm="11" :xs="24">
-      <Button class="btn-social my-btn" id="btn-google" long> 
-        <Icon id="google-icon" type=logo-google />
-        Google
-      </Button>
-    </Col>
-    <Col :sm="11" :xs="24"> 
-      <Button class="btn-social my-btn" id="btn-facebook" long>Facebook</Button>
-    </Col>
-    <Col :sm="11" :xs="24">
-      <Button class="btn-social my-btn" id="btn-linkedln" long>Linkedln</Button> 
-    </Col>
-    <Col :sm="11" :xs="24">
-      <Button class="btn-social my-btn" id="btn-twitter" long>Twitter</Button>
-    </Col>
-  </Row>
-  <p class="p-or">OR</p> 
-  <Form ref="loginForm" class="auth-form login-form" :model="user" :rules="loginValidate">
-    <FormItem prop="email">
-      <Input class="my-input" v-model="user.email" size="large" placeholder="E-mail*" />
-    </FormItem>
-    <FormItem prop="password">
-      <Input class="my-input" type="password" v-model="user.password" placeholder="Password*"/>
-    </FormItem>
-    <FormItem>
-      <Button class="my-btn btn-main" :disabled="this.isSubmitting" @click="handleLogin" long>
-        {{ isSubmitting ? 'Submitting...' : 'LOG IN' }}
-      </Button>
-    </FormItem>
-  </Form>
-  
-  <div id="register-here">Not Yet on Bloverse? <br> 
-    <router-link id="login-link" to="apply"> Register Here </router-link>
-  </div>
-</Col>
-  </BaseAuthentication>-->
-  <BaseAuthentication>
-    <!-- <div class="well"></div> -->
-    <!-- <Col :sm="18" :md="10" :xs="22" class="auth-section"></Col> -->
+  <!--
+    <div id="modal-left">
+     <div id="modal-login">
+         <div id="modal-header-top">
+         <img src="@/assets/Logo.svg" alt="">
+         <h2 id="brand-name">bloverse</h2>
+       </div>
+       <h3>Sign in to continue</h3>
+         <input class="modal-button modal-email" placeholder="Email"> </input>
+         <input class="modal-button modal-password" placeholder="Password" type="password"></input>
+         <div id="modal-footer-end">
+         <a href="">Forgot password?</a>
+         <button id="modal-login-button">Login</button>
+         </div>
+         <h4>New to Bloverse? <a href=""> Sign up</a></h4>
+     </div>
+    </div>
+    <div id="modal-right">
+        <img src="@/assets/Images.png" alt="">
+    </div>
+  -->
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-1"></div>
@@ -113,15 +91,12 @@
         <div class="col-md-1"></div>
       </div>
     </div>
-  </BaseAuthentication>
 </template>
 
 
 <script>
 import { Button, Row, Col, Icon, Input, Form, FormItem, Checkbox } from "iview";
 import { mapActions, mapState } from "vuex";
-
-import BaseAuthentication from "../../layouts/BaseAuthentication";
 
 export default {
   components: {
@@ -133,7 +108,6 @@ export default {
     Form,
     Checkbox,
     FormItem,
-    BaseAuthentication
   },
   data: function() {
     return {

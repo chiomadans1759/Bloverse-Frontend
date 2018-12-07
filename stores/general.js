@@ -15,7 +15,8 @@ export default {
     currentPost: {},
     journalists: [],
     loading: false,
-    metrics: {}
+    metrics: {},
+    modal: { show: false, currentComponent: null }
   },
   actions: {
     async setGeneralData({
@@ -150,7 +151,9 @@ export default {
     /*setState(state, params){
       state = {...state, ...params}
     }*/
-
+    setModal(state, modal){
+      state.modal = modal
+    },
     setCategories(state, categories) {
       state.categories = categories;
     },

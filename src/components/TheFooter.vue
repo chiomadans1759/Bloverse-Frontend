@@ -1,117 +1,81 @@
 <template>
-  <Footer id="footer-section">
-    <Row class="footer-1" type="flex" justify="space-between">                         
-      <Col class="footer-company-name">
-        <span>Bloverse</span>
-      </Col>
-      <Col>
-        <ul class="footer-list">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contacts</a></li>
-          <li><a href="#">Terms and Conditions</a></li>
-          <li><router-link to="/policy">Privacy Policy</router-link></li>
-        </ul>
-      </Col>
-      <Col>
-        <ul class="footer-list">
-          <li>
-            <router-link to="/rules/journalist">House Rules (Journalists)</router-link>
-          </li>
-          <li>
-            <router-link to="/ranking/journalist">Ranking System (Journalists)</router-link>
-          </li>
-          <li><router-link to="/guides">Guides to Publish Article</router-link></li>
-          <li><router-link to="/faq/journalist">Frequently Asked Question (Journalists)</router-link></li>
-        </ul>
-      </Col>
-      <Col>
-        <ul class="footer-list">
-          <li><router-link to="/rules/commenter">House Rules (Commenters)</router-link></li>
-          <li><router-link to="/ranking/commenter">Ranking System (Commenters)</router-link></li>
-          <li><router-link to="/faq/commenter">Frequently Asked Question (Commenters)</router-link></li>
-        </ul>
-      </Col>
-      <!--<Col>
-        <ul class="footer-list">
-          <li> 321 North Star 34th Street, </li>
-          <li> Suit #100 </li>
-          <li> Cupertino, 98103 </li>
-        </ul>
-      </Col>-->
-    </Row>
-    <Row type="flex" justify="space-between" id="footer-2">
-      <Col>English</Col>
-      <Col>(c) 2018 Bloverse. All Right Reserved</Col>
-      <Col>
-        <Icon class="footer-icon" type="logo-facebook"></Icon>
-        <Icon class="footer-icon" type="logo-twitter"></Icon>
-        <Icon class="footer-icon" type="logo-linkedin"></Icon>
-        <Icon class="footer-icon" type="logo-instagram"></Icon>
-      </Col>
-    </Row>
-                                  
-  </Footer>
+    <footer class="feeds-footer">
+        <div class="container">
+            <Row type="flex" justify="space-between" align="middle">
+                <Col :sm ="12" :md ="12" :xs="24">
+                    <div id="footer-links">
+                        <p style="font-size: 14px; opacity: 85%;  font-family: 'Comfortaa', cursive;">bloverse </p>
+                        <span id="vr-line"></span>
+                        <p id="links-p">Terms</p>
+                        <p id="links-p">Privacy</p>
+                        <p id="links-p">About</p>
+                        <p id="links-p"><i class="fas fa-ellipsis-h" id="footer-icon"></i></p>
+                    </div>
+                </Col>
+                <Col class ="copy-write" :sm ="12" :md ="12" :xs="24">
+                    <p id="year-text">2018 Bloverse. All Right Reserved</p>
+                </Col>
+            </Row>
+        </div>
+    </footer>  
 </template>
 
 <script>
-import { Row, Col, Icon } from 'iview';
+import { Row, Col} from 'iview';
 
 export default {
-  components: { Row, Col, Icon }
+  components: { Row, Col}
+    
 }
 </script>
 
+<style>
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 
-<style scoped>
-  #footer-section {
-    color: #d9d9d9;
-    padding: 2rem 4rem;
-    background: #363c44;
-  }
+.feeds-footer {
+    background: #ffffff;
+    height: 40px;
+    padding-top: 7px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #aaaaaa;
+    position: fixed;
+}
 
-  .footer-1 {
-    margin-bottom: 4rem;
-  }
+#vr-line {
+    border-left:1px solid rgb(160, 156, 156);
+    height: 12px;
+    margin-left: 1rem;
+    margin-top: 6px;
 
-  .footer-list {
-    list-style: none;
-    font-size: 14px;
-    line-height: 23px;
-    margin-bottom: 2rem;
-  }
+} 
+#footer-links{
+    display: flex;
+    justify-content: space-between;
+}
 
-  .footer-list a {
-    color: #d9d9d9;
-  }
+#links-p{
+    margin-left:2rem;
+    margin-top: 3px;
+    font-family: 'Comfortaa', cursive;
+    font-size: 12px;
+}
 
-  .footer-list a:hover {
-    color: var(--primary);
-    text-decoration: underline;
-  }
+#year-text {
+    font-family: 'Comfortaa', cursive;
+    font-size: 10px;
+    text-align: right;
+}
 
-  .footer-icon {
-    /* padding: 20px; */
-    padding-right: 20px;
-    font-size: 24px;
-  }
+@media screen and (max-width: 600px) {
+  .feeds-footer {
+    height: 85px;
+  } 
+  #year-text { 
+    text-align: center;
+    padding-top:1rem;
+}
+}
 
-  .footer-company-name {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 23px;
-    color: white;
-    font-style: inherit;
-    margin-bottom: 2rem;
-  }
-
-
-  @media screen and (max-width:901px){
-    .footer-company-name {
-      width: 100%;
-      text-align: center;
-      
-    }
-  }
-
-  
 </style>

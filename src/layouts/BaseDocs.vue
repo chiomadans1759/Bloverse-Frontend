@@ -1,5 +1,4 @@
 <template>
-  <WithHeader>
     <section id="doc-section">
       <header id="doc-section-header">
         <h1>{{title}}</h1>
@@ -19,17 +18,15 @@
         </Row>
       </section>
     </section>
-  </WithHeader>
 </template>
 
 
 <script>
 import { Row, Col } from 'iview';
-import WithHeader from './WithHeader'
 
 export default {
   props: ['title', 'about'],
-  components: { Row, Col, WithHeader }
+  components: { Row, Col }
 }
 
 
