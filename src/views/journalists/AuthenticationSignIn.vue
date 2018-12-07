@@ -20,79 +20,74 @@
         <img src="@/assets/Images.png" alt="">
     </div>
   -->
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-5">
-              <div class="place_page">
-                <Row type="flex" justify="center">
-                  <img :src="require('@/assets/Asset 1.svg')" alt class="img-logo">
-                </Row>
-
-                <Form
-                  ref="loginForm"
-                  class="auth-form login-form"
-                  :model="user"
-                  :rules="loginValidate"
-                >
-                  <FormItem prop="email">
-                    <Input
-                      class="my-input"
-                      v-model="user.email"
-                      size="large"
-                      placeholder="E-mail*"
-                    />
-                  </FormItem>
-                  <FormItem prop="password">
-                    <Input
-                      class="my-input"
-                      type="password"
-                      v-model="user.password"
-                      placeholder="Password*"
-                    />
-                  </FormItem>
-                  <FormItem>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <Checkbox v-model="single">Remmember Me</Checkbox>
-                      </div>
-                      <div class="col-md-6">
-                        <Button
-                          class="my-btn btn-main"
-                          :disabled="this.isSubmitting"
-                          @click="handleLogin"
-                          long
-                        >{{ isSubmitting ? 'Submitting...' : 'LOG IN' }}</Button>
-                      </div>
-                    </div>
-                    <div class="row extra__action--auth">
-                      <div class="col-md-6">
-                        <p class="text-left">
-                          <router-link id="login-link" to="apply">Register Now</router-link>
-                        </p>
-                      </div>
-                      <div class="col-md-6">
-                        <p class="text-right">Forgot Password ?</p>
-                      </div>
-                    </div>
-                  </FormItem>
-                </Form>
-              </div>
-            </div>
-            <div class="col-md-7">
-              <img :src="require('@/assets/Images.png')" class="img-responsive">
-            </div>
+  <div id="auth-sign-in">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="container pl-lg-6 pr-lg-5">
+          <div class="text-center mb-5">
+            <img src="@/assets/Asset 1.svg" alt class="img-logo">
           </div>
+
+          <Form
+            ref="loginForm"
+            class="auth-form login-form"
+            :model="user"
+            :rules="loginValidate">
+            <FormItem prop="email">
+              <Input
+                type="email"
+                v-model="user.email"
+                size="large"
+                placeholder="E-mail*"
+              />
+            </FormItem>
+            <FormItem prop="password">
+              <Input
+                size="large"
+                type="password"
+                v-model="user.password"
+                placeholder="Password*"
+              />
+            </FormItem>
+            <FormItem>
+              <div class="row">
+                <div class="col-12">
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-block"
+                    :disabled="this.isSubmitting"
+                    @click="handleLogin">
+                    {{ isSubmitting ? 'Submitting...' : 'LOG IN' }}
+                  </button>
+                </div>
+              </div>
+              
+              <div class="row mt-5">
+                <div class="col">
+                  <p class="text-left">
+                    <router-link class="btn-link" to="apply">Register Now</router-link>
+                  </p>
+                </div>
+                <div class="col-auto">
+                  <p class="text-right">Forgot Password ?</p>
+                </div>
+              </div>
+            </FormItem>
+          </Form>
         </div>
       </div>
+
+      <div class="col-md-7">
+        <img src="@/assets/Images.png" class="img-responsive">
+      </div>
     </div>
+  </div>
 </template>
 
 
 <script>
 import { Button, Row, Col, Icon, Input, Form, FormItem, Checkbox } from "iview";
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapState, mapMutations } from "vuex";
 
 export default {
   components: {
@@ -139,6 +134,8 @@ export default {
     ...mapState(["auth"])
   },
   methods: {
+    ...mapMutations(['setModal']),
+
     handleLogin: function() {
       this.$refs.loginForm.validate(async valid => {
         if (valid) {
@@ -146,6 +143,7 @@ export default {
           let success = await this.login(this.user);
           this.isSubmitting = false;
           if (success === true) {
+            this.setModal({show: false });
             this.$Message.success("You have been successfully logged in");
             let username = this.auth.loggedInUser.userName;
             this.$router.push(`/creators/${username}/dashboard`);
@@ -167,29 +165,32 @@ export default {
 
 
 <style scoped>
-#register-here {
-  font-size: 18px;
-  margin-top: 12px;
-  text-align: center;
+#auth-sign-in {
+  width: 100%;
 }
 
-#register-link {
-  color: #2f80ed;
-}
-
-.img-logo {
+#auth-sign-in .img-logo {
   height: 86px;
-  margin-top: 10%;
+  margin-top: 25%;
   margin-bottom: 7%;
+}
+
+#auth-sign-in button.btn-primary {
+  height: 4rem !important;
 }
 
 .col-md-7 img {
   float: right;
-  position: relative;
-  height: 100%;
+  height: 57.65rem;
 }
 
-.place_page {
-  padding: 20px;
+@media only screen and (max-width: 980px) {
+  #auth-sign-in .img-logo {
+    margin-top: 10%;
+  }
+
+  .col-md-7 {
+    display: none;
+  }
 }
-</style>;;
+</style>
