@@ -123,20 +123,13 @@ export default {
       }, true);
       return response.statusCode === 200;
     },
-    async getAllPublishedPosts({
-      commit
-    }, {
-      category = "",
-      country = ""
-    }) {
+    async getAllPublishedPosts({ commit }, { category = "", country = "All" }) {
       let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
       commit('setPublishedPosts', response.data.posts);
     },
-    async getAllTrendingPosts({
-      commit
-    }) {
+    async getAllTrendingPosts({ commit }) {
       let response = await Api.get(`posts/trending/`);
-      commit('setTrendingPost', response.data.posts);
+      commit('setTrendingPost', response.data.post);
     },
     async getPostBySlug({
       commit

@@ -1,13 +1,20 @@
-  <template>
-  <main class="card">
-    <div class="card-header">
-       <h3 class="post-cat" v-if="show">{{category.name}}</h3>
-     <h3 class="date-cat">2 days ago</h3>
+<template>
+  <main class="card p-0">
+    <div class="card-header border-0">
+      <div class="row pt-4">
+        <div class="col">
+          <h5 class="card-header-title text-uppercase">{{category.name}}</h5>
+        </div>
+        
+        <div class="col-auto">
+          <h6 class="text-secondary text-uppercase">2 days ago</h6>
+        </div>
+      </div>
     </div>
     
-    <img class="post-img" :src="general.currentPost.image_url">
+    <div class="card-body">
+      <img class="post-img" :src="general.currentPost.image_url">
       
-    <div class="container">
       <small class="img-descrip">This is a description of the picture above</small>
       <h1 class="post-title mt-4">{{general.currentPost.title}}</h1>
       <ul class="post-keypoints">
@@ -51,18 +58,8 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  background-color: #ffffff;
-  border: 1px solid #eeeeee;
-  padding:16px 24px 0;
-  margin-top: 15px;
-  border-radius: 4px
-}
-
 .card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center
+  width: 100%;
 }
 
 .post-img {

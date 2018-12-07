@@ -1,18 +1,14 @@
 <template>
-  <main class="post-display">
+  <main class="post-display pt-5">
     <div class="container">
       <div class="row">
         <div class="col-md-8">
           <post-details></post-details>
         </div>
 
-        <div class="col-md-4">
-          <!-- <loading /> -->
-          <author-card :author="general.currentPost.author"></author-card>
-          <br>
+        <div class="col-md-4 pt-3">
+          <author-card :author="general.currentPost.author" class="mb-5"></author-card>
           <post-social-share :slug="general.currentPost.slug"></post-social-share>
-          <br />
-          <related-posts></related-posts>
         </div>
       </div>
     </div>

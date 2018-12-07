@@ -20,83 +20,74 @@
         <img src="@/assets/Images.png" alt="">
     </div>
   -->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-          <div class="well">
-            <div class="row">
-              <div class="col-md-5">
-                <div class="place_page">
-                  <Row type="flex" justify="center">
-                    <img :src="require('@/assets/Asset 1.svg')" alt class="img-logo">
-                  </Row>
+  <div id="auth-sign-in">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="container pl-lg-6 pr-lg-5">
+          <div class="text-center mb-5">
+            <img src="@/assets/Asset 1.svg" alt class="img-logo">
+          </div>
 
-                  <Form
-                    ref="loginForm"
-                    class="auth-form login-form"
-                    :model="user"
-                    :rules="loginValidate"
-                  >
-                    <FormItem prop="email">
-                      <Input
-                        class="my-input"
-                        v-model="user.email"
-                        size="large"
-                        placeholder="E-mail*"
-                      />
-                    </FormItem>
-                    <FormItem prop="password">
-                      <Input
-                        class="my-input"
-                        type="password"
-                        v-model="user.password"
-                        placeholder="Password*"
-                      />
-                    </FormItem>
-                    <FormItem>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <Checkbox v-model="single">Remmember Me</Checkbox>
-                        </div>
-                        <div class="col-md-6">
-                          <Button
-                            class="my-btn btn-main"
-                            :disabled="this.isSubmitting"
-                            @click="handleLogin"
-                            long
-                          >{{ isSubmitting ? 'Submitting...' : 'LOG IN' }}</Button>
-                        </div>
-                      </div>
-                      <div class="row extra__action--auth">
-                        <div class="col-md-6">
-                          <p class="text-left">
-                            <router-link id="login-link" to="apply">Register Now</router-link>
-                          </p>
-                        </div>
-                        <div class="col-md-6">
-                          <p class="text-right">Forgot Password ?</p>
-                        </div>
-                      </div>
-                    </FormItem>
-                  </Form>
+          <Form
+            ref="loginForm"
+            class="auth-form login-form"
+            :model="user"
+            :rules="loginValidate">
+            <FormItem prop="email">
+              <Input
+                type="email"
+                v-model="user.email"
+                size="large"
+                placeholder="E-mail*"
+              />
+            </FormItem>
+            <FormItem prop="password">
+              <Input
+                size="large"
+                type="password"
+                v-model="user.password"
+                placeholder="Password*"
+              />
+            </FormItem>
+            <FormItem>
+              <div class="row">
+                <div class="col-12">
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-block"
+                    :disabled="this.isSubmitting"
+                    @click="handleLogin">
+                    {{ isSubmitting ? 'Submitting...' : 'LOG IN' }}
+                  </button>
                 </div>
               </div>
-              <div class="col-md-7">
-                <img :src="require('@/assets/Images.png')" class="img-responsive">
+              
+              <div class="row mt-5">
+                <div class="col">
+                  <p class="text-left">
+                    <router-link class="btn-link" to="apply">Register Now</router-link>
+                  </p>
+                </div>
+                <div class="col-auto">
+                  <p class="text-right">Forgot Password ?</p>
+                </div>
               </div>
-            </div>
-          </div>
+            </FormItem>
+          </Form>
         </div>
-        <div class="col-md-1"></div>
+      </div>
+
+      <div class="col-md-7">
+        <img src="@/assets/Images.png" class="img-responsive">
       </div>
     </div>
+  </div>
 </template>
 
 
 <script>
 import { Button, Row, Col, Icon, Input, Form, FormItem, Checkbox } from "iview";
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapState, mapMutations } from "vuex";
 
 export default {
   components: {
@@ -143,6 +134,8 @@ export default {
     ...mapState(["auth"])
   },
   methods: {
+    ...mapMutations(['setModal']),
+
     handleLogin: function() {
       this.$refs.loginForm.validate(async valid => {
         if (valid) {
@@ -150,6 +143,7 @@ export default {
           let success = await this.login(this.user);
           this.isSubmitting = false;
           if (success === true) {
+            this.setModal({show: false });
             this.$Message.success("You have been successfully logged in");
             let username = this.auth.loggedInUser.userName;
             this.$router.push(`/creators/${username}/dashboard`);
@@ -171,56 +165,32 @@ export default {
 
 
 <style scoped>
-#register-here {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
-  font-size: 18px;
-  margin-top: 12px;
-  text-align: center;
+#auth-sign-in {
+  width: 100%;
 }
 
-#register-link {
-  color: #2f80ed;
-}
-
-.well {
-  background: #fff !important;
-  box-shadow: 0 2px 15px #d0d0d06e !important;
-  border-radius: 20px;
-  padding: 0;
-  margin: 80px 0px;
-}
-.img-logo {
+#auth-sign-in .img-logo {
   height: 86px;
-  margin-top: 10%;
+  margin-top: 25%;
   margin-bottom: 7%;
 }
-.col-md-7 img {
-  float: right;
-  position: relative;
-  border-radius: 0px 20px 20px 0px;
-}
-.place_page {
-  padding: 20px;
-  margin-left: 25%;
-}
-.extra__action--auth {
-  margin-top: 2%;
-}
-.row.extra__action--auth p {
-  font-family: montserrat;
-  font-size: 13px;
-  margin-top: 9%;
-}
-.row input {
-  font-size: 14px;
+
+#auth-sign-in button.btn-primary {
+  height: 4rem !important;
 }
 
-.row button {
-  font-size: 14px !important;
+.col-md-7 img {
+  float: right;
+  height: 57.65rem;
 }
-.row {
-  font-family: montserrat !important;
+
+@media only screen and (max-width: 980px) {
+  #auth-sign-in .img-logo {
+    margin-top: 10%;
+  }
+
+  .col-md-7 {
+    display: none;
+  }
 }
-</style>;;
+</style>

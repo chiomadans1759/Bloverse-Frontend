@@ -9,7 +9,7 @@
 <script>
 import { mapActions, mapState } from 'vuex';
 import TheModal from '@/components/TheModal';
-import LoadingIcon from './components/Loading';
+import LoadingIcon from '@/components/Loading';
 
 export default {
   name: 'app',
@@ -29,24 +29,20 @@ export default {
 </script>
 
 <style>
-@import url('assets/stylesheets/utility.scss');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
-
+@import url('./assets/css/bootstrap.min.css');
+@import url('./assets/css/utility.css');
 
 #app {
-  font-family: 'Avenir', 'Roboto', Helvetica, Arial, sans-serif;
+  /* font-family: 'Avenir', 'Roboto', Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   background-color: #f5f5f5;
+  font-family: "Montserrat", sans-serif;
 }
 
 :root {
   --primary: #2F80ED;
-}
-
-body{
-  margin: 0px;
-  background-color: #f5f5f5;
 }
 </style>

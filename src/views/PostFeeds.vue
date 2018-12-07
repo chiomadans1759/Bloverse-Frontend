@@ -1,6 +1,8 @@
 <template>
   <main class="post-feeds">
-    <TrendingCard/>
+    <div class="container">
+      <TrendingCard />
+    </div>
 
     <section class="container">
       <div class="post-feeds-category" id="post-feeds-category">
@@ -217,7 +219,7 @@ export default {
 }
 
 .post-feeds-category .list-inline .list-inline-item a {
-  color: #aaaaaa;
+  color: #666666;
   font-size: 14px;
   text-transform: capitalize;
 }
@@ -237,7 +239,7 @@ export default {
 }
 
 #layout-select a {
-  color: #aaaaaa;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 #layout-select a:hover,
