@@ -1,43 +1,48 @@
 <template>
   <footer id="the-footer">
     <div class="container">
-      <!-- <Row type="flex" justify="space-between" align="middle">
-        <Col :sm="12" :md="12" :xs="24">
-          <div id="footer-links">
-            <p style="font-size: 14px; opacity: 85%;  font-family: 'Comfortaa', cursive;">bloverse</p>
-            <span id="vr-line"></span>
-            <p id="links-p">Terms</p>
-            <p id="links-p">Privacy</p>
-            <p id="links-p">About</p>
-            <p id="links-p">
-              <i class="fas fa-ellipsis-h" id="footer-icon"></i>
-            </p>
-          </div>
-        </Col>
-        <Col class="copy-write" :sm="12" :md="12" :xs="24">
-          <p id="year-text">2018 Bloverse. All Right Reserved</p>
-        </Col>
-      </Row> -->
-
-      <div class="row">
+      <div class="row" id="desktop">
         <div class="col">
           <ul class="list-inline">
             <li class="list-inline-item">
               bloverse
             </li>
-            <li class="list-inline-item">
+            <li class="list-inline-item pl-4">
               <router-link to="">Terms</router-link>
             </li>
-            <li class="list-inline-item">
+            <li class="list-inline-item pl-2">
               <router-link to="">Privacy</router-link>
             </li>
-            <li class="list-inline-item">
+            <li class="list-inline-item pl-2">
               <router-link to="">About</router-link>
             </li>
           </ul>
         </div>
 
         <div class="col-auto pt-2">
+          <p id="year-text">&copy; 2018 Bloverse. All Right Reserved</p>
+        </div>
+      </div>
+
+      <div class="row text-center pt-2" id="mobile">
+        <div class="col-12">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              bloverse
+            </li>
+            <li class="list-inline-item pl-4">
+              <router-link to="">Terms</router-link>
+            </li>
+            <li class="list-inline-item pl-2">
+              <router-link to="">Privacy</router-link>
+            </li>
+            <li class="list-inline-item pl-2">
+              <router-link to="">About</router-link>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-12 pt-1">
           <p id="year-text">&copy; 2018 Bloverse. All Right Reserved</p>
         </div>
       </div>
@@ -61,15 +66,19 @@ export default {
   left: 0;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid #aaaaaa;
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
   position: fixed;
+}
+
+#the-footer #mobile {
+  display: none;
 }
 
 #the-footer .list-inline .list-inline-item:first-child {
   font-family: "Comfortaa", cursive;
   font-size: 16px;
   border-right: 1px solid #cccccc;
-  width: 9rem;
+  width: 6rem;
 }
 
 #the-footer .list-inline .list-inline-item a {
@@ -87,6 +96,14 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
+  #the-footer #desktop {
+    display: none;
+  }
+
+  #the-footer #mobile {
+    display: block;
+  }
+
   #the-footer {
     height: 85px;
   }

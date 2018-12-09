@@ -11,7 +11,7 @@
                   <h6>Whoops!</h6>
                   <p>We can’t find the page you are looking for</p>
                 </span>
-              <router-link to="/" id="err-btn">return</router-link>
+              <router-link to="/" class="btn btn-outline-primary">return</router-link>
             </div>
           </Col>
         </Row>
@@ -32,7 +32,7 @@ export default {
 
   #not-found-container{
     display: flex;
-    top: 20rem;
+    top: 10rem;
     justify-content: space-between
   }
 
@@ -81,7 +81,7 @@ export default {
     #not-found-container {
       display: flex;
       flex-direction: column;
-      top: 13rem;
+      top: 6rem;
       margin-left: 9rem;
      
     }

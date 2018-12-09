@@ -1,8 +1,13 @@
-/*
-    FILE: General component stylesheet for Bloverse frontend
-    AUTHOR: Habeeb Mac-iver (habeeb.maciver@demzanalytics.com)
-*/
+.btn, input {
+    border-radius: 4px !important;
+}
 
-.btn {
-    font-size: 13px !important;
+.card {
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.09) !important;
+    border-radius: 4px !important;
+}
+
+.text-link {
+    color: #2F80ED !important;
 }

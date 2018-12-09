@@ -2,11 +2,12 @@
   <nav>
     <Row class="header-row" type="flex" justify="space-between" align="middle">
       <Col class="brand">
-        <router-link to="/"><img class="logo" src="./../assets/Logo - White.svg" style="height:50px; margin-bottom: 1rem;" >
-          <span id="l-text">bloverse</span></router-link>
+        <router-link to="/">
+          <img class="logo" src="./../assets/Logo - White.svg" style="height:50px; margin-bottom: 1rem;" >
+        </router-link>
       </Col>
       <Col class="header-button">
-       <router-link to="/creators/login" id="j-button">login</router-link>
+        <login-button class="pt-2 mr-3" color="white" />
         <router-link to="/creators/apply" id="c-button">apply</router-link>
       </Col>
     </Row>
@@ -15,9 +16,10 @@
 
 <script >
 import { Icon, Row, Col, Button } from "iview";
+import LoginButton from "./LoginButton";
 
 export default {
-  components: { Icon, Row, Col, Button }
+  components: { Icon, Row, Col, Button, LoginButton }
 };
 </script>
 

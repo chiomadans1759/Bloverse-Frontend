@@ -1,17 +1,19 @@
 <template>
-  <main class="card p-0">
+  <main class="card p-0" id="post-details">
     <div class="card-header border-0">
       <div class="row pt-4">
         <div class="col">
           <h5 class="card-header-title text-uppercase">{{category.name}}</h5>
         </div>
-        
+
         <div class="col-auto">
-          <h6 class="text-secondary text-uppercase">2 days ago</h6>
+          <h6
+            class="text-secondary text-uppercase"
+          >{{general.currentPost.created | postedOn}} days ago</h6>
         </div>
       </div>
     </div>
-    
+
     <div class="card-body">
       <img class="post-img" :src="general.currentPost.image_url">
       
@@ -32,14 +34,15 @@ import { mapState } from "vuex";
 
 export default {
   name: "post-details",
-  data(){
-    return{
-      show: false
-    }
-  },
-  watch:{
-    category(){
-      this.show = true;
+  filters: {
+    postedOn(date_passed) {
+      let date_one = new Date(date_passed);
+      let today = new Date();
+
+      let timeDiff = Math.abs(date_one.getTime() - today.getTime());
+      let diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+      return diffDays;
     }
   },
   computed: {
@@ -58,52 +61,56 @@ export default {
 </script>
 
 <style scoped>
-.card-header {
+#post-details .card-header {
   width: 100%;
 }
 
-.post-img {
+#post-details .card-header .card-header-title {
+  display: block;
+}
+
+#post-details .post-img {
   width: 100%;
   height: 398px;
   margin-bottom: 1rem;
   object-fit: cover;
 }
 
-.img-descrip {
+#post-details .img-descrip {
   color: #aaaaaa;
   font-size: 11px;
 }
 
-.post-cat {
+#post-details .post-cat {
   color: #666666;
   font-size: 12px;
   padding-bottom: 16px;
   text-transform: uppercase;
-  font-weight: bold
+  font-weight: bold;
 }
 
-.date-cat {
+#post-details .date-cat {
   color: #aaaaaa;
   font-size: 10px;
   padding-bottom: 16px;
   text-transform: uppercase;
-  font-weight: bold
+  font-weight: bold;
 }
 
-.post-keypoints li {
+#post-details .post-keypoints li {
   list-style-type: circle;
   margin-left: 2rem;
   margin-top: 0.7rem;
   color: #aaaaaa;
 }
 
-.post-content {
+#post-details .post-content {
   padding: 3rem 0rem;
 }
 
 @media only screen and (max-width: 980px) {
- .card{
-   margin-top: 3rem;
+  #post-details .card {
+    margin-top: 3rem;
   }
 }
 </style>
