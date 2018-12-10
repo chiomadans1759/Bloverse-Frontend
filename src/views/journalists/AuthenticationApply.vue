@@ -15,31 +15,35 @@
         class="auth-form container"
         :rules="validateApplication"
       >
+
         <Row type="flex" justify="center">
           <Col :sm="12">
+            <router-link to="/" class="router-link">
+              <img class="logo" src="@/assets/Asset 1.svg" style="height: 40px" />
+            </router-link>
             <h4 id="form-instruction">Join Bloverse as a content creator</h4>
           </Col>
         </Row>
 
         <Row type="flex" justify="center" :gutter="16">
-          <Col :sm="6">
+          <Col :sm="6" :xs="20">
             <FormItem prop="firstName" :error="errors.firstName">
               <Input class="my-input" v-model="applicant.firstName" placeholder="First name"/>
             </FormItem>
           </Col>
-          <Col :sm="6">
+          <Col :sm="6" :xs="20">
             <FormItem prop="lastName" :error="errors.lastName">
               <Input class="my-input" v-model="applicant.lastName" placeholder="Last name"/>
             </FormItem>
           </Col>
         </Row>
         <Row type="flex" justify="center" :gutter="16">
-          <Col :sm="6">
+          <Col :sm="6" :xs="20">
             <FormItem prop="email" :error="errors.email">
               <Input class="my-input" v-model="applicant.email" placeholder="Email"/>
             </FormItem>
           </Col>
-          <Col :sm="6">
+          <Col :sm="6" :xs="20">
             <FormItem prop="phone" :error="errors.phoneNumber">
               <select v-model="applicant.phoneCode" class="code-dropdown">
                 <option
@@ -63,7 +67,7 @@
           </Col>
         </Row>
         <Row type="flex" justify="center" :gutter="16">
-          <Col :sm="6">
+          <Col :sm="6" :xs="20">
             <FormItem prop="linkedIn" :error="errors.linkedIn">
               <Input
                 class="my-input"
@@ -72,7 +76,7 @@
               />
             </FormItem>
           </Col>
-          <Col :sm="6">
+          <Col :sm="6" :xs="20">
             <FormItem prop="twitter" :error="errors.twitter">
               <Input
                 class="my-input"
@@ -83,7 +87,7 @@
           </Col>
         </Row>
         <Row type="flex" justify="center">
-          <Col :sm="12">
+          <Col :sm="12" :xs="20">
             <FormItem
               prop="articles"
               :error="errors.articles"
@@ -110,7 +114,7 @@
           </Col>
         </Row>
         <Row type="flex" justify="center" :gutter="16">
-          <Col :sm="6">
+          <Col :sm="6" :xs="20">
             <FormItem prop="country" :error="errors.countryId">
               <v-select
                 :options="general.countries"
@@ -121,7 +125,7 @@
               ></v-select>
             </FormItem>
           </Col>
-          <Col :sm="6">
+          <Col :sm="6" :xs="20">
             <FormItem prop="category" :error="errors.categoryId">
               <v-select
                 :options="general.categories"
@@ -134,12 +138,12 @@
           </Col>
         </Row>
         <Row type="flex" justify="center">
-          <Col :sm="12">
+          <Col :sm="12" :xs="20">
             <Button id="apply-btn" long @click.prevent="handleSubmit">APPLY</Button>
           </Col>
         </Row>
         <Row type="flex" justify="center">
-          <Col :sm="12">
+          <Col :sm="12" :xs="20">
             <div id="login-here">
               <p>
                 By clicking apply, you agree to our
@@ -173,7 +177,6 @@ import {
 import { mapState, mapActions } from "vuex";
 import vSelect from "vue-select";
 import countryFlags from "../../countryFlags.js";
-import BaseAuthentication from "../../layouts/BaseAuthentication";
 
 export default {
   components: {
@@ -186,7 +189,6 @@ export default {
     Modal,
     Alert,
     Button,
-    BaseAuthentication,
     vSelect,
     Select,
     Option
@@ -245,7 +247,6 @@ export default {
         if (a.code == b.code) return 0;
         if (a.code < b.code) return -1;
       });
-
       return sorted;
     },
     applicant: {
@@ -264,7 +265,6 @@ export default {
       this.$refs.applyForm.validate(async valid => {
         if (valid) {
           let applied = await this.apply();
-
           if (applied === true) this.handleSuccess();
           else if (applied.errors) this.handleError(applied.errors);
           else
@@ -278,7 +278,6 @@ export default {
     },
     handleError(errors) {
       let fieldErrors, varClient;
-
       let clientServer = {
         first_name: "firstName",
         last_name: "lastName",
@@ -342,77 +341,35 @@ export default {
   background-color: #ffffff;
 }
 
-@media screen and (min-width: 20rem) {
-  .my-select {
-    width: 20rem;
-  }
-}
-
-@media screen and (min-width: 48rem) {
-  .my-select {
-    width: 17rem;
-  }
-}
-
-@media screen and (min-width: 64rem) {
-  .my-select {
-    width: 23rem;
-  }
-}
-
-@media screen and (min-width: 90rem) {
-  .my-select {
-    width: 27.5rem;
-  }
-}
-
 #add-article-btn {
   background: transparent;
 }
 
 #add-btn-container {
-  margin: 0 28.5rem 2rem 0;
+  margin: 0 28.5rem 1rem 0;
 }
 
 @media screen and (max-width: 768px) {
   #add-btn-container {
-    margin: 0 4.5rem 2rem 0;
-  }
-}
-
-@media screen and (min-width: 1023px) {
-  #add-btn-container {
-    margin: 0 23.5rem 2rem 0;
+    margin: 0 2rem 1rem 0;
   }
 }
 
 @media screen and (min-width: 766px) {
   #add-btn-container {
-    margin: 0 23.5rem 2rem 0;
-  }
-}
-
-@media screen and (min-width: 90rem) {
-  #add-btn-container {
-    margin: 0 28.5rem 2rem 0;
-  }
-}
-
-@media only screen and (min-width: 360px) and (max-width: 420px) {
-  #add-btn-container {
-    margin: 0 9rem 2rem 0;
+    margin: 0 17.5rem 1rem 0;
   }
 }
 
 @media only screen and (width: 375px) {
   #add-btn-container {
-    margin: 0 7rem 2rem 0;
+    margin: 0 2rem 1rem 0;
   }
 }
 
 @media only screen and (width: 360px) {
   #add-btn-container {
-    margin: 0 6.5rem 2rem 0;
+    margin: 0 2rem 1rem 0;
   }
 }
 
@@ -420,13 +377,12 @@ export default {
   width: 19rem;
   border: 0.1rem solid #bdbdbd;
   border-radius: 0.5rem;
-  padding: 0.2rem;
   color: #000000;
 }
 
 @media screen and (min-width: 20rem) {
   #phone-input {
-    width: 11.7rem;
+    width: 10rem;
   }
 }
 
@@ -438,7 +394,7 @@ export default {
 
 @media screen and (min-width: 90rem) {
   #phone-input {
-    width: 22.3rem;
+    width: 11.5rem;
   }
 }
 
@@ -470,10 +426,10 @@ export default {
 }
 
 #apply-btn {
-  height: 4rem;
+  height: 2rem;
   background-image: linear-gradient(to right, #003ce1, #2f80ed);
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -491,13 +447,13 @@ export default {
 }
 
 #login-here {
-  font-size: 1.5rem;
-  margin-top: 1.75rem;
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
   color: #000000;
 }
 
 #form-instruction {
-  margin-top: -1rem;
+  margin: 2rem 1rem 1.5rem 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -516,7 +472,7 @@ export default {
 
 .code-dropdown {
   width: 80px;
-  height: 36px;
+  height: 34px;
   background: #fff;
 }
 
