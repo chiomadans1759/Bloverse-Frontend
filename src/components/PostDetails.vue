@@ -9,7 +9,7 @@
         <div class="col-auto">
           <h6
             class="text-secondary text-uppercase"
-          >{{general.currentPost.created | postedOn}} days ago</h6>
+          >{{general.currentPost.created | customizedTime}}</h6>
         </div>
       </div>
     </div>
@@ -34,17 +34,6 @@ import { mapState } from "vuex";
 
 export default {
   name: "post-details",
-  filters: {
-    postedOn(date_passed) {
-      let date_one = new Date(date_passed);
-      let today = new Date();
-
-      let timeDiff = Math.abs(date_one.getTime() - today.getTime());
-      let diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-      return diffDays;
-    }
-  },
   computed: {
     ...mapState(["general"]),
 
