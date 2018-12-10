@@ -82,14 +82,16 @@ export default {
 
 
 <style>
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .showposts{
   text-align: center;
   margin-top: 15%;
 }
 
 .showposts h2 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 40px;
 }
 
@@ -98,7 +100,7 @@ export default {
   color: #fff;
   padding: 10px 10px 10px 10px;
   border-radius: 5px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .mypost-container {
