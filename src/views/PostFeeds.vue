@@ -30,7 +30,7 @@
               </li>
               <li class="list-inline-item">
                 <a href="#" @click.prevent="showMoreCats">
-                  <i class="fa fa-ellipsis-h"></i>
+                  More <i class="fa fa-caret-down"></i>
                 </a>
               </li>
             </ul>
@@ -249,7 +249,7 @@ export default {
 
 @media only screen and (max-width: 980px) {
   .post-feeds-category-sticky {
-    height: 5gitrem;
+    height: 5rem;
     padding: 1rem;
   }
 
@@ -260,11 +260,15 @@ export default {
   }
 
   .post-feeds-category .cat-list {
-    margin-top: -3rem;
+    margin-top: 1rem;
   }
 
   .post-feeds-category .list-inline .list-inline-item {
     margin-right: 0.5rem;
+  }
+
+  .post-feeds-category .cat-list .list-inline-item a {
+    font-size: 12px;
   }
 
   .post-feeds-category #layout-select {
@@ -277,7 +281,7 @@ export default {
   padding: 1rem;
   width: 40%;
   margin-left: 20rem;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   box-sizing: border-box;
   position: absolute;
   border: 1px solid rgba(0, 0, 0, 0.1);
