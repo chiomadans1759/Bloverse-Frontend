@@ -123,7 +123,7 @@ export default {
       }, true);
       return response.statusCode === 200;
     },
-    async getAllPublishedPosts({ commit }, { category = "", country = "All" }) {
+    async getAllPublishedPosts({ commit }, { category = "", country = "" }) {
       let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
       commit('setPublishedPosts', response.data.posts);
     },
