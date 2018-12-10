@@ -337,29 +337,29 @@ iframe {
     margin: 1rem 0;
   }
 }
-@media screen and (max-width: 322px) {
-  .right-contain2 p {
-    font-size: .75rem;
-    margin: 0.5rem 0;
+  @media screen and (max-width: 322px) {
+    .right-contain2 p {
+      font-size: .75rem;
+      margin: 0.5rem 0;
+    }
+    .right-contain2 h2 {
+      font-size: 1.3rem;
+    }
+    .right-text {
+      margin-top: 50%;
+    }
+    .left {
+      display: none;
+    }
+    .container3 > div {
+      margin: 1rem 0 7rem 0;
+    }
+    .right2 {
+    height: 30vh;
+    }
+  .right-text p {
+    font-size: 12px; 
+    }
   }
-  .right-contain2 h2 {
-    font-size: 1.3rem;
-  }
-  .right-text {
-    margin-top: 50%;
-  }
-  .left {
-    display: none;
-  }
-  .container3 > div {
-    margin: 1rem 0 7rem 0;
-  }
-  .right2 {
-  height: 30vh;
-  }
-.right-text p {
-		font-size: 12px; 
-	}
-  
-}
+
 </style>
