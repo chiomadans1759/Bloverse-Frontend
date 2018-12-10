@@ -28,8 +28,7 @@
             <img src="@/assets/Asset 1.svg" alt class="img-logo">
           </div>
 
-          <Form
-            ref="loginForm"
+          <Form ref="loginForm"
             class="auth-form login-form"
             :model="user"
             :rules="loginValidate">
@@ -78,7 +77,7 @@
       </div>
 
       <div class="col-md-7">
-        <img src="@/assets/Images.png" class="img-responsive">
+        <img src="@/assets/Images.png" id="auth-bg">
       </div>
     </div>
   </div>
@@ -176,12 +175,12 @@ export default {
 }
 
 #auth-sign-in button.btn-primary {
-  height: 4rem !important;
+  height: 3rem !important;
 }
 
-.col-md-7 img {
-  float: right;
-  height: 57.65rem;
+#auth-sign-in #auth-bg {
+  width: 100%;
+  height: 36.04rem;
 }
 
 @media only screen and (max-width: 980px) {

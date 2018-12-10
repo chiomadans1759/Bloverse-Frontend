@@ -17,33 +17,26 @@
         </symbol> -->
       </svg>
 
-      <div class="row share-card">
-        <div class="col-xs-4 left">
+      <div class="row">
+        <div class="col-4 pt-2">
           <h3>Share on</h3>
         </div>
 
-        <div class="col-xs-8 right">
+        <div class="col-8">
           <ul class="list-inline">
-            <li>
+            <li class="list-inline-item">
               <button @click="doShare('facebook')">
                 <svg height="34" width="34" class="social-icon">
                   <use id="fb" xlink:href="#facebook-icon" />
                 </svg>
               </button>
             </li>
-            <li>
+            <li class="list-inline-item ml-2">
               <a @click="doShare('twitter')" :href="`https://twitter.com/intent/tweet?url=${this.$BASE_URL}redirect/${this.slug}`" data-lang="en" data-show-count="false">
                 <svg height="34" width="34" class="social-icon">
                   <use id="twitter" xlink:href="#twitter-icon" />
                 </svg>
               </a>
-            </li>
-            <li>
-              <button>
-                <svg height="34" width="34" class="social-icon">
-                  <use id="linkedin" xlink:href="#linkedin-icon" />
-                </svg>
-              </button>
             </li>
           </ul>
         </div>
@@ -53,9 +46,6 @@
 </template>
 
 <script>
-import '@fortawesome/fontawesome-pro/css/all.css'
-import '@fortawesome/fontawesome-pro/js/all.js'
-
 export default {
   name: "post-social-share",
   props: ['slug'],
@@ -85,16 +75,6 @@ export default {
 </script>
 
 <style scoped>
-.left h3 {
-  font-size: 14px;
-  color: #666666;
-  margin-top: 1rem;
-}
-
-.right ul li a {
-  font-size: 13px;
-}
-
 button {
   background: transparent;
   border: none;
@@ -111,7 +91,7 @@ button {
 .social-icon use#linkedin {
   fill: #0077b5;
 }
-.share-card h3{
+.share-card h3 {
   padding-left: 14px;
 }
 </style>

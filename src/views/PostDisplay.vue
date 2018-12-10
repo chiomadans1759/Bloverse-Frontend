@@ -1,5 +1,5 @@
 <template>
-  <main class="post-display pt-5">
+  <main id="post-display">
     <div class="container">
       <div class="row">
         <div class="col-md-8">
@@ -7,7 +7,7 @@
         </div>
 
         <div class="col-md-4 pt-3">
-          <author-card :author="general.currentPost.author" class="mb-5"></author-card>
+          <post-author :author="general.currentPost.author" class="mb-5"></post-author>
           <post-social-share :slug="general.currentPost.slug"></post-social-share>
         </div>
       </div>
@@ -32,7 +32,7 @@ import { mapGetters, mapState, mapActions } from "vuex";
 import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share";
 import Loading from "@/components/Loading";
 import PostDetails from "@/components/PostDetails.vue";
-import AuthorCard from "@/components/AuthorCard.vue";
+import PostAuthor from "@/components/PostAuthor.vue";
 import PostSocialShare from "@/components/PostSocialShare";
 import RelatedPosts from "@/components/RelatedPosts";
 
@@ -53,7 +53,7 @@ export default {
     Linkedin,
     Loading,
     PostDetails,
-    AuthorCard,
+    PostAuthor,
     PostSocialShare,
     RelatedPosts
   },
@@ -102,18 +102,7 @@ export default {
 </script>
 
 <style scoped>
-.post-display {
-  width: 100%;
-  min-height: 100vh;
-  background-color: #f5f5f5;
-  overflow-x: hidden;
-  padding-bottom: 10rem;
-  font-family: "Montserrat", sans-serif;
-}
-
-@media only screen and (max-width: 980px) {
-  .col-md-4 {
-    padding-top: 2rem;
-  }
+#post-display {
+  padding-bottom: 6rem !important;
 }
 </style>

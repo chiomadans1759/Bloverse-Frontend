@@ -63,16 +63,23 @@
         
       </div>
       <div class="card-container22"> 
-        <div class="card-general-hover">
-          <h4>{{post.title}}</h4></br>
-          <ul>Keypoints
-            <li v-if="post.keypoint[0]">{{post.keypoint[0]}}</li>
-            <li v-if="post.keypoint[1]">{{post.keypoint[1]}}</li>
-            <li v-if="post.keypoint[2]">{{post.keypoint[2]}}</li>
-            <p v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]" class="keypoint-text">
-              No keypoint availble for this post
-            </p>
-          </ul>
+        <div class="container card-general-hover">
+          <h4 class="my-5">{{post.title}}</h4>
+
+          <div class="keypoints mt-2">
+            <h3>Keypoints:</h3>
+            <ul class="mt-4">
+              <li v-if="post.keypoint[0]">{{post.keypoint[0]}}</li>
+              <li v-if="post.keypoint[1]">{{post.keypoint[1]}}</li>
+              <li v-if="post.keypoint[2]">{{post.keypoint[2]}}</li>
+            </ul>
+
+            <div class="container" v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]">
+              <p class="alert alert-light">
+                <i class="fa fa-exclamation-circle"></i> No keypoint availble for this post
+              </p>
+            </div>
+          </div>
         </div>
         <div id="hover-top-border">
           <router-link :to="`posts/${post.slug}`"> 
@@ -116,9 +123,11 @@ export default {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
+
 .photo-contest-para{
   color:blue !important;
 } 
+
 .card-container {
   position: relative;
   height: 414px;
@@ -128,6 +137,7 @@ export default {
   border-radius: 4px;
   font-family: 'Montserrat';
 }
+
 .card-container2 {
   background-image: url("./../assets/landingPage.jpg"); 
   height: 414px;  
@@ -144,12 +154,14 @@ export default {
   right: 0;    
   transition: .5s ease; 
 }
+
 .card-overlay{
   height: 100%;
   width:100%;
   background: #000;
   opacity: .8;
 }
+
 .card-container2 h5{
   position:absolute;
   bottom:3rem;
@@ -157,26 +169,34 @@ export default {
   font-weight: 800;
   color:blue;
 }
+
 .card-container2 div{ 
   color: #fff; 
 }
+
 .card-container2 h4{  
   font-weight:800;
   padding:2rem;
 }
+
 .card-container2 p{  
   font-weight:200;
   padding:2rem;
   line-height: 2.5;
   font-size:1.6rem;
 }
+
 .card-container2 .fa-camera-retro, .fa-map-marker-alt{  
    margin-right:10px;
    opacity: .3;
 }
+
+
 .card-container:hover .card-container2 { 
   opacity:1; 
-}  
+} 
+
+
 .card-container22 {
   height: 414px;  
   border: 1px solid rgba(168, 25, 25, 0.15);
@@ -190,37 +210,56 @@ export default {
   right: 0; 
   transition: .5s ease; 
 }
+
 .card-container22 h5{  
   text-align: right;
   color:blue; 
   padding:2rem;
   font-weight:800; 
 }
+
 .card-container22 div{ 
   color: #000; 
 }
+
 .card-container22 ul{
   font-size:1.4rem;
   margin-left:2rem;
 }
+
 .card-container22 ul li{
   list-style-type:disc;
   margin-left:2.5rem;
   margin-top:1rem;
   list-style-position: outside;
 }
+
 #hover-top-border{
-  border-top:1px solid #ccc;
-  position:absolute;
-  bottom:0; 
-  height:6rem;
-  width:100%;
+  border-top: 1px solid #ccc;
+  position: absolute;
+  bottom: 0; 
+  height: 5rem;
+  width: 100%;
 }
+
 .card-general-hover h4{  
-  font-weight:100;
-  padding:2rem;
-  line-height:2.5rem;
+  font-weight: 100;
+  line-height: 2.5rem;
 } 
+
+.keypoints h3 {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.keypoints ul {
+  margin-left: -1rem;
+}
+
+.keypoints ul li {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+
 .card-container:hover .card-container22 {
   opacity: 1;  
   background-color: #fff;
@@ -239,12 +278,14 @@ export default {
   font-size: 10px;
   text-transform: uppercase;
 }
+
 #feed-travel-competition p {
   color:blue !important;
   font-size: 10px;
-  font-weight:800;
+  font-weight: 800;
   text-transform: uppercase;
   text-decoration: none; 
+  font-size: 16px;
 }
 
 #card-title p {

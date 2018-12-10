@@ -1,7 +1,7 @@
 <template>
   <main class="post-feeds">
     <div class="container">
-      <TrendingCard />
+      <TrendingCard/>
     </div>
 
     <section class="container">
@@ -12,15 +12,13 @@
               :options="general.countries"
               label="name"
               placeholder="Select country"
-              class="my-select"
               v-model="country"
-              id="country-select"
               v-if="allow"
-              @input="filterCountry"
-            ></v-select>
+              @input="filterCountry">
+            </v-select>
           </div>
 
-          <div class="col-md-8">
+          <div class="col-md-8" style="margin-top: -0.8rem;">
             <ul class="list-inline cat-list">
               <li class="list-inline-item" v-for="category in filteredCatList" :key="category.id">
                 <a
@@ -52,14 +50,13 @@
             </div>
           </div>
 
-          <div class="col-md-2">
+          <div class="col-md-2" style="margin-top: -0.8rem;">
             <ul class="list-inline" id="layout-select">
               <li class="list-inline-item">
                 <a
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
-                  @click.prevent="toggleLayout('grid')"
-                >
+                  @click.prevent="toggleLayout('grid')">
                   <i class="fal fa-grip-horizontal fa-1x"></i>
                 </a>
               </li>
@@ -67,8 +64,7 @@
                 <a
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'stack'}"
-                  @click.prevent="toggleLayout('stack')"
-                >
+                  @click.prevent="toggleLayout('stack')">
                   <i class="far fa-laptop fa-1x"></i>
                 </a>
               </li>
@@ -199,7 +195,7 @@ export default {
   margin-top: 0;
   width: 100%;
   z-index: 1000;
-  height: 7rem;
+  height: 4rem;
   background-color: #f5f5f5;
   padding: 1rem 7.5rem;
   border-bottom: 1px solid #eeeeee;
@@ -250,7 +246,7 @@ export default {
 
 @media only screen and (max-width: 980px) {
   .post-feeds-category-sticky {
-    height: 12rem;
+    height: 5gitrem;
     padding: 1rem;
   }
 
@@ -261,7 +257,7 @@ export default {
   }
 
   .post-feeds-category .cat-list {
-    margin-top: 1.5rem;
+    margin-top: -3rem;
   }
 
   .post-feeds-category .list-inline .list-inline-item {
@@ -302,5 +298,15 @@ export default {
 .dropdown-card a:hover {
   color: #2f80ed;
   text-decoration: none !important;
+}
+</style>
+
+<style>
+.v-select .dropdown-toggle .clear {
+  display: none !important;
+}
+
+.dropdown-toggle:after {
+  display: none !important;
 }
 </style>

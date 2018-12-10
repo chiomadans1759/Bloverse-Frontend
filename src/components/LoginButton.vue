@@ -1,5 +1,7 @@
 <template>
-  <button id="login-btn" class="btn btn-link" @click="openLogin">LOGIN</button>
+  <button id="login-btn" class="btn btn-link" @click="openLogin" :class="{'text-white': color == 'white'}">
+    LOGIN
+  </button>
 </template>
 
 <script>
@@ -8,6 +10,9 @@ import LoginView from '@/views/journalists/AuthenticationSignIn'
 
 export default {
   name: "login-button",
+  props: { 
+    color: String 
+  },
   components: { LoginView },
   methods: {
     ...mapMutations(['setModal']),

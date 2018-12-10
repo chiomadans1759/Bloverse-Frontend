@@ -40,6 +40,8 @@ export default {
   color: #2c3e50;
   background-color: #f5f5f5;
   font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden !important;
 }
 
 :root {
