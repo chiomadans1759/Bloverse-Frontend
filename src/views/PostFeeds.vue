@@ -65,7 +65,7 @@
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'stack'}"
                   @click.prevent="toggleLayout('stack')">
-                  <i class="far fa-laptop fa-1x"></i>
+                  <i class="far fa-square-full fa-1x"></i>
                 </a>
               </li>
             </ul>
@@ -215,15 +215,16 @@ export default {
 }
 
 .post-feeds-category .list-inline .list-inline-item a {
-  color: #666666;
+  color: rgba(0, 0, 0, 0.5);
   font-size: 14px;
   text-transform: capitalize;
 }
 
 .post-feeds-category .list-inline .list-inline-item a.active,
 .post-feeds-category .list-inline .list-inline-item a:hover {
-  border-bottom: 3px solid #2f80ed;
+  border-bottom: 2px solid #2f80ed;
   text-decoration: none !important;
+  color: #000000 !important;
 }
 
 .post-feeds-category .list-inline .list-inline-item:last-child a:hover {
@@ -236,6 +237,8 @@ export default {
 
 #layout-select a {
   color: rgba(0, 0, 0, 0.3);
+  font-size: 24px !important;
+  margin-top: -1rem;
 }
 
 #layout-select a:hover,

@@ -278,8 +278,8 @@ export default {
   background: #096DD9;
   border: 1px solid rgba(0, 0, 0, 0.15);
   opacity: 0.6;
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
 }
 
@@ -288,9 +288,21 @@ export default {
   background: #096DD9;
   border: 1px solid rgba(0, 0, 0, 0.15);
   opacity: 1;
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   margin-top: -2px;
+}
+
+@media only screen and (max-width: 980px) {
+  #trending-card .carousel-indicators li {
+    width: 5px;
+    height: 5px;
+  }
+
+  #trending-card .carousel-indicators li.active {
+    width: 8px;
+    height: 8px;
+  } 
 }
 
 #trending-card .card .card-img-overlay {
@@ -317,6 +329,7 @@ export default {
   width: 24px;
   height: 24px;
   margin-top: -0.3rem;
+  border-radius: 4px;
 }
 
 #trending-card .carousel-control-prev {

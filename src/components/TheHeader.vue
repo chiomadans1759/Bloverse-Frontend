@@ -8,6 +8,8 @@
           </router-link>
         </div>
 
+        <div class="col-auto"></div>
+
         <div class="col-auto">
           <login-button class="pt-2 mr-3" />
           <router-link to="/creators" class="btn btn-primary btn-md text-uppercase">
@@ -24,7 +26,13 @@ import { Row, Col } from 'iview';
 import LoginButton from "./LoginButton"
 
 export default {
-  components: { Row, Col, LoginButton }
+  components: { Row, Col, LoginButton },
+  computed: {
+    currentRoute() {
+      let route = this.$route.name
+      return route
+    }
+  }
 }
 </script>
 
