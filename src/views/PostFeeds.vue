@@ -246,7 +246,7 @@ export default {
 
 @media only screen and (max-width: 980px) {
   .post-feeds-category-sticky {
-    height: 12rem;
+    height: 5gitrem;
     padding: 1rem;
   }
 
@@ -301,12 +301,12 @@ export default {
 }
 </style>
 
-<style scoped>
-#country-select .vs__actions .clear {
+<style>
+.v-select .dropdown-toggle .clear {
   display: none !important;
 }
 
-#country-select .vs__actions .spinner::after {
+.dropdown-toggle:after {
   display: none !important;
 }
 </style>
