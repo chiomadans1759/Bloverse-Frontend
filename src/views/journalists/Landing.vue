@@ -289,19 +289,19 @@ iframe {
   }
 }
 @media screen and (max-width: 603px) {
-  .right-text {
-      margin-top: 50%;
-    }
-    
-  .left {
-      display: none;
-    }
-  .right2 {
-    height: 26vh;
-  }
-  .right-text h1 {
-    font-size: 1.6rem;
-    color: #ffffff;
+.right-text {
+    margin-top: 50%;
+	}
+	
+.left {
+    display: none;
+	}
+.right2 {
+   height: 26vh;
+}
+.right-text h1 {
+  font-size: 1.6rem;
+  color: #ffffff;
 	}
 	
   .right-text p {
