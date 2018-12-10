@@ -288,55 +288,7 @@ iframe {
     font-size:.7rem;
   }
 }
-@media screen and (max-width: 603px) {
-  .right-text {
-      margin-top: 50%;
-    }
-    
-  .left {
-      display: none;
-    }
-  .right2 {
-    height: 26vh;
-  }
-  .right-text h1 {
-    font-size: 1.6rem;
-    color: #ffffff;
-	}
-	
-  .right-text p {
-		font-size: .9rem;
-		margin-top: 1rem;
-		color: #cccccc;
-	}
-	
-  .container2 {
-    flex-direction: column;
-  }
-  .right2 .left2 {
-    height: fit-content;
-  }
-  .left-contain2 {
-    float: left;
-  }
-  .container3 > div {
-    margin: 1rem 0 7rem 0;
-  }
-  .container3 h3 {
-    font-size: 1.2rem;
-  }
-  .container3 p {
-    font-size: .5rem;
-  }
-  .right-contain2 {
-    margin-top: 7%;
-    height: fit-content;
-  }
-  .right-contain2 p {
-    font-size: .8rem;
-    margin: 1rem 0;
-  }
-}
+ 
   @media screen and (max-width: 322px) {
     .right-contain2 p {
       font-size: .75rem;
