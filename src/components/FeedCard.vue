@@ -67,15 +67,18 @@
           <h4 class="my-5">{{post.title}}</h4>
 
           <div class="keypoints mt-2">
-            <h3>Keypoints</h3>
+            <h3>Keypoints:</h3>
             <ul class="mt-4">
               <li v-if="post.keypoint[0]">{{post.keypoint[0]}}</li>
               <li v-if="post.keypoint[1]">{{post.keypoint[1]}}</li>
               <li v-if="post.keypoint[2]">{{post.keypoint[2]}}</li>
-              <p v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]" class="keypoint-text">
-                No keypoint availble for this post
-              </p>
             </ul>
+
+            <div class="container" v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]">
+              <p class="alert alert-light">
+                <i class="fa fa-exclamation-circle"></i> No keypoint availble for this post
+              </p>
+            </div>
           </div>
         </div>
         <div id="hover-top-border">

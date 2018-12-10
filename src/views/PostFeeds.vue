@@ -195,7 +195,7 @@ export default {
   margin-top: 0;
   width: 100%;
   z-index: 1000;
-  height: 7rem;
+  height: 4rem;
   background-color: #f5f5f5;
   padding: 1rem 7.5rem;
   border-bottom: 1px solid #eeeeee;
