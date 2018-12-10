@@ -217,13 +217,13 @@
 </template>
 
 <script>
-import { Row, Col, Card, Avatar } from "iview";
-import { Carousel, Slide } from "vue-carousel";
+import { Row, Col, Avatar } from "iview";
+// import { Carousel, Slide } from "vue-carousel";
 import { mapActions, mapState } from "vuex";
 
 export default {
   name: "TrendingCards",
-  components: { Row, Col, Card, Carousel, Slide, Avatar },
+  components: { Row, Col, Avatar },
   methods: {
     ...mapActions(["getAllTrendingPosts"])
   },
@@ -251,6 +251,7 @@ export default {
   box-shadow: none !important;
   border: 0px !important;
   border-radius: 0px !important;
+  margin-right: 0.4rem;
 }
 
 #trending-card .card::after {
@@ -307,6 +308,28 @@ export default {
   font-size: 13px;
 }
 
+#trending-card .carousel-control-next {
+  margin-top: 4.5rem;
+  margin-right: -1.5rem; 
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 1px solid #aaaaaa;
+}
+
+#trending-icon .carousel-control-prev {
+  margin-top: 4.5rem;
+  margin-right: -1.5rem; 
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+ 
+
+}
+
 @media only screen and (max-width: 980px) {
   #trending-card .card .card-img-overlay .card-text {
     font-size: 11px;
@@ -321,12 +344,15 @@ export default {
 
 #trending-card .carousel-control-prev {
   margin-top: 4.5rem;
-  margin-left: -1.5rem; 
+  margin-left: -1.7rem; 
   background-color: #000000;
   border-radius: 50%;
   width: 38px;
   height: 38px;
-  background-color: #dddddd;
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 1px solid #aaaaaa; /*10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border: 1px solid #aaaaaa;
 }
 
@@ -342,5 +368,8 @@ export default {
 
 #trending-icon .carousel-control-prev-icon {
   background-color: #ffffff;
+  border: 3px solid red !important;
 }
+
+
 </style>
