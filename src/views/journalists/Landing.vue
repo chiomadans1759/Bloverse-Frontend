@@ -39,15 +39,15 @@
             </Col>
           </Row>
           <Row class="container3">
-            <Col :md="8" :sm="8" :xs="8">
+            <Col :md="8" :sm="8" :xs="24">
               <h3>{{general.metrics.publishedPost}}</h3>
               <p>ARTICLES POSTED</p>
             </Col>
-            <Col :md="8" :sm="8" :xs="8" class="center">
+            <Col :md="8" :sm="8" :xs="24" class="center">
               <h3>{{general.metrics.journalists}}</h3>
               <p>CONTENT PROVIDERS</p>
             </Col>
-            <Col :md="8" :sm="8" :xs="8" v-if="show">
+            <Col :md="8" :sm="8" :xs="24" v-if="show">
               <h3>{{general.metrics.views.total}}</h3>
               <p>VISITORS</p>
             </Col>
@@ -126,7 +126,7 @@ export default {
 }
 
 .left-contain {
-  margin-top: 18%;
+  margin-top: 12%;
 }
 
 .left h1 {
@@ -154,7 +154,7 @@ export default {
   border-radius: 2px;
   color: rgb(12, 54, 243);
   border: none;
-  padding: 0.8rem 2rem;
+  padding: 0.5rem 1rem;
   background-color: #fff;
   margin-top: 2rem;
   margin-left:2rem;
@@ -183,11 +183,6 @@ export default {
   background-color: rgb(230, 221, 221);
 }
 
-.left-contain2 {
-  margin-top: 8%;
-  height: 80%;
-  float: right;
-}
 
 .right2 {
   height: 50vh;
@@ -205,15 +200,19 @@ export default {
 .right-contain2 h2 {
     font-weight: 600;
   }
-
-iframe {
-  width: 100%;
-  border-radius: 10px;
-  height: 100%;
+.left-contain2 {
+  margin-top: 8%;
+  height: 80%;
+  float: right; 
+  display: block;
   overflow: hidden;
-  border: none !important;
-  object-fit: cover;
-  box-shadow: 2px 2px 20px 2px #888888;
+  border-radius: 30px; 
+}
+iframe {
+  width: 100%; 
+  height: 100%;  
+  border: none;
+  object-fit: cover; 
 }
 
 .container3 {
@@ -289,6 +288,14 @@ iframe {
   }
 }
 @media screen and (max-width: 603px) {
+
+.container3 {
+  flex-direction:column;
+  padding-bottom:6rem;
+  }
+.center {
+  border:none;
+}
 .right-text {
     margin-top: 50%;
 	}
@@ -298,7 +305,12 @@ iframe {
 	}
 .right2 {
    height: 26vh;
+   height: fit-content;
+   order:1;
 }
+.left2 {
+    order:2;
+  }
 .right-text h1 {
   font-size: 1.6rem;
   color: #ffffff;
@@ -313,21 +325,20 @@ iframe {
   .container2 {
     flex-direction: column;
   }
-  .right2 .left2 {
-    height: fit-content;
-  }
+  
   .left-contain2 {
     float: left;
+    height:30vh;
   }
   .container3 > div {
-    margin: 1rem 0 7rem 0;
+    margin: 1rem 0 1rem 0;
   }
-  .container3 h3 {
+  /* .container3 h3 {
     font-size: 1.2rem;
   }
   .container3 p {
     font-size: .5rem;
-  }
+  } */
   .right-contain2 {
     margin-top: 7%;
     height: fit-content;
@@ -350,10 +361,7 @@ iframe {
     }
     .left {
       display: none;
-    }
-    .container3 > div {
-      margin: 1rem 0 7rem 0;
-    }
+    } 
     .right2 {
     height: 30vh;
     }
