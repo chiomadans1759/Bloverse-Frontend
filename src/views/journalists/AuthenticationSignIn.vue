@@ -25,7 +25,7 @@
       <div class="col-md-5">
         <div class="container pl-lg-6 pr-lg-5">
           <div class="text-center mb-5">
-            <img src="@/assets/Asset 1.svg" alt class="img-logo">
+            <img src="@/assets/Logo.svg" alt class="img-logo">
           </div>
 
           <Form ref="loginForm"
