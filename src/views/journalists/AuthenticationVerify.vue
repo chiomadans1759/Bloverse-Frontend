@@ -12,7 +12,7 @@
         </template>
       </Alert>
 
-      <Form ref="tokenForm" class="auth-form" v-else>
+      <Form ref="tokenForm" class="auth-form col-md-6" v-else>
         <h1 id="page-title">Verify Your Token</h1>
         <FormItem required>
           <Input  v-model="token" placeholder="Enter token here" class="my-input" />
