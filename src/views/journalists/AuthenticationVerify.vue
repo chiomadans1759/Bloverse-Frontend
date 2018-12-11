@@ -73,7 +73,7 @@ export default {
           else {
             this.setShouldRegister(true);
             this.alert.type = "success";
-            this.$router.push("register");
+            this.$router.push("setup");
           }
           this.alert.show = true;
         } else this.$Message.error("Invalid Token");
