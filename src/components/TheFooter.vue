@@ -27,14 +27,20 @@
       <div class="row pt-2" id="mobile">
         <div class="col-8">
           <ul class="list-inline">
+             <li class="list-inline-item pl-4" style="font-size:15px;">
+              bloverse
+            </li>
+            <!-- <li class="list-inline-item pl-2" style="font-size: 15px;">
+              bloverse
+            </li> -->
             <li class="list-inline-item pl-4">
-              <router-link to="">Terms</router-link>
+              <router-link to="" id="linkk">Terms</router-link>
             </li>
             <li class="list-inline-item pl-2">
-              <router-link to="">Privacy</router-link>
+              <router-link to="" id="linkk">Privacy</router-link>
             </li>
             <li class="list-inline-item pl-2">
-              <router-link to="">About</router-link>
+              <router-link to="" id="linkk">About</router-link>
             </li>
           </ul>
         </div>
@@ -129,6 +135,10 @@ export default {
   .list-inline {
     display: flex;
     justify-items: left;
+  }
+
+  #linkk {
+    font-size: 12px;
   }
 }
 </style>
