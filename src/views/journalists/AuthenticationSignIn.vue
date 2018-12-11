@@ -1,25 +1,4 @@
 <template>
-  <!--
-    <div id="modal-left">
-     <div id="modal-login">
-         <div id="modal-header-top">
-         <img src="@/assets/Logo.svg" alt="">
-         <h2 id="brand-name">bloverse</h2>
-       </div>
-       <h3>Sign in to continue</h3>
-         <input class="modal-button modal-email" placeholder="Email"> </input>
-         <input class="modal-button modal-password" placeholder="Password" type="password"></input>
-         <div id="modal-footer-end">
-         <a href="">Forgot password?</a>
-         <button id="modal-login-button">Login</button>
-         </div>
-         <h4>New to Bloverse? <a href=""> Sign up</a></h4>
-     </div>
-    </div>
-    <div id="modal-right">
-        <img src="@/assets/Images.png" alt="">
-    </div>
-  -->
   <div id="auth-sign-in">
     <div class="row">
       <div class="col-md-5">
