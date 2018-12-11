@@ -9,154 +9,96 @@
         <div slot="footer"></div>
       </Modal>
 
-      <Form
-        ref="applyForm"
-        :model="applicant"
-        class="auth-form container"
-        :rules="validateApplication"
-      >
-
-        <Row type="flex" justify="center">
-          <Col :sm="12">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
             <router-link to="/" class="router-link">
               <img class="logo" src="@/assets/Asset 1.svg" style="height: 40px" />
             </router-link>
-            <h4 id="form-instruction">Join Bloverse as a content creator</h4>
-          </Col>
-        </Row>
+            <h3 class="mt-2 mb-5">Join Bloverse as a content creator</h3>
 
-        <Row type="flex" justify="center" :gutter="16">
-          <Col :sm="6" :xs="20">
-            <FormItem prop="firstName" :error="errors.firstName">
-              <Input class="my-input" v-model="applicant.firstName" placeholder="First name"/>
-            </FormItem>
-          </Col>
-          <Col :sm="6" :xs="20">
-            <FormItem prop="lastName" :error="errors.lastName">
-              <Input class="my-input" v-model="applicant.lastName" placeholder="Last name"/>
-            </FormItem>
-          </Col>
-        </Row>
-        <Row type="flex" justify="center" :gutter="16">
-          <Col :sm="6" :xs="20">
-            <FormItem prop="email" :error="errors.email">
-              <Input class="my-input" v-model="applicant.email" placeholder="Email"/>
-            </FormItem>
-          </Col>
-          <Col :sm="6" :xs="20">
-            <FormItem prop="phone" :error="errors.phoneNumber">
-              <select v-model="applicant.phoneCode" class="code-dropdown">
-                <option
-                  class="country-dropdown"
-                  v-for="(val, index) in countriesCodeFlag"
-                  :value="val.code"
-                  :key="index"
-                >
-                  <img :src="val.imgURL" style="height:15px, background:url">
-                  {{ val.code }}
-                </option>
-              </select>
-              <input
-                class="my-input"
-                id="phone-input"
-                type="number"
-                v-model="applicant.phoneNumber"
-                placeholder="Phone Number"
-              >
-            </FormItem>
-          </Col>
-        </Row>
-        <Row type="flex" justify="center" :gutter="16">
-          <Col :sm="6" :xs="20">
-            <FormItem prop="linkedIn" :error="errors.linkedIn">
-              <Input
-                class="my-input"
-                v-model="applicant.linkedInUsername"
-                placeholder="Linkedln Profile"
-              />
-            </FormItem>
-          </Col>
-          <Col :sm="6" :xs="20">
-            <FormItem prop="twitter" :error="errors.twitter">
-              <Input
-                class="my-input"
-                v-model="applicant.twitterUsername"
-                placeholder="Twitter Profile"
-              />
-            </FormItem>
-          </Col>
-        </Row>
-        <Row type="flex" justify="center">
-          <Col :sm="12" :xs="20">
-            <FormItem
-              prop="articles"
-              :error="errors.articles"
-              v-for="(value, index) in applicant.articleURLs"
-              :key="index"
-            >
-              <Input
-                class="my-input"
-                v-model="applicant.articleURLs[index]"
-                placeholder="Link to written article"
-              />
-            </FormItem>
-          </Col>
-        </Row>
-        <Row type="flex" justify="end">
-          <Col span="1.5" id="add-btn-container">
-            <Button
-              id="add-article-btn"
-              long
-              @click="handleAdd"
-              v-if="applicant.articleURLs.length < 3"
-              icon="md-add"
-            >ADD</Button>
-          </Col>
-        </Row>
-        <Row type="flex" justify="center" :gutter="16">
-          <Col :sm="6" :xs="20">
-            <FormItem prop="country" :error="errors.countryId">
-              <v-select
-                :options="general.countries"
-                label="name"
-                placeholder="Select a country"
-                class="my-select"
-                v-model="applicant.country"
-              ></v-select>
-            </FormItem>
-          </Col>
-          <Col :sm="6" :xs="20">
-            <FormItem prop="category" :error="errors.categoryId">
-              <v-select
-                :options="general.categories"
-                label="name"
-                placeholder="Select a Category"
-                class="my-select"
-                v-model="applicant.category"
-              ></v-select>
-            </FormItem>
-          </Col>
-        </Row>
-        <Row type="flex" justify="center">
-          <Col :sm="12" :xs="20">
-            <Button id="apply-btn" long @click.prevent="handleSubmit">APPLY</Button>
-          </Col>
-        </Row>
-        <Row type="flex" justify="center">
-          <Col :sm="12" :xs="20">
-            <div id="login-here">
-              <p>
-                By clicking apply, you agree to our
-                <span id="login-link">Terms</span> and
-                <span id="login-link">Privacy</span>
-              </p>
-              <p>Have an account?
-                <router-link id="login-link" to="login">Login</router-link>
-              </p>
-            </div>
-          </Col>
-        </Row>
-      </Form>
+            <Form ref="applyForm" :model="applicant" :rules="validateApplication">
+              <Row type="flex" justify="space-between">
+                <Col :sm="11" :xs="24">
+                  <FormItem prop="firstName" :error="errors.firstName">
+                    <Input class="my-input" v-model="applicant.firstName" placeholder="First name*"  />
+                  </FormItem>
+                </Col>
+                <Col :sm="11" :xs="24">
+                  <FormItem prop="lastName" :error="errors.lastName">
+                    <Input class="my-input" v-model="applicant.lastName" placeholder="Last name*" />
+                  </FormItem>
+                </Col>
+              </Row>
+
+              <Row type="flex" justify="space-between">
+                <Col :sm="11" :xs="24">
+                  <FormItem prop="email" :error="errors.email">
+                    <Input class="my-input" v-model="applicant.email" placeholder="Email*"  />
+                  </FormItem>
+                </Col>
+                <Col :sm="11" :xs="24">
+                  <FormItem prop="phone" :error="errors.phoneNumber">
+                      <select v-model="applicant.phoneCode" class="code-dropdown">
+                      <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
+                        <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
+                      </option>
+                    </select>
+                    <input class="my-input" type="number" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
+                  </FormItem>
+                </Col>
+              </Row>
+                
+              <FormItem prop="linkedIn" :error="errors.linkedIn">
+                <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username"  >
+                    <span slot="prepend">https://www.linkedin.com/in/</span>
+                </input>
+              </FormItem>
+              
+              <FormItem prop="twitter" :error="errors.twitter">
+                <Input class="my-input" v-model="applicant.twitterUsername" placeholder="Twitter profile username"  >
+                    <span slot="prepend">https://www.twitter.com/</span>
+                </input>
+              </FormItem>
+              
+              <FormItem prop="articles" :error="errors.articles" v-for="(value, index)  in 3" :key="value">
+                <Input class="my-input" v-model="applicant.articleURLs[index]" placeholder="Link to written article">
+                    <Select slot="prepend" v-model="applicant.articleProtocols[index]" style="width: 80px">
+                      <Option value="https://">https://</Option> 
+                      <Option value="http://">http://</Option>
+                    </Select>
+                </input>
+              </FormItem>
+              <Row type="flex" justify="space-between">
+                <Col :sm="11" :xs="24">
+                  <FormItem prop="country" :error="errors.countryId">
+                  <v-select :options="general.countries" label="name" placeholder="Country*" class="my-select" v-model="applicant.country">
+                    </v-select>
+                  </FormItem>
+                </Col>
+                <Col :sm="11" :xs="24">
+                  <FormItem prop="category" :error="errors.categoryId">
+                    <v-select :options="general.categories" label="name" placeholder="Category*" class="my-select" v-model="applicant.category">
+                    </v-select>
+                  </FormItem>
+                </Col>
+              </Row>
+              <!--<FormItem prop="terms">
+                <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
+              </FormItem>-->
+              <button class="btn btn-primary btn-block" @click.prevent="handleSubmit">SUBMIT</button>
+              <div class="my-3 text-secondary">
+                <h5>
+                  By clicking apply, you agree to <a href="#" class="text-link">Terms</a> and <a href="#" class="text-link">Privacy</a>
+                </h5>
+              </div>
+              <div class="text-secondary">
+                <h5>Have an account? <router-link id="login-link" to="login"> Log in here </router-link></h5>
+              </div>
+            </Form>
+          </div>
+        </div>
+      </div>
     </main>
 </template>
 
