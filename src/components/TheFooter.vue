@@ -95,7 +95,7 @@ export default {
   text-align: right;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 980px) {
   #the-footer #desktop {
     display: none;
   }
@@ -105,12 +105,23 @@ export default {
   }
 
   #the-footer {
-    height: 85px;
+    height: 120px;
+    display: flex;
+    justify-items: left;
+    margin: auto;
+    flex-direction: column;
   }
 
   #year-text {
-    text-align: center;
+    text-align: left;
     padding-top: 1rem;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .list-inline {
+    display: flex;
+    justify-items: left;
   }
 }
 </style>

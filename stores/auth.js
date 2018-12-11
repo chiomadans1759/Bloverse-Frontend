@@ -35,7 +35,7 @@ export default {
       imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg'
     },
     applicant: {
-      articleURLs: []
+      articleURLs: ['']
     },
     loggedInUser: user,
     shouldRegister: false,
@@ -177,7 +177,8 @@ export default {
   },
   mutations: {
     setApplicant(state, props) {
-      state.applicant = { ...state.applicant,
+      state.applicant = {
+        ...state.applicant,
         ...props
       };
     },
@@ -190,7 +191,8 @@ export default {
       };
     },
     setNewUser(state, props) {
-      state.newUser = { ...state.newUser,
+      state.newUser = {
+        ...state.newUser,
         ...props
       };
     },
