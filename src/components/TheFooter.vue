@@ -24,12 +24,9 @@
         </div>
       </div>
 
-      <div class="row text-center pt-2" id="mobile">
-        <div class="col-12">
+      <div class="row pt-2" id="mobile">
+        <div class="col-8">
           <ul class="list-inline">
-            <li class="list-inline-item">
-              bloverse
-            </li>
             <li class="list-inline-item pl-4">
               <router-link to="">Terms</router-link>
             </li>
@@ -104,8 +101,19 @@ export default {
     display: block;
   }
 
+  #the-footer .list-inline {
+    margin-left: -0.5rem;
+  }
+
+  #the-footer .list-inline .list-inline-item:first-child {
+    font-family: inherit;
+    font-size: 12px;
+    border: none;
+    width: inherit;
+  }
+
   #the-footer {
-    height: 120px;
+    height: 100px;
     display: flex;
     justify-items: left;
     margin: auto;
@@ -114,9 +122,8 @@ export default {
 
   #year-text {
     text-align: left;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     padding-left: 1rem;
-    margin-bottom: 2rem;
   }
 
   .list-inline {
