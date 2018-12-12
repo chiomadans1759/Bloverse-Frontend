@@ -221,7 +221,7 @@
   <!-- For Mobile View -->
   <div class="mobile">
     <carousel
-     autoplay="true" 
+     :autoplay= true
      paginationColor="#73C2FB;"
      paginationActiveColor="#096DD9"
      :autoplayTimeout="3000"
@@ -327,6 +327,19 @@ export default {
   width: 8px;
   height: 8px;
   margin-top: -2px;
+}
+
+#trending-card .carousel-control-next {
+  margin-top: 4.5rem;
+  margin-right: -1.2rem !important; 
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 1px solid #aaaaaa;
+  filter: blur(0.5px);
 }
 
 @media only screen and (max-width: 980px) {

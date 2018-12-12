@@ -11,7 +11,7 @@
             <v-select
               :options="general.countries"
               label="name"
-              placeholder="Select country"
+              placeholder="Country"
               v-model="country"
               v-if="allow"
               @input="filterCountry">

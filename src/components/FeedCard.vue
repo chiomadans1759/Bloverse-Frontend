@@ -26,13 +26,13 @@
       <div class="card-container2"> 
         <div class="card-overlay">
           <h4>{{post.title}}</h4></br>
-          <p>
+          <p id="travel-details">
             <i class="fas fa-camera-retro"></i>{{post.device_type}} 
             </br><span> <i class="fas fa-map-marker-alt"></i>{{post.location}}</span>
           </p> 
         </div>
         <router-link :to="`posts/${post.slug}`"> 
-          <h5>READ STORY</h5>
+          <h5 style="color: #096DD9;">READ STORY</h5>
         </router-link>
       </div>
     </div>
@@ -374,6 +374,10 @@ export default {
 
 #contest-image {
   border-radius: 2px;
+}
+
+#travel-details {
+  font-size: 14px;
 }
 
 .photo-contest {
