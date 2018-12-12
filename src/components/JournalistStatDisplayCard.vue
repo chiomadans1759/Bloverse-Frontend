@@ -1,16 +1,14 @@
 <template>
   <div class="stat-card">
-    <img class="graph" src="../assets/Graph.svg" />
     <div class="main-stat">
+       <i class="fal fa-eye" id="stat-icon"></i>
       <div class="views-stat">
         <span class="stat-view">{{stats.key[2]}}</span>
-        <span class="stat-view">{{title}}</span>
+        <p class="stat-title">{{title}}</p>
       </div>
       <div class="days-stat">
-        <div>
           <span class="stat-today">{{stats.key[0]}}&nbsp;&nbsp;</span>
           <span class="stat-today">{{stats.value[0]}}</span>
-        </div>
         <div>
           <span class="stat-week">{{stats.key[1]}}&nbsp;&nbsp;</span>
           <span class="stat-week">{{stats.value[1]}}</span>
@@ -37,44 +35,56 @@ export default {
 .stat-card {
   box-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.1);
   border-radius: 0.125rem;
-  height: 11.3125rem;
-}
-
-.graph {
-  width: 10rem;
-  align-self: flex-end;
 }
 
 .main-stat {
   display: flex;
   justify-content: space-between;
+  margin-top: 1.3rem;
 }
 
-.views-stat {
+.stat-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+
+
+}
+
+.view-stat {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  bottom: 0;
+  position: absolute;
 }
 
 .stat-view {
-  font-size: 2rem;
+  font-size: 48px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .days-stat {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1.4rem;
-}
+  margin-top: 3.7rem;
+  align-content: flex-end;
+  float: right;
+} 
 
 .stat-today {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 12px;
 }
 
 .stat-week {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 12px;
+}
+
+#stat-icon {
+    position: absolute;
+    right: -15%;
+    font-size: 180px;
+    top: -45%;
+    color: #000;
+    opacity: 0.15;
 }
 </style>
 

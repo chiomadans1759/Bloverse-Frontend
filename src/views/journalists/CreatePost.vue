@@ -12,10 +12,10 @@
 
   <main id="create-post">
     <div class="row no-gutter" id="tabs">
-      <div class="col-xs-6 pt-1" @click="currentSection('basic')" :class="{'active': current_section == 'basic'}">
-        <p class="text-uppercase">basic template</p>
+      <div class="col-xs-6 pt-1 pl-2" @click="currentSection('basic')" :class="{'active': current_section == 'basic'}">
+        <p class="text-uppercase pl-2">basic template</p>
       </div>
-      <div class="col-xs-6 pt-1" @click="currentSection('travel')" :class="{'active': current_section == 'travel'}">
+      <div class="col-xs-6 pt-1 pl-2" @click="currentSection('travel')" :class="{'active': current_section == 'travel'}">
         <p class="text-uppercase">photo template</p>
       </div>
     </div>
@@ -101,15 +101,17 @@ export default {
 #create-post {
   padding-top: 3rem;
   font-family: "Montserrat", sans-serif;
+  margin-top: 1rem;
 }
 
 #create-post #tabs {
-  margin: 0 auto;
-  width: 35%;
-  height: 3rem;
+  width: 30%;
+  height: 2rem;
   background-color: #ffffff;
   border: 1px solid #096DD9;
   border-radius: 4px;
+  padding-right: 1rem;
+  margin-left: 12rem;
 }
 
 #create-post #tabs .col-xs-6 {
@@ -122,10 +124,10 @@ export default {
   text-align: center;
 }
 
-#create-post #tabs .active,
-#create-post #tabs .col-xs-6:hover {
+#create-post #tabs .active {
   color: #ffffff;
   background:#096DD9;
+  padding-right: 1rem;
 }
 
 #create-post #create-card {

@@ -3,6 +3,7 @@ import store from '../stores';
 
 import GeneralLayout from '@/layouts/GeneralLayout';
 import BlankBase from '@/layouts/BlankBase';
+import DashboardSidebar from '@/layouts/DashboardSidebar';
 
 import PostFeeds from '../src/views/PostFeeds.vue';
 import PostDisplay from '../src/views/PostDisplay.vue'; 
@@ -84,7 +85,7 @@ const routes = [
         }
       },
       { path: 'verify', component: JournalistVerify },
-      { path: ':username', component: GeneralLayout, meta: { journalist: true, auth: true },
+      { path: ':username', component: DashboardSidebar, meta: { journalist: true, auth: true },
         children: [
           { path: '', component: MyProfile},
           { path: 'dashboard', name: 'journalist-dashboard', component: DashBoardHome,beforeEnter(to, from, next) {
