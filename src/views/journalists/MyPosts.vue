@@ -19,7 +19,7 @@
           </Col>
         </Row>
 
-        <Row v-if="current_section == 'postp'" type="flex" justify="space-between" :gutter="16">
+        <Row v-if="current_section == 'postp'" type="flex" justify="space-between" :gutter="12">
           <Col v-for="post in journalist.posts" :key="post.id" :sm="24" :md="8">
             <FeedCard :post="post" style="height: 414px;" />
           </Col>
@@ -77,13 +77,17 @@ export default {
     }
   }
 }
-
 </script>
 
 
 <style>
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+#all-posts {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 4rem;
+  padding-left: 1rem;
+}
 
 .showposts{
   text-align: center;
@@ -93,7 +97,9 @@ export default {
 .showposts h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
+  padding-left: 5rem !important;
 }
+  
 
 .showposts #showbutton {
   background: #1497C9;
@@ -114,12 +120,13 @@ export default {
 }
 
 #all-posts #posts-tabs {
-  margin: 0 auto;
-  width: 35%;
-  height: 3rem;
+  width: 20%;
+  height: 2rem;
   background-color: #ffffff;
   border: 1px solid #096DD9;
   border-radius: 4px;
+  justify-content: left
+  
 }
 #all-posts #posts-tabs .col-xs-6 {
   height: 100%;
@@ -129,9 +136,9 @@ export default {
 #all-posts #posts-tabs .col-xs-6 p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
+  padding:0.2rem 0.3rem 0.2rem 0.5rem;
 }
-#all-posts #posts-tabs .active,
-#all-posts #posts-tabs .col-xs-6:hover {
+#all-posts #posts-tabs .active {
   color: #ffffff;
   background:#096DD9;
 }
