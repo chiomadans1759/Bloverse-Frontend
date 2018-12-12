@@ -22,12 +22,18 @@
               </Col>
             </Col>
           </Row>
-
+ 
           <Row class="container2">
             <Col :md="12" :sm="10" :xs="24" class="left2">
-              <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">
-                <iframe src="https://www.youtube.com/embed/EjRM4DMdnGw"></iframe>
-              </Col>
+                <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">  
+                <a href="https://www.youtube.com/embed/EjRM4DMdnGw" class="video-btn popup-youtube">
+                  <img src ="./../../assets/video-image.jpg"/>              
+                  <button class="pulse-button"><i class="far fa-play-circle"></i></button>
+                </a>
+                <div id="video-overlay" class="video-overlay">
+                  <a class="video-overlay-close"></a>
+                </div>
+                </Col>
             </Col>
 
             <Col :md="12" :sm="14" :xs="24" class="right2">
@@ -38,6 +44,7 @@
               </Col>
             </Col>
           </Row>
+
           <Row class="container3">
             <Col :md="8" :sm="8" :xs="24">
               <h3>{{general.metrics.publishedPost}}</h3>
@@ -206,13 +213,17 @@ export default {
   float: right; 
   display: block;
   overflow: hidden;
-  border-radius: 30px; 
+  border-radius: 12px; 
 }
-iframe {
+.left2 img {
   width: 100%; 
   height: 100%;  
   border: none;
-  object-fit: cover; 
+  object-fit: cover;  
+  object-position: 50%;
+  position: absolute; 
+  background-size: cover; 
+  top: 0;
 }
 
 .container3 {
@@ -248,7 +259,50 @@ iframe {
   border-left: 2px solid #ccc;
 }
 
+.fa-play-circle{
+  color:#fff;
+  font-size:2rem;
+}
+.pulse-button {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  top:38%;
+  left:38%;
+  border: none;
+  box-shadow: 0 0 0 0 rgb(42, 120, 238);
+  border-radius: 50%;
+  background-color:rgb(51, 127, 240);
+  /* background-image: linear-gradient(rgb(2, 9, 110), rgba(4, 37, 128));  */
+  background-size:cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+.pulse-button:hover 
+{
+  -webkit-animation: none;
+  -moz-animation: none;
+  -ms-animation: none;
+  animation: none;
+}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+ 
 @media screen and (max-width: 840px) {
+  .pulse-button {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  top:34%;
+  left:38%;
+  }
   .right-text {
 		margin-top: 30%;
     text-align:center; 
