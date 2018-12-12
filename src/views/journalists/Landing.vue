@@ -213,7 +213,7 @@ export default {
   float: right; 
   display: block;
   overflow: hidden;
-  border-radius: 12px; 
+  border-radius: 12px;  
 }
 .left2 img {
   width: 100%; 
@@ -224,6 +224,7 @@ export default {
   position: absolute; 
   background-size: cover; 
   top: 0;
+  
 }
 
 .container3 {
