@@ -1,7 +1,12 @@
 <template>
   <main class="auth-section">
-    <h2 id="page-title"> Complete your registration </h2>
-    <Row type="flex" justify="center">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+     <router-link to="/" class="router-link">
+      <img class="logo" src="@/assets/Asset 1.svg" style="height: 40px" />
+     </router-link>
+         <h3 id="form-instruction">Please fill the form to become a journalist on bloverse</h3>
+    <Row type="flex">
       <Col :md="14" class="steps-container">
         <!-- <Steps id="step" :current="currentPage">
           <Step content="Verify Previous Info"></Step>
@@ -29,9 +34,12 @@
       </Col>
     </Row>
     
+   </div>
+ </div>
+    <!-- <h2 id="page-title"> Complete your registration </h2> -->
+
       
     <section class="auth-form">
-      <h3 id="form-instruction">Fill the form below to become journalist on Bloverse</h3>
       <Row type="flex" justify="center">
         <PageOne v-if="currentPage===1" :user="user" @toNext="updateCurrentPage(2)" />
         <PageTwo v-else :user="user" @done="completeSetup" />
@@ -113,8 +121,8 @@ export default {
 
 <style scoped>
 #form-instruction {
-  text-align: center;
   margin-bottom: 3rem !important;
+  margin-top: 15px;
 }
 
 section.auth-form {
@@ -151,8 +159,8 @@ section.auth-form {
 margin-top:30px
 }
 .container{
-width: 100%;
-height: 3px;
+width: 50%;
+height: 2px;
 /*   background: red; */
 border: 1px solid #2D9CDB;
 margin: 10px auto;
@@ -165,7 +173,7 @@ z-index:1;
 .step-count{
 width:100%;
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 position: absolute;
 top: -10px
 }
@@ -188,7 +196,7 @@ background: #2D9CDB;
 
 .content{
 width: 40px;
-height: 50px;
+height: 40px;
 border: 1px solid #2D9CDB;
 text-align: center;
 display: flex;

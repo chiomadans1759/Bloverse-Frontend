@@ -1,5 +1,6 @@
 <template>
-<section id="img-display" :style="{height, width}">
+<div class="mother-div">
+<section id="img-display" style="height:100px; width: 100px;">
   <image-chooser :show="displayChooser" @closeModal="displayChooser=false" @selectImage="handleImageSelected" />
   <div class="img-wrapper" @mouseover="imageHover = true" @mouseleave="imageHover = false">
     <img v-if="currImage" :src="currImage" :alt="alt">
@@ -9,12 +10,14 @@
     <div v-if="canEdit" id="activate-upload" v-show="imageHover" @click="displayChooser = true">
       <div style="margin: auto; display: flex; flex-direction: column; align-items: center;">
         <Icon type="ios-camera"></Icon>
-        <h3 v-if="currImage">Click to Change Photo</h3>
+        <h3 v-if="currImage">+</h3>
         <h3 v-else>Click to Upload Photo</h3>
       </div>
     </div>
   </div>
 </section>
+<h3 style="align-self: center; color: #2D9CDB">Add a profile picture</h3>
+</div>
 </template>
 
 
@@ -48,6 +51,11 @@ export default {
 
 
 <style scoped>
+.mother-div{
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
 section#img-display {
   background: white;
   border: 0.1px solid grey;

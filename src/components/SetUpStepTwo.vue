@@ -1,11 +1,11 @@
 <template>
 <div>
-<Col :md="22" :xs="24">
+<Col :md="30" :xs="24">
   <Row type="flex" justify="space-between" align="middle">
     <Col :md="8" :xs="24" id="photo-wrapper">
       <DisplayPhoto :value="user.imageUrl" :canEdit="true" height="200px" width="50%" />
     </Col>
-    <Col :md="12" :xs="24">
+    <Col :md="30" :xs="24">
       <Form ref="stepTwoForm" :model="user" :rules="validateUserFields">
         <FormItem prop="username">
           <Input class="my-input" v-model="user.username" readonly placeholder="Username*" />
@@ -31,7 +31,7 @@
           <Input class="my-input" v-model="user.about" type="textarea" :rows="6" placeholder="About..." />
         </FormItem>
         <FormItem>
-          <Button class="my-btn btn-main" long @click="submitUser">SAVE</Button>
+          <Button class="my-btn btn-main" long @click="submitUser" style="background: #2D9CDB; color:#fff">SAVE</Button>
         </FormItem>
       </Form>
     </Col>
@@ -105,6 +105,6 @@ export default {
 
 <style>
   #photo-wrapper {
-    height: 320px;
+    height: 131px;
   }
 </style>
