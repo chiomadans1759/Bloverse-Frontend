@@ -11,7 +11,7 @@
             <v-select
               :options="general.countries"
               label="name"
-              placeholder="Select country"
+              placeholder="Country"
               v-model="country"
               v-if="allow"
               @input="filterCountry">
@@ -250,7 +250,7 @@ export default {
 @media only screen and (max-width: 980px) {
   .post-feeds-category-sticky {
     height: 5rem;
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .post-feeds-category .v-select .dropdown-toggle {
@@ -260,15 +260,15 @@ export default {
   }
 
   .post-feeds-category .cat-list {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
 
   .post-feeds-category .list-inline .list-inline-item {
-    margin-right: 0.5rem;
+    margin-right: 0.8rem;
   }
 
   .post-feeds-category .cat-list .list-inline-item a {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .post-feeds-category #layout-select {

@@ -32,7 +32,7 @@ export default {
 
 #draft-card {
   width: 568px;
-  height: 100px;
+  height: 150px;
   margin-bottom: 2rem;
 }
 
@@ -49,7 +49,7 @@ export default {
   margin-bottom: 2rem; 
   margin-top: 2rem; 
   flex-direction: flex-start;
-  width: 50%;
+  width: 100%;
 }
 
 

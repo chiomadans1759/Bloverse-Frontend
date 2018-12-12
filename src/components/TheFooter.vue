@@ -24,20 +24,23 @@
         </div>
       </div>
 
-      <div class="row text-center pt-2" id="mobile">
-        <div class="col-12">
+      <div class="row pt-2" id="mobile">
+        <div class="col-8">
           <ul class="list-inline">
-            <li class="list-inline-item">
+             <li class="list-inline-item pl-4" style="font-size:15px;">
               bloverse
             </li>
+            <!-- <li class="list-inline-item pl-2" style="font-size: 15px;">
+              bloverse
+            </li> -->
             <li class="list-inline-item pl-4">
-              <router-link to="">Terms</router-link>
+              <router-link to="" id="linkk">Terms</router-link>
             </li>
             <li class="list-inline-item pl-2">
-              <router-link to="">Privacy</router-link>
+              <router-link to="" id="linkk">Privacy</router-link>
             </li>
             <li class="list-inline-item pl-2">
-              <router-link to="">About</router-link>
+              <router-link to="" id="linkk">About</router-link>
             </li>
           </ul>
         </div>
@@ -95,7 +98,7 @@ export default {
   text-align: right;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 980px) {
   #the-footer #desktop {
     display: none;
   }
@@ -104,13 +107,38 @@ export default {
     display: block;
   }
 
+  #the-footer .list-inline {
+    margin-left: -0.5rem;
+  }
+
+  #the-footer .list-inline .list-inline-item:first-child {
+    font-family: inherit;
+    font-size: 12px;
+    border: none;
+    width: inherit;
+  }
+
   #the-footer {
-    height: 85px;
+    height: 100px;
+    display: flex;
+    justify-items: left;
+    margin: auto;
+    flex-direction: column;
   }
 
   #year-text {
-    text-align: center;
-    padding-top: 1rem;
+    text-align: left;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+  }
+
+  .list-inline {
+    display: flex;
+    justify-items: left;
+  }
+
+  #linkk {
+    font-size: 12px;
   }
 }
 </style>
