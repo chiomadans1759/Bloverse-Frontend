@@ -1,9 +1,9 @@
 <template>
   <div class="layout" id="journalist-landing">
     <Layout>
+      <HeaderGeneral />
       <Content>
         <div>
-					<HeaderGeneral/>
           <Row class="container1">
             <Col :md="12" :sm="0" :xs="0" class="left">
               <Col offset="3" :md="20" :sm="14" :xs="16" class="left-contain">

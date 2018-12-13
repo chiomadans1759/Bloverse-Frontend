@@ -61,15 +61,15 @@ export default {
   async created () {
     // fetch the data when the view is created and the data is
     // already being observed
-    await this.getMyPosts()
+    await this. getAllPublishedPosts()
   },
   watch: {
     // call again the method if the route changes
-    '$route': 'getMyPosts'
+    '$route': ' getAllPublishedPosts'
   },
   methods: {
     ...mapActions([
-      'getMyPosts'
+      ' getAllPublishedPosts'
     ]),
 
     currentSection(section) {
