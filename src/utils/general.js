@@ -23,11 +23,11 @@ export function initialize(store, router){
         }
       }
     }else{
-      if(to.path == '/creators/login' && store.getters.isAJournalist){
+      if(to.path == '/creators' && store.getters.isAJournalist){
         if(!!currentUser){
            next({path: `/creators/${currentUser.userName}/dashboard`});
          }else{
-           next('/creators/login')
+           next('/creators')
          }
       }else if(to.path == '/admin/login' && store.getters.isAnAdmin){
         
