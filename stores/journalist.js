@@ -143,6 +143,11 @@ export default {
       let response = await Api.get('journalists/' + userId + '/posts/', true);
       commit('setPosts', response.data.posts);
     },
+    async getMyDrafts({ commit, rootState }) {
+      let userId = rootState.auth.loggedInUser.id;
+      let response = await Api.get('journalists/' + userId + '/posts/', false);
+      commit('setDrafts', response.data);
+    },
     async getMyMetrics({ commit, rootState }) {
       let userId = rootState.auth.loggedInUser.id;
       let response = await Api.get(`metrics/journalists/${userId}/`);
@@ -157,6 +162,9 @@ export default {
       };
     },
     setPosts(state, props) {
+      state.posts = props
+    },
+    setDrafts(state, props) {
       state.posts = props
     },
     clearPost(state) {

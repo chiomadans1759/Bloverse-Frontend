@@ -9,7 +9,7 @@
               <Col offset="3" :md="20" :sm="14" :xs="16" class="left-contain">
                 <h1>Interactive stories from the global community</h1>
                 <p>Connecting creators to the people</p>
-                <button>GET STARTED</button>
+                <router-link to="/creators/apply" id="get-start">get started</router-link>
               </Col>
             </Col>
 
@@ -18,7 +18,7 @@
               <Col offset="1" :md="0" :sm="22" :xs="22" class="right-text">
                 <h1>Interactive stories from the global community</h1>
                 <p>Connecting creators to the people</p>
-                <button>GET STARTED</button>
+                <router-link to="/creators/apply" id="get-start">get started</router-link>
               </Col>
             </Col>
           </Row>
@@ -27,10 +27,7 @@
             <Col :md="12" :sm="10" :xs="24" class="left2">
                 <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">  
                 <iframe width="300" height="325" src="https://www.youtube.com/embed/EjRM4DMdnGw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                <img src ="./../../assets/video-image.jpg"/>              
-                  <button class="pulse-button">
-                    <i class="far fa-play-circle"></i>
-                    </button>
+    
                   </iframe>
                 <!-- <a href="https://www.youtube.com/embed/EjRM4DMdnGw" class="video-btn popup-youtube">
                   <img src ="./../../assets/video-image.jpg"/>              
@@ -163,7 +160,7 @@ export default {
   margin-left:2rem;
 }
 
-.left button {
+.left #get-start {
   border-radius: 2px;
   color: rgb(12, 54, 243);
   border: none;
@@ -172,11 +169,24 @@ export default {
   margin-top: 2rem;
   margin-left:2rem;
   font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
 }
 
 .right {
   background-color: #000;
   height: 100%;
+}
+
+.right #get-start {
+  border-radius: 2px;
+  color: rgb(12, 54, 243);
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  margin-top: 2rem;
+  margin-left:2rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
 }
 
 .right img {

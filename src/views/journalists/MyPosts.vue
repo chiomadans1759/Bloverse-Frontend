@@ -13,7 +13,7 @@
 
     <div v-if="showPosts">
       <Row v-show="current_section == 'draft'" id="draft-container" >
-        <Col>
+        <Col v-for="post in general.draftPosts" :key="post.id">
           <DraftCard />
         </Col>
       </Row>
@@ -34,7 +34,7 @@
 
 <script>
 import { Row, Col, Button, Card } from 'iview';
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 
 import FeedCard from '@/components/FeedCard.vue';
 import DraftCard from '@/components/DraftCard.vue'
@@ -55,21 +55,24 @@ export default {
 
     showPosts: function () {
       return this.journalist.posts && this.journalist.posts.length > 0
-    }
+    },
   },
   async created () {
-    // fetch the data when the view is created and the data is
+    // fetch the data whethis.getMyPostn the view is created and the data is
     // already being observed
-    await this. getAllPosts()
+    await this. getMyPosts()
+    await this. getMyDrafts()
   },
   watch: {
     // call again the method if the route changes
-    '$route': ' getAllPosts'
+    '$route': ' getMyPosts'
   },
   methods: {
     ...mapActions([
-      ' getAllPosts'
+      'getMyPosts',
+      'getMyDrafts'
     ]),
+    
 
     currentSection(section) {
       this.current_section = section;
