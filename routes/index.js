@@ -101,7 +101,7 @@ const routes = [
             children: [
               { path: '', name: 'all-posts', component: MyPosts },
               { path: 'create', name: 'create-post', component: CreatePost },
-              { path: ':slug/edit', component: CreatePost }
+              { path: ':slug/edit', component: CreatePost },
             ]
           }
         ]
