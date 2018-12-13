@@ -1,11 +1,11 @@
 <template>
-  <footer>
-    <div class="text-center">
-      <ul class="list-inline">
+  <footer id="journalist-account-footer" class="pt-5">
+    <div class="text-center mt-5">
+      <ul class="list-inline mb-2">
         <li class="list-inline-item">
           <a href>Terms</a>
         </li>
-        <li class="list-inline-item">
+        <li class="list-inline-item mx-3">
           <a href>Privacy</a>
         </li>
         <li class="list-inline-item">
@@ -30,4 +30,11 @@ export default {
 </script>
 
 <style scoped>
+#journalist-account-footer .list-inline .list-inline-item a {
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+#journalist-account-footer .list-inline .list-inline-item a:hover {
+  color: #2F80ED !important;
+}
 </style>

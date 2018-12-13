@@ -5,7 +5,7 @@
     <div class="right">
       <div class="container">
         <router-view class="px-lg-6"></router-view>
-        <journalist-account-footer />
+        <journalist-account-footer class="mt-5" />
       </div>
     </div>
   </main>
