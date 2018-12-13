@@ -11,16 +11,16 @@
   <TemplateChooser v-else @selectTemplate="selectedTemplate=$event"/> -->
 
   <main id="create-post">
-    <div class="row no-gutter" id="tabs">
-      <div class="col-xs-6 pt-1" @click="currentSection('basic')" :class="{'active': current_section == 'basic'}">
-        <p class="text-uppercase">basic template</p>
-      </div>
-      <div class="col-xs-6 pt-1" @click="currentSection('travel')" :class="{'active': current_section == 'travel'}">
-        <p class="text-uppercase">photo template</p>
-      </div>
+    <div class="btn-group mb-5 pb-3" role="group">
+      <button type="button" @click="currentSection('basic')" 
+        :class="{'btn' : true, 'btn-white': current_section != 'basic', 'btn-primary': current_section == 'basic'}">
+        basic template
+      </button>
+      <button type="button" @click="currentSection('travel')" 
+        :class="{'btn' : true, 'btn-white': current_section != 'travel', 'btn-primary': current_section == 'travel'}">
+        photo template
+      </button>
     </div>
-
-    <br /><br />
 
     <div class="card" id="create-card">
       <div class="card-body">
@@ -101,36 +101,26 @@ export default {
 #create-post {
   padding-top: 3rem;
   font-family: "Montserrat", sans-serif;
+  margin-top: 1rem;
 }
 
-#create-post #tabs {
-  margin: 0 auto;
-  width: 35%;
-  height: 3rem;
-  background-color: #ffffff;
-  border: 1px solid #096DD9;
-  border-radius: 4px;
+#create-post .btn-group .btn:first-child {
+  border-radius: 4px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
 }
 
-#create-post #tabs .col-xs-6 {
-  height: 100%;
-  color:#096DD9;
-  cursor: pointer;
+#create-post .btn-group .btn:last-child {
+  border-radius: 4px !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
 }
 
-#create-post #tabs .col-xs-6 p {
-  text-align: center;
-}
-
-#create-post #tabs .active,
-#create-post #tabs .col-xs-6:hover {
-  color: #ffffff;
-  background:#096DD9;
+#create-post .btn-group .btn {
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 #create-post #create-card {
-  margin: 0 auto;
-  width: 60%;
   min-height: 20rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }

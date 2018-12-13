@@ -4,7 +4,7 @@
       <div class="col-md-5">
         <div class="container pl-lg-6 pr-lg-5">
           <div class="text-center mb-5">
-            <img src="@/assets/Asset 1.svg" alt class="img-logo">
+            <img src="@/assets/Logo.svg" alt class="img-logo">
           </div>
 
           <Form ref="loginForm"
@@ -43,7 +43,7 @@
               <div class="row mt-5">
                 <div class="col">
                   <p class="text-left">
-                    <router-link class="btn-link" to="apply">Register Now</router-link>
+                    <router-link class="btn-link" to="/creators/apply" @click.native="close()">Register Now</router-link>
                   </p>
                 </div>
                 <div class="col-auto">
@@ -136,7 +136,10 @@ export default {
         }
       });
     },
-    ...mapActions(["login"])
+    ...mapActions(["login"]),
+    close(){
+      this.setModal({show: false, currentComponent: '' });
+    }
   }
 };
 </script>

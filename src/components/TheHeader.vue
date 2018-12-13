@@ -4,7 +4,7 @@
       <div class="row justify-content-center">
         <div class="col">
           <router-link to="/" class="router-link">
-            <img class="logo" src="@/assets/Asset 1.svg" style="height: 40px" />
+            <img class="logo" src="@/assets/Logo.svg" style="height: 40px" />
           </router-link>
         </div>
 

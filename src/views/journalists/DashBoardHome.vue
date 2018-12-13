@@ -1,52 +1,51 @@
 <template>
-  <div class="container">
-    <Row :gutter="32" id="stat-wrapper" v-if="show">
-      <Col :sm="8" :xs="24">
-        <stat-card variant="fade" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week']}" />
-      </Col>
-      <Col :sm="8" :xs="24">
-        <stat-card variant="primary" title="published" id="stat-point2" :stats="{ key:[articles.today, articles.week,  articles.total ] , value:[ 'Today' ,'This Week' ,'Articles']}" />
-      </Col>
-      <Col :sm="8" :xs="24">
-        <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ key:[`${datas.categoryRank[0]} of ${datas.categoryRank[1]}`, `${datas.countryRank[0]} of ${datas.countryRank[1]}` , `${datas.point}`] , value:['Category' ,'Country' , 'Ranking']}" />
-      </Col>
-    </Row>
-
-    <Row :gutter="32" v-if="show" type="flex" justify="center">
-      <Col :sm="16" :xs="24">
-        <Card id="map-card">
-          <div class="map-stat">
-            <div class="map-stat-keys">
-              <h4 class="stat-header">Views</h4>
-              <p v-for="(data, index) in chartData" 
-              :key="index" 
-              v-if="index > 0">
-              <span> {{ data[0] }} </span>
-              </p>
-              <p class="map-stat-total">Total</p>
+  <div style="height: 100vh;">
+    <div class="container mt-4">
+      <Row :gutter="32" id="stat-wrapper" v-if="show">
+        <Col :sm="8" :xs="24" id="icon-fix">
+          <stat-card variant="fade" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week']}" />
+        </Col>
+        <Col :sm="8" :xs="24" id="icon-fix">
+          <stat-card variant="primary" title="published" id="stat-point2" :stats="{ key:[articles.today, articles.week,  articles.total ] , value:[ 'Today' ,'This Week' ,'Articles']}" />
+        </Col>
+        <Col :sm="8" :xs="24" id="icon-fix">
+          <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ key:[`${datas.categoryRank[0]} of ${datas.categoryRank[1]}`, `${datas.countryRank[0]} of ${datas.countryRank[1]}` , `${datas.point}`] , value:['Category' ,'Country' , 'Ranking']}" />
+        </Col>
+      </Row>
+      <div class="row">
+        <div v-if="show">
+            <div id="map-wrapper">
+              <GChart
+                type="GeoChart"
+                :data="chartData"
+                ref="chartData"
+                style="width: 75%;"
+              />
             </div>
-            <div class="map-stat-values">
-              <div class="blue-icon"></div>
-              <p v-for="(data, index) in chartData" 
-              :key="index" 
-              v-if="index > 0">
-              <span>{{ data[1] }}</span>
-              </p>
-              <p class="map-stat-total-num">{{ chartData.filter((e, i) => i !== 0).reduce((acc, a) => acc + a[1], 0) }}</p>
+            <div class="map-stat">
+              <div class="map-stat-keys">
+                <h4 class="stat-header">Views</h4>
+                <p v-for="(data, index) in chartData" 
+                :key="index" 
+                v-if="index > 0"
+                style="font-size: 14px;">
+                <span> {{ data[0] }} </span>
+                </p>
+                <p class="map-stat-total">Total</p>
+              </div>
+              <div class="map-stat-values">
+                <div class="blue-icon"></div>
+                <p v-for="(data, index) in chartData" 
+                :key="index" 
+                v-if="index > 0">
+                <span>{{ data[1] }}</span>
+                </p>
+                <p class="map-stat-total-num">{{ chartData.filter((e, i) => i !== 0).reduce((acc, a) => acc + a[1], 0) }}</p>
+              </div>
             </div>
-          </div>
-          <div id="map-wrapper">
-            <GChart
-              type="GeoChart"
-              :data="chartData"
-              ref="chartData"
-              :resizeDebounce="500"
-              :width="100"
-            />
-          </div>
-        </Card>
-      </Col>
-    </Row>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -81,7 +80,7 @@ export default {
       region: '',
       subRegion: '',
       country: '',
-      categories: '',
+      categories: ''
     }
   },
   computed: {
@@ -114,23 +113,14 @@ export default {
   color: #828282;
 }
 
-#map-card {
-  height: 40rem;
-  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.3125rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
 
 .map-stat {
-  width: 22rem;
-  height: auto;
-  background-color: #F5F5F5;
+  width: 162px;
+  height: 209px;
+  background-color: #fff;
   position: absolute;
-  right: 1.25rem;
-  top: 0.9375rem;
+  right: 5rem;
+  top: 20rem;
   border-radius: 0.5rem;
   padding: 2rem;
   z-index: 10;
@@ -144,30 +134,32 @@ export default {
   margin-bottom: 1rem;
 }
 
+.map-stat-total {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .blue-icon {
-  width: 1rem;
-  height: 1rem;
+  width: 0.5rem;
+  height: 0.5rem;
   background-color: #096DD9;
   border-radius: 100%;
   margin-bottom: 1.5rem;
 }
 
 .map-stat-values {
-  color: #096DD9;
-  font-size: 1.5rem;
-  font-weight: bold;
+  color: #000;
+  font-size: 14px;
 }
 
-.map-stat-total {
-  color: #000000;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-top: 2rem;
-}
 
 .map-stat-total-num {
-  margin-top: 2rem;
+  margin-top: 1rem;
+}
+
+#icon-fix {
+  overflow: hidden;
 }
 
 #map-wrapper {
@@ -178,23 +170,25 @@ export default {
 
 #stat-point2 {
   color: #FFFFFF;
-  background-image: linear-gradient(to right ,#840000, #B10B0B);
-  display: flex;
-  flex-direction: column;
+  background-image: linear-gradient(to right top, #b10b0b, #c4190b, #d82509, #eb3106, #ff3d00);
+  overflow: hidden;
+  width:314px ;
+  height:166px;
 }
 
 #stat-point3 {
   color: #FFFFFF;
-  background-image: linear-gradient(to right, #087700,  #368700);
-  display: flex;
-  flex-direction: column;
+  background-image: linear-gradient(to right top, #4db6ac, #37a991, #2a9b73, #298c54, #2e7d32);
+  width:314px ;
+  height:166px;
 }
 
 #stat-point1 {
   color: #FFFFFF;
-  background-image: linear-gradient(to right, #087700,  #368700);
-  display: flex;
-  flex-direction: column;
+  background-image: linear-gradient(to right top, #4db6ac, #37a991, #2a9b73, #298c54, #2e7d32);
+  width:314px ;
+  height:166px;
+  bottom: 0;
 }
 
 .page_intro_name {
@@ -222,6 +216,7 @@ export default {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1rem 0.7rem;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 360px) {
