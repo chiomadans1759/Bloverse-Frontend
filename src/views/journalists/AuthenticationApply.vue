@@ -39,12 +39,12 @@
                 </Col>
                 <Col :sm="11" :xs="24">
                   <FormItem prop="phone" :error="errors.phoneNumber">
-                      <select v-model="applicant.phoneCode" class="code-dropdown">
+                      <select v-model="applicant.phoneCode" class="code-dropdown app_select_style">
                       <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
                         <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
                       </option>
                     </select>
-                    <input class="my-input" type="number" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
+                    <input class="my-input app_input_style" type="number" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
                   </FormItem>
                 </Col>
               </Row>
@@ -266,7 +266,14 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
+.app_input_style{
+    margin-left: 2px;
+    width: 78%;
+    border: 1px solid #dcdcdc;
+  } 
+.app_select_style{
+    border: 1px solid #dcdcdc;
+ }
 @media screen and (max-width: 768px) {
   .main-apply {
     height: auto;
@@ -276,6 +283,11 @@ export default {
 @media screen and (min-width: 768px) {
   .main-apply {
     height: 100vh;
+  }
+  .app_input_style{
+    margin-left: 0px;
+    width: 68%;
+    border: 1px solid #dcdcdc;
   }
 }
 
