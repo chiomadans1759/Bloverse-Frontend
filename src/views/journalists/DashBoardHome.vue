@@ -3,13 +3,13 @@
     <div class="container mt-4">
       <Row :gutter="32" id="stat-wrapper" v-if="show">
         <Col :sm="8" :xs="24" id="icon-fix">
-          <stat-card variant="fade" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week']}" />
+          <stat-card variant="fade" icon="fal fa-eye" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week']}" />
         </Col>
         <Col :sm="8" :xs="24" id="icon-fix">
-          <stat-card variant="primary" title="published" id="stat-point2" :stats="{ key:[articles.today, articles.week,  articles.total ] , value:[ 'Today' ,'This Week' ,'Articles']}" />
+          <stat-card variant="primary" icon="fal fa-rocket" title="published" id="stat-point2" :stats="{ key:[articles.today, articles.week,  articles.total ] , value:[ 'Today' ,'This Week' ,'Articles']}" />
         </Col>
         <Col :sm="8" :xs="24" id="icon-fix">
-          <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ key:[`${datas.categoryRank[0]} of ${datas.categoryRank[1]}`, `${datas.countryRank[0]} of ${datas.countryRank[1]}` , `${datas.point}`] , value:['Category' ,'Country' , 'Ranking']}" />
+          <stat-card variant="secondary" icon="fal fa-star" title="points" id="stat-point3" :stats="{ key:[`${datas.categoryRank[0]} of ${datas.categoryRank[1]}`, `${datas.countryRank[0]} of ${datas.countryRank[1]}` , `${datas.point}`] , value:['Category' ,'Country' , 'Ranking']}" />
         </Col>
       </Row>
       <div class="row">
@@ -19,8 +19,7 @@
                 type="GeoChart"
                 :data="chartData"
                 ref="chartData"
-                style="width: 75%;"
-              />
+                style="width: 75%;"/>
             </div>
             <div class="map-stat">
               <div class="map-stat-keys">

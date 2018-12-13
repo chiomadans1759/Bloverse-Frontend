@@ -3,45 +3,235 @@
     <h4 class="mb-4 text-bold" id="trend-card-heading">Top Stories</h4>
     <div class="desktop">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-      <ol class="carousel-indicators">
+      <ol class="carousel-indicators" v-show="general.trendingPost.length > 4">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1" v-show="general.trendingPost.length > 8"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
 
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row no-gutters">
-            <div class="col-3" v-for="(post,index) in general.trendingPost" :key="index">
-              <router-link :to="`posts/${post.slug}`"> 
+            <div class="col-3">
               <div class="card text-white">
-                <img class="card-img" :src="post.image_url" alt="Card image">
+                <img class="card-img" :src="general.trendingPost[0].image_url" alt="Card image">
                   <div class="card-img-overlay">
                     <h5 class="card-title">{{category}}</h5>
                     <p class="card-text">
-                      {{post.title}}
+                      {{general.trendingPost[0].title}}
                     </p>
                     <div class="author mt-4">
-                    <img class="rounded mr-3" :src="post.author.image_url" alt="">
-                    <span>{{post.author.first_name}} {{post.author.last_name}}</span>
+                    <img class="rounded mr-3" :src="general.trendingPost[0].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[0].author.first_name}} {{general.trendingPost[0].author.last_name}}
+                    </span>
                   </div>
                 </div>
               </div>
               </router-link> 
             </div>
-            
-            <div class="col-3" v-for="(post,index) in general.trendingPost" :key="index" v-if="index > 2">
-              <router-link :to="`posts/${post.slug}`"> 
+
+            <div class="col-3" v-if="general.trendingPost.length > 1">
               <div class="card text-white">
-                <img class="card-img" :src="post.image_url" alt="Card image">
+                <img class="card-img" :src="general.trendingPost[1].image_url" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      {{general.trendingPost[1].title}}
+                    </p>
+                    <div class="author mt-4">
+                    <img class="rounded mr-3" :src="general.trendingPost[1].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[1].author.first_name}} {{general.trendingPost[1].author.last_name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3" v-if="general.trendingPost.length > 2">
+              <div class="card text-white">
+                <img class="card-img" :src="general.trendingPost[2].image_url" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      {{general.trendingPost[2].title}}
+                    </p>
+                    <div class="author mt-4">
+                    <img class="rounded mr-3" :src="general.trendingPost[2].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[2].author.first_name}} {{general.trendingPost[2].author.last_name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3" v-if="general.trendingPost.length > 3">
+              <div class="card text-white">
+                <img class="card-img" :src="general.trendingPost[3].image_url" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      {{general.trendingPost[3].title}}
+                    </p>
+                    <div class="author mt-4">
+                    <img class="rounded mr-3" :src="general.trendingPost[3].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[3].author.first_name}} {{general.trendingPost[3].author.last_name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" v-if="general.trendingPost.length > 4">
+          <div class="row no-gutters">
+            <div class="col-3">
+              <div class="card text-white">
+                <img class="card-img" :src="general.trendingPost[4].image_url" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      {{general.trendingPost[4].title}}
+                    </p>
+                    <div class="author mt-4">
+                    <img class="rounded mr-3" :src="general.trendingPost[4].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[4].author.first_name}} {{general.trendingPost[4].author.last_name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-white">
+                <img class="card-img" :src="general.trendingPost[5].image_url" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      {{general.trendingPost[5].title}}
+                    </p>
+                    <div class="author mt-4">
+                    <img class="rounded mr-3" :src="general.trendingPost[5].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[5].author.first_name}} {{general.trendingPost[5].author.last_name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-white">
+                <img class="card-img" :src="general.trendingPost[6].image_url" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      {{general.trendingPost[6].title}}
+                    </p>
+                    <div class="author mt-4">
+                    <img class="rounded mr-3" :src="general.trendingPost[6].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[6].author.first_name}} {{general.trendingPost[6].author.last_name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-white">
+                <img class="card-img" :src="general.trendingPost[7].image_url" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      {{general.trendingPost[7].title}}
+                    </p>
+                    <div class="author mt-4">
+                    <img class="rounded mr-3" :src="general.trendingPost[7].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[7].author.first_name}} {{general.trendingPost[7].author.last_name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" v-if="general.trendingPost.length > 4">
+          <div class="row no-gutters">
+            <div class="col-3">
+              <div class="card text-white">
+                <img class="card-img" :src="general.trendingPost[8].image_url" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      {{general.trendingPost[8].title}}
+                    </p>
+                    <div class="author mt-4">
+                    <img class="rounded mr-3" :src="general.trendingPost[8].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[8].author.first_name}} {{general.trendingPost[8].author.last_name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-white">
+                <img class="card-img" :src="general.trendingPost[9].image_url" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      {{general.trendingPost[9].title}}
+                    </p>
+                    <div class="author mt-4">
+                    <img class="rounded mr-3" :src="general.trendingPost[9].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[9].author.first_name}} {{general.trendingPost[9].author.last_name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-white">
+                <img class="card-img" :src="general.trendingPost[10].image_url" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      {{general.trendingPost[10].title}}
+                    </p>
+                    <div class="author mt-4">
+                    <img class="rounded mr-3" :src="general.trendingPost[10].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[10].author.first_name}} {{general.trendingPost[10].author.last_name}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card text-white">
+                <img class="card-img" :src="general.trendingPost[11].image_url" alt="Card image">
                   <div class="card-img-overlay">
                     <h5 class="card-title">{{post.category}}</h5>
                     <p class="card-text">
-                      {{post.title}}
+                      {{general.trendingPost[11].title}}
                     </p>
                     <div class="author mt-4">
-                    <img class="rounded mr-3" :src="post.author.image_url" alt="">
-                    <span>{{post.author.first_name}} {{post.author.last_name}}</span>
+                    <img class="rounded mr-3" :src="general.trendingPost[11].author.image_url" alt="">
+                    <span>
+                      {{general.trendingPost[11].author.first_name}} {{general.trendingPost[11].author.last_name}}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -51,13 +241,11 @@
         </div>
       </div>
 
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" v-show="general.trendingPost.length > 4">
         <i class="fal fa-chevron-left"></i>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <!-- <span class="carousel-control-next-icon" aria-hidden="true">rere</span> -->
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" v-show="general.trendingPost.length > 4">
         <i class="fal fa-chevron-right" style="color: #fff; blur: none;"></i>
         <span class="sr-only">Next</span>
       </a>
@@ -70,10 +258,8 @@
      :autoplay= true
      paginationColor="#73C2FB;"
      paginationActiveColor="#096DD9"
-     :autoplayTimeout="3000"
-      >
-      <slide  v-for="(post,index) in general.publishedPosts" :key="index"  v-if="index < 2">
-        <router-link :to="`posts/${post.slug}`"> 
+     :autoplayTimeout="3000">
+      <slide v-for="(post, index) in general.publishedPosts" :key="index">
          <div class="card text-white">
            <img class="card-img" :src="post.image_url" alt="Card image">
               <div class="card-img-overlay">
@@ -82,7 +268,7 @@
                     {{post.title}}
                   </p>
                 <div class="author mt-4">
-                   <img class="rounded mr-3" :src="post.author.image_url" alt="">
+                  <img class="rounded mr-3" :src="post.author.image_url" alt="">
                    <span>{{post.author.first_name}} {{post.author.last_name}}</span>
                 </div>
               </div>
@@ -103,10 +289,13 @@ export default {
   name: "TrendingCards",
   components: { Row, Col, Avatar, Carousel, Slide },
   methods: {
-    ...mapActions(["getAllTrendingPosts"]),
+    ...mapActions(["getAllTrendingPosts"])
   },
   async created() {
     await this.getAllTrendingPosts();
+    setInterval(async () => {
+      await this.getAllTrendingPosts();
+    }, 100000)
   },
   computed: {
     ...mapState(["general"]),
