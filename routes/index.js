@@ -89,25 +89,63 @@ const routes = [
       },
       { path: 'verify', component: JournalistVerify },
       {
-        path: ':username', component: JournalistAccountLayout, meta: { journalist: true, auth: true },
+        path: ':username', component: JournalistAccountLayout, meta: { journalist: true, auth: true }, beforeEnter(to, from, next) {
+          if (store.getters.isAJournalist) {
+            next();
+          } else {
+            next('/creators');
+
+          }
+        },
         children: [
-          { path: '', component: MyProfile },
-          {
-            path: 'dashboard', name: 'journalist-dashboard', component: DashBoardHome, beforeEnter(to, from, next) {
-              if (store.getters.isAJournalist) {
-                next();
-              } else {
-                next({ name: 'creator-login' });
-              }
+          { path: '', component: MyProfile,beforeEnter(to, from, next) {
+            if (store.getters.isAJournalist) {
+              next();
+            } else {
+              next('/creators');
 
             }
+          }
+          },
+          { path: 'dashboard', name: 'journalist-dashboard', component: DashBoardHome,beforeEnter(to, from, next) {
+            if (store.getters.isAJournalist) {
+              next();
+            } else {
+              next('/creators');
+
+            }
+          }
           },
           {
-            path: 'posts', component: BlankBase,
+            path: 'posts', component: BlankBase, meta: { journalist: true, auth: true },
             children: [
-              { path: '', name: 'all-posts', component: MyPosts },
-              { path: 'create', name: 'create-post', component: CreatePost },
-              { path: ':slug/edit', component: CreatePost }
+              { path: '', name: 'all-posts', component: MyPosts, beforeEnter(to, from, next) {
+                if (store.getters.isAJournalist) {
+                  next();
+                } else {
+                  next('/creators');
+
+                }
+              }
+              },
+              { path: 'create', name: 'create-post', component: CreatePost, beforeEnter(to, from, next) {
+                if (store.getters.isAJournalist) {
+                  next();
+                } else {
+                  next('/creators');
+
+                }
+              } 
+              },
+              { path: ':slug/edit', component: CreatePost, beforeEnter(to, from, next) {
+                if (store.getters.isAJournalist) {
+                  next();
+                } else {
+                  next('/creators');
+
+                }
+              } 
+              },
             ]
           }
         ]
@@ -131,7 +169,16 @@ const routes = [
   },
   { path: '/login', component: ConsumerSignIn },
   */
-  { path: "*", component: NotFound }
+  { path: "*", component: NotFound },
+  { path: '/creators/*', component: NotFound, beforeEnter(to, from, next) {
+    if (store.getters.isAJournalist) {
+      next();
+    } else {
+      next('/creators');
+
+    }
+  } 
+  }
 ]
 
 
