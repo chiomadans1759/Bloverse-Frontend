@@ -35,10 +35,10 @@
                     <router-link :to="`/creators/${auth.loggedInUser.userName}/dashboard`" class="dropdown-item pl-4 pr-0">
                       <i class="far fa-th-large mr-1"></i> Dashboard
                     </router-link>
-                    <router-link :to="`/creators/${auth.loggedInUser.userName}/posts`"  class="dropdown-item pl-4 pr-0">
+                    <router-link :to="`/creators/${auth.loggedInUser.userName}/posts/create`"  class="dropdown-item pl-4 pr-0">
                       <i class="far fa-plus mr-1"></i> Create Post
                     </router-link>
-                    <router-link :to="`/creators/${auth.loggedInUser.userName}/posts/create`"  class="dropdown-item pl-4 pr-0">
+                    <router-link :to="`/creators/${auth.loggedInUser.userName}/posts`"  class="dropdown-item pl-4 pr-0">
                       <i class="fa fa-grip-horizontal mr-1"></i> Your Posts
                     </router-link>
                     <div class="dropdown-divider"></div>

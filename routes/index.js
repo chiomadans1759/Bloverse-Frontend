@@ -17,7 +17,7 @@ import CreatePost from '../src/views/journalists/CreatePost.vue';
 import JournalistApply from '../src/views/journalists/AuthenticationApply.vue';
 import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
-import JournalistLanding from '../src/views/journalists/Landing.vue';
+// import JournalistLanding from '../src/views/journalists/Landing.vue';
 
 import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
@@ -72,7 +72,7 @@ const routes = [
     path: '/creators',
     component: BlankBase,
     children: [
-      { path: '', component: JournalistLanding},
+      { path: '', component: GeneralLayout},
       { path: 'apply', component: JournalistApply },
       { path: 'setup', component: JournalistSetUp,
         beforeEnter(to, from, next) {
