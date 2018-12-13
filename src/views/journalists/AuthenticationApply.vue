@@ -9,11 +9,11 @@
         <div slot="footer"></div>
       </Modal>
 
-      <div class="container">
+      <div class="container mt-5">
         <div class="row justify-content-center">
           <div class="col-md-6">
             <router-link to="/" class="router-link">
-              <img class="logo" src="@/assets/Asset 1.svg" style="height: 40px" />
+              <img class="logo" src="@/assets/Logo.svg" style="height: 40px" />
             </router-link>
             <h3 class="mt-2 mb-5">Join Bloverse as a content creator</h3>
 
@@ -93,7 +93,7 @@
                 </h5>
               </div>
               <div class="text-secondary">
-                <h5>Have an account? <router-link id="login-link" to="login"> Log in here </router-link></h5>
+                <h5>Have an account? <router-link id="login-link" to="creators/login"> Log in here </router-link></h5>
               </div>
             </Form>
           </div>
