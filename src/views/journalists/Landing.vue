@@ -14,7 +14,7 @@
             </Col>
 
             <Col :md="12" :sm="24" :xs="24" class="right">
-              <img :src="require('./../../assets/jlanding.jpg')" alt="Journalists Landing">
+              <img :src="require('@/assets/jlanding.jpg')" alt="Journalists Landing">
               <Col offset="1" :md="0" :sm="22" :xs="22" class="right-text">
                 <h1>Interactive stories from the global community</h1>
                 <p>Connecting creators to the people</p>
@@ -26,10 +26,16 @@
           <Row class="container2">
             <Col :md="12" :sm="10" :xs="24" class="left2">
                 <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">  
-                <a href="https://www.youtube.com/embed/EjRM4DMdnGw" class="video-btn popup-youtube">
+                <iframe width="300" height="325" src="https://www.youtube.com/embed/EjRM4DMdnGw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                <img src ="./../../assets/video-image.jpg"/>              
+                  <button class="pulse-button">
+                    <i class="far fa-play-circle"></i>
+                    </button>
+                  </iframe>
+                <!-- <a href="https://www.youtube.com/embed/EjRM4DMdnGw" class="video-btn popup-youtube">
                   <img src ="./../../assets/video-image.jpg"/>              
                   <button class="pulse-button"><i class="far fa-play-circle"></i></button>
-                </a>
+                </a> -->
                 <div id="video-overlay" class="video-overlay">
                   <a class="video-overlay-close"></a>
                 </div>
@@ -188,6 +194,8 @@ export default {
 .container2 {
   display: flex;
   background-color: rgb(230, 221, 221);
+  width: 560;
+  height: 315;
 }
 
 
