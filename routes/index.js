@@ -92,7 +92,7 @@ const routes = [
             if (store.getters.isAJournalist) {
               next();
             } else {
-              next({name: 'creator-login'});
+              next('/creators');
             }
         
           }
