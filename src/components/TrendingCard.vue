@@ -3,9 +3,9 @@
     <h4 class="mb-4 text-bold" id="trend-card-heading">Top Stories</h4>
     <div class="desktop">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-      <ol class="carousel-indicators">
+      <ol class="carousel-indicators" v-show="general.trendingPost.length > 4">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1" v-show="general.trendingPost.length > 8"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
 
@@ -239,11 +239,11 @@
         </div>
       </div>
 
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" v-show="general.trendingPost.length > 4">
         <i class="fal fa-chevron-left"></i>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" v-show="general.trendingPost.length > 4">
         <i class="fal fa-chevron-right" style="color: #fff; blur: none;"></i>
         <span class="sr-only">Next</span>
       </a>
