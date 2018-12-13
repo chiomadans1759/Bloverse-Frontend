@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <main class="wrapper" id="journalist-account-sidebar">
     <!-- Sidebar -->
     <nav id="sidebar">
       <div class="sidebar-header">
@@ -8,39 +8,34 @@
         </router-link>
       </div>
 
-      <ul class="linkss">
-        <li class="list-inline-item">
+      <ul class="list-unstyled">
+        <li class="list-item">
           <router-link
             :to="`/creators/${auth.loggedInUser.userName}/dashboard`"
-            :class="{'active': currentRoute == 'journalist-dashboard'}"
-            id="dash-links">
-            <i class="far fa-th-large" style="color: #096DD9;"></i>
-            Dashboard
+            :class="{'active': currentRoute == 'journalist-dashboard'}">
+            <i class="far fa-th-large"></i>
+            <span class="ml-3">Dashboard</span>
           </router-link>
         </li>
-        <li class="list-inline-item">
+        <li class="list-item">
           <router-link
             :to="`/creators/${auth.loggedInUser.userName}/posts/create`"
-            :class="{'active': currentRoute == 'create-post'}"
-            id="dash-links"
-          >
-            <i class="fal fa-plus" style="color: #096DD9;"></i>
-            Create Content
+            :class="{'active': currentRoute == 'create-post'}">
+            <i class="fal fa-plus"></i>
+            <span class="ml-3">Create Content</span>
           </router-link>
         </li>
-        <li class="list-inline-item">
+        <li class="list-item">
           <router-link
             :to="`/creators/${auth.loggedInUser.userName}/posts`"
-            :class="{'active': currentRoute == 'all-posts'}"
-            id="dash-links"
-          >
-            <i class="fal fa-rocket" style="color: #096DD9;"></i>
-            My Posts
+            :class="{'active': currentRoute == 'all-posts'}">
+            <i class="fal fa-rocket"></i>
+            <span class="ml-3">My Posts</span>
           </router-link>
         </li>
       </ul>
 
-      <footer id="sidebar-footer">
+      <footer id="footer">
         <ul>
           <li style="margin-bottom:2rem;">
             <a href="/creators/login" @click.prevent="clearSession" class="mt-3">
@@ -54,13 +49,12 @@
             id="author-img"
             :src="auth.loggedInUser.imageUrl"
             alt="Author's Image"
-            class="avatar-img rounded"
-          >
+            class="avatar-img rounded">
           <span class="mt-2">{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</span>
         </div>
       </footer>
     </nav>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -83,57 +77,47 @@ export default {
 };
 </script>
 
-
 <style scoped>
-.wrapper {
-  margin: 2rem;
-  width: 100%;
-  height: 90vh;
+#journalist-account-sidebar {
+  padding: 4rem 2rem 2rem;
 }
 
-#sidebar {
-  min-width: 250px;
-  max-width: 250px;
+#journalist-account-sidebar .list-unstyled {
+  margin-top: 6rem;
 }
 
-.sidebar-header {
-  position: absolute;
-}
-
-.linkss {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5rem;
-  position: absolute;
-}
-
-.linkss li {
+#journalist-account-sidebar .list-unstyled li {
   margin-bottom: 2rem;
 }
 
-#dash-links {
-  color: #222222;
+#journalist-account-sidebar .list-unstyled li a {
   font-size: 16px;
 }
 
-.linkss li a.active {
+#journalist-account-sidebar .list-unstyled li a i {
+  color: #096dd9 !important;
+}
+
+#journalist-account-sidebar .list-unstyled li span {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+#journalist-account-sidebar .list-unstyled li a.active {
   border-right: 2px solid #096dd9;
   padding-right: 1rem;
 }
 
-#sidebar-footer {
-  bottom: 5%;
-  position: absolute;
+#journalist-account-sidebar #footer {
+  margin-top: 10rem;
 }
 
-#sidebar-footer ul li {
-  bottom: 0;
+#journalist-account-sidebar #footer ul li {
   list-style-type: none;
 }
 
-#sidebar-footer span {
+#journalist-account-sidebar #footer span {
   margin-left: 0.5rem;
   font-size: 14px;
-  color: #222222;
+  color: rgba(0, 0, 0, 0.9);
 }
 </style>

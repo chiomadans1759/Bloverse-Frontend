@@ -150,6 +150,10 @@ export default {
   width: 100%;
 }
 
+#auth-sign-in .row {
+  height: 100%;
+}
+
 #auth-sign-in .img-logo {
   height: 86px;
   margin-top: 25%;
@@ -162,7 +166,7 @@ export default {
 
 #auth-sign-in #auth-bg {
   width: 100%;
-  height: 36.04rem;
+  height: 100%;
 }
 
 @media only screen and (max-width: 980px) {

@@ -1,7 +1,7 @@
 <template>
   <div class="stat-card">
     <div class="main-stat">
-       <i class="fal fa-eye" id="stat-icon"></i>
+       <i :class="icon" id="stat-icon"></i>
       <div class="views-stat">
         <span class="stat-view">{{stats.key[2]}}</span>
         <p class="stat-title">{{title}}</p>
@@ -26,10 +26,9 @@ export default {
     Icon
   },
 
-  props: ["variant", "title", "stats"]
+  props: ["variant", "title", "stats", "icon"]
 };
 </script>
-
 
 <style>
 .stat-card {
