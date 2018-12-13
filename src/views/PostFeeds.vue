@@ -185,7 +185,7 @@ export default {
 }
 
 .post-feeds-category {
-  margin: 3rem 0rem;
+  margin: 3rem 0rem 0rem;
 }
 
 .post-feeds-category-sticky {

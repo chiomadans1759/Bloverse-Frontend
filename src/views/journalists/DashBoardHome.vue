@@ -19,8 +19,7 @@
                 type="GeoChart"
                 :data="chartData"
                 ref="chartData"
-                style="width: 75%;"
-              />
+                style="width: 75%;"/>
             </div>
             <div class="map-stat">
               <div class="map-stat-keys">
