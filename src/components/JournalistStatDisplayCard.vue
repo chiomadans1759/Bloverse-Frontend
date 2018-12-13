@@ -33,7 +33,7 @@ export default {
 <style>
 .stat-card {
   box-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.125rem;
+  border-radius: 4px;
 }
 
 .main-stat {
@@ -46,8 +46,6 @@ export default {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 500;
-
-
 }
 
 .view-stat {
