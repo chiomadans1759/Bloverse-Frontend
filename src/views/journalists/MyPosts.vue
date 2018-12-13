@@ -1,41 +1,40 @@
 <template>
-  <main>
-    <div id="all-posts">
-      <div class="row no-gutter" id="posts-tabs">
-        <div class="col-xs-6 pt-1" @click="currentSection('postp')" :class="{'active': current_section == 'postp'}">
-            <p class="text-uppercase">all posts</p>
-        </div>
-        <div class="col-xs-6 pt-1" @click="currentSection('draft')" :class="{'active': current_section == 'draft'}">
-            <p class="text-uppercase">all drafts</p>
-        </div>
-      </div>
+  <main id="all-posts">
+    <div class="btn-group mb-5 pb-3" role="group">
+      <button type="button" @click="currentSection('postp')" 
+        :class="{'btn' : true, 'btn-white': current_section != 'postp', 'btn-primary': current_section == 'postp'}" class="text-uppercase">
+        all posts
+      </button>
+      <button type="button" @click="currentSection('draft')" 
+        :class="{'btn' : true, 'btn-white': current_section != 'draft', 'btn-primary': current_section == 'draft'}" class="text-uppercase">
+        all drafts
+      </button>
     </div>
 
-     <br /><br />
-      <div v-if="showPosts">
-        <Row v-show="current_section == 'draft'" id="draft-container" >
-          <Col>
-            <DraftCard />
-          </Col>
-        </Row>
+    <div v-if="showPosts">
+      <Row v-show="current_section == 'draft'" id="draft-container" >
+        <Col v-for="post in general.draftPosts" :key="post.id">
+          <DraftCard />
+        </Col>
+      </Row>
 
-        <Row v-if="current_section == 'postp'" type="flex" justify="space-between" :gutter="12">
-          <Col v-for="post in journalist.posts" :key="post.id" :sm="24" :md="8">
-            <FeedCard :post="post" style="height: 414px;" />
-          </Col>
-        </Row>
-      </div> 
-      <div class="showposts" v-else>
-        <h2>This Place looks empty !</h2><br />
-        <router-link :to="`/creators/${auth.loggedInUser.userName}/posts/create`" id="showbutton">Create Posts Here</router-link>
-      </div>
+      <Row v-if="current_section == 'postp'" type="flex" justify="space-between" :gutter="12">
+        <Col v-for="post in journalist.posts" :key="post.id" :sm="24" :md="8">
+          <FeedCard :post="post" style="height: 414px;" />
+        </Col>
+      </Row>
+    </div> 
+    <div class="showposts" v-else>
+      <h2>This Place looks empty !</h2><br />
+      <router-link :to="`/creators/${auth.loggedInUser.userName}/posts/create`" id="showbutton">Create Posts Here</router-link>
+    </div>
   </main>
 </template>
 
 
 <script>
 import { Row, Col, Button, Card } from 'iview';
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 
 import FeedCard from '@/components/FeedCard.vue';
 import DraftCard from '@/components/DraftCard.vue'
@@ -56,21 +55,24 @@ export default {
 
     showPosts: function () {
       return this.journalist.posts && this.journalist.posts.length > 0
-    }
+    },
   },
   async created () {
-    // fetch the data when the view is created and the data is
+    // fetch the data whethis.getMyPostn the view is created and the data is
     // already being observed
-    await this.getMyPosts()
+    await this. getMyPosts()
+    await this. getMyDrafts()
   },
   watch: {
     // call again the method if the route changes
-    '$route': 'getMyPosts'
+    '$route': ' getMyPosts'
   },
   methods: {
     ...mapActions([
-      'getMyPosts'
+      'getMyPosts',
+      'getMyDrafts'
     ]),
+    
 
     currentSection(section) {
       this.current_section = section;
@@ -81,12 +83,27 @@ export default {
 
 
 <style>
-
 #all-posts {
   width: 100%;
   margin: 0 auto;
   padding-top: 4rem;
   padding-left: 1rem;
+}
+
+#all-posts .btn-group .btn:first-child {
+  border-radius: 4px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+#all-posts .btn-group .btn:last-child {
+  border-radius: 4px !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+#all-posts .btn-group .btn {
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .showposts{
@@ -120,7 +137,7 @@ export default {
 }
 
 #all-posts #posts-tabs {
-  width: 20%;
+  width: 30%;
   height: 2rem;
   background-color: #ffffff;
   border: 1px solid #096DD9;

@@ -1,10 +1,10 @@
 <template>
   <main class="post-feeds">
-    <div class="container">
+    <div class="container" id="trend">
       <TrendingCard/>
     </div>
 
-    <section class="container">
+    <section class="container" id="cat-nav">
       <div class="post-feeds-category" id="post-feeds-category">
         <div class="row">
           <div class="col-md-2">
@@ -72,7 +72,7 @@
           </div>
         </div>
       </div>
-      <display-feeds></display-feeds>
+      <display-feeds style="margin-top: -1rem;"></display-feeds>
     </section>
   </main>
 </template>
@@ -185,7 +185,7 @@ export default {
 }
 
 .post-feeds-category {
-  margin: 3rem 0rem;
+  margin: 3rem 0rem 0rem;
 }
 
 .post-feeds-category-sticky {
@@ -235,6 +235,9 @@ export default {
   float: right;
 }
 
+#cat-nav {
+  margin-top: -2rem;
+}
 #layout-select a {
   color: rgba(0, 0, 0, 0.3);
   font-size: 24px !important;

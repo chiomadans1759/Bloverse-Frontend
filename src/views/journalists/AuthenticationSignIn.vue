@@ -46,9 +46,6 @@
                     <router-link class="btn-link" to="/creators/apply" @click.native="close()">Register Now</router-link>
                   </p>
                 </div>
-                <div class="col-auto">
-                  <p class="text-right">Forgot Password ?</p>
-                </div>
               </div>
             </FormItem>
           </Form>
@@ -150,6 +147,10 @@ export default {
   width: 100%;
 }
 
+#auth-sign-in .row {
+  height: 100%;
+}
+
 #auth-sign-in .img-logo {
   height: 86px;
   margin-top: 25%;
@@ -162,7 +163,7 @@ export default {
 
 #auth-sign-in #auth-bg {
   width: 100%;
-  height: 36.04rem;
+  height: 100%;
 }
 
 @media only screen and (max-width: 980px) {

@@ -25,7 +25,7 @@
       </div>
       <div class="card-container2"> 
         <div class="card-overlay">
-          <h4>{{post.title}}</h4></br>
+          <h4>{{post.title}}</h4> </br>
           <p id="travel-details">
             <i class="fas fa-camera-retro"></i>{{post.device_type}} 
             </br><span> <i class="fas fa-map-marker-alt"></i>{{post.location}}</span>

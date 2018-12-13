@@ -3,10 +3,10 @@ import store from '../stores';
 
 import GeneralLayout from '@/layouts/GeneralLayout';
 import BlankBase from '@/layouts/BlankBase';
-import DashboardSidebar from '@/layouts/DashboardSidebar';
+import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
 
 import PostFeeds from '../src/views/PostFeeds.vue';
-import PostDisplay from '../src/views/PostDisplay.vue'; 
+import PostDisplay from '../src/views/PostDisplay.vue';
 
 
 import MyProfile from '../src/views/journalists/MyProfile.vue';
@@ -47,24 +47,26 @@ import ConsumerProfile from '../src/views/consumers/ConsumerProfile.vue';
 const routes = [
   {
     path: '/', component: GeneralLayout,
-    children: [ 
+    children: [
       { path: '', component: PostFeeds },
       { path: 'posts', redirect: '/' },
       { path: 'posts/:slug', component: PostDisplay }
     ]
   },
-  { path: '/admin', component: BlankBase,
+  {
+    path: '/admin', component: BlankBase,
     children: [
       { path: '', redirect: 'dashboard' },
-      { path: 'dashboard', component: AdminHome, meta: { admin: true, auth: true },beforeEnter(to, from, next) {
-        if (store.getters.isAnAdmin) {
+      {
+        path: 'dashboard', component: AdminHome, meta: { admin: true, auth: true }, beforeEnter(to, from, next) {
+          if (store.getters.isAnAdmin) {
+            next();
+          } else {
+
+            next('/admin/login');
+          }
           next();
-        } else {
-            
-          next('/admin/login');
         }
-        next();
-      }
       },
       { path: 'login', component: AdminLogin }
     ]
@@ -73,9 +75,10 @@ const routes = [
     path: '/creators',
     component: BlankBase,
     children: [
-      { path: '', component: JournalistLanding},
+      { path: '', component: JournalistLanding },
       { path: 'apply', component: JournalistApply },
-      { path: 'setup', component: JournalistSetUp,
+      {
+        path: 'setup', component: JournalistSetUp,
         beforeEnter(to, from, next) {
           if (store.getters.isAllowedToRegister) {
             next()
@@ -85,7 +88,8 @@ const routes = [
         }
       },
       { path: 'verify', component: JournalistVerify },
-      { path: ':username', component: DashboardSidebar, meta: { journalist: true, auth: true },
+      {
+        path: ':username', component: JournalistAccountLayout, meta: { journalist: true, auth: true },
         children: [
           { path: '', component: MyProfile},
           { path: 'dashboard', name: 'journalist-dashboard', component: DashBoardHome,beforeEnter(to, from, next) {
@@ -93,11 +97,12 @@ const routes = [
               next();
             } else {
               next('/creators');
+
             }
-        
           }
           },
-          { path: 'posts', component: BlankBase,
+          {
+            path: 'posts', component: BlankBase,
             children: [
               { path: '', name: 'all-posts', component: MyPosts },
               { path: 'create', name: 'create-post', component: CreatePost },

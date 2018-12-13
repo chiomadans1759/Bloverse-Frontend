@@ -11,6 +11,7 @@ export default {
     activeFeedLayout: 'grid',
     applicants: [],
     publishedPosts: [],
+    draftPosts: [],
     trendingPost: [],
     currentPost: {},
     journalists: [],
@@ -127,6 +128,10 @@ export default {
       let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
       commit('setPublishedPosts', response.data.posts);
     },
+    async getAllDraftPosts({ commit }, { category = "", country = "" }) {
+      let response = await Api.get(`posts?is_published=false&category=${category}&country=${country}`);
+      commit('setDraftPosts', response.data.posts);
+    },
     async getAllTrendingPosts({ commit }) {
       let response = await Api.get(`posts/trending/`);
       commit('setTrendingPost', response.data.post);
@@ -158,6 +163,9 @@ export default {
     },
     setPublishedPosts(state, posts) {
       state.publishedPosts = posts;
+    },
+    setDraftPosts(state, posts) {
+      state.draftPosts = posts;
     },
     setJournalists(state, journalists) {
       state.journalists = journalists;
