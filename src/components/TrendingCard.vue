@@ -13,6 +13,7 @@
         <div class="carousel-item active">
           <div class="row no-gutters">
             <div class="col-3">
+              <router-link :to="`posts/${general.trendingPost[0].slug}`"> 
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[0].image_url" alt="Card image">
                   <div class="card-img-overlay">
@@ -28,10 +29,11 @@
                   </div>
                 </div>
               </div>
-              </router-link> 
+              </router-link>
             </div>
 
             <div class="col-3" v-if="general.trendingPost.length > 1">
+              <router-link :to="`posts/${general.trendingPost[1].slug}`"> 
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[1].image_url" alt="Card image">
                   <div class="card-img-overlay">
@@ -47,6 +49,7 @@
                   </div>
                 </div>
               </div>
+              </router-link>
             </div>
 
             <div class="col-3" v-if="general.trendingPost.length > 2">
@@ -235,7 +238,6 @@
                   </div>
                 </div>
               </div>
-              </router-link>
             </div>
           </div>
         </div>
@@ -259,7 +261,8 @@
      paginationColor="#73C2FB;"
      paginationActiveColor="#096DD9"
      :autoplayTimeout="3000">
-      <slide v-for="(post, index) in general.publishedPosts" :key="index">
+      <slide v-for="(post, index) in general.trendingPost" :key="index" v-if="index < 3">
+        <router-link :to="`posts/${post.slug}`"> 
          <div class="card text-white">
            <img class="card-img" :src="post.image_url" alt="Card image">
               <div class="card-img-overlay">

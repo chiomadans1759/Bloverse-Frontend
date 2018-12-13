@@ -13,11 +13,11 @@
   <main id="create-post">
     <div class="btn-group mb-5 pb-3" role="group">
       <button type="button" @click="currentSection('basic')" 
-        :class="{'btn' : true, 'btn-white': current_section != 'basic', 'btn-primary': current_section == 'basic'}">
+        :class="{'btn' : true, 'btn-white': current_section != 'basic', 'btn-primary': current_section == 'basic'}" class="text-uppercase">
         basic template
       </button>
       <button type="button" @click="currentSection('travel')" 
-        :class="{'btn' : true, 'btn-white': current_section != 'travel', 'btn-primary': current_section == 'travel'}">
+        :class="{'btn' : true, 'btn-white': current_section != 'travel', 'btn-primary': current_section == 'travel'}" class="text-uppercase">
         photo template
       </button>
     </div>

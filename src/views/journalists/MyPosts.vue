@@ -2,11 +2,11 @@
   <main id="all-posts">
     <div class="btn-group mb-5 pb-3" role="group">
       <button type="button" @click="currentSection('postp')" 
-        :class="{'btn' : true, 'btn-white': current_section != 'postp', 'btn-primary': current_section == 'postp'}">
+        :class="{'btn' : true, 'btn-white': current_section != 'postp', 'btn-primary': current_section == 'postp'}" class="text-uppercase">
         all posts
       </button>
       <button type="button" @click="currentSection('draft')" 
-        :class="{'btn' : true, 'btn-white': current_section != 'draft', 'btn-primary': current_section == 'draft'}">
+        :class="{'btn' : true, 'btn-white': current_section != 'draft', 'btn-primary': current_section == 'draft'}" class="text-uppercase">
         all drafts
       </button>
     </div>
@@ -60,15 +60,15 @@ export default {
   async created () {
     // fetch the data when the view is created and the data is
     // already being observed
-    await this. getAllPublishedPosts()
+    await this. getAllPosts()
   },
   watch: {
     // call again the method if the route changes
-    '$route': ' getAllPublishedPosts'
+    '$route': ' getAllPosts'
   },
   methods: {
     ...mapActions([
-      ' getAllPublishedPosts'
+      ' getAllPosts'
     ]),
 
     currentSection(section) {

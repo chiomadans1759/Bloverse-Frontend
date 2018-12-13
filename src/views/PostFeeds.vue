@@ -72,7 +72,7 @@
           </div>
         </div>
       </div>
-      <display-feeds style="margin-top: -3rem;"></display-feeds>
+      <display-feeds style="margin-top: -1rem;"></display-feeds>
     </section>
   </main>
 </template>
