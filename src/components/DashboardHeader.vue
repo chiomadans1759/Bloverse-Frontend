@@ -43,7 +43,7 @@
       <footer id="sidebar-footer">
         <ul>
           <li style="margin-bottom:2rem;">
-            <a href="/creators/login" @click.prevent="clearSession" class="mt-3">
+            <a href="" @click.prevent="logOut" class="mt-3">
               <i class="fal fa-power-off" style="color: #D9091E; font-size:16px; "></i>
               <span>Sign Out</span>
             </a>
@@ -71,7 +71,11 @@ import LoginButton from "./LoginButton";
 export default {
   components: { Row, Col, LoginButton },
   methods: {
-    ...mapActions(["clearSession"])
+    ...mapActions(["clearSession"]),
+    logOut(){
+      this.clearSession();
+      this.$router.push('/creators');
+    }
   },
   computed: {
     ...mapState(["auth"]),
