@@ -32,7 +32,7 @@
                   <p v-for="(data, index) in chartData" 
                     :key="index" 
                     v-if="index > 0"
-                    style="font-size: 14px;">
+                    style="font-size: 14px;" class="mb-2">
                     <span> {{ data[0] }} </span>
                   </p>
                 </div>
@@ -40,9 +40,19 @@
                 <div class="col-auto">
                   <p v-for="(data, index) in chartData" 
                     :key="index" 
-                    v-if="index > 0">
+                    v-if="index > 0" class="mb-3">
                     <span>{{ data[1] }}</span>
                   </p>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col">
+                  <h4>TOTAL</h4>
+                </div>
+
+                <div class="col-auto">
+                  <p>{{ chartData.filter((e, i) => i !== 0).reduce((acc, a) => acc + a[1], 0) }}</p>
                 </div>
               </div>
             </li>
@@ -179,6 +189,10 @@ export default {
   background-image: linear-gradient(to right top, #4db6ac, #37a991, #2a9b73, #298c54, #2e7d32);
   width: 314px;
   height: 166px;
+}
+
+#journalist-dashboard .list-group .list-group-item {
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 360px) {
