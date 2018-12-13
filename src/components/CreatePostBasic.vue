@@ -35,6 +35,7 @@
                     v-for="item in general.categories"
                     :value="item.id"
                     :key="item.id"
+                    v-if="item.name != 'All'"
                   >{{item.name}}</Option>
                 </Select>
               </Col>
@@ -44,6 +45,7 @@
                     v-for="item in general.countries"
                     :value="item.id"
                     :key="item.id"
+                    v-if="item.name != 'All'"
                   >{{item.name}}</Option>
                 </Select>
               </Col>
