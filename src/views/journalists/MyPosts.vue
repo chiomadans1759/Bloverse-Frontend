@@ -120,7 +120,7 @@ export default {
 }
 
 #all-posts #posts-tabs {
-  width: 20%;
+  width: 30%;
   height: 2rem;
   background-color: #ffffff;
   border: 1px solid #096DD9;

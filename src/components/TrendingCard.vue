@@ -13,10 +13,11 @@
         <div class="carousel-item active">
           <div class="row no-gutters">
             <div class="col-3" v-for="(post,index) in general.trendingPost" :key="index">
+              <router-link :to="`posts/${post.slug}`"> 
               <div class="card text-white">
                 <img class="card-img" :src="post.image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{category}}</h5>
                     <p class="card-text">
                       {{post.title}}
                     </p>
@@ -26,13 +27,15 @@
                   </div>
                 </div>
               </div>
+              </router-link> 
             </div>
             
-            <div class="col-3" v-for="(post,index) in general.publishedPosts" :key="index" v-if="index < 2">
+            <div class="col-3" v-for="(post,index) in general.trendingPost" :key="index" v-if="index > 2">
+              <router-link :to="`posts/${post.slug}`"> 
               <div class="card text-white">
                 <img class="card-img" :src="post.image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{post.category}}</h5>
                     <p class="card-text">
                       {{post.title}}
                     </p>
@@ -42,6 +45,7 @@
                   </div>
                 </div>
               </div>
+              </router-link>
             </div>
           </div>
         </div>
@@ -68,20 +72,22 @@
      paginationActiveColor="#096DD9"
      :autoplayTimeout="3000"
       >
-      <slide v-for="i in 12" :key="i">
+      <slide  v-for="(post,index) in general.publishedPosts" :key="index"  v-if="index < 2">
+        <router-link :to="`posts/${post.slug}`"> 
          <div class="card text-white">
-            <img class="card-img" src="./../assets/trending/business.jpg" alt="Card image">
+           <img class="card-img" :src="post.image_url" alt="Card image">
               <div class="card-img-overlay">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">{{categoryName}}</h5>
                   <p class="card-text">
-                    This is a wider card with supporting text below as a natural.
+                    {{post.title}}
                   </p>
                 <div class="author mt-4">
-                  <img class="rounded mr-3" src="https://via.placeholder.com/300/09f/fff.png" alt="">
-                   <span>John Obi</span>
+                   <img class="rounded mr-3" :src="post.author.image_url" alt="">
+                   <span>{{post.author.first_name}} {{post.author.last_name}}</span>
                 </div>
               </div>
             </div>
+        </router-link>
       </slide>
     </carousel>
   </div>
@@ -98,14 +104,20 @@ export default {
   components: { Row, Col, Avatar, Carousel, Slide },
   methods: {
     ...mapActions(["getAllTrendingPosts"]),
-    ...mapActions(["getAllPublishedPosts"])
   },
   async created() {
     await this.getAllTrendingPosts();
-    await this.getAllPublishedPosts()
   },
   computed: {
-    ...mapState(["general"])
+    ...mapState(["general"]),
+    categoryName() {
+      if (this.category) {
+        let category = this.general.trending.find(
+          cat => cat.id == this.category.id
+        );
+        return category.name;
+      }
+    }
   }
 };
 </script>
@@ -340,6 +352,9 @@ export default {
   #trending-card .card {
   height: 170px;
   margin-right: 0.8rem;
+}
+ #trending-card .card .card-img-overlay {
+  padding-top: 3rem;
 }
 
   }

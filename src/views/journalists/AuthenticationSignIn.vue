@@ -46,9 +46,6 @@
                     <router-link class="btn-link" to="/creators/apply" @click.native="close()">Register Now</router-link>
                   </p>
                 </div>
-                <div class="col-auto">
-                  <p class="text-right">Forgot Password ?</p>
-                </div>
               </div>
             </FormItem>
           </Form>
