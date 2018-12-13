@@ -2,18 +2,18 @@
   <main id="all-posts">
     <div class="btn-group mb-5 pb-3" role="group">
       <button type="button" @click="currentSection('postp')" 
-        :class="{'btn' : true, 'btn-white': current_section != 'postp', 'btn-primary': current_section == 'postp'}">
+        :class="{'btn' : true, 'btn-white': current_section != 'postp', 'btn-primary': current_section == 'postp'}" class="text-uppercase">
         all posts
       </button>
       <button type="button" @click="currentSection('draft')" 
-        :class="{'btn' : true, 'btn-white': current_section != 'draft', 'btn-primary': current_section == 'draft'}">
+        :class="{'btn' : true, 'btn-white': current_section != 'draft', 'btn-primary': current_section == 'draft'}" class="text-uppercase">
         all drafts
       </button>
     </div>
 
     <div v-if="showPosts">
       <Row v-show="current_section == 'draft'" id="draft-container" >
-        <Col>
+        <Col v-for="post in general.draftPosts" :key="post.id">
           <DraftCard />
         </Col>
       </Row>
@@ -34,7 +34,7 @@
 
 <script>
 import { Row, Col, Button, Card } from 'iview';
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 
 import FeedCard from '@/components/FeedCard.vue';
 import DraftCard from '@/components/DraftCard.vue'
@@ -55,21 +55,24 @@ export default {
 
     showPosts: function () {
       return this.journalist.posts && this.journalist.posts.length > 0
-    }
+    },
   },
   async created () {
-    // fetch the data when the view is created and the data is
+    // fetch the data whethis.getMyPostn the view is created and the data is
     // already being observed
-    await this.getMyPosts()
+    await this. getMyPosts()
+    await this. getMyDrafts()
   },
   watch: {
     // call again the method if the route changes
-    '$route': 'getMyPosts'
+    '$route': ' getMyPosts'
   },
   methods: {
     ...mapActions([
-      'getMyPosts'
+      'getMyPosts',
+      'getMyDrafts'
     ]),
+    
 
     currentSection(section) {
       this.current_section = section;
@@ -134,7 +137,7 @@ export default {
 }
 
 #all-posts #posts-tabs {
-  width: 20%;
+  width: 30%;
   height: 2rem;
   background-color: #ffffff;
   border: 1px solid #096DD9;

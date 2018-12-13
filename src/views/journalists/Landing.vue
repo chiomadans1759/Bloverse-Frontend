@@ -1,24 +1,24 @@
 <template>
   <div class="layout" id="journalist-landing">
     <Layout>
+      <HeaderGeneral />
       <Content>
         <div>
-					<HeaderGeneral/>
           <Row class="container1">
             <Col :md="12" :sm="0" :xs="0" class="left">
               <Col offset="3" :md="20" :sm="14" :xs="16" class="left-contain">
                 <h1>Interactive stories from the global community</h1>
                 <p>Connecting creators to the people</p>
-                <button>GET STARTED</button>
+                <router-link to="/creators/apply" id="get-start">get started</router-link>
               </Col>
             </Col>
 
             <Col :md="12" :sm="24" :xs="24" class="right">
-              <img :src="require('./../../assets/jlanding.jpg')" alt="Journalists Landing">
+              <img :src="require('@/assets/jlanding.jpg')" alt="Journalists Landing">
               <Col offset="1" :md="0" :sm="22" :xs="22" class="right-text">
                 <h1>Interactive stories from the global community</h1>
                 <p>Connecting creators to the people</p>
-                <button>GET STARTED</button>
+                <router-link to="/creators/apply" id="get-start">get started</router-link>
               </Col>
             </Col>
           </Row>
@@ -26,10 +26,13 @@
           <Row class="container2">
             <Col :md="12" :sm="10" :xs="24" class="left2">
                 <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">  
-                <a href="https://www.youtube.com/embed/EjRM4DMdnGw" class="video-btn popup-youtube">
+                <iframe width="300" height="325" src="https://www.youtube.com/embed/EjRM4DMdnGw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    
+                  </iframe>
+                <!-- <a href="https://www.youtube.com/embed/EjRM4DMdnGw" class="video-btn popup-youtube">
                   <img src ="./../../assets/video-image.jpg"/>              
                   <button class="pulse-button"><i class="far fa-play-circle"></i></button>
-                </a>
+                </a> -->
                 <div id="video-overlay" class="video-overlay">
                   <a class="video-overlay-close"></a>
                 </div>
@@ -157,7 +160,7 @@ export default {
   margin-left:2rem;
 }
 
-.left button {
+.left #get-start {
   border-radius: 2px;
   color: rgb(12, 54, 243);
   border: none;
@@ -166,11 +169,24 @@ export default {
   margin-top: 2rem;
   margin-left:2rem;
   font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
 }
 
 .right {
   background-color: #000;
   height: 100%;
+}
+
+.right #get-start {
+  border-radius: 2px;
+  color: rgb(12, 54, 243);
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  margin-top: 2rem;
+  margin-left:2rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
 }
 
 .right img {
@@ -188,6 +204,8 @@ export default {
 .container2 {
   display: flex;
   background-color: rgb(230, 221, 221);
+  width: 560;
+  height: 315;
 }
 
 

@@ -63,8 +63,7 @@ export default {
 
 .days-stat {
   margin-top: 3.7rem;
-  align-content: flex-end;
-  float: right;
+  margin-right: 1.5rem;
 } 
 
 .stat-today {
