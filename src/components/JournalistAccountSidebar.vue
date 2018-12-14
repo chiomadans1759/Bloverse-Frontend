@@ -103,12 +103,16 @@ export default {
 }
 
 #journalist-account-sidebar .list-unstyled li span {
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.65);
 }
 
 #journalist-account-sidebar .list-unstyled li a.active {
   border-right: 2px solid #096dd9;
   padding-right: 1rem;
+}
+
+#journalist-account-sidebar .list-unstyled li a.active span {
+  color: rgba(0, 0, 0, 0.9);
 }
 
 #journalist-account-sidebar #footer {

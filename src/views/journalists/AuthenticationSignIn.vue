@@ -3,9 +3,7 @@
     <div class="row">
       <div class="col-md-5">
         <div class="container pl-lg-6 pr-lg-5">
-          <div class="text-center mb-5">
-            <img src="@/assets/Logo.svg" alt class="img-logo">
-          </div>
+          <img src="@/assets/Logo.svg" style="width: 2.8rem;" alt class="img-logo">
 
           <Form ref="loginForm"
             class="auth-form login-form"

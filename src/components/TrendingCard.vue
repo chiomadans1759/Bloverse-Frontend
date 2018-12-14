@@ -315,7 +315,6 @@ export default {
 </script>
 
 <style scoped>
-
 .mobile {
   display: none;
 }
@@ -333,7 +332,7 @@ export default {
   height: 180px;
   box-shadow: none !important;
   border: 0px !important;
-  border-radius: 0px !important;
+  border-radius: 4px !important;
   margin-right: 0.4rem;
 }
 
@@ -347,10 +346,12 @@ export default {
   height: 100%;
   top: 0; 
   left: 0;
+  border-radius: 4px !important;
 }
 
 #trending-card .card img {
   height: 100%;
+  border-radius: 4px !important;
 }
 
 #trending-card .carousel-indicators {

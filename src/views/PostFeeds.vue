@@ -13,7 +13,6 @@
               label="name"
               placeholder="Country"
               v-model="country"
-              v-if="allow"
               @input="filterCountry">
             </v-select>
           </div>
@@ -50,7 +49,7 @@
             </div>
           </div>
 
-          <div class="col-md-2" style="margin-top: -0.8rem;">
+          <div class="col-md-2 mr-0" style="margin-top: -0.8rem;">
             <ul class="list-inline" id="layout-select">
               <li class="list-inline-item">
                 <a
@@ -60,12 +59,12 @@
                   <i class="fal fa-grip-horizontal fa-1x"></i>
                 </a>
               </li>
-              <li class="list-inline-item">
+              <li class="list-inline-item mr-0">
                 <a
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'stack'}"
                   @click.prevent="toggleLayout('stack')">
-                  <i class="far fa-square-full fa-1x"></i>
+                  <i class="far fa-layer-group fa-1x"></i>
                 </a>
               </li>
             </ul>
