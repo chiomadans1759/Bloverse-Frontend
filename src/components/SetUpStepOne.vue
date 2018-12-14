@@ -15,7 +15,7 @@
       <Input class="my-input" v-model="user.phone" readonly placeholder="Phone*" />
     </FormItem> -->
     <FormItem>
-      <select v-model="phoneCode" class="code-dropdown app_select_style">
+      <select v-model="user.code" class="code-dropdown app_select_style">
         <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
           <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
         </option>
