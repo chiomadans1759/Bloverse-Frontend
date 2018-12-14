@@ -55,51 +55,57 @@
                 </input>
               </FormItem>
               
-              <FormItem prop="twitter" :error="errors.twitter">
-                <Input class="my-input" v-model="applicant.twitterUsername" placeholder="Twitter profile username"  >
-                    <span slot="prepend">https://www.twitter.com/</span>
-                </input>
-              </FormItem>
-              
-              <FormItem prop="articles" :error="errors.articles" v-for="(value, index)  in 3" :key="value">
-                <Input class="my-input" v-model="applicant.articleURLs[index]" placeholder="Link to written article">
-                    <Select slot="prepend" v-model="applicant.articleProtocols[index]" style="width: 80px">
-                      <Option value="https://">https://</Option> 
-                      <Option value="http://">http://</Option>
-                    </Select>
-                </input>
-              </FormItem>
-              <Row type="flex" justify="space-between">
-                <Col :sm="11" :xs="24">
-                  <FormItem prop="country" :error="errors.countryId">
-                  <v-select :options="general.countries" label="name" placeholder="Country*" class="my-select" v-model="applicant.country">
-                    </v-select>
-                  </FormItem>
-                </Col>
-                <Col :sm="11" :xs="24">
-                  <FormItem prop="category" :error="errors.categoryId">
-                    <v-select :options="general.categories" label="name" placeholder="Category*" class="my-select" v-model="applicant.category">
-                    </v-select>
-                  </FormItem>
-                </Col>
-              </Row>
-              <!--<FormItem prop="terms">
-                <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
-              </FormItem>-->
-              <button class="btn btn-primary btn-block" @click.prevent="handleSubmit">SUBMIT</button>
-              <div class="my-3 text-secondary">
-                <h5>
-                  By clicking apply, you agree to <a href="#" class="text-link">Terms</a> and <a href="#" class="text-link">Privacy</a>
-                </h5>
-              </div>
-              <div class="text-secondary">
-                <h5>Have an account? <router-link id="login-link" to="creators/login"> Log in here </router-link></h5>
-              </div>
-            </Form>
-          </div>
+            <FormItem prop="linkedIn" :error="errors.linkedIn">
+              <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username"  >
+                  <span slot="prepend">https://www.linkedin.com/in/</span>
+              </input>
+            </FormItem>
+            
+            <FormItem prop="twitter" :error="errors.twitter">
+              <Input class="my-input" v-model="applicant.twitterUsername" placeholder="Twitter profile username"  >
+                  <span slot="prepend">https://www.twitter.com/</span>
+              </input>
+            </FormItem>
+            
+            <FormItem prop="articles" :error="errors.articles" v-for="(value, index)  in 3" :key="value">
+              <Input class="my-input" v-model="applicant.articleURLs[index]" placeholder="Link to written article">
+                  <Select slot="prepend" v-model="applicant.articleProtocols[index]" style="width: 80px">
+                    <Option value="https://">https://</Option> 
+                    <Option value="http://">http://</Option>
+                  </Select>
+              </input>
+            </FormItem>
+            <Row type="flex" justify="space-between">
+              <Col :sm="11" :xs="24">
+                <FormItem prop="country" :error="errors.countryId">
+                <v-select :options="general.countries" label="name" placeholder="Country*" class="my-select" v-model="applicant.country">
+                  </v-select>
+                </FormItem>
+              </Col>
+              <Col :sm="11" :xs="24">
+                <FormItem prop="category" :error="errors.categoryId">
+                  <v-select :options="general.categories" label="name" placeholder="Category*" class="my-select" v-model="applicant.category">
+                  </v-select>
+                </FormItem>
+              </Col>
+            </Row>
+            <!--<FormItem prop="terms">
+              <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
+            </FormItem>-->
+            <button class="btn btn-primary btn-block" @click.prevent="handleSubmit">SUBMIT</button>
+            <div class="my-3 text-secondary">
+              <h5>
+                By clicking apply, you agree to <a href="#" class="text-link">Terms</a> and <a href="#" class="text-link">Privacy</a>
+              </h5>
+            </div>
+            <div class="text-secondary">
+              <h5>Have an account? <login-button style="margin-top: -0.2rem;"/></h5>
+            </div>
+          </Form>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -116,6 +122,7 @@ import {
   Select,
   Option
 } from "iview";
+import LoginButton from "@/components/LoginButton"
 import { mapState, mapActions } from "vuex";
 import vSelect from "vue-select";
 import countryFlags from "../../countryFlags.js";
@@ -133,7 +140,8 @@ export default {
     Button,
     vSelect,
     Select,
-    Option
+    Option,
+    LoginButton
   },
   data: function() {
     return {
@@ -332,24 +340,6 @@ export default {
   border: 0.1rem solid #bdbdbd;
   border-radius: 0.5rem;
   color: #000000;
-}
-
-@media screen and (min-width: 20rem) {
-  #phone-input {
-    width: 10rem;
-  }
-}
-
-@media screen and (min-width: 64rem) {
-  #phone-input {
-    width: 17rem;
-  }
-}
-
-@media screen and (min-width: 90rem) {
-  #phone-input {
-    width: 11.5rem;
-  }
 }
 
 .country-dropdown {
