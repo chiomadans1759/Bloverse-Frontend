@@ -15,12 +15,12 @@
       <Input class="my-input" v-model="user.phone" readonly placeholder="Phone*" />
     </FormItem> -->
     <FormItem>
-      <select v-model="phoneCode" class="code-dropdown app_select_style">
+      <select v-model="user.code" class="code-dropdown app_select_style">
         <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
           <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
         </option>
       </select>
-    <input class="my-input app_input_style" type="number" v-model="user.phone" placeholder="Digits after code here " />
+    <input class="my-input app_input_style" type="text" v-model="user.phone" placeholder="Digits after code here " />
     </FormItem>
 
     <FormItem>
@@ -48,8 +48,12 @@ import countryFlags from '../countryFlags.js';
 export default {
   props: { user: Object },
   components: { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem },
-  mounted: function(){ 
-    // this.applicant.phoneCode = '+1';
+  watch: {//watch for changes in the applicant phoneNumber
+    'user.phone': function(newValue){
+      const result = newValue.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, "");
+      this.$nextTick(() => this.user.phone = result);  
+    }
+
   },
   data: function(){
     return {

@@ -206,9 +206,19 @@ export default {
     },
     setUsername(state, username) {
       state.newUser.username = username;
+
     },
     setShouldRegister(state, value) {
       state.shouldRegister = value;
+      state.newUser.firstName = state.applicant.first_name;
+      state.newUser.lastName = state.applicant.last_name;
+      state.newUser.email = state.applicant.email;
+      state.newUser.phone = state.applicant.phone_number.substring(4);
+      state.newUser.categoryId = state.applicant.category;
+      state.newUser.countryId = state.applicant.country;
+      state.newUser.gender = '';
+      state.newUser.about = '';
+      state.newUser.code = state.applicant.phone_number.substring(0,4);
     },
 
     setApplicantIds(state, {
