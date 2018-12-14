@@ -119,7 +119,7 @@ export default {
 #post-image {
   width: 100%;
   height: 220px;
-  object-fit: cover;
+  object-fit: contain;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
