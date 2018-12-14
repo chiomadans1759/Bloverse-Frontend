@@ -44,16 +44,10 @@
                         <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
                       </option>
                     </select>
-                    <input class="my-input app_input_style" type="number" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
+                    <input class="my-input app_input_style" type="text" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
                   </FormItem>
                 </Col>
               </Row>
-                
-              <FormItem prop="linkedIn" :error="errors.linkedIn">
-                <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username"  >
-                    <span slot="prepend">https://www.linkedin.com/in/</span>
-                </input>
-              </FormItem>
               
             <FormItem prop="linkedIn" :error="errors.linkedIn">
               <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username"  >
@@ -142,6 +136,14 @@ export default {
     Select,
     Option,
     LoginButton
+  },
+
+  watch: {//watch for changes in the applicant phoneNumber
+    'applicant.phoneNumber': function(newValue){
+      const result = newValue.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, "");
+      this.$nextTick(() => this.applicant.phoneNumber = result);  
+    }
+
   },
   data: function() {
     return {

@@ -22,7 +22,7 @@
           <h3>Share on</h3>
         </div>
 
-        <div class="col-8">
+        <div class="col-8" style="margin-left:-1rem;">
           <ul class="list-inline">
             <li class="list-inline-item">
               <button @click="doShare('facebook')">

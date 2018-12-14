@@ -17,7 +17,6 @@
             <router-link to="">
               <h2>30 crazy facts about shoes that will blow your mind...</h2>
             </router-link>
-
             <p>2 days ago</p>
           </div>
         </div>
@@ -33,7 +32,6 @@
             <router-link to="">
               <h2>How Tanazania is upgrading the lives of children...</h2>
             </router-link>
-
             <p>2 days ago</p>
           </div>
         </div>
@@ -65,7 +63,6 @@
             <router-link to="">
               <h2>Attractions that will make you fall in love w...</h2>
             </router-link>
-
             <p>2 days ago</p>
           </div>
         </div>
@@ -81,7 +78,6 @@
             <router-link to="">
               <h2>New ford 3 has the VW Golf and Ford Focus in s...</h2>
             </router-link>
-
             <p>3 days ago</p>
           </div>
         </div>

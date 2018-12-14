@@ -13,7 +13,7 @@
 
     <div v-if="showPosts">
       <Row v-show="current_section == 'draft'" id="draft-container" >
-        <Col v-for="post in general.draftPosts" :key="post.id">
+        <Col>
           <DraftCard />
         </Col>
       </Row>
