@@ -1,13 +1,13 @@
 <template>
-    <main class="main-apply" id="auth-apply">
-      <Modal v-model="isSuccess" :width="726" id="success-modal">
-        <Alert type="success">Success!</Alert>
-        <p>
-          Your application has been sent to bloverse. A message will be sent to your mail to
-          continue the verification and approval process in 48hrs.
-        </p>
-        <div slot="footer"></div>
-      </Modal>
+  <main id="auth-apply">
+    <Modal v-if="isSuccess == true" :width="726" id="success-modal">
+      <Alert type="success">Success!</Alert>
+      <p>
+        Your application has been sent to bloverse. A message will be sent to your mail to
+        continue the verification and approval process in 48hrs.
+      </p>
+      <div slot="footer"></div>
+    </Modal>
 
       <div class="container mt-5">
         <div class="row justify-content-center">
@@ -15,7 +15,7 @@
             <router-link to="/" class="router-link">
               <img class="logo" src="@/assets/Logo.svg" style="height: 40px" />
             </router-link>
-            <h3 class="mt-2 mb-5">Join Bloverse as a content creator</h3>
+            <h3 class="mt-3 mb-5">Join Bloverse as a content creator</h3>
 
             <Form ref="applyForm" :model="applicant" :rules="validateApplication">
               <Row type="flex" justify="space-between">
@@ -267,21 +267,21 @@ export default {
 </script>
 
 <style>
-.main-apply {
-  height: 100vh;
+#auth-apply {
   background: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1rem 0rem 3rem;
 }
+
 .app_input_style{
-    margin-left: 2px;
-    width: 78%;
-    border: 1px solid #dcdcdc;
-  } 
+  margin-left: 2px;
+  width: 78%;
+  border: 1px solid #dcdcdc;
+} 
+
 .app_select_style{
-    border: 1px solid #dcdcdc;
- }
+  border: 1px solid #dcdcdc;
+}
+
 @media screen and (max-width: 768px) {
   .main-apply {
     height: auto;
