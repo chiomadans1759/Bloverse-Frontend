@@ -1,53 +1,59 @@
 <template>
-  <main id="auth-apply">
-    <Modal v-model="isSuccess" :width="726" id="success-modal">
-      <Alert type="success">Success!</Alert>
-      <p>
-        Your application has been sent to bloverse. A message will be sent to your mail to
-        continue the verification and approval process in 48hrs.
-      </p>
-      <div slot="footer"></div>
-    </Modal>
+    <main class="main-apply" id="auth-apply">
+      <Modal v-model="isSuccess" :width="726" id="success-modal">
+        <Alert type="success">Success!</Alert>
+        <p>
+          Your application has been sent to bloverse. A message will be sent to your mail to
+          continue the verification and approval process in 48hrs.
+        </p>
+        <div slot="footer"></div>
+      </Modal>
 
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <router-link to="/" class="router-link">
-            <img class="logo" src="@/assets/Asset 1.svg" style="height: 40px" />
-          </router-link>
-          <h3 class="mt-2 mb-5">Join Bloverse as a content creator</h3>
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <router-link to="/" class="router-link">
+              <img class="logo" src="@/assets/Logo.svg" style="height: 40px" />
+            </router-link>
+            <h3 class="mt-2 mb-5">Join Bloverse as a content creator</h3>
 
-          <Form ref="applyForm" :model="applicant" :rules="validateApplication">
-            <Row type="flex" justify="space-between">
-              <Col :sm="11" :xs="24">
-                <FormItem prop="firstName" :error="errors.firstName">
-                  <Input class="my-input" v-model="applicant.firstName" placeholder="First name*"  />
-                </FormItem>
-              </Col>
-              <Col :sm="11" :xs="24">
-                <FormItem prop="lastName" :error="errors.lastName">
-                  <Input class="my-input" v-model="applicant.lastName" placeholder="Last name*" />
-                </FormItem>
-              </Col>
-            </Row>
+            <Form ref="applyForm" :model="applicant" :rules="validateApplication">
+              <Row type="flex" justify="space-between">
+                <Col :sm="11" :xs="24">
+                  <FormItem prop="firstName" :error="errors.firstName">
+                    <Input class="my-input" v-model="applicant.firstName" placeholder="First name*"  />
+                  </FormItem>
+                </Col>
+                <Col :sm="11" :xs="24">
+                  <FormItem prop="lastName" :error="errors.lastName">
+                    <Input class="my-input" v-model="applicant.lastName" placeholder="Last name*" />
+                  </FormItem>
+                </Col>
+              </Row>
 
-            <Row type="flex" justify="space-between">
-              <Col :sm="11" :xs="24">
-                <FormItem prop="email" :error="errors.email">
-                  <Input class="my-input" v-model="applicant.email" placeholder="Email*"  />
-                </FormItem>
-              </Col>
-              <Col :sm="11" :xs="24">
-                <FormItem prop="phone" :error="errors.phoneNumber">
-                    <select v-model="applicant.phoneCode" class="code-dropdown">
-                    <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
-                      <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
-                    </option>
-                  </select>
-                  <input class="my-input" type="number" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
-                </FormItem>
-              </Col>
-            </Row>
+              <Row type="flex" justify="space-between">
+                <Col :sm="11" :xs="24">
+                  <FormItem prop="email" :error="errors.email">
+                    <Input class="my-input" v-model="applicant.email" placeholder="Email*"  />
+                  </FormItem>
+                </Col>
+                <Col :sm="11" :xs="24">
+                  <FormItem prop="phone" :error="errors.phoneNumber">
+                      <select v-model="applicant.phoneCode" class="code-dropdown app_select_style">
+                      <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
+                        <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
+                      </option>
+                    </select>
+                    <input class="my-input app_input_style" type="number" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
+                  </FormItem>
+                </Col>
+              </Row>
+                
+              <FormItem prop="linkedIn" :error="errors.linkedIn">
+                <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username"  >
+                    <span slot="prepend">https://www.linkedin.com/in/</span>
+                </input>
+              </FormItem>
               
             <FormItem prop="linkedIn" :error="errors.linkedIn">
               <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username"  >
@@ -261,8 +267,72 @@ export default {
 </script>
 
 <style>
-#auth-apply {
-  padding: 5rem 0rem;
+.main-apply {
+  height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app_input_style{
+    margin-left: 2px;
+    width: 78%;
+    border: 1px solid #dcdcdc;
+  } 
+.app_select_style{
+    border: 1px solid #dcdcdc;
+ }
+@media screen and (max-width: 768px) {
+  .main-apply {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-apply {
+    height: 100vh;
+  }
+  .app_input_style{
+    margin-left: 0px;
+    width: 68%;
+    border: 1px solid #dcdcdc;
+  }
+}
+
+.my-select {
+  background-color: #ffffff;
+}
+
+#add-article-btn {
+  background: transparent;
+}
+
+#add-btn-container {
+  margin: 0 28.5rem 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  #add-btn-container {
+    margin: 0 2rem 1rem 0;
+  }
+}
+
+@media screen and (min-width: 766px) {
+  #add-btn-container {
+    margin: 0 17.5rem 1rem 0;
+  }
+}
+
+@media only screen and (width: 375px) {
+  #add-btn-container {
+    margin: 0 2rem 1rem 0;
+  }
+}
+
+@media only screen and (width: 360px) {
+  #add-btn-container {
+    margin: 0 2rem 1rem 0;
+  }
 }
 
 #phone-input {

@@ -57,24 +57,6 @@
               </div>
             </li>
           </ul>
-          <!-- <div>
-            <p v-for="(data, index) in chartData" 
-            :key="index" 
-            v-if="index > 0"
-            style="font-size: 14px;">
-            <span> {{ data[0] }} </span>
-            </p>
-            <p class="map-stat-total">Total</p>
-          </div>
-          <div class="map-stat-values">
-            <div class="blue-icon"></div>
-            <p v-for="(data, index) in chartData" 
-            :key="index" 
-            v-if="index > 0">
-            <span>{{ data[1] }}</span>
-            </p>
-            <p class="map-stat-total-num">{{ chartData.filter((e, i) => i !== 0).reduce((acc, a) => acc + a[1], 0) }}</p>
-          </div> -->
         </div>
       </div>
     </div>

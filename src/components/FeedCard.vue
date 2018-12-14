@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`posts/${post.slug}`"> 
+  <router-link :to="`/posts/${post.slug}`"> 
     <div class="card-container" id="photo-contest" v-if="post.category === 7">
       <div id="card-hero">
         <img id="post-image" :src="post.image_url">
