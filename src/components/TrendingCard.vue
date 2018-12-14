@@ -15,9 +15,9 @@
             <div class="col-3">
               <router-link :to="`posts/${general.trendingPost[0].slug}`"> 
               <div class="card text-white">
-                <img class="card-img" :src="general.trendingPost[0].image_url" alt="Card image">
+                <img class="card-img" :src="general.trendingPost[0].image_url" alt="Card image" >
                   <div class="card-img-overlay">
-                    <h5 class="card-title">{{category}}</h5>
+                    <h5 class="card-title">{{categoryName}}</h5>
                     <p class="card-text">
                       {{general.trendingPost[0].title}}
                     </p>
@@ -37,7 +37,7 @@
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[1].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{categoryName}}</h5>
                     <p class="card-text">
                       {{general.trendingPost[1].title}}
                     </p>
@@ -266,7 +266,7 @@
          <div class="card text-white">
            <img class="card-img" :src="post.image_url" alt="Card image">
               <div class="card-img-overlay">
-                <h5 class="card-title">{{categoryName}}</h5>
+                <h5 class="card-title">{{category}}</h5>
                   <p class="card-text">
                     {{post.title}}
                   </p>
@@ -305,9 +305,9 @@ export default {
     categoryName() {
       if (this.category) {
         let category = this.general.trending.find(
-          cat => cat.id == this.category.id
+          category => category.id == this.category.id
         );
-        return category.name;
+        return category;
       }
     }
   }
@@ -327,6 +327,7 @@ export default {
 
 #trend-card-heading {
   font-size: 16px;
+  font-weight: 800;
 }
 
 #trending-card .card {
