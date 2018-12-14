@@ -64,7 +64,7 @@
       </div>
       <div class="card-container22"> 
         <div class="container card-general-hover">
-          <h4 class="my-5">{{post.title}}</h4>
+          <h4 class="flip-post">{{post.title}}</h4>
 
           <div class="keypoints mt-2">
             <h3>Keypoints:</h3>
@@ -182,7 +182,7 @@ export default {
 .card-container2 p{  
   font-weight:200;
   padding:2rem;
-  line-height: 2.5;
+  line-height: 1.2;
   font-size:1.6rem;
 }
 
@@ -209,13 +209,15 @@ export default {
   left: 0;
   right: 0; 
   transition: .5s ease; 
+    text-transform: capitalize
 }
 
 .card-container22 h5{  
   text-align: right;
-  color:blue; 
-  padding:2rem;
-  font-weight:800; 
+  padding:20px 20px 0 0;
+  font-weight:600; 
+  color:#096DD9
+ 
 }
 
 .card-container22 div{ 
@@ -238,13 +240,18 @@ export default {
   border-top: 1px solid #ccc;
   position: absolute;
   bottom: 0; 
-  height: 5rem;
+  height: 3.5rem;
   width: 100%;
 }
 
 .card-general-hover h4{  
-  font-weight: 100;
-  line-height: 2.5rem;
+  font-weight:400;
+  line-height: 1.5rem;
+  margin-top: 15px;
+  margin-bottom: 20px;
+    text-transform: capitalize
+
+
 } 
 
 .keypoints h3 {
@@ -257,7 +264,7 @@ export default {
 
 .keypoints ul li {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .card-container:hover .card-container22 {
@@ -450,5 +457,6 @@ export default {
   margin-top: 5rem;
   font-weight: bold;
 }
+
 </style>
 
