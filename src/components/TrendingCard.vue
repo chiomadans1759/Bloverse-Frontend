@@ -302,12 +302,12 @@ export default {
   },
   computed: {
     ...mapState(["general"]),
-    categoryName() {
-      if (this.category) {
+    category() {
+      if (this.general.category) {
         let category = this.general.trending.find(
           category => category.id == this.category.id
         );
-        return category;
+        return category.name;
       }
     }
   }
