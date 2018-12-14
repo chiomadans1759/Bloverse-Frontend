@@ -62,7 +62,11 @@ export default {
   width: 100%;
   height: 398px;
   margin-bottom: 1rem;
-  object-fit: cover;
+  object-fit: contain;
+}
+
+.card-body {
+  margin-top: -1rem;
 }
 
 #post-details .img-descrip {

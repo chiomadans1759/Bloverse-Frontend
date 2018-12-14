@@ -266,7 +266,7 @@
          <div class="card text-white">
            <img class="card-img" :src="post.image_url" alt="Card image">
               <div class="card-img-overlay">
-                <h5 class="card-title">{{category}}</h5>
+                <h5 class="card-title">{{categoryName}}</h5>
                   <p class="card-text">
                     {{post.title}}
                   </p>
