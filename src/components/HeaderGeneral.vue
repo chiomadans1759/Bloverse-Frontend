@@ -3,7 +3,7 @@
     <Row class="header-row" type="flex" justify="space-between" align="middle">
       <Col class="brand">
         <router-link to="/">
-          <img class="logo" src="./../assets/Logo - White.svg" style="height:50px; margin-bottom: 1rem;" >
+          <img class="logo" src="./../assets/Logo - White.svg" style="height:40px; margin-bottom: 1rem;" >
         </router-link>
       </Col>
       <Col class="header-button">
@@ -31,7 +31,7 @@ export default {
   background: transparent;
   z-index: 2;
   position: absolute; 
-  padding:2rem 0 0 5rem;
+  padding:1.5rem 0 0 5rem;
 }
 
 #l-text {
