@@ -12,7 +12,7 @@
               :options="general.countries"
               label="name"
               placeholder="Country"
-              v-model="country"
+              v-model="general.country"
               v-if="allow"
               @input="filterCountry">
             </v-select>
@@ -119,7 +119,7 @@ export default {
     filterCountry(id) {
       this.$store.dispatch("getAllPublishedPosts", {
         category: this.general.activeCategory.id || "",
-        country: this.country.id
+        country: this.general.country.id
       });
     },
 
@@ -238,6 +238,7 @@ export default {
 #cat-nav {
   margin-top: -2rem;
 }
+
 #layout-select a {
   color: rgba(0, 0, 0, 0.3);
   font-size: 24px !important;
