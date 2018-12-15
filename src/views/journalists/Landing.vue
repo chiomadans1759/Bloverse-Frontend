@@ -1,7 +1,7 @@
 <template>
   <div class="layout" id="journalist-landing">
     <Layout>
-      <HeaderGeneral />
+      <HeaderGeneral style="position:relative"/>
       <Content>
         <div>
           <Row class="container1">
@@ -24,20 +24,32 @@
           </Row>
  
           <Row class="container2">
+          <Col :md="12" :sm="10" :xs="24" class="left2">
+              <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">  
+              <a href="https://www.youtube.com/embed/EjRM4DMdnGw" class="video-btn popup-youtube">
+                <img src ="./../../assets/video-image.jpg"/>              
+                <button class="pulse-button"><i class="far fa-play-circle"></i></button>
+              </a>
+              <div id="video-overlay" class="video-overlay">
+                <a class="video-overlay-close"></a>
+              </div>
+              </Col>
+          </Col>
+          <!-- <Row class="container2">
             <Col :md="12" :sm="10" :xs="24" class="left2">
                 <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">  
                 <iframe width="300" height="325" src="https://www.youtube.com/embed/EjRM4DMdnGw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     
                   </iframe>
-                <!-- <a href="https://www.youtube.com/embed/EjRM4DMdnGw" class="video-btn popup-youtube">
+                <a href="https://www.youtube.com/embed/EjRM4DMdnGw" class="video-btn popup-youtube">
                   <img src ="./../../assets/video-image.jpg"/>              
                   <button class="pulse-button"><i class="far fa-play-circle"></i></button>
                 </a> -->
-                <div id="video-overlay" class="video-overlay">
+                <!-- <div id="video-overlay" class="video-overlay">
                   <a class="video-overlay-close"></a>
                 </div>
                 </Col>
-            </Col>
+            </Col> -->
 
             <Col :md="12" :sm="14" :xs="24" class="right2">
               <Col offset="2" :md="12" :sm="20" :xs="20" class="right-contain2">
@@ -108,7 +120,7 @@ export default {
     ...mapState(["general"])
   },
   methods: {
-    ...mapActions(["getGeneralMetrics"])
+    ...mapActions(["getGeneralMetrics"]),
   },
   mounted: async function() {
     await this.getGeneralMetrics();
@@ -136,7 +148,7 @@ export default {
 }
 
 .left-contain {
-  margin-top: 12%;
+  margin-top: 12%; 
 }
 
 .left h1 {
@@ -156,15 +168,15 @@ export default {
   font-family: "Montserrat", sans-serif;
 	font-size: 14px;
   opacity: .7;
-	margin-bottom: 1rem;
+	margin-bottom: 3rem;
   margin-left:2rem;
 }
 
-.left #get-start {
+#get-start {
   border-radius: 2px;
   color: rgb(12, 54, 243);
   border: none;
-  padding: 0.5rem 1rem;
+  padding: .6rem 1rem;
   background-color: #fff;
   margin-top: 2rem;
   margin-left:2rem;
@@ -176,18 +188,7 @@ export default {
   background-color: #000;
   height: 100%;
 }
-
-.right #get-start {
-  border-radius: 2px;
-  color: rgb(12, 54, 243);
-  border: none;
-  padding: 0.5rem 1rem;
-  background-color: #fff;
-  margin-top: 2rem;
-  margin-left:2rem;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-}
+ 
 
 .right img {
   width: 100%;
@@ -337,6 +338,7 @@ export default {
   .right-text p {
 		font-size: 16px;
 		margin-top: 1rem;
+    margin-bottom: 3rem;
 		color: #cccccc;
 	}
 	
