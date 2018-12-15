@@ -41,7 +41,7 @@ export default {
   background-color: #f5f5f5;
   font-family: "Montserrat", sans-serif;
   min-height: 100vh;
-  overflow-x: hidden !important;
+  /* overflow-x: hidden !important; */
 }
 
 :root {

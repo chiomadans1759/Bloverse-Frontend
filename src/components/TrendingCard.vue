@@ -166,7 +166,7 @@
           </div>
         </div>
 
-        <div class="carousel-item" v-if="general.trendingPost.length > 4">
+        <div class="carousel-item" v-if="general.trendingPost.length > 8">
           <div class="row no-gutters">
             <div class="col-3">
               <div class="card text-white">

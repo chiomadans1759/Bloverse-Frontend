@@ -74,6 +74,5 @@ export default {
   font-size: 14px;
   font-family: 'Montserrat';
   margin-top: 1rem;
-
 }
 </style>
