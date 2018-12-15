@@ -1,14 +1,72 @@
 <template>
   <main class="wrapper" id="journalist-account-sidebar">
     <!-- Sidebar -->
+    <div class="mobile-side">
     <nav id="sidebar">
+      <button class="navbar-toggler order-first" type="button" data-toggle="modal" data-target="#sidebarModalSearch" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="modal fade" id="sidebarModalSearch" tabindex="-1" role="dialog" aria-hidden="false">
+        <div class="modal-dialog modal-dialog-vertical" role="document">
+           <div class="modal-content">
+              <ul class="list-unstyled">
+                <li class="list-item">
+                  <router-link
+                    :to="`/creators/${auth.loggedInUser.userName}/dashboard`"
+                    :class="{'active': currentRoute == 'journalist-dashboard'}">
+                    <i class="far fa-th-large"></i>
+                    <span class="ml-3">Dashboard</span>
+                  </router-link>
+                </li>
+                <li class="list-item">
+                  <router-link
+                    :to="`/creators/${auth.loggedInUser.userName}/posts/create`"
+                    :class="{'active': currentRoute == 'create-post'}">
+                    <i class="fal fa-plus"></i>
+                    <span class="ml-3">Create Content</span>
+                  </router-link>
+                </li>
+                <li class="list-item">
+                  <router-link
+                    :to="`/creators/${auth.loggedInUser.userName}/posts`"
+                    :class="{'active': currentRoute == 'all-posts'}">
+                    <i class="fal fa-rocket"></i>
+                    <span class="ml-3">My Posts</span>
+                  </router-link>
+                </li>
+              </ul>
+
+       <footer id="footer">
+        <ul>
+          <li style="margin-bottom:2rem;">
+            <a href="" @click.prevent="logOut" class="mt-3">
+              <i class="fal fa-power-off" style="color: #D9091E; font-size:16px; "></i>
+              <span>Sign Out</span>
+            </a>
+          </li>
+        </ul>
+        <div class="avatar avatar-sm pt-2" style="display: flex;">
+          <img
+            id="author-img"
+            :src="auth.loggedInUser.imageUrl"
+            alt="Author's Image"
+            class="avatar-img rounded">
+          <span class="mt-2">{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+    </nav>
+    </div>
       <div class="sidebar-header">
         <router-link to="/" class="router-link">
           <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
         </router-link>
       </div>
-
-      <ul class="list-unstyled">
+      <div class="desktop-side">
+      <nav id="sidebar">
+       <ul class="list-unstyled">
         <li class="list-item">
           <router-link
             :to="`/creators/${auth.loggedInUser.userName}/dashboard`"
@@ -54,6 +112,7 @@
         </div>
       </footer>
     </nav>
+      </div>
   </main>
 </template>
 
@@ -82,6 +141,11 @@ export default {
 </script>
 
 <style scoped>
+
+.mobile-side {
+  display: none;
+}
+
 #journalist-account-sidebar {
   padding: 4rem 2rem 2rem;
 }
@@ -127,5 +191,31 @@ export default {
   margin-left: 0.5rem;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.9);
+}
+
+#journalist-account-sidebar #sidebarModalSearch .modal-content {
+  z-index: 3000 !important;
+}
+
+.desktop-side {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .desktop-side {
+    display: none;
+  }
+  .mobile-side {
+   display: block;
+   margin-top: -2rem;
+  }
+
+  .sidebar-header {
+    display: none;
+  }
+
+  #journalist-account-sidebar {
+    display: none;
+  }
 }
 </style>

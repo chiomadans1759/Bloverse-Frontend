@@ -1,6 +1,11 @@
 <template>
   <div id="journalist-dashboard">
-    <div class="container pt-5">
+     <div class="sidebar-header">
+        <router-link to="/" class="router-link">
+          <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
+        </router-link>
+      </div>
+    <div class="container pt-5" style="margin-left: -3rem;">
       <Row :gutter="32" v-if="show" id="stats">
         <Col :sm="8" :xs="24" id="icon-fix">
           <stat-card variant="fade" icon="fal fa-eye" title="views" id="stat-point1" :stats="{ key:[ views.today, views.week, views.total] ,value:['Today' , 'This Week']}" />
@@ -12,7 +17,7 @@
           <stat-card variant="secondary" icon="fal fa-star" title="points" id="stat-point3" :stats="{ key:[`${datas.categoryRank[0]} of ${datas.categoryRank[1]}`, `${datas.countryRank[0]} of ${datas.countryRank[1]}` , `${datas.point}`] , value:['Category' ,'Country' , 'Ranking']}" />
         </Col>
       </Row>
-
+      <div class="show-map">
       <div class="row" v-if="show">
         <div class="col-md-8">
           <GChart
@@ -23,7 +28,7 @@
         </div>
 
         <div class="col-md-4">
-          <h3 class="text-uppercase mb-3">Views</h3>
+          <h3 class="text-uppercase mb-3">Views <span id="blue-c"></span></h3>
 
           <ul class="list-group">
             <li class="list-group-item rounded-0">
@@ -58,6 +63,7 @@
             </li>
           </ul>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -130,6 +136,10 @@ export default {
   overflow: hidden;
 }
 
+.sidebar-header {
+  display: none;
+}
+
 #journalist-dashboard #stats .stat-card {
   padding: 1.8125rem !important;
   -webkit-box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
@@ -148,6 +158,13 @@ export default {
   justify-content: space-between;
   padding: 1rem 0.7rem;
   overflow: hidden;
+}
+
+#blue-c:before {
+  content: ' \25CF';
+  font-size: 20px;
+  margin-left: 2rem;
+  color: #096DD9;
 }
 
 #journalist-dashboard #stats #stat-point1 {
@@ -179,23 +196,38 @@ export default {
 
 @media screen and (max-width: 360px) {
   #stat-wrapper stat-card {
-    width:100%
-  }
-
-  #map-card {
-    display: none;
-    border:1px solid blue;
+    width:100%;
+    margin-bottom: 1rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   #stat-wrapper stat-card {
     width:100%;
+    margin-bottom: 1rem;
   }
 
-  #map-card {
-    display:none;
-    border:1px solid blue;
+  .show-map {
+    display: none;
   }
+
+  #icon-fix {
+    margin-bottom: 1rem;
+  }
+
+  #stats {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    text-align: center;
+    margin-left: -5rem;
+  }
+
+  .sidebar-header {
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: 3rem;
+  margin-bottom: -3rem;
+}
 }
 </style>
