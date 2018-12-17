@@ -6,12 +6,8 @@
       </div>
       <div id="body-container">
         <div id="card-body">
-          <h2 id="feed-travel-competition">
-            <p>{{category}}</p>
-          </h2>
-          <div id="body-start">
-              <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>          
-          </div>
+          <h4 id="feed-travel-competition">{{category}}</h4>
+          <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>
         </div>
         <div id="card-footer">
           <div id="body-mid">
@@ -43,18 +39,13 @@
       </div>
       <div id="body-container">
         <div id="card-body">
-          <h2 id="feed-category">
-            <p>{{category}}</p>
-          </h2>
-          <div id="body-start">
-        <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>
-      
-        </div>
+          <h4 id="feed-category">{{category}}</h4>
+          <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>
         </div>
         <div id="card-footer">
           <div id="body-mid">
-        <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
-        <span id ="author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
+            <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
+            <span id ="author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
         </div>
         <div id="views">
           <i class="fal fa-eye"></i> {{post.views}}
@@ -280,13 +271,13 @@ export default {
   border-top-left-radius: 4px;
 }
 
-#feed-category p {
+#feed-category{
   color: rgba(53, 53, 53, 1) !important;
   font-size: 10px;
   text-transform: uppercase;
 }
 
-#feed-travel-competition p {
+#feed-travel-competition {
   color:blue !important;
   font-size: 10px;
   font-weight: 800;
@@ -295,10 +286,11 @@ export default {
   font-size: 16px;
 }
 
-#card-title p {
+#card-title {
   color: rgba(52, 50, 61, 1);
   font-size: 16px;
   font-weight: 400;
+  margin-top: .5rem;
 }
 
 #body-container {
@@ -345,12 +337,6 @@ export default {
   margin-top: 15px;
   color:black;
   align-items: center;
-}
-
-#card-body {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
 }
 
 #contest-container #contest-image {
