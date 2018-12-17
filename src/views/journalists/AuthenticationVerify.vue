@@ -14,7 +14,10 @@
 
       <div class="row justify-content-center pt-5">
         <div class="col-md-3 mt-5">
-          <img src="@/assets/Logo.svg" style="width: 2.8rem;" alt class="img-logo mb-5">
+          <router-link to="/">
+            <img src="@/assets/Logo.svg" style="width: 2.8rem;" alt class="img-logo mb-5">
+          </router-link>
+          
           <Form ref="tokenForm">
             <h4 class="text-dark mb-3">
               Enter code sent to you via email <br /> to continue.
