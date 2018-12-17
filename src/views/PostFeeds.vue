@@ -14,8 +14,8 @@
               placeholder="Country"
               v-model="general.country"
               v-if="allow"
-              @input="filterCountry">
-            </v-select>
+              @input="filterCountry"
+            ></v-select>
           </div>
 
           <div class="col-md-8" style="margin-top: -0.8rem;">
@@ -30,7 +30,8 @@
               </li>
               <li class="list-inline-item">
                 <a href="#" @click.prevent="showMoreCats">
-                  More <i class="fa fa-caret-down"></i>
+                  More
+                  <i class="fa fa-caret-down"></i>
                 </a>
               </li>
             </ul>
@@ -56,7 +57,8 @@
                 <a
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
-                  @click.prevent="toggleLayout('grid')">
+                  @click.prevent="toggleLayout('grid')"
+                >
                   <i class="fal fa-grip-horizontal fa-1x"></i>
                 </a>
               </li>
@@ -64,7 +66,8 @@
                 <a
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'stack'}"
-                  @click.prevent="toggleLayout('stack')">
+                  @click.prevent="toggleLayout('stack')"
+                >
                   <i class="far fa-layer-group fa-1x"></i>
                 </a>
               </li>
@@ -294,8 +297,8 @@ export default {
   z-index: 1000;
 }
 
-@media only screen and (max-width: 980px) { 
-  .dropdown-card { 
+@media only screen and (max-width: 980px) {
+  .dropdown-card {
     margin-left: 1rem;
     width: 80%;
   }
