@@ -26,8 +26,8 @@
           <Row class="container2">
             <Col :md="12" :sm="10" :xs="24" class="left2">
                 <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">    
-                  <img src ="./../../assets/video-image.jpg" @click.prevent="hideThumbnail()"/>              
-                  <button class="pulse-button"><i class="fas fa-play"></i></button>
+                  <img src ="./../../assets/video-image.jpg" />              
+                  <button @click.prevent="hideThumbnail()"  class="pulse-button"><i class="fas fa-play"></i></button>
                 <div id="video-overlay" class="video-overlay">
                   <a class="video-overlay-close"></a>
                 </div>
