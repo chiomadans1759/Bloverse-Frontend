@@ -1,14 +1,12 @@
 <template>
   <div class="pagee">
     <div id="img-carousel">
-      <div class="card related-posts-card">
+      <div class="card related-posts-card" v-show="posts.length > 0">
         <div class="card-header">
           <h3 class="card-header-title">Related Topics</h3>
         </div>
 
         <div class="card-body">
-          <p v-if="posts.length == 0" class="text-center text-primary">Loading posts</p>
-
           <div class="post" v-for="post in posts" :key="post.id">
             <div class="row mt-3 mb-5">
               <div class="col-xs-5">
