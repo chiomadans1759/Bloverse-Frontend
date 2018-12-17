@@ -48,8 +48,16 @@ export default {
   }
 };
 </script>
+<style>
+.post-content-body  img {
+  width:100%;
+  object-fit: contain
+}
+</style>
+
 
 <style scoped>
+
 #post-details .card-header {
   width: 100%;
 }

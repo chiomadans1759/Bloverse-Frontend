@@ -5,7 +5,7 @@
         <div class="col">
           <ul class="list-inline">
             <li class="list-inline-item">
-              bloverse
+            <router-link to="/">Bloverse</router-link>
             </li>
             <li class="list-inline-item pl-4">
               <router-link to="">Terms</router-link>
