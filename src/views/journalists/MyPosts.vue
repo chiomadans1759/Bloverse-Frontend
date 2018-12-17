@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="row" v-if="current_section == 'draft'">
+    <div class="row" v-if="current_section == 'draft'" v-show="isPublished == false">
       <div class="col-md-6" v-for="post in journalist.journalistPosts" :key="post.id">
         <DraftCard />
       </div>

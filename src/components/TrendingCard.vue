@@ -278,7 +278,7 @@
                   <p class="card-text">
                     {{post.title}}
                   </p>
-                <div class="author mt-4">
+                <div class="author mt-4" style="bottom: 0">
                   <img class="rounded mr-3" :src="post.author.image_url" alt="">
                    <span>{{post.author.first_name}} {{post.author.last_name}}</span>
                 </div>
