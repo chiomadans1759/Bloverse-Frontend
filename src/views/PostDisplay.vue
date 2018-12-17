@@ -9,7 +9,7 @@
         <div class="col-md-4 pt-3">
           <post-author :author="general.currentPost.author" class="mb-5"></post-author>
           <post-social-share :slug="general.currentPost.slug"></post-social-share>
-          <related-posts />
+          <related-posts :post_id="general.currentPost.id" />
         </div>
       </div>
     </div>

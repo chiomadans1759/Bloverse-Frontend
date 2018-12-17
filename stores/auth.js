@@ -69,11 +69,11 @@ export default {
         phone: state.applicant.phoneCode + state.applicant.phoneNumber,
       }
 
-      if (state.applicant.linkedInUsername) {
+      if (state.applicant.linkedInUsername != '') {
         applicant.linkedIn = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`
       }
 
-      if (state.applicant.twitterUsername) {
+      if (state.applicant.twitterUsername != '') {
         applicant.twitter = `https://www.twitter.com/${state.applicant.twitterUsername}`;
       }
 
@@ -212,10 +212,11 @@ export default {
       state.shouldRegister = value;
       state.newUser.firstName = state.applicant.first_name;
       state.newUser.lastName = state.applicant.last_name;
+      state.newUser.applicant = state.applicant.id;
       state.newUser.email = state.applicant.email;
       state.newUser.phone = state.applicant.phone_number.substring(4);
-      state.newUser.categoryId = state.applicant.category;
-      state.newUser.countryId = state.applicant.country;
+      state.newUser.category = state.applicant.category;
+      state.newUser.country = state.applicant.country;
       state.newUser.gender = '';
       state.newUser.about = '';
       state.newUser.code = state.applicant.phone_number.substring(0,4);

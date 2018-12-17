@@ -27,6 +27,7 @@ export default {
 #journalist-account-layout {
   width: 100%;
   height: auto;
+  overflow: auto;
   padding-bottom: 20rem;
   height: auto !important;
 }

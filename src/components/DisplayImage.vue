@@ -1,6 +1,7 @@
 <template>
+<div class="col-md-12">
 <div class="mother-div">
-<section id="img-display" style="height:100px; width: 100px;">
+<section id="img-display" style="height:220px; width: 100%;">
   <image-chooser :show="displayChooser" @closeModal="displayChooser=false" @selectImage="handleImageSelected" />
   <div class="img-wrapper" @mouseover="imageHover = true" @mouseleave="imageHover = false">
     <img v-if="currImage" :src="currImage" :alt="alt">
@@ -16,7 +17,8 @@
     </div>
   </div>
 </section>
-<h3 style="align-self: center; color: #2D9CDB">Add a profile picture</h3>
+<!-- <h3 style="align-self: center; color: #2D9CDB">Add a profile picture</h3> -->
+</div>
 </div>
 </template>
 
@@ -53,12 +55,13 @@ export default {
 <style scoped>
 .mother-div{
   display: flex;
-  width: 300px;
-  justify-content: space-between;
+  width: 100%;
+
 }
 section#img-display {
-  background: white;
+  background: #aca7a7;
   border: 0.1px solid grey;
+  width: 100%;
 }
 
 .img-wrapper {
