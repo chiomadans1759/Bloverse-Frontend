@@ -69,11 +69,11 @@ export default {
         phone: state.applicant.phoneCode + state.applicant.phoneNumber,
       }
 
-      if (state.applicant.linkedInUsername) {
+      if (state.applicant.linkedInUsername != '') {
         applicant.linkedIn = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`
       }
 
-      if (state.applicant.twitterUsername) {
+      if (state.applicant.twitterUsername != '') {
         applicant.twitter = `https://www.twitter.com/${state.applicant.twitterUsername}`;
       }
 
