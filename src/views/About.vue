@@ -291,4 +291,42 @@ border: 1px solid #096DD9
 .timeline-body > p + p {
   margin-top: 5px;
 }
+
+
+     @media screen and (max-width: 600px) {
+.about-head{
+    width:90%;
+    margin-top: 0px;
+    padding-top:0px
+}
+.timeline{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+.timeline:before{
+    display:none
+}
+
+     }
+      @media screen and (max-width: 360px) {
+ .about-head{
+    width:90%;
+    margin-top: 0px;
+    padding-top:0px
+}
+.timeline{
+    width: 90%;
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+.timeline:before{
+    display:none
+}
+
+      }
 </style>
