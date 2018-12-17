@@ -25,7 +25,7 @@
             <br />
 
             <FormItem prop="title" :error="errors.title">
-              <Input id="form-control" placeholder="What's your title?" v-model="post.title"/>
+              <Input id="form-control" placeholder="What's your title?" v-model="post.title" :maxlength="max"/>
             </FormItem>
 
             <Row type="flex" justify="space-between">
@@ -186,6 +186,7 @@ export default {
   data: function() {
     return {
       errors: {},
+      max: 50,
       validatePostForm: {
         deviceType: [
           {
