@@ -7,11 +7,11 @@
         <p class="stat-title">{{title}}</p>
       </div>
       <div class="days-stat">
-          <span class="stat-today">{{stats.key[0]}}&nbsp;&nbsp;</span>
-          <span class="stat-today">{{stats.value[0]}}</span>
+          <span class="stat-today">{{stats.value[0]}}&nbsp;&nbsp;</span>
+          <span class="stat-today">{{stats.key[0]}}</span>
         <div>
-          <span class="stat-week">{{stats.key[1]}}&nbsp;&nbsp;</span>
-          <span class="stat-week">{{stats.value[1]}}</span>
+          <span class="stat-week">{{stats.value[1]}}&nbsp;&nbsp;</span>
+          <span class="stat-week">{{stats.key[1]}}</span>
         </div>
       </div>
     </div>
