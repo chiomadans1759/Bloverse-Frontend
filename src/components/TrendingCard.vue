@@ -53,6 +53,7 @@
             </div>
 
             <div class="col-3" v-if="general.trendingPost.length > 2">
+              <router-link :to="`posts/${general.trendingPost[2].slug}`"> 
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[2].image_url" alt="Card image">
                   <div class="card-img-overlay">
@@ -68,9 +69,11 @@
                   </div>
                 </div>
               </div>
+              </router-link>
             </div>
 
             <div class="col-3" v-if="general.trendingPost.length > 3">
+              <router-link :to="`posts/${general.trendingPost[3].slug}`"> 
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[3].image_url" alt="Card image">
                   <div class="card-img-overlay">
@@ -86,6 +89,7 @@
                   </div>
                 </div>
               </div>
+              </router-link>
             </div>
           </div>
         </div>
@@ -93,6 +97,7 @@
         <div class="carousel-item" v-if="general.trendingPost.length > 4">
           <div class="row no-gutters">
             <div class="col-3">
+              <router-link :to="`posts/${general.trendingPost[4].slug}`"> 
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[4].image_url" alt="Card image">
                   <div class="card-img-overlay">
@@ -108,9 +113,11 @@
                   </div>
                 </div>
               </div>
+              </router-link>
             </div>
 
             <div class="col-3">
+              <router-link :to="`posts/${general.trendingPost[4].slug}`"> 
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[5].image_url" alt="Card image">
                   <div class="card-img-overlay">
@@ -126,6 +133,7 @@
                   </div>
                 </div>
               </div>
+              </router-link>
             </div>
 
             <div class="col-3">
@@ -261,7 +269,7 @@
      paginationColor="#73C2FB;"
      paginationActiveColor="#096DD9"
      :autoplayTimeout="3000">
-      <slide v-for="(post, index) in general.trendingPost" :key="index" v-if="index < 3">
+      <slide v-for="(post, index) in general.trendingPost" :key="index">
         <router-link :to="`posts/${post.slug}`"> 
          <div class="card text-white">
            <img class="card-img" :src="post.image_url" alt="Card image">

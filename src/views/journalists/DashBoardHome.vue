@@ -76,7 +76,7 @@ import { mapActions, mapGetters, mapState } from "vuex";
 import lang from "iview/dist/locale/en-US";
 import { GChart } from "vue-google-charts";
 import { Carousel, Slide } from 'vue-carousel';
-import DashboardStatDisplayCard from "../../components/JournalistStatDisplayCard.vue";
+import DashboardStatDisplayCard from "@/components/JournalistStatDisplayCard.vue";
 // configure language
 locale(lang);
 
@@ -128,6 +128,7 @@ export default {
 
 
 <style scoped>
+
 #journalist-dashboard #stats {
   margin-bottom: 3rem;
 }
@@ -199,6 +200,20 @@ export default {
     width:100%;
     margin-bottom: 1rem;
   }
+
+  .mobile-menu {
+  display: block;
+}
+
+.bm-burger-button {
+    cursor: pointer;
+    height: 20px;
+    left: 36px;
+    position: absolute;
+    top: 36px;
+    width: 25px;
+}
+
 }
 
 @media screen and (max-width: 600px) {
@@ -226,8 +241,19 @@ export default {
   .sidebar-header {
   display: block;
   margin-top: 1.5rem;
-  margin-left: 3rem;
+  margin-left: 6rem;
   margin-bottom: -3rem;
+}
+.mobile-menu {
+  display: block;
+}
+.bm-burger-button {
+    cursor: pointer;
+    height: 20px;
+    left: 36px;
+    position: absolute;
+    top: 36px;
+    width: 25px;
 }
 }
 </style>

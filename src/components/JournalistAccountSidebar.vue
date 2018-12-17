@@ -1,64 +1,9 @@
 <template>
   <main class="wrapper" id="journalist-account-sidebar">
+     <div class="mobile-menu">
+       <journalist-account-nav></journalist-account-nav>
+    </div>
     <!-- Sidebar -->
-    <div class="mobile-side">
-    <nav id="sidebar">
-      <button class="navbar-toggler order-first" type="button" data-toggle="modal" data-target="#sidebarModalSearch" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
-        <i class="fa fa-bars"></i>
-      </button>
-      <div class="modal fade" id="sidebarModalSearch" tabindex="-1" role="dialog" aria-hidden="false">
-        <div class="modal-dialog modal-dialog-vertical" role="document">
-           <div class="modal-content">
-              <ul class="list-unstyled">
-                <li class="list-item">
-                  <router-link
-                    :to="`/creators/${auth.loggedInUser.userName}/dashboard`"
-                    :class="{'active': currentRoute == 'journalist-dashboard'}">
-                    <i class="far fa-th-large"></i>
-                    <span class="ml-3">Dashboard</span>
-                  </router-link>
-                </li>
-                <li class="list-item">
-                  <router-link
-                    :to="`/creators/${auth.loggedInUser.userName}/posts/create`"
-                    :class="{'active': currentRoute == 'create-post'}">
-                    <i class="fal fa-plus"></i>
-                    <span class="ml-3">Create Content</span>
-                  </router-link>
-                </li>
-                <li class="list-item">
-                  <router-link
-                    :to="`/creators/${auth.loggedInUser.userName}/posts`"
-                    :class="{'active': currentRoute == 'all-posts'}">
-                    <i class="fal fa-rocket"></i>
-                    <span class="ml-3">My Posts</span>
-                  </router-link>
-                </li>
-              </ul>
-
-       <footer id="footer">
-        <ul>
-          <li style="margin-bottom:2rem;">
-            <a href="" @click.prevent="logOut" class="mt-3">
-              <i class="fal fa-power-off" style="color: #D9091E; font-size:16px; "></i>
-              <span>Sign Out</span>
-            </a>
-          </li>
-        </ul>
-        <div class="avatar avatar-sm pt-2" style="display: flex;">
-          <img
-            id="author-img"
-            :src="auth.loggedInUser.imageUrl"
-            alt="Author's Image"
-            class="avatar-img rounded">
-          <span class="mt-2">{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</span>
-        </div>
-      </footer>
-    </div>
-  </div>
-</div>
-    </nav>
-    </div>
       <div class="sidebar-header">
         <router-link to="/" class="router-link">
           <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
@@ -119,10 +64,11 @@
 <script>
 import { Row, Col } from "iview";
 import { mapState, mapActions } from "vuex";
+import JournalistAccountNav from '@/components/JournalistAccountNav'
 import LoginButton from "./LoginButton";
 
 export default {
-  components: { Row, Col, LoginButton },
+  components: { Row, Col, LoginButton, JournalistAccountNav },
   methods: {
     ...mapActions(["clearSession"]),
     logOut(){
@@ -142,16 +88,21 @@ export default {
 
 <style scoped>
 
-.mobile-side {
+.mobile-menu {
   display: none;
 }
 
 #journalist-account-sidebar {
   padding: 4rem 2rem 2rem;
+  overflow: visible;
+}
+
+#journalist-account-sidebar .sidebar-header {
+  margin-top: -3.5rem;
 }
 
 #journalist-account-sidebar .list-unstyled {
-  margin-top: 6rem;
+  margin-top: 7rem;
 }
 
 #journalist-account-sidebar .list-unstyled li {
@@ -180,7 +131,7 @@ export default {
 }
 
 #journalist-account-sidebar #footer {
-  margin-top: 10rem;
+  margin-top: 15rem;
 }
 
 #journalist-account-sidebar #footer ul li {
@@ -205,17 +156,16 @@ export default {
   .desktop-side {
     display: none;
   }
-  .mobile-side {
-   display: block;
-   margin-top: -2rem;
-  }
+
 
   .sidebar-header {
     display: none;
   }
 
-  #journalist-account-sidebar {
-    display: none;
-  }
+  .mobile-menu {
+  display: block;
+  z-index: 8000 !important;
+}
+
 }
 </style>

@@ -59,7 +59,7 @@ export default {
 
 }
 section#img-display {
-  background: white;
+  background: #aca7a7;
   border: 0.1px solid grey;
   width: 100%;
 }

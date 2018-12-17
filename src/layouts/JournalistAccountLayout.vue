@@ -27,6 +27,7 @@ export default {
 #journalist-account-layout {
   width: 100%;
   height: auto;
+  overflow: auto;
 }
 
 #journalist-account-layout .left {
