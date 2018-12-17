@@ -12,15 +12,30 @@
         </template>
       </Alert>
 
-      <Form ref="tokenForm" class="auth-form col-md-6" v-else>
-        <h1 id="page-title">Verify Your Token</h1>
-        <FormItem required>
-          <Input  v-model="token" placeholder="Enter token here" class="my-input" />
-        </FormItem>
-        <FormItem>
-          <Button class="my-btn" :class="{'btn-secondary': token}" @click="verifyToken" long :disabled="!token" :loading="processing"> Submit </Button>
-        </FormItem>
-      </Form>
+      <div class="row justify-content-center pt-5">
+        <div class="col-md-3 mt-5">
+          <img src="@/assets/Logo.svg" style="width: 2.8rem;" alt class="img-logo mb-5">
+          <Form ref="tokenForm">
+            <h4 class="text-dark mb-3">
+              Enter code sent to you via email <br /> to continue.
+            </h4>
+            <FormItem required>
+              <Input  v-model="token" placeholder="Enter token here" class="my-input" />
+              <p class="text-dark">
+                Code expires in 60 minutes.
+              </p>
+            </FormItem>
+            <FormItem>
+              <button class="btn btn-primary btn-block" 
+                      @click="verifyToken" 
+                      :disabled="!token || processing">
+                Continue
+              </button>
+              <!-- <Button class="my-btn" :class="{'btn btn-primary': true, 'btn-secondary': token}" @click="verifyToken" long :disabled="!token" :loading="processing"> Submit </Button> -->
+            </FormItem>
+          </Form>
+        </div>
+      </div>
     </main>
 </template>
 
@@ -96,33 +111,5 @@ export default {
   border: 1px solid #eeeeee;
   height: 100vh;
   width: 100vw;
-}
-
-.auth-section {
-  padding-top: 5rem;
-}
-
-.auth-form {
-  background-color: #ffffff;
-  padding: 5rem 10rem 3rem;
-}
-
-.auth-form button {
-  border: 1px solid #2f80ed;
-  background-color: #2f80ed;
-  color: #ffffff;
-}
-
-#page-title {
-  font-size: 20px;
-  text-transform: uppercase;
-}
-
-.auth-form button:disabled {
-  opacity: 0.7;
-}
-
-.token {
-  padding-top: 150px;
 }
 </style>
