@@ -1,9 +1,9 @@
 <template>
 <div class="pagee">
 <div id="img-carousel">
-  <h3 class="card-header-title">Related Topics</h3>
-  <div class="related-posts-card">
+  <div class="card related-posts-card">
     <div class="card-header"> 
+      <h3 class="card-header-title">Related Topics</h3>
     </div>
 
     <div class="card-body">

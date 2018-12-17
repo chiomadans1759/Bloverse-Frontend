@@ -52,7 +52,7 @@
               </router-link>
             </div>
 
-            <div class="col-3" v-if="general.trendingPost.length > 2">
+            <div class="col-3">
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[2].image_url" alt="Card image">
                   <div class="card-img-overlay">
@@ -70,7 +70,7 @@
               </div>
             </div>
 
-            <div class="col-3" v-if="general.trendingPost.length > 3">
+            <div class="col-3">
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[3].image_url" alt="Card image">
                   <div class="card-img-overlay">
@@ -166,7 +166,7 @@
           </div>
         </div>
 
-        <div class="carousel-item" v-if="general.trendingPost.length > 4">
+        <div class="carousel-item" v-if="general.trendingPost.length > 8">
           <div class="row no-gutters">
             <div class="col-3">
               <div class="card text-white">
@@ -290,9 +290,19 @@ import { mapActions, mapState } from "vuex";
 
 export default {
   name: "TrendingCards",
+  data() {
+    return {
+      pages: null
+    }
+  },
   components: { Row, Col, Avatar, Carousel, Slide },
   methods: {
-    ...mapActions(["getAllTrendingPosts"])
+    ...mapActions(["getAllTrendingPosts"]),
+
+    countPages() {
+      let pages = Math.ceil(this.general.trendingPost.length / 3);
+      this.pages = pages
+    }
   },
   async created() {
     await this.getAllTrendingPosts();

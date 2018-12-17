@@ -3,7 +3,8 @@ import Api from '../src/utils/Api';
 
 export default {
   state: {
-    posts: null,
+    journalistPosts: {},
+    draftPosts: {},
     post: {
       keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }]
     },
@@ -84,7 +85,7 @@ export default {
       case 201:
       {
         // eslint-disable-next-line
-            let {
+        let {
           id,
           title,
           body,
@@ -162,10 +163,10 @@ export default {
       };
     },
     setPosts(state, props) {
-      state.posts = props
+      state.journalistPosts = props
     },
     setDrafts(state, props) {
-      state.posts = props
+      state.draftPosts = props
     },
     clearPost(state) {
       state.post = {

@@ -2,31 +2,32 @@
   <main id="all-posts">
     <div class="btn-group mb-5 pb-3" role="group">
       <button type="button" @click="currentSection('postp')" 
-        :class="{'btn' : true, 'btn-white': current_section != 'postp', 'btn-primary': current_section == 'postp'}" class="text-uppercase">
+        :class="{'btn' : true, 'btn-default': current_section != 'postp', 'btn-primary': current_section == 'postp'}" class="text-uppercase">
         all posts
       </button>
       <button type="button" @click="currentSection('draft')" 
-        :class="{'btn' : true, 'btn-white': current_section != 'draft', 'btn-primary': current_section == 'draft'}" class="text-uppercase">
+        :class="{'btn' : true, 'btn-default': current_section != 'draft', 'btn-primary': current_section == 'draft'}" class="text-uppercase">
         all drafts
       </button>
     </div>
 
-    <div v-if="showPosts">
-      <Row v-show="current_section == 'draft'" id="draft-container" >
-        <Col>
-          <DraftCard />
-        </Col>
-      </Row>
+    <div class="row" v-if="current_section == 'postp'">
+      <div class="col-md-6" v-for="post in journalist.journalistPosts" :key="post.id">
+        <feed-card :post="post" />
+      </div>
+    </div>
 
-      <Row v-if="current_section == 'postp'" type="flex" justify="space-between" :gutter="12">
-        <Col v-for="post in journalist.posts" :key="post.id" :sm="24" :md="8">
-          <FeedCard :post="post" style="height: 414px;" />
-        </Col>
-      </Row>
-    </div> 
-    <div class="showposts" v-else>
+    <div class="row" v-if="current_section == 'draft'">
+      <div class="col-md-6" v-for="post in journalist.journalistPosts" :key="post.id">
+        <DraftCard />
+      </div>
+    </div>
+    
+    <div v-show="!journalist.journalistPosts">
       <h2>This Place looks empty !</h2><br />
-      <router-link :to="`/creators/${auth.loggedInUser.userName}/posts/create`" id="showbutton">Create Posts Here</router-link>
+      <router-link class="btn btn-primary" :to="`/creators/${auth.loggedInUser.userName}/posts/create`">
+        Create Posts Here
+      </router-link>
     </div>
   </main>
 </template>
@@ -72,7 +73,6 @@ export default {
       'getMyPosts',
       'getMyDrafts'
     ]),
-    
 
     currentSection(section) {
       this.current_section = section;
@@ -81,13 +81,13 @@ export default {
 }
 </script>
 
-
 <style>
 #all-posts {
   width: 100%;
   margin: 0 auto;
   padding-top: 4rem;
   padding-left: 1rem;
+  height: auto !important;
 }
 
 #all-posts .btn-group .btn:first-child {
@@ -102,66 +102,9 @@ export default {
   border-bottom-left-radius: 0px !important;
 }
 
-#all-posts .btn-group .btn {
-  border-color: rgba(0, 0, 0, 0.1);
-}
-
-.showposts{
-  text-align: center;
-  margin-top: 15%;
-}
-
-.showposts h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
-  padding-left: 5rem !important;
-}
-  
-
-.showposts #showbutton {
-  background: #1497C9;
-  color: #fff;
-  padding: 10px 10px 10px 10px;
-  border-radius: 5px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.mypost-container {
-  margin: 0 auto;
-  width: 70%;
-  overflow-x: hidden !important;
-  background-color: #f5f5f5;
-  min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
-  padding-bottom: 10rem;
-}
-
-#all-posts #posts-tabs {
-  width: 30%;
-  height: 2rem;
-  background-color: #ffffff;
-  border: 1px solid #096DD9;
-  border-radius: 4px;
-  justify-content: left
-  
-}
-#all-posts #posts-tabs .col-xs-6 {
-  height: 100%;
-  color:#096DD9;
-  cursor: pointer;
-}
-#all-posts #posts-tabs .col-xs-6 p {
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  padding:0.2rem 0.3rem 0.2rem 0.5rem;
-}
-#all-posts #posts-tabs .active {
-  color: #ffffff;
-  background:#096DD9;
-}
-
-#draft-container {
-  display: flex;
-  align-items: center
+#all-posts .btn-group .btn-default {
+  background: transparent !important;
+  border-color: #2F80ED !important;
+  color: #2F80ED !important;
 }
 </style>

@@ -130,6 +130,7 @@ export default {
         country: ""
       });
       this.general.activeCategory = { id, name };
+      this.show_more = false;
     },
 
     toggleLayout(layout) {
@@ -272,7 +273,7 @@ export default {
   }
 
   .post-feeds-category .cat-list .list-inline-item a {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .post-feeds-category #layout-select {
@@ -291,6 +292,13 @@ export default {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   z-index: 1000;
+}
+
+@media only screen and (max-width: 980px) { 
+  .dropdown-card { 
+    margin-left: 1rem;
+    width: 80%;
+  }
 }
 
 .dropdown-card li {
