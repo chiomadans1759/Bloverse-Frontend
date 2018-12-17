@@ -28,6 +28,8 @@ export default {
   width: 100%;
   height: auto;
   overflow: auto;
+  padding-bottom: 20rem;
+  height: auto !important;
 }
 
 #journalist-account-layout .left {
@@ -40,12 +42,12 @@ export default {
 #journalist-account-layout .right {
   float: right;
   width: 80%;
+  height: auto !important;
 }
 
 #journalist-account-layout footer {
   height: 10rem;
   width: 100%;
-  z-index: 1000;
 }
 </style>
 

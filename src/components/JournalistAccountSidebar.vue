@@ -107,10 +107,12 @@ export default {
 
 #journalist-account-sidebar .list-unstyled li {
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 #journalist-account-sidebar .list-unstyled li a {
   font-size: 16px;
+  width: 100%;
 }
 
 #journalist-account-sidebar .list-unstyled li a i {

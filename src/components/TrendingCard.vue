@@ -174,7 +174,7 @@
           </div>
         </div>
 
-        <div class="carousel-item" v-if="general.trendingPost.length > 4">
+        <div class="carousel-item" v-if="general.trendingPost.length > 8">
           <div class="row no-gutters">
             <div class="col-3">
               <div class="card text-white">
@@ -298,9 +298,19 @@ import { mapActions, mapState } from "vuex";
 
 export default {
   name: "TrendingCards",
+  data() {
+    return {
+      pages: null
+    }
+  },
   components: { Row, Col, Avatar, Carousel, Slide },
   methods: {
-    ...mapActions(["getAllTrendingPosts"])
+    ...mapActions(["getAllTrendingPosts"]),
+
+    countPages() {
+      let pages = Math.ceil(this.general.trendingPost.length / 3);
+      this.pages = pages
+    }
   },
   async created() {
     await this.getAllTrendingPosts();
