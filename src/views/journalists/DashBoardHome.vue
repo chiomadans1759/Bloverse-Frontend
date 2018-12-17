@@ -1,6 +1,11 @@
 <template>
   <div id="journalist-dashboard">
-    <div class="container pt-5">
+     <div class="sidebar-header">
+        <router-link to="/" class="router-link">
+          <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
+        </router-link>
+      </div>
+    <div class="container pt-5" style="margin-left: -3rem;">
       <Row :gutter="32" v-if="show" id="stats">
         <Col :sm="8" :xs="24" id="icon-fix">
           <stat-card variant="fade" icon="fal fa-eye" title="views" id="stat-point1" :stats="{ key:[ views.today ?views.today : 0, views.week ?views.week:0, views.total ?views.total:0] ,value:['Today' , 'This Week']}" />
@@ -13,7 +18,7 @@
         </Col>
 
       </Row>
-
+      <div class="show-map">
       <div class="row" v-if="show">
         <div class="col-md-8">
           <GChart
@@ -24,7 +29,7 @@
         </div>
 
         <div class="col-md-4">
-          <h3 class="text-uppercase mb-3">Views</h3>
+          <h3 class="text-uppercase mb-3">Views <span id="blue-c"></span></h3>
 
           <ul class="list-group">
             <li class="list-group-item rounded-0">
@@ -60,6 +65,7 @@
           </ul>
         </div>
       </div>
+      </div>
     </div>
   </div>
 </template>
@@ -71,7 +77,7 @@ import { mapActions, mapGetters, mapState } from "vuex";
 import lang from "iview/dist/locale/en-US";
 import { GChart } from "vue-google-charts";
 import { Carousel, Slide } from 'vue-carousel';
-import DashboardStatDisplayCard from "../../components/JournalistStatDisplayCard.vue";
+import DashboardStatDisplayCard from "@/components/JournalistStatDisplayCard.vue";
 // configure language
 locale(lang);
 
@@ -123,12 +129,17 @@ export default {
 
 
 <style scoped>
+
 #journalist-dashboard #stats {
   margin-bottom: 3rem;
 }
 
 #journalist-dashboard #stats #icon-fix {
   overflow: hidden;
+}
+
+.sidebar-header {
+  display: none;
 }
 
 #journalist-dashboard #stats .stat-card {
@@ -149,6 +160,13 @@ export default {
   justify-content: space-between;
   padding: 1rem 0.7rem;
   overflow: hidden;
+}
+
+#blue-c:before {
+  content: ' \25CF';
+  font-size: 20px;
+  margin-left: 2rem;
+  color: #096DD9;
 }
 
 #journalist-dashboard #stats #stat-point1 {
@@ -180,23 +198,63 @@ export default {
 
 @media screen and (max-width: 360px) {
   #stat-wrapper stat-card {
-    width:100%
+    width:100%;
+    margin-bottom: 1rem;
   }
 
-  #map-card {
-    display: none;
-    border:1px solid blue;
-  }
+  .mobile-menu {
+  display: block;
+}
+
+.bm-burger-button {
+    cursor: pointer;
+    height: 20px;
+    left: 36px;
+    position: absolute;
+    top: 36px;
+    width: 25px;
+}
+
 }
 
 @media screen and (max-width: 600px) {
   #stat-wrapper stat-card {
     width:100%;
+    margin-bottom: 1rem;
   }
 
-  #map-card {
-    display:none;
-    border:1px solid blue;
+  .show-map {
+    display: none;
   }
+
+  #icon-fix {
+    margin-bottom: 1rem;
+  }
+
+  #stats {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    text-align: center;
+    margin-left: -5rem;
+  }
+
+  .sidebar-header {
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: 6rem;
+  margin-bottom: -3rem;
+}
+.mobile-menu {
+  display: block;
+}
+.bm-burger-button {
+    cursor: pointer;
+    height: 20px;
+    left: 36px;
+    position: absolute;
+    top: 36px;
+    width: 25px;
+}
 }
 </style>

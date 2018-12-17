@@ -470,7 +470,6 @@ export default {
 
 @media screen and (max-width: 360px) {
   #mobile {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
   }
@@ -482,7 +481,6 @@ export default {
 
 @media screen and (max-width: 600px) {
   #mobile {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
   }

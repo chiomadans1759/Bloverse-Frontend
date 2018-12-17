@@ -17,7 +17,8 @@ export default {
     journalists: [],
     loading: false,
     metrics: {},
-    modal: { show: false, currentComponent: null }
+    modal: { show: false, currentComponent: null },
+    relatedPosts: {}
   },
   actions: {
     async setGeneralData({
@@ -143,6 +144,10 @@ export default {
     }) {
       let response = await Api.get(`posts?slug=${slug}`)
       commit('setCurrentPost', response.data.posts[0]);
+    },
+    async getSimilarPosts({ commit }, { post_id, threshold }) {
+      let response = await Api.get(`posts/${post_id}/similar/?threshold=${threshold}`);
+      commit('setRelatedPosts', response.data.posts);
     }
   },
   mutations: {
@@ -181,6 +186,9 @@ export default {
     },
     setTrendingPost(state, trending) {
       state.trendingPost = trending
+    },
+    setRelatedPosts(state, posts) {
+      state.relatedPosts = posts
     }
   },
   getters: {
