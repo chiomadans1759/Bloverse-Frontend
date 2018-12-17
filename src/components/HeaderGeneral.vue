@@ -29,7 +29,7 @@ export default {
   width: 90%;
   margin: 0 auto;
   background: transparent;
-  z-index: 2;
+  z-index: 1;
   position: absolute; 
   padding:1.5rem 0 0 5rem;
 }

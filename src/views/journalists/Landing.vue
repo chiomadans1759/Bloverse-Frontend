@@ -24,33 +24,16 @@
           </Row>
  
           <Row class="container2">
-          <Col :md="12" :sm="10" :xs="24" class="left2">
-              <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">  
-              <a href="https://www.youtube.com/embed/EjRM4DMdnGw" class="video-btn popup-youtube">
-                <img src ="./../../assets/video-image.jpg"/>              
-                <button class="pulse-button"><i class="far fa-play-circle"></i></button>
-              </a>
-              <div id="video-overlay" class="video-overlay">
-                <a class="video-overlay-close"></a>
-              </div>
-              </Col>
-          </Col>
-          <!-- <Row class="container2">
             <Col :md="12" :sm="10" :xs="24" class="left2">
-                <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">  
-                <iframe width="300" height="325" src="https://www.youtube.com/embed/EjRM4DMdnGw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    
-                  </iframe>
-                <a href="https://www.youtube.com/embed/EjRM4DMdnGw" class="video-btn popup-youtube">
-                  <img src ="./../../assets/video-image.jpg"/>              
-                  <button class="pulse-button"><i class="far fa-play-circle"></i></button>
-                </a> -->
-                <!-- <div id="video-overlay" class="video-overlay">
+                <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">    
+                  <img src ="./../../assets/video-image.jpg" />              
+                  <button @click.prevent="hideThumbnail()"  class="pulse-button"><i class="fas fa-play"></i></button>
+                <div id="video-overlay" class="video-overlay">
                   <a class="video-overlay-close"></a>
                 </div>
-                </Col>
-            </Col> -->
-
+                </Col>              
+            </Col>
+           <video-modal v-if="thumbnail" @close="modalClose"/>
             <Col :md="12" :sm="14" :xs="24" class="right2">
               <Col offset="2" :md="12" :sm="20" :xs="20" class="right-contain2">
                 <h2>About Us</h2>
@@ -63,11 +46,11 @@
           <Row class="container3">
             <Col :md="8" :sm="8" :xs="24">
               <h3>{{general.metrics.publishedPost}}</h3>
-              <p>ARTICLES POSTED</p>
+              <p>CONTENT PUBLISHED</p>
             </Col>
             <Col :md="8" :sm="8" :xs="24" class="center">
               <h3>{{general.metrics.journalists}}</h3>
-              <p>CONTENT PROVIDERS</p>
+              <p>CONTENT CREATORS</p>
             </Col>
             <Col :md="8" :sm="8" :xs="24" v-if="show">
               <h3>{{general.metrics.views.total}}</h3>
@@ -96,6 +79,7 @@ import {
 import { mapState, mapActions } from "vuex";
 import HeaderGeneral from "../../components/HeaderGeneral.vue";
 import TheFooter from "../../components/TheFooter.vue";
+import VideoModal from "../../components/VideoModal.vue";
 
 export default {
   components: {
@@ -109,11 +93,13 @@ export default {
     Layout,
     Header,
     HeaderGeneral,
-    TheFooter
+    TheFooter,
+    VideoModal
   },
   data() {
     return {
-      show: false
+      show: false,
+      thumbnail: false
     };
   },
   computed: {
@@ -121,6 +107,12 @@ export default {
   },
   methods: {
     ...mapActions(["getGeneralMetrics"]),
+    hideThumbnail(){
+      this.thumbnail = true;
+    },
+    modalClose(){
+      this.thumbnail = false;
+    }
   },
   mounted: async function() {
     await this.getGeneralMetrics();
@@ -279,9 +271,9 @@ export default {
   border-left: 2px solid #ccc;
 }
 
-.fa-play-circle{
+.fa-play{
   color:#fff;
-  font-size:2rem;
+  font-size:1rem;
 }
 .pulse-button {
   position: absolute;

@@ -4,6 +4,7 @@
       <div class="col-md-5">
         <div class="container pl-lg-6 pr-lg-5">
           <img src="@/assets/Logo.svg" style="width: 2.8rem;" alt class="img-logo">
+          <p id="sign-c">Sign in to continue</p>
 
           <Form ref="loginForm"
             class="auth-form login-form"
@@ -38,10 +39,10 @@
                 </div>
               </div>
               
-              <div class="row mt-5">
+              <div class="row mt-4">
                 <div class="col">
                   <p class="text-left">
-                    <router-link class="btn-link" to="/creators/apply" @click.native="close()">Register Now</router-link>
+                    New to Bloverse ? &nbsp;<router-link class="btn-link" to="/creators/apply" @click.native="close()">Apply</router-link>
                   </p>
                 </div>
               </div>
@@ -162,6 +163,13 @@ export default {
 #auth-sign-in #auth-bg {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  margin-left:0.1rem
+}
+
+#sign-c {
+  font-size: 16px;
+  margin-bottom: 1rem;
 }
 
 @media only screen and (max-width: 980px) {

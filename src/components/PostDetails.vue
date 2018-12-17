@@ -62,7 +62,7 @@ export default {
   width: 100%;
   height: 398px;
   margin-bottom: 1rem;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .card-body {

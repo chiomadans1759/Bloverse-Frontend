@@ -62,7 +62,7 @@ export default {
     // fetch the data whethis.getMyPostn the view is created and the data is
     // already being observed
     await this. getMyPosts()
-    await this. getMyDrafts()
+    // await this. getMyDrafts()
   },
   watch: {
     // call again the method if the route changes
@@ -70,8 +70,8 @@ export default {
   },
   methods: {
     ...mapActions([
-      'getMyPosts',
-      'getMyDrafts'
+      'getMyPosts'
+      // 'getMyDrafts'
     ]),
 
     currentSection(section) {
