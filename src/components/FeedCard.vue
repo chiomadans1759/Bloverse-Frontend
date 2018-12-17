@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/posts/${post.slug}`"> 
+  <router-link :to="`/posts/${post.slug}`">
     <div class="card-container" id="photo-contest" v-if="post.category === 7">
       <div id="card-hero">
         <img id="post-image" :src="post.image_url">
@@ -10,28 +10,42 @@
             <p>{{category}}</p>
           </h2>
           <div id="body-start">
-              <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>          
+            <h2 id="card-title">
+              <p>
+                <strong>{{post.title}}</strong>
+              </p>
+            </h2>
           </div>
         </div>
         <div id="card-footer">
           <div id="body-mid">
-        <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
-        <span id ="author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
-        </div>
-        <div id="views">
-          <i class="fal fa-eye"></i> {{post.views}}
+            <Avatar id="author-image" :src="post.author.image_url"/>&nbsp;&nbsp;
+            <span id="author-area">
+              {{post.author.first_name}} {{post.author.last_name}}
+              <p>{{post.published | customizedTime}}</p>
+            </span>
           </div>
-        </div>            
-      </div>
-      <div class="card-container2"> 
-        <div class="card-overlay">
-          <h4>{{post.title}}</h4> </br>
-          <p id="travel-details">
-            <i class="fas fa-camera-retro"></i>{{post.device_type}} 
-            </br><span> <i class="fas fa-map-marker-alt"></i>{{post.location}}</span>
-          </p> 
+          <div id="views">
+            <i class="fal fa-eye"></i>
+            {{post.views}}
+          </div>
         </div>
-        <router-link :to="`posts/${post.slug}`"> 
+      </div>
+      <div class="card-container2">
+        <div class="card-overlay">
+          <h4>{{post.title}}</h4>
+          <br>
+          <p id="travel-details">
+            <i class="fas fa-camera-retro"></i>
+            {{post.device_type}}
+            <br>
+            <span>
+              <i class="fas fa-map-marker-alt"></i>
+              {{post.location}}
+            </span>
+          </p>
+        </div>
+        <router-link :to="`posts/${post.slug}`">
           <h5 style="color: #096DD9;">READ STORY</h5>
         </router-link>
       </div>
@@ -47,22 +61,28 @@
             <p>{{category}}</p>
           </h2>
           <div id="body-start">
-        <h2 id="card-title"><p><strong>{{post.title}}</strong></p></h2>
-      
-        </div>
+            <h2 id="card-title">
+              <p>
+                <strong>{{post.title}}</strong>
+              </p>
+            </h2>
+          </div>
         </div>
         <div id="card-footer">
           <div id="body-mid">
-        <Avatar id="author-image" :src="post.author.image_url"/> &nbsp;&nbsp;
-        <span id ="author-area">{{post.author.first_name}} {{post.author.last_name}}  <p>{{post.published | customizedTime}}</p></span>
-        </div>
-        <div id="views">
-          <i class="fal fa-eye"></i> {{post.views}}
+            <Avatar id="author-image" :src="post.author.image_url"/>&nbsp;&nbsp;
+            <span id="author-area">
+              {{post.author.first_name}} {{post.author.last_name}}
+              <p>{{post.published | customizedTime}}</p>
+            </span>
+          </div>
+          <div id="views">
+            <i class="fal fa-eye"></i>
+            {{post.views}}
           </div>
         </div>
-        
       </div>
-      <div class="card-container22"> 
+      <div class="card-container22">
         <div class="container card-general-hover">
           <h4 class="flip-post">{{post.title}}</h4>
 
@@ -74,7 +94,10 @@
               <li v-if="post.keypoint[2]">{{post.keypoint[2]}}</li>
             </ul>
 
-            <div class="container" v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]">
+            <div
+              class="container"
+              v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]"
+            >
               <p class="alert alert-light">
                 <i class="fa fa-exclamation-circle"></i> No keypoint availble for this post
               </p>
@@ -82,7 +105,7 @@
           </div>
         </div>
         <div id="hover-top-border">
-          <router-link :to="`posts/${post.slug}`"> 
+          <router-link :to="`posts/${post.slug}`">
             <h5>READ STORY</h5>
           </router-link>
         </div>
@@ -114,7 +137,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 #post-image {
   width: 100%;
@@ -124,9 +147,9 @@ export default {
   border-top-left-radius: 4px;
 }
 
-.photo-contest-para{
-  color:blue !important;
-} 
+.photo-contest-para {
+  color: blue !important;
+}
 
 .card-container {
   position: relative;
@@ -135,124 +158,120 @@ export default {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .card-container2 {
-  background-image: url("./../assets/landingPage.jpg"); 
-  height: 414px;  
+  background-image: url("./../assets/landingPage.jpg");
+  height: 414px;
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 4px;
-  font-family: 'Montserrat';
-  opacity:0;  
-  position: absolute; 
-  top: 0; 
+  font-family: "Montserrat";
+  opacity: 0;
+  position: absolute;
+  top: 0;
   bottom: 0;
   left: 0;
-  right: 0;    
-  transition: .5s ease; 
+  right: 0;
+  transition: 0.5s ease;
 }
 
-.card-overlay{
+.card-overlay {
   height: 100%;
-  width:100%;
+  width: 100%;
   background: #000;
-  opacity: .8;
+  opacity: 0.8;
 }
 
-.card-container2 h5{
-  position:absolute;
-  bottom:3rem;
-  right:3rem;  
+.card-container2 h5 {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
   font-weight: 800;
-  color:blue;
+  color: blue;
 }
 
-.card-container2 div{ 
-  color: #fff; 
+.card-container2 div {
+  color: #fff;
 }
 
-.card-container2 h4{  
-  font-weight:800;
-  padding:2rem;
+.card-container2 h4 {
+  font-weight: 800;
+  padding: 2rem;
 }
 
-.card-container2 p{  
-  font-weight:200;
-  padding:2rem;
+.card-container2 p {
+  font-weight: 200;
+  padding: 2rem;
   line-height: 1.2;
-  font-size:1.6rem;
+  font-size: 1.6rem;
 }
 
-.card-container2 .fa-camera-retro, .fa-map-marker-alt{  
-   margin-right:10px;
-   opacity: .3;
+.card-container2 .fa-camera-retro,
+.fa-map-marker-alt {
+  margin-right: 10px;
+  opacity: 0.3;
 }
 
-
-.card-container:hover .card-container2 { 
-  opacity:1; 
-} 
-
+.card-container:hover .card-container2 {
+  opacity: 1;
+}
 
 .card-container22 {
-  height: 414px;  
+  height: 414px;
   border: 1px solid rgba(168, 25, 25, 0.15);
   border-radius: 4px;
-  font-family: 'Montserrat';
-  opacity: 0;  
-  position: absolute; 
-  top: 0; 
+  font-family: "Montserrat";
+  opacity: 0;
+  position: absolute;
+  top: 0;
   bottom: 0;
   left: 0;
-  right: 0; 
-  transition: .5s ease; 
-    text-transform: capitalize
+  right: 0;
+  transition: 0.5s ease;
+  text-transform: capitalize;
 }
 
-.card-container22 h5{  
+.card-container22 h5 {
   text-align: right;
-  padding:20px 20px 0 0;
-  font-weight:600; 
-  color:#096DD9
- 
+  padding: 20px 20px 0 0;
+  font-weight: 600;
+  color: #096dd9;
 }
 
-.card-container22 div{ 
-  color: #000; 
+.card-container22 div {
+  color: #000;
 }
 
-.card-container22 ul{
-  font-size:1.4rem;
-  margin-left:2rem;
+.card-container22 ul {
+  font-size: 1.4rem;
+  margin-left: 2rem;
 }
 
-.card-container22 ul li{
-  list-style-type:disc;
-  margin-left:2.5rem;
-  margin-top:1rem;
+.card-container22 ul li {
+  list-style-type: disc;
+  margin-left: 2.5rem;
+  margin-top: 1rem;
   list-style-position: outside;
 }
 
-#hover-top-border{
+#hover-top-border {
   border-top: 1px solid #ccc;
   position: absolute;
-  bottom: 0; 
+  bottom: 0;
   height: 3.5rem;
   width: 100%;
 }
 
-.card-general-hover h4{  
-  font-weight:400;
+.card-general-hover h4 {
+  font-weight: 400;
   line-height: 1.5rem;
   margin-top: 15px;
   margin-bottom: 20px;
-    text-transform: capitalize
-
-
-} 
+  text-transform: capitalize;
+}
 
 .keypoints h3 {
   color: rgba(0, 0, 0, 0.5);
@@ -268,9 +287,9 @@ export default {
 }
 
 .card-container:hover .card-container22 {
-  opacity: 1;  
+  opacity: 1;
   background-color: #fff;
-} 
+}
 
 #post-image {
   width: 100%;
@@ -287,11 +306,11 @@ export default {
 }
 
 #feed-travel-competition p {
-  color:blue !important;
+  color: blue !important;
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
-  text-decoration: none; 
+  text-decoration: none;
   font-size: 16px;
 }
 
@@ -326,8 +345,8 @@ export default {
   align-items: center;
 }
 
-#views{
-  color:black;
+#views {
+  color: black;
   opacity: 0.85;
 }
 
@@ -343,7 +362,7 @@ export default {
   justify-content: space-between;
   font-size: 14px;
   margin-top: 15px;
-  color:black;
+  color: black;
   align-items: center;
 }
 
@@ -362,21 +381,21 @@ export default {
 }
 
 #contest-container {
-  background-image: linear-gradient(#2c5364,#203A43,#0F2027 );
-  color:rgba(255, 255, 255, 0.856);
-  font-family: 'Montserrat';
+  background-image: linear-gradient(#2c5364, #203a43, #0f2027);
+  color: rgba(255, 255, 255, 0.856);
+  font-family: "Montserrat";
 }
 
 #contest-author-area {
-   color:white;
-  opacity:0.8;
+  color: white;
+  opacity: 0.8;
   font-size: 14px;
 }
 
 #contest-author-area p {
-  color:white;
+  color: white;
   font-size: 10px;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 
 #contest-image {
@@ -414,14 +433,14 @@ export default {
 }
 
 .img-container img::after {
-  background:rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* Bottom left text */
 .bottom-left {
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
 }
 
 /* Top left text */
@@ -457,6 +476,5 @@ export default {
   margin-top: 5rem;
   font-weight: bold;
 }
-
 </style>
 
