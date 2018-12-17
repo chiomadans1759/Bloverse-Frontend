@@ -63,11 +63,11 @@
           <Row class="container3">
             <Col :md="8" :sm="8" :xs="24">
               <h3>{{general.metrics.publishedPost}}</h3>
-              <p>ARTICLES POSTED</p>
+              <p>CONTENT PUBLISHED</p>
             </Col>
             <Col :md="8" :sm="8" :xs="24" class="center">
               <h3>{{general.metrics.journalists}}</h3>
-              <p>CONTENT PROVIDERS</p>
+              <p>CONTENT CREATORS</p>
             </Col>
             <Col :md="8" :sm="8" :xs="24" v-if="show">
               <h3>{{general.metrics.views.total}}</h3>

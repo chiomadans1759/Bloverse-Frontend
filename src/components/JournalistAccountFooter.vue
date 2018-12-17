@@ -37,4 +37,10 @@ export default {
 #journalist-account-footer .list-inline .list-inline-item a:hover {
   color: #2F80ED !important;
 }
+
+@media screen and (max-width: 600px) {
+  #journalist-account-footer {
+    display: none;
+  }
+}
 </style>

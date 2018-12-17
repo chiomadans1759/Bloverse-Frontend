@@ -1,14 +1,17 @@
 <template>
   <main class="wrapper" id="journalist-account-sidebar">
+     <!-- <div class="mobile-menu">
+       <journalist-account-nav></journalist-account-nav>
+    </div> -->
     <!-- Sidebar -->
-    <nav id="sidebar">
       <div class="sidebar-header">
         <router-link to="/" class="router-link">
           <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
         </router-link>
       </div>
-
-      <ul class="list-unstyled">
+      <div class="desktop-side">
+      <nav id="sidebar">
+       <ul class="list-unstyled">
         <li class="list-item">
           <router-link
             :to="`/creators/${auth.loggedInUser.userName}/dashboard`"
@@ -54,16 +57,18 @@
         </div>
       </footer>
     </nav>
+      </div>
   </main>
 </template>
 
 <script>
 import { Row, Col } from "iview";
 import { mapState, mapActions } from "vuex";
+import JournalistAccountNav from '@/components/JournalistAccountNav'
 import LoginButton from "./LoginButton";
 
 export default {
-  components: { Row, Col, LoginButton },
+  components: { Row, Col, LoginButton, JournalistAccountNav },
   methods: {
     ...mapActions(["clearSession"]),
     logOut(){
@@ -82,12 +87,22 @@ export default {
 </script>
 
 <style scoped>
+
+.mobile-menu {
+  display: none;
+}
+
 #journalist-account-sidebar {
   padding: 4rem 2rem 2rem;
+  overflow: visible;
+}
+
+#journalist-account-sidebar .sidebar-header {
+  margin-top: -3.5rem;
 }
 
 #journalist-account-sidebar .list-unstyled {
-  margin-top: 6rem;
+  margin-top: 7rem;
 }
 
 #journalist-account-sidebar .list-unstyled li {
@@ -118,7 +133,7 @@ export default {
 }
 
 #journalist-account-sidebar #footer {
-  margin-top: 10rem;
+  margin-top: 15rem;
 }
 
 #journalist-account-sidebar #footer ul li {
@@ -129,5 +144,30 @@ export default {
   margin-left: 0.5rem;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.9);
+}
+
+#journalist-account-sidebar #sidebarModalSearch .modal-content {
+  z-index: 3000 !important;
+}
+
+.desktop-side {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .desktop-side {
+    display: none;
+  }
+
+
+  .sidebar-header {
+    display: none;
+  }
+
+  .mobile-menu {
+  display: block;
+  z-index: 8000 !important;
+}
+
 }
 </style>
