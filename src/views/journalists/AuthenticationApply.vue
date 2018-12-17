@@ -228,6 +228,9 @@ export default {
       this.errors = {}; // reset error
       this.$refs.applyForm.validate(async valid => {
         if (valid) {
+          if (!this.validateArticleURLS()) {
+            return
+          }
           let applied = await this.apply();
           if (applied == true) {
             this.isSuccess = true;
@@ -274,6 +277,16 @@ export default {
       if (this.applicant.articleURLs.length < 3) {
         this.applicant.articleURLs.push("");
       }
+    },
+    validateArticleURLS() {
+      const applicantUrls = this.applicant.articleURLs.filter(Boolean)
+      if ([...(new Set(applicantUrls))].length !== applicantUrls.length) {
+        this.$Message.error("Links to written articles cannot be identical");
+
+        return false
+      }
+
+      return true
     },
 
     ...mapActions(["apply"]),
