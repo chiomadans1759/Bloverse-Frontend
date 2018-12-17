@@ -24,7 +24,7 @@ import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
 
 import NotFound from '../src/views/NotFound.vue';
-
+import About from '../src/views/About.vue';
 
 /*
 
@@ -50,9 +50,11 @@ const routes = [
     children: [
       { path: '', component: PostFeeds },
       { path: 'posts', redirect: '/' },
-      { path: 'posts/:slug', component: PostDisplay }
+      { path: 'posts/:slug', component: PostDisplay },
+      { path: '/about', component: About},
     ]
   },
+ 
   {
     path: '/admin', component: BlankBase,
     children: [
