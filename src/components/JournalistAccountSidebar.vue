@@ -1,8 +1,8 @@
 <template>
   <main class="wrapper" id="journalist-account-sidebar">
-     <div class="mobile-menu">
+     <!-- <div class="mobile-menu">
        <journalist-account-nav></journalist-account-nav>
-    </div>
+    </div> -->
     <!-- Sidebar -->
       <div class="sidebar-header">
         <router-link to="/" class="router-link">
