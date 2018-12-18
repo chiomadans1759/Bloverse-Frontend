@@ -157,6 +157,7 @@ import { VueEditor } from "vue2-editor";
 import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
 import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
 
+import { Push } from 'vue-burger-menu';
 import DisplayImage from "./DisplayImage";
 import Tinymce from "./Tinymce";
 
@@ -180,7 +181,8 @@ export default {
     DatePicker,
     Tinymce,
     Form,
-    FormItem
+    FormItem,
+    Push
   },
   props: ["isTravel"],
   data: function() {

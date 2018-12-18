@@ -1,5 +1,22 @@
 <template>
   <div id="journalist-dashboard">
+   <Push>
+     <div class="dashboard-image">
+      <img :src="auth.loggedInUser.imageUrl" />
+     </div>
+      <a id="home" href="/creators/${auth.loggedInUser.userName}/dashboard">
+        <span>Dashboard</span>
+      </a>
+      <a id="home" href="/creators/${auth.loggedInUser.userName}/posts/create">
+        <span>Create Content</span>
+      </a>
+      <a id="home" href="/creators/${auth.loggedInUser.userName}/posts">
+        <span>My Posts</span>
+      </a>
+      <a id="home" href="" @click.prevent="logOut">
+        <span>Sign Out</span>
+      </a>
+   </Push> 
      <div class="sidebar-header">
         <router-link to="/" class="router-link">
           <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
@@ -76,6 +93,7 @@ import { Row, Col, Card, Select, Option, locale, Avatar, Icon } from "iview";
 import { mapActions, mapGetters, mapState } from "vuex";
 import lang from "iview/dist/locale/en-US";
 import { GChart } from "vue-google-charts";
+import { Push } from 'vue-burger-menu';
 import { Carousel, Slide } from 'vue-carousel';
 import DashboardStatDisplayCard from "@/components/JournalistStatDisplayCard.vue";
 // configure language
@@ -93,7 +111,8 @@ export default {
     StatCard: DashboardStatDisplayCard,
     Icon,
     Carousel, 
-    Slide
+    Slide,
+    Push
   },
   data(){
     return {
@@ -105,7 +124,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(["general"]),
+    ...mapState(["general", "auth"]),
     chartData() {
       let newData = [["Country", "views"]];
       let countries = this.views.countries || '';
@@ -118,7 +137,11 @@ export default {
     ...mapGetters(["views", "articles", "datas"])
   },
   methods: {
-    ...mapActions(["getMyMetrics"])
+    ...mapActions(["getMyMetrics", "clearSession"]),
+    logOut(){
+      this.clearSession();
+      this.$router.push('/creators');
+    }
   },
   mounted: async function() {
     await this.getMyMetrics();
@@ -132,6 +155,14 @@ export default {
 
 #journalist-dashboard #stats {
   margin-bottom: 3rem;
+}
+
+#journalist-dashboard .dashboard-image img {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+  margin: auto;
+
 }
 
 #journalist-dashboard #stats #icon-fix {
