@@ -1,21 +1,31 @@
 <template>
-  <div id="journalist-dashboard">
-   <Push>
-     <div class="dashboard-image">
+  <main id="journalist-dashboard">
+   <Push class="side">
+     <div lass="dashboard-image">
       <img :src="auth.loggedInUser.imageUrl" />
      </div>
       <a id="home" href="/creators/${auth.loggedInUser.userName}/dashboard">
+      <i class="far fa-th-large"></i>
         <span>Dashboard</span>
       </a>
       <a id="home" href="/creators/${auth.loggedInUser.userName}/posts/create">
+      <i class="fal fa-plus"></i>
         <span>Create Content</span>
       </a>
       <a id="home" href="/creators/${auth.loggedInUser.userName}/posts">
+      <i class="fal fa-rocket"></i>
         <span>My Posts</span>
       </a>
       <a id="home" href="" @click.prevent="logOut">
+        <i class="fal fa-power-off" style="color: #D9091E; font-size:16px; "></i>
         <span>Sign Out</span>
       </a>
+       <div class="overlayed-text">
+        <div class="overlayed-content">
+          <img :src="auth.loggedInUser.imageUrl" />
+           <p class="text-white" style="text-transform: capitalize; margin-left: -0.6rem">{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</p>
+        </div>
+      </div>
    </Push> 
      <div class="sidebar-header">
         <router-link to="/" class="router-link">
@@ -106,7 +116,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 
@@ -188,14 +198,6 @@ export default {
 <style scoped>
 #journalist-dashboard #stats {
   margin-bottom: 3rem;
-}
-
-#journalist-dashboard .dashboard-image img {
-  height: 200px;
-  width: 100%;
-  object-fit: contain;
-  margin: auto;
-
 }
 
 #journalist-dashboard #stats #icon-fix {
@@ -307,6 +309,28 @@ export default {
     margin-bottom: 1rem;
   }
 
+  #journalist-dashboard .side img{
+    width: 130%;
+    height: 172px;
+    margin-left: -2.5rem !important;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+
+  }
+
+  #journalist-dashboard .side .overlayed-text {
+    overflow: hidden;
+    position: absolute;
+    left: 20px;
+    top: 100px;
+  }
+
+  #journalist-dashboard .side .overlayed-text .overlayed-content img{
+    filter: none;
+     width: 55%;
+     height: 55%;
+    object-fit: contain;
+}
   .show-map {
     display: none;
   }
@@ -332,13 +356,43 @@ export default {
   .mobile-menu {
     display: block;
   }
-  .bm-burger-button {
-    cursor: pointer;
-    height: 20px;
-    left: 36px;
-    position: absolute;
-    top: 36px;
-    width: 25px;
-  }
+    .bm-burger-button {
+      position: fixed;
+      width: 18px;
+      height: 12px;
+      left: 36px;
+      top: 36px;
+      cursor: pointer;
+   }
+    .bm-burger-bars {
+      background-color: #525358;
+    }
+
+     .bm-item-list {
+      color: #b8b7ad;
+      margin-left: 5%;
+      font-size: 14px;
+    }
+
+     .bm-menu {
+      height: 100%;
+      width: 0; 
+      position: fixed; 
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: #f5f5f5; 
+      overflow-x: hidden;
+      padding-top: 60px; 
+      transition: 0.5s;
+    }
+
+
+    .bm-item-list > * > span {
+      margin-left: 14px;
+      color: #222222;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
 }
 </style>

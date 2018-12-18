@@ -16,17 +16,27 @@
       <img :src="auth.loggedInUser.imageUrl" />
      </div>
       <a id="home" href="/creators/${auth.loggedInUser.userName}/dashboard">
+      <i class="far fa-th-large"></i>
         <span>Dashboard</span>
       </a>
       <a id="home" href="/creators/${auth.loggedInUser.userName}/posts/create">
+      <i class="fal fa-plus"></i>
         <span>Create Content</span>
       </a>
      <a id="home" href="/creators/${auth.loggedInUser.userName}/posts">
+     <i class="fal fa-rocket"></i>
         <span>My Posts</span>
       </a>
          <a id="home" href="" @click.prevent="logOut">
+           <i class="fal fa-power-off" style="color: #D9091E; font-size:16px; "></i>
         <span>Sign Out</span>
       </a>
+       <div class="overlayed-text">
+        <div class="overlayed-content">
+           <img :src="auth.loggedInUser.imageUrl" />
+           <p class="text-white" style="text-transform: capitalize; margin-left: -1.6rem">{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</p>
+        </div>
+      </div>
    </Push>
      <div class="mobile">
         <router-link to="/" class="router-link">
@@ -162,13 +172,89 @@ export default {
 @media screen and (max-width: 600px) {
   #create-post .mobile {
   display: block;
-  margin-top: -2rem;
+  margin-top: -4rem;
   margin-bottom: 2rem;
   text-align: center;
 }
 
 #create-post .side {
   display: block;
-}
+    display: block;
+    margin-top: -2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+    #create-post .side img{
+    width: 130%;
+    height: 172px;
+    margin-left: -2.5rem !important;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+
+  }
+
+   #create-post .side .overlayed-text {
+    overflow: hidden;
+    position: absolute;
+    left: -100px;
+    top: 90px;
+  }
+
+  #create-post .side .overlayed-text .overlayed-content img{
+    filter: none;
+    width: 55%;
+    height:100px;
+    object-fit: contain;
+    margin-left: -2rem;
+
+  } 
+    #create-post .side .overlayed-content {
+       height: 120px;
+       margin-left: -2rem;
+    }
+     /* #create-post .side .overlayed-content {
+       height: 50px;
+       margin-left: -2rem;
+    } */
+   .bm-burger-button {
+      position: fixed;
+      width: 18px;
+      height: 12px;
+      left: 36px;
+      top: 36px;
+      cursor: pointer;
+   }
+
+    .bm-burger-bars {
+      background-color: #525358;
+    }
+
+     .bm-item-list {
+      color: #b8b7ad;
+      margin-left: 5%;
+      font-size: 14px;
+    }
+
+     .bm-menu {
+      height: 100%;
+      width: 0; 
+      position: fixed; 
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: #f5f5f5; 
+      overflow-x: hidden;
+      padding-top: 60px; 
+      transition: 0.5s;
+    }
+
+
+    .bm-item-list > * > span {
+      margin-left: 14px;
+      color: #222222;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
 }
 </style>

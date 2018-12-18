@@ -275,13 +275,15 @@
            <img class="card-img" :src="post.image_url" alt="Card image">
               <div class="card-img-overlay">
                 <h5 class="card-title">{{categoryName}}</h5>
-                  <p class="card-text">
+                  <p class="card-text" style="margin-top:-2rem;">
                     {{post.title}}
                   </p>
-                <div class="author mt-4" style="bottom: 0">
-                  <img class="rounded mr-3" :src="post.author.image_url" alt="">
-                   <span>{{post.author.first_name}} {{post.author.last_name}}</span>
-                </div>
+                  <div class="card-footerr">
+                    <div class="author mt-4">
+                      <img class="rounded mr-3" :src="post.author.image_url" alt="">
+                      <span>{{post.author.first_name}} {{post.author.last_name}}</span>
+                    </div>
+                  </div>
               </div>
             </div>
         </router-link>
