@@ -129,7 +129,11 @@ export default {
   height: auto !important;
 }
 
-#all-post .mobile {
+.mobile {
+  display: none;
+}
+
+.side  {
   display: none;
 }
 
@@ -157,6 +161,10 @@ export default {
     margin-top: -2rem;
     text-align: center;
     margin-bottom: 2rem;
+  }
+
+   #all-posts .side{
+    display: block;
   }
 
   #all-post .side .dashboard-img img{
