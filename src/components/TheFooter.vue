@@ -8,10 +8,10 @@
               bloverse
             </li>
             <li class="list-inline-item pl-4">
-              <router-link to="">Terms</router-link>
+              <router-link to="/terms-and-conditions">Terms</router-link>
             </li>
             <li class="list-inline-item pl-2">
-              <router-link to="">Privacy</router-link>
+              <router-link to="/privacy-policies">Privacy</router-link>
             </li>
             <li class="list-inline-item pl-2">
               <router-link to="/about">About</router-link>
