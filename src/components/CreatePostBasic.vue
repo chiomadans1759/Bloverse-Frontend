@@ -25,7 +25,7 @@
             <br />
 
             <FormItem prop="title" :error="errors.title">
-              <Input id="form-control" placeholder="What's your title?" v-model="post.title"/>
+              <Input id="form-control" placeholder="What's your title?" v-model="post.title" :maxlength="max"/>
             </FormItem>
 
             <Row type="flex" justify="space-between">
@@ -157,6 +157,7 @@ import { VueEditor } from "vue2-editor";
 import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
 import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
 
+import { Push } from 'vue-burger-menu';
 import DisplayImage from "./DisplayImage";
 import Tinymce from "./Tinymce";
 
@@ -180,12 +181,14 @@ export default {
     DatePicker,
     Tinymce,
     Form,
-    FormItem
+    FormItem,
+    Push
   },
   props: ["isTravel"],
   data: function() {
     return {
       errors: {},
+      max: 50,
       validatePostForm: {
         deviceType: [
           {

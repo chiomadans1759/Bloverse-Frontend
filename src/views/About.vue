@@ -14,7 +14,7 @@
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">Lorem ipsum dolor sit amet, vel accumsan liberavisse</h4>
-              <div class="timeline-date"><hr size="10"> 
+              <div class="timeline-date"><hr id="timeline-line" size="10"> 
               <p>Dec 2017</p> </div>
               <div class="timeline-pic">
                   <img src="@/assets/meeting.jpg" alt="">
@@ -31,7 +31,7 @@
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">Lorem ipsum dolor sit amet, vel accumsan liberavisse</h4>
-              <div class="timeline-date"><hr size="10"> 
+              <div class="timeline-date"><hr id="timeline-line" size="10"> 
               <p>Dec 2017</p> </div>
               <div class="timeline-pic">
                   <img src="@/assets/meeting.jpg" alt="">
@@ -47,7 +47,7 @@
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">Lorem ipsum dolor sit amet, vel accumsan liberavisse</h4>
-              <div class="timeline-date"><hr size="10"> 
+              <div class="timeline-date"><hr id="timeline-line" size="10"> 
               <p>Dec 2017</p> </div>
               <div class="timeline-pic">
                   <img src="@/assets/meeting.jpg" alt="">
@@ -63,7 +63,7 @@
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">Lorem ipsum dolor sit amet, vel accumsan liberavisse</h4>
-               <div class="timeline-date"><hr size="10"> 
+               <div class="timeline-date"><hr id="timeline-line" size="10"> 
               <p>Dec 2017</p> </div>
               <div class="timeline-pic">
                   <img src="@/assets/meeting.jpg" alt="">
@@ -79,7 +79,7 @@
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">Lorem ipsum dolor sit amet, vel accumsan liberavisse</h4>
-               <div class="timeline-date"><hr size="10"> 
+               <div class="timeline-date"><hr id="timeline-line" size="10"> 
               <p>Dec 2017</p> </div>
               <div class="timeline-pic">
                   <img src="@/assets/meeting.jpg" alt="">
@@ -96,7 +96,7 @@
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h4 class="timeline-title">Lorem ipsum dolor sit amet, vel accumsan liberavisse</h4>
-              <div class="timeline-date"><hr size="10"> 
+              <div class="timeline-date"><hr id="timeline-line" size="10"> 
               <p>Dec 2017</p> </div>
               <div class="timeline-pic">
                   <img src="@/assets/meeting.jpg" alt="">
@@ -130,13 +130,20 @@ export default {
 .timeline-date{
     display:flex;
     align-items: center;
-    margin:10px 0
+    margin:10px 0;
+    padding:0 20px
     
 
 }
-.timeline-date hr{
+.timeline-body{
+  padding: 0 20px 20px 20px
+}
+/* .timeline-heading{
+  padding:20px
+} */
+#timeline-line{
     width:15px;
-border: 1px solid #096DD9
+border: 1px solid #096DD9;
     
 }
 .timeline-date p{
@@ -167,7 +174,7 @@ border: 1px solid #096DD9
   padding: 20px 0 20px;
   position: relative;
   margin-top: 60px;
-  width: 750px;
+  width: 850px;
   margin: 60px auto
 }
 .timeline:before {
@@ -201,10 +208,9 @@ border: 1px solid #096DD9
   clear: both;
 }
 .timeline > li > .timeline-panel {
-  width: 320px;
+  width: 360px;
   border: 1px solid #d4d4d4;
   border-radius: 2px;
-  padding: 20px;
   position: relative;
   background: white
 
@@ -282,7 +288,8 @@ border: 1px solid #096DD9
   color: inherit;
   font-size: 16px;
   font-weight: 600;
-  line-height: 22px
+  line-height: 22px;
+  padding: 20px 20px 0 20px
 }
 .timeline-body > p,
 .timeline-body > ul {
