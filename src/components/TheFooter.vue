@@ -40,7 +40,7 @@
               <router-link to="" id="linkk">Privacy</router-link>
             </li>
             <li class="list-inline-item pl-2">
-              <router-link to="" id="linkk">About</router-link>
+              <router-link to="/about" id="linkk">About</router-link>
             </li>
           </ul>
         </div>
