@@ -329,4 +329,7 @@ border: 1px solid #096DD9
 }
 
       }
+@media only screen and (max-width: 768px) {
+    
+}
 </style>
