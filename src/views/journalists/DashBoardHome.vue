@@ -208,6 +208,10 @@ export default {
   display: none;
 }
 
+#journalist-dashboard .side {
+  display: none;
+}
+
 #journalist-dashboard #stats .stat-card {
   padding: 1.8125rem !important;
   -webkit-box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
@@ -289,6 +293,10 @@ export default {
     margin-bottom: 1rem;
   }
 
+  #journalist-dashboard .side {
+  display: block;
+}
+
   .mobile-menu {
     display: block;
   }
@@ -308,6 +316,10 @@ export default {
     width: 100%;
     margin-bottom: 1rem;
   }
+
+  #journalist-dashboard .side {
+  display: block;
+}
 
   #journalist-dashboard .side img{
     width: 130%;
@@ -358,18 +370,18 @@ export default {
   }
     .bm-burger-button {
       position: fixed;
-      width: 18px;
-      height: 12px;
+      width: 18px !important;
+      height: 12px !important;
       left: 36px;
       top: 36px;
       cursor: pointer;
    }
     .bm-burger-bars {
-      background-color: #525358;
+      background-color: #525358 !important;
     }
 
      .bm-item-list {
-      color: #b8b7ad;
+      color: #b8b7ad !important;
       margin-left: 5%;
       font-size: 14px;
     }
@@ -381,7 +393,7 @@ export default {
       z-index: 1000;
       top: 0;
       left: 0;
-      background-color: #f5f5f5; 
+      background-color: #f5f5f5 !important; 
       overflow-x: hidden;
       padding-top: 60px; 
       transition: 0.5s;
