@@ -101,7 +101,7 @@ export default {
 }
 #feed-card .card-img-top {
   height: 220px;
-  width: 368px;
+  width: 367.2px;
   border-radius: 0;
   object-fit: cover;
 }
