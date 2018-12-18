@@ -20,6 +20,11 @@
               <li><i class="fas fa-camera-retro"></i>&nbsp;&nbsp;{{post.device_type}} </li>
               <li><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;{{post.location}}</li>
             </ul>
+            <p class="read-more">
+              <router-link :to="`posts/${post.slug}`"> 
+                <h5>READ STORY</h5>
+              </router-link>
+            </p>
           </div>
     </div>
     
@@ -44,7 +49,7 @@
                 <li v-if="post.keypoint[1]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[1]}}</li>
                 <li v-if="post.keypoint[2]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[2]}}</li>
             </ul>
-            <p class="read-more" v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]">
+            <p class="read-more">
                   <router-link :to="`posts/${post.slug}`"> 
                    <h5>READ STORY</h5>
                   </router-link>
@@ -223,6 +228,10 @@ margin-bottom: 2rem;
   text-transform: capitalize;
   margin-top: 1rem;
   font-weight: bold;
+}
+
+#feed-card .overlay .overlay-content li {
+  margin-bottom: 1rem;
 }
 
 #feed-card .read-more{
