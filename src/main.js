@@ -80,7 +80,7 @@ Vue.filter('firstToUpper', (value) => {
 
 Vue.filter('customizedTime', (value) => {
   return moment(value).fromNow()
-})
+});
 
 new Vue({
   router,

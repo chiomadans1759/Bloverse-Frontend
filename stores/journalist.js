@@ -196,7 +196,8 @@ export default {
       return {
         countryRank: state.metrics.countryRank,
         categoryRank: state.metrics.categoryRank,
-        point: state.metrics.points
+        point: state.metrics.points,
+        worldRank: state.metrics.worldRank
       }
     },
     articles(state) {
