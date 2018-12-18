@@ -4,6 +4,11 @@
             <h1>Terms And Conditions</h1>
             <p>LAST UPDATED 19 DECEMBER, 2018</p>
             <div class="terms-texts">
+                <h1>Welcome to Bloverse!</h1>
+                <p>Thanks for using our products and services. By using our Services, you are agreeing to these terms.
+                    These ‘’Terms’’ are a contract between you and Bloverse. Please read them carefully;
+                    <br/><br/>These Terms can be changed at any time. We would send you a notification each time there is an addition or change in these Terms.
+                </p>
                 <h5>Rights &amp; responsibilities on Content</h5>
                 <p> You own the rights to the content you create and post on Bloverse.<br/><br/> You’re responsible for the 
                     content you post. This means you assume all risks related to it, including someone else’s claims 
@@ -45,7 +50,7 @@ export default {
 }
 </script>
 terms-texts
-<style>
+<style scoped>
     .terms{
         background-color: #F5F5F5;
         display:flex;
@@ -72,6 +77,12 @@ terms-texts
         background-color: #fff; 
         padding:1rem 2.5rem 2rem 2.5rem;
     }
+    .terms-texts h1{ 
+        font-weight:700;
+        padding-bottom:1rem;
+        letter-spacing:2px;
+        line-height: 2;
+    }
     .terms-texts h5{ 
         font-weight:700;
         padding:1rem 0;
@@ -80,5 +91,10 @@ terms-texts
     }
     .terms-texts p{ 
         line-height: 2;
+    }
+    @media screen and (max-width: 800px) {
+    .terms-container{
+        width:90%; 
+    }  
     }
 </style>
