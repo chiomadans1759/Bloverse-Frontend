@@ -229,6 +229,7 @@ export default {
 
   .trending-card {
     display: block !important;
+    margin-right: 0.5rem;
   }
 
   .card-bodyy .post h2 {
