@@ -1,12 +1,6 @@
 <template>
   <div id="auth-sign-in">   
          <iframe src="https://www.youtube.com/embed/EjRM4DMdnGw?autoplay=1" allow='autoplay' frameborder="0" allowfullscreen></iframe>
-        <!-- <div class="row mt-5">
-                <div class="col">
-                  <p class="text-left">
-                    <router-link class="btn-link" to="/creators/apply" @click.native="close()">Register Now</router-link>
-                  </p>
-        </div> --> 
         <button type="button" class="close" aria-label="Close">
             <span aria-hidden="true" @click="closeModal()"><i class="fal fa-times"></i></span>
         </button>

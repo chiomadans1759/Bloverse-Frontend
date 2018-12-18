@@ -254,5 +254,4 @@ margin-bottom: 2rem;
 #feed-card:hover .overlay{
   opacity: 1;
 }
-
 </style>
