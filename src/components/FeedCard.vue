@@ -44,7 +44,7 @@
                 <li v-if="post.keypoint[1]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[1]}}</li>
                 <li v-if="post.keypoint[2]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[2]}}</li>
             </ul>
-            <p class="read-more">
+            <p class="read-more" v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]">
                   <router-link :to="`posts/${post.slug}`"> 
                    <h5>READ STORY</h5>
                   </router-link>
