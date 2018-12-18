@@ -110,7 +110,7 @@
               </Col>
               <Col :sm="6">
                 <span>
-                  <a href="#" class="text-uppercase mr-2">Preview</a>
+                  <a @click="previewPosts()" class="text-uppercase mr-2">Preview</a>
                 </span>
                 <Button
                   id="btn-publish"
@@ -131,6 +131,31 @@
           <p v-html="post.body" id="body"></p>
         </Card>
       </Col> -->
+    </div>
+
+    <!-- PREVIEW POST  -->
+    <div id="modalfocus">
+      <Modal
+        v-model="previewPost"
+        width="70%"
+        :loading="loading"
+        >
+     <div v-if="!post.title">
+       <h1 class="text-center" style="padding:100px;">NOTHING TO PREVIEW YET</h1>
+     </div>
+     <div v-if="post.title">
+        <div class="container-fluid previewMade">
+          <h4>Preview</h4>
+            <!-- <p>{{post.category}}</p> -->
+            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true" />
+            <h1>{{post.title}}</h1>
+            <ul v-for="(keypoint) in post.keyPoints" :key="keypoint.value">
+              <li>{{keypoint.value}}</li>
+            </ul>
+            <p v-html="post.body"></p>
+        </div>
+     </div>
+    </Modal>
     </div>
   </main>
 </template>
@@ -188,6 +213,7 @@ export default {
   data: function() {
     return {
       errors: {},
+      previewPost:false,
       max: 50,
       validatePostForm: {
         deviceType: [
@@ -280,6 +306,9 @@ export default {
   methods: {
     ...mapActions(["processPost"]),
     ...mapMutations(["setPost"]),
+    previewPosts(){
+      this.previewPost = true
+    },
     handleProcessPost: async function(shouldPublish = false) {
       this.errors = {};
       if (this.isTravel) {
@@ -503,6 +532,25 @@ export default {
     margin-bottom: 10px;
   }
 }
+.container-fluid.previewMade p {
+    padding: 0px 13px;
+    margin-top: 2%;
+}
+.container-fluid.previewMade ul {
+    padding: 0px 30px;
+}
+.container-fluid.previewMade h1 {
+    font-size: 29px;
+    padding: 0px 11px;
+    margin-bottom: 2%;
+}
+.container-fluid.previewMade div {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.container-fluid.previewMade {
+    padding: 29px;
+}
 </style>
 
 
@@ -545,6 +593,31 @@ export default {
 }
 .posts {
   position: relative;
+}
+.ivu-modal-close .ivu-icon-ios-close {
+    font-size: 31px;
+    color: #999;
+    transition: color .2s ease;
+    /* position: absolute; */
+    top: 1px;
+    margin-top: 0;
+    float: right;
+    right: 0px !important;
+}
+
+.container-fluid.previewMade section#img-display {
+    background: #aca7a7;
+    border: 0.1px solid grey;
+    width: 100%;
+    height: 400px !important;
+}
+div#modalfocus .ivu-modal-mask {
+    background: #fff;
+}
+div#modalfocus .ivu-modal-content {
+    box-shadow: none !important;
+    border: 1px solid #d9d9d9;
+    border-radius: 1px !important;
 }
 </style>
 
