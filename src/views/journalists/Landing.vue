@@ -38,7 +38,7 @@
               <Col offset="2" :md="12" :sm="20" :xs="20" class="right-contain2">
                 <h2>About Us</h2>
                 <p>Bloverse was created with you in mind. Have you ever thought of creating a news blog but then balked at the thought of the effort.</p>
-                <router-link to="#" style="font-family: 'Montserrat', sans-serif;">Know More</router-link>
+                <router-link to="/about" style="font-family: 'Montserrat', sans-serif;">Know More</router-link>
               </Col>
             </Col>
           </Row>
