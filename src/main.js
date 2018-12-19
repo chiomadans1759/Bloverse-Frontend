@@ -80,7 +80,15 @@ Vue.filter('firstToUpper', (value) => {
 
 Vue.filter('customizedTime', (value) => {
   return moment(value).fromNow()
-})
+});
+
+Vue.filter('truncate', function (string, number) {
+  if (string.length >= number) {
+    return string.slice(0, number) + "...";
+  } else {
+    return string;
+  }
+});
 
 new Vue({
   router,

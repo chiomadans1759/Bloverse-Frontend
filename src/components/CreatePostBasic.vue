@@ -16,16 +16,16 @@
       </div>
     </Modal>
 
-    <div id="mobile">
-      <Form :model="post" ref="basicCreatePostForm" :rules="validatePostForm">
+    <div id="mobile" :class="{ isTravel: isTravel }">
+      <Form :model="post" ref="basicCreatePostForm" class="travel-form" :rules="validatePostForm" style="margin-top: 6rem;">
         <Row type="flex" justify="space-between">
           <Col :sm="24" id="create-post">
-            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true" />
+            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true"/>
 
-            <br />
+            <br>
 
             <FormItem prop="title" :error="errors.title">
-              <Input id="form-control" placeholder="What's your title?" v-model="post.title"/>
+              <Input id="form-control" placeholder="What's your title?" v-model="post.title" :maxlength="max"/>
             </FormItem>
 
             <Row type="flex" justify="space-between">
@@ -51,14 +51,16 @@
               </Col>
             </Row>
 
-            <br />
+            <br>
 
             <section>
               <div class="key-points" v-if="isTravel">
-                <input v-model="post.location"
+                <input
+                  v-model="post.location"
                   ref="autocomplete"
                   placeholder="Location"
-                  class="search-location">
+                  class="search-location"
+                >
 
                 <FormItem prop="duration">
                   <DatePicker
@@ -87,7 +89,8 @@
                   v-for="(keypoint, index) in post.keyPoints"
                   :key="index"
                   :prop="`keyPoints.${index}.value`"
-                  :rules="{required: index === 0, message: 'Please provide at least one keypoint', trigger: 'change' }">
+                  :rules="{required: index === 0, message: 'Please provide at least one keypoint', trigger: 'change' }"
+                >
                   <Input :placeholder="`Keypoint ${index+1}`" v-model="keypoint.value"/>
                 </FormItem>
               </div>
@@ -110,14 +113,13 @@
               </Col>
               <Col :sm="6">
                 <span>
-                  <a href="#" class="text-uppercase mr-2">Preview</a>
+                  <a @click="previewPosts()" class="text-uppercase mr-2">Preview</a>
                 </span>
                 <Button
                   id="btn-publish"
                   :disabled="post.is_published || this.isPublishing"
-                  @click="handleProcessPost(true)">
-                  {{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}
-                </Button>
+                  @click="handleProcessPost(true)"
+                >{{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}</Button>
               </Col>
             </Row>
           </Col>
@@ -130,7 +132,32 @@
           <DisplayImage :value="post.imageUrl" height="200px" width="100%" :can-edit="false"/>
           <p v-html="post.body" id="body"></p>
         </Card>
-      </Col> -->
+      </Col>-->
+    </div>
+
+    <!-- PREVIEW POST  -->
+    <div id="modalfocus">
+      <Modal
+        v-model="previewPost"
+        width="70%"
+        :loading="loading"
+        >
+     <div v-if="!post.title">
+       <h1 class="text-center" style="padding:100px;">NOTHING TO PREVIEW YET</h1>
+     </div>
+     <div v-if="post.title">
+        <div class="container-fluid previewMade">
+          <h4>Preview</h4>
+            <!-- <p>{{post.category}}</p> -->
+            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true" />
+            <h1>{{post.title}}</h1>
+            <ul v-for="(keypoint) in post.keyPoints" :key="keypoint.value">
+              <li>{{keypoint.value}}</li>
+            </ul>
+            <p v-html="post.body"></p>
+        </div>
+     </div>
+    </Modal>
     </div>
   </main>
 </template>
@@ -157,6 +184,7 @@ import { VueEditor } from "vue2-editor";
 import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
 import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
 
+import { Push } from 'vue-burger-menu';
 import DisplayImage from "./DisplayImage";
 import Tinymce from "./Tinymce";
 
@@ -180,12 +208,17 @@ export default {
     DatePicker,
     Tinymce,
     Form,
-    FormItem
+    FormItem,
+    Push
   },
+
   props: ["isTravel"],
+
   data: function() {
     return {
       errors: {},
+      previewPost:false,
+      max: 50,
       validatePostForm: {
         deviceType: [
           {
@@ -259,6 +292,7 @@ export default {
       ]
     };
   },
+
   computed: {
     post: {
       get() {
@@ -274,9 +308,14 @@ export default {
 
     ...mapState(["general", "auth"])
   },
+
   methods: {
     ...mapActions(["processPost"]),
+
     ...mapMutations(["setPost"]),
+    previewPosts(){
+      this.previewPost = true
+    },
     handleProcessPost: async function(shouldPublish = false) {
       this.errors = {};
       if (this.isTravel) {
@@ -285,6 +324,7 @@ export default {
         }
         this.post.location = this.$refs.autocomplete.value;
       }
+
       this.$refs.basicCreatePostForm.validate(async valid => {
         if (valid) {
           if (!this.post.body || !this.post.body.trim()) {
@@ -300,6 +340,7 @@ export default {
             if (success === true) {
               this.$Message.success("Post successfully saved");
               this.publishModal = shouldPublish;
+              this.clearTinyMceEditor();
             }
             if (success.errors) {
               this.handleError(success.errors);
@@ -311,6 +352,7 @@ export default {
         }
       });
     },
+
     handleError(errors) {
       let fieldErrors, varClient;
 
@@ -323,108 +365,51 @@ export default {
         varClient = clientServer[field];
         this.$set(this.errors, varClient, fieldErrors);
       });
+    },
+
+    clearTinyMceEditor() {
+      this.$store.commit("setTinyMiceValue", "<p></p>");
+    },
+
+    checkTravel() {
+      if (this.isTravel) {
+        this.setPost({
+          category: 7,
+          country: this.auth.loggedInUser.country.id
+        });
+        this.$nextTick(() => {
+          this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
+            this.$refs.autocomplete,
+            { types: ["geocode"] }
+          );
+
+          this.autocomplete.addListener("place_changed", () => {
+            let place = this.autocomplete.getPlace();
+            this.post.location = place.formatted_address;
+          });
+        });
+      } else {
+        this.setPost({
+          category: this.auth.loggedInUser.category.id,
+          country: this.auth.loggedInUser.country.id
+        });
+      }
     }
   },
+
   watch: {
     "post.imageUrl": function() {
       this.isNewImage = true;
+    },
+
+    isTravel: function() {
+      this.checkTravel();
     }
   },
+
   mounted() {
-    if (this.isTravel) {
-      this.setPost({ category: 7, country: this.auth.loggedInUser.country.id });
-      this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
-        this.$refs.autocomplete,
-        { types: ["geocode"] }
-      );
-
-      this.autocomplete.addListener("place_changed", () => {
-        let place = this.autocomplete.getPlace();
-        this.post.location = place.formatted_address;
-      });
-    } else {
-      this.setPost({
-        category: this.auth.loggedInUser.category.id,
-        country: this.auth.loggedInUser.country.id
-      });
-    }
+    this.checkTravel();
   }
-
-  /*let { data, status } = await this.createOrUpdatePost();
-        status = status === 403 ? 401 : status; //Convert 403 response error to 401;
-
-        switch(status){
-          case 200:
-          case 201:
-            let { id, title, body, image_url: imageUrl, country: countryId, category: categoryId, keypoint: keyPoints } = data.data.post;
-            this.modal = {status: data.status};
-            this.post = { id, title, body, imageUrl, countryId, categoryId, keyPoints };
-            break;
-          case 400:
-            this.modal = { data: data.data, status: 'error' };
-            break;
-          case 401: 
-            // Unauthenticated
-            break;
-          default:
-            this.modal = {status: 'Error', data: {'SERVER ERROR': ['The server is not responding, can you try again']}};
-        }
-        this.modal.action = 'SAVE';
-
-      publishPost: async function(){
-        let response, config;
-        
-        try{
-          config = { headers: {'Authorization': `Token ${this.session.token}`}};
-          if(this.post.id)
-            response = await this.$http.put(`/api/v1/posts/${this.post.id}/publish/`, {}, config)
-        }catch(error){
-          response = error.response;
-        }
-
-        return response;
-      },
-      handlePublish: async function(){
-        //Perform Create Or update
-        await this.handleSave();
-
-        //if it didn't fail perform Publish
-        if(this.modal.status === 'success'){
-          let { data, status } = await this.publishPost();
-          status = status === 403 ? 401 : status; //Convert 403 response error to 401;
-
-          //Convert 403 response error to 401 when it results from not authenticated
-          if(status === 403){
-            if(data.message === "You are not authenticated")
-              status = 401;
-          }
-
-          //and process repsonse
-          switch(status){
-            case 200:
-            case 201:
-              let { id, title, body, image_url: imageUrl, country: countryId, category: categoryId, keypoint: keyPoints } = data.data.post;
-              this.modal = {status: data.status};
-              this.post = { id, title, body, imageUrl, countryId, categoryId, keyPoints };
-              break;
-            case 400:
-              this.modal = { data: data.data, status: 'error' };
-              break;
-            case 401: 
-              // Unauthenticated
-            case 403:
-              // post doesn't belong to him/her
-              break;
-            default:
-              this.modal = {status: 'Error', data: {'SERVER ERROR': ['The server is not responding, can you try again']}};
-          }
-
-          this.modal.action = 'PUBLISH';
-
-        }
-        
-        
-      },*/
 };
 </script>
 
@@ -433,11 +418,17 @@ export default {
   height: 3rem !important;
 }
 
+.isTravel {
+  position: relative;
+  top: -1.6rem;
+}
+
 #create-basic-post {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 120vh;
+  margin-top: -80px;
 }
 
 .search-location {
@@ -500,6 +491,25 @@ export default {
     margin-bottom: 10px;
   }
 }
+.container-fluid.previewMade p {
+    padding: 0px 13px;
+    margin-top: 2%;
+}
+.container-fluid.previewMade ul {
+    padding: 0px 30px;
+}
+.container-fluid.previewMade h1 {
+    font-size: 29px;
+    padding: 0px 11px;
+    margin-bottom: 2%;
+}
+.container-fluid.previewMade div {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.container-fluid.previewMade {
+    padding: 29px;
+}
 </style>
 
 
@@ -542,6 +552,31 @@ export default {
 }
 .posts {
   position: relative;
+}
+.ivu-modal-close .ivu-icon-ios-close {
+    font-size: 31px;
+    color: #999;
+    transition: color .2s ease;
+    /* position: absolute; */
+    top: 1px;
+    margin-top: 0;
+    float: right;
+    right: 0px !important;
+}
+
+.container-fluid.previewMade section#img-display {
+    background: #aca7a7;
+    border: 0.1px solid grey;
+    width: 100%;
+    height: 400px !important;
+}
+div#modalfocus .ivu-modal-mask {
+    background: #fff;
+}
+div#modalfocus .ivu-modal-content {
+    box-shadow: none !important;
+    border: 1px solid #d9d9d9;
+    border-radius: 1px !important;
 }
 </style>
 

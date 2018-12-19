@@ -1,10 +1,10 @@
 <template>
   <main class="post-feeds">
     <div class="container" id="trend">
-      <TrendingCard/>
+      <trending />
     </div>
 
-    <section class="container" id="cat-nav">
+    <section class="container mt-5 pt-3" id="cat-nav">
       <div class="post-feeds-category" id="post-feeds-category">
         <div class="row">
           <div class="col-md-2">
@@ -57,8 +57,7 @@
                 <a
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
-                  @click.prevent="toggleLayout('grid')"
-                >
+                  @click.prevent="toggleLayout('grid')">
                   <i class="fal fa-grip-horizontal fa-1x"></i>
                 </a>
               </li>
@@ -66,8 +65,7 @@
                 <a
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'stack'}"
-                  @click.prevent="toggleLayout('stack')"
-                >
+                  @click.prevent="toggleLayout('stack')">
                   <i class="far fa-layer-group fa-1x"></i>
                 </a>
               </li>
@@ -75,7 +73,8 @@
           </div>
         </div>
       </div>
-      <display-feeds style="margin-top: -1rem;"></display-feeds>
+
+      <display-feeds></display-feeds>
     </section>
   </main>
 </template>
@@ -85,13 +84,13 @@ import { mapState } from "vuex";
 import { Row, Col, Card } from "iview";
 import vSelect from "vue-select";
 import DisplayFeeds from "@/components/DisplayFeeds.vue";
-import TrendingCard from "@/components/TrendingCard.vue";
+import Trending from "@/components/Trending.vue";
 
 export default {
   name: "FeedsSection",
-  components: { Row, Col, Card, vSelect, DisplayFeeds, TrendingCard },
+  components: { Row, Col, Card, vSelect, DisplayFeeds, Trending },
   watch: {
-    general: {
+    'general.countries': {
       handler: function(newItem) {
         this.allow = true;
       },
@@ -181,7 +180,6 @@ export default {
 .post-feeds {
   margin: 0 auto;
   width: 100%;
-  overflow-x: hidden !important;
   background-color: #f5f5f5;
   min-height: 100vh;
   font-family: "Montserrat", sans-serif;

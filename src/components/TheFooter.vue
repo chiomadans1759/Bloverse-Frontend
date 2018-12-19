@@ -5,7 +5,7 @@
         <div class="col">
           <ul class="list-inline">
             <li class="list-inline-item">
-              bloverse
+            <router-link to="/">Bloverse</router-link>
             </li>
             <li class="list-inline-item pl-4">
               <router-link to="/terms-and-conditions">Terms</router-link>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="col-auto pt-2">
-          <p id="year-text">&copy; 2018 Bloverse. All Right Reserved</p>
+          <p id="year-text">&copy; {{year}} Bloverse. All Right Reserved</p>
         </div>
       </div>
 
@@ -30,9 +30,6 @@
              <li class="list-inline-item pl-4" style="font-size:15px;">
               bloverse
             </li>
-            <!-- <li class="list-inline-item pl-2" style="font-size: 15px;">
-              bloverse
-            </li> -->
             <li class="list-inline-item pl-4">
               <router-link to="" id="linkk">Terms</router-link>
             </li>
@@ -40,13 +37,13 @@
               <router-link to="" id="linkk">Privacy</router-link>
             </li>
             <li class="list-inline-item pl-2">
-              <router-link to="" id="linkk">About</router-link>
+              <router-link to="/about" id="linkk">About</router-link>
             </li>
           </ul>
         </div>
 
         <div class="col-12 pt-1">
-          <p id="year-text">&copy; 2018 Bloverse. All Right Reserved</p>
+          <p id="year-text">&copy; {{year}} Bloverse. All Right Reserved</p>
         </div>
       </div>
     </div>
@@ -57,7 +54,12 @@
 import { Row, Col } from "iview";
 
 export default {
-  components: { Row, Col }
+  components: { Row, Col },
+  data() {
+    return {
+      year: new Date().getFullYear()
+    }
+  }
 };
 </script>
 
@@ -86,6 +88,7 @@ export default {
 
 #the-footer .list-inline .list-inline-item a {
   color: #aaaaaa !important;
+  font-size: 13px;
 }
 
 #the-footer .list-inline .list-inline-item a:hover {

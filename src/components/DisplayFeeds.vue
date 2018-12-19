@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div v-if="general.publishedPosts == []">
+    <div v-if="!general.publishedPosts.length">
       <h3>No Post Here Yet</h3>
     </div>
     <div v-if="general.publishedPosts">
