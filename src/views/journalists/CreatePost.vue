@@ -28,7 +28,7 @@
       </a>
          <a id="home" href="" @click.prevent="logOut">
            <i class="fal fa-power-off" style="color: #D9091E; font-size:16px; "></i>
-        <span>Sign Out</span>
+           <span>Sign Out</span>
       </a>
        <div class="overlayed-text">
         <div class="overlayed-content">
@@ -177,7 +177,7 @@ export default {
 }
 
 #create-post #create-card {
-  min-height: 20rem;
+  min-height: 25rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
