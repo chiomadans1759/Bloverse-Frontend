@@ -25,6 +25,8 @@ import AdminHome from '../src/views/admin/Home.vue';
 
 import NotFound from '../src/views/NotFound.vue';
 import About from '../src/views/About.vue';
+import Terms from '../src/views/TermsAndConditions.vue';
+import Privacy from '../src/views/Privacy.vue';
 
 /*
 
@@ -52,6 +54,8 @@ const routes = [
       { path: 'posts', redirect: '/' },
       { path: 'posts/:slug', component: PostDisplay },
       { path: '/about', component: About},
+      { path: '/terms-and-conditions', component: Terms},
+      { path: '/privacy-policies', component: Privacy}
     ]
   },
  

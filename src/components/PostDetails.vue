@@ -49,6 +49,23 @@ export default {
 };
 </script>
 
+<style>
+.post-content-body{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+justify-content: space-between;
+  object-fit: contain;
+}
+.post-content-body  img {
+display:flex;
+width: 100%;
+justify-content: space-between;
+  object-fit: contain;
+}
+</style>
+
+
 <style scoped>
 #post-details .card-header {
   width: 100%;
@@ -106,5 +123,7 @@ export default {
     margin-top: 3rem;
   }
 }
+
+
 </style>
 

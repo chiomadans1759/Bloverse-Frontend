@@ -91,7 +91,7 @@ export default {
   name: "FeedsSection",
   components: { Row, Col, Card, vSelect, DisplayFeeds, TrendingCard },
   watch: {
-    general: {
+    'general.countries': {
       handler: function(newItem) {
         this.allow = true;
       },

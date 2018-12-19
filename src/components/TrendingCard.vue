@@ -12,8 +12,8 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row no-gutters">
-            <div class="col-3">
-              <router-link :to="`posts/${general.trendingPost[0].slug}`"> 
+            <div class="col-3" v-if="general.trendingPost.length > 0">
+             <router-link :to="`posts/${general.trendingPost[0].slug}`"> 
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[0].image_url" alt="Card image" >
                   <div class="card-img-overlay">
@@ -275,13 +275,15 @@
            <img class="card-img" :src="post.image_url" alt="Card image">
               <div class="card-img-overlay">
                 <h5 class="card-title">{{categoryName}}</h5>
-                  <p class="card-text">
+                  <p class="card-text" style="margin-top:-2rem;">
                     {{post.title}}
                   </p>
-                <div class="author mt-4">
-                  <img class="rounded mr-3" :src="post.author.image_url" alt="">
-                   <span>{{post.author.first_name}} {{post.author.last_name}}</span>
-                </div>
+                  <div class="card-footerr">
+                    <div class="author mt-4">
+                      <img class="rounded mr-3" :src="post.author.image_url" alt="">
+                      <span>{{post.author.first_name}} {{post.author.last_name}}</span>
+                    </div>
+                  </div>
               </div>
             </div>
         </router-link>
