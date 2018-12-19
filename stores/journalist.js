@@ -142,7 +142,17 @@ export default {
     async getMyPosts({ commit, rootState }) {
       let userId = rootState.auth.loggedInUser.id;
       let response = await Api.get('journalists/' + userId + '/posts/', true);
-      commit('setPosts', response.data.posts);
+      let posts = [];
+      let drafts = [];
+      response.data.posts.forEach(post => {
+        if (post.is_published == true) {
+          posts.push(post)
+        } else if (post.is_published == false) {
+          drafts.push(post)
+        }
+      })
+      commit('setPosts', posts);
+      commit('setDrafts', drafts);
     },
     async getMyDrafts({ commit, rootState }) {
       let userId = rootState.auth.loggedInUser.id;
