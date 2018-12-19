@@ -16,8 +16,8 @@
       </div>
     </Modal>
 
-    <div id="mobile" v-bind:class="{ isTravel: isTravel }">
-      <Form :model="post" ref="basicCreatePostForm" :rules="validatePostForm">
+    <div id="mobile" :class="{ isTravel: isTravel }">
+      <Form :model="post" ref="basicCreatePostForm" class="travel-form" :rules="validatePostForm" style="margin-top: 6rem;">
         <Row type="flex" justify="space-between">
           <Col :sm="24" id="create-post">
             <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true"/>
