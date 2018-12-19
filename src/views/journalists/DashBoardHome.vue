@@ -56,9 +56,9 @@
           <stat-card
             variant="secondary"
             icon="fal fa-star"
-            title="points"
+            title="rankings"
             id="stat-point3"
-            :stats="{ key:[`${datas.worldRank? computePosition(datas.worldRank[0].toString()) : 0} out of ${datas.worldRank ? datas.worldRank[1] : 0 }`, `${datas.countryRank? computePosition(datas.countryRank[0].toString()):0} out of ${datas.countryRank?datas.countryRank[1] :0}` , `${datas.point?datas.point:0}`] , value:['Globally - ' ,`${auth.loggedInUser.country.name} - ` , 'Ranking']}"
+            :stats="{ key:[`${datas.worldRank? datas.worldRank[0].toString() : 0} / ${datas.worldRank ? datas.worldRank[1] : 0 }`, `${datas.countryRank? datas.countryRank[0].toString():0} / ${datas.countryRank?datas.countryRank[1] :0}` , `${datas.point?datas.point:0}`] , value:['Global' ,`${auth.loggedInUser.country.name}` , 'Ranking']}"
           />
         </Col>
       </Row>
@@ -172,10 +172,12 @@ export default {
 
   methods: {
     ...mapActions(["getMyMetrics", "clearSession"]),
+    
     logOut(){
       this.clearSession();
       this.$router.push('/creators');
     },
+    
     computePosition(key) {
       const target = key[key.length - 1];
       const dataMap = {
