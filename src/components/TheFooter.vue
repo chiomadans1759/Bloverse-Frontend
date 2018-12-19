@@ -43,7 +43,7 @@
         </div>
 
         <div class="col-12 pt-1">
-          <p id="year-text">&copy; 2018 Bloverse. All Right Reserved</p>
+          <p id="year-text">&copy; {{year}} Bloverse. All Right Reserved</p>
         </div>
       </div>
     </div>
@@ -54,7 +54,12 @@
 import { Row, Col } from "iview";
 
 export default {
-  components: { Row, Col }
+  components: { Row, Col },
+  data() {
+    return {
+      year: new Date.getYear()
+    }
+  }
 };
 </script>
 
@@ -83,6 +88,7 @@ export default {
 
 #the-footer .list-inline .list-inline-item a {
   color: #aaaaaa !important;
+  font-size: 13px;
 }
 
 #the-footer .list-inline .list-inline-item a:hover {
