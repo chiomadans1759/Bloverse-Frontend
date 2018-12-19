@@ -52,6 +52,7 @@ export default {
 <style>
 .post-content-body{
   display:flex;
+  flex-direction: column;
   width: 100%;
 justify-content: space-between;
   object-fit: contain;
