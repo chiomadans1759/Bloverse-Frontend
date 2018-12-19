@@ -151,7 +151,7 @@
 
 
                 <div class="col-md-3 privacy-outline">
-                    <ul> 
+                    <ul class="position-sticky"> 
                         <li class="active"><a href="#l1">Bloverse Privacy Policy</a></li>
                         <li><a href="#l2">What personal information do we collect from the people that visit our blog, website or app?</a></li>
                         <li><a href="#l3">When do we collect information?</a></li>
