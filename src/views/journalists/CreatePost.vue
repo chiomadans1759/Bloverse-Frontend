@@ -8,8 +8,7 @@
     >Back to Choose Template</Button>
     <BasicCreatePost :isTravel="selectedTemplate === 'travel'"/>
   </div>
-  <TemplateChooser v-else @selectTemplate="selectedTemplate=$event"/> -->
-
+  <TemplateChooser v-else @selectTemplate="selectedTemplate=$event"/>-->
   <main id="create-post">
     <Push class="side">
      <div class="dashboard-image">
@@ -44,30 +43,34 @@
         </router-link>
       </div>
     <div class="btn-group mb-5 pb-3" role="group">
-      <button type="button" @click="currentSection('basic')" 
-        :class="{'btn' : true, 'btn-white': current_section != 'basic', 'btn-primary': current_section == 'basic'}" class="text-uppercase">
-        basic template
-      </button>
-      <button type="button" @click="currentSection('travel')" 
-        :class="{'btn' : true, 'btn-white': current_section != 'travel', 'btn-primary': current_section == 'travel'}" class="text-uppercase">
-        photo template
-      </button>
+      <button
+        type="button"
+        @click="isTravel = false"
+        :class="{'btn' : true, 'btn-white': isTravel, 'btn-primary': !isTravel}"
+        class="text-uppercase"
+      >basic template</button>
+      <button
+        type="button"
+        @click="isTravel = true"
+        :class="{'btn' : true, 'btn-white': !isTravel, 'btn-primary': isTravel}"
+        class="text-uppercase"
+      >photo Contest</button>
     </div>
 
     <div class="card" id="create-card">
       <div class="card-body">
-        <BasicCreatePost :isTravel="selectedTemplate == current_section" />
+        <BasicCreatePost :isTravel="isTravel"/>
       </div>
     </div>
   </main>
 </template>
 
 <script>
-import { Button } from 'iview';
-import { mapGetters, mapActions, mapState, mapMutations } from 'vuex';
+import { Button } from "iview";
+import { mapGetters, mapActions, mapState, mapMutations } from "vuex";
 
-import TemplateChooser from '@/components/TemplateChooser.vue';
-import BasicCreatePost from '@/components/CreatePostBasic.vue';
+import TemplateChooser from "@/components/TemplateChooser.vue";
+import BasicCreatePost from "@/components/CreatePostBasic.vue";
 import Tinymce from "@/components/Tinymce";
 import { Push } from 'vue-burger-menu';
 
@@ -75,60 +78,65 @@ export default {
   components: { TemplateChooser, BasicCreatePost, Button, Tinymce, Push },
   data(){
     return {
-      selectedTemplate: null,
-      current_section: 'basic'
-    }
+      isTravel: false
+    };
   },
   computed: {
-    ...mapState(['journalist', 'auth', 'general']),
+    ...mapState(["journalist", "auth", "general"]),
 
-    ...mapGetters([
-      'isCreatingBasicPost',
-      'isCreatingTravelPost'
-    ]),
+    ...mapGetters(["isCreatingBasicPost", "isCreatingTravelPost"])
   },
   methods: {
     ...mapActions(['getPostBySlug', 'clearSession']),
 
-    ...mapMutations(['setPost', 'clearPost']),
+    ...mapMutations(["setPost", "clearPost"]),
 
-    clearCurrentPost(){
+    clearCurrentPost() {
       this.clearPost();
-      this.selectedTemplate = null;
     },
 
     currentSection(section) {
       this.current_section = section;
     },
+    
     logOut(){
       this.clearSession();
       this.$router.push('/creators');
     }
   },
-  async created(){
+  async created() {
     let currentPost;
-    if(this.$route.params.slug){
+    if (this.$route.params.slug) {
       //if(this.journalist.posts.length < 1)
       await this.getPostBySlug(this.$route.params);
-      currentPost = this.general.currentPost
-      let { id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published:isPublished=false, slug, device_type: deviceType, location } = currentPost;
-      let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, deviceType, location };
+      currentPost = this.general.currentPost;
+      let {
+        id,
+        title,
+        body,
+        keypoint: keyPoints,
+        image_url: imageUrl,
+        category,
+        country,
+        is_published: isPublished = false,
+        slug,
+        device_type: deviceType,
+        location
+      } = currentPost;
+      let updatedPost = {
+        id,
+        keyPoints,
+        imageUrl,
+        title,
+        body,
+        category,
+        country,
+        isPublished,
+        slug,
+        deviceType,
+        location
+      };
       this.setPost(updatedPost);
-    }
-
-    if(this.isCreatingBasicPost)
-      this.selectedTemplate = 'basic';
-    else if(this.isCreatingTravelPost)
-      this.selectedTemplate = 'travel';
-  },
-  mounted() {
-    if (this.isTravel) {
-      this.setPost({ category: '', country: '' });
-    } else {
-      this.setPost({
-        category: '',
-        country: ''
-      });
     }
   }
 };
@@ -146,6 +154,10 @@ export default {
   padding-top: 3rem;
   font-family: "Montserrat", sans-serif;
   margin-top: 1rem;
+}
+
+.btn {
+  z-index: 20;
 }
 
 #create-post .btn-group .btn:first-child {
