@@ -20,7 +20,7 @@
         </div>
 
         <div class="col-auto pt-2">
-          <p id="year-text">&copy; 2018 Bloverse. All Right Reserved</p>
+          <p id="year-text">&copy; {{year}} Bloverse. All Right Reserved</p>
         </div>
       </div>
 
@@ -57,7 +57,7 @@ export default {
   components: { Row, Col },
   data() {
     return {
-      year: new Date.getYear()
+      year: new Date().getFullYear()
     }
   }
 };
