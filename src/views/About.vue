@@ -8,6 +8,7 @@
   Where the people are connected to creators
 </p>
 </div>
+
 <div class="about-body ">
   <div id="about-body-container">
     <img src="@/assets/photo1.png" alt="">
@@ -196,7 +197,9 @@ font-weight: 600
 }
 #about-body-container{
   display:flex;
-  height:;
+ justify-content: space-between;
+ height:217px;
+
 }
 #about-body-container div{
   background: white;
@@ -204,26 +207,25 @@ font-weight: 600
 }
 #about-body-container img{
   width:263px;
-  height:217px
+  
 }
 .about-body{
 width: 60%;
-margin: 50px auto
+margin: 50px auto;
   /* margin:30px 50px */
 }
 #about-body-text h1{
   font-size: 16px;
   font-weight: 600;
   padding-bottom: 25px;
-  margin-top: 5px
+  margin-top: 5px;
 }
 #about-body-text p{
-  font-size: 14px
+  font-size: 14px;
 }
 #about-body-container2{
   display:flex;
-  height:217px;
-  flex-direction: row-reverse
+  flex-direction: row-reverse;
 }
 #about-body-container2 div{
   background: white;
@@ -231,12 +233,11 @@ margin: 50px auto
 }
 #about-body-container2 img{
   width:263px;
-  height:217px
+  height:auto;
 }
 #about-body-container3{
   display:flex;
-
- 
+  height:250px
 }
 #about-body-container3 div{
   background: white;
@@ -244,11 +245,11 @@ margin: 50px auto
 }
 #about-body-container3 img{
   width:263px;
-  height:239px
+  
 }
 #about-strong{
   padding-top: 20px;
-  font-weight: 600
+  font-weight: 600;
 }
 #about-footer{
   text-align: center;
@@ -256,7 +257,7 @@ margin: 50px auto
 
 }
 #about-footer button{
-  border-radius: 0px !important
+  border-radius: 0px !important;
 }
 #about-footer p{
   background: white;
@@ -268,8 +269,8 @@ margin: 50px auto
 }
 #about-body-container4{
   display:flex;
- 
-  flex-direction: row-reverse
+  flex-direction: row-reverse;
+  height:371px
 }
 #about-body-container4 div{
   background: white;
@@ -277,11 +278,10 @@ margin: 50px auto
 }
 #about-body-container4 img{
   width:263px;
-  height:371px;
-  object-fit: cover
+  object-fit: cover;
 }
 #empty{
-  margin-top: 40px
+  margin-top: 40px;
 }
 
 /* .timeline .fa-circle{
