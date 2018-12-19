@@ -12,8 +12,8 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row no-gutters">
-            <div class="col-3">
-              <router-link :to="`posts/${general.trendingPost[0].slug}`"> 
+            <div class="col-3" v-if="general.trendingPost.length > 0">
+             <router-link :to="`posts/${general.trendingPost[0].slug}`"> 
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[0].image_url" alt="Card image" >
                   <div class="card-img-overlay">
