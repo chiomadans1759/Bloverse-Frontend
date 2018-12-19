@@ -152,10 +152,10 @@ export default {
 }
 
 #trending-card .card .card-img-overlay .card-text {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 13px;
   position: absolute;
-  bottom: 4.5rem;
+  bottom: 4rem;
 }
 
 @media only screen and (max-width: 980px) {

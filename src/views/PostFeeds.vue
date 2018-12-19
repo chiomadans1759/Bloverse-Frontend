@@ -181,10 +181,10 @@ export default {
 .post-feeds {
   margin: 0 auto;
   width: 100%;
-  overflow-x: hidden !important;
   background-color: #f5f5f5;
   min-height: 100vh;
   font-family: "Montserrat", sans-serif;
+  padding-bottom: 10rem;
 }
 
 .post-feeds-category {
