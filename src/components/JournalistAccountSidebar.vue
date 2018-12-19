@@ -56,6 +56,8 @@
           <span class="mt-2">{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</span>
         </div>
       </footer>
+
+      <journalist-account-footer class="mt-5" />
     </nav>
       </div>
   </main>
@@ -66,9 +68,10 @@ import { Row, Col } from "iview";
 import { mapState, mapActions } from "vuex";
 import JournalistAccountNav from '@/components/JournalistAccountNav'
 import LoginButton from "./LoginButton";
+import JournalistAccountFooter from '@/components/JournalistAccountFooter';
 
 export default {
-  components: { Row, Col, LoginButton, JournalistAccountNav },
+  components: { Row, Col, LoginButton, JournalistAccountNav, JournalistAccountFooter },
   methods: {
     ...mapActions(["clearSession"]),
     logOut(){
@@ -133,7 +136,8 @@ export default {
 }
 
 #journalist-account-sidebar #footer {
-  margin-top: 15rem;
+  margin-top: 8rem;
+  margin-bottom: 4rem;
 }
 
 #journalist-account-sidebar #footer ul li {

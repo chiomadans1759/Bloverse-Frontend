@@ -104,24 +104,14 @@
 
             <br>
 
-            <Row id="every" type="flex" justify="space-between">
-              <Col :sm="6">
-                <Button id="btn-draft" @click="handleProcessPost()" class="text-uppercase">
-                  <span v-if="post.id">Save Changes</span>
-                  <span v-else>Save as draft</span>
-                </Button>
-              </Col>
-              <Col :sm="6">
-                <span>
-                  <a @click="previewPosts()" class="text-uppercase mr-2">Preview</a>
-                </span>
-                <Button
-                  id="btn-publish"
-                  :disabled="post.is_published || this.isPublishing"
-                  @click="handleProcessPost(true)"
-                >{{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}</Button>
-              </Col>
-            </Row>
+            <div>
+              <Button id="btn-draft" @click="handleProcessPost()" class="text-uppercase mt-3">
+                <span v-if="post.id">Save Changes</span>
+                <span v-else>Save as draft</span>
+              </Button>
+
+              <a @click="previewPosts()" class="float-right btn btn-primary btn-md text-white">Preview</a>
+            </div>
           </Col>
         </Row>
       </Form>
@@ -155,6 +145,15 @@
               <li>{{keypoint.value}}</li>
             </ul>
             <p v-html="post.body"></p>
+
+            <div class="text-center mt-4 mx-5">
+              <Button
+                id="btn-publish"
+                :disabled="post.is_published || this.isPublishing"
+                @click="handleProcessPost(true)">
+                {{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}
+              </Button>
+            </div>
         </div>
      </div>
     </Modal>
@@ -540,7 +539,8 @@ export default {
 #btn-publish {
   background-color: var(--primary);
   color: white;
-  width: 50%;
+  width: 20%;
+  height: 2.5rem;
 }
 
 .red-border {

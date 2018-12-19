@@ -46,13 +46,13 @@
       <button
         type="button"
         @click="isTravel = false"
-        :class="{'btn' : true, 'btn-white': isTravel, 'btn-primary': !isTravel}"
+        :class="{'btn' : true, 'btn-default': isTravel, 'btn-primary': !isTravel}"
         class="text-uppercase"
       >basic template</button>
       <button
         type="button"
         @click="isTravel = true"
-        :class="{'btn' : true, 'btn-white': !isTravel, 'btn-primary': isTravel}"
+        :class="{'btn' : true, 'btn-default': !isTravel, 'btn-primary': isTravel}"
         class="text-uppercase"
       >photo Contest</button>
     </div>
@@ -174,6 +174,12 @@ export default {
 
 #create-post .btn-group .btn {
   border-color: rgba(0, 0, 0, 0.1);
+}
+
+#create-post .btn-default {
+  background: transparent !important;
+  border: 1px solid #2f80ed !important;
+  color: #2f80ed !important;
 }
 
 #create-post #create-card {

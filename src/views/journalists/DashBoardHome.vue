@@ -64,11 +64,11 @@
       </Row>
       <div class="show-map">
         <div class="row" v-if="show">
-          <div class="col-md-8">
-            <GChart type="GeoChart" :data="chartData" ref="chartData" style="width: 100%;"/>
+          <div class="col-md-9">
+            <GChart type="GeoChart" :options="chartOptions" :data="chartData" ref="chartData" style="width: 100%;"/>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-3">
             <h3 class="text-uppercase mb-3">
               Views
               <span id="blue-c"></span>
@@ -82,9 +82,8 @@
                       v-for="(data, index) in chartData"
                       :key="index"
                       v-if="index > 0"
-                      style="font-size: 14px;"
-                      class="mb-2"
-                    >
+                      style="font-size: 13px;"
+                      class="mb-2">
                       <span>{{ data[0] }}</span>
                     </p>
                   </div>
@@ -94,15 +93,16 @@
                       v-for="(data, index) in chartData"
                       :key="index"
                       v-if="index > 0"
+                      style="font-size: 10px;"
                       class="mb-3">
                       <span>{{ data[1] }}</span>
                     </p>
                   </div>
                 </div>
 
-                <div class="row mt-4">
+                <div class="row mt-3">
                   <div class="col">
-                    <h4>TOTAL</h4>
+                    <h5>TOTAL</h5>
                   </div>
 
                   <div class="col-auto">
@@ -153,10 +153,9 @@ export default {
       country: "",
       categories: "",
       chartOptions: {
-        chart: {
-          title: "Company Performance",
-          subtitle: "Sales, Expenses, and Profit: 2014-2017"
-        }
+        backgroundColor: '#f5f5f5',
+        datalessRegionColor: '#c2c2c2',
+        colorAxis: {colors: ['#c5c5c5', '#2F80ED']}
       }
     };
   },
@@ -416,8 +415,3 @@ export default {
 }
 </style>
 
-<style>
-rect {
-  fill: #f5f5f5 !important;
-}
-</style>

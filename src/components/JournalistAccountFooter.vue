@@ -1,6 +1,6 @@
 <template>
-  <footer id="journalist-account-footer" class="pt-5">
-    <div class="text-center mt-5">
+  <footer id="journalist-account-footer">
+    <div class="mt-5">
       <ul class="list-inline mb-2">
         <li class="list-inline-item">
           <a href>Terms</a>
@@ -32,6 +32,7 @@ export default {
 <style scoped>
 #journalist-account-footer .list-inline .list-inline-item a {
   color: rgba(0, 0, 0, 0.9) !important;
+  font-size: 12px;
 }
 
 #journalist-account-footer .list-inline .list-inline-item a:hover {
@@ -42,5 +43,9 @@ export default {
   #journalist-account-footer {
     display: none;
   }
+}
+
+#journalist-account-footer h5 {
+  font-size: 12px;
 }
 </style>
