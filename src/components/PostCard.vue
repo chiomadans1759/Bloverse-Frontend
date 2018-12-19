@@ -62,9 +62,6 @@ export default {
       if (!value) return ''
       return value.substring(0, 60)
     }
-  },
-  methods: {
-    
   }
 }
 

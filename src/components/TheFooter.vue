@@ -30,9 +30,6 @@
              <li class="list-inline-item pl-4" style="font-size:15px;">
               bloverse
             </li>
-            <!-- <li class="list-inline-item pl-2" style="font-size: 15px;">
-              bloverse
-            </li> -->
             <li class="list-inline-item pl-4">
               <router-link to="" id="linkk">Terms</router-link>
             </li>
