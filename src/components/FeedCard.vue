@@ -43,7 +43,8 @@
          </div>
           <div class="overlay">
             <ul class="overlay-content">
-              <h3  v-if="post.keypoint[0] && post.keypoint[1] && post.keypoint[2]">{{post.title}}</h3>
+              <!--Display all keypoints if available  -->
+              <h3  v-if="post.keypoint[0] && post.keypoint[1] && post.keypoint[2] || post.keypoint[0] || post.keypoint[1] || post.keypoint[2]  ">{{post.title}}</h3>
               <h2  v-if="post.keypoint[0] && post.keypoint[1] && post.keypoint[2]">Keypoints</h2>
                 <li v-if="post.keypoint[0]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[0] | truncate(75)}}</li>
                 <li v-if="post.keypoint[1]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[1] | truncate(75)}}</li>
