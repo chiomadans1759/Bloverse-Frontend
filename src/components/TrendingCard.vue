@@ -17,9 +17,9 @@
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[0].image_url" alt="Card image" >
                   <div class="card-img-overlay">
-                    <h5 class="card-title">{{categoryName}}</h5>
+                    <h5 class="card-title">{{general.trendingPost[0].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[0].title}}
+                      {{general.trendingPost[0].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[0].author.image_url" alt="">
@@ -37,9 +37,9 @@
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[1].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">{{categoryName}}</h5>
+                    <h5 class="card-title">{{general.trendingPost[1].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[1].title}}
+                      {{general.trendingPost[1].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[1].author.image_url" alt="">
@@ -57,9 +57,9 @@
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[2].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{general.trendingPost[2].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[2].title}}
+                      {{general.trendingPost[2].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[2].author.image_url" alt="">
@@ -77,9 +77,9 @@
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[3].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{general.trendingPost[3].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[3].title}}
+                      {{general.trendingPost[3].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[3].author.image_url" alt="">
@@ -101,9 +101,9 @@
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[4].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{general.trendingPost[4].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[4].title}}
+                      {{general.trendingPost[4].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[4].author.image_url" alt="">
@@ -116,14 +116,14 @@
               </router-link>
             </div>
 
-            <div class="col-3">
+            <div class="col-3" v-if="general.trendingPost.length > 5">
               <router-link :to="`posts/${general.trendingPost[4].slug}`"> 
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[5].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{general.trendingPost[5].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[5].title}}
+                      {{general.trendingPost[5].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[5].author.image_url" alt="">
@@ -136,13 +136,13 @@
               </router-link>
             </div>
 
-            <div class="col-3">
+            <div class="col-3" v-if="general.trendingPost.length > 6">
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[6].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{general.trendingPost[6].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[6].title}}
+                      {{general.trendingPost[6].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[6].author.image_url" alt="">
@@ -154,13 +154,13 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-3" v-if="general.trendingPost.length > 7">
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[7].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{general.trendingPost[7].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[7].title}}
+                      {{general.trendingPost[7].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[7].author.image_url" alt="">
@@ -180,9 +180,9 @@
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[8].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{general.trendingPost[8].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[8].title}}
+                      {{general.trendingPost[8].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[8].author.image_url" alt="">
@@ -194,13 +194,13 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-3" v-if="general.trendingPost.length > 9">
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[9].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{general.trendingPost[9].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[9].title}}
+                      {{general.trendingPost[9].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[9].author.image_url" alt="">
@@ -212,13 +212,13 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-3" v-if="general.trendingPost.length > 10">
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[10].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{general.trendingPost[10].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[10].title}}
+                      {{general.trendingPost[10].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[10].author.image_url" alt="">
@@ -230,13 +230,13 @@
               </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-3" v-if="general.trendingPost.length > 11">
               <div class="card text-white">
                 <img class="card-img" :src="general.trendingPost[11].image_url" alt="Card image">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">{{post.category}}</h5>
+                    <h5 class="card-title">{{general.trendingPost[11].category | categoryName(general.categories)}}</h5>
                     <p class="card-text">
-                      {{general.trendingPost[11].title}}
+                      {{general.trendingPost[11].title | reduceText}}
                     </p>
                     <div class="author mt-4">
                     <img class="rounded mr-3" :src="general.trendingPost[11].author.image_url" alt="">
@@ -316,22 +316,30 @@ export default {
     await this.getAllTrendingPosts();
     setInterval(async () => {
       await this.getAllTrendingPosts();
-    }, 100000)
+    }, 100000);
   },
   computed: {
-    ...mapState(["general"]),
-    categoryName() {
-      if (this.general.category) {
-        let category = this.general.trending.find(
-          category => category.id == this.category.id
-        );
-        return category.name;
+    ...mapState(["general"])
+  },
+  filters: {
+    categoryName(cat_id, category) {
+      let ct = category.filter(cat => {
+        cat.id == cat_id
+      });
+      return ct.name;
+    },
+
+    reduceText(text) {
+      if(text.length > 50) {
+        return text.substring(0, 50) + '...';
+      }else {
+        return text;
       }
     }
   }
 };
 </script>
-
+  1
 <style scoped>
 .mobile {
   display: none;

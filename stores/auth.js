@@ -58,36 +58,41 @@ export default {
       }
     },
 
-    async apply({
-      state,
-      commit
-    }) {
-      let categoryId = state.applicant.category.id;
-      let countryId = state.applicant.country.id;
+    async apply({ state, commit }) {
+      const applicant = {}
+      applicant.categoryId = state.applicant.category.id;
+      applicant.countryId = state.applicant.country.id;
+      applicant.phone = state.applicant.phoneCode + state.applicant.phoneNumber;
 
-      const applicant = {
-        phone: state.applicant.phoneCode + state.applicant.phoneNumber,
+      if (!state.applicant.linkedInUsername) {
+        applicant.linkedInUrl = "";
+      }else {
+        applicant.linkedInUrl = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`;
       }
 
-      if (state.applicant.linkedInUsername != '') {
-        applicant.linkedIn = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`
-      }
-
-      if (state.applicant.twitterUsername != '') {
-        applicant.twitter = `https://www.twitter.com/${state.applicant.twitterUsername}`;
+      if (!state.applicant.twitterUsername) {
+        applicant.twitterUrl = ""
+      }else {
+        applicant.twitterUrl = `https://www.twitter.com/${state.applicant.twitterUsername}`;
       }
 
       if (state.applicant.articleURLs.length > 0) {
         applicant.articles = state.applicant.articleURLs.map((article, index) => {
-          return `${state.applicant.articleProtocols[index]}${article}`
+          if(article) {
+            return `${state.applicant.articleProtocols[index]}${article}`;
+          }
         });
+      }
+
+      if(!applicant.articles[0]) {
+        applicant.articles = undefined
       }
 
       commit('setApplicant', applicant);
       let response = await Api.post('applicants/', {
         ...state.applicant,
-        countryId,
-        categoryId
+        countryId: state.applicant.countryId,
+        categoryId: state.applicant.categoryId
       })
       switch (response.statusCode) {
       case 201:

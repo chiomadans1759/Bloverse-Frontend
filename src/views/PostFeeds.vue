@@ -4,7 +4,7 @@
       <TrendingCard/>
     </div>
 
-    <section class="container" id="cat-nav">
+    <section class="container mt-5" id="cat-nav">
       <div class="post-feeds-category" id="post-feeds-category">
         <div class="row">
           <div class="col-md-2">

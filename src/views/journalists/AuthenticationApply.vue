@@ -1,6 +1,6 @@
 <template>
   <main id="auth-apply">
-    <Modal v-show="isSuccess == true" :width="726" id="success-modal">
+    <Modal v-model="isSuccess" :width="726" id="success-modal">
       <Alert type="success">Success!</Alert>
       <p>
         Your application has been sent to bloverse. A message will be sent to your mail to
@@ -50,23 +50,23 @@
             </Row>
             
           <FormItem prop="linkedIn" :error="errors.linkedIn">
-            <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username"  >
+            <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username" >
                 <span slot="prepend">https://www.linkedin.com/in/</span>
-            </input>
+            </Input>
           </FormItem>
           
           <FormItem prop="twitter" :error="errors.twitter">
-            <Input class="my-input" v-model="applicant.twitterUsername" placeholder="Twitter profile username"  >
+            <Input class="my-input" v-model="applicant.twitterUsername" placeholder="Twitter profile username" >
                 <span slot="prepend">https://www.twitter.com/</span>
-            </input>
+            </Input>
           </FormItem>
           
-          <FormItem prop="articles" :error="errors.articles" v-for="(value, index)  in 3" :key="value">
+          <FormItem prop="articles" :error="errors.articles" v-for="(value, index) in 3" :key="value">
             <Input class="my-input" v-model="applicant.articleURLs[index]" placeholder="Link to written article">
-                <Select slot="prepend" v-model="applicant.articleProtocols[index]" style="width: 80px">
-                  <Option value="https://">https://</Option> 
-                  <Option value="http://">http://</Option>
-                </Select>
+              <Select slot="prepend" v-model="applicant.articleProtocols[index]" style="width: 80px">
+                <Option value="https://">https://</Option> 
+                <Option value="http://">http://</Option>
+              </Select>
             </input>
           </FormItem>
           <Row type="flex" justify="space-between">
@@ -90,7 +90,8 @@
           <!--<FormItem prop="terms">
             <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
           </FormItem>-->
-          <div class="alert alert-success" v-show="isSuccess == true">
+
+          <div class="alert alert-success" v-show="isSuccess === true">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -98,6 +99,7 @@
             Your application has gracefully been recieved. A message will be sent to your mail to
             continue the verification and approval process in 48hrs.
           </div>
+
           <button class="btn btn-primary btn-block" @click.prevent="handleSubmit">SUBMIT</button>
           <div class="my-3 text-secondary">
             <h5>
@@ -234,7 +236,7 @@ export default {
           let applied = await this.apply();
           if (applied == true) {
             this.isSuccess = true;
-            this.handleSuccess();
+            this.applicant = null;
           }else if (applied.errors) {
             this.handleError(applied.errors);
           }else {
@@ -268,16 +270,19 @@ export default {
       });
       this.$Message.error("Some Forms fields were not filled correctly!");
     },
+
     handleSuccess() {
       this.applicant = null;
       this.$refs.applyForm.resetFields();
-      this.$store.commit("clearApplicant")
+      this.$store.commit("clearApplicant");
     },
+
     handleAdd() {
       if (this.applicant.articleURLs.length < 3) {
         this.applicant.articleURLs.push("");
       }
     },
+
     validateArticleURLS() {
       const applicantUrls = this.applicant.articleURLs.filter(Boolean)
       if ([...(new Set(applicantUrls))].length !== applicantUrls.length) {
