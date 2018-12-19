@@ -32,7 +32,7 @@
       <img class="card-img-top" :src="post.image_url" >
         <div class="card-body">
           <h5 class="card-title">{{ category }}</h5>
-            <p class="card-text">{{ post.title }}</p>
+            <p class="card-text">{{ post.title | truncate(50) }}</p>
             <div class="foott">
               <div class="further">
               <img :src="post.author.image_url" class="author-imgg">
@@ -45,9 +45,9 @@
             <ul class="overlay-content">
               <h3  v-if="post.keypoint[0] && post.keypoint[1] && post.keypoint[2]">{{post.title}}</h3>
               <h2  v-if="post.keypoint[0] && post.keypoint[1] && post.keypoint[2]">Keypoints</h2>
-                <li v-if="post.keypoint[0]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[0]}}</li>
-                <li v-if="post.keypoint[1]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[1]}}</li>
-                <li v-if="post.keypoint[2]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[2]}}</li>
+                <li v-if="post.keypoint[0]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[0] | truncate(75)}}</li>
+                <li v-if="post.keypoint[1]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[1] | truncate(75)}}</li>
+                <li v-if="post.keypoint[2]"><i class="fas fa-circle" style="font-size: 8px;"></i>&nbsp;{{post.keypoint[2] | truncate(75)}}</li>
             </ul>
             <p class="read-more">
                   <router-link :to="`posts/${post.slug}`"> 
@@ -90,9 +90,10 @@ export default {
 }
 
 #feed-card .card {
-  height: 392px;
+  height: 394px;
   width: 100%;
   border-radius: none;
+  margin-bottom: -2rem;
 }
 
 #feed-card .card:hover {
