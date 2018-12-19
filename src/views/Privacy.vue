@@ -180,7 +180,8 @@
 export default {
     
 }
-</script> 
+</script>
+terms-texts
 <style scoped>
 .affix {
       top: 20px;
@@ -218,15 +219,6 @@ export default {
         font-weight:600;
         letter-spacing: 2px;
         padding:1rem 0 2rem 0;
-    }
-    
-    .privacy-outline{
-        position: -webkit-sticky;
-        position: -moz-sticky;
-        position: -ms-sticky;
-        position: -o-sticky;
-        position: fixed;  
-        right:7%;
     }
     .privacy-texts{
         background-color: #fff; 
