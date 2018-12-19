@@ -1,10 +1,10 @@
 <template>
   <main class="post-feeds">
     <div class="container" id="trend">
-      <TrendingCard/>
+      <trending />
     </div>
 
-    <section class="container mt-5" id="cat-nav">
+    <section class="container mt-5 pt-3" id="cat-nav">
       <div class="post-feeds-category" id="post-feeds-category">
         <div class="row">
           <div class="col-md-2">
@@ -75,7 +75,7 @@
           </div>
         </div>
       </div>
-      <display-feeds style="margin-top: -1rem;"></display-feeds>
+      <display-feeds style="margin-top: -3rem;"></display-feeds>
     </section>
   </main>
 </template>
@@ -85,11 +85,11 @@ import { mapState } from "vuex";
 import { Row, Col, Card } from "iview";
 import vSelect from "vue-select";
 import DisplayFeeds from "@/components/DisplayFeeds.vue";
-import TrendingCard from "@/components/TrendingCard.vue";
+import Trending from "@/components/Trending.vue";
 
 export default {
   name: "FeedsSection",
-  components: { Row, Col, Card, vSelect, DisplayFeeds, TrendingCard },
+  components: { Row, Col, Card, vSelect, DisplayFeeds, Trending },
   watch: {
     'general.countries': {
       handler: function(newItem) {
@@ -185,7 +185,6 @@ export default {
   background-color: #f5f5f5;
   min-height: 100vh;
   font-family: "Montserrat", sans-serif;
-  padding-bottom: 10rem;
 }
 
 .post-feeds-category {
