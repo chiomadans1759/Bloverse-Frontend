@@ -59,7 +59,7 @@
     </div>
 
     <div class="row" v-if="current_section == 'draft'">
-      <div class="col-md-6" v-for="draft in journalist.draftPosts" :key="draft.id">
+      <div class="col-md-4" v-for="draft in journalist.draftPosts" :key="draft.id">
         <draft-card :post="draft"/>
       </div>
     </div>
@@ -218,7 +218,7 @@ export default {
     top: 36px;
     cursor: pointer;
   }
-  
+
   .bm-burger-bars {
     background-color: #525358;
   }
