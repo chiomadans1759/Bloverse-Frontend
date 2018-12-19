@@ -16,13 +16,13 @@
       </div>
     </Modal>
 
-    <div id="mobile">
+    <div id="mobile" v-bind:class="{ isTravel: isTravel }">
       <Form :model="post" ref="basicCreatePostForm" :rules="validatePostForm">
         <Row type="flex" justify="space-between">
           <Col :sm="24" id="create-post">
-            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true" />
+            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true"/>
 
-            <br />
+            <br>
 
             <FormItem prop="title" :error="errors.title">
               <Input id="form-control" placeholder="What's your title?" v-model="post.title" :maxlength="max"/>
@@ -51,14 +51,16 @@
               </Col>
             </Row>
 
-            <br />
+            <br>
 
             <section>
               <div class="key-points" v-if="isTravel">
-                <input v-model="post.location"
+                <input
+                  v-model="post.location"
                   ref="autocomplete"
                   placeholder="Location"
-                  class="search-location">
+                  class="search-location"
+                >
 
                 <FormItem prop="duration">
                   <DatePicker
@@ -87,7 +89,8 @@
                   v-for="(keypoint, index) in post.keyPoints"
                   :key="index"
                   :prop="`keyPoints.${index}.value`"
-                  :rules="{required: index === 0, message: 'Please provide at least one keypoint', trigger: 'change' }">
+                  :rules="{required: index === 0, message: 'Please provide at least one keypoint', trigger: 'change' }"
+                >
                   <Input :placeholder="`Keypoint ${index+1}`" v-model="keypoint.value"/>
                 </FormItem>
               </div>
@@ -115,9 +118,8 @@
                 <Button
                   id="btn-publish"
                   :disabled="post.is_published || this.isPublishing"
-                  @click="handleProcessPost(true)">
-                  {{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}
-                </Button>
+                  @click="handleProcessPost(true)"
+                >{{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}</Button>
               </Col>
             </Row>
           </Col>
@@ -130,7 +132,7 @@
           <DisplayImage :value="post.imageUrl" height="200px" width="100%" :can-edit="false"/>
           <p v-html="post.body" id="body"></p>
         </Card>
-      </Col> -->
+      </Col>-->
     </div>
 
     <!-- PREVIEW POST  -->
@@ -209,7 +211,9 @@ export default {
     FormItem,
     Push
   },
+
   props: ["isTravel"],
+
   data: function() {
     return {
       errors: {},
@@ -288,6 +292,7 @@ export default {
       ]
     };
   },
+
   computed: {
     post: {
       get() {
@@ -303,8 +308,10 @@ export default {
 
     ...mapState(["general", "auth"])
   },
+
   methods: {
     ...mapActions(["processPost"]),
+
     ...mapMutations(["setPost"]),
     previewPosts(){
       this.previewPost = true
@@ -317,6 +324,7 @@ export default {
         }
         this.post.location = this.$refs.autocomplete.value;
       }
+
       this.$refs.basicCreatePostForm.validate(async valid => {
         if (valid) {
           if (!this.post.body || !this.post.body.trim()) {
@@ -332,6 +340,7 @@ export default {
             if (success === true) {
               this.$Message.success("Post successfully saved");
               this.publishModal = shouldPublish;
+              this.clearTinyMceEditor();
             }
             if (success.errors) {
               this.handleError(success.errors);
@@ -343,6 +352,7 @@ export default {
         }
       });
     },
+
     handleError(errors) {
       let fieldErrors, varClient;
 
@@ -355,108 +365,51 @@ export default {
         varClient = clientServer[field];
         this.$set(this.errors, varClient, fieldErrors);
       });
+    },
+
+    clearTinyMceEditor() {
+      this.$store.commit("setTinyMiceValue", "<p></p>");
+    },
+
+    checkTravel() {
+      if (this.isTravel) {
+        this.setPost({
+          category: 7,
+          country: this.auth.loggedInUser.country.id
+        });
+        this.$nextTick(() => {
+          this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
+            this.$refs.autocomplete,
+            { types: ["geocode"] }
+          );
+
+          this.autocomplete.addListener("place_changed", () => {
+            let place = this.autocomplete.getPlace();
+            this.post.location = place.formatted_address;
+          });
+        });
+      } else {
+        this.setPost({
+          category: this.auth.loggedInUser.category.id,
+          country: this.auth.loggedInUser.country.id
+        });
+      }
     }
   },
+
   watch: {
     "post.imageUrl": function() {
       this.isNewImage = true;
+    },
+
+    isTravel: function() {
+      this.checkTravel();
     }
   },
+
   mounted() {
-    if (this.isTravel) {
-      this.setPost({ category: 7, country: this.auth.loggedInUser.country.id });
-      this.autocomplete = new google.maps.places.Autocomplete( // eslint-disable-line no-undef
-        this.$refs.autocomplete,
-        { types: ["geocode"] }
-      );
-
-      this.autocomplete.addListener("place_changed", () => {
-        let place = this.autocomplete.getPlace();
-        this.post.location = place.formatted_address;
-      });
-    } else {
-      this.setPost({
-        category: this.auth.loggedInUser.category.id,
-        country: this.auth.loggedInUser.country.id
-      });
-    }
+    this.checkTravel();
   }
-
-  /*let { data, status } = await this.createOrUpdatePost();
-        status = status === 403 ? 401 : status; //Convert 403 response error to 401;
-
-        switch(status){
-          case 200:
-          case 201:
-            let { id, title, body, image_url: imageUrl, country: countryId, category: categoryId, keypoint: keyPoints } = data.data.post;
-            this.modal = {status: data.status};
-            this.post = { id, title, body, imageUrl, countryId, categoryId, keyPoints };
-            break;
-          case 400:
-            this.modal = { data: data.data, status: 'error' };
-            break;
-          case 401: 
-            // Unauthenticated
-            break;
-          default:
-            this.modal = {status: 'Error', data: {'SERVER ERROR': ['The server is not responding, can you try again']}};
-        }
-        this.modal.action = 'SAVE';
-
-      publishPost: async function(){
-        let response, config;
-        
-        try{
-          config = { headers: {'Authorization': `Token ${this.session.token}`}};
-          if(this.post.id)
-            response = await this.$http.put(`/api/v1/posts/${this.post.id}/publish/`, {}, config)
-        }catch(error){
-          response = error.response;
-        }
-
-        return response;
-      },
-      handlePublish: async function(){
-        //Perform Create Or update
-        await this.handleSave();
-
-        //if it didn't fail perform Publish
-        if(this.modal.status === 'success'){
-          let { data, status } = await this.publishPost();
-          status = status === 403 ? 401 : status; //Convert 403 response error to 401;
-
-          //Convert 403 response error to 401 when it results from not authenticated
-          if(status === 403){
-            if(data.message === "You are not authenticated")
-              status = 401;
-          }
-
-          //and process repsonse
-          switch(status){
-            case 200:
-            case 201:
-              let { id, title, body, image_url: imageUrl, country: countryId, category: categoryId, keypoint: keyPoints } = data.data.post;
-              this.modal = {status: data.status};
-              this.post = { id, title, body, imageUrl, countryId, categoryId, keyPoints };
-              break;
-            case 400:
-              this.modal = { data: data.data, status: 'error' };
-              break;
-            case 401: 
-              // Unauthenticated
-            case 403:
-              // post doesn't belong to him/her
-              break;
-            default:
-              this.modal = {status: 'Error', data: {'SERVER ERROR': ['The server is not responding, can you try again']}};
-          }
-
-          this.modal.action = 'PUBLISH';
-
-        }
-        
-        
-      },*/
 };
 </script>
 
@@ -465,11 +418,17 @@ export default {
   height: 3rem !important;
 }
 
+.isTravel {
+  position: relative;
+  top: -1.6rem;
+}
+
 #create-basic-post {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 120vh;
+  margin-top: -80px;
 }
 
 .search-location {

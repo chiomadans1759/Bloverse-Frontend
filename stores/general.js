@@ -2,6 +2,7 @@ import Api from '../src/utils/Api'
 
 export default {
   state: {
+    tinyMiceValue: "",
     categories: null,
     countries: null,
     activeCategory: {
@@ -18,7 +19,7 @@ export default {
     loading: false,
     metrics: {},
     modal: { show: false, currentComponent: null },
-    relatedPosts: {}
+    relatedPosts: {},
   },
   actions: {
     async setGeneralData({
@@ -154,7 +155,10 @@ export default {
     /*setState(state, params){
       state = {...state, ...params}
     }*/
-    setModal(state, modal){
+    setTinyMiceValue(state, value) {
+      state.tinyMiceValue = value;
+    },
+    setModal(state, modal) {
       state.modal = modal
     },
     setCategories(state, categories) {

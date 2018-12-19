@@ -29,7 +29,7 @@ export default {
   height: auto;
   overflow: auto;
   padding-bottom: 20rem;
-  height: auto !important;
+  height: 100vh;
 }
 
 #journalist-account-layout .left {
