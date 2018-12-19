@@ -1,78 +1,289 @@
 <template>
-<div class="container">
-  <Row id="draft-container">
-    <h2>Today</h2>
-    <Col v-for="i in 5" :key="i">
-      <Card id="draft-card">
-        <div style="margin: 1rem;">
-          <span id="draft-details">
-          <p class="text-uppercase">Category</p>
-          <p class="text-uppercase">1 min ago</p>
-          </span>
-          <p class="text-bold" id="draft-text">I took a break from mum guilt for the day</p>
-          <p  id="draft-textt">I took a break from mum guilt for the day</p>
+  <main id="draft-card">
+    <router-link :to="`/posts/${post.slug}`">
+      <div class="card" v-if="post.category === 7">
+        <img class="card-img-top" :src="post.image_url">
+        <div class="card-body">
+          <h5 class="card-titlee">{{ category }}</h5>
+          <p class="card-text">{{ post.title }}</p>
+          <div class="foott">
+            <div class="further">
+              <img :src="post.author.image_url" class="author-imgg">
+              <span class="detailss">
+                {{post.author.first_name}} {{post.author.last_name}}
+                <p>{{post.published | customizedTime}}</p>
+              </span>
+            </div>
+            <h6 class="right">
+              <i class="fal fa-eye" style="opacity:0.4;"></i>
+              {{post.views}}
+            </h6>
+          </div>
         </div>
-      </Card>
-    </Col>
-  </Row>
-</div>
-  
+        <div class="overlay">
+          <p>{{post.title}}</p>
+          <ul class="travel-deets">
+            <li>
+              <i class="fas fa-camera-retro"></i>
+              &nbsp;&nbsp;{{post.device_type}}
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              &nbsp;&nbsp;{{post.location}}
+            </li>
+          </ul>
+          <p class="read-more">
+            <router-link :to="`posts/${post.slug}`">
+              <h5>READ STORY</h5>
+            </router-link>
+          </p>
+        </div>
+      </div>
+
+      <div class="card" v-else>
+        <img class="card-img-top" :src="post.image_url">
+        <div class="card-body">
+          <h5 class="card-title">{{ category }}</h5>
+          <p class="card-text">{{ post.title | truncate(50) }}</p>
+          <div class="foott">
+            <div class="further">
+              <img :src="post.author.image_url" class="author-imgg">
+              <span class="detailss">
+                {{post.author.first_name}} {{post.author.last_name}}
+                <p>{{post.published | customizedTime}}</p>
+              </span>
+            </div>
+            <h6 class="right">
+              <i class="fal fa-eye" style="opacity:0.4;"></i>
+              {{post.views}}
+            </h6>
+          </div>
+        </div>
+        <div class="overlay">
+          <ul class="overlay-content">
+            <h3 v-if="post.keypoint[0] && post.keypoint[1] && post.keypoint[2]">{{post.title}}</h3>
+            <h2 v-if="post.keypoint[0] && post.keypoint[1] && post.keypoint[2]">Keypoints</h2>
+            <li v-if="post.keypoint[0]">
+              <i class="fas fa-circle" style="font-size: 8px;"></i>
+              &nbsp;{{post.keypoint[0] | truncate(75)}}
+            </li>
+            <li v-if="post.keypoint[1]">
+              <i class="fas fa-circle" style="font-size: 8px;"></i>
+              &nbsp;{{post.keypoint[1] | truncate(75)}}
+            </li>
+            <li v-if="post.keypoint[2]">
+              <i class="fas fa-circle" style="font-size: 8px;"></i>
+              &nbsp;{{post.keypoint[2] | truncate(75)}}
+            </li>
+          </ul>
+          <p class="read-more">
+            <router-link :to="`posts/${post.slug}`">
+              <h5>READ STORY</h5>
+            </router-link>
+          </p>
+
+          <h4
+            class="empty-class"
+            v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]"
+          >No KeyPoints Available for this post</h4>
+        </div>
+      </div>
+    </router-link>
+  </main>
 </template>
 
 <script>
-import { Row, Col, Card } from 'iview';
+import { mapState } from "vuex";
 
 export default {
-  components: { Row, Col, Card }
-  
-}
+  name: "draft-card",
+  props: {
+    post: Object
+  },
+  computed: {
+    ...mapState(["general"]),
+    category() {
+      const postCategory = this.general.categories.find(
+        category => category.id === this.post.category
+      );
+      return postCategory.name;
+    }
+  }
+};
 </script>
 
 <style scoped>
-
 #draft-card {
-  width: 568px;
-  height: 150px;
-  margin-bottom: 2rem;
+  margin-top: 4rem;
 }
 
-#draft-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 2rem;
-}
-
-#draft-container h2 {
-  font-size: 16px; 
-  font-family: 'Montserrat', sans-serif; 
-  margin-bottom: 2rem; 
-  margin-top: 2rem; 
-  flex-direction: flex-start;
+#draft-card .card {
+  height: 394px;
   width: 100%;
+  border-radius: none;
+  margin-bottom: -2rem;
 }
 
+#draft-card .card:hover {
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+#draft-card .card-img-top {
+  height: 220px;
+  width: 100%;
+  border-radius: 0;
+  object-fit: cover;
+}
 
-#draft-details {
+#draft-card .card-title {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #353535;
+}
+
+#draft-card .card-titlee {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #096dd9;
+}
+
+#draft-card .card-text {
+  font-size: 16px;
+  color: #34323d;
+  opacity: 85%;
+  text-transform: capitalize;
+  height: 64px;
+  font-weight: 600;
+}
+
+#draft-card .author-imgg {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+}
+
+#draft-card .foott {
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
 }
 
-#draft-details p {
+#draft-card .foott .further {
+  display: flex;
+  justify-content: space-between;
+}
+
+#draft-card .foott .right {
+  color: #353535 !important;
   font-size: 12px;
-  font-family: 'Montserrat'
+  margin-top: 0.6rem;
 }
 
-#draft-text {
+#draft-card .foott span {
+  margin-left: 0.5rem;
+  color: #353535;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+#draft-card .foott p {
+  color: #353535;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+#draft-card .overlay .empty-class {
+  text-align: center;
+  font-size: 19px;
+  margin-top: 10rem;
+  color: #fff;
+}
+
+#draft-card .overlay p {
+  text-align: left;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 3rem;
+  margin-top: 2rem;
+}
+
+#draft-card .overlay .travel-deets {
+  list-style-type: none;
+  color: #fff;
+  text-align: left;
+  margin-left: 3rem;
+  margin-top: 5rem;
+}
+#draft-card .overlay .travel-deets li {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 2rem;
+}
+
+#draft-card .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 392px;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(13, 13, 15, 0.849);
+  overflow-x: none;
+}
+
+#draft-card .overlay-content h3 {
   font-size: 16px;
-  font-family: 'Montserrat';
+  margin-bottom: 1rem;
+  text-transform: capitalize;
   margin-top: 1rem;
-
+  font-weight: bold;
 }
 
-#draft-textt {
-  font-size: 14px;
-  font-family: 'Montserrat';
+#draft-card .overlay-content h2 {
+  font-size: 16px;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
   margin-top: 1rem;
+  font-weight: bold;
+}
+
+#draft-card .overlay .overlay-content li {
+  margin-bottom: 1rem;
+}
+
+#draft-card .read-more {
+  margin-left: 16rem !important;
+  position: absolute;
+  bottom: 0 !important;
+  margin-bottom: 1.5rem;
+}
+
+#draft-card .overlay-content #consumer-keypoints {
+  margin-bottom: 1rem;
+}
+
+#draft-card .overlay-content {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  margin-left: 2.2rem;
+  left: 43%;
+  top: 46%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 12.6px;
+  width: 95%;
+  list-style-type: none;
+}
+
+#draft-card:hover .overlay {
+  opacity: 1;
 }
 </style>

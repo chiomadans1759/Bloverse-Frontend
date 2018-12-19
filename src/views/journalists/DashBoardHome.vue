@@ -65,7 +65,7 @@
       <div class="show-map">
         <div class="row" v-if="show">
           <div class="col-md-8">
-            <GChart type="GeoChart" :data="chartData" ref="chartData" style="width: 75%;"/>
+            <GChart type="GeoChart" :data="chartData" ref="chartData" style="width: 100%;"/>
           </div>
 
           <div class="col-md-4">
@@ -94,8 +94,7 @@
                       v-for="(data, index) in chartData"
                       :key="index"
                       v-if="index > 0"
-                      class="mb-3"
-                    >
+                      class="mb-3">
                       <span>{{ data[1] }}</span>
                     </p>
                   </div>
@@ -152,7 +151,13 @@ export default {
       region: "",
       subRegion: "",
       country: "",
-      categories: ""
+      categories: "",
+      chartOptions: {
+        chart: {
+          title: "Company Performance",
+          subtitle: "Sales, Expenses, and Profit: 2014-2017"
+        }
+      }
     };
   },
   computed: {
@@ -408,5 +413,11 @@ export default {
       font-weight: 500;
       margin-bottom: 2rem;
     }
+}
+</style>
+
+<style>
+rect {
+  fill: #f5f5f5 !important;
 }
 </style>

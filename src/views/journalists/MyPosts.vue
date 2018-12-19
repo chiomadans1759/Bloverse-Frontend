@@ -1,6 +1,6 @@
 <template>
   <main id="all-posts">
-     <Push class="side">
+    <Push class="side">
      <div class="dashboard-image">
       <img :src="auth.loggedInUser.imageUrl" />
      </div>
@@ -26,13 +26,15 @@
            <p class="text-white" style="text-transform: capitalize; margin-left: -0.6rem">{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</p>
         </div>
       </div>
-   </Push>
-     <div class="mobile">
-        <router-link to="/" class="router-link">
-          <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
-        </router-link>
-      </div>
-    <div class="btn-group mb-5 pb-3" role="group">
+    </Push>
+
+    <div class="mobile">
+      <router-link to="/" class="router-link">
+        <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
+      </router-link>
+    </div>
+
+    <div class="btn-group" role="group">
       <button type="button" @click="currentSection('postp')" 
         :class="{'btn' : true, 'btn-default': current_section != 'postp', 'btn-primary': current_section == 'postp'}" class="text-uppercase">
         all posts
@@ -49,9 +51,9 @@
       </div>
     </div>
 
-    <div class="row" v-if="current_section == 'draft'" v-show="isPublished == false">
-      <div class="col-md-6" v-for="post in journalist.journalistPosts" :key="post.id">
-        <DraftCard />
+    <div class="row" v-if="current_section == 'draft'">
+      <div class="col-md-6" v-for="draft in journalist.draftPosts" :key="draft.id">
+        <draft-card :post="draft" />
       </div>
     </div>
     
@@ -94,7 +96,7 @@ export default {
   async created () {
     // fetch the data whethis.getMyPostn the view is created and the data is
     // already being observed
-    await this. getMyPosts()
+    await this.getMyPosts()
     // await this. getMyDrafts()
   },
   watch: {
