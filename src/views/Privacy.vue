@@ -1,6 +1,6 @@
 <template>
     <main class="privacy">       
-        <div class="privacy-container">
+        <div class="container privacy-container">
             <h1 id="l1">Privacy Policy</h1>
             <p>LAST UPDATED 19 DECEMBER, 2018</p>
             <div class="row">
@@ -152,7 +152,7 @@
 
                 <div class="col-md-3 privacy-outline">
                     <ul> 
-                        <li><a href="#l1">Bloverse Privacy Policy</a></li>
+                        <li class="active"><a href="#l1">Bloverse Privacy Policy</a></li>
                         <li><a href="#l2">What personal information do we collect from the people that visit our blog, website or app?</a></li>
                         <li><a href="#l3">When do we collect information?</a></li>
                         <li><a href="#l4">Do we use 'cookies'?</a></li>
@@ -180,20 +180,17 @@
 export default {
     
 }
-</script>
-terms-texts
+</script> 
 <style scoped>
+.affix {
+      top: 20px;
+      z-index: 9999 !important;
+  }
     .privacy{
         background-color: #F5F5F5;
         width:70%;
         margin:auto;
-    }
-    .privacy-outline{ 
-        position:fixed;
-        right:7%;
-        overflow: scroll;
-        height:70%;    
-    } 
+    }  
     .privacy-outline li{  
         list-style-type: none;
         font-size:.7rem;
@@ -221,6 +218,15 @@ terms-texts
         font-weight:600;
         letter-spacing: 2px;
         padding:1rem 0 2rem 0;
+    }
+    
+    .privacy-outline{
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: fixed;  
+        right:7%;
     }
     .privacy-texts{
         background-color: #fff; 

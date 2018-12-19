@@ -57,7 +57,7 @@ terms-texts
         justify-content: center;
         align-items: center;
         font-family: Montserrat;
-    }
+    } 
     .terms-container{
         width:50%;
         margin-bottom:7rem;
