@@ -91,7 +91,7 @@ export default {
 
 #feed-card .card {
   height: 392px;
-  width: 368px;
+  width: 100%;
   border-radius: none;
 }
 
@@ -101,7 +101,7 @@ export default {
 }
 #feed-card .card-img-top {
   height: 220px;
-  width: 368px;
+  width: 100%;
   border-radius: 0;
   object-fit: cover;
 }
@@ -207,11 +207,11 @@ margin-bottom: 2rem;
   left: 0;
   right: 0;
   height: 392px;
-  width: 368px;
+  width: 100%;
   opacity: 0;
   transition: .5s ease;
   background-color: rgba(13, 13, 15, 0.849);
-  overflow-y: auto;
+  overflow-x: none;
 }
 
 #feed-card .overlay-content h3 {
