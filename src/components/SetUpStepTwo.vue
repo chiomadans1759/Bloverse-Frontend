@@ -1,22 +1,24 @@
 <template>
-<div>
-<Col :md="30" :xs="24">
-  <Row type="flex" justify="space-between" align="middle">
-    <Col :md="8" :xs="24" id="photo-wrapper">
-      <DisplayPhoto :value="user.imageUrl" :canEdit="true" height="200px" width="50%" />
-    </Col>
-    <Col :md="30" :xs="24">
+<div id="step-two-container-head" >
+<Col id="step-two" :xs="24">
+  <Row>
+    <div id="displayphoto-upload">
+      <DisplayPhoto id="display-upload-pic" :value="user.imageUrl" :canEdit="true" />
+    <p>Upload your Profile Picture</p>
+    </div>
+    <Col  :xs="24">
       <Form ref="stepTwoForm" :model="user" :rules="validateUserFields">
         <FormItem prop="username">
           <Input class="my-input" v-model="user.username" readonly placeholder="Username*" />
+         
         </FormItem>
         <Row type="flex" justify="space-between">
-          <Col :md="11" :xs="24">
+          <Col  :xs="24">
             <FormItem prop="password">
               <Input class="my-input" type="password" v-model="user.password" placeholder="Password*" />
             </FormItem>
           </Col>
-          <Col :md="11" :xs="24">
+          <Col  :xs="24">
             <FormItem prop="confirmPassword" :error="passwordError">
               <Input class="my-input" type="password" v-model="user.confirmPassword" placeholder="Confirm Password*" /> 
             </FormItem>
@@ -104,7 +106,25 @@ export default {
 </script>
 
 <style>
-  #photo-wrapper {
-    height: 131px;
-  }
+
+#displayphoto-upload{
+width:80%;
+margin: 2px auto 25px
+
+}
+#displayphoto-upload p{
+  text-align: center;
+  padding:15px 0
+}
+#step-two{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1rem;
+    width:100%;
+}
+#display-upload-pic{
+ 
+  width:100%;
+  z-index: 1;
+}
 </style>
