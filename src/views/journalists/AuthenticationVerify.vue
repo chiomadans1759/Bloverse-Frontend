@@ -109,10 +109,11 @@ export default {
 
 
 <style scoped>
-.auth-verify {
+.auth-section {
   background-color: #f5f5f5;
   border: 1px solid #eeeeee;
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 </style>
