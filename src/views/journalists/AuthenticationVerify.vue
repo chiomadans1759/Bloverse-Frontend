@@ -29,8 +29,8 @@
               </p>
             </FormItem>
             <FormItem>
-              <button class="btn btn-primary btn-block" 
-                      @click="verifyToken" 
+              <button type="button" class="btn btn-primary btn-block" 
+                      @click.prevent="verifyToken" 
                       :disabled="!token || processing">
                 Continue
               </button>

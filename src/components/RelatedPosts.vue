@@ -14,7 +14,7 @@
               </div>
 
               <div class="col-xs-7">
-                <router-link to>
+                <router-link :to="`/posts/${post.slug}`">
                   <h2>{{post.title}}</h2>
                 </router-link>
                 <p>{{post.created | customizedTime}}</p>

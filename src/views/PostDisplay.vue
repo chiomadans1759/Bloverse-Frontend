@@ -96,6 +96,7 @@ export default {
     // fetch the data when the view is created and the data is
     // already being observed
     let { slug } = this.$route.params;
+    // console.log({slug})
     await this.getPostBySlug({ slug });
     this.postDetails = this.general.currentPost;
   }
