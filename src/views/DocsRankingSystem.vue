@@ -10,7 +10,7 @@
     </Row> 
     <div> 
       <ol>
-        <li v-for="rank in ranks"> 
+        <li v-for="rank in ranks" :key="rank.id"> 
          <b>{{rank.question}}</b><br>
          {{rank.answer}}
         </li>
@@ -21,47 +21,44 @@
 
 
 <script>
-  import { Row, Col, Input } from 'iview';
-  import BaseDocs from '../layouts/BaseDocs.vue';
-  import data from '../data.js';
+import { Row, Col, Input } from "iview";
+import BaseDocs from "../layouts/BaseDocs.vue";
+import data from "../data.js";
 
-  export default {
-    components: { BaseDocs, Row, Col, Input },
-    data: function(){
-      return {
-      	ranks: data.ranking[this.$route.params.person]
-      }
-    },
-    watch: {
-      '$route' (to, from) {
-        // react to route changes...
-        this.ranks = data.ranking[to.params.person]
-      }
+export default {
+  components: { BaseDocs, Row, Col, Input },
+  data: function() {
+    return {
+      ranks: data.ranking[this.$route.params.person]
+    };
+  },
+  watch: {
+    $route(to, from) {
+      // react to route changes...
+      this.ranks = data.ranking[to.params.person];
     }
   }
-
+};
 </script>
 <style scoped>
-ol
-{
-    list-style: circle;
-    margin-left: 0;
+ol {
+  list-style: circle;
+  margin-left: 0;
 }
 
-li
-{
-    /* counter-increment: custom; */
-    font-size: 14px;
-    line-height: 19px;
-    margin-bottom: 12px;
-    padding-left: 20px;
-    width:80%;
+li {
+  /* counter-increment: custom; */
+  font-size: 14px;
+  line-height: 19px;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  width: 80%;
 }
 
 h3 {
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    line-height: 25px;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 25px;
 }
 </style>

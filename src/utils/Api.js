@@ -1,13 +1,14 @@
 import axios from 'axios';
-import store from '../../stores';
+import store from "../../stores";
 
-let BASE_URL = process.env.VUE_APP_API
+let API_URL = process.env.VUE_APP_API
 class Api {
   static async get(url, requireAuth=false) {
     let response, statusCode, statusText, data, message, config;
     try {
       config = { headers: {'Authorization': `Token ${store.state.auth.jwt}`}};
-      response = requireAuth ? await axios.get(BASE_URL + url, config) : await axios.get(BASE_URL + url)
+      //store.commit('setLoading', true)
+      response = requireAuth ? await axios.get(API_URL + url, config) : await axios.get(API_URL + url)
       statusCode = response.status;
       data = response.data.data;
       statusText = response.data.status;
@@ -19,11 +20,11 @@ class Api {
         data = error.response.data.data;
         message = error.response.data.message;
       }else{
-        console.log(error);
+        return error;
       }
       
     }
-
+    //store.commit('setLoading', false)
     return { statusCode, statusText, data, message }
     
   }
@@ -33,32 +34,29 @@ class Api {
     let response, statusCode, statusText, data, message;
     try {
       let config = { headers: {'Authorization': `Token ${store.state.auth.jwt}`}};
-      response = requireAuth ? await axios.post(BASE_URL + url, payload, config) : await axios.post(BASE_URL + url, payload)
+      response = requireAuth ? await axios.post(API_URL + url, payload, config) : await axios.post(API_URL + url, payload)
       statusCode = response.status;
       data = response.data.data;
       statusText = response.data.status;
     }catch(error){
       if(error.response){
-        console.log(error.response)
         statusCode = error.response.status;
         statusText = error.response.data.status;
         data = error.response.data.data;
         message = error.response.data.message;
       }else{
-        console.log(error);
+        return error;
       }
       
     }
-
-    return { statusCode, statusText, data, message }
-    
+    return { statusCode, statusText, data, message } 
   }
 
   static async put(url, payload={}, requireAuth=false){
     let response, statusCode, statusText, data, message;
     try {
       let config = { headers: {'Authorization': `Token ${store.state.auth.jwt}`}};
-      response = requireAuth ? await axios.put(BASE_URL + url, payload, config) : await axios.put(BASE_URL + url, payload)
+      response = requireAuth ? await axios.put(API_URL + url, payload, config) : await axios.put(API_URL + url, payload)
       statusCode = response.status;
       data = response.data.data;
       statusText = response.data.status;
@@ -69,17 +67,14 @@ class Api {
         data = error.response.data.data;
         message = error.response.data.message;
       }else{
-        console.log(error);
+        return error;
       }
       
     }
-
     return { statusCode, statusText, data, message }
   }
 
 }
-
-
 
 
 export default Api;

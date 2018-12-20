@@ -1,64 +1,81 @@
 <template>
   <nav>
-    <Row type="flex" justify="space-between" class="header-nav">
-      <Col>
+    <Row class="header-row" type="flex" justify="space-between" align="middle">
+      <Col class="brand">
         <router-link to="/">
-          <img src="https://res.cloudinary.com/naera/image/upload/v1532035571/bloverse/b_blue.png" style="heigh:15px">
-          <span style="height: 30px; font-size: 24px; font-weight: bold">BLOVERSE</span>
+          <img class="logo" src="./../assets/Logo - White.svg" style="height:40px; margin-bottom: 1rem;" >
         </router-link>
       </Col>
-      <Col>
-       <router-link to="/journalist/apply" class="auth">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-       <router-link to="/journalist/login" class="auth1">Login</router-link>
+      <Col class="header-button">
+        <login-button class="pt-2 mr-3" color="white" />
+        <router-link to="/creators/apply" id="c-button">apply</router-link>
       </Col>
     </Row>
  </nav>
 </template>
-<script >
- import { Icon, Row, Col, Button } from 'iview';
-  export default {
-  	components: { Icon, Row, Col, Button },
-  	data () {
-            return {
-            }
-  	},
-    methods: {
-        }
 
-    }
+<script >
+import { Icon, Row, Col, Button } from "iview";
+import LoginButton from "./LoginButton";
+
+export default {
+  components: { Icon, Row, Col, Button, LoginButton }
+};
 </script>
 
 
 <style scoped>
-img{
-      width: 24px;
-      /* padding-left: 20px; */
+.header-row {
+  width: 90%;
+  margin: 0 auto;
+  background: transparent;
+  z-index: 1;
+  position: absolute; 
+  padding:1.5rem 0 0 5rem;
 }
 
-Button{
-  color: blue;
-  margin:2px 20px 0 20px ;
-  padding-right: 30px;
-  padding-left: 30px;
+#l-text {
+  font-size: 32px;
+  margin-top: 1rem;
+  font-family: 'Comfortaa', cursive;
+  color: #fff; 
+  font-weight: 500;
 }
- .auth {
-    background: #FFFFFF;
-    padding: 10px 30px 10px 30px;
-    border-radius: 10px;
-    border: 1px solid #2f80ed;
-    color: #2f80ed;
-  }
+#j-button {
+  font-family: 'Montserrat', sans-serif;
+  border: 1px inset #ffffff;
+  color: #ffffff;
+  margin-top: 1rem;
+  font-size: 14px;
+  padding :5px 10px;
+  text-transform: uppercase; 
+  border-radius: 4px;
+  text-align: center;
+  margin-right:2rem;
+}
 
-.auth:hover {
-  color: #2f80ed;
+#c-button {
+  font-family: 'Montserrat', sans-serif;
+  background: #ffffff;
+  color: #096DD9;
+  margin-top: 1rem;
+  font-size: 14px;
+  padding :7px 10px;
+  text-transform: uppercase; 
+  border-radius: 4px;
+  text-align: center;
 }
-  .auth1 {
-    background: #2f80ed;
-    color: #FFFFFF;
-    padding: 13px 30px 13px 30px;
-    border-radius: 10px;
-  }
-.header-nav{
-  padding: 15px 40px 10px 40px;
+
+@media screen and (max-width: 600px) {
+  #l-text {
+  font-size: 2rem; 
+}
+#j-button, #c-button{  
+  font-size: 1rem;  
+} 
+.header-row {
+  width: 95%; 
+  padding:2rem 0 0 1rem;
+} 
 }
 </style>

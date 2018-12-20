@@ -26,63 +26,63 @@
           </form>
         </div>
       </div>
-    </section>
-    <footer slot="footer">
+      <footer slot="footer" id="img-footer">
       <Button type="error" @click.native="discardModal">DISCARD & EXIT</Button>
       <Button type="warning" :disabled="!image" @click.native="removeImage">Remove Image</Button>
       <Button type="success" :disabled="!image" @click.native="imageOk" >DONE</Button> 
     </footer>
+    </section>
   </Modal>
 </template>
 
 <script>
 
-  import { Icon, Button, Modal } from 'iview';
-  import Utility from '../utils/Utility.js';
+import { Icon, Button, Modal } from 'iview';
+import Utility from '../utils/Utility.js';
 
-  export default {
-    components: { Icon, Button, Modal },
-    props: ['show'],
-    data: function(){
-      return {
-        areaColor: '#90A0B3',
-        image: null
-      }
+export default {
+  components: { Icon, Button, Modal },
+  props: ['show'],
+  data: function(){
+    return {
+      areaColor: '#90A0B3',
+      image: null
+    }
+  },
+  methods: {
+    highLightDropArea: function(){
+      this.areaColor = '#FF620C'
     },
-    methods: {
-      highLightDropArea: function(){
-        this.areaColor = '#FF620C'
-      },
-      removeHighLightFromDropArea: function(){
-        this.areaColor = '#90A0B3'
-      },
-      handleDrop: function(evt){
-        this.removeHighLightFromDropArea();
-        let data = evt.dataTransfer;
-        let files = data.files;
-        this.handleFileSelected(files);
-      },
-      handleFileSelected(files){
-        Utility.readFileToData(files[0], image => {
-          this.image = image;
-        })
-      },
-      removeImage(){
-        this.image = null;
-      },
-      discardModal(){
-        this.removeImage();
-        this.$emit('closeModal');
-      },
-      imageOk(){
-        this.$emit('selectImage', this.image)
-        this.discardModal();
-      },
-      acceptFile: function(){
-        this.$emit('file', this.image);
-        this.$emit('cancel');
-      },
-      /*uploadFile: function(){
+    removeHighLightFromDropArea: function(){
+      this.areaColor = '#90A0B3'
+    },
+    handleDrop: function(evt){
+      this.removeHighLightFromDropArea();
+      let data = evt.dataTransfer;
+      let files = data.files;
+      this.handleFileSelected(files);
+    },
+    handleFileSelected(files){
+      Utility.readFileToData(files[0], image => {
+        this.image = image;
+      })
+    },
+    removeImage(){
+      this.image = null;
+    },
+    discardModal(){
+      this.removeImage();
+      this.$emit('closeModal');
+    },
+    imageOk(){
+      this.$emit('selectImage', this.image)
+      this.discardModal();
+    },
+    acceptFile: function(){
+      this.$emit('file', this.image);
+      this.$emit('cancel');
+    },
+    /*uploadFile: function(){
         this.uploading = true;
         const formData = new FormData()
         formData.append('file', this.image);
@@ -96,16 +96,22 @@
           this.uploading = false;
         })
       }*/
-    }
   }
+}
 </script>
 
 
 <style scoped>
-  footer {
+
+  #img-footer{
     display: flex;
     justify-content: space-between;
   }
+   #img-footer button {
+     margin-right: 1rem;
+     margin-top: 1rem;
+     margin-left: 1rem;
+   }
   #img-upload {
     padding: 0;
     margin: 0 -16px;

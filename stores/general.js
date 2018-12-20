@@ -2,73 +2,111 @@ import Api from '../src/utils/Api'
 
 export default {
   state: {
+    tinyMiceValue: "",
     categories: null,
     countries: null,
-    applicants: null,
+    activeCategory: {
+      id: '',
+      name: 'All'
+    },
+    activeFeedLayout: 'grid',
+    applicants: [],
     publishedPosts: [],
+    draftPosts: [],
+    trendingPost: [],
     currentPost: {},
     journalists: [],
     loading: false,
-    metrics: {}
+    metrics: {},
+    modal: { show: false, currentComponent: null },
+    relatedPosts: {},
   },
   actions: {
-    async setGeneralData ({commit}) {
+    async setGeneralData({
+      commit
+    }) {
       let response, categories, countries;
-      
+
       response = await Api.get('categories/');
-      
-      switch(response.statusCode){
-        case 200:
-          categories = response.data && response.data.categories;
-          response = await Api.get('countries/');
-          countries = response.data && response.data.countries;
-          commit('setCountries', countries);
-          commit('setCategories', categories);
-          return true;
+
+      switch (response.statusCode) {
+      case 200:
+        categories = response.data && response.data.categories;
+        //Adds an object to select all categories to array 
+        categories.unshift({
+          id: '',
+          name: 'All'
+        });
+
+        categories = categories.sort((a, b) => {
+          if (a.name > b.name) return 1;
+          if (a.name == b.name) return 0;
+          if (a.name < b.name) return -1;
+        })
+
+        response = await Api.get('countries/');
+        countries = response.data && response.data.countries;
+        //Adds an object to select all countries array 
+        countries.unshift({
+          id: '',
+          name: 'All'
+        });
+        countries = countries.sort((a, b) => {
+          if (a.name > b.name) return 1;
+          if (a.name == b.name) return 0;
+          if (a.name < b.name) return -1;
+        })
+        commit('setCountries', countries);
+        commit('setCategories', categories);
+        return true;
       }
       return false;
-      //commit('setState', { categories, countries });
     },
-    async getGeneralMetrics({commit}){
+    async getGeneralMetrics({
+      commit
+    }) {
       const response = await Api.get('metrics/general/');
-      let { statusCode, data } = response;
+      let {
+        data
+      } = response;
       commit('setMetrics', data);
     },
-    async getAllApplicants({commit}){
-      let response, applicants;
-      commit('setLoading', true);
-      response = await Api.get('applicants/', true);
-      switch(response.statusCode){
-        case 200:
-          //removes admin from applicants
-          let onlyApplicants = response.data.applicants.filter(applicant=> applicant.id !== 1);
-
-          commit('setApplicants', onlyApplicants);
-          commit('setLoading', false);
-          return true;
-      }
-
-      return false;
-    },
-
-    async getAllJournalists({commit}){
+    async getAllApplicants({
+      commit
+    }) {
       let response;
-      commit('setLoading', true);
-      response = await Api.get('journalists/');
-      switch(response.statusCode){
-        case 200:
-          commit('setJournalists', response.data.journalists);
-          commit('setLoading', false);
-          return true;
+      response = await Api.get('applicants/', true);
+      switch (response.statusCode) {
+      case 200: // eslint-disable-line no-case-declarations
+        //removes admin from applicants
+        let onlyApplicants = response.data.applicants.filter(applicant => applicant.id !== 1);
+        commit('setApplicants', onlyApplicants);
+        return true;
       }
 
       return false;
     },
-    async rejectAcceptApplicants({dispatch}, applicants){
-      let processedUsers = [];
-      applicants.forEach(async applicant=> {
 
-        if(applicant.status === 1)
+    async getAllJournalists({
+      commit
+    }) {
+      let response;
+      response = await Api.get('journalists/');
+      switch (response.statusCode) {
+      case 200:
+        commit('setJournalists', response.data.journalists);
+        return true;
+      }
+
+      return false;
+    },
+    async rejectAcceptApplicants({
+      dispatch
+    }, applicants) {
+      let processedUsers = [];
+      applicants.forEach(async applicant => {
+
+        if (applicant.status === 1)
           return;
         const statusUpdated = await dispatch('processApplicant', applicant);
         if (statusUpdated) {
@@ -78,71 +116,102 @@ export default {
       await dispatch('getAllApplicants');
       return processedUsers;
     },
-    async processApplicant(context, applicant){
-      let { id, status } = applicant;
-      let response = await Api.put('applicants/'+id +'/', { status }, true);
+    async processApplicant(context, applicant) {
+      let {
+        id,
+        status
+      } = applicant;
+      let response = await Api.put('applicants/' + id + '/', {
+        status
+      }, true);
       return response.statusCode === 200;
     },
-    async getAllPublishedPosts({commit}){
-      commit('setLoading', true);
-      let response = await Api.get('posts?is_published=true')     
+    async getAllPublishedPosts({ commit }, { category = "", country = "" }) {
+      let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
       commit('setPublishedPosts', response.data.posts);
-      commit('setLoading', false);
     },
-    async getPostBySlug({commit}, {slug}){
-      commit('setLoading', true);
-      let response = await Api.get(`posts?slug=${slug}`)     
+    async getAllDraftPosts({ commit }, { category = "", country = "" }) {
+      let response = await Api.get(`posts?is_published=false&category=${category}&country=${country}`);
+      commit('setDraftPosts', response.data.posts);
+    },
+    async getAllTrendingPosts({ commit }) {
+      let response = await Api.get(`posts/trending/`);
+      commit('setTrendingPost', response.data.post);
+    },
+    async getPostBySlug({
+      commit
+    }, {
+      slug
+    }) {
+      let response = await Api.get(`posts?slug=${slug}`)
       commit('setCurrentPost', response.data.posts[0]);
-      commit('setLoading', false);
+    },
+    async getSimilarPosts({ commit }, { post_id, threshold }) {
+      let response = await Api.get(`posts/${post_id}/similar/?threshold=${threshold}`);
+      commit('setRelatedPosts', response.data.posts);
     }
   },
   mutations: {
     /*setState(state, params){
       state = {...state, ...params}
     }*/
-
-    setCategories(state, categories){
+    setTinyMiceValue(state, value) {
+      state.tinyMiceValue = value;
+    },
+    setModal(state, modal) {
+      state.modal = modal
+    },
+    setCategories(state, categories) {
       state.categories = categories;
     },
-    setCountries(state, countries){
+    setCountries(state, countries) {
       state.countries = countries;
     },
-    setApplicants(state, applicants){
+    setApplicants(state, applicants) {
       state.applicants = applicants;
     },
-    setPublishedPosts(state, posts){
+    setPublishedPosts(state, posts) {
       state.publishedPosts = posts;
     },
-    setJournalists(state, journalists){
+    setDraftPosts(state, posts) {
+      state.draftPosts = posts;
+    },
+    setJournalists(state, journalists) {
       state.journalists = journalists;
     },
-    setLoading(state, loading){
+    setLoading(state, loading) {
       state.loading = loading;
     },
-    setCurrentPost(state, post){
+    setCurrentPost(state, post) {
       state.currentPost = post;
     },
-    setMetrics(state, metrics){
+    setMetrics(state, metrics) {
       state.metrics = metrics
+    },
+    setTrendingPost(state, trending) {
+      state.trendingPost = trending
+    },
+    setRelatedPosts(state, posts) {
+      state.relatedPosts = posts
     }
   },
   getters: {
     acceptedApplicants(state) {
       // Filter accepted applicants
-      return state.applicants.filter(applicant=> applicant.status === 2);
+      return state.applicants.filter(applicant => applicant.status === 2);
     },
     pendingApplicants(state) {
       // Filter pending applicants
-      return state.applicants.filter(applicant=> applicant.status === 1);
+      return state.applicants.filter(applicant => applicant.status === 1);
     },
-    rejectedApplicants(state){
+    rejectedApplicants(state) {
       // Filter rejected applicants
-      return state.applicants.filter(applicant=> applicant.status === 3);
+      return state.applicants.filter(applicant => applicant.status === 3);
     },
-    journalistCount(state){
+    journalistCount(state) {
       return state.journalists.length;
     },
-    postCount (state) {
+    postCount(state) {
       return state.publishedPosts.length;
     }
   }

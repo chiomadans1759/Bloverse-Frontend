@@ -1,620 +1,440 @@
 <template>
-    <div class="layout">
-      <Layout>
-        <Content>
-          <div class="landing-img">
-            <section>
-                <Row class="header-row" type="flex" justify="space-between" align="middle">
-                  <Col class="brand">
-                    <router-link to="/"><img class="logo" src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" ></router-link>
-                  </Col>
-                  <Col class="header-button">
-                    <!--<Button ghost shape="circle"  @click="displayModal=true">Sign-in</Button>-->
-                    <router-link to="/creators/apply" class="auth">Apply</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <router-link to="/creators/login" class="auth1">Login</router-link>
-
-                    <!--<Button class="btn register" type="default" shape="circle" @click="displayModal=true" ghost>Register</Button>
-                    <Button class="btn login" type="primary" shape="circle"  @click="displayModal=true">Login</Button>-->
-                  </Col>
-                </Row>
-                <div class="head-content">
-                  <h4>Interactive stories from the global community</h4>
-                  <p class="second">Connecting jounalists to the people</p>         
-                </div>
-                <Icon class="dropdown-icon" type="android-arrow-dropdown-circle"></Icon>                       
-            </section>
-          </div>
-          <Row class="section-1" type="flex" justify="space-around">
-            <Col :sm="10" class="section-description">
-                <h2> Get started on Bloverse</h2>
-                <p> Bloverse was created with you in mind. Have you ever thought about creating a news blog but then balked at the thought of the effort required?. Well I have good news! At bloverse we leverage state of the art AI techniques to make your life easier and help you on the journey to being an elite content creator. With our journalist ranking system you can see how you rank compared to others in your circle. The ultimate objective of bloverse is to create a platform with high quality content creators based on feedback from an engaged community. 
-                Excited? You should be! #PressPlay #JoinTheBloverse</p>
-                <Button class="know" type="primary" ><router-link to="/creators/apply" id="getStarted">Get Started</router-link> </Button>
-            </Col>
-            <Col class="section-description" :sm="10">
-                <iframe width="400" height="400"
-                  src="https://www.youtube.com/embed/EjRM4DMdnGw">                           
-               </iframe>
-            </Col>
-          </Row> 
-          <Row class="section-2" type="flex" justify="space-around">
-            <Col :sm="7" class="section-2-description">
-              <Icon class="section-2-icon" type="ios-paper"></Icon>
-              <h2>{{general.metrics.publishedPost}}</h2>
-              <p> Article have been published</p>
-            </Col>
-            
-            <Col :sm="7" class="section-2-description">
-              <Icon class="section-2-icon" type="ios-create" md="md-create"></Icon>
-              <h2>{{general.metrics.journalists}}</h2>
-              <p> Content providers have joined </p>
+  <div class="layout" id="journalist-landing">
+    <Layout>
+      <HeaderGeneral style="position:relative"/>
+      <Content>
+        <div>
+          <Row class="container1">
+            <Col :md="12" :sm="0" :xs="0" class="left">
+              <Col offset="3" :md="20" :sm="14" :xs="16" class="left-contain">
+                <h1>Interactive stories from the global community</h1>
+                <p>Connecting creators to the people</p>
+                <router-link to="/creators/apply" id="get-start">get started</router-link>
+              </Col>
             </Col>
 
-            <Col :sm="7" class="section-2-description">
-                <Icon class="section-2-icon" type="ios-people"></Icon>
-                <h2>{{general.metrics.views.total}}</h2>
-                <p>Unique visitors have accessed the site </p>
+            <Col :md="12" :sm="24" :xs="24" class="right">
+              <img :src="require('@/assets/jlanding.jpg')" alt="Journalists Landing">
+              <Col offset="1" :md="0" :sm="22" :xs="22" class="right-text">
+                <h1>Interactive stories from the global community</h1>
+                <p>Connecting creators to the people</p>
+                <router-link to="/creators/apply" id="get-start">get started</router-link>
+              </Col>
             </Col>
           </Row>
-                     <!-- <Row class="section-3" type="flex" justify="space-around">
-                        <div class="section-3-header"> <span class="underline">Top Journalists</span> </div> 
-                            <i-Col span="6" class="section-3-content">
-                                <img src="images/person1.jpeg" width=100px height=100px>
-                                <h2> White Guy </h2>
-                                <p> description</p>
-                            </i-Col>
-                            <i-Col span="6" class="section-3-content">
-                                    <img src="images/person2.jpeg" width=100px height=100px>
-                                    <h2> White Lady </h2>
-                                    <p> description</p>
-                            </i-Col>
-                            <i-Col span="6" class="section-3-content">
-                                    <img src="images/person4.jpeg" width=100px height=100px>
-                                    <h2> Black Guy </h2>
-                                    <p> description</p>
-                            </i-Col>
-                        </Row>   -->
-          <!-- <Row class="section-4" type="flex" justify="space-around" >
-            <Col class="map-section" span="20">
-              <span class="underline"> Active Regions</span>
-              <div class="imap">
-                  <div ref="bubbles" style=" margin-top: -70px; width: 100%; height: 100%;"></div>
-              </div>  
+ 
+          <Row class="container2">
+            <Col :md="12" :sm="10" :xs="24" class="left2">
+                <Col offset="2" :md="14" :sm="22" :xs="20" class="left-contain2">    
+                  <img src ="./../../assets/video-image.jpg" />              
+                  <button @click.prevent="hideThumbnail()"  class="pulse-button"><i class="fas fa-play"></i></button>
+                <div id="video-overlay" class="video-overlay">
+                  <a class="video-overlay-close"></a>
+                </div>
+                </Col>              
             </Col>
-          </Row> -->
-        </Content>
-      </Layout>
-    </div>
-  <!-- </WithFooter> -->
-  
+           <video-modal v-if="thumbnail" @close="modalClose"/>
+            <Col :md="12" :sm="14" :xs="24" class="right2">
+              <Col offset="2" :md="12" :sm="20" :xs="20" class="right-contain2">
+                <h2>About Us</h2>
+                <p>Bloverse was created with you in mind. Have you ever thought of creating a content site but then balked at the thought of starting from ground zero.</p>
+                <router-link to="/about" style="font-family: 'Montserrat', sans-serif;">Know More</router-link>
+              </Col>
+            </Col>
+          </Row>
+
+          <Row class="container3">
+            <Col :md="8" :sm="8" :xs="24">
+              <h3>{{general.metrics.publishedPost}}</h3>
+              <p>CONTENT PUBLISHED</p>
+            </Col>
+            <Col :md="8" :sm="8" :xs="24" class="center">
+              <h3>{{general.metrics.journalists}}</h3>
+              <p>CONTENT CREATORS</p>
+            </Col>
+            <Col :md="8" :sm="8" :xs="24" v-if="show">
+              <h3>{{general.metrics.views.total}}</h3>
+              <p>VISITORS</p>
+            </Col>
+          </Row>
+          <TheFooter/>
+        </div>
+      </Content>
+    </Layout>
+  </div>
 </template>
 
 <script>
-import { Button, Modal, Layout, Icon, Row, Content, Col } from "iview";
-// import WithFooter from '../../layouts/WithFooter';
-import { mapState, mapActions, mapGetters } from 'vuex';
-import { page } from 'vue-analytics';
-
+import {
+  Button,
+  Row,
+  Col,
+  Icon,
+  Input,
+  Form,
+  Content,
+  Layout,
+  Header
+} from "iview";
+import { mapState, mapActions } from "vuex";
+import HeaderGeneral from "../../components/HeaderGeneral.vue";
+import TheFooter from "../../components/TheFooter.vue";
+import VideoModal from "../../components/VideoModal.vue";
 
 export default {
-  components: { Button, Modal, Layout, Icon, Row, Content, Col},
+  components: {
+    Button,
+    Row,
+    Col,
+    Icon,
+    Input,
+    Form,
+    Content,
+    Layout,
+    Header,
+    HeaderGeneral,
+    TheFooter,
+    VideoModal
+  },
+  data() {
+    return {
+      show: false,
+      thumbnail: false
+    };
+  },
   computed: {
-    ...mapState([
-      'general'
-    ])
+    ...mapState(["general"])
   },
   methods: {
-    ...mapActions([
-      'getGeneralMetrics'
-    ])
+    ...mapActions(["getGeneralMetrics"]),
+    hideThumbnail(){
+      this.thumbnail = true;
+    },
+    modalClose(){
+      this.thumbnail = false;
+    }
   },
-  mounted:
-    async function(){
+  mounted: async function() {
     await this.getGeneralMetrics();
-    let mapp = this.$refs.bubbles;
-    var bubble_map = new Datamap({
-      element: mapp,
-      geographyConfig: {
-        popupOnHover: true,
-        highlightOnHover: true
-      },
-      fills: {
-        defaultFill: '#ABDDA4',
-        USA: 'blue',
-        CAN: 'yellow',
-        NIG: 'purple',
-        ITA: 'orange',
-        RUS: 'red'
-      }
-  });
-  bubble_map.bubbles([
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'BRA',
-      country: 'Brazil',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'EGY',
-      country: 'Egypt',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'FRA',
-      country: 'France',
-      number: 30,
-      fillKey: 'NIG',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'IND',
-      country: 'India',
-      number: 30,
-      fillKey: 'ITA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'ITA',
-      country: 'Italy',
-      number: 30,
-      fillKey: 'RUS',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'MLI',
-      country: 'Mali',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'MLT',
-      country: 'Malta',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'ZMB',
-      country: 'Zambia',
-      number: 30,
-      fillKey: 'NIG',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'QAT',
-      country: 'Qatar',
-      number: 30,
-      fillKey: 'ITA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'USA',
-      country: 'United State of America',
-      number: 30,
-      fillKey: 'RUS',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'MCO',
-      country: 'Mexico',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'ARG',
-      country: 'Argentina',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'BEL',
-      country: 'Belgium',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'BRA',
-      country: 'Brazil',
-      number: 30,
-      fillKey: 'RUS',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'RUS',
-      country: 'Russia',
-      number: 30,
-      fillKey: 'ITA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'FJI',
-      country: 'Fiji',
-      number: 30,
-      fillKey: 'NIG',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'FIN',
-      country: 'Finland',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'GEO',
-      country: 'Georgia',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'KEN',
-      country: 'Kenya',
-      number: 30,
-      fillKey: 'RUS',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'KWT',
-      country: 'Kuwait',
-      number: 30,
-      fillKey: 'ITA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'BOL',
-      country: 'Bolivia',
-      number: 30,
-      fillKey: 'NIG',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'MNE',
-      country: 'Mongolia',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'AUS',
-      country: 'Australia',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'GRL',
-      country: 'GreenLand',
-      number: 30,
-      fillKey: 'RUS',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'PER',
-      country: 'Peru',
-      number: 30,
-      fillKey: 'ITA',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'RWA',
-      country: 'Rwanda',
-      number: 30,
-      fillKey: 'NIG',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'COG',
-      country: 'Congo',
-      number: 30,
-      fillKey: 'CAN',
-    },
-    {
-      name: 'Journalist',
-      radius: 5,
-      centered: 'MAR',
-      country: 'Morocco',
-      number: 30,
-      fillKey: 'USA',
-    },
-    {
-      name: 'Journalists',
-      radius: 5,
-      number: 10,
-      country: 'Canada',
-      centered: 'CAN',
-      fillKey: 'ITA'
-    }
-  ], {
-    popupTemplate: function(geo, data) {
-      return '<div class="hoverinfo">' + data.number + ' Journalists in '  + data.country + ''
-    }
-  })
-              }
+    this.show = true;
+  }
 };
 </script>
+
 <style scoped>
-  * {
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Montserrat");
+
+#journalist-landing {
+  font-family: "Comfortaa", cursive;
+}
+
+.container1 {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  height: 80vh;
+}
+
+.left {
+  background-image: linear-gradient(rgb(2, 9, 110), rgba(4, 37, 128));
+}
+
+.left-contain {
+  margin-top: 12%; 
+}
+
+.left h1 {
+  color: #ffffff;
+  letter-spacing: 3px;
+  padding: 2rem 0 1rem;
+  line-height: 1.5;
+  font-weight: 200;
+  opacity: 0.9;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  margin: 2rem 8rem 0rem 2rem;
+}
+
+.left p {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+	font-size: 14px;
+  opacity: .7;
+	margin-bottom: 3rem;
+  margin-left:2rem;
+}
+
+#get-start {
+  border-radius: 2px;
+  color: rgb(12, 54, 243);
+  border: none;
+  padding: .6rem 1rem;
+  background-color: #fff;
+  margin-top: 2rem;
+  margin-left:2rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+.right {
+  background-color: #000;
+  height: 100%;
+}
+ 
+
+.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50%;
+  position: absolute;
+  opacity: 0.5;
+  background-size: cover;
+  border-radius: 10px;
+  top: 0;
+}
+
+.container2 {
+  display: flex;
+  background-color: rgb(230, 221, 221);
+  width: 560;
+  height: 315;
+}
+
+
+.right2 {
+  height: 50vh;
+}
+
+.right-contain2 {
+  margin-top: 14%;
+}
+
+.right-contain2 p {
+  font-size: 15px;
+  margin: 2rem 0;
+  font-family: "Montserrat", sans-serif;
+}
+.right-contain2 h2 {
+    font-weight: 600;
   }
+.left-contain2 {
+  margin-top: 8%;
+  height: 80%;
+  float: right; 
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;  
+}
+.left2 img {
+  width: 100%; 
+  height: 100%;  
+  border: none;
+  object-fit: cover;  
+  object-position: 50%;
+  position: absolute; 
+  background-size: cover; 
+  top: 0;
+  
+}
 
-  .landing-img {
-    background: url("https://res.cloudinary.com/aolfiligre/image/upload/v1533747277/pjimage_1.jpg") no-repeat;
-    width: 100%;
-    height:600px; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-attachment: scroll; 
+.container3 {
+  display: flex;
+  background-color: rgb(230, 221, 221);
+  height: fit-content;
+}
 
+.container3 h3 {
+  font-size: 2rem;
+  line-height: 2;
+  color: black;
+  font-weight: 600;
+  opacity: 6;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container3 p {
+  font-family: "Montserrat", sans-serif;
+  font-size: .8rem;
+  line-height: 1;
+  color: black; 
+  text-align: center;
+}
+
+.container3 > div {
+  margin:6rem 0;
+}
+
+.center {
+  border-right: 2px solid #ccc;
+  border-left: 2px solid #ccc;
+}
+
+.fa-play{
+  color:#fff;
+  font-size:1rem;
+}
+.pulse-button {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  top:38%;
+  left:38%;
+  border: none;
+  box-shadow: 0 0 0 0 rgb(42, 120, 238);
+  border-radius: 50%;
+  background-color:rgb(51, 127, 240);
+  /* background-image: linear-gradient(rgb(2, 9, 110), rgba(4, 37, 128));  */
+  background-size:cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+.pulse-button:hover 
+{
+  -webkit-animation: none;
+  -moz-animation: none;
+  -ms-animation: none;
+  animation: none;
+}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+ 
+@media screen and (max-width: 840px) {
+  .pulse-button {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  top:34%;
+  left:38%;
   }
-
-  .header-row{
-    width: 90%;
-    margin: 0 auto;
+  .right-text {
+		margin-top: 30%;
+    text-align:center; 
+	}
+	.container1{
+    height:70vh;
   }
-
-  .landing-img > section{
-    color: #FFFFFF;
-    padding-top: .4rem; 
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .dropdown-icon {
-    font-size: 35px;
-    margin-top: 6%;
-  }
-
-  .logo {
-  height:90px;
-  margin-left: 2em;
-  }
-
-  .header-button {
-    font-size: 14px;
-  }
-
-  .header-button .btn {
-    width: 9em;
-    font-size: 1em;
-  }
-
-  .register {
-    
-    border: 2px solid;
-    margin-right: 2em;
-    
-
-  }
-  .login {
-    margin-left: 2em;
-    border: 2px solid #2d8cf0;
-  }
-
-  .imap {
-    position: relative; 
-    margin:0 auto; 
-    width: 700px; 
-    height: 500px;
-  }
-
-  @media screen and (max-width: 680px){
-    .imap {
-      width: 350px; 
-    }
-  }
-
-  @media screen and (min-width: 681px)  and (max-width: 780px){
-    .imap {
-      width: 600px; 
-    }
-  }
-
-
-
-  .head-content {
-    font-size: 16px;
-  }
-
-  .head-content h4{
-    font-size: 3em;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  .head-content .second{
-    font-size: 1.5em;
-    font-weight: 400;
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  .section-1 {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    /* border:1px solid green; */
-    background: white;
-  }
-  .section-description {
-    /* border:1px solid yellow; */
-    margin: auto;
-    padding: 20px;
-  }
-
-  /* /* .section-description > button {
-    margin-top: 20px;
-    width: 7rem; 
-  } */
-
-  .know {
-
-  padding-left:20px;
-  padding-right:20px;
-  margin-top: 30px;   
-
-
-  }
-
-  .section-description > h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-  }
-
-  iframe {
-    width: 100%;
-    height: 27rem;
+  .right-text h1 {
+		font-size: 1.85rem; 
+		color: #ffffff;
+	}
+	
+  .right-text p {
+		font-size: 16px;
+		margin-top: 1rem;
+    margin-bottom: 3rem;
+		color: #cccccc;
+	}
+	
+  .right-text button {
+    border-radius: 2px;
+    color: rgb(12, 54, 243);
     border: none;
+    padding: 0.6rem 1rem; 
+    margin-top: 2rem;
   }
+  .right2 {
+    height: 30vh;
+  }
+  .right-contain2 {
+    margin-top: 7%;
+  } 
+  .container3 > div {
+    margin: 1rem 0 5rem 0;
+  }
+  .container3 p{
+    font-size:.7rem;
+  }
+}
+@media screen and (max-width: 603px) {
 
-  .section-2-description {
-    padding: 20px;
-    text-align: center;
-    height: 100%;
-    height: 100%;
+.container3 {
+  flex-direction:column;
+  padding-bottom:6rem;
   }
-  .section-2 {
-    color: white;
-    height: 100%;
-    padding: 20px;
-    background: linear-gradient(to right, #2d9cdb 0%, #56ccf2 100%);
+.center {
+  border:none;
+}
+.right-text {
+    margin-top: 50%;
+	}
+	
+.left {
+    display: none;
+	}
+.right2 {
+   height: 26vh;
+   height: fit-content;
+   order:1;
+}
+.left2 {
+    order:2;
   }
-
-  .section-2-icon {
-    font-size: 45px;
-  }
-
-  .section-2-description > h2 {
-    margin-top: 6px;
-    font-size: 48px;
-    margin-bottom: 6px;
-  }
-
-  .section-2-description > p {
-    font-size: 18px;
-  }
-
-  .section-3 {
-    text-align: center;
-    background: #e5e5e5;
-    /* color: white; */
-    /* padding-bottom: 30px; */
-    /* padding-top: 20px; */
-    /* padding: 20px 20px 30px 30px; */
-  }
-
-  .underline {
-    text-decoration: none;
-    position: relative;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 42px;
-  }
-
-  .underline:after {
-    right: 0;
-    position: absolute;
-    content: "";
-    width: 60%;
-    height: 3px;
-    bottom: -4px;
-    left: 0;
-    margin: 0 auto;
-    background: #2f80ed;
-  }
-
-  .auth {
-    background: transparent;
-    padding: 5px 30px 5px 30px;
-    border-radius: 20px;
-    border: 2px solid #fff;
-  }
-
-  .auth1 {
-    background: #2f80ed;
-    color: #FFFFFF;
-    padding: 5px 30px 5px 30px;
-    border-radius: 20px;
-    border: 2px solid #2f80ed;
-  }
-  .section-3-header {
-    width: 100%;
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
-
-  .section-3-content > img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  .section-3-content > h2 {
-    margin-top: 30px;
-    margin-bottom: 0rem;
-    font-size: 24px;
-  }
-
-  .section-3-content > p {
-    margin-bottom: 30px;
-  }
-
-  .section-4 {
-    /* border: 1px solid green; */
-    width: 100%;
-    padding: 20px;
-    height: 500px;
-    background: white;
-    /* background: #E5E5E5; */
-    text-align: center;
-  }
-  .map-section {
-    /* border: 1px solid green; */
-    background: white;
-    border-radius: 4px;
-    margin-top: 50px;
+.right-text h1 {
+  font-size: 1.6rem;
+  color: #ffffff;
+	}
+	
+  .right-text p {
+		font-size: .9rem;
+		margin-top: 1rem;
+		color: #cccccc;
+	}
+	
+  .container2 {
+    flex-direction: column;
   }
   
-  #getStarted {
-    color: #fff;
+  .left-contain2 {
+    float: left;
+    height:30vh;
+  }
+  .container3 > div {
+    margin: 1rem 0 1rem 0;
+  }
+  /* .container3 h3 {
+    font-size: 1.2rem;
+  }
+  .container3 p {
+    font-size: .5rem;
+  } */
+  .right-contain2 {
+    margin-top: 7%;
+    height: fit-content;
+  }
+  .right-contain2 p {
+    font-size: .8rem;
+    margin: 1rem 0;
+  }
+}
+  @media screen and (max-width: 322px) {
+    .right-contain2 p {
+      font-size: .75rem;
+      margin: 0.5rem 0;
+    }
+    .right-contain2 h2 {
+      font-size: 1.3rem;
+    }
+    .right-text {
+      margin-top: 50%;
+    }
+    .left {
+      display: none;
+    } 
+    .right2 {
+    height: 30vh;
+    }
+  .right-text p {
+    font-size: 12px; 
+    }
   }
 
 </style>

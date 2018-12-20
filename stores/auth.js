@@ -1,110 +1,256 @@
 import Api from '../src/utils/Api';
+import {
+  getLocalUser,
+  getJWT
+} from "@/utils/UserAuth";
+
+
+var objCodec = require('object-encode');
+var SimpleCrypto = require("simple-crypto-js").default;
+
+var _secretKey = "some-unique-key";
+var simpleCrypto = new SimpleCrypto(_secretKey);
+var bloverseOps = ')*myNewAWESOME-mmbloverseOps254@%^&%';
+
+let user = null;
+let localJWT = null;
+if (getLocalUser() == null) {
+  user = null;
+} else {
+  user = objCodec.decode_object(getLocalUser(), 'base64', bloverseOps);
+}
+
+if (getJWT() == null) {
+  localJWT = null;
+} else {
+  localJWT = simpleCrypto.decrypt(getJWT());
+
+}
+
 
 export default {
   state: {
-    jwt: null,
-    newUser: { imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg' },
-    applicant: { articles: [] },
-    loggedInUser: null,
-    shouldRegister: false
+    jwt: localJWT,
+    newUser: {
+      imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg'
+    },
+    applicant: {
+      articleURLs: ['']
+    },
+    loggedInUser: user,
+    shouldRegister: false,
   },
   actions: {
-    async login ({commit, state}, params) {
+    async login({
+      commit,
+      state
+    }, params) {
       let response = await Api.post('authentication/', params)
-      switch(response.statusCode){
-        case 201:
-          commit('setJwt', response.data.token);
-          commit('setLoggedInUser', response.data.user)
-          return true;
-        default:
-          return { errors: response.data };
+      switch (response.statusCode) {
+      case 201:
+        commit('setJwt', response.data.token);
+        commit('setLoggedInUser', response.data.user)
+        return true;
+      default:
+        return {
+          errors: response.data
+        };
       }
     },
-    async apply ({state}){
-      let response = await Api.post('applicants/', state.applicant)
-      switch(response.statusCode){
-        case 201:
-          return true;
-        default:
-          return { errors: response.data };
+
+    async apply({ state, commit }) {
+      const applicant = {}
+      applicant.categoryId = state.applicant.category.id;
+      applicant.countryId = state.applicant.country.id;
+      applicant.phone = state.applicant.phoneCode + state.applicant.phoneNumber;
+
+      if (!state.applicant.linkedInUsername) {
+        applicant.linkedInUrl = "";
+      }else {
+        applicant.linkedInUrl = `https://www.linkedin.com/in/${state.applicant.linkedInUsername}`;
+      }
+
+      if (!state.applicant.twitterUsername) {
+        applicant.twitterUrl = ""
+      }else {
+        applicant.twitterUrl = `https://www.twitter.com/${state.applicant.twitterUsername}`;
+      }
+
+      if (state.applicant.articleURLs.length > 0) {
+        applicant.articles = state.applicant.articleURLs.map((article, index) => {
+          if(article) {
+            return `${state.applicant.articleProtocols[index]}${article}`;
+          }
+        });
+      }
+
+      if (!applicant.articles || applicant.articles[0] == undefined) {
+        applicant.articles = undefined
+      }
+
+      commit('setApplicant', applicant);
+      let response = await Api.post('applicants/', {
+        ...state.applicant,
+        countryId: state.applicant.countryId,
+        categoryId: state.applicant.categoryId
+      })
+      switch (response.statusCode) {
+      case 201:
+        return true;
+      default:
+        return {
+          errors: response.data
+        };
       }
     },
-    async getApplicantById({commit},id){
-      let response = await Api.get('applicants/'+id + '/')
-      switch(response.statusCode){
-        case 200:
-          commit('setApplicant', response.data.applicant);
-          break;
-        case 404:
-          commit('clearApplicant');
-          break;
-        default:
-          return { errors: response.data };
+    async getApplicantById({
+      commit
+    }, id) {
+      let response = await Api.get('applicants/' + id + '/')
+      switch (response.statusCode) {
+      case 200:
+        commit('setApplicant', response.data.applicant);
+        break;
+      case 404:
+        commit('clearApplicant');
+        break;
+      default:
+        return {
+          errors: response.data
+        };
       }
     },
-    async applicantHasRegistered({state}){
+    async applicantHasRegistered({
+      state
+    }) {
       //Checks if an applicant had previously setup account as user
-      let response = await Api.get('journalists?applicant='+state.applicant.id)
+      let response = await Api.get('journalists?applicant=' + state.applicant.id)
       return response.data.journalists.length > 0;
     },
-    async registerJournalist({state}){
+    async registerJournalist({
+      state
+    }) {
       let response = await Api.post('journalists/', state.newUser);
-      switch(response.statusCode){
-        case 201:
-          return true;
-        default:
-          return { errors: response.data };
+      switch (response.statusCode) {
+      case 201:
+        return true;
+      default:
+        return {
+          errors: response.data
+        };
       }
     },
-    clearSession({commit}) {
-      commit('setJwt', null);
-      commit('setLoggedInUser', null);
-      return true;
+    async generateUsername({
+      state,
+      commit,
+      dispatch
+    }) {
+      let username = `${state.newUser.firstName}.${state.newUser.lastName}`.toLowerCase();
+      username = await dispatch('validateUsername', {
+        username,
+        count: 1
+      })
+      commit('setUsername', username);
     },
+    async validateUsername({
+      dispatch
+    }, {
+      username,
+      count
+    }) {
+      let response = await Api.get('journalists?username=' + username)
+      if (response.data.journalists.length > 0) {
+        username += count;
+        count++;
+        dispatch('validateUsername', {
+          username,
+          count
+        });
+      }
+      return username;
+    },
+    clearSession({
+      commit,
+      state
+    }) {
+      localStorage.removeItem("jwt");
+      localStorage.removeItem("loggedInUser");
+      state.jwt = null;
+      state.loggedInUser = null;
+      return true;
+    }
   },
   mutations: {
-    setApplicant(state, props){
-      state.applicant = {...state.applicant, ...props};
+    setApplicant(state, props) {
+      state.applicant = {
+        ...state.applicant,
+        ...props
+      };
     },
-    clearApplicant(state){
-      state.applicant = null;
+    clearApplicant(state) {
+      state.applicant = {
+        articleURLs: [],
+        phoneNumber: '',
+        linkedInUsername: '',
+        twitterUsername: ''
+      };
     },
-    setNewUser(state, props){
-      state.newUser = {...state.newUser, ...props};
+    setNewUser(state, props) {
+      state.newUser = {
+        ...state.newUser,
+        ...props
+      };
     },
-    setJwt(state, jwt){
+    setJwt(state, jwt) {
       state.jwt = jwt
-      if(jwt) 
-        localStorage.setItem('jwt', jwt);
-      else
-        localStorage.removeItem('jwt');
+      localStorage.setItem("jwt", JSON.stringify(simpleCrypto.encrypt(state.jwt)));
     },
-    setLoggedInUser(state, user){
+    setLoggedInUser(state, user) {
       state.loggedInUser = user;
-      if(user)
-        localStorage.setItem('loggedInUser', JSON.stringify(user));
-      else
-        localStorage.removeItem('loggedInUser');
+      localStorage.setItem("loggedInUser", JSON.stringify(objCodec.encode_object(state.loggedInUser, 'base64', bloverseOps)));
     },
-    setUsername(state){
-      state.newUser.username = `${state.newUser.firstName}.${state.newUser.lastName}`.toLowerCase();
+    setUsername(state, username) {
+      state.newUser.username = username;
+
     },
-    setShouldRegister(state, value){
+    setShouldRegister(state, value) {
       state.shouldRegister = value;
-      localStorage.setItem('shouldRegister', value);
+      state.newUser.firstName = state.applicant.first_name;
+      state.newUser.lastName = state.applicant.last_name;
+      state.newUser.applicant = state.applicant.id;
+      state.newUser.email = state.applicant.email;
+      state.newUser.phone = state.applicant.phone_number.substring(4);
+      state.newUser.category = state.applicant.category;
+      state.newUser.country = state.applicant.country;
+      state.newUser.gender = '';
+      state.newUser.about = '';
+      state.newUser.code = state.applicant.phone_number.substring(0,4);
+    },
+
+    setApplicantIds(state, {
+      name,
+      value
+    }) {
+      state.applicant[name] = value;
     }
   },
   getters: {
-    isAuthenticated(state){
+    isAuthenticated(state) {
       return state.loggedInUser !== null;
     },
-    isAnAdmin(state){
-      return state.loggedInUser.type === 'Admin';
+    isAnAdmin(state) {
+      if (state.loggedInUser) {
+        return state.loggedInUser.type === 'Admin';
+      }
+      return false;
     },
-    isAJournalist(state){
-      return state.loggedInUser.type === 'journalist';
+    isAJournalist(state) {
+      if (state.loggedInUser) {
+        return state.loggedInUser.type === 'journalist';
+      }
+      return false;
     },
-    allowedToRegister(state){
+    isAllowedToRegister(state) {
       return state.shouldRegister;
     }
   }

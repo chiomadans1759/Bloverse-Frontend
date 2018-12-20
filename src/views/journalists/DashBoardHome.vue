@@ -1,245 +1,417 @@
 <template>
-  <div>
-    <Row :gutter="32" id="stat-wrapper">
-      <Col :sm="8">
-        <stat-card variant="fade" title="views" id="stat-point1" :stats="{ today: views.today, week: views.week, total: views.total}" />
-      </Col>
-      <Col :sm="8">
-        <stat-card variant="primary" title="published" id="stat-point2" :stats="{ today: articles.today, week: articles.week, total: articles.total}" />
-      </Col>
-      <Col :sm="8">
-        <stat-card variant="secondary" title="points" id="stat-point3" :stats="{ today: '2 of 10', week: '12 of 150', total: 200}" />
-      </Col>
-    </Row>
-
-    <Row :gutter="32">
-      <Col :sm="16">
-        <Card id="map-card">
-          <h2 slot="title" class="title">Total Visits</h2>
-          <span slot="extra">
-            <ion-icon name="add" id="extra-icon"></ion-icon>
-            <ion-icon name="remove" id="extra-icon"></ion-icon>
-            <!-- Zoom out and zoom in for map -->
-          </span>
-          <Row :gutter="16" id="select-wrapper">
-            <Col span="8">
-              <Select placeholder="Region" v-model="region">
-                <Option >No item yet</Option>
-              </Select>
-            </Col>
-            <Col span="8">
-              <Select placeholder="Subregion" v-model="subRegion">
-                <Option >No item yet</Option>
-              </Select>
-            </Col>
-            <Col span="8">
-              <Select placeholder="Country" v-model="country">
-                <Option >No item yet</Option>
-              </Select>
-            </Col>
-          </Row>
-          <div id="map-wrapper">
-            <div ref="activityMap" class="map"></div>
+  <main id="journalist-dashboard">
+   <Push class="side">
+     <div lass="dashboard-image">
+      <img :src="auth.loggedInUser.imageUrl" />
+     </div>
+      <a id="home" href="/creators/${auth.loggedInUser.userName}/dashboard">
+      <i class="far fa-th-large"></i>
+        <span>Dashboard</span>
+      </a>
+      <a id="home" href="/creators/${auth.loggedInUser.userName}/posts/create">
+      <i class="fal fa-plus"></i>
+        <span>Create Content</span>
+      </a>
+      <a id="home" href="/creators/${auth.loggedInUser.userName}/posts">
+      <i class="fal fa-rocket"></i>
+        <span>My Posts</span>
+      </a>
+      <a id="home" href="" @click.prevent="logOut">
+        <i class="fal fa-power-off" style="color: #D9091E; font-size:16px; "></i>
+        <span>Sign Out</span>
+      </a>
+       <div class="overlayed-text">
+        <div class="overlayed-content">
+          <img :src="auth.loggedInUser.imageUrl" />
+           <p class="text-white" style="text-transform: capitalize; margin-left: -0.6rem">{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</p>
+        </div>
+      </div>
+   </Push> 
+     <div class="sidebar-header">
+        <router-link to="/" class="router-link">
+          <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
+        </router-link>
+      </div>
+    <div class="container pt-5" style="margin-left: -3rem;">
+      <Row :gutter="32" v-if="show" id="stats">
+        <Col :sm="8" :xs="24" id="icon-fix">
+          <stat-card
+            variant="fade"
+            icon="fal fa-eye"
+            title="views"
+            id="stat-point1"
+            :stats="{ key:[ views.today ?views.today : 0, views.week ?views.week:0, views.total ?views.total:0] ,value:['Today' , 'This Week']}"
+          />
+        </Col>
+        <Col :sm="8" :xs="24" id="icon-fix">
+          <stat-card
+            variant="primary"
+            icon="fal fa-rocket"
+            title="published"
+            id="stat-point2"
+            :stats="{ key:[articles.today?articles.today:0, articles.week?articles.week:0,  articles.total?articles.total:0 ] , value:[ 'Today' ,'This Week' ,'Articles']}"
+          />
+        </Col>
+        <Col :sm="8" :xs="24" id="icon-fix">
+          <stat-card
+            variant="secondary"
+            icon="fal fa-star"
+            title="rankings"
+            id="stat-point3"
+            :stats="{ key:[`${datas.worldRank? datas.worldRank[0].toString() : 0} / ${datas.worldRank ? datas.worldRank[1] : 0 }`, `${datas.countryRank? datas.countryRank[0].toString():0} / ${datas.countryRank?datas.countryRank[1] :0}` , `${datas.point?datas.point:0}`] , value:['Global' ,`${auth.loggedInUser.country.name}` , 'Ranking']}"
+          />
+        </Col>
+      </Row>
+      <div class="show-map">
+        <div class="row" v-if="show">
+          <div class="col-md-9">
+            <GChart type="GeoChart" :options="chartOptions" :data="chartData" ref="chartData" style="width: 100%;"/>
           </div>
-        </Card>
-      </Col>
-      <Col :sm="8">
-        <Card id="trending-card">
-          <h2 slot="title" class="title">Trending</h2>
-               <Row type="flex" justify="space-around">
-            <Col span="10">
-              <Select v-model="categories" placeholder="Categories" id="categories">
-                <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{item.name}}</Option>
-              </Select>
-            </Col>
-            <Col span="10">
-              <Select v-model="country" placeholder="Country" id="country">
-                <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{item.name}}</Option>
-              </Select>
-            </Col>
-          </Row>
-          <Row type="flex" :gutter="16" justify="center" id="entities-wrapper">
-            <Col class="entity" v-for="i in 9" :key="i">
-              <router-link to="/entity">
-                <Avatar src="https://res.cloudinary.com/naera/image/upload/v1530033169/bloverse/ca6df9c3826fa48bf487c553b4a8fb62.jpg" />
-                <p>Drake</p>
-              </router-link>
-            </Col>
 
-          </Row>
-        </Card>
-      </Col>
-    </Row>
-  </div>
+          <div class="col-md-3">
+            <h3 class="text-uppercase mb-3">
+              Views
+              <span id="blue-c"></span>
+            </h3>
+
+            <ul class="list-group">
+              <li class="list-group-item rounded-0">
+                <div class="row">
+                  <div class="col">
+                    <p
+                      v-for="(data, index) in chartData"
+                      :key="index"
+                      v-if="index > 0"
+                      style="font-size: 13px;"
+                      class="mb-2">
+                      <span>{{ data[0] }}</span>
+                    </p>
+                  </div>
+
+                  <div class="col-auto">
+                    <p
+                      v-for="(data, index) in chartData"
+                      :key="index"
+                      v-if="index > 0"
+                      style="font-size: 10px;"
+                      class="mb-3">
+                      <span>{{ data[1] }}</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row mt-3">
+                  <div class="col">
+                    <h5>TOTAL</h5>
+                  </div>
+
+                  <div class="col-auto">
+                    <p>{{ chartData.filter((e, i) => i !== 0).reduce((acc, a) => acc + a[1], 0) }}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </template>
 
 
 <script>
-  import { Row, Col, Card, Select, Option, locale, Avatar, Icon } from 'iview';
-  import { mapActions, mapGetters } from 'vuex';
-  import DashboardStatDisplayCard from '../../components/JournalistStatDisplayCard.vue';
-  import lang from 'iview/dist/locale/en-US';
-  import { mapState } from 'vuex';
+import { Row, Col, Card, Select, Option, locale, Avatar, Icon } from "iview";
+import { mapActions, mapGetters, mapState } from "vuex";
+import lang from "iview/dist/locale/en-US";
+import { GChart } from "vue-google-charts";
+import { Push } from 'vue-burger-menu';
+import { Carousel, Slide } from 'vue-carousel';
+import DashboardStatDisplayCard from "@/components/JournalistStatDisplayCard.vue";
+// configure language
+locale(lang);
 
-  // configure language
-  locale(lang);
-
-  
-  export default {
-    components: {
-      Row, Col, Card, Select, Option, Avatar, 
-      StatCard: DashboardStatDisplayCard,
-      Icon
-    },
-    computed: {
-
-      ...mapState([
-        'general'
-      ])
-    },
-    computed:{
-      ...mapGetters(['views', 'articles'])
-    },
-    methods: {
-      ...mapActions(['getMyMetrics'])
-    },
-    mounted: async function(){
-      await this.getMyMetrics();
-      let mapElement = this.$refs.activityMap;
-      var map = new Datamap({element: mapElement,
-        fills: {
-          defaultFill: '#C4C4C4',
-        },
-        geographyConfig: {
-          highlightFillColor: '#2F80ED',
-          highlightBorderColor: '#2F80ED',
-          highlightBorderWidth: 4,
-          highlightBorderOpacity: 2,
-          popupTemplate: function(geography, data) { //this function should just return a string
-          return '<div class="hoverinfo stat-info"><p class="country"><strong>' + geography.properties.name + '</strong></p><p class="views">1200 page views</p></div>';
-        },
-        }
+export default {
+  components: {
+    Row,
+    Col,
+    Card,
+    Select,
+    Option,
+    Avatar,
+    GChart,
+    StatCard: DashboardStatDisplayCard,
+    Icon,
+    Carousel, 
+    Slide,
+    Push
+  },
+  data() {
+    return {
+      show: false,
+      region: "",
+      subRegion: "",
+      country: "",
+      categories: "",
+      chartOptions: {
+        backgroundColor: '#f5f5f5',
+        datalessRegionColor: '#c2c2c2',
+        colorAxis: {colors: ['#c5c5c5', '#2F80ED']}
+      }
+    };
+  },
+  computed: {
+    ...mapState(["general", "auth"]),
+    chartData() {
+      let newData = [["Country", "views"]];
+      let countries = this.views.countries || "";
+      Object.keys(countries).forEach(country => {
+        newData.push([country, countries[country]]);
       });
+
+      return newData;
+    },
+
+    ...mapGetters(["views", "articles", "datas"])
+  },
+
+  methods: {
+    ...mapActions(["getMyMetrics", "clearSession"]),
+    
+    logOut(){
+      this.clearSession();
+      this.$router.push('/creators');
+    },
+    
+    computePosition(key) {
+      const target = key[key.length - 1];
+      const dataMap = {
+        "1": "st",
+        "2": "nd",
+        "3": "rd"
+      };
+      return `${key}${dataMap[target] || "th"}`;
     }
-  } 
+  },
+
+  mounted: async function() {
+    await this.getMyMetrics();
+    this.show = true;
+  }
+};
 </script>
 
 
 <style scoped>
+#journalist-dashboard #stats {
+  margin-bottom: 3rem;
+}
 
-  #stat-wrapper {
-    margin-bottom: 30px;
-    color: #828282;
+#journalist-dashboard #stats #icon-fix {
+  overflow: hidden;
+}
+
+.sidebar-header {
+  display: none;
+}
+
+#journalist-dashboard .side {
+  display: none;
+}
+
+#journalist-dashboard #stats .stat-card {
+  padding: 1.8125rem !important;
+  -webkit-box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.3125rem;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem 0.7rem;
+  overflow: hidden;
+}
+
+#blue-c:before {
+  content: " \25CF";
+  font-size: 20px;
+  margin-left: 2rem;
+  color: #096dd9;
+}
+
+#journalist-dashboard #stats #stat-point1 {
+  color: #ffffff;
+  background-image: linear-gradient(
+    to right top,
+    #4db6ac,
+    #37a991,
+    #2a9b73,
+    #298c54,
+    #2e7d32
+  );
+  width: 320px;
+  height: 166px;
+  bottom: 0;
+}
+
+#journalist-dashboard #stats #stat-point2 {
+  color: #ffffff;
+  background-image: linear-gradient(
+    to right top,
+    #b10b0b,
+    #c4190b,
+    #d82509,
+    #eb3106,
+    #ff3d00
+  );
+  overflow: hidden;
+  width: 320px;
+  height: 166px;
+}
+
+#journalist-dashboard #stats #stat-point3 {
+  color: #ffffff;
+  background-image: linear-gradient(
+    to right top,
+    #4db6ac,
+    #37a991,
+    #2a9b73,
+    #298c54,
+    #2e7d32
+  );
+  width: 320px;
+  height: 166px;
+}
+
+#journalist-dashboard .list-group .list-group-item {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 360px) {
+  #stat-wrapper stat-card {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
-  .title {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    color: #9da19c;
+  #journalist-dashboard .side {
+  display: block;
+}
+
+  .mobile-menu {
+    display: block;
   }
 
-  #trending-card {
-    height: 450px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    overflow:hidden;
+  .bm-burger-button {
+    cursor: pointer;
+    height: 20px;
+    left: 36px;
+    position: absolute;
+    top: 36px;
+    width: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #stat-wrapper stat-card {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
-  #map-card {
-    height: 450px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+  #journalist-dashboard .side {
+  display: block;
+}
+
+  #journalist-dashboard .side img{
+    width: 130%;
+    height: 172px;
+    margin-left: -2.5rem !important;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+
   }
 
-  #select-wrapper {
-    width: 80%;
-    margin: auto !important;
+  #journalist-dashboard .side .overlayed-text {
+    overflow: hidden;
+    position: absolute;
+    left: 20px;
+    top: 100px;
   }
 
-  #map-wrapper {
-    margin-top: 20px;
-    height: 300px;
+  #journalist-dashboard .side .overlayed-text .overlayed-content img{
+    filter: none;
+     width: 55%;
+     height: 55%;
+    object-fit: contain;
+}
+  .show-map {
+    display: none;
   }
 
-  #entities-wrapper {
-    width: 98%;
-    margin: auto !important;
-    /* padding-left: 8px; */
+  #icon-fix {
+    margin-bottom: 1rem;
   }
 
-  #stat-point2 {
-    color: #2F80ED;
-  }
-
-  #stat-point3 {
-    color: #6FCF97;
-  }
-  #stat-point1 {
-    color: #56CCF2;
-  }
-
-  #extra-icon {
-    font-size: 17px;
-    font-weight: 700;
-    color: #2F80ED;
-    margin-left: 10px;
-    border: 2px solid #2F80ED;
-     border-radius:50%;
-    -moz-border-radius:50%;
-    -webkit-border-radius:50%;
-  }
-  .entity{
+  #stats {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .entity-pix{
-    width:25%;
-    height:60px;
-    margin-top: 20px;
-  }
-
-  .entity .ivu-avatar {
-    height: 60px;
-    width: 60px;
-    margin-top: 20px;
-    border-radius: 40px;
-    margin-right: 8px;
-    margin-left: 8px;
-  }
-
-  .entity p {
+    margin-top: 4rem;
     text-align: center;
+    margin-left: -5rem;
   }
 
-  .map {
-    height: 100%;
-    max-width: 100%;
-    position: relative;
-    margin: auto;
-    overflow:hidden;
+  .sidebar-header {
+    display: block;
+    margin-top: 1.5rem;
+    margin-left: 6rem;
+    margin-bottom: -3rem;
   }
-
-  .stat-info {
-    width: 120px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 2px;
-
+  .mobile-menu {
+    display: block;
   }
+    .bm-burger-button {
+      position: fixed;
+      width: 18px !important;
+      height: 12px !important;
+      left: 36px;
+      top: 36px;
+      cursor: pointer;
+   }
+    .bm-burger-bars {
+      background-color: #525358 !important;
+    }
 
-  .stat-info > p{
-    margin: 0;
-    padding: 0;
-  }
+     .bm-item-list {
+      color: #b8b7ad !important;
+      margin-left: 5%;
+      font-size: 14px;
+    }
 
-  .stat-info .country {
-    font-weight: bold;
-  }
+     .bm-menu {
+      height: 100%;
+      width: 0; 
+      position: fixed; 
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: #f5f5f5 !important; 
+      overflow-x: hidden;
+      padding-top: 60px; 
+      transition: 0.5s;
+    }
 
 
-
+    .bm-item-list > * > span {
+      margin-left: 14px;
+      color: #222222;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+}
 </style>
+

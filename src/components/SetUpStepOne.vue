@@ -1,5 +1,6 @@
 <template>
-<Col :md="14" :xs="24">
+<div style="width: 32%;">
+ 
   <Form id="form-setup-one" ref="stepOneForm" :model="user" :rules="validateUserFields">
     <FormItem prop="firstName">
       <Input class="my-input" v-model="user.firstName" placeholder="First name*" />
@@ -8,57 +9,80 @@
       <Input class="my-input" v-model="user.lastName" placeholder="Last name*" /> 
     </FormItem>
     <FormItem>
-      <Input class="my-input" v-model="user.email" readonly placeholder="Email*" />
+      <Input class="my-input" v-model="user.email" placeholder="Email*" readonly/>
     </FormItem>
-    <FormItem>
-      <Input class="my-input" v-model="user.phone" readonly placeholder="Phone*" />
+    <FormItem class="auth-phone">
+      <select v-model="user.code" class="code-dropdown app_select_style" disabled>
+        <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
+          <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
+        </option>
+      </select>
+    <input class="my-input app_input_style" type="text" v-model="user.phone" placeholder="Digits after code here " readonly/>
     </FormItem>
-    <FormItem>
-      <Select class="my-select" placeholder="Category*" v-model="user.categoryId" disabled>  
+
+      <Select class="my-select auth-category-disabled" placeholder="Category*" v-model="user.category" disabled>  
         <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
       </Select>
-    </FormItem>
+    
     <FormItem>
-      <Select class="my-select" placeholder="Country*" v-model="user.countryId" disabled>  
+      <Select class="my-select" placeholder="Country*" v-model="user.country" disabled>  
         <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{ item.name }}</Option>
       </Select>
     </FormItem>
+    <Button class="auth-button my-btn btn-secondary" style="background:#2F80ED; color: #fff;" @click="toNext">NEXT</Button>
   </Form>
-  <Button long class="my-btn btn-secondary" @click="toNext">NEXT</Button>
-</Col>
-
+  
+</div>
 </template>
 
 <script>
-  import { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem } from 'iview';
+import { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem } from 'iview';
+import { mapState } from 'vuex';
+import countryFlags from '../countryFlags.js';
 
-  import { mapState } from 'vuex';
 
-  export default {
-    props: { user: Object },
-    components: { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem },
-    data: function(){
-      return {
-        validateUserFields: {
-          firstName: [
-            {required: true, message: 'First name cannot be empty', trigger: 'blur' },
-          ],
-          lastName: [
-            { required: true, message: 'Last name cannot be empty', trigger: 'blur' },
-          ]
-        }
-      }
-    },
-    computed: {
-      ...mapState([
-         // map this.count to store.state.count
-         'general'
-       ]),
-    },
-    methods: {
-      toNext(){
-        this.$emit('toNext');
-       /* this.$refs.stepOneForm.validate(valid=> {
+export default {
+  props: { user: Object },
+  components: { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem },
+  watch: {//watch for changes in the applicant phoneNumber
+    'user.phone': function(newValue){
+      const result = newValue.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, "");
+      this.$nextTick(() => this.user.phone = result);  
+    }
+
+  },
+  data: function(){
+    return {
+      validateUserFields: {
+        firstName: [
+          {required: true, message: 'First name cannot be empty', trigger: 'blur' },
+        ],
+        lastName: [
+          { required: true, message: 'Last name cannot be empty', trigger: 'blur' },
+        ]
+      },
+      phoneCode: '+1'
+    }
+  },
+  computed: {
+    ...mapState([
+      // map this.count to store.state.count
+      'general'
+    ]),
+    countriesCodeFlag() {
+      let sorted = countryFlags.sort((a, b) => {
+        if (a.code > b.code) return 1;
+        if (a.code == b.code) return 0;
+        if (a.code < b.code) return -1;
+      })
+
+      return sorted;
+    }
+  },
+  methods: {
+    toNext(){
+      this.$emit('toNext');
+      /* this.$refs.stepOneForm.validate(valid=> {
           if(valid){
             this.$emit('toNext');
           }else{
@@ -66,24 +90,71 @@
           }
           
         })*/
-        
-      }
-    },
+    }
   }
+};
 </script>
 
 
 <style scoped>
+.auth-phone .code-dropdown{
+  width:20% !important;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
   #form-setup-one {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-column-gap: 1rem;
+    width:80%;
+    margin:auto;
+
+  }
+ 
+  .app_input_style{
+
+    width: 79.5%;
+    border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+    padding-left: 10px;
+    border: 1px solid #dcdcdc;
+  } 
+  .app_select_style{
+    border: 1px solid #dcdcdc;
+  }
+  .auth-category-disabled{
+    margin-bottom: 25px
+  }
+  .auth-button{
+    margin-top: 5px;
+width:100%
+  }
+
+   @media screen and (max-width:320px) {
+#stepone-setup-one{
+  width:100% !important;
+border: 1px solid red
+}
+   }
+   @media screen and (max-width:900px) {
+#stepone-setup-one{
+  width:100% !important;
+border: 1px solid red
+}
+ }
+ .auth-phone .code-dropdown{
+  width:20% !important;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+  #form-setup-one {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1rem;
+    width:90%;
+    margin:auto;
 
   }
 
-  @media screen and (max-width:768px) {
-    #form-setup-one {
-      grid-template-columns: 1fr;
-    }
-  }
+  
 </style>

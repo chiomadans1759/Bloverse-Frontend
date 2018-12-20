@@ -1,117 +1,147 @@
 <template>
-  <Footer id="footer-section">
-    <Row class="footer-1" type="flex" justify="space-between">                         
-      <Col class="footer-company-name">
-        <span>Bloverse</span>
-      </Col>
-      <Col>
-        <ul class="footer-list">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contacts</a></li>
-          <li><a href="#">Terms and Conditions</a></li>
-          <li><router-link to="/policy">Privacy Policy</router-link></li>
-        </ul>
-      </Col>
-      <Col>
-        <ul class="footer-list">
-          <li>
-            <router-link to="/rules/journalist">House Rules (Journalists)</router-link>
-          </li>
-          <li>
-            <router-link to="/ranking/journalist">Ranking System (Journalists)</router-link>
-          </li>
-          <li><router-link to="/guides">Guides to Publish Article</router-link></li>
-          <li><router-link to="/faq/journalist">Frequently Asked Question (Journalists)</router-link></li>
-        </ul>
-      </Col>
-      <Col>
-        <ul class="footer-list">
-          <li><router-link to="/rules/commenter">House Rules (Commenters)</router-link></li>
-          <li><router-link to="/ranking/commenter">Ranking System (Commenters)</router-link></li>
-          <li><router-link to="/faq/commenter">Frequently Asked Question (Commenters)</router-link></li>
-        </ul>
-      </Col>
-      <!--<Col>
-        <ul class="footer-list">
-          <li> 321 North Star 34th Street, </li>
-          <li> Suit #100 </li>
-          <li> Cupertino, 98103 </li>
-        </ul>
-      </Col>-->
-    </Row>
-    <Row type="flex" justify="space-between" id="footer-2">
-      <Col>English</Col>
-      <Col>(c) 2018 Bloverse. All Right Reserved</Col>
-      <Col>
-        <Icon class="footer-icon" type="logo-facebook"></Icon>
-        <Icon class="footer-icon" type="logo-twitter"></Icon>
-        <Icon class="footer-icon" type="logo-linkedin"></Icon>
-        <Icon class="footer-icon" type="logo-instagram"></Icon>
-      </Col>
-    </Row>
-                                  
-  </Footer>
+  <footer id="the-footer">
+    <div class="container">
+      <div class="row" id="desktop">
+        <div class="col">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+            <router-link to="/">Bloverse</router-link>
+            </li>
+            <li class="list-inline-item pl-4">
+              <router-link to="/terms-and-conditions">Terms</router-link>
+            </li>
+            <li class="list-inline-item pl-2">
+              <router-link to="/privacy-policies">Privacy</router-link>
+            </li>
+            <li class="list-inline-item pl-2">
+              <router-link to="/about">About</router-link>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-auto pt-2">
+          <p id="year-text">&copy; {{year}} Bloverse. All Right Reserved</p>
+        </div>
+      </div>
+
+      <div class="row pt-2" id="mobile">
+        <div class="col-8">
+          <ul class="list-inline">
+             <li class="list-inline-item pl-4" style="font-size:15px;">
+              bloverse
+            </li>
+            <li class="list-inline-item pl-4">
+              <router-link to="" id="linkk">Terms</router-link>
+            </li>
+            <li class="list-inline-item pl-2">
+              <router-link to="" id="linkk">Privacy</router-link>
+            </li>
+            <li class="list-inline-item pl-2">
+              <router-link to="/about" id="linkk">About</router-link>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-12 pt-1">
+          <p id="year-text">&copy; {{year}} Bloverse. All Right Reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script>
-  import { Row, Col, Icon } from 'iview';
+import { Row, Col } from "iview";
 
-  export default {
-    components: { Row, Col, Icon }
-  }
-</script>
-
-
-<style scoped>
-  #footer-section {
-    color: #d9d9d9;
-    padding: 2rem 4rem;
-    background: #363c44;
-  }
-
-  .footer-1 {
-    margin-bottom: 4rem;
-  }
-
-  .footer-list {
-    list-style: none;
-    font-size: 14px;
-    line-height: 23px;
-    margin-bottom: 2rem;
-  }
-
-  .footer-list a {
-    color: #d9d9d9;
-  }
-
-  .footer-list a:hover {
-    color: var(--primary);
-    text-decoration: underline;
-  }
-
-  .footer-icon {
-    /* padding: 20px; */
-    padding-right: 20px;
-    font-size: 24px;
-  }
-
-  .footer-company-name {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 23px;
-    color: white;
-    font-style: inherit;
-    margin-bottom: 2rem;
-  }
-
-
-  @media screen and (max-width:901px){
-    .footer-company-name {
-      width: 100%;
-      text-align: center;
-      
+export default {
+  components: { Row, Col },
+  data() {
+    return {
+      year: new Date().getFullYear()
     }
   }
+};
+</script>
 
-  
+<style>
+#the-footer {
+  background: #ffffff;
+  height: 40px;
+  padding-top: 7px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
+  position: fixed;
+}
+
+#the-footer #mobile {
+  display: none;
+}
+
+#the-footer .list-inline .list-inline-item:first-child {
+  font-family: "Comfortaa", cursive;
+  font-size: 16px;
+  border-right: 1px solid #cccccc;
+  width: 6rem;
+}
+
+#the-footer .list-inline .list-inline-item a {
+  color: #aaaaaa !important;
+  font-size: 13px;
+}
+
+#the-footer .list-inline .list-inline-item a:hover {
+  color: #333333 !important;
+}
+
+#year-text {
+  font-family: "Comfortaa", cursive;
+  font-size: 10px;
+  text-align: right;
+}
+
+@media screen and (max-width: 980px) {
+  #the-footer #desktop {
+    display: none;
+  }
+
+  #the-footer #mobile {
+    display: block;
+  }
+
+  #the-footer .list-inline {
+    margin-left: -0.5rem;
+  }
+
+  #the-footer .list-inline .list-inline-item:first-child {
+    font-family: inherit;
+    font-size: 12px;
+    border: none;
+    width: inherit;
+  }
+
+  #the-footer {
+    height: 100px;
+    display: flex;
+    justify-items: left;
+    margin: auto;
+    flex-direction: column;
+  }
+
+  #year-text {
+    text-align: left;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+  }
+
+  .list-inline {
+    display: flex;
+    justify-items: left;
+  }
+
+  #linkk {
+    font-size: 12px;
+  }
+}
 </style>

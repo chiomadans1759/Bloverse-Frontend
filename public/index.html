@@ -1,67 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="google-signin-client_id" content="966117903311-1fk401e4fiks3u34nsputljh7smgckor.apps.googleusercontent.com">
-    <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <title>bloverse</title>
-  </head>
-  <body>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWWwgiJxX-Kwov9JKfNA2gCbmfU7OiUAE&libraries=places"></script>
-  <script src="https://apis.google.com/js/client:platform.js"></script>
+
+<head>
+  <meta name="theme-color" content="#2F80ED">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="charset=utf-8" />
+  <meta name="author" content="Bloverse" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+  <meta name="description" content="Connecting Content Creators to Consumers">
+  <meta name="keywords" content="bloverse , bloverse.com , software, code, tech, computer , html, css, javascript, websites, website development, web development, design, ui, ux , demzanalytics , code_wonders" />
+
+  <meta name="google-signin-client_id" content="966117903311-1fk401e4fiks3u34nsputljh7smgckor.apps.googleusercontent.com">
+  <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <title>Bloverse</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127172964-2"></script>
-  <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-  <script src="https://datamaps.github.io/scripts/0.4.4/datamaps.world.min.js"></script>
-  <!--<script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130020413-1"></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('config', 'UA-130020413-1');
+  </script>
+  <div id="app"></div>
+  <!-- <script type="text/javascript" src="static/js/jquery.min.js"></script> -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.7.4/tinymce.min.js"></script>
+  <script src="https://apis.google.com/js/client:platform.js"></script>
+  <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '1818159268248375',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v3.2'
+      });
+    };
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWWwgiJxX-Kwov9JKfNA2gCbmfU7OiUAE&libraries=places"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127172964-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-127172964-2');
-    </script>-->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-127172964-2', 'auto');
-      ga('send', 'pageview');
-
-
-    </script>
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/5be317dc70ff5a5a3a711432/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+      Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/5be317dc70ff5a5a3a711432/default';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
     })();
-    </script>
-    <!--End of Tawk.to Script-->
-    <noscript>
-      <strong>We're sorry but bloverse doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+  </script>
+  <!--End of Tawk.to Script-->
+  <noscript>
+    <strong>We're sorry but bloverse doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+  <!-- ga('create', 'UA-130020413-1', 'auto');
+      ga('send', 'pageview'); -->
+
+  <!-- built files will be auto injected -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWWwgiJxX-Kwov9JKfNA2gCbmfU7OiUAE&libraries=places"></script>
+</body>
+
 </html>

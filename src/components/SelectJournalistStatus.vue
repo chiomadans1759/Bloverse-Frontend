@@ -7,15 +7,16 @@
 </template>
 
 <script>
-  import { Select, Option } from 'iview';
-  export default {
-  	components: { Select, Option },
-  	props: { row: Object },
-  	watch: {
-  		'row.status': function(val){
-  			//console.log(val);
-  			this.$emit('statusChanged', val)
-  		}
-  	}
+import { Select, Option } from "iview";
+
+export default {
+  components: { Select, Option },
+  props: { row: Object },
+  watch: {
+    "row.status": function(val) {
+      //console.log(val);
+      this.$emit("statusChanged", val);
+    }
   }
+};
 </script>

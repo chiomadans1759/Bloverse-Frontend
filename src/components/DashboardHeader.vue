@@ -1,77 +1,143 @@
 <template>
-  <Header id="header">
-    <Icon @click.native="handleIconClick" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
-    <Row id="items-wrapper" type="flex" justify="space-between" align="middle">
-      <Col><Icon type="navicon-round" color="#E0E0E0"></Icon></Col>
-      <Col></Col>
-      <Col>
-      <Icon type="ios-notifications-outline" style="font-size: 30px; color: grey; margin-right: 90px;"></Icon>
-        <Avatar icon="person" /> &nbsp; <span>{{name}}</span> &nbsp;
-        <Dropdown>
-          <Icon type="md-arrow-dropdown" />
-          <DropdownMenu slot="list">
-            <DropdownItem >Profile</DropdownItem>
-            <DropdownItem divided @click.native="logOut">Log out</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-        &nbsp;
-      </Col>
-    </Row> 
-  </Header>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <router-link to="/" class="router-link">
+          <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
+        </router-link>
+      </div>
 
+      <ul class="linkss">
+        <li class="list-inline-item">
+          <router-link
+            :to="`/creators/${auth.loggedInUser.userName}/dashboard`"
+            :class="{'active': currentRoute == 'journalist-dashboard'}"
+            id="dash-links">
+            <i class="far fa-th-large" style="color: #096DD9;"></i>
+            Dashboard
+          </router-link>
+        </li>
+        <li class="list-inline-item">
+          <router-link
+            :to="`/creators/${auth.loggedInUser.userName}/posts/create`"
+            :class="{'active': currentRoute == 'create-post'}"
+            id="dash-links"
+          >
+            <i class="fal fa-plus" style="color: #096DD9;"></i>
+            Create Content
+          </router-link>
+        </li>
+        <li class="list-inline-item">
+          <router-link
+            :to="`/creators/${auth.loggedInUser.userName}/posts`"
+            :class="{'active': currentRoute == 'all-posts'}"
+            id="dash-links"
+          >
+            <i class="fal fa-rocket" style="color: #096DD9;"></i>
+            My Posts
+          </router-link>
+        </li>
+      </ul>
+
+      <footer id="sidebar-footer">
+        <ul>
+          <li style="margin-bottom:2rem;">
+            <a href="" @click.prevent="logOut" class="mt-3">
+              <i class="fal fa-power-off" style="color: #D9091E; font-size:16px; "></i>
+              <span>Sign Out</span>
+            </a>
+          </li>
+        </ul>
+        <div class="avatar avatar-sm pt-2" style="display: flex;">
+          <img
+            id="author-img"
+            :src="auth.loggedInUser.imageUrl"
+            alt="Author's Image"
+            class="avatar-img rounded"
+          >
+          <span class="mt-2">{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</span>
+        </div>
+      </footer>
+    </nav>
+  </div>
 </template>
 
 <script>
-  import { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem } from 'iview';
-  import { mapMutations, mapState, mapActions } from 'vuex'
-  export default {
-    components: { Row, Col, Icon, Input, Avatar, Dropdown, DropdownMenu, DropdownItem },
-    data(){
-      return {
-        collapsed: false
-      }
-    },
-    computed: {
-      ...mapState(['auth']),
-      name(){
-        let { firstName, lastName } = this.auth.loggedInUser; 
-        return firstName + ' ' +  lastName;
-      }
-    },
-    methods: {
-      ...mapActions([
-        'clearSession'
-      ]),
-      logOut(){
-        if(this.clearSession())
-          this.$router.push('/journalist/login');
-      },
-      handleIconClick(){
-        this.collapsed = !this.collapsed
-        this.$emit('collapsed', this.collapsed)
-      }
+import { Row, Col } from "iview";
+import { mapState, mapActions } from "vuex";
+import LoginButton from "./LoginButton";
 
-      //...mapMutations(['clearSession']),
+export default {
+  components: { Row, Col, LoginButton },
+  methods: {
+    ...mapActions(["clearSession"]),
+    logOut(){
+      this.clearSession();
+      this.$router.push('/creators');
     }
-     
+  },
+  computed: {
+    ...mapState(["auth"]),
+    currentRoute() {
+      let route = this.$route.name;
+      return route;
+    }
   }
+};
 </script>
 
-<style>
-  #header {
-    background: #FFFFFF;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-    transform: rotate(0deg);
-    height: 50px;
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-  }
 
-  #header #items-wrapper {
-    flex: 1 1 auto;
-  }
-    .rotateIcon{
-        transform: rotate(-90deg);
-    }
+<style scoped>
+.wrapper {
+  margin: 2rem;
+  width: 100%;
+  height: 90vh;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+}
+
+.sidebar-header {
+  position: absolute;
+}
+
+.linkss {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  position: absolute;
+}
+
+.linkss li {
+  margin-bottom: 2rem;
+}
+
+#dash-links {
+  color: #222222;
+  font-size: 16px;
+}
+
+.linkss li a.active {
+  border-right: 2px solid #096dd9;
+  padding-right: 1rem;
+}
+
+#sidebar-footer {
+  bottom: 5%;
+  position: absolute;
+}
+
+#sidebar-footer ul li {
+  bottom: 0;
+  list-style-type: none;
+}
+
+#sidebar-footer span {
+  margin-left: 0.5rem;
+  font-size: 14px;
+  color: #222222;
+}
 </style>

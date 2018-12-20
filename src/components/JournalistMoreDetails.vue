@@ -18,10 +18,10 @@
 </template>
 
 <script>
-  import { Row, Col } from 'iview';
+import { Row, Col } from 'iview';
 
-  export default {
-    components: { Row, Col },
-    props: { row: Object }
-  }
+export default {
+  components: { Row, Col },
+  props: { row: Object }
+}
 </script>
