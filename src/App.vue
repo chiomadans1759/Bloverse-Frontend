@@ -38,10 +38,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  background-color: #f5f5f5;
+  background-color: #f5f5f5 !important;
   font-family: "Montserrat", sans-serif;
   min-height: 100vh;
   /* overflow-x: hidden !important; */
+}
+body{
+    background-color: #f5f5f5 !important;
 }
 
 :root {

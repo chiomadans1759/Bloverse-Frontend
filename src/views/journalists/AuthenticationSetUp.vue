@@ -1,13 +1,13 @@
 <template>
   <main class="auth-section">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
+  <div class="auth-container">
+    <div class="auth-header">
      <router-link to="/" class="router-link">
       <img class="logo" src="@/assets/Asset 1.svg" style="height: 40px" />
      </router-link>
          <h3 id="form-instruction">Please fill the form to become a journalist on bloverse</h3>
-    <Row type="flex">
-      <Col :md="14" class="steps-container">
+    <Row type="flex" id="auth-one-two">
+      <Col class="steps-container">
         <!-- <Steps id="step" :current="currentPage">
           <Step content="Verify Previous Info"></Step>
           <Step id="last" title="Final" content="Personalize your account"></Step>
@@ -41,7 +41,7 @@
       
     <section class="auth-form">
       <Row type="flex" justify="center">
-        <PageOne v-if="currentPage===1" :user="user" @toNext="updateCurrentPage(2)" />
+        <PageOne id="auth-pageone" v-if="currentPage===1" :user="user" @toNext="updateCurrentPage(2)" />
         <PageTwo v-else :user="user" @done="completeSetup" />
       </Row>
     </section>
@@ -120,13 +120,27 @@ export default {
 </script>
 
 <style scoped>
+.steps-container{
+  width:100% !important;
+  justify-content: space-between !important;
+
+}
+.auth-container{
+width:28%;
+margin:auto;
+}
+.auth-header{
+  padding-top: 20px
+}
 #form-instruction {
-  margin-bottom: 3rem !important;
-  margin-top: 15px;
+line-height: 30px;
+font-size: 16px;
+font-weight: 600;
+margin: 1rem 1rem 1.5rem 0;
 }
 
 section.auth-form {
-  margin-top: 6rem;
+  margin-top: 1.5rem;
 }
 
 #step {
@@ -142,7 +156,10 @@ section.auth-form {
 #step > #last {
   width: auto !important;
 }
+.steps-container{
 
+  width:90%
+}
 .image-upload{
     width: 180px;
   background: #f1f1f1db;
@@ -158,6 +175,7 @@ section.auth-form {
 #container{
 margin-top:30px
 }
+
 .container{
 width: 50%;
 height: 2px;
@@ -177,7 +195,9 @@ justify-content: space-between;
 position: absolute;
 top: -10px
 }
-
+.auth-section{
+  width: 100%
+}
 /* p{
 width: 20px;
 height: 20px;
@@ -188,7 +208,9 @@ background:white;
 color: blue;
 } */
 
-
+#auth-pageone{
+width:32% !important;
+}
 .content .active{
 color: white;
 background: #2D9CDB;
@@ -210,7 +232,11 @@ color: #2D9CDB
 color: white;
 background: #2D9CDB
 }
+.auth-form{
 
+  width:100%;
+  margin: 10px auto 
+}
 p{
 margin: auto
 }
@@ -224,10 +250,25 @@ background: blue;
 color: white;
 }
 
-@media (max-width: 992px){
-  .steps-container{
-    display: block;
-    width: 70%;
-  }
+@media (max-width: 900px){
+  .auth-container{
+width:90% !important;
+margin:auto;
+}
+#auth-pageone{
+width:90% !important;
+  
+}
+  
+}
+@media (max-width: 360px){
+  .auth-container{
+width:90% !important;
+margin:auto;
+}
+#auth-pageone{
+width:90% !important;
+  
+}
 }
 </style>
