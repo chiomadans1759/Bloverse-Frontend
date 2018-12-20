@@ -287,6 +287,7 @@ export default {
 
     handleSuccess() {
       this.isSuccess = true;
+      // eslint-disable-next-line 
       $("#successModal").modal("show");
       this.applicant = null;
       this.$refs.applyForm.resetFields();
@@ -323,6 +324,7 @@ export default {
     },
 
     navigateToHome() {
+      // eslint-disable-next-line 
       $("#successModal").modal("hide");
       this.$router.push("/creators");
     }
