@@ -92,12 +92,12 @@ export default {
     ...mapActions(["getPostBySlug"])
   },
 
-  created() {
+  async created() {
     // fetch the data when the view is created and the data is
     // already being observed
     let { slug } = this.$route.params;
     // console.log({slug})
-    this.getPostBySlug({ slug });
+    await this.getPostBySlug({ slug });
     this.postDetails = this.general.currentPost;
   }
 };
