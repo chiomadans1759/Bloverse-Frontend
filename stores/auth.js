@@ -84,7 +84,7 @@ export default {
         });
       }
 
-      if(!applicant.articles[0]) {
+      if (!applicant.articles || applicant.articles[0] == undefined) {
         applicant.articles = undefined
       }
 
