@@ -29,9 +29,10 @@
               </p>
             </FormItem>
             <FormItem>
-              <button class="btn btn-primary btn-block" 
-                      @click="verifyToken" 
-                      :disabled="!token || processing">
+              <button 
+              class="btn btn-primary btn-block" 
+              @click="verifyToken" 
+              :disabled="!token || processing">
                 Continue
               </button>
               <!-- <Button class="my-btn" :class="{'btn btn-primary': true, 'btn-secondary': token}" @click="verifyToken" long :disabled="!token" :loading="processing"> Submit </Button> -->

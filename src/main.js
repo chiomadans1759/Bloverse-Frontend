@@ -17,7 +17,6 @@ import store from '../stores';
 
 //import VueAnalytics from 'vue-analytics';
 
-
 import routes from '../routes'
 import App from './App.vue'
 
