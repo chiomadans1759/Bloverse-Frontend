@@ -29,10 +29,9 @@
               </p>
             </FormItem>
             <FormItem>
-              <button 
-              class="btn btn-primary btn-block" 
-              @click="verifyToken" 
-              :disabled="!token || processing">
+              <button type="button" class="btn btn-primary btn-block" 
+                      @click.prevent="verifyToken" 
+                      :disabled="!token || processing">
                 Continue
               </button>
               <!-- <Button class="my-btn" :class="{'btn btn-primary': true, 'btn-secondary': token}" @click="verifyToken" long :disabled="!token" :loading="processing"> Submit </Button> -->
@@ -110,10 +109,11 @@ export default {
 
 
 <style scoped>
-.auth-verify {
+.auth-section {
   background-color: #f5f5f5;
   border: 1px solid #eeeeee;
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 </style>

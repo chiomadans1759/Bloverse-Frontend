@@ -91,7 +91,7 @@
             <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
           </FormItem>-->
 
-          <div class="alert alert-success" v-show="isSuccess === true">
+          <div class="alert alert-success" v-show="isSuccess == true">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -235,8 +235,7 @@ export default {
           }
           let applied = await this.apply();
           if (applied == true) {
-            this.isSuccess = true;
-            this.applicant = null;
+            this.handleSuccess();
           }else if (applied.errors) {
             this.handleError(applied.errors);
           }else {
@@ -272,6 +271,7 @@ export default {
     },
 
     handleSuccess() {
+      this.isSuccess = true;
       this.applicant = null;
       this.$refs.applyForm.resetFields();
       this.$store.commit("clearApplicant");
