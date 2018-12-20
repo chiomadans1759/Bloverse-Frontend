@@ -1,6 +1,6 @@
 <template>
-<div style="width: 50%;">
-  <Col :md="30" :xs="24">
+<div style="width: 32%;">
+ 
   <Form id="form-setup-one" ref="stepOneForm" :model="user" :rules="validateUserFields">
     <FormItem prop="firstName">
       <Input class="my-input" v-model="user.firstName" placeholder="First name*" />
@@ -9,33 +9,29 @@
       <Input class="my-input" v-model="user.lastName" placeholder="Last name*" /> 
     </FormItem>
     <FormItem>
-      <Input class="my-input" v-model="user.email" readonly placeholder="Email*" />
+      <Input class="my-input" v-model="user.email" placeholder="Email*" readonly/>
     </FormItem>
-    <!-- <FormItem>
-      <Input class="my-input" v-model="user.phone" readonly placeholder="Phone*" />
-    </FormItem> -->
-    <FormItem>
-      <select v-model="user.code" class="code-dropdown app_select_style">
+    <FormItem class="auth-phone">
+      <select v-model="user.code" class="code-dropdown app_select_style" disabled>
         <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
           <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
         </option>
       </select>
-    <input class="my-input app_input_style" type="text" v-model="user.phone" placeholder="Digits after code here " />
+    <input class="my-input app_input_style" type="text" v-model="user.phone" placeholder="Digits after code here " readonly/>
     </FormItem>
 
-    <FormItem>
-      <Select class="my-select" placeholder="Category*" v-model="user.categoryId">  
+      <Select class="my-select auth-category-disabled" placeholder="Category*" v-model="user.category" disabled>  
         <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
       </Select>
-    </FormItem>
+    
     <FormItem>
-      <Select class="my-select" placeholder="Country*" v-model="user.countryId">  
+      <Select class="my-select" placeholder="Country*" v-model="user.country" disabled>  
         <Option v-for="item in general.countries" :value="item.id" :key="item.id">{{ item.name }}</Option>
       </Select>
     </FormItem>
+    <Button class="auth-button my-btn btn-secondary" style="background:#2F80ED; color: #fff;" @click="toNext">NEXT</Button>
   </Form>
-  <Button long class="my-btn btn-secondary" style="background:#2F80ED; color: #fff;" @click="toNext">NEXT</Button>
-  </Col>
+  
 </div>
 </template>
 
@@ -101,29 +97,64 @@ export default {
 
 
 <style scoped>
+.auth-phone .code-dropdown{
+  width:20% !important;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
   #form-setup-one {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-column-gap: 1rem;
+    width:80%;
+    margin:auto;
 
   }
+ 
   .app_input_style{
-    margin-left: 2px;
-    width: 75%;
+
+    width: 79.5%;
+    border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+    padding-left: 10px;
     border: 1px solid #dcdcdc;
   } 
   .app_select_style{
     border: 1px solid #dcdcdc;
   }
+  .auth-category-disabled{
+    margin-bottom: 25px
+  }
+  .auth-button{
+    margin-top: 5px;
+width:100%
+  }
 
-  @media screen and (max-width:768px) {
-    #form-setup-one {
-      grid-template-columns: 1fr;
-    }
-    .app_input_style{
-    margin-left: 0px;
-    width: 69%;
-    border: 1px solid #dcdcdc;
+   @media screen and (max-width:320px) {
+#stepone-setup-one{
+  width:100% !important;
+border: 1px solid red
+}
+   }
+   @media screen and (max-width:900px) {
+#stepone-setup-one{
+  width:100% !important;
+border: 1px solid red
+}
+ }
+ .auth-phone .code-dropdown{
+  width:20% !important;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+  #form-setup-one {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1rem;
+    width:90%;
+    margin:auto;
+
   }
-  }
+
+  
 </style>

@@ -1,13 +1,13 @@
 <template>
   <main id="auth-apply">
-    <Modal v-model="isSuccess" :width="726" id="success-modal">
+    <!-- <Modal v-model="isSuccess" :width="726" id="success-modal">
       <Alert type="success">Success!</Alert>
       <p>
         Your application has been sent to bloverse. A message will be sent to your mail to
         continue the verification and approval process in 48hrs.
       </p>
       <div slot="footer"></div>
-    </Modal>
+    </Modal> -->
 
     <div class="container mt-5">
       <div class="row justify-content-center">
@@ -91,19 +91,12 @@
             <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
           </FormItem>-->
 
-          <div class="alert alert-success" v-show="isSuccess == true">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <strong>Success!</strong> 
-            Your application has gracefully been recieved. A message will be sent to your mail to
-            continue the verification and approval process in 48hrs.
-          </div>
-
           <button class="btn btn-primary btn-block" @click.prevent="handleSubmit">SUBMIT</button>
           <div class="my-3 text-secondary">
             <h5>
-              By clicking apply, you agree to <a href="#" class="text-link">Terms</a> and <a href="#" class="text-link">Privacy</a>
+              By clicking apply, you agree to 
+              <router-link to="/terms-and-conditions" class="text-link">Terms</router-link> 
+              and <router-link to="/privacy-policies" class="text-link">Privacy</router-link>
             </h5>
           </div>
           <div class="text-secondary">
@@ -112,6 +105,28 @@
         </Form>
       </div>
     </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade pt-5" id="successModal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+      <div class="modal-dialog pt-5" role="document">
+        <div class="modal-content mt-5">
+          <div class="modal-body py-5">
+            <h3 class="mb-3">
+              <strong>Your application has been sent to bloverse.</strong>
+            </h3> 
+            <h5>
+              A message will be sent to your mail to
+              continue the verification and approval process in 48hrs.
+            </h5>
+          </div>
+          <div class="modal-footer py-3">
+            <button type="button" class="btn btn-primary" @click.prevent="navigateToHome">
+              Okay
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -272,6 +287,8 @@ export default {
 
     handleSuccess() {
       this.isSuccess = true;
+      // eslint-disable-next-line 
+      $("#successModal").modal("show");
       this.applicant = null;
       this.$refs.applyForm.resetFields();
       this.$store.commit("clearApplicant");
@@ -304,6 +321,12 @@ export default {
     async setCategories() {
       let res = await this.general.categories;
       this.categories = res.splice(0, 1);
+    },
+
+    navigateToHome() {
+      // eslint-disable-next-line 
+      $("#successModal").modal("hide");
+      this.$router.push("/creators");
     }
   },
   created: function() {
