@@ -12,7 +12,7 @@
           <div v-if="!auth.loggedInUser">
             <login-button class="pt-2 mr-3" />
             <router-link to="/creators" class="btn btn-primary btn-md text-uppercase">
-              create content
+              create
             </router-link>
           </div>
 

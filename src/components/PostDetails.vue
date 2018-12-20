@@ -16,8 +16,7 @@
 
     <div class="card-body">
       <img class="post-img" :src="general.currentPost.image_url">
-      
-      <small class="img-descrip">This is a description of the picture above</small>
+    
       <h1 class="post-title mt-4">{{general.currentPost.title}}</h1>
       <ul class="post-keypoints">
         <li v-for="point in general.currentPost.keypoint" :key="point.id">{{point}}</li>

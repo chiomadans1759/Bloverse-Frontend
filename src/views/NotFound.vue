@@ -2,7 +2,7 @@
     <main class="container">
         <Row id="not-found-container">
           <Col>
-            <img src="./../assets/image.svg" alt="" id="err-img">
+            <img src="@/assets/image.svg" alt="" id="err-img">
           </Col>
           <Col>
             <div id="not-found-text">
