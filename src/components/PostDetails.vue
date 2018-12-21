@@ -3,7 +3,7 @@
     <div class="card-header border-0">
       <div class="row pt-4">
         <div class="col">
-          <h5 class="card-header-title text-uppercase">{{category.name}}</h5>
+          <h5 class="card-header-title text-uppercase" v-if="show">{{category.name}}</h5>
         </div>
 
         <div class="col-auto">
@@ -33,6 +33,20 @@ import { mapState } from "vuex";
 
 export default {
   name: "post-details",
+  data(){
+    return{
+      show: false,
+      imageShow: false
+    }
+  },
+  watch:{
+    'category': {
+      handler: function(newItem) {
+        this.show = true;
+      },
+      deep: true
+    }
+  },
   computed: {
     ...mapState(["general"]),
 
