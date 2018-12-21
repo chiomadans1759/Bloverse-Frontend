@@ -14,6 +14,7 @@
               placeholder="Country"
               v-model="general.country"
               @input="filterCountry"
+              v-if=" allow || general.countries"
             ></v-select>
           </div>
 
