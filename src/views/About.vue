@@ -14,7 +14,7 @@
     <img src="@/assets/photo1.png" alt="">
     <div id="about-body-text">
       <h1>About Us</h1>
-      <p>We are Bloverse, a platform fostering a global community of engaged and insightful individuals. Together with our global community we are revolutionising the creation and consumption of content.</p>
+      <p>We are Bloverse, a content creation platform fostering a global community of engaged and insightful individuals. Together with our global community we are revolutionising the creation and consumption of content</p>
     </div>
   </div>
 </div>
@@ -23,7 +23,7 @@
     <img src="@/assets/photo2.png" alt="">
     <div id="about-body-text">
       <h1>Goal</h1>
-      <p>Our goal is to ensure stories from our global community are told, stories that matter to you. Gone are the days where the narrative is forced upon us but rather the narrative is from you, shaped by your values and interest. </p>
+      <p>Our goal is to give everyone a voice and a safe space to express it. With our data-driven approach we aim to ensure that you make the most of your data, with a personalized experienced that ensures you are never far away from the stories that matter to you, whilst also being exposed to the numerous angles to each story that are blocked out by the mainstream media.Our goal is to give everyone a voice and a safe space to express it. With our data-driven approach we aim to ensure that you make the most of your data, with a personalized experienced that ensures you are never far away from the stories that matter to you, whilst also being exposed to the numerous angles to each story that are blocked out by the mainstream media.</p>
     </div>
   </div>
 </div>
@@ -32,7 +32,7 @@
     <img src="@/assets/photo3.png" alt="">
     <div id="about-body-text">
       <h1 id>Mission</h1>
-      <p>Leveraging powerful AI techniques, we want to create a content driven social platform initially launching in 20 countries that gives journalists and content creators a platform to share quality content to an ever-engaging community of people who want to be a part of the story</p>
+      <p>Leveraging state-of-the-art AI techniques, we want to create a content-driven social platform that gives journalists and other content creators a medium to share quality content to an ever-engaging community of people who want to be a part of the story.</p>
     </div>
   </div>
 </div>
@@ -41,7 +41,7 @@
     <img src="@/assets/photo4.jpg" alt="">
     <div id="about-body-text">
       <h1>The Users</h1>
-      <p>For you, the users, We want you to take part and enjoy interacting with content from across the globe, things that are important to you and to make your voice heard. Bloverse filters content by interests, country, comments and interactions to ensure you consume what is relevant to you. With our ranking system we aim to prevent information overload and attempting to fight fake news by ensuring that you consume content from those who know what they are talking about. <p id="about-strong"> #Jointhebloverse</p></p>
+      <p>For you, the users, we want you to take part and enjoy interacting with content from across the globe, things that are important to you and to make your voice heard. Bloverse filters content by interests, country, comments and interactions to ensure you consume what is relevant to you. With our ranking system we aim to prevent information overload and attempting to fight fake news by ensuring that you consume content from those who know what they are talking about.<p id="about-strong"> #Jointhebloverse</p></p>
     </div>
   </div>
 </div>
@@ -234,6 +234,8 @@ margin: 50px auto;
 #about-body-container2 img{
   width:263px;
   height:auto;
+  object-fit: cover;
+  object-position:left;
 }
 #about-body-container3{
   display:flex;
