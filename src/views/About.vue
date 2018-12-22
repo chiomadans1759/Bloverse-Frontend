@@ -14,7 +14,7 @@
     <img src="@/assets/photo1.png" alt="">
     <div id="about-body-text">
       <h1>About Us</h1>
-      <p>We are Bloverse, a platform fostering a global community of engaged and insightful individuals. Together with our global community we are revolutionising the the creation and consumption of content.</p>
+      <p>We are Bloverse, a platform fostering a global community of engaged and insightful individuals. Together with our global community we are revolutionising the creation and consumption of content.</p>
     </div>
   </div>
 </div>
