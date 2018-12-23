@@ -100,12 +100,9 @@ export default {
 
       return false;
     },
-    async rejectAcceptApplicants({
-      dispatch
-    }, applicants) {
+    async rejectAcceptApplicants({dispatch}, applicants) {
       let processedUsers = [];
       applicants.forEach(async applicant => {
-
         if (applicant.status === 1)
           return;
         const statusUpdated = await dispatch('processApplicant', applicant);
@@ -117,14 +114,11 @@ export default {
       return processedUsers;
     },
     async processApplicant(context, applicant) {
-      let {
-        id,
-        status
-      } = applicant;
-      let response = await Api.put('applicants/' + id + '/', {
-        status
-      }, true);
-      return response.statusCode === 200;
+      let { id, status } = applicant;
+      //let response = 
+      await Api.put('applicants/' + id + '/', {status}, true);
+      //return response.statusCode === 200; //accepting an applicants does not return 200
+      return true; // this line should be replaced with the above line when the internal server error has been resolved on the server
     },
     async getAllPublishedPosts({ commit }, { category = "", country = "" }) {
       let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);

@@ -32,7 +32,7 @@ export default {
   state: {
     jwt: localJWT,
     newUser: {
-      imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg'
+      imageUrl: 'https://res.cloudinary.com/naera/image/upload/v1512417704/u7aoterwekcq0thkng3j.png'
     },
     applicant: {
       articleURLs: ['']
