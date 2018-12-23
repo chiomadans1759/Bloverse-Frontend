@@ -122,11 +122,12 @@ export default {
   }
 
   #the-footer {
-    height: 100px;
+    height: auto;
     display: flex;
     justify-items: left;
     margin: auto;
     flex-direction: column;
+    padding: 0px;
   }
 
   #year-text {
