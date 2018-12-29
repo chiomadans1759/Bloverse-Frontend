@@ -127,9 +127,9 @@ export default {
       let response = await Api.get('journalists?applicant=' + state.applicant.id)
       return response.data.journalists.length > 0;
     },
-    async registerJournalist({
-      state
-    }) {
+    async registerJournalist({state, dispatch, commit}) {
+      let newUrl = await dispatch('doUpload', state.newUser.imageUrl, {root: true})
+      commit('setNewUser', { imageUrl: newUrl })
       let response = await Api.post('journalists/', state.newUser);
       switch (response.statusCode) {
       case 201:

@@ -13,10 +13,8 @@ export default {
   actions: {
     async processPost({ commit, rootState, state, dispatch }, params) {
       if (params.shouldUploadImage) {
-        let newUrl = await dispatch('doUpload');
-        commit('setPost', {
-          imageUrl: newUrl
-        });
+        let newUrl = await dispatch('doUpload', state.post.imageUrl);
+        commit('setPost', { imageUrl: newUrl });
       }
       // The commented codes on this section are for implementing travelCompetition posts
       let userId = rootState.auth.loggedInUser.id;
@@ -123,7 +121,7 @@ export default {
         };
       }
     },
-    async doUpload({ state, commit }) {
+    async doUpload(params, imageUrl) {
       const cloudinary = {
         uploadPreset: 'pspvcsig',
         apiKey: '967987814344437',
@@ -131,12 +129,10 @@ export default {
       };
       const clUrl = `https://api.cloudinary.com/v1_1/${cloudinary.cloudName}/upload`;
       const formData = new FormData()
-      formData.append('file', state.post.imageUrl);
+      formData.append('file', imageUrl);
       formData.append('upload_preset', cloudinary.uploadPreset);
       formData.append('folder', 'bloverse');
-      commit('setLoading', true, { root: true });
       const resp = await axios.post(clUrl, formData);
-      commit('setLoading', false, { root: true });
       return resp.data.secure_url;
     },
     async getMyPosts({ commit, rootState }) {
