@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Api from '../src/utils/Api'
 
 export default {
@@ -86,7 +87,21 @@ export default {
 
       return false;
     },
-
+    async doUpload(params, imageUrl) {
+      const cloudinary = {
+        uploadPreset: process.env.VUE_APP_CL_UPLOAD_PRESET,
+        apiKey: process.env.VUE_APP_CL_API_KEY,
+        cloudName: process.env.VUE_APP_CL_CLOUD_NAME,
+        folder: process.env.VUE_APP_CL_FOLDER
+      };
+      const clUrl = `https://api.cloudinary.com/v1_1/${cloudinary.cloudName}/upload`;
+      const formData = new FormData()
+      formData.append('file', imageUrl);
+      formData.append('upload_preset', cloudinary.uploadPreset);
+      formData.append('folder', cloudinary.folder);
+      const resp = await axios.post(clUrl, formData);
+      return resp.data.secure_url;
+    },
     async getAllJournalists({
       commit
     }) {

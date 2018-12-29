@@ -3,7 +3,7 @@
 <Col id="step-two" :xs="24">
   <Row>
     <div id="displayphoto-upload">
-      <DisplayPhoto id="display-upload-pic" :value="user.imageUrl" :canEdit="true" />
+      <DisplayPhoto id="display-upload-pic" v-model="user.imageUrl" :canEdit="true" />
     <p>Upload your Profile Picture</p>
     </div>
     <Col  :xs="24">
