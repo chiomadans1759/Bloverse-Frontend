@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Api from '../src/utils/Api'
 
 export default {
@@ -86,7 +87,20 @@ export default {
 
       return false;
     },
-
+    async doUpload(params, imageUrl) {
+      const cloudinary = {
+        uploadPreset: 'pspvcsig',
+        apiKey: '967987814344437',
+        cloudName: 'naera'
+      };
+      const clUrl = `https://api.cloudinary.com/v1_1/${cloudinary.cloudName}/upload`;
+      const formData = new FormData()
+      formData.append('file', imageUrl);
+      formData.append('upload_preset', cloudinary.uploadPreset);
+      formData.append('folder', 'bloverse');
+      const resp = await axios.post(clUrl, formData);
+      return resp.data.secure_url;
+    },
     async getAllJournalists({
       commit
     }) {
