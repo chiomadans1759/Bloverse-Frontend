@@ -139,7 +139,7 @@
         <div class="container-fluid previewMade">
           <h4>Preview</h4>
             <!-- <p>{{post.category}}</p> -->
-            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true" />
+            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="false" />
             <h1>{{post.title}}</h1>
             <ul v-for="(keypoint) in post.keyPoints" :key="keypoint.value">
               <li>{{keypoint.value}}</li>
