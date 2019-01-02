@@ -47,7 +47,8 @@ import { Row, Col, Button, Input, Form, FormItem, Alert } from "iview";
 import Hashids from "hashids";
 import { mapActions, mapState, mapMutations } from "vuex";
 
-let hashids = new Hashids("SG.AKa2vomKT26KSV9yNHf-HQ.e-", 16);
+const SALT = process.env.VUE_APP_HASH_SALT
+let hashids = new Hashids(SALT, 16);
 export default {
   components: {
     Row,

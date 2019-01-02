@@ -13,8 +13,8 @@
               label="name"
               placeholder="Country"
               v-model="general.country"
-              v-if="allow"
               @input="filterCountry"
+              v-if=" allow || general.countries"
             ></v-select>
           </div>
 

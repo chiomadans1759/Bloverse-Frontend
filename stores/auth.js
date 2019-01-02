@@ -32,7 +32,7 @@ export default {
   state: {
     jwt: localJWT,
     newUser: {
-      imageUrl: 'http://res.cloudinary.com/naera/image/upload/v1532107032/bloverse/hndx2wy0k2y2nykqcixu.jpg'
+      imageUrl: 'https://res.cloudinary.com/naera/image/upload/v1512417704/u7aoterwekcq0thkng3j.png'
     },
     applicant: {
       articleURLs: ['']
@@ -127,9 +127,9 @@ export default {
       let response = await Api.get('journalists?applicant=' + state.applicant.id)
       return response.data.journalists.length > 0;
     },
-    async registerJournalist({
-      state
-    }) {
+    async registerJournalist({state, dispatch, commit}) {
+      let newUrl = await dispatch('doUpload', state.newUser.imageUrl, {root: true})
+      commit('setNewUser', { imageUrl: newUrl })
       let response = await Api.post('journalists/', state.newUser);
       switch (response.statusCode) {
       case 201:

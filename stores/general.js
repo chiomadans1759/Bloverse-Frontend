@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Api from '../src/utils/Api'
 
 export default {
@@ -86,7 +87,21 @@ export default {
 
       return false;
     },
-
+    async doUpload(params, imageUrl) {
+      const cloudinary = {
+        uploadPreset: process.env.VUE_APP_CL_UPLOAD_PRESET,
+        apiKey: process.env.VUE_APP_CL_API_KEY,
+        cloudName: process.env.VUE_APP_CL_CLOUD_NAME,
+        folder: process.env.VUE_APP_CL_FOLDER
+      };
+      const clUrl = `https://api.cloudinary.com/v1_1/${cloudinary.cloudName}/upload`;
+      const formData = new FormData()
+      formData.append('file', imageUrl);
+      formData.append('upload_preset', cloudinary.uploadPreset);
+      formData.append('folder', cloudinary.folder);
+      const resp = await axios.post(clUrl, formData);
+      return resp.data.secure_url;
+    },
     async getAllJournalists({
       commit
     }) {
@@ -100,12 +115,9 @@ export default {
 
       return false;
     },
-    async rejectAcceptApplicants({
-      dispatch
-    }, applicants) {
+    async rejectAcceptApplicants({dispatch}, applicants) {
       let processedUsers = [];
       applicants.forEach(async applicant => {
-
         if (applicant.status === 1)
           return;
         const statusUpdated = await dispatch('processApplicant', applicant);
@@ -117,14 +129,10 @@ export default {
       return processedUsers;
     },
     async processApplicant(context, applicant) {
-      let {
-        id,
-        status
-      } = applicant;
-      let response = await Api.put('applicants/' + id + '/', {
-        status
-      }, true);
-      return response.statusCode === 200;
+      let { id, status } = applicant;
+      //let response = 
+      let response = await Api.put('applicants/' + id + '/', {status}, true);
+      return response.statusCode === 200;   
     },
     async getAllPublishedPosts({ commit }, { category = "", country = "" }) {
       let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
