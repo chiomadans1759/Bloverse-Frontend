@@ -3,7 +3,7 @@
     <div id="img-carousel">
       <div class="card related-posts-card" v-show="posts.length > 0">
         <div class="card-header">
-          <h3 class="card-header-title">Related Topics</h3>
+          <h3 class="card-header-title">Most Read Topics</h3>
         </div>
 
         <div class="card-body">
@@ -101,10 +101,14 @@ export default {
           this.posts = this.general.trendingPost.splice(0, 6)
         }
       }
+    },
+
+    getTrending() {
+      this.posts = this.general.trendingPost.splice(0, 6);
     }
   },
   async created() {
-    await this.getData()
+    await this.getTrending()
   },
   computed: {
     ...mapState([
