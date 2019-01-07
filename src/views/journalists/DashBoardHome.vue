@@ -1,37 +1,40 @@
 <template>
   <main id="journalist-dashboard">
-   <Push class="side">
-     <div lass="dashboard-image">
-      <img :src="auth.loggedInUser.imageUrl" />
-     </div>
+    <Push class="side">
+      <div lass="dashboard-image">
+        <img :src="auth.loggedInUser.imageUrl">
+      </div>
       <a id="home" href="/creators/${auth.loggedInUser.userName}/dashboard">
-      <i class="far fa-th-large"></i>
+        <i class="far fa-th-large"></i>
         <span>Dashboard</span>
       </a>
       <a id="home" href="/creators/${auth.loggedInUser.userName}/posts/create">
-      <i class="fal fa-plus"></i>
+        <i class="fal fa-plus"></i>
         <span>Create Content</span>
       </a>
       <a id="home" href="/creators/${auth.loggedInUser.userName}/posts">
-      <i class="fal fa-rocket"></i>
+        <i class="fal fa-rocket"></i>
         <span>My Posts</span>
       </a>
-      <a id="home" href="" @click.prevent="logOut">
+      <a id="home" href @click.prevent="logOut">
         <i class="fal fa-power-off" style="color: #D9091E; font-size:16px; "></i>
         <span>Sign Out</span>
       </a>
-       <div class="overlayed-text">
+      <div class="overlayed-text">
         <div class="overlayed-content">
-          <img :src="auth.loggedInUser.imageUrl" />
-           <p class="text-white" style="text-transform: capitalize; margin-left: -0.6rem">{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</p>
+          <img :src="auth.loggedInUser.imageUrl">
+          <p
+            class="text-white"
+            style="text-transform: capitalize; margin-left: -0.6rem"
+          >{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</p>
         </div>
       </div>
-   </Push> 
-     <div class="sidebar-header">
-        <router-link to="/" class="router-link">
-          <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
-        </router-link>
-      </div>
+    </Push>
+    <div class="sidebar-header">
+      <router-link to="/" class="router-link">
+        <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
+      </router-link>
+    </div>
     <div class="container pt-5" style="margin-left: -3rem;">
       <Row :gutter="32" v-if="show" id="stats">
         <Col :sm="8" :xs="24" id="icon-fix">
@@ -65,7 +68,13 @@
       <div class="show-map">
         <div class="row" v-if="show">
           <div class="col-md-9">
-            <GChart type="GeoChart" :options="chartOptions" :data="chartData" ref="chartData" style="width: 100%;"/>
+            <GChart
+              type="GeoChart"
+              :options="chartOptions"
+              :data="chartData"
+              ref="chartData"
+              style="width: 100%;"
+            />
           </div>
 
           <div class="col-md-3">
@@ -83,7 +92,8 @@
                       :key="index"
                       v-if="index > 0"
                       style="font-size: 13px;"
-                      class="mb-2">
+                      class="mb-2"
+                    >
                       <span>{{ data[0] }}</span>
                     </p>
                   </div>
@@ -94,7 +104,8 @@
                       :key="index"
                       v-if="index > 0"
                       style="font-size: 10px;"
-                      class="mb-3">
+                      class="mb-3"
+                    >
                       <span>{{ data[1] }}</span>
                     </p>
                   </div>
@@ -118,14 +129,13 @@
   </main>
 </template>
 
-
 <script>
 import { Row, Col, Card, Select, Option, locale, Avatar, Icon } from "iview";
 import { mapActions, mapGetters, mapState } from "vuex";
 import lang from "iview/dist/locale/en-US";
 import { GChart } from "vue-google-charts";
-import { Push } from 'vue-burger-menu';
-import { Carousel, Slide } from 'vue-carousel';
+import { Push } from "vue-burger-menu";
+import { Carousel, Slide } from "vue-carousel";
 import DashboardStatDisplayCard from "@/components/JournalistStatDisplayCard.vue";
 // configure language
 locale(lang);
@@ -141,7 +151,7 @@ export default {
     GChart,
     StatCard: DashboardStatDisplayCard,
     Icon,
-    Carousel, 
+    Carousel,
     Slide,
     Push
   },
@@ -153,9 +163,9 @@ export default {
       country: "",
       categories: "",
       chartOptions: {
-        backgroundColor: '#f5f5f5',
-        datalessRegionColor: '#c2c2c2',
-        colorAxis: {colors: ['#c5c5c5', '#2F80ED']}
+        backgroundColor: "#f5f5f5",
+        datalessRegionColor: "#c2c2c2",
+        colorAxis: { colors: ["#c5c5c5", "#2F80ED"] }
       }
     };
   },
@@ -176,12 +186,12 @@ export default {
 
   methods: {
     ...mapActions(["getMyMetrics", "clearSession"]),
-    
-    logOut(){
+
+    logOut() {
       this.clearSession();
-      this.$router.push('/creators');
+      this.$router.push("/creators");
     },
-    
+
     computePosition(key) {
       const target = key[key.length - 1];
       const dataMap = {
@@ -199,7 +209,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped>
 #journalist-dashboard #stats {
@@ -300,8 +309,8 @@ export default {
   }
 
   #journalist-dashboard .side {
-  display: block;
-}
+    display: block;
+  }
 
   .mobile-menu {
     display: block;
@@ -324,16 +333,15 @@ export default {
   }
 
   #journalist-dashboard .side {
-  display: block;
-}
+    display: block;
+  }
 
-  #journalist-dashboard .side img{
+  #journalist-dashboard .side img {
     width: 130%;
     height: 172px;
     margin-left: -2.5rem !important;
     filter: blur(10px);
     -webkit-filter: blur(10px);
-
   }
 
   #journalist-dashboard .side .overlayed-text {
@@ -343,12 +351,12 @@ export default {
     top: 100px;
   }
 
-  #journalist-dashboard .side .overlayed-text .overlayed-content img{
+  #journalist-dashboard .side .overlayed-text .overlayed-content img {
     filter: none;
-     width: 55%;
-     height: 55%;
+    width: 55%;
+    height: 55%;
     object-fit: contain;
-}
+  }
   .show-map {
     display: none;
   }
@@ -371,47 +379,49 @@ export default {
     margin-left: 6rem;
     margin-bottom: -3rem;
   }
+
   .mobile-menu {
     display: block;
   }
-    .bm-burger-button {
-      position: fixed;
-      width: 18px !important;
-      height: 12px !important;
-      left: 36px;
-      top: 36px;
-      cursor: pointer;
-   }
-    .bm-burger-bars {
-      background-color: #525358 !important;
-    }
 
-     .bm-item-list {
-      color: #b8b7ad !important;
-      margin-left: 5%;
-      font-size: 14px;
-    }
+  .bm-burger-button {
+    position: fixed;
+    width: 18px !important;
+    height: 12px !important;
+    left: 36px;
+    top: 36px;
+    cursor: pointer;
+  }
 
-     .bm-menu {
-      height: 100%;
-      width: 0; 
-      position: fixed; 
-      z-index: 1000;
-      top: 0;
-      left: 0;
-      background-color: #f5f5f5 !important; 
-      overflow-x: hidden;
-      padding-top: 60px; 
-      transition: 0.5s;
-    }
+  .bm-burger-bars {
+    background-color: #525358 !important;
+  }
 
+  .bm-item-list {
+    color: #b8b7ad !important;
+    margin-left: 5%;
+    font-size: 14px;
+  }
 
-    .bm-item-list > * > span {
-      margin-left: 14px;
-      color: #222222;
-      font-weight: 500;
-      margin-bottom: 2rem;
-    }
+  .bm-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #f5f5f5 !important;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+  }
+
+  .bm-item-list > * > span {
+    margin-left: 14px;
+    color: #222222;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
 }
 </style>
 

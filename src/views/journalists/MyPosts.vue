@@ -30,7 +30,7 @@
         </div>
       </div>
     </Push>
-
+    <!-- for mobile -->
     <div class="mobile">
       <router-link to="/" class="router-link">
         <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
@@ -51,19 +51,16 @@
         class="text-uppercase"
       >all drafts</button>
     </div>
-
     <div class="row" v-if="current_section == 'postp'">
       <div class="col-md-6" v-for="post in journalist.journalistPosts" :key="post.id">
         <feed-card :post="post"/>
       </div>
     </div>
-
     <div class="row" v-if="current_section == 'draft'">
       <div class="col-md-4" v-for="draft in journalist.draftPosts" :key="draft.id">
         <draft-card :post="draft"/>
       </div>
     </div>
-
     <div v-show="!journalist.journalistPosts">
       <h2>This Place looks empty !</h2>
       <br>
@@ -74,7 +71,6 @@
     </div>
   </main>
 </template>
-
 
 <script>
 import { Row, Col, Button, Card } from "iview";
@@ -102,7 +98,6 @@ export default {
     // fetch the data whethis.getMyPostn the view is created and the data is
     // already being observed
     await this.getMyPosts();
-    // await this. getMyDrafts()
   },
   watch: {
     // call again the method if the route changes
@@ -111,7 +106,6 @@ export default {
   methods: {
     ...mapActions([
       "getMyPosts",
-      // 'getMyDrafts'
       "clearSession"
     ]),
 

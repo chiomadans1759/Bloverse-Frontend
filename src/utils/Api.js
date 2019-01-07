@@ -27,7 +27,6 @@ class Api {
       } else {
         return error;
       }
-
     }
     //store.commit('setLoading', false)
     return {
@@ -36,9 +35,7 @@ class Api {
       data,
       message
     }
-
   }
-
 
   static async post(url, payload, requireAuth = false) {
     let response, statusCode, statusText, data, message;
@@ -61,8 +58,8 @@ class Api {
       } else {
         return error;
       }
-
     }
+
     return {
       statusCode,
       statusText,
@@ -92,7 +89,6 @@ class Api {
       } else {
         return error;
       }
-
     }
     return {
       statusCode,
@@ -101,9 +97,6 @@ class Api {
       message
     }
   }
-
 }
 
-
 export default Api;
-
