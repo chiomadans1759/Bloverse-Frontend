@@ -25,7 +25,7 @@
           </Col>
         </Row>
         <FormItem prop="gender">
-          <Select class="my-select" v-model="user.gender">  
+          <Select class="my-select" v-model="user.gender" placeholder="Select Gender*">  
             <Option v-for="item in genders" :value="item.value" :key="item.value">{{ item.label }}</Option>
           </Select>
         </FormItem>
