@@ -217,7 +217,7 @@ export default {
     return {
       errors: {},
       previewPost:false,
-      max: 50,
+      max: 150,
       validatePostForm: {
         deviceType: [
           {
