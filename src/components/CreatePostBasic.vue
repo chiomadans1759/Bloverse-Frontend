@@ -25,6 +25,9 @@
             <br>
 
             <FormItem prop="title" :error="errors.title">
+              <div class="alert alert-danger py-0" role="alert" v-if="post.title != undefined && post.title.length == 150">
+                150 maximum characters for title exceeded.
+              </div>
               <Input id="form-control" placeholder="What's your title?" v-model="post.title" :maxlength="max"/>
             </FormItem>
 
@@ -217,7 +220,7 @@ export default {
     return {
       errors: {},
       previewPost:false,
-      max: 50,
+      max: 150,
       validatePostForm: {
         deviceType: [
           {
