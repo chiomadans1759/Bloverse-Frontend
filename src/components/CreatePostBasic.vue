@@ -2,7 +2,7 @@
   <main id="create-basic-post">
     <Modal v-model="publishModal">
       <Alert type="success">Success</Alert>
-      <div>
+      <div class="text-center">
         <p>Your post has been successfully published</p>
         <div class="posts">
           <vue-goodshare-facebook :page_url="url" has_icon style="font-size: 25px;"></vue-goodshare-facebook>
@@ -314,9 +314,9 @@ export default {
   methods: {
     ...mapActions(["processPost"]),
 
-    ...mapMutations(["setPost"]),
+    ...mapMutations(["setPost", "clearPost"]),
     previewPosts(){
-      this.previewPost = true
+      this.previewPost = true;
     },
     handleProcessPost: async function(shouldPublish = false) {
       this.errors = {};
@@ -342,7 +342,10 @@ export default {
             if (success === true) {
               this.$Message.success("Post successfully saved");
               this.publishModal = shouldPublish;
+              this.previewPost = false;
               this.clearTinyMceEditor();
+              this.$store.commit("clearPost");
+              
             }
             if (success.errors) {
               this.handleError(success.errors);
@@ -459,6 +462,11 @@ export default {
 #display-post #body {
   padding: 0 1.5rem;
   margin-top: 2rem;
+}
+
+#modal-focus p {
+  width: 100% !important;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 360px) {

@@ -83,7 +83,7 @@ section#img-display {
   position: absolute;
   left: 0px;
   top: 0px;
- object-fit: cover
+  object-fit: cover;
 }
 .img-wrapper p{
  text-align: center;
