@@ -341,7 +341,7 @@ export default {
               this.publishModal = shouldPublish;
               this.previewPost = false;
               this.clearTinyMceEditor();
-              this.clearForm();
+              this.$store.commit("clearPost");
               
             }
             if (success.errors) {
@@ -371,10 +371,6 @@ export default {
 
     clearTinyMceEditor() {
       this.$store.commit("setTinyMiceValue", "<p></p>");
-    },
-
-    clearForm() {
-      this.$store.commit("clearPost");
     },
 
     checkTravel() {
@@ -463,6 +459,11 @@ export default {
 #display-post #body {
   padding: 0 1.5rem;
   margin-top: 2rem;
+}
+
+#modal-focus p {
+  width: 100% !important;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 360px) {
