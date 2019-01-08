@@ -19,7 +19,10 @@
     
       <h1 class="post-title mt-4">{{general.currentPost.title}}</h1>
       <ul class="post-keypoints">
-        <li v-for="point in general.currentPost.keypoint" :key="point.id">{{point}}</li>
+        <li v-for="point in general.currentPost.keypoint" 
+          :key="point.id" 
+          v-if="point !== ''"
+        >{{point}}</li>
       </ul>
       <div class="post-content">
         <div class="post-content-body" v-html="general.currentPost.body"></div>
