@@ -15,7 +15,7 @@ class Api {
       //store.commit('setLoading', true)
       response = requireAuth ? await axios.get(API_URL + url, config) : await axios.get(API_URL + url)
       statusCode = response.status;
-      data = response.data.data;
+      data = (response.data.data) ? response.data.data : response.data.results.data;
       statusText = response.data.status;
     } catch (error) {
       if (error.response) {
