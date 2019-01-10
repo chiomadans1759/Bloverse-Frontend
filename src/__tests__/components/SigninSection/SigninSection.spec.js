@@ -1,9 +1,15 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount, RouterLinkStub  } from '@vue/test-utils'
 import SigninComponent from '@/components/SigninSection/Signin.vue';
 
 describe('SigninComponent Component', () => {
   it('should render correctly', () => {
-    const wrapper = shallowMount(SigninComponent);
+
+    const wrapper = mount(SigninComponent, {
+      stubs: {
+        RouterLink: RouterLinkStub
+      }
+    });
+    expect(wrapper.find(RouterLinkStub).props().to).toBe('/creators/apply')
     expect(wrapper.element).toMatchSnapshot();
   })
 });

@@ -22,21 +22,29 @@ exports[`SigninComponent Component should render correctly 1`] = `
   <div
     class="social-login"
   >
-    <button-stub>
-      <img
-        src="@/assets/facebook-logo-light.svg"
-      />
-    </button-stub>
+    <div>
+      <button
+        class="defaultButton"
+      >
+        <img
+          src="@/assets/facebook-logo-light.svg"
+        />
+      </button>
+    </div>
      
     <br />
      
-    <button-stub>
-      <img
-        height="25"
-        src="@/assets/google-text-logo.png"
-        width="60"
-      />
-    </button-stub>
+    <div>
+      <button
+        class="defaultButton"
+      >
+        <img
+          height="25"
+          src="@/assets/google-text-logo.png"
+          width="60"
+        />
+      </button>
+    </div>
   </div>
    
   <br />
@@ -78,27 +86,31 @@ exports[`SigninComponent Component should render correctly 1`] = `
      
     <br />
      
-    <button-stub
-      customclass="login-button"
-    >
-      Login
-    </button-stub>
-     
-    <br />
-    <br />
-     
-    <button-stub
-      customclass="signup-button"
-    >
-      <h2
-        class="new-bloverse-text"
+    <div>
+      <button
+        class="defaultButton login-button"
       >
-        New to bloverse? 
-        <span>
-          Sign Up
-        </span>
-      </h2>
-    </button-stub>
+        Login
+      </button>
+    </div>
+     
+    <br />
+    <br />
+     
+    <div>
+      <button
+        class="defaultButton signup-button"
+      >
+        <h2
+          class="new-bloverse-text"
+        >
+          New to bloverse? 
+          <span>
+            Sign Up
+          </span>
+        </h2>
+      </button>
+    </div>
   </div>
    
   <br />
@@ -108,10 +120,13 @@ exports[`SigninComponent Component should render correctly 1`] = `
     class="creator-text"
   >
     Content creator? 
+    
     <a
-      class="apply-now-text"
+      class="router-link apply-now-text"
     >
+      
       Apply now
+    
     </a>
   </h2>
 </div>

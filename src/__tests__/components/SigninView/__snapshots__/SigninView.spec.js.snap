@@ -7,22 +7,149 @@ exports[`SigninView Component should render correctly 1`] = `
   <div
     class="top"
   >
-    <router-link
+    <a
       class="router-link"
-      to="/"
     >
       <img
         class="logo"
         src="@/assets/Logo - White.svg"
         style="height: 40px;"
       />
-    </router-link>
+    </a>
   </div>
    
   <div
     class="content"
   >
-    <signin-component-stub />
+    <div>
+      <h2
+        class="welcome-text"
+      >
+        Welcome back
+      </h2>
+       
+      <br />
+       
+      <h2
+        class="login-text"
+      >
+        Login With
+      </h2>
+       
+      <br />
+      <br />
+       
+      <div
+        class="social-login"
+      >
+        <div>
+          <button
+            class="defaultButton"
+          >
+            <img
+              src="@/assets/facebook-logo-light.svg"
+            />
+          </button>
+        </div>
+         
+        <br />
+         
+        <div>
+          <button
+            class="defaultButton"
+          >
+            <img
+              height="25"
+              src="@/assets/google-text-logo.png"
+              width="60"
+            />
+          </button>
+        </div>
+      </div>
+       
+      <br />
+       
+      <p>
+        Or
+      </p>
+       
+      <br />
+       
+      <div
+        class="basic-login"
+      >
+        <input
+          class="input"
+          placeholder="Email"
+          type="email"
+        />
+         
+        <br />
+        <br />
+         
+        <input
+          class="input"
+          placeholder="Password"
+          type="password"
+        />
+         
+        <br />
+        <br />
+         
+        <p
+          class="forgot-password-link"
+        >
+          <a>
+            Forgot password ?
+          </a>
+        </p>
+         
+        <br />
+         
+        <div>
+          <button
+            class="defaultButton login-button"
+          >
+            Login
+          </button>
+        </div>
+         
+        <br />
+        <br />
+         
+        <div>
+          <button
+            class="defaultButton signup-button"
+          >
+            <h2
+              class="new-bloverse-text"
+            >
+              New to bloverse? 
+              <span>
+                Sign Up
+              </span>
+            </h2>
+          </button>
+        </div>
+      </div>
+       
+      <br />
+      <br />
+       
+      <h2
+        class="creator-text"
+      >
+        Content creator? 
+    
+        <a
+          class="router-link apply-now-text"
+        >
+          
+      Apply now
+    
+        </a>
+      </h2>
+    </div>
   </div>
    
   <div
