@@ -7,7 +7,9 @@
         </router-link>
       </Col>
       <Col class="header-button">
-        <login-button class="pt-2 mr-3" color="white" />
+        <router-link to="/login" class="pt-2 mr-3 btn btn-md text-uppercase">
+          login
+        </router-link>
         <router-link to="/creators/apply" id="c-button">apply</router-link>
       </Col>
     </Row>
@@ -16,10 +18,9 @@
 
 <script >
 import { Icon, Row, Col, Button } from "iview";
-import LoginButton from "./LoginButton";
 
 export default {
-  components: { Icon, Row, Col, Button, LoginButton }
+  components: { Icon, Row, Col, Button }
 };
 </script>
 

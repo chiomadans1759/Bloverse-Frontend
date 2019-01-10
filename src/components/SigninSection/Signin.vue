@@ -32,7 +32,11 @@
         </Button>
       </div>
       <br/><br/>
-      <h2 class="creator-text">Content creator? <a class="apply-now-text">Apply now</a></h2>
+      <h2 class="creator-text">Content creator? 
+        <router-link to="/creators/apply" class="router-link apply-now-text">
+          Apply now
+        </router-link>
+      </h2>
     </div>
 </template>
 <script>

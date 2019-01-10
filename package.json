@@ -24,6 +24,7 @@
     "object-encode": "^1.0.2",
     "prettyjson": "^1.2.1",
     "pug": "^2.0.3",
+    "sass-rem": "^2.0.1",
     "serve-static": "^1.13.2",
     "simple-crypto-js": "^2.0.2",
     "vue": "^2.5.17",

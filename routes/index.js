@@ -14,7 +14,6 @@ import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
 import MyPosts from '../src/views/journalists/MyPosts.vue';
 import CreatePost from '../src/views/journalists/CreatePost.vue';
 
-// import JournalistLanding from '../src/views/journalists/Landing.vue';
 import JournalistApply from '../src/views/journalists/AuthenticationApply.vue';
 import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
@@ -30,24 +29,6 @@ import Privacy from '../src/views/Privacy.vue';
 
 import Signin from '../src/views/Signin/Signin.vue';
 
-/*
-
-import FrequentlyAskedQuestions from '../src/views/DocsFAQ.vue';
-import HouseRules from '../src/views/DocsHouseRules.vue';
-import RankingSystem from '../src/views/DocsRankingSystem.vue';
-import PublishGuide from '../src/views/DocsPublishGuide.vue';
-
- 
-import ConsumerSignIn from '../src/views/consumers/ConsumerSignIn.vue';
-import SelectCountry from '../src/views/consumers/SelectCountry.vue';
-import SelectCategory from '../src/views/consumers/SelectCategory.vue';
-import ConsumerModal from '../src/views/consumers/ConsumerModal.vue';
-import ConsumerLandingPage from '../src/views/consumers/ConsumerLandingPage.vue';
-import ConsumersTrending from '../src/views/consumers/ConsumersTrending.vue';
-import ConsumerProfile from '../src/views/consumers/ConsumerProfile.vue';
-
-*/
-
 const routes = [
   {
     path: '/', component: GeneralLayout,
@@ -60,7 +41,7 @@ const routes = [
       { path: '/privacy-policies', component: Privacy},
     ]
   },
-  { path: '/signin', component: Signin},
+  { path: '/login', component: Signin},
 
   {
     path: '/admin', component: BlankBase,
@@ -161,23 +142,7 @@ const routes = [
       },
     ]
   },
-  /*
-  { path: '/faq/:person', component: FrequentlyAskedQuestions },
-  { path: '/rules/:person', component: HouseRules },
-  { path: '/guides', component: PublishGuide },
-  { path: '/ranking/:person', component: RankingSystem },
-  { path: '/web', component: BaseConsumer, // All pages for the new user features should reside here
-    children: [
-      { path: '', component: ConsumerLandingPage },
-      { path: 'country', component: SelectCountry },
-      { path: 'category', component: SelectCategory },
-      { path: 'modal', component: ConsumerModal },
-      { path: 'profile', component: ConsumerProfile},
-      { path: 'trending', component: ConsumersTrending }
-    ]
-  },
-  { path: '/login', component: ConsumerSignIn },
-  */
+
   { path: "*", component: NotFound },
   { path: '/creators/*', component: NotFound, beforeEnter(to, from, next) {
     if (store.getters.isAJournalist) {

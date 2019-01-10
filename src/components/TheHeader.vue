@@ -10,7 +10,10 @@
 
         <div class="col-auto">
           <div v-if="!auth.loggedInUser">
-            <login-button class="pt-2 mr-3" />
+            <router-link to="/login" class="pt-2 mr-3 btn btn-md text-uppercase">
+              login
+            </router-link>
+          
             <router-link to="/creators" class="btn btn-primary btn-md text-uppercase">
               create
             </router-link>
@@ -59,10 +62,9 @@
 <script>
 import { Row, Col } from 'iview';
 import { mapState, mapActions } from "vuex";
-import LoginButton from "./LoginButton";
 
 export default {
-  components: { Row, Col, LoginButton },
+  components: { Row, Col },
   methods: {
     ...mapActions(['clearSession'])
   },
