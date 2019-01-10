@@ -28,6 +28,8 @@ import About from '../src/views/About.vue';
 import Terms from '../src/views/TermsAndConditions.vue';
 import Privacy from '../src/views/Privacy.vue';
 
+import Signin from '../src/views/Signin/Signin.vue';
+
 /*
 
 import FrequentlyAskedQuestions from '../src/views/DocsFAQ.vue';
@@ -55,10 +57,11 @@ const routes = [
       { path: 'posts/:slug', component: PostDisplay },
       { path: '/about', component: About},
       { path: '/terms-and-conditions', component: Terms},
-      { path: '/privacy-policies', component: Privacy}
+      { path: '/privacy-policies', component: Privacy},
     ]
   },
- 
+  { path: '/signin', component: Signin},
+
   {
     path: '/admin', component: BlankBase,
     children: [

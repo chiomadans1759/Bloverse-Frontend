@@ -1,0 +1,14 @@
+.defaultButton {
+  background-color: #ffffff;
+  height: 40px;
+  width: 268px;
+  font-size: 14px;
+  font-weight: 700;
+  border: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+.defaultButton:hover {
+  cursor: pointer;
+}

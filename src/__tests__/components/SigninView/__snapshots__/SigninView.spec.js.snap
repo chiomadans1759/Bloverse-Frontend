@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SigninView Component should render correctly 1`] = `
+<div
+  class="signin-container"
+>
+  <div
+    class="top"
+  >
+    <router-link
+      class="router-link"
+      to="/"
+    >
+      <img
+        class="logo"
+        src="@/assets/Logo - White.svg"
+        style="height: 40px;"
+      />
+    </router-link>
+  </div>
+   
+  <div
+    class="content"
+  >
+    <signin-component-stub />
+  </div>
+   
+  <div
+    class="bottom"
+  >
+    <p>
+      <span
+        class="bloverse"
+      >
+        bloverse
+      </span>
+       2018 All rights reserved
+    </p>
+  </div>
+</div>
+`;

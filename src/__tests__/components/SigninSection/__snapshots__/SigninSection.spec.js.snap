@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SigninComponent Component should render correctly 1`] = `
+<div>
+  <h2
+    class="welcome-text"
+  >
+    Welcome back
+  </h2>
+   
+  <br />
+   
+  <h2
+    class="login-text"
+  >
+    Login With
+  </h2>
+   
+  <br />
+  <br />
+   
+  <div
+    class="social-login"
+  >
+    <button-stub>
+      <img
+        src="@/assets/facebook-logo-light.svg"
+      />
+    </button-stub>
+     
+    <br />
+     
+    <button-stub>
+      <img
+        height="25"
+        src="@/assets/google-text-logo.png"
+        width="60"
+      />
+    </button-stub>
+  </div>
+   
+  <br />
+   
+  <p>
+    Or
+  </p>
+   
+  <br />
+   
+  <div
+    class="basic-login"
+  >
+    <input
+      class="input"
+      placeholder="Email"
+      type="email"
+    />
+     
+    <br />
+    <br />
+     
+    <input
+      class="input"
+      placeholder="Password"
+      type="password"
+    />
+     
+    <br />
+    <br />
+     
+    <p
+      class="forgot-password-link"
+    >
+      <a>
+        Forgot password ?
+      </a>
+    </p>
+     
+    <br />
+     
+    <button-stub
+      customclass="login-button"
+    >
+      Login
+    </button-stub>
+     
+    <br />
+    <br />
+     
+    <button-stub
+      customclass="signup-button"
+    >
+      <h2
+        class="new-bloverse-text"
+      >
+        New to bloverse? 
+        <span>
+          Sign Up
+        </span>
+      </h2>
+    </button-stub>
+  </div>
+   
+  <br />
+  <br />
+   
+  <h2
+    class="creator-text"
+  >
+    Content creator? 
+    <a
+      class="apply-now-text"
+    >
+      Apply now
+    </a>
+  </h2>
+</div>
+`;
