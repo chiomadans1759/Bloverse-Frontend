@@ -1,13 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SigninComponent Component should render correctly 1`] = `
-<div>
+<div
+  class="signinSection"
+>
   <h2
     class="welcome-text"
   >
     Welcome back
   </h2>
    
+  <br />
   <br />
    
   <h2
@@ -16,7 +19,6 @@ exports[`SigninComponent Component should render correctly 1`] = `
     Login With
   </h2>
    
-  <br />
   <br />
    
   <div
@@ -49,9 +51,33 @@ exports[`SigninComponent Component should render correctly 1`] = `
    
   <br />
    
-  <p>
-    Or
-  </p>
+  <div
+    class="grid-container"
+  >
+    <div
+      class="grid-item"
+    >
+      <hr
+        class="hr-text"
+      />
+    </div>
+     
+    <div
+      class="middle-grid-item"
+    >
+      <p>
+        Or
+      </p>
+    </div>
+     
+    <div
+      class="grid-item"
+    >
+      <hr
+        class="hr-text"
+      />
+    </div>
+  </div>
    
   <br />
    
@@ -59,7 +85,9 @@ exports[`SigninComponent Component should render correctly 1`] = `
     class="basic-login"
   >
     <input
-      class="input"
+      class="defaultClass text-input"
+      id="email"
+      name="email"
       placeholder="Email"
       type="email"
     />
@@ -68,7 +96,9 @@ exports[`SigninComponent Component should render correctly 1`] = `
     <br />
      
     <input
-      class="input"
+      class="defaultClass text-input"
+      id="password"
+      name="password"
       placeholder="Password"
       type="password"
     />
@@ -125,7 +155,7 @@ exports[`SigninComponent Component should render correctly 1`] = `
       class="router-link apply-now-text"
     >
       
-      Apply now
+      Apply
     
     </a>
   </h2>

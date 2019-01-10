@@ -1,14 +1,17 @@
+@import 'sass-rem';
+
 .defaultButton {
   background-color: #ffffff;
-  height: 40px;
-  width: 268px;
-  font-size: 14px;
+  height: rem(38px);
+  width: rem(302px);
+  font-size: rem(14px);
   font-weight: 700;
   border: solid;
-  border-width: 1px;
+  border-width: rem(1px);
   border-color: rgba(255, 255, 255, 0.15);
-  border-radius: 2px;
+  border-radius: rem(2px);
 }
+
 .defaultButton:hover {
   cursor: pointer;
 }

@@ -1,60 +1,94 @@
 @import 'sass-rem';
+.signinSection {
+  text-align: left !important;
+}
 
 .welcome-text {
   font-size: rem(24px);
 }
+
 .login-text {
   font-size: rem(14px);
 }
-.input {
-  height: rem(40px);
-  width: rem(268px);
-  background-color: rgba(0, 0, 0, 0.45);
-  border: solid;
-  border-width: rem(1px);
-  border-color: rgba(255, 255, 255, 0.15);
-  padding-left: rem(16px);
-  padding-top: rem(11px);
-  padding-right: rem(16px);
-  padding-bottom: rem(11px);
-  border-radius: 0;
-  color: white;
-  outline: none;
-}
+
 .forgot-password-link {
   text-align: right !important;
   color: #096DD9;
   font-size: rem(14px);
 }
+
 .creator-text {
   font-size: rem(14px);
 }
+
 .apply-now-text {
   font-size: rem(14px);
   color: #096DD9 !important;
 }
+
 .new-bloverse-text {
   font-size: rem(14px);
+  text-align: left;
+  padding-left: rem(20px); 
 }
+
 .new-bloverse-text > span {
   color: #096DD9 !important;
 }
+
 .login-button {
   background-image: linear-gradient( to right, #2F80ED, #003CE1);
-  height: rem(40px);
-  width: rem(268px);
-  font-size: rem(14px);
-  font-weight: 700;
   color: #ffffff;
   border: solid;
   border-width: rem(1px);
   border-color: rgba(255, 255, 255, 0.15);
   border-radius: rem(2px);
 }
+
 .signup-button {
   background-color: transparent !important;
   height: rem(50px) !important;
   color: #ffffff;
   border-width: rem(2px) !important;
   border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: rem(0.5fr) rem(0.5fr) rem(1.9fr);
+}
+
+.grid-item {
+  opacity: .5;
+}
+
+.middle-grid-item {
+  text-align: center;
+  font-size: rem(16px);
+}
+
+.hr-text {
+  line-height: 0em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  text-align: left;
+  height: rem(2em);
+  opacity: .8;
+  width: 100%;
+}
+
+.hr-text:before {
+  content: '';
+  background: #ecebeb;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: rem(1px);
+}
+
+.text-input {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
 }

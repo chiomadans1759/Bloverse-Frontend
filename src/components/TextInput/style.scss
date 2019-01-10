@@ -1,0 +1,17 @@
+@import 'sass-rem';
+
+.defaultClass {
+  height: rem(38px);
+  width: rem(302px);
+  background-color: #ffffff;
+  border: solid;
+  border-width: rem(1px);
+  border-color: rgba(255, 255, 255, 0.15);
+  padding-left: rem(16px);
+  padding-top: rem(11px);
+  padding-right: rem(16px);
+  padding-bottom: rem(11px);
+  border-radius: 0;
+  color: #B7B7B7;
+  outline: none;
+}
