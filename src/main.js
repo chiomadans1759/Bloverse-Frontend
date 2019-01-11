@@ -9,6 +9,7 @@ import GoogleAuth from 'vue-google-authenticator'
 import lang from 'iview/dist/locale/en-US';
 import VueRouter from 'vue-router';
 import moment from 'moment'
+import infiniteScroll from "vue-infinite-scroll";
 import SocialSharing from 'vue-social-sharing';
 import VueHead from 'vue-head'
 
@@ -35,7 +36,7 @@ Vue.use(GoogleAuth, {
 Vue.googleAuth().load()
 Vue.googleAuth().directAccess()
 Vue.use(VueHead)
-
+Vue.use(infiniteScroll);
 // configure language
 locale(lang);
 

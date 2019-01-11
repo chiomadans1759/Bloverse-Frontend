@@ -6,15 +6,15 @@
         <span class="col-md-8">No content for this filter result yet!</span>
       </div>
     </div>
-    <div v-if="general.publishedPosts">
+    <div v-if="general.publishedPosts" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="limit">
       <Row id="card-rows" :gutter="32" v-if="general.activeFeedLayout == 'grid'">
-        <Col :xs="24" :sm="12" :md="8" v-for="post in general.publishedPosts" :key="post.id">
+        <Col :xs="24" :sm="12" :md="8" v-for="post in posts" :key="post.id">
           <FeedCard :post="post"/>
         </Col>
       </Row>
 
       <Row type="flex" justify="center" v-if="general.activeFeedLayout == 'stack'">
-        <Col :xs="24" :sm="20" :md="14" v-for="post in general.publishedPosts" :key="post.id">
+        <Col :xs="24" :sm="20" :md="14" v-for="post in posts" :key="post.id">
           <FeedCard :post="post"/>
         </Col>
       </Row>
@@ -30,11 +30,39 @@ import FeedCard from "./FeedCard.vue";
 export default {
   name: "Displayfeeds",
   components: { Row, Col, Card, vSelect, Avatar, Icon, FeedCard },
+  data() {
+    return {
+      posts: [],
+      results: [],
+      busy: false,
+      limit: 10,
+    };
+  },
+  
   methods: {
-    ...mapActions(["getAllPublishedPosts"])
+    ...mapActions(["getAllPublishedPosts"]),
+    loadMore() {
+      
+      // console.log("scrolling");
+      
+      this.busy = true;   
+      // axios.get("https://jsonplaceholder.typicode.com/photos").then(res => {
+        
+      const append = this.general.publishedPosts.slice(this.posts.length,this.posts.length + this.limit )
+               
+      this.posts = this.posts.concat(append);
+        
+      this.busy = false;
+      // }).catch( (err) => {
+      //   this.busy = false;
+      // })
+        
+    
+    }
   },
   async created() {
-    await this.getAllPublishedPosts({ category: "", country: "" });
+    await this.getAllPublishedPosts({ category: '', country:'' });
+    this.loadMore();
   },
   computed: {
     ...mapState(["general"])
