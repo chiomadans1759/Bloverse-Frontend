@@ -137,8 +137,6 @@ export default {
     async getAllPublishedPosts({ commit }, { category = "", country = "" }) {
       let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
       commit('setPublishedPosts', response.data.posts);
-      // console.log(response)
-      // debugger;
     },
     async getAllDraftPosts({ commit }, { category = "", country = "" }) {
       let response = await Api.get(`posts?is_published=false&category=${category}&country=${country}`);

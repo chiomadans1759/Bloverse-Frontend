@@ -35,28 +35,21 @@ export default {
       posts: [],
       results: [],
       busy: false,
-      limit: 10,
+      limit: 9,
     };
   },
   
   methods: {
     ...mapActions(["getAllPublishedPosts"]),
     loadMore() {
-      
-      // console.log("scrolling");
-      
       this.busy = true;   
-      // axios.get("https://jsonplaceholder.typicode.com/photos").then(res => {
+
         
       const append = this.general.publishedPosts.slice(this.posts.length,this.posts.length + this.limit )
                
       this.posts = this.posts.concat(append);
         
       this.busy = false;
-      // }).catch( (err) => {
-      //   this.busy = false;
-      // })
-        
     
     }
   },
