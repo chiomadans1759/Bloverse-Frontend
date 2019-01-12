@@ -110,11 +110,12 @@ export default {
   },
   methods: {
     showMoreCats() {
-      this.other_cats = this.$store.state.general.categories.slice(4);
+      this.other_cats = this.general.categories.slice(4);
       if (this.show_more == false) {
         this.show_more = true;
       } else if (this.show_more == true) {
         this.show_more = false;
+        this.hide();
       }
     },
 
