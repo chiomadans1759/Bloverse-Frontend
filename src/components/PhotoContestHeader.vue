@@ -4,17 +4,17 @@
       <div class="row justify-content-center">
         <div class="col">
           <router-link to="/" class="router-link">
-            <img class="logo" src="@/assets/Logo.svg" style="height: 40px" />
+            <img class="logo" src="@/assets/Logo - White.svg" style="height: 40px" />
           </router-link>
         </div>
 
         <div class="col-auto">
           <div v-if="!auth.loggedInUser">
-            <router-link to="/photo-contest" class="btn btn-link text-uppercase">
+              <router-link to="/photo-contest" class="btn btn-link text-uppercase text-white">
               photo contest
-            </router-link>
-            <login-button class="pt-2 mr-3" />
-            <router-link to="/creators" class="btn btn-primary btn-md text-uppercase">
+              </router-link>
+            <login-button class="pt-2 mr-3 text-white" />
+            <router-link to="/creators" class="btn btn-white btn-sm text-uppercase">
               create
             </router-link>
           </div>
@@ -77,8 +77,10 @@ export default {
 
 <style lang="scss" scoped>
 #feeds-header {
-  height: 8rem;
-  padding-top: 2rem;
+    padding-top: 1.5rem;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
 }
 
 #feeds-header #author-img {
