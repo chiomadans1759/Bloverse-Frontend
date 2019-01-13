@@ -2,7 +2,7 @@
   <main id="display-feeds">
     <div class="card" v-if="!general.publishedPosts.length">
       <div class="card-body">
-        <img src="@/assets/image.svg" alt="" class="col-md-3">
+        <img src="@/assets/image.svg" alt class="col-md-3">
         <span class="col-md-8">No content for this filter result yet!</span>
       </div>
     </div>
@@ -43,26 +43,26 @@ export default {
 </script>
 
 <style scoped>
-#display-feeds .card {
-  left: 30%;
-  width: 504px;
-  height: 139px;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 3rem;
-}
+  #display-feeds .card {
+    left: 30%;
+    width: 504px;
+    height: 139px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+  }
 
-#display-feeds .card .card-body img {
-  width: 80px;
-  height: 90.99px;
-}
+  #display-feeds .card .card-body img {
+    width: 80px;
+    height: 90.99px;
+  }
 
-#display-feeds .card .card-body {
-text-align: center;
-}
+  #display-feeds .card .card-body {
+    text-align: center;
+  }
 
-#display-feeds .card .card-body span {
-  font-size: 14px;
-}
+  #display-feeds .card .card-body span {
+    font-size: 14px;
+  }
 </style>
 

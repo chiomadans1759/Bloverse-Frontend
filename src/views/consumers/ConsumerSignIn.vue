@@ -1,57 +1,49 @@
-<template> 
-     <section >       
-        <template>
-            <div class = "login-container"> 
-                <Col :sm="12" :md="12" :xs="24" class="image">               
-                      <p><span>Bloverse</span> </br>Interactive stories from the global community</p> 
-                </Col>
-                
-                <Col :md="12" :sm="12"  :xs="24">
-                        <Col offset="4" :sm="16" :md="16" :xs="16" class="auth-section" >
-                                <h1 id="page-title">Sign in</h1>
-
-                                <p class="join">Join Bloverse today.</p>   
-
-                                <Button class="btn-social button" id="btn-google" long @click="googleAuth"> 
-                                    <Icon id="google-icon" type=logo-google /> Sign up with Google
-                                </Button>
-
-                                <facebook-login
-                                  id="btn-fb"
-                                  loginLabel="Sign up with Facebook"
-                                  logoutLabel="Sign out with Facebook"
-                                  appId="416283189263206"
-                                  @login="onFBLogin"
-                                  @sdk-loaded="FBsdkLoaded"
-                                  @logout="onFBLogout" 
-                                  long>
-                                </facebook-login>
-                        </Col>
-                </col>
-                <Col :md="24" :sm="24"  :xs="24" class="footer">
-                  <ConsumerLoginFooter/> 
-                </Col>
-            </div> 
-                           
-        </template>
-        
-    </section>    
+<template>
+  <section >
+    <template>
+      <div class = "login-container">
+        <Col :sm="12" :md="12" :xs="24" class="image">
+          <p><span>Bloverse</span> </br>Interactive stories from the global community</p>
+        </Col>
+        <Col :md="12" :sm="12"  :xs="24">
+          <Col offset="4" :sm="16" :md="16" :xs="16" class="auth-section" >
+            <h1 id="page-title">Sign in</h1>
+            <p class="join">Join Bloverse today.</p>
+            <Button class="btn-social button" id="btn-google" long @click="googleAuth">
+                <Icon id="google-icon" type=logo-google /> Sign up with Google
+            </Button>
+            <facebook-login
+              id="btn-fb"
+              loginLabel="Sign up with Facebook"
+              logoutLabel="Sign out with Facebook"
+              appId="416283189263206"
+              @login="onFBLogin"
+              @sdk-loaded="FBsdkLoaded"
+              @logout="onFBLogout"
+              long>
+            </facebook-login>
+          </Col>
+        </Col>
+        <Col :md="24" :sm="24"  :xs="24" class="footer">
+          <ConsumerLoginFooter/>
+        </Col>
+      </div>
+    </template>
+  </section>
 </template>
 
 <script>
 import Vue from 'vue'
-
+import { mapState } from 'vuex';
 import { Button,Row, Col, Icon, Input, Form, FormItem } from 'iview';
-import { mapState } from 'vuex'; 
 import ConsumerLoginFooter from '../../components/ConsumerLoginFooter.vue';
- 
 import BlankBase from '../../layouts/BlankBase';
 import facebookLogin from '@/components/fb-auth/fb.vue';
 
 export default {
   components: { Button, Row, Col, Icon, Input, Form, FormItem, BlankBase, ConsumerLoginFooter, facebookLogin},
   data: function(){
-    return {      
+    return {
       user: {
         email: '',
         password: ''
@@ -111,74 +103,77 @@ export default {
     ...mapState([
       'auth'
     ])
-  } 
-
+  }
 }
 </script>
 
-
 <style scoped>
-  .join{
-    font-size:17px;
-    font-weight:600;
-    padding-bottom:16px;
-  }
-  .button{
-    margin-bottom:30px !important;
-    padding:10px 0 !important;
-    height: 3rem !important;
-    border: none !important;
-  }
-  .login-container{
-    padding:0;
-    margin:0;            
-    height:90vh; 
-  }
-  .footer{ 
-    height:10vh; 
-    font-size:1rem;
-    }
-  .image{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./../../assets/signin.jpg);
-    background-repeat: no-repeat;
-    background-size: cover; 
-    height:100%;
-    background-position:center;
-    padding: 0;
-    margin: 0; 
-    align-items:center; 
-    padding:4rem;
-    display:flex; 
-    color:#fff;
-    font-size:1.2rem;   
+.join{
+  font-size:17px;
+  font-weight:600;
+  padding-bottom:16px;
 }
-  
+
+.button{
+  margin-bottom:30px !important;
+  padding:10px 0 !important;
+  height: 3rem !important;
+  border: none !important;
+}
+
+.login-container{
+  padding:0;
+  margin:0;
+  height:90vh;
+}
+
+.footer{
+  height:10vh;
+  font-size:1rem;
+  }
+
+.image{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./../../assets/signin.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100%;
+  background-position:center;
+  padding: 0;
+  margin: 0;
+  align-items:center;
+  padding:4rem;
+  display:flex;
+  color:#fff;
+  font-size:1.2rem;
+}
+
 .image span {
-    font-size:6rem;
-    font-weight: 500;
+  font-size:6rem;
+  font-weight: 500;
 }
-.auth-section{
-    margin-top:20%; 
+
+.auth-section {
+  margin-top:20%;
 }
 
 @media only screen and (max-width: 600px) {
-    .login-container{ 
-     height:90vh;       
+  .login-container {
+    height:90vh;
   }
-  .footer{
+
+  .footer {
     height:10vh;
   }
- 
 }
+
 @media only screen and (max-width: 840px) {
-  .login-container{ 
-     height:87vh;        
+  .login-container{
+    height:87vh;
   }
+
   .footer{
     height:13vh;
     padding:auto 0;
   }
- 
 }
-
 </style>

@@ -1,7 +1,6 @@
 <template>
   <main id="journalist-account-layout">
-    <JournalistAccountSidebar class="left" />
-    
+    <JournalistAccountSidebar class="left"/>
     <div class="right">
       <div class="container">
         <router-view class="px-lg-6"></router-view>
@@ -12,15 +11,15 @@
 </template>
 
 <script>
-import JournalistAccountSidebar from '@/components/JournalistAccountSidebar';
-import JournalistAccountFooter from '@/components/JournalistAccountFooter';
+import JournalistAccountSidebar from "@/components/JournalistAccountSidebar";
+import JournalistAccountFooter from "@/components/JournalistAccountFooter";
 
 export default {
-  components: { 
-    JournalistAccountSidebar, 
-    JournalistAccountFooter 
+  components: {
+    JournalistAccountSidebar,
+    JournalistAccountFooter
   }
-}
+};
 </script>
 
 <style scoped>

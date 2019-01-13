@@ -13,22 +13,45 @@
         </Row>
       </Col>
       <Col :sm="6">
-        <Input search v-model="searchTerm" placeholder="Search by Names..."  size ="large"/>
+        <Input search v-model="searchTerm" placeholder="Search by Names..." size="large"/>
       </Col>
     </Row>
-    <Table :loading="usersLoading" ref="tblUser" border height="400" stripe :columns="tblColumns" :data="displayedUsers" @on-selection-change="changeSelection"></Table>
-    <Row  type="flex" justify="space-between">
+    <Table
+      :loading="usersLoading"
+      ref="tblUser"
+      border
+      height="400"
+      stripe
+      :columns="tblColumns"
+      :data="displayedUsers"
+      @on-selection-change="changeSelection"
+    ></Table>
+    <Row type="flex" justify="space-between">
       <Col>
-        <Button type="error" :disabled="!selectedUsers || updatingUsersStatus" @click="$refs.tblUser.selectAll(false)">Clear Selection</Button>
-        <Button type="success" :disabled="!selectedUsers" :loading="updatingUsersStatus" @click="processSelectedUsers">Process Selected Users</Button>
+        <Button
+          type="error"
+          :disabled="!selectedUsers || updatingUsersStatus"
+          @click="$refs.tblUser.selectAll(false)"
+        >Clear Selection</Button>
+        <Button
+          type="success"
+          :disabled="!selectedUsers"
+          :loading="updatingUsersStatus"
+          @click="processSelectedUsers"
+        >Process Selected Users</Button>
       </Col>
       <Col>
-        <Page @on-change="currPage = $event" style="float: right;" :total="users.length" :page-size="entriesLength" show-total /> 
+        <Page
+          @on-change="currPage = $event"
+          style="float: right;"
+          :total="users.length"
+          :page-size="entriesLength"
+          show-total
+        />
       </Col>
     </Row>
   </section>
 </template>
-
 
 <script>
 import Vue from "vue";
@@ -36,7 +59,6 @@ import { Row, Col, Table, Input, Page, Select, Option, Button } from "iview";
 import { mapState, mapGetters, mapActions } from "vuex";
 import TableExpand from "./JournalistMoreDetails.vue";
 import SelectStatus from "./SelectJournalistStatus.vue";
-
 
 // Registers Dropdown to select a new status globally
 Vue.component("SelectStatus", SelectStatus);
@@ -183,7 +205,8 @@ export default {
         };
       });
       // eslint-disable-next-line
-      this.usersLoading = false; TODO: // find out more about this bug
+      this.usersLoading = false;
+      // find out more about this bug
       return users;
     },
 

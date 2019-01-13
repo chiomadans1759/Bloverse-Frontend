@@ -5,11 +5,10 @@
         <div class="col-md-8">
           <post-details></post-details>
         </div>
-
         <div class="col-md-4 pt-3">
           <post-author :author="general.currentPost.author" class="mb-5"></post-author>
           <post-social-share :slug="general.currentPost.slug"></post-social-share>
-          <related-posts :post_id="general.currentPost.id" />
+          <related-posts :post_id="general.currentPost.id"/>
         </div>
       </div>
     </div>
@@ -62,7 +61,6 @@ export default {
     return {
       newComment: "",
       postDetails: {}
-      //url: 'https://bloverse-frontend.herokuapp.com/#/posts' + this.post.slug
     };
   },
 
@@ -70,12 +68,7 @@ export default {
     url() {
       return `${this.$BASE_URL}posts/${this.general.currentPost.slug}`;
     },
-    // titleTemplate: titleChunk => {
-    //   // If undefined or blank then we don't need the hyphen
-    //   return titleChunk
-    //     ? `${this.general.currentPost.title} - Site Title`
-    //     : "Site Title";
-    // },
+
     ...mapState(["general", "auth"]),
     ...mapGetters(["isLoggedIn"]),
 
@@ -96,7 +89,7 @@ export default {
     // fetch the data when the view is created and the data is
     // already being observed
     let { slug } = this.$route.params;
-    // console.log({slug})
+
     await this.getPostBySlug({ slug });
     this.postDetails = this.general.currentPost;
   }

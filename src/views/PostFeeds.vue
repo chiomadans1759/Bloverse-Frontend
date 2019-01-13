@@ -1,9 +1,8 @@
 <template>
   <main class="post-feeds">
     <div class="container" id="trend">
-      <trending />
+      <trending/>
     </div>
-
     <section class="container mt-5 pt-3" id="cat-nav">
       <div class="post-feeds-category" id="post-feeds-category">
         <div class="row">
@@ -17,7 +16,6 @@
               v-if=" allow || general.countries"
             ></v-select>
           </div>
-
           <div class="col-md-8" style="margin-top: -0.8rem;">
             <ul class="list-inline cat-list">
               <li class="list-inline-item" v-for="category in filteredCatList" :key="category.id">
@@ -35,7 +33,6 @@
                 </a>
               </li>
             </ul>
-
             <div class="dropdown-card" v-show="show_more == true">
               <div class="row">
                 <div class="col-md-6" v-for="cat in other_cats" :key="cat.id">
@@ -50,14 +47,14 @@
               </div>
             </div>
           </div>
-
           <div class="col-md-2 mr-0" style="margin-top: -0.8rem;">
             <ul class="list-inline" id="layout-select">
               <li class="list-inline-item">
                 <a
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
-                  @click.prevent="toggleLayout('grid')">
+                  @click.prevent="toggleLayout('grid')"
+                >
                   <i class="fal fa-grip-horizontal fa-1x"></i>
                 </a>
               </li>
@@ -65,7 +62,8 @@
                 <a
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'stack'}"
-                  @click.prevent="toggleLayout('stack')">
+                  @click.prevent="toggleLayout('stack')"
+                >
                   <i class="far fa-layer-group fa-1x"></i>
                 </a>
               </li>
@@ -73,7 +71,6 @@
           </div>
         </div>
       </div>
-
       <display-feeds></display-feeds>
     </section>
   </main>
@@ -90,7 +87,7 @@ export default {
   name: "FeedsSection",
   components: { Row, Col, Card, vSelect, DisplayFeeds, Trending },
   watch: {
-    'general.countries': {
+    "general.countries": {
       handler: function(newItem) {
         this.allow = true;
       },
@@ -164,8 +161,6 @@ export default {
         );
         return category.name;
       }
-
-      // return "all categories";
     },
 
     filteredCatList() {
@@ -320,9 +315,7 @@ export default {
   color: #2f80ed;
   text-decoration: none !important;
 }
-</style>
 
-<style>
 .v-select .dropdown-toggle .clear {
   display: none !important;
 }

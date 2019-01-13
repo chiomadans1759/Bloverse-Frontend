@@ -5,7 +5,7 @@
         <div class="card-header">
           <h3 class="card-header-title">Most Read Topics</h3>
         </div>
-
+        <!-- card body -->
         <div class="card-body">
           <div class="post" v-for="post in posts" :key="post.id">
             <div class="row mt-3 mb-5">
@@ -21,11 +21,11 @@
               </div>
             </div>
 
-            <hr />
+            <hr>
           </div>
         </div>
       </div>
-
+      <!-- related card -->
       <div>
         <div class="related-card">
           <h4
@@ -82,23 +82,27 @@ export default {
   data() {
     return {
       posts: {}
-    }
+    };
   },
   methods: {
-    ...mapActions([
-      "getSimilarPosts"
-    ]),
+    ...mapActions(["getSimilarPosts"]),
 
     async getData() {
-      await this.getSimilarPosts({ post_id: await this.post_id, threshold: 1.75});
-      if(this.general.relatedPosts.length > 0) {
-        this.posts = this.general.relatedPosts
-      }else {
-        await this.getSimilarPosts({ post_id: await this.post_id, threshold: 1});
-        if(this.general.relatedPosts.length > 0) {
-          this.posts = this.general.relatedPosts
-        }else {
-          this.posts = this.general.trendingPost.splice(0, 6)
+      await this.getSimilarPosts({
+        post_id: await this.post_id,
+        threshold: 1.75
+      });
+      if (this.general.relatedPosts.length > 0) {
+        this.posts = this.general.relatedPosts;
+      } else {
+        await this.getSimilarPosts({
+          post_id: await this.post_id,
+          threshold: 1
+        });
+        if (this.general.relatedPosts.length > 0) {
+          this.posts = this.general.relatedPosts;
+        } else {
+          this.posts = this.general.trendingPost.splice(0, 6);
         }
       }
     },
@@ -108,155 +112,154 @@ export default {
     }
   },
   async created() {
-    await this.getTrending()
+    await this.getTrending();
   },
   computed: {
-    ...mapState([
-      "general"
-    ])
+    ...mapState(["general"])
   }
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-
-.card-header-title {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.related-posts-card {
-  background-color: #ffffff;
-  border: 1px solid #eeeeee;
-  min-height: 17rem;
-}
-
-.related-posts-card .card-header-title {
-  font-size: 17px;
-  text-transform: capitalize;
-  color: #666666;
-}
-
-.related-posts-card .card-body {
-  min-height: 50rem;
-  padding: 1rem 0rem;
-}
-
-.related-posts-card .post {
-  width: 100%;
-  padding: 1rem 2rem;
-}
-
-.related-posts-card .post img {
-  width: 100%;
-  height: 10rem;
-  object-fit: cover;
-}
-
-.related-posts-card .post h2 {
-  font-size: 15px;
-  color: #333333;
-  margin: 1rem 0rem;
-}
-
-.related-posts-card .post h2:hover {
-  color: #2f80ed;
-}
-
-.related-posts-card .post p {
-  color: #666666;
-  font-size: 13px;
-}
-.trending {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-#category-name {
-  font-size: 10px;
-  font-family: "Montserrat", sans-serif;
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-#trend-card {
-  width: 330px;
-  margin-right: 1rem;
-}
-
-#trend-img {
-  height: 210px;
-  width: 330px;
-}
-
-#category-text {
-  position: absolute;
-  top: 120px;
-  right: 16px;
-  left: 16px;
-  color: #ffffff;
-  font-size: 12px;
-  font-family: "Montserrat", sans-serif;
-}
-
-#avatarr {
-  position: absolute;
-  bottom: 10px;
-  left: 16px;
-}
-
-#user-name {
-  position: absolute;
-  color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-  bottom: 7%;
-  left: 20%;
-  font-size: 12px;
-  float: left;
-}
-</style>
-
-<style>
-@media screen and (max-width: 600px) {
-  .related-posts-card {
-    display: none;
-  }
+  @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
   .card-header-title {
-    display: none;
+    font-size: 16px;
+    font-weight: bold;
   }
 
-  .trending-card {
-    display: block !important;
-    margin-right: 0.5rem;
-  }
-
-  .card-bodyy .post h2 {
-    font-size: 15px;
-    color: #333333;
-    margin: 1rem 0rem;
-  }
-  .card-bodyy {
+  .related-posts-card {
     background-color: #ffffff;
     border: 1px solid #eeeeee;
-    min-height: 10rem;
+    min-height: 17rem;
   }
 
-  .card-bodyy img {
+  .related-posts-card .card-header-title {
+    font-size: 17px;
+    text-transform: capitalize;
+    color: #666666;
+  }
+
+  .related-posts-card .card-body {
+    min-height: 50rem;
+    padding: 1rem 0rem;
+  }
+
+  .related-posts-card .post {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .related-posts-card .post img {
     width: 100%;
     height: 10rem;
     object-fit: cover;
   }
-}
-@media (min-width: 1200px) {
-  .related-card {
-    display: none;
+
+  .related-posts-card .post h2 {
+    font-size: 15px;
+    color: #333333;
+    margin: 1rem 0rem;
   }
-}
+
+  .related-posts-card .post h2:hover {
+    color: #2f80ed;
+  }
+
+  .related-posts-card .post p {
+    color: #666666;
+    font-size: 13px;
+  }
+
+  .trending {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #category-name {
+    font-size: 10px;
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  #trend-card {
+    width: 330px;
+    margin-right: 1rem;
+  }
+
+  #trend-img {
+    height: 210px;
+    width: 330px;
+  }
+
+  #category-text {
+    position: absolute;
+    top: 120px;
+    right: 16px;
+    left: 16px;
+    color: #ffffff;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  #avatarr {
+    position: absolute;
+    bottom: 10px;
+    left: 16px;
+  }
+
+  #user-name {
+    position: absolute;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    bottom: 7%;
+    left: 20%;
+    font-size: 12px;
+    float: left;
+  }
+
+  @media screen and (max-width: 600px) {
+    .related-posts-card {
+      display: none;
+    }
+
+    .card-header-title {
+      display: none;
+    }
+
+    .trending-card {
+      display: block !important;
+      margin-right: 0.5rem;
+    }
+
+    .card-bodyy .post h2 {
+      font-size: 15px;
+      color: #333333;
+      margin: 1rem 0rem;
+    }
+
+    .card-bodyy {
+      background-color: #ffffff;
+      border: 1px solid #eeeeee;
+      min-height: 10rem;
+    }
+
+    .card-bodyy img {
+      width: 100%;
+      height: 10rem;
+      object-fit: cover;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .related-card {
+      display: none;
+    }
+  }
 </style>
 

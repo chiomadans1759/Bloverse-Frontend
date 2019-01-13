@@ -41,6 +41,7 @@ export default {
   min-height: 100vh;
   /* overflow-x: hidden !important; */
 }
+
 body {
   background-color: #f5f5f5 !important;
 }
