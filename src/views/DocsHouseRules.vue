@@ -1,7 +1,7 @@
 <template>
   <BaseDocs
     title="House rules"
-    about="The conversation here is moderated according to The community rules. Please <a href="#">read the rules</a> before joining the discussion."
+    about="The conversation here is moderated according to The community rules. Please <a href='#'>read the rules</a> before joining the discussion."
   >
     <Row type="flex" justify="right">
       <Col>
