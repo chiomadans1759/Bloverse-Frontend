@@ -7,7 +7,6 @@
           <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
         </router-link>
       </div>
-
       <ul class="linkss">
         <li class="list-inline-item">
           <router-link
@@ -39,7 +38,6 @@
           </router-link>
         </li>
       </ul>
-
       <footer id="sidebar-footer">
         <ul>
           <li style="margin-bottom:2rem;">
@@ -87,57 +85,56 @@ export default {
 };
 </script>
 
-
 <style scoped>
-.wrapper {
-  margin: 2rem;
-  width: 100%;
-  height: 90vh;
-}
+  .wrapper {
+    margin: 2rem;
+    width: 100%;
+    height: 90vh;
+  }
 
-#sidebar {
-  min-width: 250px;
-  max-width: 250px;
-}
+  #sidebar {
+    min-width: 250px;
+    max-width: 250px;
+  }
 
-.sidebar-header {
-  position: absolute;
-}
+  .sidebar-header {
+    position: absolute;
+  }
 
-.linkss {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5rem;
-  position: absolute;
-}
+  .linkss {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    position: absolute;
+  }
 
-.linkss li {
-  margin-bottom: 2rem;
-}
+  .linkss li {
+    margin-bottom: 2rem;
+  }
 
-#dash-links {
-  color: #222222;
-  font-size: 16px;
-}
+  #dash-links {
+    color: #222222;
+    font-size: 16px;
+  }
 
-.linkss li a.active {
-  border-right: 2px solid #096dd9;
-  padding-right: 1rem;
-}
+  .linkss li a.active {
+    border-right: 2px solid #096dd9;
+    padding-right: 1rem;
+  }
 
-#sidebar-footer {
-  bottom: 5%;
-  position: absolute;
-}
+  #sidebar-footer {
+    bottom: 5%;
+    position: absolute;
+  }
 
-#sidebar-footer ul li {
-  bottom: 0;
-  list-style-type: none;
-}
+  #sidebar-footer ul li {
+    bottom: 0;
+    list-style-type: none;
+  }
 
-#sidebar-footer span {
-  margin-left: 0.5rem;
-  font-size: 14px;
-  color: #222222;
-}
+  #sidebar-footer span {
+    margin-left: 0.5rem;
+    font-size: 14px;
+    color: #222222;
+  }
 </style>

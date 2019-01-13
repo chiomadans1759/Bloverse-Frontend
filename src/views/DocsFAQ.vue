@@ -10,18 +10,16 @@
       <Col :sm="7" :xs="24">
         <Input placeholder="Search FAQs" />
       </Col>
-    </Row> 
-    <div class ="toggle-section"> 
-      <div class="toggle-select" v-for="(question, index) in questions" :key="index"> 
+    </Row>
+    <div class ="toggle-section">
+      <div class="toggle-select" v-for="(question, index) in questions" :key="index">
         <input class="toggle-box" :id="`identifier-${index+1}`" type="checkbox" >
         <label :for="`identifier-${index+1}`">{{question.question}}</label>
-        <div v-html="question.answer"></div> 
+        <div v-html="question.answer"></div>
       </div>
     </div>
-
   </BaseDocs>
 </template>
-
 
 <script>
 import { Row, Col, Input } from 'iview';
@@ -41,9 +39,7 @@ export default {
       this.questions = data.faq[to.params.person]
     }
   }
-
 }
-
 </script>
 
 <style scoped>
@@ -99,6 +95,4 @@ export default {
 .toggle-section{
   margin-top: 30px;
 }
-
-    
 </style>

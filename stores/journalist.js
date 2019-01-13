@@ -71,7 +71,6 @@ export default {
 
       let response;
       if (state.post.id) {
-        //let payload = { keypoint, image_url, title, body, is_published: params.shouldPublish } 
         response = await Api.put('journalists/' + userId + '/posts/' + postId, payload, true);
       } else {
         response = await Api.post('journalists/' + userId + '/posts/', payload, true);
@@ -168,8 +167,5 @@ export default {
     articles(state) {
       return state.metrics && state.metrics.publishedArticles;
     }
-    // countries(state){
-    //   return state.metrics.country;
-    // }
   }
 }

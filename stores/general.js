@@ -130,7 +130,6 @@ export default {
     },
     async processApplicant(context, applicant) {
       let { id, status } = applicant;
-      //let response = 
       let response = await Api.put('applicants/' + id + '/', {status}, true);
       return response.statusCode === 200;   
     },
@@ -160,9 +159,6 @@ export default {
     }
   },
   mutations: {
-    /*setState(state, params){
-      state = {...state, ...params}
-    }*/
     setTinyMiceValue(state, value) {
       state.tinyMiceValue = value;
     },

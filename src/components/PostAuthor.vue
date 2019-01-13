@@ -7,7 +7,6 @@
             <img :src="author.image_url" alt="Author's Image" class="avatar-img rounded">
           </div>
         </div>
-
         <div class="col-10 mt-3">
           <h3 id="author-fullname">{{author.first_name}} {{author.last_name}}</h3>
         </div>
