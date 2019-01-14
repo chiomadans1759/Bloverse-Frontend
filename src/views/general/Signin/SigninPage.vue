@@ -22,7 +22,8 @@
   </div>
 </template>
 <script>
-import SigninComponent from '@/components/SigninSection/Signin.vue';
+import SigninComponent from '@/components/SigninSection/SigninSection.vue';
+
 
 export default {
   components: {
@@ -30,6 +31,7 @@ export default {
   }
 }
 </script>
+
 <style lang="scss">
-  @import './style.scss';
+  @import './SigninPage.scss';
 </style>

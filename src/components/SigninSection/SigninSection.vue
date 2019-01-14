@@ -34,7 +34,7 @@
           :value="password" :onChange="onChange" custom-class="text-input" />
         <br/><br/>
         <p class="forgot-password-link">
-          <a>Forgot password ?</a>
+          <router-link to="/forgotpassword">Forgot password ?</router-link>
         </p>
         <br/>
         <Button customClass="login-button">Login</Button>
@@ -75,5 +75,5 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import './style.scss';
+  @import './SigninSection.scss';
 </style>

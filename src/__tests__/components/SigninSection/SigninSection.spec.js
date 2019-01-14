@@ -1,5 +1,5 @@
 import { mount, RouterLinkStub  } from '@vue/test-utils'
-import SigninComponent from '@/components/SigninSection/Signin.vue';
+import SigninComponent from '@/components/SigninSection/SigninSection.vue';
 
 describe('SigninComponent Component', () => {
   it('should render correctly', () => {
@@ -9,7 +9,7 @@ describe('SigninComponent Component', () => {
         RouterLink: RouterLinkStub
       }
     });
-    expect(wrapper.find(RouterLinkStub).props().to).toBe('/creators/apply')
+    expect(wrapper.find(RouterLinkStub).props().to).toBe('/forgotpassword')
     expect(wrapper.element).toMatchSnapshot();
   });
 
