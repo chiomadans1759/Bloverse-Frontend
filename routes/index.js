@@ -29,6 +29,7 @@ import Privacy from '../src/views/Privacy.vue';
 
 import Signin from '../src/views/general/Signin/SigninPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
+import consumerSignup from '../src/views/consumers/SignUpPage/SignUpPage';
 
 const routes = [
   {
@@ -43,7 +44,10 @@ const routes = [
     ]
   },
   { path: '/login', component: Signin},
+
   { path: '/forgotpassword', component: ForgotPassword , name:'forgotpassword'},
+
+  { path: '/consumers/register', component: consumerSignup},
 
   {
     path: '/admin', component: BlankBase,

@@ -40,7 +40,9 @@
         <Button customClass="login-button">Login</Button>
         <br/><br/>
         <Button customClass="signup-button">
-          <h2 class="new-bloverse-text">New to bloverse? <span>Sign Up</span></h2>
+          <h2 class="new-bloverse-text">New to bloverse? 
+            <router-link to="/consumers/register" class="signup-text">Sign Up</router-link>
+          </h2>
         </Button>
       </div>
       <br/><br/>

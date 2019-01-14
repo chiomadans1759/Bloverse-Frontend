@@ -99,9 +99,11 @@
               and <router-link to="/privacy-policies" class="text-link">Privacy</router-link>
             </h5>
           </div>
-          <div class="text-secondary">
-            <h5>Have an account? <login-button style="margin-top: -0.2rem;"/></h5>
-          </div>
+          <h5>Have an account?
+            <router-link to="/login" class="btn btn-md text-uppercase text-link">
+              login
+            </router-link>
+          </h5>
         </Form>
       </div>
     </div>

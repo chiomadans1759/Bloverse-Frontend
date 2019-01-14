@@ -172,9 +172,12 @@ exports[`SigninView Component should render correctly 1`] = `
               class="new-bloverse-text"
             >
               New to bloverse? 
-              <span>
+        
+              <a
+                class="signup-text"
+              >
                 Sign Up
-              </span>
+              </a>
             </h2>
           </button>
         </div>
