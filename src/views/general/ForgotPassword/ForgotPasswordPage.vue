@@ -1,5 +1,5 @@
 <template>
-  <div class="signin-container">
+  <div class="main-container">
      <div class="top">
       <div>
         <span class="top-left-container">
@@ -17,15 +17,15 @@
       <div class="signinSection">
        <h2 class="welcome-text">Forgot Password</h2>
         <br/>
-        <h2 class="login-text">Enter your email address and <br> we will send you a link to reset your password</h2>
+        <h2 class="intro-text">Enter your email address and <br> we will send you a link to reset your password</h2>
         <br/>
       
-        <div class="basic-login">
+        <div class="form-section">
           <text-input
             id="email" name="email" type="email" placeholder="Email" 
             :value="email" :onChange="onChange" custom-class="text-input" />
           <br/><br/>
-          <Button customClass="login-button">Send</Button>
+          <Button customClass="primary-button">Send</Button>
           <br/>
           <div class="grid-container">
             <div class="grid-item">
@@ -37,8 +37,8 @@
             </div>
           </div>
           <br>
-          <Button customClass="signup-button">
-            <h2 class="new-bloverse-text">Create <router-link to="/creators/apply" class="router-link apply-now-text">
+          <Button customClass="secondary-button">
+            <h2 class="new-bloverse-text">Create <router-link to="/register" class="router-link apply-now-text">
             new Account
           </router-link></h2>
           </Button>

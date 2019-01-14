@@ -1,8 +1,8 @@
 <template>
-    <div class="signinSection">
+    <div class="mainSection">
       <h2 class="welcome-text">Welcome back</h2>
       <br/><br/>
-      <h2 class="login-text">Login With</h2>
+      <h2 class="intro-text">Login With</h2>
       <br/>
       <div class="social-login">
         <Button>
@@ -24,7 +24,7 @@
         </div>
       </div>
       <br />
-      <div class="basic-login">
+      <div class="form-section">
         <text-input
           id="email" name="email" type="email" placeholder="Email" 
           :value="email" :onChange="onChange" custom-class="text-input" />
@@ -37,10 +37,12 @@
           <router-link to="/forgotpassword">Forgot password ?</router-link>
         </p>
         <br/>
-        <Button customClass="login-button">Login</Button>
+        <Button customClass="primary-button">Login</Button>
         <br/><br/>
-        <Button customClass="signup-button">
-          <h2 class="new-bloverse-text">New to bloverse? <span>Sign Up</span></h2>
+        <Button customClass="secondary-button">
+          <h2 class="new-bloverse-text">New to bloverse? 
+            <router-link to="/register" class="signup-text">Sign Up</router-link>
+          </h2>
         </Button>
       </div>
       <br/><br/>

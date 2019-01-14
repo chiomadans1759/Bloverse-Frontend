@@ -1,5 +1,5 @@
 <template>
-  <div class="signin-container">
+  <div class="main-container">
     <div class="top">
       <div>
         <span class="top-left-container">
@@ -17,7 +17,7 @@
       <signin-component></signin-component>
     </div>
     <div class="bottom">
-      <p><span class="bloverse">bloverse</span> 2018 All rights reserved</p>
+      <p><span class="bloverse">bloverse</span> 2019 All rights reserved</p>
     </div>
   </div>
 </template>

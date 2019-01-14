@@ -1,18 +1,19 @@
 @import 'sass-rem';
 
 .content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5rem auto;
 }
 
-.signin-container {
+.main-container {
   padding-top: rem(20px);
   padding-bottom: rem(20px);
   background-color: #333333;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   color: white;
   background-repeat: no-repeat;
   background-size: cover;

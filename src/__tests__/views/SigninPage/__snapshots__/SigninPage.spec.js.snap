@@ -2,7 +2,7 @@
 
 exports[`SigninView Component should render correctly 1`] = `
 <div
-  class="signin-container"
+  class="main-container"
 >
   <div
     class="top"
@@ -39,7 +39,7 @@ exports[`SigninView Component should render correctly 1`] = `
     class="content"
   >
     <div
-      class="signinSection"
+      class="mainSection"
     >
       <h2
         class="welcome-text"
@@ -51,7 +51,7 @@ exports[`SigninView Component should render correctly 1`] = `
       <br />
        
       <h2
-        class="login-text"
+        class="intro-text"
       >
         Login With
       </h2>
@@ -119,7 +119,7 @@ exports[`SigninView Component should render correctly 1`] = `
       <br />
        
       <div
-        class="basic-login"
+        class="form-section"
       >
         <input
           class="defaultClass text-input"
@@ -155,7 +155,7 @@ exports[`SigninView Component should render correctly 1`] = `
          
         <div>
           <button
-            class="defaultButton login-button"
+            class="defaultButton primary-button"
           >
             Login
           </button>
@@ -166,15 +166,18 @@ exports[`SigninView Component should render correctly 1`] = `
          
         <div>
           <button
-            class="defaultButton signup-button"
+            class="defaultButton secondary-button"
           >
             <h2
               class="new-bloverse-text"
             >
               New to bloverse? 
-              <span>
+        
+              <a
+                class="signup-text"
+              >
                 Sign Up
-              </span>
+              </a>
             </h2>
           </button>
         </div>
