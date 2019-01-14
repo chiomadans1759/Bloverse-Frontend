@@ -7,6 +7,7 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
 .signin-container {
   padding-top: rem(20px);
   padding-bottom: rem(20px);
@@ -20,9 +21,12 @@
         linear-gradient(rgba(37, 42, 48, 0.5), rgba(37, 42, 48, 0.5)),
         url('../../assets/signin-image.jpg');
 }
+
 .logo {
-  margin-left: 5%;
+  height: rem(40px);
+  padding-left: rem(20px);
 }
+
 .bottom {
   position: absolute;
   margin: auto;
@@ -31,7 +35,24 @@
   text-align: center;
   padding: rem(10px);
 }
+
 .bloverse {
   font-size: rem(14px);
   font-weight: 900;
+}
+
+.top-left-container {
+  margin-left: 5%;
+}
+
+.top-left-container > a {
+  color: #ffffff;
+}
+
+.top-left-container > a > svg {
+  vertical-align: middle;
+}
+
+.top-left-container > a > span {
+  padding-left: rem(10px);
 }
