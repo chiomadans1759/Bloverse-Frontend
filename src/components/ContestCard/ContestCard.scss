@@ -1,0 +1,83 @@
+@import 'sass-rem';
+
+#bl-contest-card {
+  border: solid;
+  border-width: rem(1px);
+  border-color: rgba(0, 0, 0, 0.15);
+
+  .contest-image {
+    width: 100%;
+    height: rem(371px);
+    object-fit: cover;
+  }
+  .image {
+    width: 100%;
+    height: rem(371px);
+  }
+  
+  .footer {
+    padding-top: rem(16px);
+    padding-bottom: rem(16px);
+    padding-left: rem(24px);
+    padding-right: rem(24px);
+  }
+
+  .profile-icon-col {
+    padding: 0;
+    img {
+      width: rem(24px);
+      height: rem(24px);
+    }
+  }
+
+  .username {
+    padding-right: 0;
+    p {
+      font-size: rem(14px);
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .message {
+    p {
+      height: rem(20px);
+      font-size: rem(14px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #868686;
+    }
+
+    p::before {
+      content: '\25CF';
+      color: #2F80ED;
+      font-weight: 900;
+      padding-right: rem(20px);
+    }
+  }
+
+  .userdetails {
+    height: 100%;
+    align-items: center;
+    .point {
+      height: rem(20px);
+      width: rem(20px);
+    }
+  }
+
+  .actions {
+    padding: 0;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    div:hover {
+      cursor: pointer;
+    }
+    .icon {
+      color: #868686;
+    }
+  }
+}

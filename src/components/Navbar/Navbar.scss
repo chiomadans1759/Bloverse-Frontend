@@ -17,6 +17,70 @@ nav {
   font-size: rem(14px);
   border-bottom: rem(1px) solid #e6e6e6;
   margin-bottom: rem(49px);
+  background-color: #ffffff;
+}
+
+.transparent {
+  background-color: transparent !important;
+  border: none;
+}
+
+.white-text {
+  a.nav-link {
+    color: rgba(255, 255, 255, 0.65);
+  }
+  a.nav-link:hover {
+    color: rgb(255, 255, 255);
+  }
+  a.router-link-active {
+    color: white !important;
+  }
+  a.router-link-active:hover {
+    color: white !important;
+  }
+}
+
+.alt-button {
+
+  .vl {
+    height: rem(38px);
+    border-left: rem(1px) solid rgba(255, 255, 255, 0.10) !important;
+    left: 50%;
+    margin: auto rem(20px);
+    top: 0;
+    font-weight: 100;
+    background-color: rgba(255, 255, 255, 0.10) !important;
+  }
+
+  .get-started-link {
+    background-color: transparent !important;
+    border: rem(1px) solid #ffffff;
+    color: #ffffff;
+  }
+
+  .get-started-link:hover {
+    background-color: #ffffff !important;
+    background-image: none;
+    border: rem(1px) solid #096DD9;
+    border-radius: 0.3rem;
+    color: #096DD9;
+    padding: rem(7px) rem(16px);
+    text-align: center;
+    text-decoration: none;
+    font-size: rem(14px);
+  }
+
+  .publish-link {
+    background-color: #ffffff !important;
+    background-image: none;
+    border: rem(1px) solid #096DD9;
+    border-radius: 0.3rem;
+    color: #096DD9;
+    padding: rem(7px) rem(16px);
+    text-align: center;
+    text-decoration: none;
+    font-size: rem(14px);
+  }
 }
 
 .dropdown-menu a {
