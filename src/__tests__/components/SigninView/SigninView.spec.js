@@ -1,5 +1,5 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
-import SigninView from '@/views/Signin/Signin.vue';
+import SigninView from '@/views/general/Signin/Signin.vue';
 
 describe('SigninView Component', () => {
   it('should render correctly', () => {

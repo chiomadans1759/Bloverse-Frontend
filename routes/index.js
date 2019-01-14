@@ -27,8 +27,8 @@ import About from '../src/views/About.vue';
 import Terms from '../src/views/TermsAndConditions.vue';
 import Privacy from '../src/views/Privacy.vue';
 
-import Signin from '../src/views/Signin/Signin.vue';
-import ForgotPassword from '../src/views/Signin/ForgotPassword.vue';
+import Signin from '../src/views/general/Signin/Signin.vue';
+import ForgotPassword from '../src/views/general/forgotPassword/ForgotPassword.vue';
 
 const routes = [
   {

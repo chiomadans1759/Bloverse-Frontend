@@ -1,0 +1,154 @@
+@import 'sass-rem';
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.signin-container {
+  padding-top: rem(20px);
+  padding-bottom: rem(20px);
+  background-color: #333333;
+  min-height: 100vh;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image:
+        linear-gradient(rgba(37, 42, 48, 0.5), rgba(37, 42, 48, 0.5)),
+        url('../../../assets/signin-image.jpg');
+}
+
+.logo {
+  height: rem(40px);
+  padding-left: rem(20px);
+}
+
+.bottom {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  padding: rem(10px);
+}
+
+.bloverse {
+  font-size: rem(14px);
+  font-weight: 900;
+}
+
+.top-left-container {
+  margin-left: 5%;
+}
+
+.top-left-container > a {
+  color: #ffffff;
+}
+
+.top-left-container > a > svg {
+  vertical-align: middle;
+}
+
+.top-left-container > a > span {
+  padding-left: rem(10px);
+}
+
+.signinSection {
+  text-align: left !important;
+}
+
+.welcome-text {
+    font-size: 1.5rem;
+    font-weight: 900 !important;
+}
+.login-text {
+    font-size: 0.9rem !important;
+    line-height: 23px;
+}
+
+.forgot-password-link {
+  text-align: right !important;
+  color: #096DD9;
+  font-size: rem(14px);
+}
+
+.creator-text {
+  font-size: rem(14px);
+}
+
+.apply-now-text {
+  font-size: rem(14px);
+  color: #096DD9 !important;
+}
+
+.new-bloverse-text {
+  font-size: rem(14px);
+  text-align: left;
+  padding-left: rem(20px); 
+}
+
+.new-bloverse-text > span {
+  color: #096DD9 !important;
+}
+
+.login-button {
+  background-image: linear-gradient( to right, #2F80ED, #003CE1);
+  color: #ffffff;
+  border: solid;
+  border-width: rem(1px);
+  border-color: rgba(255, 255, 255, 0.15);
+  border-radius: rem(2px);
+}
+
+.signup-button {
+  background-color: transparent !important;
+  height: rem(50px) !important;
+  color: #ffffff;
+  border-width: rem(2px) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: rem(0.5fr) rem(0.5fr) rem(1.9fr);
+}
+
+.grid-item {
+  opacity: .5;
+}
+
+.middle-grid-item {
+  text-align: center;
+  font-size: rem(16px);
+}
+
+.hr-text {
+  line-height: 0em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  text-align: left;
+  height: rem(2em);
+  opacity: .8;
+  width: 100%;
+}
+
+.hr-text:before {
+  content: '';
+  background: #ecebeb;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: rem(1px);
+}
+
+.text-input {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+}
+

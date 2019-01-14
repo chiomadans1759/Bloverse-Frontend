@@ -12,6 +12,16 @@ describe('SigninComponent Component', () => {
     expect(wrapper.find(RouterLinkStub).props().to).toBe('/creators/apply')
     expect(wrapper.element).toMatchSnapshot();
   });
+  it('should render correctly', () => {
+
+    const wrapper = mount(SigninComponent, {
+      stubs: {
+        RouterLink: RouterLinkStub
+      }
+    });
+    expect(wrapper.find(RouterLinkStub).props().to).toBe('/forgotpassword')
+    expect(wrapper.element).toMatchSnapshot();
+  });
 
   it('should update the component state when input is changed', () => {
     const wrapper = mount(SigninComponent, {
