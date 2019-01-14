@@ -44,13 +44,10 @@ export default {
     loadMore() {
       this.busy = true;   
 
-        
       const append = this.general.publishedPosts.slice(this.posts.length,this.posts.length + this.limit )
-               
       this.posts = this.posts.concat(append);
         
       this.busy = false;
-    
     }
   },
   async created() {
