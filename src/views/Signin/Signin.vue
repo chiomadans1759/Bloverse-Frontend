@@ -1,9 +1,17 @@
 <template>
   <div class="signin-container">
     <div class="top">
-      <router-link to="/" class="router-link">
-            <img class="logo" src="@/assets/Logo - White.svg" style="height: 40px" />
+      <div>
+        <span class="top-left-container">
+          <a href="/">
+            <i class="fal fa-long-arrow-left fa-2x"></i>
+            <span>Back</span>
+          </a>
+          <router-link to="/" class="router-link">
+            <img class="logo" src="@/assets/Logo - White.svg" />
           </router-link>
+        </span>
+      </div>
     </div>
     <div class="content">
       <signin-component></signin-component>
