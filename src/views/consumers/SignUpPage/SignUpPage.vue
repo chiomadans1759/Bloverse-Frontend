@@ -17,8 +17,8 @@
       <div class="mainSection">
         <h2 class="welcome-text"> Join Us </h2>
         <br />
-        <h3 class="intro-text">Lorem ipsum dolor sit amet, 
-          <br /> consectetur adipiscing elit consectetur
+        <h3>Lorem ipsum dolor sit amet, vel
+          <br /> accumsanliberse ex, ea nec
         </h3>
         <br />
         <h3 class="sign-up-text">Sign Up With</h3>
@@ -97,9 +97,9 @@
         <h4 class="terms-and-privacy">
           By creating an account, you agree to
           <br>our
-          <span class="terms-text">Terms</span>
+          <router-link to="/terms-and-conditions" class="terms-text">Terms</router-link>
           and
-          <span class="privacy-text">Privacy</span>
+          <router-link to="/privacy-policies" class="privacy-text">Privacy</router-link>
         </h4>
         <br>
         <Button customClass="secondary-button">
@@ -109,11 +109,13 @@
         </Button>
       </div>
       <br/><br/>
-      <h2 class="creator-text">Content creator? 
+      <div class="signup-creator-text">
+        <h2 class="creator-text">Content creator? 
         <router-link to="/creators/apply" class="router-link apply-now-text">
           Apply
         </router-link>
-      </h2>
+        </h2>
+      </div>
     </div>
   </div>
 </template>

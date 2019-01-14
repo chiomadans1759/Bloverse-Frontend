@@ -41,7 +41,7 @@
         <br/><br/>
         <Button customClass="secondary-button">
           <h2 class="new-bloverse-text">New to bloverse? 
-            <router-link to="/consumers/register" class="signup-text">Sign Up</router-link>
+            <router-link to="/register" class="signup-text">Sign Up</router-link>
           </h2>
         </Button>
       </div>

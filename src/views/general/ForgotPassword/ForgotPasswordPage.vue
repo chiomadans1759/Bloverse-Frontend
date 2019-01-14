@@ -38,7 +38,7 @@
           </div>
           <br>
           <Button customClass="secondary-button">
-            <h2 class="new-bloverse-text">Create <router-link to="/consumers/register" class="router-link apply-now-text">
+            <h2 class="new-bloverse-text">Create <router-link to="/register" class="router-link apply-now-text">
             new Account
           </router-link></h2>
           </Button>

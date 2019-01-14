@@ -1,31 +1,5 @@
 @import 'sass-rem';
 
-.signup-container {
-  padding-top: rem(20px);
-  padding-bottom: rem(20px);
-  background-color: #333333;
-  min-height: 100vh;
-  color: white;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-image:
-        linear-gradient(rgba(37, 42, 48, 0.5), rgba(37, 42, 48, 0.5)),
-        url('../../../assets/signin-image.jpg');
-}
-
-.signup-intro-text {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  width: rem(302px);
-}
-
-.join-us-text {
-  font-size: rem(24px);
-  font-weight: bolder;
-}
-
 .sign-up-text {
   font-weight: bold;
 }
@@ -40,4 +14,9 @@
 
 .privacy-text {
   color: #096DD9;
+}
+
+.signup-creator-text {
+  width: rem(302px);
+
 }
