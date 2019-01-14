@@ -134,6 +134,7 @@ exports[`Signup Page should render correctly 1`] = `
       />
        
       <br />
+       
       <br />
        
       <input
@@ -145,6 +146,7 @@ exports[`Signup Page should render correctly 1`] = `
       />
        
       <br />
+       
       <br />
        
       <input
@@ -156,6 +158,7 @@ exports[`Signup Page should render correctly 1`] = `
       />
        
       <br />
+       
       <br />
        
       <input
@@ -167,6 +170,7 @@ exports[`Signup Page should render correctly 1`] = `
       />
        
       <br />
+       
       <br />
        
       <div>
@@ -182,19 +186,19 @@ exports[`Signup Page should render correctly 1`] = `
       <h4
         class="terms-and-privacy"
       >
+        
         By creating an account, you agree to
         
         <br />
-        
-        our 
+        our
         
         <span
           class="terms-text"
         >
           Terms
         </span>
-         
-        and 
+        
+        and
         
         <span
           class="privacy-text"
@@ -212,7 +216,7 @@ exports[`Signup Page should render correctly 1`] = `
           <h2
             class="new-bloverse-text"
           >
-            Have an account? 
+            Have an account?
           
             <a
               class="signup-text"
@@ -225,19 +229,18 @@ exports[`Signup Page should render correctly 1`] = `
     </div>
      
     <br />
+     
     <br />
      
     <h2
       class="creator-text"
     >
-      Content creator? 
+      Content creator?
       
       <a
         class="router-link apply-now-text"
       >
-        
         Apply
-      
       </a>
     </h2>
   </div>
