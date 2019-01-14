@@ -1,7 +1,8 @@
 <template>
-  <div class="signup-container">
+  <div class="main-container">
     <div class="top">
-      <span class="top-left-container">
+      <div>
+        <span class="top-left-container">
         <a href="/login">
           <i class="fal fa-long-arrow-left fa-2x"></i>
           <span>Back</span>
@@ -10,39 +11,43 @@
           <img class="logo" src="@/assets/Logo - White.svg">
         </router-link>
       </span>
+      </div>
     </div>
     <div class="content">
-      <div class="signup-intro-text">
-        <h2 class="join-us-text">Join us</h2>
-        <br>
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-        <br>
+      <div class="mainSection">
+        <h2 class="welcome-text"> Join Us </h2>
+        <br />
+        <h3 class="intro-text">Lorem ipsum dolor sit amet, 
+          <br /> consectetur adipiscing elit consectetur
+        </h3>
+        <br />
         <h3 class="sign-up-text">Sign Up With</h3>
-      </div>
-      <br>
-      <div class="social-login">
-        <Button>
-          <img src="@/assets/facebook-logo-light.svg">
-        </Button>
-        <br>
-        <Button>
-          <img src="@/assets/google-text-logo.png" height="25" width="60">
-        </Button>
-      </div>
-      <br>
-      <div class="grid-container">
+        <br />
+
+        <div class="social-login">
+          <Button>
+            <img src="@/assets/facebook-logo-light.svg">
+          </Button>
+          <br>
+          <Button>
+            <img src="@/assets/google-text-logo.png" height="25" width="60">
+          </Button>
+        </div>
+        <br />
+        <div class="grid-container">
         <div class="grid-item">
-          <hr class="hr-text">
+          <hr class="hr-text" />
         </div>
-        <div class="middle-grid-item">
-          <p>Or</p>
-        </div>
+        <div class="middle-grid-item"><p>Or</p></div>
         <div class="grid-item">
-          <hr class="hr-text">
+          <hr class="hr-text" />
         </div>
       </div>
-      <br>
-      <div class="basic-signup">
+      <br />
+      </div>
+      <br />
+
+      <div class="form-section">
         <text-input
           id="first-name"
           name="firstName"
@@ -87,7 +92,7 @@
         />
         <br>
         <br>
-        <Button customClass="login-button">Sign Up</Button>
+        <Button customClass="primary-button">Sign Up</Button>
         <br>
         <h4 class="terms-and-privacy">
           By creating an account, you agree to
@@ -97,16 +102,17 @@
           <span class="privacy-text">Privacy</span>
         </h4>
         <br>
-        <Button customClass="signup-button">
+        <Button customClass="secondary-button">
           <h2 class="new-bloverse-text">Have an account?
             <router-link to="/login" class="signup-text">Login</router-link>
           </h2>
         </Button>
       </div>
-      <br>
-      <br>
-      <h2 class="creator-text">Content creator?
-        <router-link to="/creators/apply" class="router-link apply-now-text">Apply</router-link>
+      <br/><br/>
+      <h2 class="creator-text">Content creator? 
+        <router-link to="/creators/apply" class="router-link apply-now-text">
+          Apply
+        </router-link>
       </h2>
     </div>
   </div>

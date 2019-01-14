@@ -1,5 +1,5 @@
 @import 'sass-rem';
-.signinSection {
+.mainSection {
   text-align: left !important;
 }
 
@@ -7,7 +7,7 @@
   font-size: rem(24px);
 }
 
-.login-text {
+.intro-text {
   font-size: rem(14px);
 }
 
@@ -36,7 +36,7 @@
   color: #096DD9 !important;
 }
 
-.login-button {
+.primary-button {
   background-image: linear-gradient( to right, #2F80ED, #003CE1);
   color: #ffffff;
   border: solid;
@@ -45,14 +45,13 @@
   border-radius: rem(2px);
 }
 
-.signup-button {
+.secondary-button {
   background-color: transparent !important;
   height: rem(50px) !important;
   color: #ffffff;
   border-width: rem(2px) !important;
   border-color: rgba(255, 255, 255, 0.2) !important;
-  display: flex;
-  justify-content: center;
+  padding-left: 1.5rem;
 }
 
 .grid-container {

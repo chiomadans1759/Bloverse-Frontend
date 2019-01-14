@@ -1,5 +1,5 @@
 <template>
-  <div class="signin-container">
+  <div class="main-container">
     <div class="top">
       <div>
         <span class="top-left-container">
