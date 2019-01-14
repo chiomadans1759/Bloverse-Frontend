@@ -1,10 +1,10 @@
 <template>
     <div>
-      <h2 class="welcome-text">Welcome back</h2>
-      <br/>
-      <h2 class="login-text">Login With</h2>
-      <br/><br/>
-      <div class="social-login">
+      <!-- <h2 class="welcome-text">Welcome back</h2> -->
+      <!-- <br/> -->
+      <!-- <h2 class="login-text">Login With</h2> -->
+      
+      <!-- <div class="social-login">
         <Button>
           <img src="@/assets/facebook-logo-light.svg" />
         </Button>
@@ -15,17 +15,21 @@
       </div>
       <br />
       <p>Or</p>
-      <br />
+      <br /> -->
       <div class="basic-login">
+      <h2 class="welcome-text">Forgot Password</h2>
+      <br/>
+      <h2 class="login-text">Enter your email address and we will send you a link t reset your password</h2>
+      <br/><br/>
         <input type="email" placeholder="Email" class="input" />
         <br/><br/>
-        <input type="password" placeholder="Password" class="input" />
-        <br/><br/>
-        <p class="forgot-password-link">
-          <router-link to="/forgotpassword">Forgot password ?</router-link>
-        </p>
+        <!-- <input type="password" placeholder="Password" class="input" />
+        <br/><br/> -->
+       <!--  <p class="forgot-password-link">
+          <a>Forgot password ?</a>
+        </p> -->
         <br/>
-        <Button customClass="login-button">Login</Button>
+        <Button customClass="login-button">Send</Button>
         <br/><br/>
         <Button customClass="signup-button">
           <h2 class="new-bloverse-text">New to bloverse? <span>Sign Up</span></h2>

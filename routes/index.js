@@ -28,6 +28,7 @@ import Terms from '../src/views/TermsAndConditions.vue';
 import Privacy from '../src/views/Privacy.vue';
 
 import Signin from '../src/views/Signin/Signin.vue';
+import ForgotPassword from '../src/views/Signin/ForgotPassword.vue';
 
 const routes = [
   {
@@ -42,6 +43,7 @@ const routes = [
     ]
   },
   { path: '/login', component: Signin},
+  { path: '/forgotpassword', component: ForgotPassword , name:'forgotpassword'},
 
   {
     path: '/admin', component: BlankBase,

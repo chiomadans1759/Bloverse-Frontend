@@ -6,7 +6,7 @@
           </router-link>
     </div>
     <div class="content">
-      <signin-component></signin-component>
+      <forgot-component></forgot-component>
     </div>
     <div class="bottom">
       <p><span class="bloverse">bloverse</span> 2018 All rights reserved</p>
@@ -14,12 +14,12 @@
   </div>
 </template>
 <script>
-import SigninComponent from '@/components/SigninSection/Signin.vue';
 
+import ForgotComponent from '@/components/SigninSection/forgot.vue';
 
 export default {
   components: {
-    SigninComponent,
+    ForgotComponent,
   }
 }
 </script>
