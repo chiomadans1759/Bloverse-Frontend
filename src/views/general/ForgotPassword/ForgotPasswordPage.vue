@@ -57,7 +57,6 @@ import Button from '@/components/button/button.vue';
 import TextInput from '@/components/TextInput/TextInput.vue';
 
 export default {
-  name: 'SigninComponent',
   data() {
     return {
       email: '',
@@ -74,7 +73,3 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-  @import './style.scss';
-</style>
-

@@ -1,5 +1,5 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
-import ForgotPassword from '@/views/general/forgotPassword/ForgotPassword.vue';
+import ForgotPassword from '@/views/general/ForgotPassword/ForgotPasswordPage.vue';
 
 describe('ForgotPassword Component', () => {
   it('should render correctly', () => {
