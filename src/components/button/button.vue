@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="defaultButton" :class="customClass" @click="buttonClick">
+    <button :class="customClass" @click="buttonClick">
       <slot></slot>
     </button>
   </div>
