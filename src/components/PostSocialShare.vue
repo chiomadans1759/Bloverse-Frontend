@@ -54,9 +54,8 @@ export default {
       switch (media) {
       /* eslint-disable */
       case "facebook":
-        FB.ui(
+        FB.ui( // eslint-disable-line no-undef
           {
-            // eslint-disable-line no-undef
             method: "share",
             display: "popup",
             href: `${this.$BASE_URL}redirect/${this.slug}`
@@ -67,8 +66,7 @@ export default {
         );
         break;
       case "twitter":
-        twttr.events.bind("tweet", function(event) {
-          // eslint-disable-line no-undef
+        twttr.events.bind("tweet", function(event) { // eslint-disable-line no-undef
           // Count tweet here
         });
         break;
