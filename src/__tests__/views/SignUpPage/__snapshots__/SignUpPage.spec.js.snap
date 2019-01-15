@@ -49,13 +49,11 @@ exports[`Signup Page should render correctly 1`] = `
        
       <br />
        
-      <h3
-        class="intro-text"
-      >
-        Lorem ipsum dolor sit amet, 
+      <h3>
+        Lorem ipsum dolor sit amet, vel
         
         <br />
-         consectetur adipiscing elit consectetur
+         accumsanliberse ex, ea nec
       
       </h3>
        
@@ -74,7 +72,7 @@ exports[`Signup Page should render correctly 1`] = `
       >
         <div>
           <button
-            class="defaultButton"
+            class="btn btn-light social-button"
           >
             <img
               src="@/assets/facebook-logo-light.svg"
@@ -86,7 +84,7 @@ exports[`Signup Page should render correctly 1`] = `
          
         <div>
           <button
-            class="defaultButton"
+            class="btn btn-light social-button"
           >
             <img
               height="25"
@@ -185,7 +183,7 @@ exports[`Signup Page should render correctly 1`] = `
        
       <div>
         <button
-          class="defaultButton primary-button"
+          class="btn btn-primary primary-button"
         >
           Sign Up
         </button>
@@ -202,26 +200,26 @@ exports[`Signup Page should render correctly 1`] = `
         <br />
         our
         
-        <span
+        <a
           class="terms-text"
         >
           Terms
-        </span>
+        </a>
         
         and
         
-        <span
+        <a
           class="privacy-text"
         >
           Privacy
-        </span>
+        </a>
       </h4>
        
       <br />
        
       <div>
         <button
-          class="defaultButton secondary-button"
+          class="btn btn-outline-secondary secondary-button"
         >
           <h2
             class="new-bloverse-text"
@@ -241,19 +239,23 @@ exports[`Signup Page should render correctly 1`] = `
     <br />
     <br />
      
-    <h2
-      class="creator-text"
+    <div
+      class="signup-creator-text"
     >
-      Content creator? 
-      
-      <a
-        class="router-link apply-now-text"
+      <h2
+        class="creator-text"
       >
-        
+        Content creator? 
+      
+        <a
+          class="router-link apply-now-text"
+        >
+          
         Apply
       
-      </a>
-    </h2>
+        </a>
+      </h2>
+    </div>
   </div>
 </div>
 `;

@@ -19,6 +19,20 @@ nav {
   color: #ffffff;
 }
 
+.btn-started a:hover {
+  color: #ffffff;
+}
+
+.prim-button {
+  background-image: linear-gradient( to bottom left, #2F80ED, #003CE1);
+  width: rem(281px);
+  height: rem(38px);
+}
+
+.primary-button:hover {
+  background-color: #ffffff;
+}
+
 .dropdown-menu:after, .dropdown-menu:before {
 	bottom: 100%;
 	left: 50%;
@@ -36,6 +50,7 @@ nav {
 	border-width: 10px;
 	margin-left: -10px;
 }
+
 .dropdown-menu:before {
 	border-color: rgba(194, 225, 245, 0);
 	border-bottom-color: rgba(18, 38, 63, .1);

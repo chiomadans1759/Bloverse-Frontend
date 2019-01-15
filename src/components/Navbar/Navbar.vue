@@ -1,6 +1,6 @@
 <template>
   <header id="feeds-header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-between px-5">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white px-5">
     <router-link to="/" class="router-link">
       <img class="logo" src="@/assets/Logo.svg" style="height: 40px" />
     </router-link>
@@ -9,7 +9,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="right-nav">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
           <router-link to="/" class="nav-link"> Home <span class="sr-only">(current)</span></router-link>
         </li>
@@ -36,7 +36,7 @@
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0 pr-4">
-        <Button customClass="btn btn-outline-primary">
+        <Button customClass="btn btn-outline-primary btn-started">
           <router-link to="/login" class="router-link">
             Get Started
           </router-link>

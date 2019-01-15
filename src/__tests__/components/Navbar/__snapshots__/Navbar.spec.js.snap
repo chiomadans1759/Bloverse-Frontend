@@ -5,18 +5,17 @@ exports[`Navbar Component should render correctly 1`] = `
   id="feeds-header"
 >
   <nav
-    class="navbar navbar-expand-lg navbar-light bg-white justify-content-between px-5"
+    class="navbar navbar-expand-lg navbar-light bg-white px-5"
   >
-    <router-link
+    <a
       class="router-link"
-      to="/"
     >
       <img
         class="logo"
         src="@/assets/Logo.svg"
         style="height: 40px;"
       />
-    </router-link>
+    </a>
      
     <button
       aria-controls="navbarSupportedContent"
@@ -37,14 +36,13 @@ exports[`Navbar Component should render correctly 1`] = `
       id="right-nav"
     >
       <ul
-        class="navbar-nav mr-auto"
+        class="navbar-nav ml-auto"
       >
         <li
           class="nav-item active"
         >
-          <router-link
+          <a
             class="nav-link"
-            to="/"
           >
              Home 
             <span
@@ -52,18 +50,17 @@ exports[`Navbar Component should render correctly 1`] = `
             >
               (current)
             </span>
-          </router-link>
+          </a>
         </li>
          
         <li
           class="nav-item"
         >
-          <router-link
+          <a
             class="nav-link"
-            to="/about"
           >
             About
-          </router-link>
+          </a>
         </li>
          
         <li
@@ -110,19 +107,17 @@ exports[`Navbar Component should render correctly 1`] = `
               class="triangle-up"
             />
              
-            <router-link
+            <a
               class="dropdown-item"
-              to="/terms-and-conditions"
             >
               Terms
-            </router-link>
+            </a>
              
-            <router-link
+            <a
               class="dropdown-item"
-              to="/privacy-policies"
             >
               Privacy
-            </router-link>
+            </a>
              
             <a
               class="dropdown-item"
@@ -150,16 +145,15 @@ exports[`Navbar Component should render correctly 1`] = `
       >
         <div>
           <button
-            class="btn btn-outline-primary"
+            class="btn btn-outline-primary btn-started"
           >
-            <router-link
+            <a
               class="router-link"
-              to="/login"
             >
               
             Get Started
           
-            </router-link>
+            </a>
           </button>
         </div>
          
@@ -171,14 +165,13 @@ exports[`Navbar Component should render correctly 1`] = `
           <button
             class="btn btn-primary"
           >
-            <router-link
+            <a
               class="router-link"
-              to="/creators/apply"
             >
               
             Publish
           
-            </router-link>
+            </a>
           </button>
         </div>
       </div>
