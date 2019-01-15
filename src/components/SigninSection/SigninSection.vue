@@ -5,11 +5,11 @@
       <h2 class="intro-text">Login With</h2>
       <br/>
       <div class="social-login">
-        <Button>
+        <Button customClass="btn btn-light social-button">
           <img src="@/assets/facebook-logo-light.svg" />
         </Button>
         <br/>
-        <Button>
+        <Button customClass="btn btn-light social-button">
           <img src="@/assets/google-text-logo.png" height="25" width="60" />
         </Button>
       </div>
@@ -37,9 +37,9 @@
           <router-link to="/forgotpassword">Forgot password ?</router-link>
         </p>
         <br/>
-        <Button customClass="primary-button">Login</Button>
+        <Button customClass="btn btn-primary primary-button">Login</Button>
         <br/><br/>
-        <Button customClass="secondary-button">
+        <Button customClass="btn btn-outline-secondary secondary-button">
           <h2 class="new-bloverse-text">New to bloverse? 
             <router-link to="/register" class="signup-text">Sign Up</router-link>
           </h2>
@@ -53,8 +53,9 @@
       </h2>
     </div>
 </template>
+
 <script>
-import Button from '../button/button.vue';
+import Button from '../Button/Button.vue';
 import TextInput from '../TextInput/TextInput.vue';
 
 export default {
@@ -76,6 +77,7 @@ export default {
   }
 }
 </script>
+
 <style lang="scss">
   @import './SigninSection.scss';
 </style>

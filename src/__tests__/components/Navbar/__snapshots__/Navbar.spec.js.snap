@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar Component should render correctly 1`] = `
+<header
+  id="feeds-header"
+>
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-white justify-content-between px-5"
+  >
+    <router-link
+      class="router-link"
+      to="/"
+    >
+      <img
+        class="logo"
+        src="@/assets/Logo.svg"
+        style="height: 40px;"
+      />
+    </router-link>
+     
+    <button
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      class="navbar-toggler"
+      data-target="#navbarSupportedContent"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        class="navbar-toggler-icon"
+      />
+    </button>
+     
+    <div
+      class="collapse navbar-collapse"
+      id="right-nav"
+    >
+      <ul
+        class="navbar-nav mr-auto"
+      >
+        <li
+          class="nav-item active"
+        >
+          <router-link
+            class="nav-link"
+            to="/"
+          >
+             Home 
+            <span
+              class="sr-only"
+            >
+              (current)
+            </span>
+          </router-link>
+        </li>
+         
+        <li
+          class="nav-item"
+        >
+          <router-link
+            class="nav-link"
+            to="/about"
+          >
+            About
+          </router-link>
+        </li>
+         
+        <li
+          class="nav-item"
+        >
+          <a
+            class="nav-link"
+            href="#"
+          >
+            Photo Contest
+          </a>
+        </li>
+         
+        <li
+          class="nav-item dropdown pr-4"
+        >
+          <a
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+          >
+            <span
+              id="option-icon"
+            />
+             
+            <span
+              id="option-icon"
+            />
+             
+            <span
+              id="option-icon"
+            />
+          </a>
+           
+          <div
+            aria-labelledby="navbarDropdown"
+            class="dropdown-menu"
+          >
+            <div
+              class="triangle-up"
+            />
+             
+            <router-link
+              class="dropdown-item"
+              to="/terms-and-conditions"
+            >
+              Terms
+            </router-link>
+             
+            <router-link
+              class="dropdown-item"
+              to="/privacy-policies"
+            >
+              Privacy
+            </router-link>
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              FAQ
+            </a>
+             
+            <div
+              class="dropdown-divider"
+            />
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              Feedback
+            </a>
+          </div>
+        </li>
+      </ul>
+       
+      <div
+        class="form-inline my-2 my-lg-0 pr-4"
+      >
+        <div>
+          <button
+            class="btn btn-outline-primary"
+          >
+            <router-link
+              class="router-link"
+              to="/login"
+            >
+              
+            Get Started
+          
+            </router-link>
+          </button>
+        </div>
+         
+        <span
+          class="vl bg-light"
+        />
+         
+        <div>
+          <button
+            class="btn btn-primary"
+          >
+            <router-link
+              class="router-link"
+              to="/creators/apply"
+            >
+              
+            Publish
+          
+            </router-link>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+`;
