@@ -14,7 +14,6 @@ export default {
   props: { row: Object },
   watch: {
     "row.status": function(val) {
-      //console.log(val);
       this.$emit("statusChanged", val);
     }
   }

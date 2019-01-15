@@ -106,12 +106,12 @@ export default {
   computed: {
     ...mapState(["general"]),
     category() {
-      const postCategory = this.general.categories.find(
-        category => category.id === this.post.category
-      );
-      return postCategory.name;
+      const { categories } = this.general;
+      const postCategory = categories ? categories.find(category => 
+        category.id === this.post.category) : {};
+      return postCategory.name || undefined;
     }
-  }
+  },
 };
 </script>
 
