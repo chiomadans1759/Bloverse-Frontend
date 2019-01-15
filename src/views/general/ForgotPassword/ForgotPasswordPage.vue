@@ -25,7 +25,7 @@
             id="email" name="email" type="email" placeholder="Email" 
             :value="email" :onChange="onChange" custom-class="text-input" />
           <br/><br/>
-          <Button customClass="primary-button">Send</Button>
+          <Button customClass="btn btn-primary primary-button">Send</Button>
           <br/>
           <div class="grid-container">
             <div class="grid-item">
@@ -37,7 +37,7 @@
             </div>
           </div>
           <br>
-          <Button customClass="secondary-button">
+          <Button customClass="btn btn-outline-secondary secondary-button">
             <h2 class="new-bloverse-text">Create <router-link to="/register" class="router-link apply-now-text">
             new Account
           </router-link></h2>
@@ -52,8 +52,9 @@
     </div>
   </div>
 </template>
+
 <script>
-import Button from '@/components/button/button.vue';
+import Button from '@/components/Button/Button.vue';
 import TextInput from '@/components/TextInput/TextInput.vue';
 
 export default {

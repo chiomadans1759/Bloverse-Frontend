@@ -56,7 +56,7 @@
 <script>
 import { Row, Col } from 'iview';
 import { mapState, mapActions } from "vuex";
-import Button from '../button/button.vue';
+import Button from '../Button/Button.vue';
 
 export default {
   components: { Row, Col, Button },
