@@ -23,12 +23,12 @@ import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
 
 import NotFound from '../src/views/NotFound.vue';
-import About from '../src/views/About.vue';
 import Terms from '../src/views/TermsAndConditions.vue';
 import Privacy from '../src/views/Privacy.vue';
 
 import Signin from '../src/views/general/Signin/SigninPage.vue';
-import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
+import AboutUs from '../src/views/general/about/about.vue';
+import ForgotPassword from '../src/views/general/forgotPassword/ForgotPasswordPage.vue';
 import consumerSignup from '../src/views/consumers/SignUpPage/SignUpPage';
 
 const routes = [
@@ -38,7 +38,7 @@ const routes = [
       { path: '', component: PostFeeds },
       { path: 'posts', redirect: '/' },
       { path: 'posts/:slug', component: PostDisplay },
-      { path: '/about', component: About},
+      { path: '/about', component: AboutUs , name:"about"},
       { path: '/terms-and-conditions', component: Terms},
       { path: '/privacy-policies', component: Privacy},
     ]
