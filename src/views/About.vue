@@ -22,7 +22,7 @@
     <img src="@/assets/photo2.png" alt="">
     <div id="about-body-text">
       <h1>Goal</h1>
-      <p>Our goal is to give everyone a voice and a safe space to express it. With our data-driven approach we aim to ensure that you make the most of your data, with a personalized experienced that ensures you are never far away from the stories that matter to you, whilst also being exposed to the numerous angles to each story that are blocked out by the mainstream media.Our goal is to give everyone a voice and a safe space to express it. With our data-driven approach we aim to ensure that you make the most of your data, with a personalized experienced that ensures you are never far away from the stories that matter to you, whilst also being exposed to the numerous angles to each story that are blocked out by the mainstream media.</p>
+      <p>Our goal is to give everyone a voice and a safe space to express it. With our data-driven approach we aim to ensure that you make the most of your data, with a personalized experienced that ensures you are never far away from the stories that matter to you, whilst also being exposed to the numerous angles to each story that are blocked out by the mainstream media.</p>
     </div>
   </div>
 </div>
