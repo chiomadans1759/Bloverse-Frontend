@@ -26,7 +26,7 @@ exports[`SigninComponent Component should render correctly 1`] = `
   >
     <div>
       <button
-        class="defaultButton"
+        class="btn btn-light social-button"
       >
         <img
           src="@/assets/facebook-logo-light.svg"
@@ -38,7 +38,7 @@ exports[`SigninComponent Component should render correctly 1`] = `
      
     <div>
       <button
-        class="defaultButton"
+        class="btn btn-light social-button"
       >
         <img
           height="25"
@@ -118,7 +118,7 @@ exports[`SigninComponent Component should render correctly 1`] = `
      
     <div>
       <button
-        class="defaultButton primary-button"
+        class="btn btn-primary primary-button"
       >
         Login
       </button>
@@ -129,7 +129,7 @@ exports[`SigninComponent Component should render correctly 1`] = `
      
     <div>
       <button
-        class="defaultButton secondary-button"
+        class="btn btn-outline-secondary secondary-button"
       >
         <h2
           class="new-bloverse-text"

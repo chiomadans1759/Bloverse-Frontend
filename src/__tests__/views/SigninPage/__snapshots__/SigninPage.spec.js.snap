@@ -63,7 +63,7 @@ exports[`SigninView Component should render correctly 1`] = `
       >
         <div>
           <button
-            class="defaultButton"
+            class="btn btn-light social-button"
           >
             <img
               src="@/assets/facebook-logo-light.svg"
@@ -75,7 +75,7 @@ exports[`SigninView Component should render correctly 1`] = `
          
         <div>
           <button
-            class="defaultButton"
+            class="btn btn-light social-button"
           >
             <img
               height="25"
@@ -155,7 +155,7 @@ exports[`SigninView Component should render correctly 1`] = `
          
         <div>
           <button
-            class="defaultButton primary-button"
+            class="btn btn-primary primary-button"
           >
             Login
           </button>
@@ -166,7 +166,7 @@ exports[`SigninView Component should render correctly 1`] = `
          
         <div>
           <button
-            class="defaultButton secondary-button"
+            class="btn btn-outline-secondary secondary-button"
           >
             <h2
               class="new-bloverse-text"
@@ -211,7 +211,7 @@ exports[`SigninView Component should render correctly 1`] = `
       >
         bloverse
       </span>
-       2018 All rights reserved
+       2019 All rights reserved
     </p>
   </div>
 </div>

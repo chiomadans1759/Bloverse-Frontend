@@ -38,7 +38,7 @@ export default {
   margin-bottom: 0.5rem;
 }
 #feeds-header {
-  background-color: #F5F5F5;
+  background-color: #ffffff;
 }
 #logo-text {
   font-size: 32px;

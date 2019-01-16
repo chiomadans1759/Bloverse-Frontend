@@ -28,8 +28,9 @@
 }
 
 .new-bloverse-text {
-  font-size: rem(14px);
+  font-size: 14px;
   text-align: left;
+  color: #ffffff;
 }
 
 .new-bloverse-text > .signup-text {
@@ -37,21 +38,30 @@
 }
 
 .primary-button {
-  background-image: linear-gradient( to right, #2F80ED, #003CE1);
-  color: #ffffff;
-  border: solid;
-  border-width: rem(1px);
-  border-color: rgba(255, 255, 255, 0.15);
-  border-radius: rem(2px);
+  background-image: linear-gradient( to left, #2F80ED, #003CE1);
+  width: rem(281px);
+  height: rem(38px);
 }
 
 .secondary-button {
-  background-color: transparent !important;
+  width: rem(281px);
   height: rem(50px) !important;
-  color: #ffffff;
   border-width: rem(2px) !important;
   border-color: rgba(255, 255, 255, 0.2) !important;
-  padding-left: 1.5rem;
+  padding-left: rem(24px) !important;
+}
+
+.social-button {
+  width: rem(281px);
+  height: rem(38px);
+}
+
+.social-button:hover {
+  background-color: #ffffff !important;
+}
+
+.secondary-button:hover {
+  background-color: transparent !important;
 }
 
 .grid-container {

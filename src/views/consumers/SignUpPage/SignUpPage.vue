@@ -25,11 +25,11 @@
         <br />
 
         <div class="social-login">
-          <Button>
+          <Button customClass="btn btn-light social-button">
             <img src="@/assets/facebook-logo-light.svg">
           </Button>
           <br>
-          <Button>
+          <Button customClass="btn btn-light social-button">
             <img src="@/assets/google-text-logo.png" height="25" width="60">
           </Button>
         </div>
@@ -92,7 +92,7 @@
         />
         <br>
         <br>
-        <Button customClass="primary-button">Sign Up</Button>
+        <Button customClass="btn btn-primary primary-button">Sign Up</Button>
         <br>
         <h4 class="terms-and-privacy">
           By creating an account, you agree to
@@ -102,7 +102,7 @@
           <router-link to="/privacy-policies" class="privacy-text">Privacy</router-link>
         </h4>
         <br>
-        <Button customClass="secondary-button">
+        <Button customClass="btn btn-outline-secondary secondary-button">
           <h2 class="new-bloverse-text">Have an account?
             <router-link to="/login" class="signup-text">Login</router-link>
           </h2>
@@ -121,7 +121,7 @@
 </template>
 
 <script>
-import Button from "../../../components/button/button.vue";
+import Button from "../../../components/Button/Button.vue";
 import TextInput from "../../../components/TextInput/TextInput.vue";
 
 export default {

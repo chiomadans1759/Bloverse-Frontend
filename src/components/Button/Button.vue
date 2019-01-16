@@ -1,10 +1,11 @@
 <template>
   <div>
-    <button class="defaultButton" :class="customClass" @click="buttonClick">
+    <button :class="customClass" @click="buttonClick">
       <slot></slot>
     </button>
   </div>
 </template>
+
 <script>
 export default {
   name: "Button",
@@ -21,6 +22,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-  @import './style.scss';
-</style>
