@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import Button from '../Button/Button.vue';
+import Button from '../button/button.vue';
 import TextInput from '../TextInput/TextInput.vue';
 
 export default {
