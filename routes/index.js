@@ -28,12 +28,14 @@ import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPag
 
 import Privacy from '../src/views/Privacy.vue';
 
-import Signin from '../src/views/general/Signin/SigninPage.vue';
 import AboutUs from '../src/views/general/About/AboutPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
-import consumerSignup from '../src/views/consumers/SignUpPage/SignUpPage';
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 import Homepage from '../src/views/general/Home/Homepage.vue';
+import SigninPage from '../src/views/general/Signin/SigninPage.vue';
+import ForgotPasswordPage from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
+import SignupPage from '../src/views/consumers/SignUpPage/SignUpPage';
+import RecoverPasswordPage from '../src/views/general/RecoverPassword/RecoverPasswordPage.vue';
 
 const routes = [
   {
@@ -47,17 +49,21 @@ const routes = [
       { path: '/privacy-policies', component: Privacy},
     ]
   },
+
   {
     path: '/', component: BlankBase,
     children: [
       { path: '/photo-contest', component: PhotoContest},
     ]
   },
-  { path: '/login', component: Signin},
 
   { path: '/forgotpassword', component: ForgotPassword},
 
-  { path: '/register', component: consumerSignup},
+  { path: '/login', component: SigninPage},
+
+  { path: '/register', component: SignupPage},
+
+  { path: '/recover-password', component: RecoverPasswordPage},
 
   {
     path: '/admin', component: BlankBase,

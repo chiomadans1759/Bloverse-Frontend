@@ -1,11 +1,11 @@
 <template>
-  <div class="main-container">
+  <div class="sign-up-container">
     <div class="top">
       <div>
         <span class="top-left-container">
         <a href="/login">
           <i class="fal fa-long-arrow-left fa-2x"></i>
-          <span>Back</span>
+          <span class="back-text">Back</span>
         </a>
         <router-link to="/" class="router-link">
           <img class="logo" src="@/assets/Logo - White.svg">
@@ -13,41 +13,38 @@
       </span>
       </div>
     </div>
-    <div class="content">
-      <div class="mainSection">
-        <h2 class="welcome-text"> Join Us </h2>
-        <br />
-        <h3>Lorem ipsum dolor sit amet, vel
+    <div class="sign-up-content">
+      <div>
+        <h2 class="sign-up-intro-one">Join Us</h2>
+        <h4 class="sign-up-intro-two">Lorem ipsum dolor sit amet, vel
           <br /> accumsanliberse ex, ea nec
-        </h3>
-        <br />
-        <h3 class="sign-up-text">Sign Up With</h3>
-        <br />
+        </h4>
+        <h5 class="sign-up-intro-three">Sign Up With</h5>
 
         <div class="social-login">
-          <Button customClass="btn btn-light social-button">
+          <Button customClass="btn btn-light sign-up-social-button sign-up-facebook-btn">
             <img src="@/assets/facebook-logo-light.svg">
           </Button>
           <br>
-          <Button customClass="btn btn-light social-button">
+          <Button customClass="btn btn-light sign-up-social-button">
             <img src="@/assets/google-text-logo.png" height="25" width="60">
           </Button>
         </div>
-        <br />
-        <div class="grid-container">
-        <div class="grid-item">
-          <hr class="hr-text" />
-        </div>
-        <div class="middle-grid-item"><p>Or</p></div>
-        <div class="grid-item">
-          <hr class="hr-text" />
-        </div>
-      </div>
-      <br />
-      </div>
-      <br />
 
-      <div class="form-section">
+        <div class="grid-container">
+          <div class="grid-item">
+            <hr class="hr-text" />
+          </div>
+          <div class="middle-grid-item">
+            <p><strong>Or</strong></p>
+          </div>
+          <div class="grid-item">
+            <hr class="hr-text" />
+          </div>
+      </div>
+    </div>
+
+      <div class="sign-up-form-section">
         <text-input
           id="first-name"
           name="firstName"
@@ -57,8 +54,6 @@
           :onChange="onChange"
           custom-class="text-input"
         />
-        <br>
-        <br>
         <text-input
           id="last-name"
           name="lastName"
@@ -68,8 +63,6 @@
           :onChange="onChange"
           custom-class="text-input"
         />
-        <br>
-        <br>
         <text-input
           id="email"
           name="email"
@@ -79,8 +72,6 @@
           :onChange="onChange"
           custom-class="text-input"
         />
-        <br>
-        <br>
         <text-input
           id="password"
           name="password"
@@ -90,32 +81,31 @@
           :onChange="onChange"
           custom-class="text-input"
         />
-        <br>
-        <br>
         <Button customClass="btn btn-primary primary-button">Sign Up</Button>
-        <br>
-        <h4 class="terms-and-privacy">
-          By creating an account, you agree to
-          <br>our
-          <router-link to="/terms-and-conditions" class="terms-text">Terms</router-link>
+  
+        <h4 class="sign-up-terms-and-privacy">
+          By creating an account, you agree to our
+          <router-link to="/terms-and-conditions" class="sign-up-link-text">Terms</router-link>
           and
-          <router-link to="/privacy-policies" class="privacy-text">Privacy</router-link>
+          <router-link to="/privacy-policies" class="sign-up-link-text">Privacy</router-link>
         </h4>
-        <br>
+ 
         <Button customClass="btn btn-outline-secondary secondary-button">
-          <h2 class="new-bloverse-text">Have an account?
-            <router-link to="/login" class="signup-text">Login</router-link>
+          <h2 class="sign-up-new-bloverse-text">Have an account?
+            <router-link to="/login" class="signup-login-text">Login</router-link>
           </h2>
         </Button>
       </div>
-      <br/><br/>
       <div class="signup-creator-text">
-        <h2 class="creator-text">Content creator? 
-        <router-link to="/creators/apply" class="router-link apply-now-text">
+        <h2 class="sign-up-creator-text">Content creator? 
+        <router-link to="/creators/apply" class="router-link sign-up-apply-now-text">
           Apply
         </router-link>
         </h2>
       </div>
+    </div>
+    <div class="bottom">
+      <p><span class="bloverse">Bloverse</span> {{year}}. All rights reserved</p>
     </div>
   </div>
 </template>
@@ -126,11 +116,13 @@ import TextInput from "../../../components/TextInput/TextInput.vue";
 
 export default {
   data() {
+
     return {
       firstName: "",
       lastName: "",
       email: "",
-      password: ""
+      password: "",
+      year: new Date().getFullYear()
     };
   },
   components: {

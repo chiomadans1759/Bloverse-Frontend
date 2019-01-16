@@ -1,22 +1,166 @@
 @import 'sass-rem';
 
-.sign-up-text {
-  font-weight: bold;
+.sign-up-container {
+  padding-top: rem(20px);
+  padding-bottom: rem(20px);
+  background-color: #333333;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-image:
+        linear-gradient(rgba(37, 42, 48, 0.2), rgba(37, 42, 48, 0.2)),
+        url('../../../assets/signin-image.jpg');
 }
 
-.terms-and-privacy {
-  text-align: left;
+.sign-up-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5rem auto;
 }
 
-.terms-text {
-  color: #096DD9;
+.sign-up-intro-one {
+  font-size: rem(24px);
+  font-weight: bolder;
+  margin: rem(40px) 0 rem(8px) 0;
 }
 
-.privacy-text {
+.sign-up-intro-two {
+  font-size: rem(16px);
+  margin-bottom: rem(24px);
+}
+
+.sign-up-intro-three {
+  font-size: rem(16px);
+  font-weight: bolder;
+  margin-bottom: rem(8px);
+}
+
+.sign-up-social-button {
+  width: rem(281px);
+  height: rem(38px);
+}
+
+.sign-up-social-button:hover {
+  background-color: #ffffff !important;
+}
+
+.sign-up-facebook-btn {
+  margin-bottom: rem(-10px);
+}
+
+.sign-up-form-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-up-terms-and-privacy {
+  font-size: rem(16px);
+  margin: rem(8px) 0 rem(24px) 0;
+  width: rem(281px);
+}
+
+.sign-up-link-text {
   color: #096DD9;
 }
 
 .signup-creator-text {
-  width: rem(302px);
+  width: rem(281px);
+  text-align: left;
+}
 
+.sign-up-creator-text {
+  font-size: rem(14px);
+  text-align: left;
+}
+
+.sign-up-apply-now-text {
+  font-size: rem(14px);
+  color: #096DD9 !important;
+}
+
+.sign-up-new-bloverse-text {
+  font-size: 14px;
+  text-align: left;
+  color: #ffffff;
+}
+
+// These styles apply to other pages 
+
+.grid-container {
+  display: grid;
+  grid-template-columns: rem(0.5fr) rem(0.5fr) rem(1.9fr);
+}
+
+.grid-item {
+  opacity: .5;
+}
+
+.middle-grid-item {
+  text-align: center;
+  font-size: rem(16px);
+  margin: rem(24px) 0 rem(24px) 0;
+}
+
+.hr-text {
+  line-height: 0em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  text-align: left;
+  height: rem(2em);
+  opacity: .8;
+  width: 100%;
+  margin: rem(24px) 0 rem(24px) 0;
+}
+
+.hr-text:before {
+  content: '';
+  background: #ad938a;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: rem(1px);
+}
+
+.new-bloverse-text > .signup-login-text {
+  color: #096DD9 !important;
+}
+
+.text-input {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+}
+
+.back-text {
+  font-size: rem(16px);
+}
+
+.top-left-container {
+  margin-left: 5%;
+}
+
+.top-left-container > a {
+  color: #ffffff;
+}
+
+.top-left-container > a > svg {
+  vertical-align: middle;
+}
+
+.top-left-container > a > span {
+  padding-left: rem(10px);
+}
+
+.logo {
+  height: rem(40px);
+  padding-left: rem(20px);
 }

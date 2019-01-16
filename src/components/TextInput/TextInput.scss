@@ -1,8 +1,8 @@
 @import 'sass-rem';
 
 .defaultClass {
-  height: rem(38px);
-  width: rem(302px);
+  height: rem(40px);
+  width: rem(281px);
   background-color: #ffffff;
   border: solid;
   border-width: rem(1px);
@@ -10,7 +10,8 @@
   padding-left: rem(16px);
   padding-top: rem(11px);
   padding-right: rem(16px);
-  padding-bottom: rem(11px);
+  padding-bottom: rem(8px);
+  margin-bottom: rem(8px);
   border-radius: 0;
   color: #B7B7B7;
   outline: none;

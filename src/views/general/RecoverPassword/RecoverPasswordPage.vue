@@ -12,18 +12,26 @@
         </span>
     </div>
     <div class="forgot-password-content">
-        <h4 class="forgot-password-intro-one">Forgot Password</h4>
-        <h5 class="forgot-password-intro-two">Enter your email address and 
-        <br/> we will send you a link to reset 
-        <br/> your password</h5>
+        <h4 class="forgot-password-intro-one">Recover Password</h4>
+        <h5 class="forgot-password-intro-two">Enter your new password below</h5>
 
       <div class="forgot-password-form-section">
         <text-input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Email"
-          :value="email"
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Password"
+          :value="password"
+          :onChange="onChange"
+          custom-class="text-input"
+        />
+
+        <text-input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Confirm Password"
+          :value="password"
           :onChange="onChange"
           custom-class="text-input"
         />
@@ -78,5 +86,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import './ForgotPasswordPage.scss';
+  @import './RecoverPasswordPage.scss';
 </style>
