@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <TheHeader /> -->
     <Navbar />
     <transition name="fade" mode="out-in">
       <router-view></router-view>
@@ -11,7 +10,6 @@
 
 <script>
 import TheFooter from '@/components/TheFooter';
-// import TheHeader from '@/components/TheHeader';
 import Navbar from '@/components/Navbar/Navbar.vue';
 
 export default {

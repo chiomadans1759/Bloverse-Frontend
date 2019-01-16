@@ -13,27 +13,104 @@ exports[`Navbar Component should render correctly 1`] = `
       <img
         class="logo"
         src="@/assets/Logo.svg"
-        style="height: 40px;"
       />
     </a>
      
-    <button
+    <div
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
-      class="navbar-toggler"
+      class="form-inline my-2 my-lg-0 navbar-toggler mobile-view"
       data-target="#navbarSupportedContent"
       data-toggle="collapse"
       type="button"
     >
-      <span
-        class="navbar-toggler-icon"
-      />
-    </button>
+      <a
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="nav-link dropdown-toggle"
+        data-toggle="dropdown"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+      >
+        <span
+          id="option-icon"
+        />
+         
+        <span
+          id="option-icon"
+        />
+         
+        <span
+          id="option-icon"
+        />
+      </a>
+       
+      <div
+        aria-labelledby="navbarDropdown"
+        class="dropdown-menu dropdown-mobile-view"
+      >
+        <a
+          class="dropdown-item"
+        >
+          About
+        </a>
+         
+        <a
+          class="dropdown-item"
+        >
+          Photo Contest
+        </a>
+         
+        <a
+          class="dropdown-item"
+        >
+          Terms
+        </a>
+         
+        <a
+          class="dropdown-item"
+        >
+          Privacy
+        </a>
+         
+        <a
+          class="dropdown-item"
+          href="#"
+        >
+          FAQ
+        </a>
+         
+        <div
+          class="dropdown-divider"
+        />
+         
+        <a
+          class="dropdown-item"
+          href="#"
+        >
+          Feedback
+        </a>
+      </div>
+       
+      <div>
+        <span
+          class="vl bg-light"
+        />
+         
+        <a
+          class="get-started-link"
+        >
+          
+            Get Started
+          
+        </a>
+      </div>
+    </div>
      
     <div
       class="collapse navbar-collapse"
-      id="right-nav"
     >
       <ul
         class="navbar-nav ml-auto"
@@ -103,10 +180,6 @@ exports[`Navbar Component should render correctly 1`] = `
             aria-labelledby="navbarDropdown"
             class="dropdown-menu"
           >
-            <div
-              class="triangle-up"
-            />
-             
             <a
               class="dropdown-item"
             >
@@ -143,37 +216,25 @@ exports[`Navbar Component should render correctly 1`] = `
       <div
         class="form-inline my-2 my-lg-0 pr-4"
       >
-        <div>
-          <button
-            class="btn btn-outline-primary btn-started"
-          >
-            <a
-              class="router-link"
-            >
-              
+        <a
+          class="get-started-link"
+        >
+          
             Get Started
           
-            </a>
-          </button>
-        </div>
+        </a>
          
         <span
           class="vl bg-light"
         />
          
-        <div>
-          <button
-            class="btn btn-primary"
-          >
-            <a
-              class="router-link"
-            >
-              
+        <a
+          class="publish-link"
+        >
+          
             Publish
           
-            </a>
-          </button>
-        </div>
+        </a>
       </div>
     </div>
   </nav>

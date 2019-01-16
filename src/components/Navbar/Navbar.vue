@@ -2,13 +2,32 @@
   <header id="feeds-header">
   <nav class="navbar navbar-expand-lg navbar-light bg-white px-5">
     <router-link to="/" class="router-link">
-      <img class="logo" src="@/assets/Logo.svg" style="height: 40px" />
+      <img class="logo" src="@/assets/Logo.svg" />
     </router-link>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="form-inline my-2 my-lg-0 navbar-toggler mobile-view" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span id="option-icon"/>
+        <span id="option-icon"/>
+        <span id="option-icon"/>
+      </a>
+      <div class="dropdown-menu dropdown-mobile-view" aria-labelledby="navbarDropdown">
+        <router-link to="/abouts" class="dropdown-item">About</router-link>
+        <router-link to="#" class="dropdown-item">Photo Contest</router-link>
+        <router-link to="/terms-and-conditions" class="dropdown-item">Terms</router-link>
+        <router-link to="/privacy-policies" class="dropdown-item">Privacy</router-link>
+        <a class="dropdown-item" href="#">FAQ</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Feedback</a>
+      </div>
+      <div>
+         <span class="vl bg-light"></span>
+          <router-link class="get-started-link" to="/login">
+            Get Started
+          </router-link>
+      </div>
+    </div>
 
-    <div class="collapse navbar-collapse" id="right-nav">
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
           <router-link to="/" class="nav-link"> Home <span class="sr-only">(current)</span></router-link>
@@ -26,7 +45,6 @@
             <span id="option-icon"/>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <div class="triangle-up"></div>
             <router-link to="/terms-and-conditions" class="dropdown-item">Terms</router-link>
             <router-link to="/privacy-policies" class="dropdown-item">Privacy</router-link>
             <a class="dropdown-item" href="#">FAQ</a>
@@ -36,17 +54,13 @@
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0 pr-4">
-        <Button customClass="btn btn-outline-primary btn-started">
-          <router-link to="/login" class="router-link">
+          <router-link class="get-started-link" to="/login">
             Get Started
           </router-link>
-        </Button>
         <span class="vl bg-light"></span>
-        <Button customClass="btn btn-primary">
-          <router-link to="/creators/apply" class="router-link">
+          <router-link class="publish-link" to="/creators/apply">
             Publish
           </router-link>
-         </Button>
       </div>
     </div>
 </nav>
@@ -56,10 +70,9 @@
 <script>
 import { Row, Col } from 'iview';
 import { mapState, mapActions } from "vuex";
-import Button from '../Button/Button.vue';
 
 export default {
-  components: { Row, Col, Button },
+  components: { Row, Col },
   methods: {
     ...mapActions(['clearSession'])
   },
