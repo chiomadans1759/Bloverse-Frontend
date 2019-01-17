@@ -6,7 +6,7 @@ import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
 
 import PostFeeds from '../src/views/PostFeeds.vue';
-import PostDisplay from '../src/views/PostDisplay.vue';
+import PostDisplay from '../src/views/general/singlePost/singlepost';
 
 
 import MyProfile from '../src/views/journalists/MyProfile.vue';
