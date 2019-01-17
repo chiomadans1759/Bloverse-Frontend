@@ -1,5 +1,5 @@
 <template>
-  <div class="forgot-password-container">
+  <div class="recover-password-container">
     <div class="top">
         <span class="top-left-container">
           <a href="/">
@@ -11,11 +11,11 @@
           </router-link>
         </span>
     </div>
-    <div class="forgot-password-content">
-        <h4 class="forgot-password-intro-one">Recover Password</h4>
-        <h5 class="forgot-password-intro-two">Enter your new password below</h5>
+    <div class="recover-password-content">
+        <h4 class="recover-password-intro-one">Recover Password</h4>
+        <h5 class="recover-password-intro-two">Enter your new password below</h5>
 
-      <div class="forgot-password-form-section">
+      <div class="recover-password-form-section">
         <text-input
           id="password"
           name="password"
@@ -37,15 +37,15 @@
         />
         <Button customClass="btn btn-primary primary-button">Send</Button>
 
-        <div class="grid-container">
-          <div class="grid-item">
-            <hr class="hr-text" />
+        <div class="password-grid-container">
+          <div class="password-grid-item">
+            <hr class="password-hr-text" />
           </div>
-          <div class="middle-grid-item">
-            <p><strong>Or</strong></p>
+          <div class="password-middle-grid-item">
+            <p><strong class="password-or-text">Or</strong></p>
           </div>
-          <div class="grid-item">
-            <hr class="hr-text" />
+          <div class="password-grid-item">
+            <hr class="password-hr-text" />
           </div>
         </div>
 
@@ -57,13 +57,13 @@
       </div>
     </div>
     <div class="bottom">
-      <p><span class="bloverse">Bloverse</span>  {{year}}. All rights reserved</p>
+      <p><span class="bloverse">Bloverse</span> {{year}}. All rights reserved</p>
     </div>
   </div>
 </template>
 
 <script>
-import Button from '@/components/button/button.vue';
+import Button from '@/components/Button/Button.vue';
 import TextInput from '@/components/TextInput/TextInput.vue';
 
 export default {

@@ -96,7 +96,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: rem(0.5fr) rem(0.5fr) rem(1.9fr);
+  grid-template-columns: 0.5fr 0.5fr 1.9fr;
 }
 
 .grid-item {
