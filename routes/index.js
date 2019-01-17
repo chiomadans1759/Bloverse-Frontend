@@ -24,7 +24,7 @@ import AdminHome from '../src/views/admin/Home.vue';
 
 import NotFound from '../src/views/NotFound.vue';
 import About from '../src/views/About.vue';
-import Terms from '../src/views/TermsAndConditions.vue';
+import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPage.vue';
 import Privacy from '../src/views/Privacy.vue';
 
 import Signin from '../src/views/general/Signin/SigninPage.vue';
