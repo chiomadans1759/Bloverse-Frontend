@@ -1,69 +1,66 @@
 <template>
   <div class="pagee">
-    <div id="img-carousel">
-      <div class="card related-posts-card" v-show="posts.length > 0">
-        <div class="card-header">
-          <h3 class="card-header-title">Most Read Topics</h3>
-        </div>
-        <!-- card body -->
-        <div class="card-body">
-          <div class="post" v-for="post in posts" :key="post.id">
-            <div class="row mt-3 mb-5">
-              <div class="col-xs-5">
-                <img :src="post.image_url" alt>
-              </div>
-
-              <div class="col-xs-7">
-                <router-link :to="`/posts/${post.slug}`">
-                  <h2>{{post.title}}</h2>
-                </router-link>
-                <p>{{post.created | customizedTime}}</p>
-              </div>
+    <!-- Desktop Layout -->
+    <div class="card related-posts-card" v-show="posts.length > 0">
+      <div class="card-header">
+        <h3 class="card-header-title">Most Read Topics</h3>
+      </div>
+      <div class="card-body">
+        <div class="post" v-for="post in posts" :key="post.id">
+          <div class="row mt-3 mb-5">
+            <div class="col-xs-5">
+              <img :src="post.image_url" alt>
             </div>
 
-            <hr>
+            <div class="col-xs-7">
+              <router-link :to="`/posts/${post.slug}`">
+                <h2>{{post.title}}</h2>
+              </router-link>
+              <p>{{post.created | customizedTime}}</p>
+            </div>
           </div>
+
+          <hr>
         </div>
       </div>
-      <!-- related card -->
-      <div>
-        <div class="related-card">
-          <h4
-            style="font-family: 'Montserrat', sans-serif; margin-top: 4rem; font-weight: bold;"
-          >Related Topics</h4>
-          <Row class="trending">
-            <carousel
-              paginationActiveColor="#096DD9"
-              paginationColor="#95C8D8"
-              :perPageCustom="[[768, 3], [600, 2], [300,1]]"
-              :autoplay="true"
-              :autoplayTimeout="4000"
-            >
-              <slide v-for="post in posts" :key="post.id" id="slider">
-                <Col>
-                  <div class="card-bodyy">
-                    <div class="post">
-                      <div class="row">
-                        <div class="col-xs-5">
-                          <img :src="post.image_url" alt height="100">
-                        </div>
+    </div>
 
-                        <div class="col-xs-7">
-                          <router-link to>
-                            <h2>{{post.title}}</h2>
-                          </router-link>
+    <!-- Mobile Layout -->
+    <div class="related-card">
+      <h4
+        style="font-family: 'Montserrat', sans-serif; margin-top: 4rem; font-weight: bold;">
+        Most Read Topics
+      </h4>
+      <Row class="trending">
+        <carousel
+          paginationActiveColor="#096DD9"
+          paginationColor="#95C8D8"
+          :perPageCustom="[[768, 3], [600, 2], [300,1]]"
+          :autoplay="true"
+          :autoplayTimeout="4000">
+          <slide v-for="post in posts" :key="post.id" id="slider">
+            <Col>
+              <div class="card-bodyy">
+                <div class="post">
+                  <div class="row">
+                    <div class="col-xs-5">
+                      <img :src="post.image_url" alt height="100">
+                    </div>
 
-                          <p>{{post.created | customizedTime}}</p>
-                        </div>
-                      </div>
+                    <div class="col-xs-7">
+                      <router-link to>
+                        <h2>{{post.title}}</h2>
+                      </router-link>
+
+                      <p>{{post.created | customizedTime}}</p>
                     </div>
                   </div>
-                </Col>
-              </slide>
-            </carousel>
-          </Row>
-        </div>
-      </div>
+                </div>
+              </div>
+            </Col>
+          </slide>
+        </carousel>
+      </Row>
     </div>
   </div>
 </template>

@@ -7,7 +7,8 @@
         <p class="card-text">{{post.title | truncate(50)}}</p>
         <div class="author mt-4">
           <img class="rounded mr-3" :src="post.author.image_url" alt>
-          <span>{{author_fullname | truncate(10)}}</span>
+          <span id="desktop">{{author_fullname | truncate(30)}}</span>
+          <span id="mobile">{{author_fullname | truncate(10)}}</span>
         </div>
       </div>
     </div>
@@ -108,9 +109,21 @@ export default {
     top: 100px;
   }
 
+  #trending-card .card .author #mobile {
+    display: none;
+  }
+
   @media only screen and (max-width: 980px) {
     #trending-card .card .card-img-overlay .card-text {
       font-size: 11px;
+    }
+
+    #trending-card .card .author #desktop {
+      display: none;
+    }
+
+    #trending-card .card .author #mobile {
+      display: block;
     }
   }
 
