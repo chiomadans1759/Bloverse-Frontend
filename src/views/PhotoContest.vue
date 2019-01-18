@@ -19,9 +19,7 @@
                     </div>
                 </div>
             </div>
-            <!--end of row-->
         </div>
-        <!--end of container-->
     </section>
     <section class="detail-wrap">
         <div class="container">
@@ -44,11 +42,10 @@
                     </div>
                 </div>
             </div>
-            <!--end of row-->
             <div class="row justify-content-center align-items-center detail-content">
                 <div class="col-lg-6 d-none d-xl-block d-lg-block">
                     <div class="d-flex justify-content-center image-wrap">
-                        <img class="img-fluid w-100" src="@/assets/photo4.jpg" alt=""> 
+                        <img class="img-fluid w-100" src="@/assets/photo3.png" alt=""> 
                     </div>
                 </div>
                 <div class="col-sm-10 col-md-9 col-lg-5 pl-lg-4">
@@ -59,7 +56,6 @@
                     </div>
                 </div>
             </div>
-            <!--end of row-->
             <div class="row justify-content-center align-items-center detail-content reward">
                 <div class="col-lg-3 col-md-5 col-sm-6">
                     <div class="card text-center gold mb-0">
@@ -106,31 +102,24 @@
                     </div>
                 </div>
             </div>
-            <!--<div class="row justify-content-center align-items-center detail-content reward">
-                <div class="col-lg-4">
-                    <div class="card platinum mb-0">
-                        <div class="card-body pt-0 d-flex justify-content-center">
-                            <img class="" src="@/assets/Silver-medal.svg" alt=""> 
-                            <div class="align-self-center">
-                                <div class="card-title font-weight-bold">Highest Ranked Creator</div>
-                                <div class="display-1 font-weight-normal">$100</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-            <!--end of row-->
         </div>
-        <!--end of container-->
     </section>   
     <section>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-
+                <div class="col-lg-8 col-md-10">
+                    <p class="mb-5">Contest is open to all residents of  Australia, Mexico, United States, Canada, United Kingdom, Ireland, Italy, France, Germany, Netherlands, United Arab Emirates, Pakistan, India, Singapore, Philippines, Hong Kong, Kenya, South Africa, Nigeria and Ghana.</p>
+										<div class="d-sm-flex align-items-center">
+											<h3 class="font-weight-bold">Spread The Word:</h3>
+											<ul class="list-unstyled social-round">
+													<li><a class="d-flex justify-content-center align-items-center rounded-circle facebook-color" href="https://www.facebook.com/bloverse/"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a class="d-flex justify-content-center align-items-center rounded-circle twitter-color" href="https://twitter.com/bloverse_world"><i class="fab fa-twitter"></i></a></li>
+													<li><a class="d-flex justify-content-center align-items-center rounded-circle linkedin-color" href="https://www.linkedin.com/company/bloverse1/"><i class="fab fa-linkedin-in"></i></a></li>
+											</ul>
+										</div>
                 </div>
             </div>
-
+						<the-footer />
         </div>
     </section>
   </main>
@@ -138,32 +127,22 @@
 
 <script>
 import PhotoContestHeader from '@/components/PhotoContestHeader';
+import TheFooter from "@/components/TheFooter";
 
 export default {
+  name: 'photo-contest',
   components: {
-    PhotoContestHeader
-  },
-  data: function() {
-    return {
-      
-    };
-  },
-
-  computed: {
-    
-  },
-  methods: {
-    
-  },
-
+    PhotoContestHeader,
+    TheFooter
+  }
 };
 </script>
 
 <style scoped>
-    #photo-contest {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
+#photo-contest {
+    font-size: 1rem;
+    line-height: 1.6;
+}
   section  {
     margin: 7rem 0;
   }
@@ -181,8 +160,8 @@ export default {
     opacity: .35;
   }
   .btn-play {
-        width: 4.5rem;
-        height: 4.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
   }
  .image-wrap {
     height: 23rem;
@@ -192,7 +171,6 @@ export default {
     position: relative;
     background: #FFF;
   }
-
  .image-wrap img {
     position: absolute;
     right: 0;
@@ -226,11 +204,11 @@ export default {
   .overlay {
     height: 100%;
     width: 100%;
-    position: absolute; /* Stay in place */
+    position: absolute;
     left: 0;
     top: 0;
-    background-color: #000; /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
+    background-color: #000;
+    overflow-x: hidden;
   }
   .reward .card {
       border: 1px solid !important;
@@ -244,16 +222,36 @@ export default {
     -webkit-transform: scale(1.22);
     z-index: 2;
     }
-  .reward .card img {
-  margin-top: -2px;
-  }
+		.reward .card img {
+			margin-top: -2px;
+		}
+		ul.social-round li {
+			display: inline-block;
+			margin-left: 1rem;
+		}
+		ul.social-round li:first-child {
+			margin-left: 2rem;
+		}
+		ul.social-round li a {
+			height: 3.5rem;
+			width: 3.5rem;
+			border: 1px solid rgba(0, 0, 0, 0.15);
+			color: #ffffff;
+		}
+		.facebook-color {
+			background-color: #3b5998;
+		}
+		.twitter-color {
+			background-color: #38A1F3;
+		}
+		.linkedin-color {
+			background-color: #0077B5;
+		}
     .reward .card.silver {
         border-color: #BCBEC0 !important;
     }
     .reward .card.gold {
         border-color: #E5B64E !important;
-            /*transform: scale(1.22);
-            z-index: 1;*/
     }
     .reward .card.bronze {
       border-color: #D37B40 !important;
@@ -270,6 +268,15 @@ export default {
     }
     
 @media (max-width: 576px) { 
+
+    ul.social-round {
+        margin-top: 1rem;
+    }
+    ul.social-round li:first-child {
+		margin-left: 0;
+	}
+ }
+ @media (max-width: 991.98px) { 
     .reward .card {
         margin-bottom: 2rem !important;
     }
@@ -279,7 +286,9 @@ export default {
     .detail-wrap .detail-content {
       margin-bottom: 3rem;
     }
- }
-
+    #photo-contest {
+        padding-bottom: 2rem;
+    }
+  }
 
 </style>
