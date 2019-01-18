@@ -5,8 +5,7 @@
       <div class="text-center">
         <p>Your post has been successfully published</p>
         <div class="posts">
-          <vue-goodshare-facebook :page_url="url" has_icon style="font-size: 25px;"></vue-goodshare-facebook>
-          <vue-goodshare-twitter :page_url="url" has_icon style="font-size: 25px;"></vue-goodshare-twitter>
+          <social-buttons :slug="post.slug"></social-buttons>
         </div>
       </div>
       <div slot="footer">
@@ -108,13 +107,6 @@
           </Col>
         </Row>
       </Form>
-      <!-- <Col id="otherside" :sm="10">
-        <Card id="display-post">
-          <h2 id="title">{{post.title}}</h2>
-          <DisplayImage :value="post.imageUrl" height="200px" width="100%" :can-edit="false"/>
-          <p v-html="post.body" id="body"></p>
-        </Card>
-      </Col>-->
     </div>
 
     <!-- PREVIEW POST  -->
@@ -171,8 +163,7 @@ import {
 } from "iview";
 import { mapState, mapActions, mapMutations } from "vuex";
 import { VueEditor } from "vue2-editor";
-import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
-import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
+import SocialButtons from '@/components/SocialButtons'
 
 import { Push } from 'vue-burger-menu';
 import DisplayImage from "./DisplayImage";
@@ -191,8 +182,7 @@ export default {
     Option,
     Modal,
     Alert,
-    VueGoodshareFacebook,
-    VueGoodshareTwitter,
+    SocialButtons,
     VueEditor,
     DisplayImage,
     DatePicker,
@@ -292,9 +282,6 @@ export default {
         this.$store.commit("setPost", props);
       }
     },
-    url() {
-      return `${this.$BASE_URL}posts/${this.post.slug}`;
-    },
 
     ...mapState(["general", "auth"])
   },
@@ -330,6 +317,10 @@ export default {
             if (success === true) {
               this.$Message.success("Post successfully saved");
               this.publishModal = shouldPublish;
+
+              //remove once social share after publish works fine
+              console.log('3. slug', this.post.slug) // eslint-disable-line no-console
+
               this.previewPost = false;
               this.clearTinyMceEditor();
               this.$store.commit("clearPost");

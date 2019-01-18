@@ -15,7 +15,7 @@ export default {
         let newUrl = await dispatch('doUpload', state.post.imageUrl, {root: true});
         commit('setPost', { imageUrl: newUrl });
       }
-      // The commented codes on this section are for implementing travelCompetition posts
+
       let userId = rootState.auth.loggedInUser.id;
       let payload;
 
@@ -85,7 +85,15 @@ export default {
         } = response.data.post;
 
         let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, location, duration, device_type };
+        
+        //remove once social share after publish works fine
+        console.log('1. slug', slug) // eslint-disable-line no-console
+
         commit('setPost', updatedPost);
+
+        //remove once social share after publish works fine
+        console.log('2. slug', state.post.slug) // eslint-disable-line no-console
+        
         commit('clearPost')
         return true;
       }
