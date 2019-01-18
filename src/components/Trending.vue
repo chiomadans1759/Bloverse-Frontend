@@ -190,18 +190,9 @@ export default {
     border-radius: 50%;
     width: 38px;
     height: 38px;
-    background: #bdc3c7; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #2c3e50,
-      #bdc3c7
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #2c3e50,
-      #bdc3c7
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border: 1px solid #aaaaaa;
+    background: #bdc3c7;
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
     filter: blur(0.5px);
   }
 
