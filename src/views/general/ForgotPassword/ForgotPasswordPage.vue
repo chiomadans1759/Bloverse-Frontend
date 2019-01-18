@@ -8,6 +8,7 @@
           </a>
           <router-link to="/" class="router-link">
             <img class="logo" src="@/assets/Logo - White.svg" />
+            <img class="blue-logo" src="@/assets/Logo.svg">
           </router-link>
         </span>
     </div>
@@ -27,7 +28,7 @@
           :onChange="onChange"
           custom-class="text-input"
         />
-        <Button customClass="btn btn-primary primary-button">Send</Button>
+        <Button customClass="btn btn-primary password-primary-button">Send</Button>
 
         <div class="password-grid-container">
           <div class="password-grid-item">
@@ -48,7 +49,7 @@
         </Button>
       </div>
     </div>
-    <div class="bottom">
+    <div class="password-bottom">
       <p><span class="bloverse">Bloverse</span> {{year}}. All rights reserved</p>
     </div>
   </div>

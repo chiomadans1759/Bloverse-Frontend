@@ -4,7 +4,7 @@
   padding-top: rem(20px);
   padding-bottom: rem(20px);
   background-color: #333333;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   color: white;
   background-repeat: no-repeat;
@@ -21,7 +21,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 5rem auto;
+  min-height: calc(100vh - 60px);
+  position: relative;
 }
 
 .sign-up-intro-one {
@@ -74,6 +75,7 @@
 .signup-creator-text {
   width: rem(281px);
   text-align: left;
+  margin-bottom: rem(70px);
 }
 
 .sign-up-creator-text {
@@ -86,13 +88,13 @@
   color: #096DD9 !important;
 }
 
+
+// These styles apply to other pages 
 .sign-up-new-bloverse-text {
   font-size: 14px;
   text-align: left;
   color: #ffffff;
 }
-
-// These styles apply to other pages 
 
 .grid-container {
   display: grid;
@@ -137,7 +139,7 @@
 .text-input {
   background-color: rgba(0, 0, 0, 0.45) !important;
   border-color: rgba(255, 255, 255, 0.15) !important;
-  color: white !important;
+  color: #ffffff !important;
 }
 
 .back-text {
@@ -163,4 +165,66 @@
 .logo {
   height: rem(40px);
   padding-left: rem(20px);
+}
+
+.blue-logo {
+  height: rem(40px);
+  visibility: hidden;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media (min-width: 320px) and (max-width: 480px) {
+  .text-input {
+    background-color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #868686 !important;
+  }
+
+  .sign-up-new-bloverse-text {
+    color: #565656;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 600px) { 
+  .sign-up-container {
+    background-color: #F5F5F5;
+    color: #252525;
+    background-image: none;
+  }
+
+  .logo {
+    visibility: hidden;
+    padding-left: 0.25rem;
+  }
+
+  .blue-logo {
+    visibility: visible;
+  }
+
+  .sign-up-social-button {
+    background-color: #ffffff !important;
+    width:  18.4375rem;
+  }
+
+  .primary-button {
+    width: 18.4375rem;
+  }
+}
+
+@media (min-width: 411px) and (max-width: 731px) { 
+  .sign-up-social-button {
+    width: 21.4375rem;
+  }
+
+  .primary-button {
+    width: 21.4375rem;
+  }
+
+  .sign-up-creator-text {
+    margin-left: rem(-27px);
+  }
+
+  .sign-up-terms-and-privacy {
+    margin-left: -3.6875rem;
+  }
 }

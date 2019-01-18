@@ -17,3 +17,16 @@
   outline: none;
   font-size: rem(16px);
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media (min-width: 320px) and (max-width: 480px) { 
+  .defaultClass {
+    width: rem(343px);
+  }
+}
+
+@media (min-width: 320px) and (max-width: 400px) { 
+  .text-input {
+    width: 18.4375rem;
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="recover-password-container">
+  <div class="new-password-container">
     <div class="top">
         <span class="top-left-container">
           <a href="/">
@@ -8,14 +8,15 @@
           </a>
           <router-link to="/" class="router-link">
             <img class="logo" src="@/assets/Logo - White.svg" />
+            <img class="blue-logo" src="@/assets/Logo.svg">
           </router-link>
         </span>
     </div>
-    <div class="recover-password-content">
-        <h4 class="recover-password-intro-one">Recover Password</h4>
-        <h5 class="recover-password-intro-two">Enter your new password below</h5>
+    <div class="new-password-content">
+        <h4 class="new-password-intro-one">New Password</h4>
+        <h5 class="new-password-intro-two">Enter your new password below</h5>
 
-      <div class="recover-password-form-section">
+      <div class="new-password-form-section">
         <text-input
           id="password"
           name="password"
@@ -35,7 +36,7 @@
           :onChange="onChange"
           custom-class="text-input"
         />
-        <Button customClass="btn btn-primary primary-button">Send</Button>
+        <Button customClass="btn btn-primary password-primary-button">Send</Button>
 
         <div class="password-grid-container">
           <div class="password-grid-item">
@@ -56,7 +57,7 @@
         </Button>
       </div>
     </div>
-    <div class="bottom">
+    <div class="password-bottom">
       <p><span class="bloverse">Bloverse</span> {{year}}. All rights reserved</p>
     </div>
   </div>
@@ -86,5 +87,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import './RecoverPasswordPage.scss';
+  @import './NewPasswordPage.scss';
 </style>

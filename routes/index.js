@@ -34,8 +34,8 @@ import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue
 import Homepage from '../src/views/general/Home/Homepage.vue';
 import SigninPage from '../src/views/general/Signin/SigninPage.vue';
 import ForgotPasswordPage from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
-import SignupPage from '../src/views/consumers/SignUpPage/SignUpPage';
-import RecoverPasswordPage from '../src/views/general/RecoverPassword/RecoverPasswordPage.vue';
+import SignupPage from '../src/views/consumers/SignUp/SignUpPage.vue';
+import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vue';
 
 const routes = [
   {
@@ -63,7 +63,7 @@ const routes = [
 
   { path: '/register', component: SignupPage},
 
-  { path: '/recover-password', component: RecoverPasswordPage},
+  { path: '/new-password', component: NewPasswordPage},
 
   {
     path: '/admin', component: BlankBase,

@@ -8,6 +8,7 @@
         </a>
         <router-link to="/" class="router-link">
           <img class="logo" src="@/assets/Logo - White.svg">
+          <img class="blue-logo" src="@/assets/Logo.svg">
         </router-link>
       </span>
     </div> 
@@ -60,7 +61,7 @@
           <router-link to="/forgot-password">Forgot password ?</router-link>
         </p>
 
-        <Button customClass="btn btn-primary primary-button">Login</Button>
+        <Button customClass="btn btn-primary sign-in-primary-button">Login</Button>
 
         <Button customClass="btn btn-outline-secondary secondary-button">
           <h2 class="sign-up-new-bloverse-text">New to Bloverse?
@@ -69,7 +70,7 @@
         </Button>
       </div>
       
-      <div class="signin-creator-text">
+      <div class="signin-creator-div">
         <h2 class="sign-in-creator-text">Content creator? 
         <router-link to="/creators/apply" class="router-link sign-up-apply-now-text">
           Apply
@@ -78,7 +79,7 @@
       </div>
     </div>
     <div class="bottom">
-      <p><span class="bloverse">Bloverse</span> {{year}}. All rights reserved</p>
+      <p><span class="bloverse">Bloverse</span> {{year}}. All Right Reserved</p>
     </div>
   </div>
 </template>
