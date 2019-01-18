@@ -58,7 +58,11 @@
             icon="fal fa-star"
             title="rankings"
             id="stat-point3"
-            :stats="{ key:[`${datas.worldRank? datas.worldRank[0].toString() : 0} / ${datas.worldRank ? datas.worldRank[1] : 0 }`, `${datas.countryRank? datas.countryRank[0].toString():0} / ${datas.countryRank?datas.countryRank[1] :0}` , `${datas.point?datas.point:0}`] , value:['Global' ,`${auth.loggedInUser.country.name}` , 'Ranking']}"
+            :stats="{ 
+              key:[`${datas.worldRank? datas.worldRank[0].toString() : 0} / ${datas.worldRank ? datas.worldRank[1] : 0 }`,
+                   `${datas.countryRank? datas.countryRank[0].toString():0} / ${datas.countryRank?datas.countryRank[1] :0}`, 
+                   `${datas.point?datas.point:0}`],
+                    value:['Global' ,`${auth.loggedInUser.country.name}` , 'Ranking']}"
           />
         </Col>
       </Row>
