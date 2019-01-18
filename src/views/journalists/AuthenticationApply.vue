@@ -1,14 +1,5 @@
 <template>
   <main id="auth-apply">
-    <!-- <Modal v-model="isSuccess" :width="726" id="success-modal">
-      <Alert type="success">Success!</Alert>
-      <p>
-        Your application has been sent to bloverse. A message will be sent to your mail to
-        continue the verification and approval process in 48hrs.
-      </p>
-      <div slot="footer"></div>
-    </Modal> -->
-
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
@@ -16,7 +7,6 @@
             <img class="logo" src="@/assets/Logo.svg" style="height: 40px" />
           </router-link>
           <h3 class="mt-3 mb-5">Join Bloverse as a content creator</h3>
-
           <Form ref="applyForm" :model="applicant" :rules="validateApplication">
             <Row type="flex" justify="space-between">
               <Col :sm="11" :xs="24">
@@ -30,7 +20,6 @@
                 </FormItem>
               </Col>
             </Row>
-
             <Row type="flex" justify="space-between">
               <Col :sm="11" :xs="24">
                 <FormItem prop="email" :error="errors.email">
@@ -41,30 +30,27 @@
                 <FormItem prop="phone" :error="errors.phoneNumber">
                     <select v-model="applicant.phoneCode" class="code-dropdown app_select_style">
                     <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
-                      <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}   
+                      <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}
                     </option>
                   </select>
                   <input class="my-input app_input_style" type="text" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
                 </FormItem>
               </Col>
             </Row>
-            
           <FormItem prop="linkedIn" :error="errors.linkedIn">
             <Input class="my-input" v-model="applicant.linkedInUsername" placeholder="Linkedln profile username" >
                 <span slot="prepend">https://www.linkedin.com/in/</span>
             </Input>
           </FormItem>
-          
           <FormItem prop="twitter" :error="errors.twitter">
             <Input class="my-input" v-model="applicant.twitterUsername" placeholder="Twitter profile username" >
                 <span slot="prepend">https://www.twitter.com/</span>
             </Input>
           </FormItem>
-          
           <FormItem prop="articles" :error="errors.articles" v-for="(value, index) in 3" :key="value">
             <Input class="my-input" v-model="applicant.articleURLs[index]" placeholder="Link to written article">
               <Select slot="prepend" v-model="applicant.articleProtocols[index]" style="width: 80px">
-                <Option value="https://">https://</Option> 
+                <Option value="https://">https://</Option>
                 <Option value="http://">http://</Option>
               </Select>
             </input>
@@ -72,11 +58,12 @@
           <Row type="flex" justify="space-between">
             <Col :sm="11" :xs="24">
               <FormItem prop="country" :error="errors.countryId">
-              <v-select :options="general.countries" 
-                        label="name" 
-                        placeholder="Country*" 
-                        class="my-select" 
-                        v-model="applicant.country">
+              <v-select
+                :options="general.countries"
+                label="name"
+                placeholder="Country*"
+                class="my-select"
+                v-model="applicant.country">
               </v-select>
               </FormItem>
             </Col>
@@ -87,14 +74,10 @@
               </FormItem>
             </Col>
           </Row>
-          <!--<FormItem prop="terms">
-            <Checkbox v-model="applicant.terms"><a id="terms" href="#" >I have agreed to terms and conditions</a></Checkbox>
-          </FormItem>-->
-
           <button class="btn btn-primary btn-block" @click.prevent="handleSubmit">SUBMIT</button>
           <div class="my-3 text-secondary">
             <h5>
-              By clicking apply, you agree to 
+              By clicking apply, you agree to
               <router-link to="/terms-and-conditions" class="text-link">Terms</router-link> 
               and <router-link to="/privacy-policies" class="text-link">Privacy</router-link>
             </h5>
@@ -106,7 +89,6 @@
       </div>
     </div>
     </div>
-
     <!-- Success Modal -->
     <div class="modal fade pt-5" id="successModal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
       <div class="modal-dialog pt-5" role="document">
@@ -345,7 +327,7 @@ export default {
 }
 
 #auth-apply .alert-success {
-  border-radius: 4px; 
+  border-radius: 4px;
   background-color: #009400;
   border-color: #009400;
 }
@@ -354,7 +336,7 @@ export default {
   margin-left: 2px;
   width: 78%;
   border: 1px solid #dcdcdc;
-} 
+}
 
 .app_select_style{
   border: 1px solid #dcdcdc;
@@ -370,6 +352,7 @@ export default {
   .main-apply {
     height: 100vh;
   }
+
   .app_input_style{
     margin-left: 0px;
     width: 68%;
@@ -458,6 +441,7 @@ export default {
   #success-modal p {
     width: 80%;
   }
+
   #success-modal .ivu-alert {
     width: 60%;
   }

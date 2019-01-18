@@ -20,7 +20,6 @@
     </section>
 </template>
 
-
 <script>
 import { Row, Col } from 'iview';
 

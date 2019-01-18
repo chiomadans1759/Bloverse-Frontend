@@ -7,7 +7,6 @@ export function initialize(store, router){
     const isAdmin = to.matched.some(record => record.meta.admin);
     const currentUser = store.state.auth.loggedInUser;
 
-    
     if(requiresAuth){
       if(isJournalist && store.getters.isAJournalist){
         next()
@@ -30,16 +29,12 @@ export function initialize(store, router){
            next('/creators')
          }
       }else if(to.path == '/admin/login' && store.getters.isAnAdmin){
-        
          next('/admin/dashboard');
       }else{
          next();
        }
     }
-
-   
   });
-
 
   axios.interceptors.response.use(null, (error) =>{
     if(error.response.status == 403){
@@ -48,7 +43,4 @@ export function initialize(store, router){
     }
     return Promise.reject(error);
   });
-
-  
-
 }

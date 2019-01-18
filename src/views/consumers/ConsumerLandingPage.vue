@@ -1,29 +1,27 @@
-<template> 
-    <main>
-      <div class="container"> 
-        <Col :md="6" :sm="8" :xs="24"  class="side-bar">  
-          <Col class ="side-menu">
-              <div class = "box1">   
-                <feed-categories></feed-categories>
-              </div>
-              
-              <div>
-                  <RecentlyRead/>  
-              </div>
-              
-              <div> 
-                  <RecentComments/> 
-              </div>
-         </Col>
-        </Col> 
-        <Col span="12" v-for="i in 3" :key="i">
-            <ConsumersFeedsCard/>   
+<template>
+  <main>
+    <div class="container">
+      <Col :md="6" :sm="8" :xs="24" class="side-bar">
+        <Col class="side-menu">
+          <div class="box1">
+            <feed-categories></feed-categories>
+          </div>
+          <div>
+            <RecentlyRead/>
+          </div>
+          <div>
+            <RecentComments/>
+          </div>
         </Col>
-        <Col>
-            <ConsumersAdverts />
-        </Col>
-      </div>
-    </main>   
+      </Col>
+      <Col span="12" v-for="i in 3" :key="i">
+        <ConsumersFeedsCard/>
+      </Col>
+      <Col>
+        <ConsumersAdverts/>
+      </Col>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -67,5 +65,4 @@ export default {
 .box1 {
   margin-top: 1.5rem;
 }
-
 </style>

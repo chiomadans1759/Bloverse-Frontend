@@ -1,4 +1,3 @@
-
 <template>
   <textarea v-model="value"></textarea>
 </template>
@@ -105,12 +104,6 @@ export default {
                   alert(msg);
                 }
               });
-              // setTimeout(function() {
-              //  // console.log($('iframe').contentWindow);
-              //  var iframe = document.getElementById('#mce_36_ifr');
-              //     iframe.contentWindow.twttr.widgets.load();
-
-              // }, 1000)
             }
           });
         }
@@ -209,13 +202,9 @@ export default {
   },
   methods: {
     setup: function(editor) {
-      // console.log(editor);
-
       editor.on("init", function(args) {
         this.editor_id = args.target.id;
-        // console.log(this.editor_id);
       });
-      // console.log(this.editor_id);
     }
   }
 };

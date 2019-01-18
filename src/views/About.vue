@@ -8,7 +8,6 @@
   Where the people are connected to creators
 </p>
 </div>
-
 <div class="about-body ">
   <div id="about-body-container">
     <img src="@/assets/photo1.png" alt="">
@@ -23,7 +22,7 @@
     <img src="@/assets/photo2.png" alt="">
     <div id="about-body-text">
       <h1>Goal</h1>
-      <p>Our goal is to give everyone a voice and a safe space to express it. With our data-driven approach we aim to ensure that you make the most of your data, with a personalized experienced that ensures you are never far away from the stories that matter to you, whilst also being exposed to the numerous angles to each story that are blocked out by the mainstream media.Our goal is to give everyone a voice and a safe space to express it. With our data-driven approach we aim to ensure that you make the most of your data, with a personalized experienced that ensures you are never far away from the stories that matter to you, whilst also being exposed to the numerous angles to each story that are blocked out by the mainstream media.</p>
+      <p>Our goal is to give everyone a voice and a safe space to express it. With our data-driven approach we aim to ensure that you make the most of your data, with a personalized experienced that ensures you are never far away from the stories that matter to you, whilst also being exposed to the numerous angles to each story that are blocked out by the mainstream media.</p>
     </div>
   </div>
 </div>
@@ -47,7 +46,6 @@
 </div>
 <div id="about-footer">
  <login-button class="btn btn-outline-primary" >GET STARTED</login-button>
-
 <p>Content Creator ?  <router-link to="/creators">Apply Now!</router-link> </p>
 </div>
 <div id="empty">
@@ -174,7 +172,6 @@
 </template>
 
 <script>
-
 import LoginButton from '@/components/LoginButton.vue'
 
 export default {
@@ -183,85 +180,99 @@ export default {
 </script>
 
 <style scoped>
-#about-container{
-text-align: center
+#about-container {
+  text-align: center
 }
-#about-title{
-font-size: 24px;
-font-weight: 600
+
+#about-title {
+  font-size: 24px;
+  font-weight: 600
 }
-#about-subtitle{
+
+#about-subtitle {
   font-size: 14px;
   font-weight:600;
   padding-top: 1em
 }
-#about-body-container{
+
+#about-body-container {
   display:flex;
- justify-content: space-between;
- height:217px;
+  justify-content: space-between;
+  height:217px;
 
 }
-#about-body-container div{
+
+#about-body-container div {
   background: white;
   padding:40px
 }
-#about-body-container img{
+
+#about-body-container img {
   width:263px;
-  
 }
-.about-body{
-width: 60%;
-margin: 50px auto;
-  /* margin:30px 50px */
+
+.about-body {
+  width: 60%;
+  margin: 50px auto;
 }
-#about-body-text h1{
+
+#about-body-text h1 {
   font-size: 16px;
   font-weight: 600;
   padding-bottom: 25px;
   margin-top: 5px;
 }
-#about-body-text p{
+
+#about-body-text p {
   font-size: 14px;
 }
-#about-body-container2{
+
+#about-body-container2 {
   display:flex;
   flex-direction: row-reverse;
 }
-#about-body-container2 div{
+
+#about-body-container2 div {
   background: white;
   padding:40px
 }
-#about-body-container2 img{
+
+#about-body-container2 img {
   width:263px;
   height:auto;
   object-fit: cover;
   object-position:left;
 }
-#about-body-container3{
+
+#about-body-container3 {
   display:flex;
   height:250px
 }
-#about-body-container3 div{
+
+#about-body-container3 div {
   background: white;
   padding:40px
 }
-#about-body-container3 img{
+
+#about-body-container3 img {
   width:263px;
-  
 }
-#about-strong{
+
+#about-strong {
   padding-top: 20px;
   font-weight: 600;
 }
-#about-footer{
+
+#about-footer {
   text-align: center;
   margin-bottom: 40px;
-
 }
+
 #about-footer button{
   border-radius: 0px !important;
 }
-#about-footer p{
+
+#about-footer p {
   background: white;
   width:20%;
   margin: auto;
@@ -269,20 +280,24 @@ margin: 50px auto;
   margin:30px auto;
   margin-bottom: 40px !important
 }
-#about-body-container4{
+
+#about-body-container4 {
   display:flex;
   flex-direction: row-reverse;
   height:371px
 }
-#about-body-container4 div{
+
+#about-body-container4 div {
   background: white;
   padding:40px
 }
-#about-body-container4 img{
+
+#about-body-container4 img {
   width:263px;
   object-fit: cover;
 }
-#empty{
+
+#empty {
   margin-top: 40px;
 }
 
@@ -466,85 +481,103 @@ border: 1px solid #096DD9;
 
 */
 @media screen and (max-width: 768px) {
-.about-body{
-  width:90%
+  .about-body{
+    width:90%
+  }
 }
 
-}
 @media screen and (max-width: 600px) {
   #about-body-container{
     height:auto
   }
-    #about-body-container2{
+
+  #about-body-container2{
     height:auto
   }
-    #about-body-container3{
+
+  #about-body-container3{
     height:auto
   }
-      #about-body-container4{
+
+  #about-body-container4{
     height:auto
   }
-#about-body-container2 img{
-  display:none
+
+  #about-body-container2 img{
+    display:none
+  }
+
+  #about-body-container img {
+    display:none
+  }
+
+  #about-body-container3 img {
+    display:none
+  }
+
+  #about-body-container4 img {
+    display:none
+  }
+
+  .about-body{
+    width:90%
+  }
+
+  #about-footer p{
+    width:90%
+  }
+
+  #empty{
+    margin-top: 100px
+  }
 }
 
-#about-body-container img {
-  display:none
-}
-#about-body-container3 img {
-  display:none
-}
-#about-body-container4 img {
-  display:none
-}
-.about-body{
-  width:90%
-}
-#about-footer p{
-  width:90%
-}
-#empty{
-  margin-top: 100px
+@media screen and (max-width: 360px) {
+  .about-body{
+    width:90%
+  }
+
+  #about-body-container{
+    height:auto
+  }
+
+  #about-body-container2{
+    height:auto
+  }
+
+  #about-body-container3{
+    height:auto
+  }
+
+  #about-body-container4{
+    height:auto
+  }
+
+  #about-body-container2 img{
+    display:none
+  }
+
+  #about-body-container img {
+    display:none
+  }
+
+  #about-body-container3 img {
+    display:none
+  }
+
+  #about-body-container4 img {
+    display:none
+  }
+
+  #about-footer p{
+    width:90%
+  }
+
+  #empty{
+    margin-top: 100px
+  }
 }
 
-     }
-      @media screen and (max-width: 360px) {
-.about-body{
-  width:90%
-}
-#about-body-container{
-  height:auto
-}
-#about-body-container2{
-  height:auto
-}
-#about-body-container3{
-  height:auto
-}
-#about-body-container4{
-  height:auto
-}
-#about-body-container2 img{
-  display:none
-}
-#about-body-container img {
-  display:none
-}
-#about-body-container3 img {
-  display:none
-}
-#about-body-container4 img {
-  display:none
-}
-#about-footer p{
-  width:90%
-}
-#empty{
-  margin-top: 100px
-}
-
-      }
 @media only screen and (max-width: 768px) {
-    
-} 
+}
 </style>

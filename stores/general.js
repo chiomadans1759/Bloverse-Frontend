@@ -13,6 +13,7 @@ export default {
     activeFeedLayout: 'grid',
     applicants: [],
     publishedPosts: [],
+    publishedPostsLoading: false,
     draftPosts: [],
     trendingPost: [],
     currentPost: {},
@@ -23,9 +24,7 @@ export default {
     relatedPosts: {},
   },
   actions: {
-    async setGeneralData({
-      commit
-    }) {
+    async setGeneralData({ commit }) {
       let response, categories, countries;
 
       response = await Api.get('categories/');
@@ -130,13 +129,18 @@ export default {
     },
     async processApplicant(context, applicant) {
       let { id, status } = applicant;
-      //let response = 
       let response = await Api.put('applicants/' + id + '/', {status}, true);
       return response.statusCode === 200;   
     },
     async getAllPublishedPosts({ commit }, { category = "", country = "" }) {
-      let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
-      commit('setPublishedPosts', response.data.posts);
+      try {
+        commit('setPublishedPostsLoading', true);
+        let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
+        commit('setPublishedPosts', response.data.posts);
+        return commit('setPublishedPostsLoading', false);
+      } catch (error) {
+        commit('fetchCountriesFailure', 'Failed to fetch published posts!');        
+      }
     },
     async getAllDraftPosts({ commit }, { category = "", country = "" }) {
       let response = await Api.get(`posts?is_published=false&category=${category}&country=${country}`);
@@ -157,12 +161,12 @@ export default {
     async getSimilarPosts({ commit }, { post_id, threshold }) {
       let response = await Api.get(`posts/${post_id}/similar/?threshold=${threshold}`);
       commit('setRelatedPosts', response.data.posts);
+    },
+    publishedPostsIsLoading({ commit }, loading) {
+      commit('setPublishedPostsLoading', loading);
     }
   },
   mutations: {
-    /*setState(state, params){
-      state = {...state, ...params}
-    }*/
     setTinyMiceValue(state, value) {
       state.tinyMiceValue = value;
     },
@@ -177,6 +181,9 @@ export default {
     },
     setApplicants(state, applicants) {
       state.applicants = applicants;
+    },
+    setPublishedPostsLoading(state, loading) {
+      state.publishedPostsLoading = loading;
     },
     setPublishedPosts(state, posts) {
       state.publishedPosts = posts;

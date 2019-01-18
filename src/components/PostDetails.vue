@@ -5,18 +5,15 @@
         <div class="col">
           <h5 class="card-header-title text-uppercase" v-if="show">{{category.name}}</h5>
         </div>
-
         <div class="col-auto">
-          <h6
-            class="text-secondary text-uppercase"
-          >{{general.currentPost.created | customizedTime}}</h6>
+          <h6 class="text-secondary text-uppercase">{{general.currentPost.created | customizedTime}}</h6>
         </div>
       </div>
     </div>
-
+    <!-- card body -->
     <div class="card-body">
       <img class="post-img" :src="general.currentPost.image_url">
-    
+
       <h1 class="post-title mt-4">{{general.currentPost.title}}</h1>
       <ul class="post-keypoints">
         <li v-for="point in general.currentPost.keypoint" 
@@ -36,14 +33,14 @@ import { mapState } from "vuex";
 
 export default {
   name: "post-details",
-  data(){
-    return{
+  data() {
+    return {
       show: false,
       imageShow: false
-    }
+    };
   },
-  watch:{
-    'category': {
+  watch: {
+    category: {
       handler: function(newItem) {
         this.show = true;
       },
@@ -65,79 +62,76 @@ export default {
 };
 </script>
 
-<style>
-.post-content-body {
-  display:flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: space-between;
-  object-fit: contain;
-}
-
-.post-content-body  img {
-  display:flex;
-  width: 100%;
-  justify-content: space-between;
-  object-fit: contain;
-}
-</style>
-
 <style scoped>
-#post-details .card-header {
-  width: 100%;
-}
-
-#post-details .card-header .card-header-title {
-  display: block;
-}
-
-#post-details .post-img {
-  width: 100%;
-  height: 398px;
-  margin-bottom: 1rem;
-  object-fit: cover;
-}
-
-.card-body {
-  margin-top: -1rem;
-}
-
-#post-details .img-descrip {
-  color: #aaaaaa;
-  font-size: 11px;
-}
-
-#post-details .post-cat {
-  color: #666666;
-  font-size: 12px;
-  padding-bottom: 16px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-#post-details .date-cat {
-  color: #aaaaaa;
-  font-size: 10px;
-  padding-bottom: 16px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-#post-details .post-keypoints li {
-  list-style-type: circle;
-  margin-left: 2rem;
-  margin-top: 0.7rem;
-  color: #aaaaaa;
-}
-
-#post-details .post-content {
-  padding: 3rem 0rem;
-}
-
-@media only screen and (max-width: 980px) {
-  #post-details .card {
-    margin-top: 3rem;
+  .post-content-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    object-fit: contain;
   }
-}
-</style>
 
+  .post-content-body img {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    object-fit: contain;
+  }
+
+  #post-details .card-header {
+    width: 100%;
+  }
+
+  #post-details .card-header .card-header-title {
+    display: block;
+  }
+
+  #post-details .post-img {
+    width: 100%;
+    height: 398px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+  }
+
+  .card-body {
+    margin-top: -1rem;
+  }
+
+  #post-details .img-descrip {
+    color: #aaaaaa;
+    font-size: 11px;
+  }
+
+  #post-details .post-cat {
+    color: #666666;
+    font-size: 12px;
+    padding-bottom: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  #post-details .date-cat {
+    color: #aaaaaa;
+    font-size: 10px;
+    padding-bottom: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  #post-details .post-keypoints li {
+    list-style-type: circle;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    color: #aaaaaa;
+  }
+
+  #post-details .post-content {
+    padding: 3rem 0rem;
+  }
+
+  @media only screen and (max-width: 980px) {
+    #post-details .card {
+      margin-top: 3rem;
+    }
+  }
+</style>

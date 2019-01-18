@@ -1,24 +1,24 @@
 <template>
   <BaseDocs
     title="Ranking System"
-    about='Have a points-based system for each article read based on the following metrics;'
+    about="Have a points-based system for each article read based on the following metrics;"
   >
     <Row type="flex" justify="right">
       <Col>
-        <h3 class="">Ranking System</h3>
+        <h3 class>Ranking System</h3>
       </Col>
-    </Row> 
-    <div> 
+    </Row>
+    <div>
       <ol>
-        <li v-for="rank in ranks" :key="rank.id"> 
-         <b>{{rank.question}}</b><br>
-         {{rank.answer}}
+        <li v-for="rank in ranks" :key="rank.id">
+          <b>{{rank.question}}</b>
+          <br>
+          {{rank.answer}}
         </li>
       </ol>
     </div>
   </BaseDocs>
 </template>
-
 
 <script>
 import { Row, Col, Input } from "iview";
@@ -40,6 +40,7 @@ export default {
   }
 };
 </script>
+
 <style scoped>
 ol {
   list-style: circle;
@@ -47,7 +48,6 @@ ol {
 }
 
 li {
-  /* counter-increment: custom; */
   font-size: 14px;
   line-height: 19px;
   margin-bottom: 12px;
