@@ -4,7 +4,7 @@
       <div class="container">
       
         <div class="row">
-            <div class="col-8">
+            <div class="col-12 col-sm-8 col-md-8 col-lg-8">
               <div class="card">
                 <a class="img_fetch">
                   <img :src="require('@/assets/photo4.jpg')" alt="" class="img-responsive">
@@ -37,28 +37,28 @@
                     <div class="more_imgs">
                       <p><b>More Images</b></p>
                       <div class="row">
-                        <div class="col-3">
+                        <div class="col-6 col-sm-3 col-md-3 col-lg-3">
                           <img :src="require('@/assets/signin.jpg')" alt="" class="img-responsive">
                         </div>
-                        <div class="col-3">
+                        <div class="col-6 col-sm-3 col-md-3 col-lg-3">
                           <img :src="require('@/assets/signin.jpg')" alt="" class="img-responsive">
                         </div>
-                        <div class="col-3">
+                        <div class="col-6 col-sm-3 col-md-3 col-lg-3">
                           <img :src="require('@/assets/signin.jpg')" alt="" class="img-responsive">
                         </div>
-                        <div class="col-3">
+                        <div class="col-6 col-sm-3 col-md-3 col-lg-3">
                           <img :src="require('@/assets/signin.jpg')" alt="" class="img-responsive">
                         </div>
-                        <div class="col-3">
+                        <div class="col-6 col-sm-3 col-md-3 col-lg-3">
                           <img :src="require('@/assets/signin.jpg')" alt="" class="img-responsive">
                         </div>
-                        <div class="col-3">
+                        <div class="col-6 col-sm-3 col-md-3 col-lg-3">
                           <img :src="require('@/assets/signin.jpg')" alt="" class="img-responsive">
                         </div>
-                        <div class="col-3">
+                        <div class="col-6 col-sm-3 col-md-3 col-lg-3">
                           <img :src="require('@/assets/signin.jpg')" alt="" class="img-responsive">
                         </div>
-                        <div class="col-3">
+                        <div class="col-6 col-sm-3 col-md-3 col-lg-3">
                           <img :src="require('@/assets/signin.jpg')" alt="" class="img-responsive">
                         </div>
                       </div>
@@ -69,16 +69,16 @@
               </div>
               <br>
               <div class="card about_content--creator">
-                <p><b>The Content Creator</b></p><br>
+                <p><span style="font-weight: 600">The Content Creator</span></p><br>
                 <div class="media">
                   <img :src="require('@/assets/photo4.jpg')" class="img-responsive mr-3">
                   <div class="media-body">
                     <div class="row">
-                      <div class="col-9">
+                      <div class="col-12 col-sm-9 col-md-9 col-lg-9">
                         <h5 class="mt-0"><b>John Doe</b></h5>
                         <p>Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpretaris, sed diceret concludatque no. Verear habemus nibh scripta in.</p>
                       </div>
-                      <div class="col-3">
+                      <div class="col-12 col-sm-3 col-md-3 col-lg-3">
                          <p><button class="btn btn-primary">Follow</button></p>
                       </div>
                     </div>
@@ -90,7 +90,7 @@
               </div>
               <br>
               <div class="card comment_content--creator">
-                <p><b>Comments</b></p>
+                <p class="mb-2"><span style="font-weight: 600">Comments</span></p>
                 <p>Want to Join the conversation ? <router-link to="/register">Sign Up</router-link></p><br>
                 <div class="media">
                  <img :src="require('@/assets/signin-image.jpg')" alt="" class="img-responsive mr-3">
@@ -118,7 +118,7 @@
               </div><br><br><br>
             </div>
 
-            <div class="col-4 related__articles">
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 related__articles">
               <p class="mb-2"><b>Related Articles</b></p>
               <div class="card">
                 <div class="content_card_wrapper--related">

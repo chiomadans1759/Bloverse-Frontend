@@ -8,13 +8,13 @@ text-align: left
     margin: 50px auto;
 }
 #about-title {
-    font-size: 32px;
+    font-size: rem(32px);
     font-weight: 100;
     margin-top: -3%;
     color: #000;
 }
 #about-subtitle {
-    font-size: 17px;
+    font-size: rem(17px);
     font-weight: 100;
     padding-top: 0.7em;
     margin-bottom: 5%;
@@ -23,33 +23,33 @@ text-align: left
 .about-body-container{
   display:flex;
  justify-content: space-between;
- height:217px;
+ height:rem(217px);
   div{
     background: white;
     padding:40px
   }
   img{
-    width:263px;
+    width:rem(263px);
     
   }
 }
 
 .about-body{
   width: 60%;
-  margin: 50px auto;
+  margin: rem(50px) auto;
   /* margin:30px 50px */
 }
 #about-body-text{
    p {
-    font-size: 14px;
+    font-size: rem(14px);
     font-weight: 100;
     color: #292929;
   }
   h1 {
-      font-size: 21px;
+      font-size: rem(21px);
       font-weight: 900;
-      padding-bottom: 12px;
-      margin-top: 5px;
+      padding-bottom: rem(12px);
+      margin-top: rem(5px);
       color: #000;
   }
 }
@@ -60,33 +60,33 @@ text-align: left
 }
 .about-body-container2 div{
   background: white;
-  padding:40px
+  padding:rem(40px)
 }
 .about-body-container2 img{
-  width:263px;
+  width:rem(263px);
   height:auto;
   object-fit: cover;
   object-position:left;
 }
 .about-body-container3{
   display:flex;
-  height:250px
+  height:rem(250px)
 }
 .about-body-container3 div{
   background: white;
-  padding:40px
+  padding:rem(40px)
 }
 .about-body-container3 img{
-  width:263px;
+  width:rem(263px);
   
 }
 #about-strong{
-  padding-top: 20px;
+  padding-top: rem(20px);
   font-weight: 600;
 }
 #about-footer{
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: rem(40px);
 
 }
 #about-footer button{
@@ -96,25 +96,25 @@ text-align: left
   background: white;
   width:20%;
   margin: auto;
-  padding:8px;
+  padding:rem(8px);
   margin:30px auto;
-  margin-bottom: 40px !important
+  margin-bottom: rem(40px) !important
 }
 .about-body-container4{
   display:flex;
   flex-direction: row-reverse;
-  height:371px
+  height:rem(371px)
 }
 .about-body-container4 div{
   background: white;
-  padding:40px
+  padding:rem(40px)
 }
 .about-body-container4 img{
-  width:263px;
+  width:rem(263px);
   object-fit: cover;
 }
 #empty{
-  margin-top: 40px;
+  margin-top: rem(40px);
 }
 
 @media screen and (max-width: 768px) {
