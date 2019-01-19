@@ -7,6 +7,7 @@ import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
 
 import PostFeeds from '../src/views/PostFeeds.vue';
 import PostDisplay from '../src/views/PostDisplay.vue';
+import PhotoContest from '../src/views/PhotoContest.vue';
 
 
 import MyProfile from '../src/views/journalists/MyProfile.vue';
@@ -58,7 +59,11 @@ const routes = [
       { path: '/privacy-policies', component: Privacy}
     ]
   },
- 
+  
+  {
+    path: '/photo-contest', component: PhotoContest,
+  },
+
   {
     path: '/admin', component: BlankBase,
     children: [
