@@ -1,11 +1,11 @@
 <template>
   <main id="create-basic-post">
-    <Modal v-model="publishModal">
+    <Modal v-model="publishModal" @on-visible-change="handleModalChange">
       <Alert type="success">Success</Alert>
       <div class="text-center">
         <p>Your post has been successfully published</p>
         <div class="posts">
-          <social-buttons :slug="post.slug"></social-buttons>
+          <social-buttons :slug="slug"></social-buttons>
         </div>
       </div>
       <div slot="footer">
@@ -139,28 +139,18 @@
             </div>
           </div>
         </div>
+        <div slot="footer"></div>
       </Modal>
     </div>
   </main>
 </template>
 
 <script>
+
 import {
-  Row,
-  Col,
-  Card,
-  Input,
-  Upload,
-  Icon,
-  Button,
-  Select,
-  Option,
-  Modal,
-  Alert,
-  Form,
-  FormItem,
-  DatePicker
+  Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, Form, FormItem, DatePicker
 } from "iview";
+
 import { mapState, mapActions, mapMutations } from "vuex";
 import { VueEditor } from "vue2-editor";
 import SocialButtons from '@/components/SocialButtons'
@@ -196,6 +186,10 @@ export default {
 
   data: function() {
     return {
+      slug: null,
+      post: {
+        keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }]
+      },
       errors: {},
       previewPost:false,
       max: 150,
@@ -274,16 +268,7 @@ export default {
   },
 
   computed: {
-    post: {
-      get() {
-        return this.$store.state.journalist.post;
-      },
-      set(props) {
-        this.$store.commit("setPost", props);
-      }
-    },
-
-    ...mapState(["general", "auth"])
+    ...mapState(["general", "auth", "journalist"])
   },
 
   methods: {
@@ -292,6 +277,19 @@ export default {
     ...mapMutations(["setPost", "clearPost"]),
     previewPosts(){
       this.previewPost = true;
+    },
+    setPost(params){
+      this.post = {...this.post, ...params};
+    },
+    clearPost(){
+      this.post = { keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }] }
+    },
+    handleModalChange(status){
+      if(!status)
+        this.takeToMyPosts();
+    },
+    takeToMyPosts(){
+      this.$router.push({path: `/creators/${this.auth.loggedInUser.userName}/posts`})
     },
     handleProcessPost: async function(shouldPublish = false) {
       this.errors = {};
@@ -309,21 +307,32 @@ export default {
           }
           if (this.post.imageUrl) {
             this.isPublishing = true;
-            let success = await this.processPost({
+            let response = await this.processPost({
               shouldPublish,
-              shouldUploadImage: this.isNewImage
+              shouldUploadImage: this.isNewImage,
+              post: this.post
             });
+            
+            let success = !!response.id;
+
             this.isPublishing = false;
-            if (success === true) {
+            if (success) {
+              this.post = response;
               this.$Message.success("Post successfully saved");
               this.publishModal = shouldPublish;
 
-              //remove once social share after publish works fine
-              console.log('3. slug', this.post.slug) // eslint-disable-line no-console
+              if(shouldPublish){
+                this.slug = this.post.slug //gets value of slug before clearing post object - for purpose of social share
+                this.clearTinyMceEditor();
+                this.clearPost()
+              }else{
+                //perform action if save as draft
+
+                // uncomment next line if edit features now work well.
+                //this.takeToMyPosts()
+              }
 
               this.previewPost = false;
-              this.clearTinyMceEditor();
-              this.$store.commit("clearPost");
               
             }
             if (success.errors) {

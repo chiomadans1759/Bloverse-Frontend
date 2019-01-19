@@ -1,5 +1,5 @@
 <template>
-  <Modal v-model="general.modal.show" width="1050" :styles="{top: '20px'}">
+  <Modal id="main-modal" v-model="general.modal.show" width="1050" :styles="{top: '20px'}">
     <div id="loginmodal-mainbody">
       <component :is="general.modal.currentComponent"></component>
     </div>
@@ -169,7 +169,7 @@ export default {
 		border-radius: 8px !important;
 	}
 
-	.ivu-modal-footer {
+	#main-modal .ivu-modal-footer {
 		display: none;
 	}
 

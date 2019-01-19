@@ -1,6 +1,37 @@
 <template>
   <main class="wrapper" id="journalist-account-sidebar">
-    <!-- Sidebar -->
+    <Push class="side">
+      <div class="dashboard-image">
+        <img :src="auth.loggedInUser.imageUrl">
+      </div>
+      <a id="home" :href="`/creators/${auth.loggedInUser.userName}/dashboard`">
+        <i class="far fa-th-large"></i>
+        <span>Dashboard</span>
+      </a>
+      <a id="home" :href="`/creators/${auth.loggedInUser.userName}/posts/create`">
+        <i class="fal fa-plus"></i>
+        <span>Create Content</span>
+      </a>
+      <a id="home" :href="`/creators/${auth.loggedInUser.userName}/posts`">
+        <i class="fal fa-rocket"></i>
+        <span>My Posts</span>
+      </a>
+      <a id="home" href @click.prevent="logOut">
+        <i class="fal fa-power-off" style="color: #D9091E; font-size:16px; "></i>
+        <span>Sign Out</span>
+      </a>
+      <div class="overlayed-text">
+        <div class="overlayed-content">
+          <img :src="auth.loggedInUser.imageUrl">
+          <p
+            class="text-white"
+            style="text-transform: capitalize; margin-left: -1.6rem"
+          >{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</p>
+        </div>
+      </div>
+    </Push>
+
+
     <div class="sidebar-header">
       <router-link to="/" class="router-link">
         <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
@@ -66,6 +97,8 @@
 <script>
 import { Row, Col } from "iview";
 import { mapState, mapActions } from "vuex";
+import { Push } from "vue-burger-menu";
+
 import JournalistAccountNav from "@/components/JournalistAccountNav";
 import LoginButton from "./LoginButton";
 import JournalistAccountFooter from "@/components/JournalistAccountFooter";
@@ -76,7 +109,8 @@ export default {
     Col,
     LoginButton,
     JournalistAccountNav,
-    JournalistAccountFooter
+    JournalistAccountFooter,
+    Push
   },
   methods: {
     ...mapActions(["clearSession"]),
@@ -96,7 +130,8 @@ export default {
 </script>
 
 <style scoped>
-  .mobile-menu {
+
+  .side {
     display: none;
   }
 
@@ -162,8 +197,85 @@ export default {
   .desktop-side {
     display: block;
   }
+  
 
   @media screen and (max-width: 600px) {
+
+    .side {
+      display: block;
+      display: block;
+      margin-top: -2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .side img {
+      width: 130%;
+      height: 172px;
+      margin-left: -2.5rem !important;
+      filter: blur(10px);
+      -webkit-filter: blur(10px);
+    }
+
+    .side .overlayed-text {
+      overflow: hidden;
+      position: absolute;
+      left: -100px;
+      top: 90px;
+    }
+
+    .side .overlayed-text .overlayed-content img {
+      filter: none;
+      width: 55%;
+      height: 100px;
+      object-fit: contain;
+      margin-left: -2rem;
+    }
+
+    .side .overlayed-content {
+      height: 120px;
+      margin-left: -2rem;
+    }
+
+    .bm-burger-button {
+      position: fixed;
+      width: 18px;
+      height: 12px;
+      left: 36px;
+      top: 36px;
+      cursor: pointer;
+    }
+
+    .bm-burger-bars {
+      background-color: #525358;
+    }
+
+    .bm-item-list {
+      color: #b8b7ad;
+      margin-left: 5%;
+      font-size: 14px;
+    }
+
+    .bm-menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: #f5f5f5;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+    }
+
+    .bm-item-list > * > span {
+      margin-left: 14px;
+      color: #222222;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
     .desktop-side {
       display: none;
     }
@@ -171,10 +283,6 @@ export default {
     .sidebar-header {
       display: none;
     }
-
-    .mobile-menu {
-      display: block;
-      z-index: 8000 !important;
-    }
   }
+  
 </style>
