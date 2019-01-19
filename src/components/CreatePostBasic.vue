@@ -128,7 +128,7 @@
             <ul v-for="(keypoint) in post.keyPoints" :key="keypoint.value">
               <li>{{keypoint.value}}</li>
             </ul>
-            <p v-html="post.body"></p>
+            <p v-html="post.body" id="content"></p>
             <div class="text-center mt-4 mx-5">
               <Button
                 id="btn-publish"
@@ -479,6 +479,11 @@ export default {
     width: 100%;
     margin-bottom: 10px;
   }
+}
+
+#create-basic-post .previewMade #content {
+  width: 100% !important;
+  overflow-x: hidden !important;
 }
 
 .container-fluid.previewMade p {
