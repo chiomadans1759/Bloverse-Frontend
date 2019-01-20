@@ -12,7 +12,7 @@
           </router-link>
         </span>
     </div>
-    <div class="new-password-content">
+    <div class="new-password-content d-flex flex-column justify-content-center align-items-center">
         <h4 class="new-password-intro-one">New Password</h4>
         <h5 class="new-password-intro-two">Enter your new password below</h5>
 
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="password-bottom">
-      <p><span class="bloverse">Bloverse</span> {{year}}. All rights reserved</p>
+      <p><span class="bloverse">Bloverse</span> {{year}}. All Right reserved</p>
     </div>
   </div>
 </template>

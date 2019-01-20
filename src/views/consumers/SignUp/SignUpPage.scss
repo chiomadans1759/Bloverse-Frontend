@@ -5,7 +5,6 @@
   padding-bottom: rem(20px);
   background-color: #333333;
   min-height: 100vh;
-  overflow: hidden;
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,10 +16,6 @@
 }
 
 .sign-up-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   min-height: calc(100vh - 60px);
   position: relative;
 }
@@ -45,6 +40,7 @@
 .sign-up-social-button {
   width: rem(281px);
   height: rem(38px);
+  border-radius: 0 !important;
 }
 
 .sign-up-social-button:hover {
@@ -53,13 +49,6 @@
 
 .sign-up-facebook-btn {
   margin-bottom: rem(-10px);
-}
-
-.sign-up-form-section {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
 
 .sign-up-terms-and-privacy {
@@ -136,12 +125,6 @@
   color: #096DD9 !important;
 }
 
-.text-input {
-  background-color: rgba(0, 0, 0, 0.45) !important;
-  border-color: rgba(255, 255, 255, 0.15) !important;
-  color: #ffffff !important;
-}
-
 .back-text {
   font-size: rem(16px);
 }
@@ -172,24 +155,24 @@
   visibility: hidden;
 }
 
+.primary-button {
+  background-image: linear-gradient( to left, #2F80ED, #003CE1);
+  width: rem(281px);
+  height: rem(38px);
+  margin-bottom: rem(8px);
+  border-radius: 0 !important;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media (min-width: 320px) and (max-width: 480px) {
-  .text-input {
-    background-color: #FFFFFF !important;
-    border-color: rgba(255, 255, 255, 0.15) !important;
-    color: #868686 !important;
+.sign-up-container {
+    background-color: #F5F5F5;
+    color: #252525;
+    background-image: none;
   }
 
   .sign-up-new-bloverse-text {
     color: #565656;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 600px) { 
-  .sign-up-container {
-    background-color: #F5F5F5;
-    color: #252525;
-    background-image: none;
   }
 
   .logo {
@@ -203,28 +186,5 @@
 
   .sign-up-social-button {
     background-color: #ffffff !important;
-    width:  18.4375rem;
-  }
-
-  .primary-button {
-    width: 18.4375rem;
-  }
-}
-
-@media (min-width: 411px) and (max-width: 731px) { 
-  .sign-up-social-button {
-    width: 21.4375rem;
-  }
-
-  .primary-button {
-    width: 21.4375rem;
-  }
-
-  .sign-up-creator-text {
-    margin-left: rem(-27px);
-  }
-
-  .sign-up-terms-and-privacy {
-    margin-left: -3.6875rem;
   }
 }

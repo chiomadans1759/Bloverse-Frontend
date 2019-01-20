@@ -12,7 +12,7 @@
         </router-link>
       </span>
     </div> 
-    <div class="sign-up-content">
+    <div class="sign-in-content d-flex flex-column justify-content-center align-items-center">
       <div>
         <h4 class="sign-in-intro-one">Welcome Back</h4>
         <h5 class="sign-in-intro-two">Login With</h5>
@@ -46,7 +46,6 @@
           placeholder="Email"
           :value="email"
           :onChange="onChange"
-          custom-class="text-input"
         />
         <text-input
           id="password"
@@ -55,10 +54,9 @@
           placeholder="Password"
           :value="password"
           :onChange="onChange"
-          custom-class="text-input"
         />
-        <p class="forgot-password-link">
-          <router-link to="/forgot-password">Forgot password ?</router-link>
+        <p class="forgot-password-link d-flex justify-content-end">
+          <router-link to="/forgotpassword">Forgot password ?</router-link>
         </p>
 
         <Button customClass="btn btn-primary sign-in-primary-button">Login</Button>
@@ -70,13 +68,14 @@
         </Button>
       </div>
       
-      <div class="signin-creator-div">
-        <h2 class="sign-in-creator-text">Content creator? 
+      <div class="signup-creator-text">
+        <h2 class="sign-up-creator-text">Content creator? 
         <router-link to="/creators/apply" class="router-link sign-up-apply-now-text">
           Apply
         </router-link>
         </h2>
       </div>
+      
     </div>
     <div class="bottom">
       <p><span class="bloverse">Bloverse</span> {{year}}. All Right Reserved</p>

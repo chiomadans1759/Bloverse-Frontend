@@ -14,7 +14,7 @@
       </span>
       </div>
     </div>
-    <div class="sign-up-content">
+    <div class="sign-up-content d-flex flex-column justify-content-center align-items-center">
       <div>
         <h2 class="sign-up-intro-one">Join Us</h2>
         <h4 class="sign-up-intro-two">Lorem ipsum dolor sit amet, vel
@@ -45,58 +45,55 @@
       </div>
     </div>
 
-      <div class="sign-up-form-section">
-        <text-input
-          id="first-name"
-          name="firstName"
-          type="text"
-          placeholder="First name"
-          :value="firstName"
-          :onChange="onChange"
-          custom-class="text-input"
-        />
-        <text-input
-          id="last-name"
-          name="lastName"
-          type="text"
-          placeholder="Last name"
-          :value="lastName"
-          :onChange="onChange"
-          custom-class="text-input"
-        />
-        <text-input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Email"
-          :value="email"
-          :onChange="onChange"
-          custom-class="text-input"
-        />
-        <text-input
-          id="password"
-          name="password"
-          type="password"
-          placeholder="Password"
-          :value="password"
-          :onChange="onChange"
-          custom-class="text-input"
-        />
-        <Button customClass="btn btn-primary primary-button">Sign Up</Button>
-  
-        <h4 class="sign-up-terms-and-privacy">
-          By creating an account, you agree to our
-          <router-link to="/terms-and-conditions" class="sign-up-link-text">Terms</router-link>
-          and
-          <router-link to="/privacy-policies" class="sign-up-link-text">Privacy</router-link>
-        </h4>
- 
-        <Button customClass="btn btn-outline-secondary secondary-button">
-          <h2 class="sign-up-new-bloverse-text">Have an account?
-            <router-link to="/login" class="signup-login-text">Login</router-link>
-          </h2>
-        </Button>
-      </div>
+    <div class="sign-up-form-section">
+      <text-input
+        id="first-name"
+        name="firstName"
+        type="text"
+        placeholder="First name"
+        :value="firstName"
+        :onChange="onChange"
+      />
+      <text-input
+        id="last-name"
+        name="lastName"
+        type="text"
+        placeholder="Last name"
+        :value="lastName"
+        :onChange="onChange"
+      />
+      <text-input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Email"
+        :value="email"
+        :onChange="onChange"
+      />
+      <text-input
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Password"
+        :value="password"
+        :onChange="onChange"
+      />
+      <Button customClass="btn btn-primary primary-button">Sign Up</Button>
+
+      <h4 class="sign-up-terms-and-privacy">
+        By creating an account, you agree to our
+        <router-link to="/terms-and-conditions" class="sign-up-link-text">Terms</router-link>
+        and
+        <router-link to="/privacy-policies" class="sign-up-link-text">Privacy</router-link>
+      </h4>
+
+      <Button customClass="btn btn-outline-secondary secondary-button">
+        <h2 class="sign-up-new-bloverse-text">Have an account?
+          <router-link to="/login" class="signup-login-text">Login</router-link>
+        </h2>
+      </Button>
+    </div>
+
       <div class="signup-creator-text">
         <h2 class="sign-up-creator-text">Content creator? 
         <router-link to="/creators/apply" class="router-link sign-up-apply-now-text">
@@ -106,7 +103,7 @@
       </div>
     </div>
     <div class="bottom">
-      <p><span class="bloverse">Bloverse</span> {{year}}. All rights reserved</p>
+      <p><span class="bloverse">Bloverse</span> {{year}}. All Right reserved</p>
     </div>
   </div>
 </template>

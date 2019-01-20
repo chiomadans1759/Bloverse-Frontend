@@ -33,7 +33,6 @@ import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPa
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 import Homepage from '../src/views/general/Home/Homepage.vue';
 import SigninPage from '../src/views/general/Signin/SigninPage.vue';
-import ForgotPasswordPage from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
 import SignupPage from '../src/views/consumers/SignUp/SignUpPage.vue';
 import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vue';
 
@@ -53,7 +52,7 @@ const routes = [
   {
     path: '/', component: BlankBase,
     children: [
-      { path: '/photo-contest', component: PhotoContest},
+      { path: '/photocontest', component: PhotoContest},
     ]
   },
 
@@ -63,7 +62,7 @@ const routes = [
 
   { path: '/register', component: SignupPage},
 
-  { path: '/new-password', component: NewPasswordPage},
+  { path: '/newpassword', component: NewPasswordPage},
 
   {
     path: '/admin', component: BlankBase,

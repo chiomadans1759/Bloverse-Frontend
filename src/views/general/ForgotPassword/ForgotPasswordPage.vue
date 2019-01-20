@@ -12,7 +12,7 @@
           </router-link>
         </span>
     </div>
-    <div class="forgot-password-content">
+    <div class="forgot-password-content d-flex flex-column justify-content-center align-items-center">
         <h4 class="forgot-password-intro-one">Forgot Password</h4>
         <h5 class="forgot-password-intro-two">Enter your email address and 
         <br/> we will send you a link to reset 
@@ -50,7 +50,7 @@
       </div>
     </div>
     <div class="password-bottom">
-      <p><span class="bloverse">Bloverse</span> {{year}}. All rights reserved</p>
+      <p><span class="bloverse">Bloverse</span> {{year}}. All Right reserved</p>
     </div>
   </div>
 </template>

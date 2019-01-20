@@ -3,30 +3,20 @@
 .defaultClass {
   height: rem(40px);
   width: rem(281px);
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  color: #ffffff;
   border: solid;
   border-width: rem(1px);
-  border-color: rgba(255, 255, 255, 0.15);
-  padding-left: rem(16px);
-  padding-top: rem(11px);
-  padding-right: rem(16px);
-  padding-bottom: rem(8px);
-  margin-bottom: rem(8px);
-  border-radius: 0;
-  color: #B7B7B7;
-  outline: none;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 0 !important;
   font-size: rem(16px);
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media (min-width: 320px) and (max-width: 480px) { 
   .defaultClass {
-    width: rem(343px);
-  }
-}
-
-@media (min-width: 320px) and (max-width: 400px) { 
-  .text-input {
-    width: 18.4375rem;
+    background-color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #868686 !important;
   }
 }
