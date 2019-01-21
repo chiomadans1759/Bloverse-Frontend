@@ -5,9 +5,7 @@ import GeneralLayout from '@/layouts/GeneralLayout';
 import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
 
-import PostFeeds from '../src/views/PostFeeds.vue';
 import PostDisplay from '../src/views/PostDisplay.vue';
-
 
 import MyProfile from '../src/views/journalists/MyProfile.vue';
 import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
@@ -31,12 +29,13 @@ import Signin from '../src/views/general/Signin/SigninPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
 import consumerSignup from '../src/views/consumers/SignUpPage/SignUpPage';
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
+import Homepage from '../src/views/general/Home/Homepage.vue';
 
 const routes = [
   {
     path: '/', component: GeneralLayout,
     children: [
-      { path: '', component: PostFeeds },
+      { path: '', component: Homepage },
       { path: 'posts', redirect: '/' },
       { path: 'posts/:slug', component: PostDisplay },
       { path: '/about', component: About},

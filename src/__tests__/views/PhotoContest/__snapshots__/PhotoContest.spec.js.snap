@@ -32,7 +32,6 @@ exports[`PhotoContest Component should render correctly 1`] = `
           class="form-inline my-2 my-lg-0 navbar-toggler mobile-view"
           data-target="#navbarSupportedContent"
           data-toggle="collapse"
-          type="button"
         >
           <a
             aria-expanded="false"

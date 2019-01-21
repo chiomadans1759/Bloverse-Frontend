@@ -1,0 +1,583 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trends Component should render correctly 1`] = `
+<main
+  class="container-fluid bl-trends"
+>
+  <div
+    class="bl-trends--header"
+  >
+    <p
+      class="font-weight-bold title"
+    >
+      Trending
+    </p>
+     
+    <p
+      class="subtitle"
+    >
+      
+      Lorem ipsum dolor sit amet, vel accumsan
+    
+    </p>
+  </div>
+   
+  <section
+    class="VueCarousel"
+  >
+    <div
+      class="VueCarousel-wrapper"
+    >
+      <div
+        class="VueCarousel-inner"
+        role="listbox"
+        style="transform: translate(0px, 0); visibility: hidden; height: auto;"
+      >
+        <div
+          class="VueCarousel-slide"
+          tabindex="-1"
+        >
+          <main
+            class="card text-white trendCard"
+          >
+            <img
+              alt="trend image"
+              class="card-img"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-img-overlay trendCard--overlay"
+            >
+              <div
+                class="content trendCard--overlay__content"
+              >
+                <p
+                  class="card-title trendCard--title"
+                >
+                  Category
+                </p>
+                 
+                <p
+                  class="card-text font-weight-bold trendCard--text"
+                >
+                  
+        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+      
+                </p>
+                 
+                <p
+                  class="card-text trendCard--username"
+                >
+                  <a
+                    class="btn btn-primary initials"
+                    href="#"
+                    role="button"
+                  />
+                   
+                  <span
+                    class="name"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="VueCarousel-slide"
+          tabindex="-1"
+        >
+          <main
+            class="card text-white trendCard"
+          >
+            <img
+              alt="trend image"
+              class="card-img"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-img-overlay trendCard--overlay"
+            >
+              <div
+                class="content trendCard--overlay__content"
+              >
+                <p
+                  class="card-title trendCard--title"
+                >
+                  Category
+                </p>
+                 
+                <p
+                  class="card-text font-weight-bold trendCard--text"
+                >
+                  
+        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+      
+                </p>
+                 
+                <p
+                  class="card-text trendCard--username"
+                >
+                  <a
+                    class="btn btn-primary initials"
+                    href="#"
+                    role="button"
+                  />
+                   
+                  <span
+                    class="name"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="VueCarousel-slide"
+          tabindex="-1"
+        >
+          <main
+            class="card text-white trendCard"
+          >
+            <img
+              alt="trend image"
+              class="card-img"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-img-overlay trendCard--overlay"
+            >
+              <div
+                class="content trendCard--overlay__content"
+              >
+                <p
+                  class="card-title trendCard--title"
+                >
+                  Category
+                </p>
+                 
+                <p
+                  class="card-text font-weight-bold trendCard--text"
+                >
+                  
+        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+      
+                </p>
+                 
+                <p
+                  class="card-text trendCard--username"
+                >
+                  <a
+                    class="btn btn-primary initials"
+                    href="#"
+                    role="button"
+                  />
+                   
+                  <span
+                    class="name"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="VueCarousel-slide"
+          tabindex="-1"
+        >
+          <main
+            class="card text-white trendCard"
+          >
+            <img
+              alt="trend image"
+              class="card-img"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-img-overlay trendCard--overlay"
+            >
+              <div
+                class="content trendCard--overlay__content"
+              >
+                <p
+                  class="card-title trendCard--title"
+                >
+                  Category
+                </p>
+                 
+                <p
+                  class="card-text font-weight-bold trendCard--text"
+                >
+                  
+        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+      
+                </p>
+                 
+                <p
+                  class="card-text trendCard--username"
+                >
+                  <a
+                    class="btn btn-primary initials"
+                    href="#"
+                    role="button"
+                  />
+                   
+                  <span
+                    class="name"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="VueCarousel-slide"
+          tabindex="-1"
+        >
+          <main
+            class="card text-white trendCard"
+          >
+            <img
+              alt="trend image"
+              class="card-img"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-img-overlay trendCard--overlay"
+            >
+              <div
+                class="content trendCard--overlay__content"
+              >
+                <p
+                  class="card-title trendCard--title"
+                >
+                  Category
+                </p>
+                 
+                <p
+                  class="card-text font-weight-bold trendCard--text"
+                >
+                  
+        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+      
+                </p>
+                 
+                <p
+                  class="card-text trendCard--username"
+                >
+                  <a
+                    class="btn btn-primary initials"
+                    href="#"
+                    role="button"
+                  />
+                   
+                  <span
+                    class="name"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="VueCarousel-slide"
+          tabindex="-1"
+        >
+          <main
+            class="card text-white trendCard"
+          >
+            <img
+              alt="trend image"
+              class="card-img"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-img-overlay trendCard--overlay"
+            >
+              <div
+                class="content trendCard--overlay__content"
+              >
+                <p
+                  class="card-title trendCard--title"
+                >
+                  Category
+                </p>
+                 
+                <p
+                  class="card-text font-weight-bold trendCard--text"
+                >
+                  
+        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+      
+                </p>
+                 
+                <p
+                  class="card-text trendCard--username"
+                >
+                  <a
+                    class="btn btn-primary initials"
+                    href="#"
+                    role="button"
+                  />
+                   
+                  <span
+                    class="name"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="VueCarousel-slide"
+          tabindex="-1"
+        >
+          <main
+            class="card text-white trendCard"
+          >
+            <img
+              alt="trend image"
+              class="card-img"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-img-overlay trendCard--overlay"
+            >
+              <div
+                class="content trendCard--overlay__content"
+              >
+                <p
+                  class="card-title trendCard--title"
+                >
+                  Category
+                </p>
+                 
+                <p
+                  class="card-text font-weight-bold trendCard--text"
+                >
+                  
+        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+      
+                </p>
+                 
+                <p
+                  class="card-text trendCard--username"
+                >
+                  <a
+                    class="btn btn-primary initials"
+                    href="#"
+                    role="button"
+                  />
+                   
+                  <span
+                    class="name"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="VueCarousel-slide"
+          tabindex="-1"
+        >
+          <main
+            class="card text-white trendCard"
+          >
+            <img
+              alt="trend image"
+              class="card-img"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-img-overlay trendCard--overlay"
+            >
+              <div
+                class="content trendCard--overlay__content"
+              >
+                <p
+                  class="card-title trendCard--title"
+                >
+                  Category
+                </p>
+                 
+                <p
+                  class="card-text font-weight-bold trendCard--text"
+                >
+                  
+        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+      
+                </p>
+                 
+                <p
+                  class="card-text trendCard--username"
+                >
+                  <a
+                    class="btn btn-primary initials"
+                    href="#"
+                    role="button"
+                  />
+                   
+                  <span
+                    class="name"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="VueCarousel-slide"
+          tabindex="-1"
+        >
+          <main
+            class="card text-white trendCard"
+          >
+            <img
+              alt="trend image"
+              class="card-img"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-img-overlay trendCard--overlay"
+            >
+              <div
+                class="content trendCard--overlay__content"
+              >
+                <p
+                  class="card-title trendCard--title"
+                >
+                  Category
+                </p>
+                 
+                <p
+                  class="card-text font-weight-bold trendCard--text"
+                >
+                  
+        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+      
+                </p>
+                 
+                <p
+                  class="card-text trendCard--username"
+                >
+                  <a
+                    class="btn btn-primary initials"
+                    href="#"
+                    role="button"
+                  />
+                   
+                  <span
+                    class="name"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="VueCarousel-slide"
+          tabindex="-1"
+        >
+          <main
+            class="card text-white trendCard"
+          >
+            <img
+              alt="trend image"
+              class="card-img"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-img-overlay trendCard--overlay"
+            >
+              <div
+                class="content trendCard--overlay__content"
+              >
+                <p
+                  class="card-title trendCard--title"
+                >
+                  Category
+                </p>
+                 
+                <p
+                  class="card-text font-weight-bold trendCard--text"
+                >
+                  
+        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+      
+                </p>
+                 
+                <p
+                  class="card-text trendCard--username"
+                >
+                  <a
+                    class="btn btn-primary initials"
+                    href="#"
+                    role="button"
+                  />
+                   
+                  <span
+                    class="name"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="VueCarousel-pagination"
+      data-v-438fd353=""
+      style="display: none;"
+    >
+      <ul
+        class="VueCarousel-dot-container"
+        data-v-438fd353=""
+        role="tablist"
+      />
+    </div>
+     
+    <!---->
+  </section>
+</main>
+`;
