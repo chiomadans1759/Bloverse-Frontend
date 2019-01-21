@@ -61,7 +61,7 @@ const routes = [
   },
   
   {
-    path: '/photo-contest', component: PhotoContest,
+    path: '/photocontest', component: PhotoContest,
   },
 
   {
