@@ -1,0 +1,60 @@
+@import 'sass-rem';
+
+.terms {
+  font-family: Montserrat, Regular;
+  color: #2d2d2d;
+  font-weight: 500;
+}
+
+.navbar-nav {
+  font-size: rem(16px);
+  font-weight: 700;
+}
+
+.active {
+  border-bottom: rem(1px) solid #004ded !important;
+}
+
+nav {
+  margin: rem(0px);
+  padding: rem(0px);
+}
+
+.sub-content {
+  word-spacing: rem(2px);
+  font-size: rem(14px);
+  color: #767676;
+}
+
+.sub-content > h6 {
+  color: #565656;
+}
+
+.last-update {
+  color: #565656;
+}
+.date {
+  font-weight: 700;
+}
+
+.terms-title > h1 {
+  font-size: rem(26px);
+}
+
+.terms-title > p {
+  font-size: rem(14px);
+}
+
+@media screen and (max-width: 800px) {
+  .terms-container{
+    width:100% !important;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .terms-title {
+    padding-left: rem(20px);
+  }
+}

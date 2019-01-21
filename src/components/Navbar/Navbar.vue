@@ -6,7 +6,7 @@
       <img class="logo" v-if="!isTransparent" src="@/assets/Logo.svg" />
       <img class="logo" v-if="isTransparent" src="@/assets/Logo - White.svg" />
     </router-link>
-    <div class="form-inline my-2 my-lg-0 navbar-toggler mobile-view" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="form-inline my-2 my-lg-0 navbar-toggler mobile-view" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span id="option-icon"/>
         <span id="option-icon"/>

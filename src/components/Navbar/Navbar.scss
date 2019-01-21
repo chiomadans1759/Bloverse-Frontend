@@ -186,6 +186,27 @@ nav {
   }
 
   .dropdown-mobile-view {
+    left: rem(122px);
+    top: rem(65px);
+  }
+}
+
+@media only screen and (max-width: 411px) {
+  .dropdown-mobile-view {
+    left: rem(131px);
+    top: rem(65px);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .dropdown-mobile-view {
+    left: rem(120px);
+    top: rem(65px);
+  }
+}
+
+@media only screen and (min-width: 414px) {
+  .dropdown-mobile-view {
     left: rem(135px);
     top: rem(65px);
   }
@@ -265,3 +286,11 @@ nav {
     top: rem(65px);
   }
 }
+
+@media screen and (max-width: 800px) and (min-width: 320px){
+  .navbar-toggler {
+    border: none !important;
+    color: #ffffff !important;
+  }
+}
+
