@@ -87,6 +87,10 @@ nav {
   color: #898989;
 }
 
+.dropdown-toggle:after {
+  visibility: hidden;
+}
+
 .nav-link.dropdown-toggle {
   padding-top: rem(6px);
 }
