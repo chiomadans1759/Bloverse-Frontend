@@ -1,12 +1,11 @@
 <template>
   <main id="create-basic-post">
-    <Modal v-model="publishModal">
+    <Modal v-model="publishModal" @on-visible-change="handleModalChange">
       <Alert type="success">Success</Alert>
       <div class="text-center">
         <p>Your post has been successfully published</p>
         <div class="posts">
-          <vue-goodshare-facebook :page_url="url" has_icon style="font-size: 25px;"></vue-goodshare-facebook>
-          <vue-goodshare-twitter :page_url="url" has_icon style="font-size: 25px;"></vue-goodshare-twitter>
+          <social-buttons :slug="slug"></social-buttons>
         </div>
       </div>
       <div slot="footer">
@@ -15,22 +14,17 @@
         </router-link>
       </div>
     </Modal>
-
     <div id="mobile" :class="{ isTravel: isTravel }">
       <Form :model="post" ref="basicCreatePostForm" class="travel-form" :rules="validatePostForm" style="margin-top: 6rem;">
         <Row type="flex" justify="space-between">
           <Col :sm="24" id="create-post">
-            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true"/>
-
-            <br>
-
+            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true"/><br>
             <FormItem prop="title" :error="errors.title">
               <div class="alert alert-danger py-0" role="alert" v-if="post.title != undefined && post.title.length == 150">
                 150 maximum characters for title exceeded.
               </div>
               <Input id="form-control" placeholder="What's your title?" v-model="post.title" :maxlength="max"/>
             </FormItem>
-
             <Row type="flex" justify="space-between">
               <Col :sm="11">
                 <Select v-model="post.category" placeholder="Choose Category" :disabled="isTravel">
@@ -39,7 +33,9 @@
                     :value="item.id"
                     :key="item.id"
                     v-if="item.name != 'All'"
-                  >{{item.name}}</Option>
+                  >
+                    {{item.name}}
+                  </Option>
                 </Select>
               </Col>
               <Col :sm="11">
@@ -49,13 +45,12 @@
                     :value="item.id"
                     :key="item.id"
                     v-if="item.name != 'All'"
-                  >{{item.name}}</Option>
+                  >
+                    {{item.name}}
+                  </Option>
                 </Select>
               </Col>
-            </Row>
-
-            <br>
-
+            </Row><br>
             <section>
               <div class="key-points" v-if="isTravel">
                 <input
@@ -64,7 +59,6 @@
                   placeholder="Location"
                   class="search-location"
                 >
-
                 <FormItem prop="duration">
                   <DatePicker
                     v-model="post.duration"
@@ -75,18 +69,18 @@
                     style="width: 100%"
                   ></DatePicker>
                 </FormItem>
-
                 <FormItem prop="deviceType">
                   <Select placeholder="Device Used" id="keypoint" v-model="post.deviceType">
                     <Option
                       v-for="item in deviceList"
                       :value="item.value"
                       :key="item.value"
-                    >{{ item.label }}</Option>
+                    >
+                      {{ item.label }}
+                    </Option>
                   </Select>
                 </FormItem>
               </div>
-
               <div class="keypoints" v-else>
                 <FormItem
                   v-for="(keypoint, index) in post.keyPoints"
@@ -98,34 +92,21 @@
                 </FormItem>
               </div>
             </section>
-
             <div class="row">
               <div class="col-md-12">
                 <tinymce class="form-control required" v-model="post.body"></tinymce>
               </div>
-            </div>
-
-            <br>
-
+            </div><br>
             <div>
               <Button id="btn-draft" @click="handleProcessPost()" class="text-uppercase mt-3">
                 <span v-if="post.id">Save Changes</span>
                 <span v-else>Save as draft</span>
               </Button>
-
               <a @click="previewPosts()" class="float-right btn btn-primary btn-md text-white">Preview</a>
             </div>
           </Col>
         </Row>
       </Form>
-
-      <!-- <Col id="otherside" :sm="10">
-        <Card id="display-post">
-          <h2 id="title">{{post.title}}</h2>
-          <DisplayImage :value="post.imageUrl" height="200px" width="100%" :can-edit="false"/>
-          <p v-html="post.body" id="body"></p>
-        </Card>
-      </Col>-->
     </div>
 
     <!-- PREVIEW POST  -->
@@ -134,21 +115,20 @@
         v-model="previewPost"
         width="70%"
         :loading="loading"
-        >
-     <div v-if="!post.title">
-       <h1 class="text-center" style="padding:100px;">NOTHING TO PREVIEW YET</h1>
-     </div>
-     <div v-if="post.title">
-        <div class="container-fluid previewMade">
-          <h4>Preview</h4>
-            <!-- <p>{{post.category}}</p> -->
+      >
+        <div v-if="!post.title">
+          <h1 class="text-center" style="padding:100px;">NOTHING TO PREVIEW YET</h1>
+        </div>
+        <div v-if="post.title">
+          <div class="container-fluid previewMade">
+            <h4>Preview</h4>
+              <!-- <p>{{post.category}}</p> -->
             <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="false" />
             <h1>{{post.title}}</h1>
             <ul v-for="(keypoint) in post.keyPoints" :key="keypoint.value">
               <li>{{keypoint.value}}</li>
             </ul>
-            <p v-html="post.body"></p>
-
+            <p v-html="post.body" id="content"></p>
             <div class="text-center mt-4 mx-5">
               <Button
                 id="btn-publish"
@@ -157,34 +137,23 @@
                 {{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}
               </Button>
             </div>
+          </div>
         </div>
-     </div>
-    </Modal>
+        <div slot="footer"></div>
+      </Modal>
     </div>
   </main>
 </template>
 
 <script>
+
 import {
-  Row,
-  Col,
-  Card,
-  Input,
-  Upload,
-  Icon,
-  Button,
-  Select,
-  Option,
-  Modal,
-  Alert,
-  Form,
-  FormItem,
-  DatePicker
+  Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, Form, FormItem, DatePicker
 } from "iview";
+
 import { mapState, mapActions, mapMutations } from "vuex";
 import { VueEditor } from "vue2-editor";
-import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
-import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
+import SocialButtons from '@/components/SocialButtons'
 
 import { Push } from 'vue-burger-menu';
 import DisplayImage from "./DisplayImage";
@@ -203,8 +172,7 @@ export default {
     Option,
     Modal,
     Alert,
-    VueGoodshareFacebook,
-    VueGoodshareTwitter,
+    SocialButtons,
     VueEditor,
     DisplayImage,
     DatePicker,
@@ -218,6 +186,10 @@ export default {
 
   data: function() {
     return {
+      slug: null,
+      post: {
+        keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }]
+      },
       errors: {},
       previewPost:false,
       max: 150,
@@ -296,19 +268,7 @@ export default {
   },
 
   computed: {
-    post: {
-      get() {
-        return this.$store.state.journalist.post;
-      },
-      set(props) {
-        this.$store.commit("setPost", props);
-      }
-    },
-    url() {
-      return `${this.$BASE_URL}posts/${this.post.slug}`;
-    },
-
-    ...mapState(["general", "auth"])
+    ...mapState(["general", "auth", "journalist"])
   },
 
   methods: {
@@ -317,6 +277,19 @@ export default {
     ...mapMutations(["setPost", "clearPost"]),
     previewPosts(){
       this.previewPost = true;
+    },
+    setPost(params){
+      this.post = {...this.post, ...params};
+    },
+    clearPost(){
+      this.post = { keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }] }
+    },
+    handleModalChange(status){
+      if(!status)
+        this.takeToMyPosts();
+    },
+    takeToMyPosts(){
+      this.$router.push({path: `/creators/${this.auth.loggedInUser.userName}/posts`})
     },
     handleProcessPost: async function(shouldPublish = false) {
       this.errors = {};
@@ -334,17 +307,32 @@ export default {
           }
           if (this.post.imageUrl) {
             this.isPublishing = true;
-            let success = await this.processPost({
+            let response = await this.processPost({
               shouldPublish,
-              shouldUploadImage: this.isNewImage
+              shouldUploadImage: this.isNewImage,
+              post: this.post
             });
+            
+            let success = !!response.id;
+
             this.isPublishing = false;
-            if (success === true) {
+            if (success) {
+              this.post = response;
               this.$Message.success("Post successfully saved");
               this.publishModal = shouldPublish;
+
+              if(shouldPublish){
+                this.slug = this.post.slug //gets value of slug before clearing post object - for purpose of social share
+                this.clearTinyMceEditor();
+                this.clearPost()
+              }else{
+                //perform action if save as draft
+
+                // uncomment next line if edit features now work well.
+                //this.takeToMyPosts()
+              }
+
               this.previewPost = false;
-              this.clearTinyMceEditor();
-              this.$store.commit("clearPost");
               
             }
             if (success.errors) {
@@ -360,7 +348,6 @@ export default {
 
     handleError(errors) {
       let fieldErrors, varClient;
-
       let clientServer = {
         message: "title"
       };
@@ -474,6 +461,7 @@ export default {
     display: flex;
     flex-direction: column;
   }
+
   #every {
     display: flex;
     flex-direction: column;
@@ -501,114 +489,102 @@ export default {
     margin-bottom: 10px;
   }
 }
+
+#create-basic-post .previewMade #content {
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
 .container-fluid.previewMade p {
-    padding: 0px 13px;
-    margin-top: 2%;
+  padding: 0px 13px;
+  margin-top: 2%;
 }
+
 .container-fluid.previewMade ul {
-    padding: 0px 30px;
+  padding: 0px 30px;
 }
+
 .container-fluid.previewMade h1 {
-    font-size: 29px;
-    padding: 0px 11px;
-    margin-bottom: 2%;
+  font-size: 29px;
+  padding: 0px 11px;
+  margin-bottom: 2%;
 }
+
 .container-fluid.previewMade div {
-    margin-top: 2%;
-    margin-bottom: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
+
 .container-fluid.previewMade {
-    padding: 29px;
+  padding: 29px;
 }
 </style>
 
-
 <style>
-#upload-post-image .ivu-upload-drag {
-  display: flex;
-  width: 200px;
-  height: 200px;
-}
+  #upload-post-image .ivu-upload-drag {
+    display: flex;
+    width: 200px;
+    height: 200px;
+  }
 
-.ivu-btn {
-  font-size: 18px;
-  width: 200px;
-  font-weight: bold;
-  line-height: 21px;
-}
+  .ivu-btn {
+    font-size: 18px;
+    width: 200px;
+    font-weight: bold;
+    line-height: 21px;
+  }
 
-#btn-draft {
-  background-color: white;
-  color: var(--primary);
-  padding: 0px !important;
-  background: transparent !important;
-  border: none !important;
-  font-size: 12px;
-  margin-top: 0.5rem;
-}
+  #btn-draft {
+    background-color: white;
+    color: var(--primary);
+    padding: 0px !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 12px;
+    margin-top: 0.5rem;
+  }
 
-#btn-publish {
-  background-color: var(--primary);
-  color: white;
-  width: 20%;
-  height: 2.5rem;
-}
+  #btn-publish {
+    background-color: var(--primary);
+    color: white;
+    width: 20%;
+    height: 2.5rem;
+  }
 
-.red-border {
-  border: 1px solid red;
-}
+  .red-border {
+    border: 1px solid red;
+  }
 
-.keypoints .ivu-input-wrapper {
-  margin: 0.5rem 0;
-}
-.posts {
-  position: relative;
-}
-.ivu-modal-close .ivu-icon-ios-close {
+  .keypoints .ivu-input-wrapper {
+    margin: 0.5rem 0;
+  }
+  .posts {
+    position: relative;
+  }
+  .ivu-modal-close .ivu-icon-ios-close {
     font-size: 31px;
     color: #999;
     transition: color .2s ease;
-    /* position: absolute; */
     top: 1px;
     margin-top: 0;
     float: right;
     right: 0px !important;
-}
+  }
 
-.container-fluid.previewMade section#img-display {
+  .container-fluid.previewMade section#img-display {
     background: #aca7a7;
     border: 0.1px solid grey;
     width: 100%;
     height: 400px !important;
-}
-div#modalfocus .ivu-modal-mask {
+  }
+
+  div#modalfocus .ivu-modal-mask {
     background: #fff;
-}
-div#modalfocus .ivu-modal-content {
+  }
+
+  div#modalfocus .ivu-modal-content {
     box-shadow: none !important;
     border: 1px solid #d9d9d9;
     border-radius: 1px !important;
-}
-</style>
-
-
-<!--
-
-mounted: async function(){
-  
-  if(this.$route.params.slug){
-    let response;
-    try {
-      response = await this.$http.get(`/api/v1/posts/${this.$route.params.slug}/`);
-
-      let { id, title, body, image_url: imageUrl, country: countryId, category: categoryId, keypoint: keyPoints } = response.data.data.post;
-      this.post = { id, title, body, imageUrl, countryId, categoryId, keyPoints };
-    }catch(error){
-      console.log(error);
-    }
   }
-  
-  
-}
-
--->
+</style>

@@ -4,24 +4,22 @@ export default {
   state: {
     journalistPosts: {},
     draftPosts: {},
-    post: {
-      keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }]
-    },
     metrics: {},
   },
   actions: {
     async processPost({ commit, rootState, state, dispatch }, params) {
+      let { post } = params;
       if (params.shouldUploadImage) {
-        let newUrl = await dispatch('doUpload', state.post.imageUrl, {root: true});
-        commit('setPost', { imageUrl: newUrl });
+        let newUrl = await dispatch('doUpload', post.imageUrl, {root: true});
+        post.imageUrl = newUrl
       }
-      // The commented codes on this section are for implementing travelCompetition posts
+
       let userId = rootState.auth.loggedInUser.id;
       let payload;
 
       let postId;
 
-      if (state.post.category === 7) {
+      if (post.category === 7) {
         let {
           id,
           title,
@@ -32,7 +30,7 @@ export default {
           category,
           country,
           body
-        } = state.post;
+        } = post;
         postId = id;
         payload = {
           id,
@@ -55,7 +53,7 @@ export default {
           imageUrl: image_url,
           category,
           country
-        } = state.post;
+        } = post;
         postId = id;
         payload = {
           id,
@@ -70,8 +68,11 @@ export default {
       }
 
       let response;
-      if (state.post.id) {
-        //let payload = { keypoint, image_url, title, body, is_published: params.shouldPublish } 
+
+      /* The block of line below performs either an update or create, checks if post sent with param has an Id
+         it updates if it finds an Id
+      */
+      if (post.id) {
         response = await Api.put('journalists/' + userId + '/posts/' + postId, payload, true);
       } else {
         response = await Api.post('journalists/' + userId + '/posts/', payload, true);
@@ -86,9 +87,8 @@ export default {
         } = response.data.post;
 
         let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, location, duration, device_type };
-        commit('setPost', updatedPost);
-        commit('clearPost')
-        return true;
+
+        return updatedPost;
       }
       default:
         return { errors: response };
@@ -121,39 +121,17 @@ export default {
     }
   },
   mutations: {
-    setPost(state, props) {
-      state.post = {
-        ...state.post,
-        ...props
-      };
-    },
     setPosts(state, props) {
       state.journalistPosts = props
     },
     setDrafts(state, props) {
       state.draftPosts = props
     },
-    clearPost(state) {
-      state.post = {
-        keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }],
-        body: '',
-        title: '',
-        imageUrl: '',
-        deviceType: '',
-        location: ''
-      }
-    },
     setMyMetrics(state, metrics) {
       state.metrics = metrics;
     }
   },
   getters: {
-    isCreatingBasicPost(state) {
-      return (state.post.title || state.post.body) && state.post.keyPoints && state.post.keyPoints.length > 0
-    },
-    isCreatingTravelPost(state) {
-      return (state.post.title || state.post.body) && state.post.deviceType && state.post.location
-    },
     views(state) {
       return state.metrics && state.metrics.views;
     },
@@ -168,8 +146,5 @@ export default {
     articles(state) {
       return state.metrics && state.metrics.publishedArticles;
     }
-    // countries(state){
-    //   return state.metrics.country;
-    // }
   }
 }

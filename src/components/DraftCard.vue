@@ -1,6 +1,6 @@
 <template>
   <main id="draft-card">
-    <router-link :to="`/posts/${post.slug}`">
+    <router-link to="#">
       <div class="card" v-if="post.category === 7">
         <img class="card-img-top" :src="post.image_url">
         <div class="card-body">
@@ -39,7 +39,6 @@
           </p>
         </div>
       </div>
-
       <div class="card" v-else>
         <img class="card-img-top" :src="post.image_url">
         <div class="card-body">
@@ -81,7 +80,6 @@
               <h5>READ STORY</h5>
             </router-link>
           </p>
-
           <h4
             class="empty-class"
             v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]"
@@ -113,177 +111,179 @@ export default {
 </script>
 
 <style scoped>
-#draft-card {
-  margin-top: 4rem;
-}
+  #draft-card {
+    margin-top: 4rem;
+  }
 
-#draft-card .card {
-  height: 394px;
-  width: 100%;
-  border-radius: none;
-  margin-bottom: -2rem;
-}
+  #draft-card .card {
+    height: 394px;
+    width: 100%;
+    border-radius: none;
+    margin-bottom: -2rem;
+  }
 
-#draft-card .card:hover {
-  transition: 0.5s ease;
-  cursor: pointer;
-}
-#draft-card .card-img-top {
-  height: 220px;
-  width: 100%;
-  border-radius: 0;
-  object-fit: cover;
-}
+  #draft-card .card:hover {
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
 
-#draft-card .card-title {
-  text-transform: uppercase;
-  font-size: 13px;
-  color: #353535;
-}
+  #draft-card .card-img-top {
+    height: 220px;
+    width: 100%;
+    border-radius: 0;
+    object-fit: cover;
+  }
 
-#draft-card .card-titlee {
-  text-transform: uppercase;
-  font-size: 13px;
-  color: #096dd9;
-}
+  #draft-card .card-title {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #353535;
+  }
 
-#draft-card .card-text {
-  font-size: 16px;
-  color: #34323d;
-  opacity: 85%;
-  text-transform: capitalize;
-  height: 64px;
-  font-weight: 600;
-}
+  #draft-card .card-titlee {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #096dd9;
+  }
 
-#draft-card .author-imgg {
-  width: 34px;
-  height: 34px;
-  object-fit: cover;
-}
+  #draft-card .card-text {
+    font-size: 16px;
+    color: #34323d;
+    opacity: 85%;
+    text-transform: capitalize;
+    height: 64px;
+    font-weight: 600;
+  }
 
-#draft-card .foott {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
+  #draft-card .author-imgg {
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+  }
 
-#draft-card .foott .further {
-  display: flex;
-  justify-content: space-between;
-}
+  #draft-card .foott {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
 
-#draft-card .foott .right {
-  color: #353535 !important;
-  font-size: 12px;
-  margin-top: 0.6rem;
-}
+  #draft-card .foott .further {
+    display: flex;
+    justify-content: space-between;
+  }
 
-#draft-card .foott span {
-  margin-left: 0.5rem;
-  color: #353535;
-  font-size: 12px;
-  font-weight: 500;
-}
+  #draft-card .foott .right {
+    color: #353535 !important;
+    font-size: 12px;
+    margin-top: 0.6rem;
+  }
 
-#draft-card .foott p {
-  color: #353535;
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  opacity: 0.4;
-}
+  #draft-card .foott span {
+    margin-left: 0.5rem;
+    color: #353535;
+    font-size: 12px;
+    font-weight: 500;
+  }
 
-#draft-card .overlay .empty-class {
-  text-align: center;
-  font-size: 19px;
-  margin-top: 10rem;
-  color: #fff;
-}
+  #draft-card .foott p {
+    color: #353535;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    opacity: 0.4;
+  }
 
-#draft-card .overlay p {
-  text-align: left;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  margin-left: 3rem;
-  margin-top: 2rem;
-}
+  #draft-card .overlay .empty-class {
+    text-align: center;
+    font-size: 19px;
+    margin-top: 10rem;
+    color: #fff;
+  }
 
-#draft-card .overlay .travel-deets {
-  list-style-type: none;
-  color: #fff;
-  text-align: left;
-  margin-left: 3rem;
-  margin-top: 5rem;
-}
-#draft-card .overlay .travel-deets li {
-  color: #fff;
-  font-size: 15px;
-  margin-bottom: 2rem;
-}
+  #draft-card .overlay p {
+    text-align: left;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 3rem;
+    margin-top: 2rem;
+  }
 
-#draft-card .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 392px;
-  width: 100%;
-  opacity: 0;
-  transition: 0.5s ease;
-  background-color: rgba(13, 13, 15, 0.849);
-  overflow-x: none;
-}
+  #draft-card .overlay .travel-deets {
+    list-style-type: none;
+    color: #fff;
+    text-align: left;
+    margin-left: 3rem;
+    margin-top: 5rem;
+  }
 
-#draft-card .overlay-content h3 {
-  font-size: 16px;
-  margin-bottom: 1rem;
-  text-transform: capitalize;
-  margin-top: 1rem;
-  font-weight: bold;
-}
+  #draft-card .overlay .travel-deets li {
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 2rem;
+  }
 
-#draft-card .overlay-content h2 {
-  font-size: 16px;
-  margin-bottom: 1rem;
-  text-transform: capitalize;
-  margin-top: 1rem;
-  font-weight: bold;
-}
+  #draft-card .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 392px;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: rgba(13, 13, 15, 0.849);
+    overflow-x: none;
+  }
 
-#draft-card .overlay .overlay-content li {
-  margin-bottom: 1rem;
-}
+  #draft-card .overlay-content h3 {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
 
-#draft-card .read-more {
-  margin-left: 16rem !important;
-  position: absolute;
-  bottom: 0 !important;
-  margin-bottom: 1.5rem;
-}
+  #draft-card .overlay-content h2 {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
 
-#draft-card .overlay-content #consumer-keypoints {
-  margin-bottom: 1rem;
-}
+  #draft-card .overlay .overlay-content li {
+    margin-bottom: 1rem;
+  }
 
-#draft-card .overlay-content {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  margin-left: 2.2rem;
-  left: 43%;
-  top: 46%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 12.6px;
-  width: 95%;
-  list-style-type: none;
-}
+  #draft-card .read-more {
+    margin-left: 16rem !important;
+    position: absolute;
+    bottom: 0 !important;
+    margin-bottom: 1.5rem;
+  }
 
-#draft-card:hover .overlay {
-  opacity: 1;
-}
+  #draft-card .overlay-content #consumer-keypoints {
+    margin-bottom: 1rem;
+  }
+
+  #draft-card .overlay-content {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    margin-left: 2.2rem;
+    left: 43%;
+    top: 46%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 12.6px;
+    width: 95%;
+    list-style-type: none;
+  }
+
+  #draft-card:hover .overlay {
+    opacity: 1;
+  }
 </style>

@@ -10,13 +10,13 @@ import LoginView from '@/views/journalists/AuthenticationSignIn'
 
 export default {
   name: "login-button",
-  props: { 
-    color: String 
+  props: {
+    color: String
   },
   components: { LoginView },
   methods: {
     ...mapMutations(['setModal']),
-    
+
     openLogin(){
       this.setModal({show: true, currentComponent: LoginView })
     }
@@ -25,8 +25,7 @@ export default {
 </script>
 
 <style scoped>
-#login-btn {
-  font-weight: 500;
-}
+  #login-btn {
+    font-weight: 500;
+  }
 </style>
-

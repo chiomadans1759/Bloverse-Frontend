@@ -8,9 +8,9 @@ import {
 var objCodec = require('object-encode');
 var SimpleCrypto = require("simple-crypto-js").default;
 
-var _secretKey = "some-unique-key";
+var _secretKey = process.env.VUE_APP_SECRET_KEY;
 var simpleCrypto = new SimpleCrypto(_secretKey);
-var bloverseOps = ')*myNewAWESOME-mmbloverseOps254@%^&%';
+var bloverseOps = process.env.VUE_APP_BLOVERSEOPS;
 
 let user = null;
 let localJWT = null;
@@ -24,7 +24,6 @@ if (getJWT() == null) {
   localJWT = null;
 } else {
   localJWT = simpleCrypto.decrypt(getJWT());
-
 }
 
 

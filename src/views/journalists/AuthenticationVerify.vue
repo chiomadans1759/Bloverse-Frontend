@@ -1,45 +1,46 @@
 <template>
-    <main class="auth-section">
-      <Alert :type="alert.type" v-if="alert.show" show-icon>
-        <template v-if="alert.type === 'success'">
-          Verified!!!
-          <span slot="desc">You have been verified, system is redirecting... </span>
-        </template>
+  <main class="auth-section">
+    <Alert :type="alert.type" v-if="alert.show" show-icon>
+      <template v-if="alert.type === 'success'">
+        Verified!!!
+        <span slot="desc">You have been verified, system is redirecting...</span>
+      </template>
 
-        <template v-else>
-          Already Registered?
-          <span slot="desc">It looks like you have been previously registrered. Click <router-link to="/creators/login">here to login</router-link></span>
-        </template>
-      </Alert>
-
-      <div class="row justify-content-center pt-5">
-        <div class="col-md-3 mt-5">
-          <router-link to="/">
-            <img src="@/assets/Logo.svg" style="width: 2.8rem;" alt class="img-logo mb-5">
-          </router-link>
-          
-          <Form ref="tokenForm">
-            <h4 class="text-dark mb-3">
-              Enter code sent to you via email <br /> to continue.
-            </h4>
-            <FormItem required>
-              <Input  v-model="token" placeholder="Enter token here" class="my-input" />
-              <p class="text-dark">
-                Code expires in 60 minutes.
-              </p>
-            </FormItem>
-            <FormItem>
-              <button type="button" class="btn btn-primary btn-block" 
-                      @click.prevent="verifyToken" 
-                      :disabled="!token || processing">
-                Continue
-              </button>
-              <!-- <Button class="my-btn" :class="{'btn btn-primary': true, 'btn-secondary': token}" @click="verifyToken" long :disabled="!token" :loading="processing"> Submit </Button> -->
-            </FormItem>
-          </Form>
-        </div>
+      <template v-else>
+        Already Registered?
+        <span
+          slot="desc"
+        >It looks like you have been previously registrered. Click
+          <router-link to="/creators/login">here to login</router-link>
+        </span>
+      </template>
+    </Alert>
+    <!-- content -->
+    <div class="row justify-content-center pt-5">
+      <div class="col-md-3 mt-5">
+        <router-link to="/">
+          <img src="@/assets/Logo.svg" style="width: 2.8rem;" alt class="img-logo mb-5">
+        </router-link>
+        <Form ref="tokenForm">
+          <h4 class="text-dark mb-3">Enter code sent to you via email
+            <br>to continue.
+          </h4>
+          <FormItem required>
+            <Input v-model="token" placeholder="Enter token here" class="my-input"/>
+            <p class="text-dark">Code expires in 60 minutes.</p>
+          </FormItem>
+          <FormItem>
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              @click.prevent="verifyToken"
+              :disabled="!token || processing"
+            >Continue</button>
+          </FormItem>
+        </Form>
       </div>
-    </main>
+    </div>
+  </main>
 </template>
 
 <script >
@@ -47,7 +48,7 @@ import { Row, Col, Button, Input, Form, FormItem, Alert } from "iview";
 import Hashids from "hashids";
 import { mapActions, mapState, mapMutations } from "vuex";
 
-const SALT = process.env.VUE_APP_HASH_SALT
+const SALT = process.env.VUE_APP_HASH_SALT;
 let hashids = new Hashids(SALT, 16);
 export default {
   components: {
@@ -107,7 +108,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped>
 .auth-section {

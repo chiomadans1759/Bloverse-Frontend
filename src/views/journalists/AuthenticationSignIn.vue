@@ -5,26 +5,12 @@
         <div class="container pl-lg-6 pr-lg-5">
           <img src="@/assets/Logo.svg" style="width: 2.8rem;" alt class="img-logo">
           <p id="sign-c">Sign in to continue</p>
-
-          <Form ref="loginForm"
-            class="auth-form login-form"
-            :model="user"
-            :rules="loginValidate">
+          <Form ref="loginForm" class="auth-form login-form" :model="user" :rules="loginValidate">
             <FormItem prop="email">
-              <Input
-                type="email"
-                v-model="user.email"
-                size="large"
-                placeholder="E-mail*"
-              />
+              <Input type="email" v-model="user.email" size="large" placeholder="E-mail*"/>
             </FormItem>
             <FormItem prop="password">
-              <Input
-                size="large"
-                type="password"
-                v-model="user.password"
-                placeholder="Password*"
-              />
+              <Input size="large" type="password" v-model="user.password" placeholder="Password*"/>
             </FormItem>
             <FormItem>
               <div class="row">
@@ -33,16 +19,14 @@
                     type="button"
                     class="btn btn-primary btn-block"
                     :disabled="this.isSubmitting"
-                    @click="handleLogin">
-                    {{ isSubmitting ? 'Submitting...' : 'LOG IN' }}
-                  </button>
+                    @click="handleLogin"
+                  >{{ isSubmitting ? 'Submitting...' : 'LOG IN' }}</button>
                 </div>
               </div>
-              
               <div class="row mt-4">
                 <div class="col">
-                  <p class="text-left">
-                    New to Bloverse ? &nbsp;<router-link class="btn-link" to="/creators/apply" @click.native="close()">Apply</router-link>
+                  <p class="text-left">New to Bloverse ? &nbsp;
+                    <router-link class="btn-link" to="/creators/apply" @click.native="close()">Apply</router-link>
                   </p>
                 </div>
               </div>
@@ -50,14 +34,12 @@
           </Form>
         </div>
       </div>
-
       <div class="col-md-7">
         <img src="@/assets/Images.png" id="auth-bg">
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 import { Button, Row, Col, Icon, Input, Form, FormItem, Checkbox } from "iview";
@@ -72,7 +54,7 @@ export default {
     Input,
     Form,
     Checkbox,
-    FormItem,
+    FormItem
   },
   data: function() {
     return {
@@ -108,7 +90,7 @@ export default {
     ...mapState(["auth"])
   },
   methods: {
-    ...mapMutations(['setModal']),
+    ...mapMutations(["setModal"]),
 
     handleLogin: function() {
       this.$refs.loginForm.validate(async valid => {
@@ -117,7 +99,7 @@ export default {
           let success = await this.login(this.user);
           this.isSubmitting = false;
           if (success === true) {
-            this.setModal({show: false });
+            this.setModal({ show: false });
             this.$Message.success("You have been successfully logged in");
             let username = this.auth.loggedInUser.userName;
             this.$router.push(`/creators/${username}/dashboard`);
@@ -133,13 +115,12 @@ export default {
       });
     },
     ...mapActions(["login"]),
-    close(){
-      this.setModal({show: false, currentComponent: '' });
+    close() {
+      this.setModal({ show: false, currentComponent: "" });
     }
   }
 };
 </script>
-
 
 <style scoped>
 #auth-sign-in {
@@ -164,7 +145,7 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  margin-left:0.1rem
+  margin-left: 0.1rem;
 }
 
 #sign-c {

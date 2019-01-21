@@ -1,11 +1,10 @@
-
 <template>
   <textarea v-model="value"></textarea>
 </template>
 
 <script>
 import { mapState } from "vuex";
-
+/* eslint-disable */
 export default {
   props: ["value", "options"],
   mounted() {
@@ -38,6 +37,7 @@ export default {
         vm.allowSetContent = false;
       });
     };
+    // eslint-disable-line no-undef
     tinymce.PluginManager.add("twitter_url", function(editor, url) {
       // eslint-disable-line no-undef
       var icon_url =
@@ -66,7 +66,7 @@ export default {
             ],
             onsubmit: function(e) {
               var tweetEmbedCode = e.data.twitter;
-
+                // eslint-disable-line no-undef
               $.ajax({
                 // eslint-disable-line no-undef
                 url: "https://publish.twitter.com/oembed?url=" + tweetEmbedCode,
@@ -105,12 +105,6 @@ export default {
                   alert(msg);
                 }
               });
-              // setTimeout(function() {
-              //  // console.log($('iframe').contentWindow);
-              //  var iframe = document.getElementById('#mce_36_ifr');
-              //     iframe.contentWindow.twttr.widgets.load();
-
-              // }, 1000)
             }
           });
         }
@@ -209,13 +203,9 @@ export default {
   },
   methods: {
     setup: function(editor) {
-      // console.log(editor);
-
       editor.on("init", function(args) {
         this.editor_id = args.target.id;
-        // console.log(this.editor_id);
       });
-      // console.log(this.editor_id);
     }
   }
 };

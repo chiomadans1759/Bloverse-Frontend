@@ -1,49 +1,56 @@
 <template>
   <div>
     <Layout>
-        <Header id="admin-header">
-          <Row type="flex" justify="space-between">
-            <Col>
-              <img src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png" style="width:40px">
-            </Col>
-            <Col>
-              
-              <Button type="error" @click="logOut">LOGOUT</Button>
-            </Col>
-          </Row>
+      <Header id="admin-header">
+        <Row type="flex" justify="space-between">
+          <Col>
+            <img
+              src="https://res.cloudinary.com/aolfiligre/image/upload/v1533663492/freed.png"
+              style="width:40px"
+            >
+          </Col>
+          <Col>
+            <Button type="error" @click="logOut">LOGOUT</Button>
+          </Col>
+        </Row>
       </Header>
     </Layout>
     <div id="admin-body">
-      <Row type="flex" justify="space-around" style="padding:20px; margin:20px" >
-          <Col span="6" class="status">
-              <a href=#>
-                <Card :border="true">
-                    <p slot="title" style="font-size: 25px; color: #5b6270"> TOTAL </p>
-                    <p style="padding: 5px; color: blue; font-size: 40px;"><b>{{stats.total}}</b></p>
-                </Card>
-              </a>
-          </Col>
-          <Col span="6" class="status">
-              <a href=#>
-                <Card shodow>
-                  <p slot="title"  style="font-size: 25px; color: #5b6270"> ACCEPTED </p>
-                  <p style="padding: 5px; color: blue; font-size: 40px;"> <b>{{stats.accepted}}</b> </p>
-                </Card>
-              </a>
-          </Col>
-          <Col span="6" class="status">
-            <a href=#>
-              <Card :bordered="true">
-                <p slot="title"  style="font-size: 25px; color: #5b6270"> REJECTED </p>
-                <p style="padding: 5px; color: blue; font-size: 40px;"> <b>{{stats.rejected}}</b> </p>
-              </Card>
-            </a>
-          </Col>
+      <Row type="flex" justify="space-around" style="padding:20px; margin:20px">
+        <Col span="6" class="status">
+          <a href="#">
+            <Card :border="true">
+              <p slot="title" style="font-size: 25px; color: #5b6270">TOTAL</p>
+              <p style="padding: 5px; color: blue; font-size: 40px;">
+                <b>{{stats.total}}</b>
+              </p>
+            </Card>
+          </a>
+        </Col>
+        <Col span="6" class="status">
+          <a href="#">
+            <Card shodow>
+              <p slot="title" style="font-size: 25px; color: #5b6270">ACCEPTED</p>
+              <p style="padding: 5px; color: blue; font-size: 40px;">
+                <b>{{stats.accepted}}</b>
+              </p>
+            </Card>
+          </a>
+        </Col>
+        <Col span="6" class="status">
+          <a href="#">
+            <Card :bordered="true">
+              <p slot="title" style="font-size: 25px; color: #5b6270">REJECTED</p>
+              <p style="padding: 5px; color: blue; font-size: 40px;">
+                <b>{{stats.rejected}}</b>
+              </p>
+            </Card>
+          </a>
+        </Col>
       </Row>
       <DisplayApplicants></DisplayApplicants>
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -90,7 +97,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped>
 .status {

@@ -12,7 +12,6 @@
           <a href>Feedback</a>
         </li>
       </ul>
-
       <h5 class="text-secondary">{{current_year}} Bloverse. All rights reserved.</h5>
     </div>
   </footer>
@@ -30,22 +29,22 @@ export default {
 </script>
 
 <style scoped>
-#journalist-account-footer .list-inline .list-inline-item a {
-  color: rgba(0, 0, 0, 0.9) !important;
-  font-size: 12px;
-}
-
-#journalist-account-footer .list-inline .list-inline-item a:hover {
-  color: #2F80ED !important;
-}
-
-@media screen and (max-width: 600px) {
-  #journalist-account-footer {
-    display: none;
+  #journalist-account-footer .list-inline .list-inline-item a {
+    color: rgba(0, 0, 0, 0.9) !important;
+    font-size: 12px;
   }
-}
 
-#journalist-account-footer h5 {
-  font-size: 12px;
-}
+  #journalist-account-footer .list-inline .list-inline-item a:hover {
+    color: #2f80ed !important;
+  }
+
+  @media screen and (max-width: 600px) {
+    #journalist-account-footer {
+      display: none;
+    }
+  }
+
+  #journalist-account-footer h5 {
+    font-size: 12px;
+  }
 </style>
