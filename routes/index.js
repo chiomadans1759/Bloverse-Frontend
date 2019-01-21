@@ -30,6 +30,7 @@ import Privacy from '../src/views/Privacy.vue';
 import Signin from '../src/views/general/Signin/SigninPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
 import consumerSignup from '../src/views/consumers/SignUpPage/SignUpPage';
+import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 
 const routes = [
   {
@@ -41,6 +42,12 @@ const routes = [
       { path: '/about', component: About},
       { path: '/terms-and-conditions', component: Terms},
       { path: '/privacy-policies', component: Privacy},
+    ]
+  },
+  {
+    path: '/', component: BlankBase,
+    children: [
+      { path: '/photo-contest', component: PhotoContest},
     ]
   },
   { path: '/login', component: Signin},
