@@ -9,8 +9,13 @@
         </div>
         <div class="col-auto">
           <div v-if="!auth.loggedInUser">
-            <login-button class="pt-2 mr-3"/>
-            <router-link to="/creators" class="btn btn-primary btn-md text-uppercase">create</router-link>
+            <router-link to="/photo-contest" class="btn btn-link text-uppercase">
+              photo contest
+            </router-link>
+            <login-button class="pt-2 mr-3" />
+            <router-link to="/creators" class="btn btn-primary btn-md text-uppercase">
+              create
+            </router-link>
           </div>
           <div v-else>
             <div class="row">

@@ -4,7 +4,7 @@
 
 <script>
 import { mapState } from "vuex";
-
+/* eslint-disable */
 export default {
   props: ["value", "options"],
   mounted() {
@@ -37,6 +37,7 @@ export default {
         vm.allowSetContent = false;
       });
     };
+    // eslint-disable-line no-undef
     tinymce.PluginManager.add("twitter_url", function(editor, url) {
       // eslint-disable-line no-undef
       var icon_url =
@@ -65,7 +66,7 @@ export default {
             ],
             onsubmit: function(e) {
               var tweetEmbedCode = e.data.twitter;
-
+                // eslint-disable-line no-undef
               $.ajax({
                 // eslint-disable-line no-undef
                 url: "https://publish.twitter.com/oembed?url=" + tweetEmbedCode,

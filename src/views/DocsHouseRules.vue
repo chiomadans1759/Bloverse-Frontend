@@ -1,10 +1,11 @@
 <template>
   <BaseDocs
     title="House rules"
-    about="The conversation here is moderated according to The community rules. Please <a href='#'>read the rules</a> before joining the discussion.">
+    about="The conversation here is moderated according to The community rules. Please <a href ='#'> read the rules </a> before joining the discussion."
+  >
     <Row type="flex" justify="right">
       <Col>
-        <h3 class>House rules</h3>
+        <h3>House rules</h3>
       </Col>
     </Row>
     <div>
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+
 import { Row, Col, Input } from "iview";
 import BaseDocs from "../layouts/BaseDocs.vue";
 import data from "../data.js";
