@@ -1,5 +1,5 @@
 <template>
-  <div class="forgot-password-container">
+  <div class="new-password-container">
     <div class="top">
         <span class="top-left-container">
           <a href="/">
@@ -12,19 +12,27 @@
           </router-link>
         </span>
     </div>
-    <div class="forgot-password-content d-flex flex-column justify-content-center align-items-center">
-        <h4 class="forgot-password-intro-one">Forgot Password</h4>
-        <h5 class="forgot-password-intro-two">Enter your email address and 
-        <br/> we will send you a link to reset 
-        <br/> your password</h5>
+    <div class="new-password-content d-flex flex-column justify-content-center align-items-center">
+        <h4 class="new-password-intro-one">New Password</h4>
+        <h5 class="new-password-intro-two">Enter your new password below</h5>
 
-      <div class="forgot-password-form-section">
+      <div class="new-password-form-section">
         <text-input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Email"
-          :value="email"
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Password"
+          :value="password"
+          :onChange="onChange"
+          custom-class="text-input"
+        />
+
+        <text-input
+          id="confirmPassword"
+          name="confirmPassword"
+          type="password"
+          placeholder="Confirm Password"
+          :value="password"
           :onChange="onChange"
           custom-class="text-input"
         />
@@ -79,5 +87,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import './ForgotPasswordPage.scss';
+  @import './NewPasswordPage.scss';
 </style>

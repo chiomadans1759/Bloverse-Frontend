@@ -1,5 +1,5 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
-import SignUpPage from '@/views/consumers/SignUpPage/SignUpPage.vue';
+import SignUpPage from '@/views/consumers/SignUp/SignUpPage.vue';
 
 describe('Signup Page', () => {
   it('should render correctly', () => {

@@ -14,7 +14,7 @@
       </a>
       <div class="dropdown-menu dropdown-mobile-view" aria-labelledby="navbarDropdown">
         <router-link to="/abouts" class="dropdown-item">About</router-link>
-        <router-link to="/photo-contest" class="dropdown-item">Photo Contest</router-link>
+        <router-link to="/photocontest" class="dropdown-item">Photo Contest</router-link>
         <router-link to="/terms-and-conditions" class="dropdown-item">Terms</router-link>
         <router-link to="/privacy-policies" class="dropdown-item">Privacy</router-link>
         <a class="dropdown-item" href="#">FAQ</a>
@@ -38,7 +38,7 @@
           <router-link to="/about" class="nav-link">About</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/photo-contest">Photo Contest</a>
+          <a class="nav-link" href="/photocontest">Photo Contest</a>
         </li>
         <li class="nav-item dropdown pr-4">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
