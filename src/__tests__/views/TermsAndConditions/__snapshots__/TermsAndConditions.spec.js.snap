@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Terms And Conditions should render correctly 1`] = `
+<div
+  class="terms d-flex justify-content-center align-items-center"
+>
+  <div
+    class="terms-container w-50 mb-5"
+  >
+    <div
+      class="terms-title"
+    >
+      <h1
+        class="font-weight-bold mb-2"
+      >
+        Terms And Conditions
+      </h1>
+       
+      <p
+        class="last-update text-capitalize"
+      >
+        Last Updated 
+        <span
+          class="date"
+        >
+          19 December, 2018
+        </span>
+      </p>
+    </div>
+     
+    <div
+      class="terms-content bg-white mt-4 pt-0 mb-5 border"
+    >
+      <div
+        class="terms-nav border-bottom"
+      >
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-white justify-content-center"
+        >
+          <div>
+            <ul
+              class="navbar-nav"
+            >
+              <li
+                class="nav-item active mr-4 p-2"
+              >
+                <a
+                  class="nav-link"
+                >
+                   General 
+                  <span
+                    class="sr-only"
+                  >
+                    (current)
+                  </span>
+                </a>
+              </li>
+               
+              <li
+                class="nav-item p-2"
+              >
+                <a
+                  class="nav-link"
+                >
+                  Photo Contest
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+       
+      <div
+        class="general p-4 pb-5"
+      >
+        <div
+          class="sub-content"
+        >
+          <h6
+            class="font-weight-bold pb-4"
+          >
+            Rights & responsibilities on Content
+          </h6>
+           
+          <p
+            class="pb-4"
+          >
+            You own the rights to the content you create and post on Bloverse.
+          </p>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  You’re responsible for the content you post.
+                  This means you assume all risks related to it,
+                  including someone else’s claims relating to intellectual property
+                  or other legal rights
+                
+          </p>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  You’re welcome to share your published content on Bloverse
+                  to other social platforms or accounts of yours.
+                
+          </p>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  By posting content to Bloverse, you have given us the license to use your content. We may also use your content to promote Bloverse. 
+                  We will never sell your content to third parties without your explicit permission.
+                
+          </p>
+        </div>
+         
+        <div
+          class="sub-content"
+        >
+          <h6
+            class="font-weight-bold pb-4"
+          >
+            Our content and services
+          </h6>
+           
+          <p
+            class="pb-4"
+          >
+             Do not interfere with, or disrupt, the access of any user,
+                  host, or network, including sending a virus, overloading,
+                  flooding, spamming, mail-bombing the Services, or by scripting
+                  the creation of content or accounts in such a manner as to interfere with
+                  or create an undue burden on the Services.
+          </p>
+           
+          <p
+            class="pb-4"
+          >
+            
+                    Scraping the Services is totally
+                    prohibited, but Crawling the Services is allowed if done in accordance with the provisions of our robots.txt file
+                
+          </p>
+        </div>
+         
+        <div
+          class="sub-content"
+        >
+          <h6
+            class="font-weight-bold pb-4"
+          >
+            No children
+          </h6>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  Bloverse is only for people 13 years old and over.
+                  By using Bloverse, you affirm that you are over 13.
+                  If we learn someone under 13 is using Bloverse, we’ll terminate their account.
+                
+          </p>
+        </div>
+         
+        <div
+          class="sub-content"
+        >
+          <h6
+            class="font-weight-bold pb-4"
+          >
+            Incorporated rules and policies
+          </h6>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  By using the Services, you agree to let Bloverse collect and
+                  use information as detailed in our Privacy Policy.
+                
+          </p>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  To enable a functioning community, we have House Rules for commenters, 
+                  House rules for content providers
+                
+          </p>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  By using Bloverse, you agree to follow these Rules and Policies. If you don’t, 
+                  we may remove your content, or suspend or delete your account.
+                
+          </p>
+        </div>
+         
+        <div
+          class="sub-content"
+        >
+          <h6
+            class="font-weight-bold pb-4"
+          >
+            Other Terms
+          </h6>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  Bloverse is only for people 13 years old and over.
+                  By using Bloverse, you affirm that you are over 13.
+                  If we learn someone under 13 is using Bloverse, we’ll terminate their account.
+                
+          </p>
+        </div>
+         
+        <div
+          class="sub-content"
+        >
+          <h6
+            class="font-weight-bold pb-4"
+          >
+            Incorporated rules and policies
+          </h6>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  Disclaimer of warranty
+                
+          </p>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  No implied warranty of merchantability,
+                  fitness for a particular purpose, availability,
+                  security, title or non-infringement. You use our services at your own
+                  risk and discretion. That means they don’t come with any warranty.
+                
+          </p>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  Responsibilities for comments
+                
+          </p>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  Kindly note that any opinion or comment being share on your post
+                  isn’t of Bloverse but of commenters.
+                
+          </p>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  Entire agreement.
+                
+          </p>
+           
+          <p
+            class="pb-4"
+          >
+            
+                  These Terms (including any document incorporated by reference into them)
+                  are the whole agreement between Bloverse and you concerning the Services.
+                
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,109 @@
+@import 'sass-rem';
+
+.trendCard {
+  border: 1px solid #d9d9d9 !important;
+  width: rem(343px);
+  height: 100%;
+  height: rem(240px);
+  border-radius: 0 !important;
+  &>img {
+    border-radius: 0 !important;
+    height: 100%;
+  }
+  &--overlay {
+    position: relative;
+    background-color: linear-gradient(red, yellow);
+
+    &__content {
+      position: absolute;
+      text-align: justify;
+      align-items: baseline;
+      bottom:  rem(-16px);
+      padding-right: rem(16px);
+    }
+  }
+  &--title, &--text {
+    font-size: rem(14px);
+  }
+  &--text {
+    margin-top: rem(-8px);
+  }
+  &--username {
+    font-size: rem(14px);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: rem(8px);
+    font-weight: 600;
+    .initials {
+      height: rem(16px);
+      width: rem(16px);
+      font-size: rem(10px);
+      text-align: center;
+      padding: 0;
+      padding-top: rem(1.5px);
+      padding-bottom: rem(1.5px);
+      background-color: #868686;
+      border: none;
+    }
+    .name {
+      margin: 0 rem(5px);
+    }
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .trendCard {
+    border: 1px solid #d9d9d9 !important;
+    width: rem(420px);
+    height: 100%;
+    height: rem(240px);
+    border-radius: 0 !important;
+    &>img {
+      border-radius: 0 !important;
+    }
+    &--overlay {
+      position: relative;
+      background-color: linear-gradient(red, yellow);
+  
+      &__content {
+        position: absolute;
+        text-align: justify;
+        align-items: baseline;
+        bottom:  rem(12px);
+        padding-right: rem(16px);
+      }
+    }
+    &--title, &--text {
+      font-size: rem(16px);
+    }
+    &--text {
+      margin-top: rem(-8px);
+    }
+    &--username {
+      font-size: rem(14px);
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: rem(8px);
+      .initials {
+        height: rem(16px);
+        width: rem(16px);
+        font-size: rem(10px);
+        text-align: center;
+        padding: 0;
+        padding-top: rem(1.5px);
+        padding-bottom: rem(1.5px);
+        background-color: #868686;
+        border: none;
+      }
+      .name {
+        margin: 0 rem(5px);
+      }
+    }
+  }
+}
