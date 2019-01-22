@@ -1,0 +1,100 @@
+@import 'sass-rem';
+
+.bl-dropdown {
+  &.show {
+    .bl-dropdown-btn {
+      background-color: #ffffff;
+      color: #252525;
+    }
+  }
+  &-btn {
+    background: #ffffff;
+    color: #252525;
+    height: rem(38px);
+    width: rem(125px);
+    border: rem(1px) solid rgba(0, 0, 0, 0.15);
+    &:active, &:hover {
+      background-color: #ffffff;
+      color: #252525;
+    }
+  }
+  p.country {
+    cursor: pointer;
+    &>img {
+      height: rem(18px);
+      width: rem(18px);
+      border-radius: 50%;
+      margin-right: rem(8px);
+    }
+  }
+  &-menu {
+    height: auto;
+    padding: 0;
+    &__countries {
+      width: rem(177px);
+      max-height: rem(320px);
+      overflow-y: scroll;
+      overscroll-behavior-y: smooth;
+      flex-direction: column;
+      margin: 0;
+      .country {
+        padding: rem(2px) rem(24px);
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .favourite-countries {
+        width: 100%;
+        padding: rem(12px) 0;
+        border-bottom: rem(1px) solid rgba(0, 0, 0, 0.10);;
+        .header {
+          font-size: rem(14px);
+          color: #B7B7B7;
+          text-transform: capitalize;
+          padding: rem(4px) rem(20px);
+          white-space: nowrap; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .subheader {
+          &:hover, &:active {
+            padding-bottom: 0;
+            background-color: transparent;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .other-countries {
+        width: 100%;
+        padding: rem(12px) 0;
+        .header {
+          font-size: rem(14px);
+          text-transform: capitalize;
+          color: #B7B7B7;
+          padding: rem(4px) rem(20px);
+          white-space: nowrap; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    .dropdown-item {
+      color: #252525;
+    }
+  }
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
+
+.btn-no-bg {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+};
