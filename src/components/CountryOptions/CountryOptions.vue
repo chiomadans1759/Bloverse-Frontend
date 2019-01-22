@@ -100,5 +100,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import './countryoptions.scss';
+  @import './Countryoptions.scss';
 </style>
