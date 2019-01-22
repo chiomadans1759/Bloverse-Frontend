@@ -1,0 +1,1352 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhotoContest Component should render correctly 1`] = `
+<main
+  class="container-fluid p-0"
+  id="bl-photocontest"
+>
+  <div
+    class="top-section-container"
+  >
+    <header
+      id="feeds-header"
+    >
+      <nav
+        class="navbar navbar-expand-lg navbar-light px-5 transparent alt-button"
+      >
+        <a
+          class="router-link"
+        >
+          <!---->
+           
+          <img
+            class="nav-logo"
+            src="@/assets/Logo - White.svg"
+          />
+        </a>
+         
+        <div
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          class="form-inline my-2 my-lg-0 navbar-toggler mobile-view"
+          data-target="#navbarSupportedContent"
+          data-toggle="collapse"
+        >
+          <a
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+          >
+            <span
+              id="option-icon"
+            />
+             
+            <span
+              id="option-icon"
+            />
+             
+            <span
+              id="option-icon"
+            />
+          </a>
+           
+          <div
+            aria-labelledby="navbarDropdown"
+            class="dropdown-menu dropdown-mobile-view"
+          >
+            <a
+              class="dropdown-item"
+            >
+              About
+            </a>
+             
+            <a
+              class="dropdown-item"
+            >
+              Photo Contest
+            </a>
+             
+            <a
+              class="dropdown-item"
+            >
+              Terms
+            </a>
+             
+            <a
+              class="dropdown-item"
+            >
+              Privacy
+            </a>
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              FAQ
+            </a>
+             
+            <div
+              class="dropdown-divider"
+            />
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              Feedback
+            </a>
+          </div>
+           
+          <div>
+            <span
+              class="vl bg-light"
+            />
+             
+            <a
+              class="get-started-link"
+            >
+              
+            Get Started
+          
+            </a>
+          </div>
+        </div>
+         
+        <div
+          class="collapse navbar-collapse"
+        >
+          <ul
+            class="navbar-nav ml-auto white-text"
+          >
+            <li
+              class="nav-item active"
+            >
+              <a
+                class="nav-link"
+              >
+                 Home 
+                <span
+                  class="sr-only"
+                >
+                  (current)
+                </span>
+              </a>
+            </li>
+             
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+              >
+                About
+              </a>
+            </li>
+             
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/photocontest"
+              >
+                Photo Contest
+              </a>
+            </li>
+             
+            <li
+              class="nav-item dropdown pr-4"
+            >
+              <a
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+              >
+                <span
+                  id="option-icon"
+                />
+                 
+                <span
+                  id="option-icon"
+                />
+                 
+                <span
+                  id="option-icon"
+                />
+              </a>
+               
+              <div
+                aria-labelledby="navbarDropdown"
+                class="dropdown-menu"
+              >
+                <a
+                  class="dropdown-item"
+                >
+                  Terms
+                </a>
+                 
+                <a
+                  class="dropdown-item"
+                >
+                  Privacy
+                </a>
+                 
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  FAQ
+                </a>
+                 
+                <div
+                  class="dropdown-divider"
+                />
+                 
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  Feedback
+                </a>
+              </div>
+            </li>
+          </ul>
+           
+          <div
+            class="form-inline my-2 my-lg-0 pr-4 alt-button"
+          >
+            <a
+              class="get-started-link"
+            >
+              
+            Get Started
+          
+            </a>
+             
+            <span
+              class="vl bg-light"
+            />
+             
+            <a
+              class="publish-link"
+            >
+              
+            Publish
+          
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+     
+    <div
+      class="container-fluid h-100 pb-5"
+    >
+      <div
+        class="row h-100 justify-content-center align-items-center"
+      >
+        <div
+          class="col-lg-5 col-md-6 col-sm-12 col-12"
+        >
+          <h1
+            class="title"
+          >
+            Bloverse Photo Contest
+          </h1>
+           
+          <h2
+            class="paragraph"
+          >
+            'The Story Behind The Photo'
+          </h2>
+           
+          <br />
+           
+          <div
+            class="publish-link-container mb-3 mb-sm-0"
+          >
+            <a
+              class="publish-link btn"
+            >
+              
+              Publish a Photo Contest
+            
+            </a>
+          </div>
+        </div>
+         
+        <div
+          class="col-lg-4 col-md-6 col-sm-12 col-12"
+        >
+          <video
+            class="col-12"
+            controls="controls"
+            id="video-element"
+          >
+            <source
+              src="@/assets/photocontest.mp4"
+              type="video/mp4"
+            />
+          </video>
+           
+          <div
+            class="video-button play"
+          >
+            <button>
+              <i
+                class="fas fa-play video-controls"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="ongoing-contest-section"
+  >
+    <div
+      class="row align-items-center justify-content-center"
+    >
+      <div
+        class="col-lg-8 col-md-12 col-sm-12 col-12"
+      >
+        <div
+          class="title-container"
+        >
+          <h1
+            class="title"
+          >
+            Ongoing Contest
+          </h1>
+           
+          <p
+            class="paragraph"
+          >
+            Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea
+          </p>
+        </div>
+         
+        <br />
+         
+        <div
+          class="row"
+        >
+          <div
+            class="col-lg-8 col-md-8 col-sm-12 col-12 mb-4"
+          >
+            <main
+              id="bl-contest-card"
+            >
+              <div
+                class="image"
+              >
+                <img
+                  class="img-fluid contest-image"
+                  src="@/assets/photo-3.jpg"
+                />
+              </div>
+               
+              <div
+                class="footer align-middle"
+              >
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-md-12 col-lg-12 d-none d-sm-none d-md-block"
+                  >
+                    <div
+                      class="row"
+                    />
+                  </div>
+                   
+                  <div
+                    class="col-lg-6 col-md-6 col-sm-12 col-12"
+                  >
+                    <div
+                      class="row userdetails"
+                    >
+                      <div
+                        class="col-lg-1 col-md-1 col-sm-1 col-1 profile-icon-col"
+                      >
+                        <img
+                          class="img-responsive"
+                          src="@/assets/photo-3.jpg"
+                        />
+                      </div>
+                       
+                      <div
+                        class="col-lg-3 col-md-3 col-sm-3 col-2 username"
+                      >
+                        <p>
+                          Johndoe
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="col-lg-8 col-md-8 col-sm-8 col-9 message"
+                      >
+                        <p>
+                          Greetings to the sun
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="col-lg-6 col-md-6 col-sm-12 col-12"
+                  >
+                    <div
+                      class="row actions"
+                    >
+                      <div
+                        class="col-lg-3 col-md-3 col-sm-2 col-2"
+                      >
+                        <i
+                          class="fal fa-eye icon"
+                        />
+                         123
+          
+                      </div>
+                       
+                      <div
+                        class="col-lg-3 col-md-3 col-sm-2 col-2"
+                      >
+                        <i
+                          class="fal fa-thumbs-up icon"
+                        />
+                         18
+          
+                      </div>
+                       
+                      <div
+                        class="col-lg-3 col-md-3 col-sm-2 col-2"
+                      >
+                        <i
+                          class="fal fa-comment-dots icon"
+                        />
+                         67
+          
+                      </div>
+                       
+                      <div
+                        class="col-lg-3 col-md-3 col-sm-2 col-2"
+                      >
+                        <i
+                          class="fal fa-share icon"
+                        />
+                         11
+          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+           
+          <div
+            class="col-lg-4 col-md-4 col-sm-12 col-12 d-lg-flex justify-content-center"
+          >
+            <div
+              class="contestant-list"
+            >
+              <div
+                class="contestant-header row"
+              >
+                <div
+                  class="col-lg-10 col-md-10 col-sm-11 col-10"
+                >
+                  <span
+                    class="contestant-title"
+                  >
+                    
+                    Contestants    
+                  
+                  </span>
+                   
+                  <span
+                    class="text-muted"
+                  >
+                    <main
+                      class="btn-group bl-dropdown"
+                      id="bl-dropdown"
+                    >
+                      <button
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="dropdown-toggle btn-no-bg"
+                        data-reference="parent"
+                        data-toggle="dropdown"
+                        type="button"
+                      >
+                        <p
+                          class="country"
+                        >
+                          
+      All 
+                          <i
+                            class="fal fa-angle-down"
+                          />
+                        </p>
+                      </button>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="header"
+                            >
+                              
+          Favourite Country
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item subheader"
+                            >
+                              All
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/mexico.svg"
+                              />
+                              
+          Mexico
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/US.svg"
+                              />
+                              
+          USA
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/nigeria.svg"
+                              />
+                              
+          Nigeria
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/mexico.svg"
+                              />
+                              
+          Mexico
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/US.svg"
+                              />
+                              
+          USA
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/nigeria.svg"
+                              />
+                              
+          Nigeria
+        
+                            </p>
+                          </div>
+                           
+                          <div
+                            class="other-countries"
+                          >
+                            <p
+                              class="header"
+                            >
+                              
+          Other Country
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/mexico.svg"
+                              />
+                              
+          Mexico
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/US.svg"
+                              />
+                              
+          USA
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/nigeria.svg"
+                              />
+                              
+          Nigeria
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/mexico.svg"
+                              />
+                              
+          Mexico
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/US.svg"
+                              />
+                              
+          USA
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/nigeria.svg"
+                              />
+                              
+          Nigeria
+        
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <img
+                                alt="fr"
+                                src="@/assets/nigeria.svg"
+                              />
+                              
+          Nigeria
+        
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </main>
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-lg-2 col-md-2 col-sm-1 col-2 d-flex justify-content-end badge-container"
+                >
+                  <span
+                    class="badge badge-primary"
+                  >
+                    64
+                  </span>
+                </div>
+              </div>
+               
+              <div
+                class="contestant-body"
+              >
+                <div
+                  class="contestant-names"
+                >
+                  <div
+                    class="row contestant-row"
+                  >
+                    <div
+                      class="col-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"
+                    >
+                      <img
+                        class="contestant-img"
+                        src="@/assets/photo-3.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-10 col-lg-10 col-md-10 col-sm-10 col-xs-10 contestant-name"
+                    >
+                      Johndoe
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="row contestant-row"
+                  >
+                    <div
+                      class="col-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"
+                    >
+                      <img
+                        class="contestant-img"
+                        src="@/assets/photo-3.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-10 col-lg-10 col-md-10 col-sm-10 col-xs-10 contestant-name"
+                    >
+                      Johndoe
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="row contestant-row"
+                  >
+                    <div
+                      class="col-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"
+                    >
+                      <img
+                        class="contestant-img"
+                        src="@/assets/photo-3.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-10 col-lg-10 col-md-10 col-sm-10 col-xs-10 contestant-name"
+                    >
+                      Johndoe
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="row contestant-row"
+                  >
+                    <div
+                      class="col-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"
+                    >
+                      <img
+                        class="contestant-img"
+                        src="@/assets/photo-3.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-10 col-lg-10 col-md-10 col-sm-10 col-xs-10 contestant-name"
+                    >
+                      Johndoe
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="row contestant-row"
+                  >
+                    <div
+                      class="col-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"
+                    >
+                      <img
+                        class="contestant-img"
+                        src="@/assets/photo-3.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-10 col-lg-10 col-md-10 col-sm-10 col-xs-10 contestant-name"
+                    >
+                      Johndoe
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="row contestant-row"
+                  >
+                    <div
+                      class="col-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"
+                    >
+                      <img
+                        class="contestant-img"
+                        src="@/assets/photo-3.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-10 col-lg-10 col-md-10 col-sm-10 col-xs-10 contestant-name"
+                    >
+                      Johndoe
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="contestant-bottom"
+                >
+                  <div
+                    class="contestant-link-container"
+                  >
+                    <a
+                      class="contestant-link btn"
+                    >
+                      
+                      Join the contestants
+                    
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="how-to-enter"
+  >
+    <div
+      class="row justify-content-center"
+    >
+      <div
+        class="col-lg-8 col-md-12 col-sm-12 col-12"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-lg-6 col-md-6 col-sm-12 col-12 left-side"
+          >
+            <h2
+              class="how-to-enter-text"
+            >
+              How to enter
+            </h2>
+             
+            <br />
+             
+            <div
+              class="steps"
+            >
+              <ol>
+                <li>
+                  Like this post
+                </li>
+                 
+                <li>
+                  Follow us on instagram 
+                  <span
+                    class="bold-text"
+                  >
+                    @bloverse
+                  </span>
+                </li>
+                 
+                <li>
+                  Tag two friends with the hashtag 
+                  <span
+                    class="bold-text"
+                  >
+                    #JoinTheBloverse
+                  </span>
+                </li>
+                 
+                <li>
+                  <a>
+                    Apply
+                  </a>
+                   to be a content creator
+                </li>
+                 
+                <li>
+                  Submit the lifestyle photo and the story behind it as a published post on bloverse
+                </li>
+                 
+                <li>
+                  Share your article on instagram, facebook, twitter followed by the hashtag 
+                  <span
+                    class="bold-text"
+                  >
+                    #JoinTheBloverse
+                  </span>
+                </li>
+              </ol>
+            </div>
+          </div>
+           
+          <div
+            class="col-lg-6 col-md-6 d-none d-sm-none d-md-block align-self-center"
+          >
+            <img
+              class="img-fluid enter-image"
+              src="@/assets/photo-2.jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="judging-criteria"
+  >
+    <div
+      class="row justify-content-center"
+    >
+      <div
+        class="col-lg-8 col-md-12 col-sm-12 col-12"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-lg-6 col-md-6 d-none d-sm-none d-md-block align-self-center"
+          >
+            <img
+              class="img-fluid judging-image"
+              src="@/assets/photo-1.jpg"
+            />
+          </div>
+           
+          <div
+            class="col-lg-6 col-md-6 col-sm-12 col-12 right-hand"
+          >
+            <h2
+              class="judging-criteria-text"
+            >
+              Judging Criteria:
+            </h2>
+             
+            <br />
+             
+            <div>
+              <div
+                class="row criteria"
+              >
+                <div
+                  class="col-md-2"
+                >
+                  <div
+                    class="criteria-icon"
+                  >
+                    <i
+                      class="fal fa-eye fa-2x icon"
+                    />
+                  </div>
+                </div>
+                 
+                <div
+                  class="col-md-10 criteria-content"
+                >
+                  <h2
+                    class="criteria-text"
+                  >
+                    Views
+                  </h2>
+                   
+                  <p
+                    class="criteria-subtext"
+                  >
+                    You get a reward of 1 point for every view your article has.
+                  </p>
+                </div>
+              </div>
+               
+              <div
+                class="row criteria"
+              >
+                <div
+                  class="col-md-2"
+                >
+                  <div
+                    class="criteria-icon"
+                  >
+                    <i
+                      class="fal fa-eye fa-2x icon"
+                    />
+                  </div>
+                </div>
+                 
+                <div
+                  class="col-md-10 criteria-content"
+                >
+                  <h2
+                    class="criteria-text"
+                  >
+                    Comment
+                  </h2>
+                   
+                  <p
+                    class="criteria-subtext"
+                  >
+                    For every interaction (in comment) that you post/article 
+                    received you get a reward of 5 points per comment.
+                  </p>
+                </div>
+              </div>
+               
+              <div
+                class="row criteria"
+              >
+                <div
+                  class="col-md-2"
+                >
+                  <div
+                    class="criteria-icon"
+                  >
+                    <i
+                      class="fal fa-eye fa-2x icon"
+                    />
+                  </div>
+                </div>
+                 
+                <div
+                  class="col-md-10 criteria-content"
+                >
+                  <h2
+                    class="criteria-text"
+                  >
+                    Share Content
+                  </h2>
+                   
+                  <p
+                    class="criteria-subtext"
+                  >
+                    You can also get reward for every of your post/article that is being 
+                    shared on other social media platforms. You get reward of 10 points per share.
+                  
+                  </p>
+                </div>
+              </div>
+               
+              <div
+                class="row criteria"
+              >
+                <div
+                  class="col-md-2"
+                >
+                  <div
+                    class="criteria-icon"
+                  >
+                    <i
+                      class="fal fa-eye fa-2x icon"
+                    />
+                  </div>
+                </div>
+                 
+                <div
+                  class="col-md-10 criteria-content"
+                >
+                  <h2
+                    class="criteria-text"
+                  >
+                    Likes
+                  </h2>
+                   
+                  <p
+                    class="criteria-subtext"
+                  >
+                    For every like that your post/article attracts, you get a
+                     reward of 25 points per like.
+                  
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="prize-section"
+  >
+    <div
+      class="row justify-content-center"
+    >
+      <div
+        class="col-md-10 col-sm-12 col-12"
+      >
+        <div
+          class="row justify-content-center"
+        >
+          <div
+            class="col-lg-3 col-md-6 col-sm-12 col-12 prize"
+          >
+            <div
+              class="card mb-3 gold-card"
+            >
+              <img
+                alt="Gold Icon"
+                class="card-img-top card-icon align-self-center"
+                src="@/assets/Gold icon.svg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  1st Prize
+                </h5>
+                 
+                <p
+                  class="card-text"
+                >
+                  $150
+                </p>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="col-lg-3 col-md-6 col-sm-12 col-12 prize"
+          >
+            <div
+              class="card mb-3 silver-card"
+            >
+              <img
+                alt="Silver Icon"
+                class="card-img-top card-icon align-self-center"
+                src="@/assets/Silver icon.svg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  2nd Prize
+                </h5>
+                 
+                <p
+                  class="card-text"
+                >
+                  $120
+                </p>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="col-lg-3 col-md-6 col-sm-12 col-12 prize"
+          >
+            <div
+              class="card mb-3 bronze-card"
+            >
+              <img
+                alt="Bronze Icon"
+                class="card-img-top card-icon align-self-center"
+                src="@/assets/Bronze icon.svg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  3rd Prize
+                </h5>
+                 
+                <p
+                  class="card-text"
+                >
+                  $50
+                </p>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="col-lg-3 col-md-6 col-sm-12 col-12 prize"
+          >
+            <div
+              class="card mb-3 platinum-card"
+            >
+              <img
+                alt="Platinum Icon"
+                class="card-img-top card-icon align-self-center"
+                src="@/assets/Blue.svg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Highest Ranked Creator
+                </h5>
+                 
+                <p
+                  class="card-text"
+                >
+                  $100
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="footer-section"
+  >
+    <div
+      class="row pb -4"
+    >
+      <div
+        class="col-md-2 d-none d-sm-none d-md-block"
+      />
+       
+      <div
+        class="col-md-8 col-sm-12 col-12"
+      >
+        <div
+          class="footer"
+        >
+          <div>
+            <h2
+              class="footer-text"
+            >
+              Contest is open to all residents of Australia, Mexico, United States, Canada, 
+            United Kingdom, Ireland, Italy, France, Germany, Netherlands, United Arab Emirates, 
+            Pakistan, India, Singapore, Philippines, Hong Kong, Kenya, South Africa, Nigeria 
+            and Ghana.
+            </h2>
+             
+            <h2
+              class="footer-text"
+            >
+              
+            For complete contest rules. 
+              <a>
+                click here
+              </a>
+            </h2>
+          </div>
+           
+          <br />
+           
+          <div
+            class="word-spread"
+          >
+            <div>
+              <span
+                class="title"
+              >
+                Spread The Word:
+              </span>
+               
+              <span
+                class="facebook-icon social-icon"
+              >
+                <img
+                  alt="facebook"
+                  src="@/assets/facebook.svg"
+                />
+              </span>
+               
+              <span
+                class="twitter-icon social-icon"
+              >
+                <img
+                  alt="twitter"
+                  src="@/assets/twitter.svg"
+                />
+              </span>
+               
+              <span
+                class="twitter-icon social-icon"
+              >
+                <img
+                  alt="linkedin"
+                  src="@/assets/linkedin.svg"
+                />
+              </span>
+            </div>
+          </div>
+           
+          <div
+            class="copyright text-center"
+          >
+            <p
+              class="title"
+            >
+              bloverse
+              <span
+                class="sub-text"
+              >
+                2018. All Right Reserved
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="col-md-2 d-none d-sm-none d-md-block"
+      />
+    </div>
+  </div>
+</main>
+`;

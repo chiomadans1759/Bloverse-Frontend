@@ -1,0 +1,60 @@
+
+@import 'sass-rem';
+
+.bl-trends {
+  margin: rem(12px) rem(8px);
+  height: rem(321px);
+  height: auto;
+  padding: 0;
+  &--header {
+    margin-bottom: rem(16px);
+    .title {
+      color: #252525;
+      font-size: rem(14px);
+    }
+    .subtitle {
+      color: #868686;
+      font-size: rem(12px);
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .VueCarousel-slide:first-child {
+    margin-left: 0;
+  }
+  .VueCarousel-slide {
+    margin: auto rem(8px);
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .bl-trends {
+    margin: rem(16px) auto;
+    height: rem(321px);
+    height: auto;
+    padding: 0;
+    &--header {
+      margin-bottom: rem(16px);
+      .title {
+        color: #252525;
+        font-size: rem(16px);
+      }
+      .subtitle {
+        color: #868686;
+        font-size: rem(14px);
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .VueCarousel-slide:first-child {
+      margin-left: 0;
+    }
+    .VueCarousel-slide {
+      margin: auto rem(8px);
+    }
+  }
+}

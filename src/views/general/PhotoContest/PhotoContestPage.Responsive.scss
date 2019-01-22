@@ -1,0 +1,61 @@
+@media (max-width: 576px) {
+  #bl-photocontest {
+    overflow-x: hidden;
+    .ongoing-contest-section {
+      padding: 0 !important;
+
+      .title-container {
+        padding: rem(40px) rem(17px) rem(10px) rem(17px);
+      }
+    }
+
+    .contestant-list {
+      padding: rem(23px) rem(16px) rem(23px) rem(16px);
+      width: auto;
+      .badge-container {
+        text-align: right;
+      }
+    }
+
+    .judging-criteria {
+      padding-top: rem(40px);
+      padding-bottom: rem(40px);
+      .criteria {
+        width: auto;
+      }
+      .criteria-content {
+        padding-left: rem(80px);
+      }
+    }
+
+    .prize-section {
+      padding-top: rem(40px);
+      padding-bottom: rem(40px);
+
+      .prize {
+        margin-bottom: rem(17px);
+
+        .card {
+          .card-icon {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #bl-photocontest {
+    .judging-criteria {
+      padding-top: rem(40px);
+      padding-bottom: rem(40px);
+      .criteria {
+        width: auto;
+      }
+      .criteria-content {
+        padding-left: rem(80px);
+      }
+    }
+  }
+}

@@ -1,0 +1,373 @@
+@import 'sass-rem';
+
+#bl-photocontest {
+
+  background-color: #ffffff;
+  .top-section-container {
+    background-color: #096DD9;
+    margin: 0;
+    background-image:
+          linear-gradient(rgba(18, 18, 19, 0.8), rgba(18, 18, 19, 0.8)),
+          url('../../../assets/photo-4.jpg');
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .row {
+      margin: 0;
+    }
+
+    .video-button {
+      height: rem(80px);
+      width: rem(80px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      border-radius: 50%;
+
+      .video-controls {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #252525;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    .title {
+      font-size: rem(56px);
+      padding: rem(10px);
+    }
+    
+    .paragraph {
+      font-size: rem(20px);
+      padding: rem(10px);
+    }
+    
+    .publish-link {
+      background-image: linear-gradient( to right, #003CE1, #2F80ED);
+      color: #ffffff;
+      padding: rem(10px);
+      font-size: rem(18px);
+    }
+    
+    img {
+      height: rem(400px);
+      width: rem(600px);
+      padding-top: rem(20px);
+      padding-bottom: rem(20px);
+    }
+  }
+  
+  .publish-link-container {
+    padding: rem(10px);
+  }
+  
+  .ongoing-contest-section {
+    padding: rem(40px) rem(50px) rem(40px) rem(50px);
+
+    .title {
+      font-size: rem(24px);
+    }
+
+    .paragraph {
+      font-size: rem(14px);
+      padding-top: rem(5px);
+      color: #868686;
+    }
+  }
+
+  .contestant-list {
+    width: rem(100%);
+
+    .contestant-title {
+      font-size: rem(14px);
+      font-weight: 600;
+
+    }
+
+    .contestant-filter {
+      font-size: rem(14px);
+    }
+
+    .badge {
+      background-color: transparent;
+      width: rem(22px);
+      height: rem(16px);
+      color: #096DD9;
+      border: rem(1px) solid #096DD9;
+      border-radius: rem(2px);
+    }
+
+    .contestant-body {
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      .contestant-row {
+        padding-bottom: rem(10px);
+      }
+      .contestant-names {
+        padding: rem(10px);
+        height: rem(200px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        .contestant-img {
+          height: rem(40px);
+          width: rem(40px);
+          border-radius: rem(2px);
+        }
+        .contestant-name {
+          padding: rem(10px) rem(10px) rem(10px) rem(20px);
+          font-weight: 900;
+        }
+      }
+    }
+
+    .contestant-bottom {
+      border-top: rem(1px) solid rgba(0, 0, 0, 0.15);
+      .contestant-link-container {
+        padding: rem(10px);
+        text-align: center;
+        .contestant-link {
+          background-image: linear-gradient( to right, #003CE1, #2F80ED);
+          color: #ffffff;
+          padding: rem(10px);
+          font-size: rem(14px);
+          width: 100%;
+        }
+      }
+    }
+
+  }
+
+  .how-to-enter {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+
+    .row {
+      margin: 0;
+    }
+
+    .enter-image {
+      width: rem(479px);
+      height: rem(362.76px);
+    }
+
+    .left-side {
+      padding-top: rem(24px);
+    }
+
+    .how-to-enter-text {
+      font-size: rem(24px);
+      font-weight: 900;
+    }
+
+    li {
+      padding-left: rem(27px);
+      padding-top: rem(16px);
+      font-size: rem(16px);
+    }
+
+    .bold-text {
+      font-weight: 900;
+    }
+
+    .steps {
+      padding-left: rem(20px);
+    }
+  }
+
+  .judging-criteria {
+
+    .row {
+      margin: 0;
+    }
+
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+    .judging-image {
+      width: rem(479px);
+      height: rem(680px);
+    }
+
+    .judging-criteria-text {
+      font-size: rem(24px);
+      font-weight: 900;
+
+    }
+
+    .criteria-icon {
+      position: absolute;
+      background-color: #ffffff;
+      left: rem(-20px);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      height: rem(72px);
+      width: rem(72px);
+      margin: auto;
+      text-align: center;
+      vertical-align: middle;
+      .icon {
+        color: #096DD9;
+      }
+      svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .criteria-content {
+      color: #565656;
+
+      .criteria-text {
+        font-size: rem(16px);
+        font-weight: 900;
+        padding-bottom: rem(8px);
+      }
+
+      p {
+        font-size: rem(16px);
+      }
+    }
+
+    .criteria {
+      position: relative;
+      padding-top: rem(24px);
+      padding-bottom: rem(24px);
+      border: rem(1px) solid rgba(0, 0, 0, 0.15);
+      margin-bottom: rem(8px) ;
+    }
+  }
+
+  .prize-section {
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+    text-align: center;
+
+    .row {
+      margin: 0;
+    }
+
+    .prize .card:hover {
+      transform: scale(1.22);
+      -webkit-transform: scale(1.22);
+      z-index: 2;
+    }
+
+    .prize {
+      cursor: pointer;
+      .card {
+        background-color: #F5F5F5;
+        border-radius: 0 !important;
+        border-bottom-width: rem(4px) !important;
+        min-height: rem(290px);
+        transition: all .25s ease-in-out;
+        .card-title {
+          font-size: rem(16px);
+          color: #252525;
+          font-weight: 900;
+        }
+        .card-text {
+          font-size: rem(56px);
+          color: #096DD9;
+        }
+        .card-icon {
+          height: rem(100px);
+          width: rem(100px);
+        }
+
+        .card-img-overlay {
+          padding: 0;
+          div {
+            padding-top: rem(20px);
+          }
+        }
+      }
+      .gold-card {
+        border-color: #E5B64E !important;
+        background-image: url('../../../assets/gold-medal-mask.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      .silver-card {
+        border-color: #BCBEC0 !important;
+        background-image: url('../../../assets/silver-medal-mask.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      .bronze-card {
+        border-color: #D37B40 !important;
+        background-image: url('../../../assets/bronze-medal-mask.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      .platinum-card {
+        border-color: #ABD1E4 !important;
+        background-image: url('../../../assets/platinum-medal-mask.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+
+  .footer-section {
+    padding-top: rem(64px);
+    background-color: #F5F5F5;
+
+    .row {
+      margin: 0;
+    }
+
+    .footer-text {
+      font-size: rem(16px);
+      color: #565656;
+    }
+    .word-spread {
+      margin-top: rem(20px);
+      .title {
+        font-size: rem(14px);
+        font-weight: 900;
+      }
+
+      .social-icon {
+        position: relative;
+        padding-left: rem(16px);
+
+        img {
+          height: rem(38px);
+          width: rem(38px);
+        }
+      }
+    }
+
+    .copyright {
+      margin-top: rem(64px);
+      .title {
+        font-size: rem(14px);
+        color: #B7B7B7;
+
+        span {
+          padding-left: rem(4px);
+          font-size: rem(10px);
+        }
+      }
+
+      .sub-text {
+        font-size: rem(10px);
+        color: rgba(0, 0, 0, 0.45);
+      }
+    }
+  }
+}

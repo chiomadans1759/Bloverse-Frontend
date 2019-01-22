@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CountryOptions Component should render correctly 1`] = `
+<main
+  class="btn-group bl-dropdown"
+  id="bl-dropdown"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="btn dropdown-toggle bl-dropdown-btn"
+    data-reference="parent"
+    data-toggle="dropdown"
+    type="button"
+  >
+    <p
+      class="country"
+    >
+      <img
+        alt="fr"
+        src="@/assets/france.svg"
+      />
+      
+      France
+      
+      <i
+        class="fal fa-angle-down"
+      />
+    </p>
+  </button>
+   
+  <div
+    aria-labelledby="dropdownMenuReference"
+    class="dropdown-menu bl-dropdown-menu"
+  >
+    <div
+      class="d-flex bl-dropdown-menu__countries"
+    >
+      <div
+        class="favourite-countries"
+      >
+        <p
+          class="header"
+        >
+          
+          Favourite Country
+        
+        </p>
+         
+        <p
+          class="dropdown-item subheader"
+        >
+          All
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/mexico.svg"
+          />
+          
+          Mexico
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/US.svg"
+          />
+          
+          USA
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/nigeria.svg"
+          />
+          
+          Nigeria
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/mexico.svg"
+          />
+          
+          Mexico
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/US.svg"
+          />
+          
+          USA
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/nigeria.svg"
+          />
+          
+          Nigeria
+        
+        </p>
+      </div>
+       
+      <div
+        class="other-countries"
+      >
+        <p
+          class="header"
+        >
+          
+          Other Country
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/mexico.svg"
+          />
+          
+          Mexico
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/US.svg"
+          />
+          
+          USA
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/nigeria.svg"
+          />
+          
+          Nigeria
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/mexico.svg"
+          />
+          
+          Mexico
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/US.svg"
+          />
+          
+          USA
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/nigeria.svg"
+          />
+          
+          Nigeria
+        
+        </p>
+         
+        <p
+          class="dropdown-item country"
+        >
+          <img
+            alt="fr"
+            src="@/assets/nigeria.svg"
+          />
+          
+          Nigeria
+        
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+`;

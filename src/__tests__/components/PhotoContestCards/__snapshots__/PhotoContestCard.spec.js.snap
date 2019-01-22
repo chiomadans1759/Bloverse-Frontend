@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhotoContestCard Component should render correctly 1`] = `
+<main
+  class="card text-white photoContestCard"
+>
+  <img
+    alt="trend image"
+    class="card-img"
+    src="@/assets/photo-contest-1.jpg"
+  />
+   
+  <div
+    class="card-img-overlay photoContestCard--overlay"
+  >
+    <div
+      class="content photoContestCard--overlay__content"
+    >
+      <p
+        class="card-text font-weight-bold photoContestCard--text"
+      >
+        
+        Lorem ipsum dolor sit amet, vel accumsan
+      
+      </p>
+       
+      <p
+        class="card-text photoContestCard--username"
+      >
+        <a
+          class="btn btn-primary initials"
+          href="#"
+          role="button"
+        />
+         
+        <span
+          class="name"
+        >
+          John Doe
+        </span>
+      </p>
+    </div>
+  </div>
+</main>
+`;

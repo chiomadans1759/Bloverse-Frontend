@@ -27,7 +27,7 @@
       <div class="row pt-2" id="mobile">
         <div class="col-8">
           <ul class="list-inline">
-             <li class="list-inline-item pl-4" style="font-size:15px;">
+            <li class="list-inline-item pl-4" style="font-size:15px;">
               bloverse
             </li>
             <li class="list-inline-item pl-4">
