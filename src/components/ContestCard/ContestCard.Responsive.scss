@@ -1,0 +1,12 @@
+@media (max-width: 576px) {
+  #bl-contest-card {
+    .actions {
+      padding-top: rem(10px);
+      div {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        text-align: left;
+      }
+    }
+  }
+}

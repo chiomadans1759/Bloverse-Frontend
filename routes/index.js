@@ -5,7 +5,7 @@ import GeneralLayout from '@/layouts/GeneralLayout';
 import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
 
-import PostFeeds from '../src/views/PostFeeds.vue';
+
 import PostDisplay from '../src/views/general/singlePost/singlepost';
 
 
@@ -23,24 +23,34 @@ import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
 
 import NotFound from '../src/views/NotFound.vue';
-import Terms from '../src/views/TermsAndConditions.vue';
+
+import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPage.vue';
+
 import Privacy from '../src/views/Privacy.vue';
 
 import Signin from '../src/views/general/Signin/SigninPage.vue';
 import AboutUs from '../src/views/general/about/about.vue';
 import ForgotPassword from '../src/views/general/forgotPassword/ForgotPasswordPage.vue';
 import consumerSignup from '../src/views/consumers/SignUpPage/SignUpPage';
+import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
+import Homepage from '../src/views/general/Home/Homepage.vue';
 
 const routes = [
   {
     path: '/', component: GeneralLayout,
     children: [
-      { path: '', component: PostFeeds },
+      { path: '', component: Homepage },
       { path: 'posts', redirect: '/' },
       { path: 'posts/:slug', component: PostDisplay },
       { path: '/about', component: AboutUs , name:"about"},
       { path: '/terms-and-conditions', component: Terms},
       { path: '/privacy-policies', component: Privacy},
+    ]
+  },
+  {
+    path: '/', component: BlankBase,
+    children: [
+      { path: '/photo-contest', component: PhotoContest},
     ]
   },
   { path: '/login', component: Signin},

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trend Component should render correctly 1`] = `
+<main
+  class="card text-white trendCard"
+>
+  <img
+    alt="trend image"
+    class="card-img"
+    src="@/assets/photo-4.jpg"
+  />
+   
+  <div
+    class="card-img-overlay trendCard--overlay"
+  >
+    <div
+      class="content trendCard--overlay__content"
+    >
+      <p
+        class="card-title trendCard--title"
+      >
+        Category
+      </p>
+       
+      <p
+        class="card-text font-weight-bold trendCard--text"
+      >
+        
+        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+      
+      </p>
+       
+      <p
+        class="card-text trendCard--username"
+      >
+        <a
+          class="btn btn-primary initials"
+          href="#"
+          role="button"
+        />
+         
+        <span
+          class="name"
+        >
+          John Doe
+        </span>
+      </p>
+    </div>
+  </div>
+</main>
+`;

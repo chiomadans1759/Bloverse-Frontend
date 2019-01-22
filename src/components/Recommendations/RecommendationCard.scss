@@ -1,0 +1,222 @@
+@import 'sass-rem';
+
+.recommendation-card {
+  border-radius: 0 !important;
+  height: rem(344px);
+  width: rem(281px);
+  padding: rem(4px);
+  .card-body {
+    padding: rem(12px);
+    .card-title {
+      color: #868686;
+      font-size: rem(14px);
+    }
+  }
+  &>img {
+    border-radius: 0 !important;
+  }
+  &--content {
+    height: rem(65px);
+    &__text {
+      height: 60%;
+      overflow: hidden;
+    }
+    &__username {
+      margin: rem(8px) auto;
+      .initials {
+        height: rem(16px);
+        width: rem(16px);
+        font-size: rem(10px);
+        text-align: center;
+        padding: 0;
+        padding-top: rem(1.5px);
+        padding-bottom: rem(1.5px);
+        background-color: #868686;
+        border: none;
+      }
+      .initials {
+        height: rem(16px);
+        width: rem(16px);
+        font-size: rem(10px);
+        text-align: center;
+        padding: 0;
+        padding-top: rem(2.5px);
+        padding-bottom: rem(1.5px);
+        background-color: #868686;
+        border: none;
+      }
+      .name {
+        color: #565656;
+        font-weight: 500;
+        margin: auto rem(5px);
+      }
+      .name::after {
+        content: '\2022';
+        color: #2F80ED;
+        margin-left: rem(5px);
+        font-weight: 800;
+      }
+      .time {
+        font-size: rem(12px);
+        color: #868686;
+      }
+    }
+  }
+  .actions {
+    height: rem(21px);
+    margin: rem(12px) auto;
+    margin-bottom: 0;
+    .count {
+      margin: rem(7px);
+      color: #252525;
+    }
+    .views {
+      color: #868686;
+      padding: 0;
+      cursor: pointer;
+    }
+    .others {
+      margin:0;
+      padding: 0;
+      .likes {
+        border-right: rem(1px) solid #e6e5e5;
+        padding: 0;
+        display: inline-flex;
+        justify-content: space-around;
+        color: #2F80ED;
+        .thumbs-up, .thumbs-down {
+          cursor: pointer;
+        }
+      }
+      .comments {
+        border-right: rem(1px) solid #e6e5e5;
+        padding: 0;
+        display: inline-flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #868686;
+        .coment, .share {
+          cursor: pointer;
+        }
+      }
+      .ellipsis {
+        cursor: pointer;
+        font-size: rem(16px);
+        padding: 0;
+        text-align: center;
+        color: #868686;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .recommendation-card {
+    border-radius: 0 !important;
+    height: rem(344px);
+    width: rem(281px);
+    padding: rem(4px);
+    .card-body {
+      padding: rem(12px);
+      .card-title {
+        color: #868686;
+      }
+    }
+    &>img {
+      border-radius: 0 !important;
+    }
+    &--content {
+      height: rem(65px);
+      &__text {
+        height: 60%;
+        overflow: hidden;
+      }
+      &__username {
+        margin: rem(8px) auto;
+        .initials {
+          height: rem(16px);
+          width: rem(16px);
+          font-size: rem(10px);
+          text-align: center;
+          padding: 0;
+          padding-top: rem(1.5px);
+          padding-bottom: rem(1.5px);
+          background-color: #868686;
+          border: none;
+        }
+        .initials {
+          height: rem(16px);
+          width: rem(16px);
+          font-size: rem(10px);
+          text-align: center;
+          padding: 0;
+          padding-top: rem(2.5px);
+          padding-bottom: rem(1.5px);
+          background-color: #868686;
+          border: none;
+        }
+        .name {
+          color: #565656;
+          font-weight: 500;
+          margin: auto rem(5px);
+        }
+        .name::after {
+          content: '\2022';
+          color: #2F80ED;
+          margin-left: rem(5px);
+          font-weight: 800;
+        }
+        .time {
+          font-size: rem(12px);
+          color: #868686;
+        }
+      }
+    }
+    .actions {
+      height: rem(21px);
+      margin: rem(12px) auto;
+      margin-bottom: 0;
+      .count {
+        margin: rem(7px);
+        color: #252525;
+      }
+      .views {
+        color: #868686;
+        padding: 0;
+        cursor: pointer;
+      }
+      .others {
+        margin:0;
+        padding: 0;
+        .likes {
+          border-right: rem(1px) solid #e6e5e5;
+          padding: 0;
+          display: inline-flex;
+          justify-content: space-around;
+          color: #2F80ED;
+          .thumbs-up, .thumbs-down {
+            cursor: pointer;
+          }
+        }
+        .comments {
+          border-right: rem(1px) solid #e6e5e5;
+          padding: 0;
+          display: inline-flex;
+          justify-content: space-around;
+          align-items: center;
+          color: #868686;
+          .coment, .share {
+            cursor: pointer;
+          }
+        }
+        .ellipsis {
+          cursor: pointer;
+          font-size: rem(16px);
+          padding: 0;
+          text-align: center;
+          color: #868686;
+        }
+      }
+    }
+  }
+}

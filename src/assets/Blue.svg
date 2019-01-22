@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88.099" height="160.714" viewBox="0 0 88.099 160.714">
+  <g id="Blue" transform="translate(0)">
+    <g id="Layer_1" data-name="Layer 1">
+      <circle id="Ellipse_555" data-name="Ellipse 555" cx="34.153" cy="34.153" r="34.153" transform="translate(9.853 92.398)" fill="#96c6de"/>
+      <circle id="Ellipse_556" data-name="Ellipse 556" cx="27.925" cy="27.925" r="27.925" transform="translate(16.08 98.626)" fill="#76afcb"/>
+      <circle id="Ellipse_557" data-name="Ellipse 557" cx="24.942" cy="24.942" r="24.942" transform="translate(19.063 101.609)" fill="#abd1e4"/>
+      <path id="Path_2032" data-name="Path 2032" d="M41,89.158a7.109,7.109,0,1,0-7.109-7.109A7.109,7.109,0,0,0,41,89.158Zm0-10.593a3.457,3.457,0,1,0,0,.033Z" transform="translate(3.006 6.647)" fill="#abd1e4"/>
+      <path id="Path_2033" data-name="Path 2033" d="M37.458,86.235A7.1,7.1,0,0,1,43.207,75v3.593a3.473,3.473,0,0,0,0,6.946v68.523a34.153,34.153,0,0,1-5.748-67.826Z" transform="translate(0.799 6.653)" fill="#fff" opacity="0.2"/>
+      <path id="Path_2034" data-name="Path 2034" d="M45.95,74.25H57.817L84.022,0H72.155Z" transform="translate(4.076)" fill="#096dd9"/>
+      <path id="Path_2035" data-name="Path 2035" d="M24.15,74.25H36.017L62.222,0H50.355Z" transform="translate(2.142)" fill="#096dd9"/>
+      <path id="Path_2036" data-name="Path 2036" d="M35.05,74.25H46.917L73.122,0H61.255Z" transform="translate(3.109)" fill="#fff"/>
+      <path id="Path_2037" data-name="Path 2037" d="M74.089,0H50.355L24.15,74.25h35.6L85.956,0Z" transform="translate(2.142)" opacity="0.16"/>
+      <path id="Path_2038" data-name="Path 2038" d="M38.45,72.27v6.706a2.177,2.177,0,1,0,4.355,0V72.27Z" transform="translate(3.411 6.411)" fill="#abd1e4"/>
+      <path id="Path_2039" data-name="Path 2039" d="M65.322,74.05H19.89a4.05,4.05,0,1,1,0-8.1H65.322a4.05,4.05,0,1,1,0,8.1ZM19.89,68.4a1.6,1.6,0,1,0,0,3.2H65.322a1.6,1.6,0,1,0,0-3.2Z" transform="translate(1.405 5.85)" fill="#abd1e4"/>
+      <path id="Path_2040" data-name="Path 2040" d="M38.072,74.25H26.205L0,0H11.867Z" fill="#096dd9"/>
+      <path id="Path_2041" data-name="Path 2041" d="M59.872,74.25H48.005L21.8,0H33.667Z" transform="translate(1.934)" fill="#096dd9"/>
+      <path id="Path_2042" data-name="Path 2042" d="M48.972,74.25H37.105L10.9,0H22.767Z" transform="translate(0.967)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

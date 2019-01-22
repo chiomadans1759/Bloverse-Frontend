@@ -115,124 +115,21 @@
 
                 </div>
                  <p class="text-center"><button class="btn btn-primary">More Comments</button></p>
-              </div><br><br><br>
+              </div><br>
+              <div class="card">
+                <div class="card-body">
+                  <trends />
+                </div>
+              </div><br>
+              <div class="card">
+                <div class="card-body">
+                  <recommendations />
+                </div>
+              </div><br><br><br><br>
+              
             </div>
 
             <div class="col-12 col-sm-4 col-md-4 col-lg-4 related__articles">
-              <p class="mb-2"><b>Related Articles</b></p>
-              <div class="card">
-                <div class="content_card_wrapper--related">
-                  <div class="media">
-                    <div class="media-body">
-                      <h5 class="mt-0 mb-1">Lorem ipsum dolor sit amet, vel accumsan libera</h5>
-                     <div class="user_details">
-                      <div class="media">
-                        <img :src="require('@/assets/photo4.jpg')" class="img-responsive mr-3">
-                        <div class="media-body">
-                          <h5 class="mt-0">John Doe . <small>1 min Ago</small></h5>
-                          
-                        </div>
-                      </div>
-
-                    </div>
-                    </div>
-                    <img :src="require('@/assets/signin-image.jpg')" alt="" class="img-responsive ml-4">
-                  </div>
-                  <br><br>
-                  <div class="media">
-                    <div class="media-body">
-                      <h5 class="mt-0 mb-1">Lorem ipsum dolor sit amet, vel accumsan libera</h5>
-                     <div class="user_details">
-                      <div class="media">
-                        <img :src="require('@/assets/photo4.jpg')" class="img-responsive mr-3">
-                        <div class="media-body">
-                          <h5 class="mt-0">John Doe . <small>1 min Ago</small></h5>
-                          
-                        </div>
-                      </div>
-
-                    </div>
-                    </div>
-                    <img :src="require('@/assets/signin-image.jpg')" alt="" class="img-responsive ml-4">
-                  </div>
-                  <br><br>
-                  <div class="media">
-                    <div class="media-body">
-                      <h5 class="mt-0 mb-1">Lorem ipsum dolor sit amet, vel accumsan libera</h5>
-                     <div class="user_details">
-                      <div class="media">
-                        <img :src="require('@/assets/photo4.jpg')" class="img-responsive mr-3">
-                        <div class="media-body">
-                          <h5 class="mt-0">John Doe . <small>1 min Ago</small></h5>
-                          
-                        </div>
-                      </div>
-
-                    </div>
-                    </div>
-                    <img :src="require('@/assets/signin-image.jpg')" alt="" class="img-responsive ml-4">
-                  </div>
-                  <br><br>
-                </div>
-              </div>
-              <br>
-              <p class="mb-2"><b>Top Articles Within Category's Name</b></p>
-              <div class="card">
-                <div class="content_card_wrapper--related">
-                  <div class="media">
-                    <div class="media-body">
-                      <h5 class="mt-0 mb-1">Lorem ipsum dolor sit amet, vel accumsan libera</h5>
-                     <div class="user_details">
-                      <div class="media">
-                        <img :src="require('@/assets/photo4.jpg')" class="img-responsive mr-3">
-                        <div class="media-body">
-                          <h5 class="mt-0">John Doe . <small>1 min Ago</small></h5>
-                          
-                        </div>
-                      </div>
-
-                    </div>
-                    </div>
-                    <img :src="require('@/assets/signin-image.jpg')" alt="" class="img-responsive ml-4">
-                  </div>
-                  <br><br>
-                  <div class="media">
-                    <div class="media-body">
-                      <h5 class="mt-0 mb-1">Lorem ipsum dolor sit amet, vel accumsan libera</h5>
-                     <div class="user_details">
-                      <div class="media">
-                        <img :src="require('@/assets/photo4.jpg')" class="img-responsive mr-3">
-                        <div class="media-body">
-                          <h5 class="mt-0">John Doe . <small>1 min Ago</small></h5>
-                          
-                        </div>
-                      </div>
-
-                    </div>
-                    </div>
-                    <img :src="require('@/assets/signin-image.jpg')" alt="" class="img-responsive ml-4">
-                  </div>
-                  <br><br>
-                  <div class="media">
-                    <div class="media-body">
-                      <h5 class="mt-0 mb-1">Lorem ipsum dolor sit amet, vel accumsan libera</h5>
-                     <div class="user_details">
-                      <div class="media">
-                        <img :src="require('@/assets/photo4.jpg')" class="img-responsive mr-3">
-                        <div class="media-body">
-                          <h5 class="mt-0">John Doe . <small>1 min Ago</small></h5>
-                          
-                        </div>
-                      </div>
-
-                    </div>
-                    </div>
-                    <img :src="require('@/assets/signin-image.jpg')" alt="" class="img-responsive ml-4">
-                  </div>
-                  <br><br>
-                </div>
-              </div>
-              <p class="mb-2"><b>Top Articles Within Category's Name</b></p>
               <div class="card">
                 <div class="content_card_wrapper--contest">
                   <h3>Photo Contest Competition</h3>
@@ -241,7 +138,21 @@
                   <img :src="require('@/assets/Mask Group 15.svg')" alt="" class="img-responsive mr-3">
                 </div>
               </div>
+              <div class="bl-footer">
+                <div class="row company-name">
+                  <div class="col-sm-3 font-weight-bold text-lowercase">bloverse</div>
+                  <p class="col-sm-9">
+                    <span class="text-capitalize dots">terms</span>
+                    <span class="text-capitalize dots">privacy</span>
+                    <span class="text-capitalize">feedback</span>
+                  </p>
+                </div>
+                <p class="row company-rights text-capitalize">
+                  2018 Bloverse. All Right Reserved
+                </p>
+              </div>
             </div>
+
           <!-- </div> -->
         </div>
       </div>
@@ -249,10 +160,14 @@
   </span>
 </template>
 <script>
+import Trends from '@/components/Trends/Trends';
+import Recommendations from '@/components/Recommendations/Recommendations.vue';
 
 export default {
-
+  name: 'Single Post',
+  components: { Recommendations, Trends }
 }
+
 </script>
 
 <style lang="scss">
