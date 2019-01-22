@@ -1,0 +1,22 @@
+.about-body {
+  width: 60%;
+  margin: 50px auto;
+}
+
+@media screen and (max-width: 768px) {
+.about-body{
+  width:90%
+  }
+}
+
+@media screen and (max-width: 600px) {
+.about-body {
+  width:90%
+  }
+}
+
+@media screen and (max-width: 360px) {
+.about-body {
+  width:90%
+  }
+}

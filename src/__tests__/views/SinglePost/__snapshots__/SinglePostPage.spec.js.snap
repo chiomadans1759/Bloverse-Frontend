@@ -1,0 +1,1300 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SinglePost Page should render correctly 1`] = `
+<span>
+  <div
+    class="post_wrapper"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-12 col-sm-8 col-md-8 col-lg-8"
+        >
+          <div
+            class="card"
+          >
+            <a
+              class="img_fetch"
+            >
+              <img
+                alt=""
+                class="img-responsive"
+                src="@/assets/photo4.jpg"
+              />
+            </a>
+             
+            <div
+              class="content_card_wrapper"
+            >
+              <p>
+                Category
+              </p>
+               
+              <h1>
+                Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+              </h1>
+               
+              <div
+                class="user_details"
+              >
+                <div
+                  class="media"
+                >
+                  <img
+                    class="img-responsive mr-3"
+                    src="@/assets/photo4.jpg"
+                  />
+                   
+                  <div
+                    class="media-body"
+                  >
+                    <h5
+                      class="mt-0"
+                    >
+                      John Doe . 
+                      <small>
+                        1 min Ago
+                      </small>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="keypoint_reg"
+              >
+                <p>
+                  <b>
+                    Keypoint
+                  </b>
+                </p>
+                 
+                <ul>
+                  <li>
+                    Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                  </li>
+                   
+                  <li>
+                    Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                  </li>
+                   
+                  <li>
+                    Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                  </li>
+                </ul>
+              </div>
+               
+              <div
+                class="story_point"
+              >
+                <p>
+                  Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpretaris, sed diceret concludaturque no. Verear habemus sea ut. His nibh scripta in. In sea vocibus facilisis. Sed ea cibo eripuit vituperata, pri eius debitis ne. Eos et wisi legimus, vel cu paulo doctus vidisse. Iudico dicant nostrum nec an, in eos harum vitae, te quod vero salutandi nam. In detraxit eleifend duo, alterum iudicabit consectetuer per ad. Qui case possit omittam an, everti expetenda ut usu. Pro discere graecis liberavisse in. Ne docendi corpora quaestio eum, has vivendo suavitate accommodare an. Mei commune detraxit intellegebat ea, duo malis mundi abhorreant ei, cu mentitum recusabo elaboraret eos. Debitis temporibus sit an, eam at alterum efficiantur philosophia. Sea laoreet contentiones id, inermis partiendo vix ut, sea no graeco forensibus posidonium. Id pri error simul, ius illud falli meliore eu. Invenire forensibus est cu, diam ocurreret eu nam. Ne cum iriure accumsan oportere, laudem mandamus no duo. Vis at bonorum delenit appellantur, ne has oratio placerat posidonium, vix labores urbanitas interpretaris an. Nobis blandit adolescens eam ex. Doctus tamquam quaerendum sit ne. Ornatus repudiare pri ad, an ipsum animal vivendum eos. Duo ne mundi malorum, et falli tempor posidonium qui, est paulo scripta interpretaris ex.
+                </p>
+                 
+                <img
+                  alt=""
+                  class="img-responsive"
+                  src="@/assets/signin-image.jpg"
+                />
+                 
+                <p>
+                  Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpretaris, sed diceret concludaturque no. Verear habemus sea ut. His nibh scripta in. In sea vocibus facilisis. Sed ea cibo eripuit vituperata, pri eius debitis ne. Eos et wisi legimus, vel cu paulo doctus vidisse. Iudico dicant nostrum nec an, in eos harum vitae, te quod vero salutandi nam. In detraxit eleifend duo, alterum iudicabit consectetuer per ad. Qui case possit omittam an, everti expetenda ut usu. Pro discere graecis liberavisse in. Ne docendi corpora quaestio eum, has vivendo suavitate accommodare an. Mei commune detraxit intellegebat ea, duo malis mundi abhorreant ei, cu mentitum recusabo elaboraret eos. Debitis temporibus sit an, eam at alterum efficiantur philosophia. Sea laoreet contentiones id, inermis partiendo vix ut, sea no graeco forensibus posidonium. Id pri error simul, ius illud falli meliore eu. Invenire forensibus est cu, diam ocurreret eu nam. Ne cum iriure accumsan oportere, laudem mandamus no duo. Vis at bonorum delenit appellantur, ne has oratio placerat posidonium, vix labores urbanitas interpretaris an. Nobis blandit adolescens eam ex. Doctus tamquam quaerendum sit ne. Ornatus repudiare pri ad, an ipsum animal vivendum eos. Duo ne mundi malorum, et falli tempor posidonium qui, est paulo scripta interpretaris ex.
+                </p>
+                 
+                <img
+                  alt=""
+                  class="img-responsive"
+                  src="@/assets/signin.jpg"
+                />
+                 
+                <p>
+                  Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpretaris, sed diceret concludaturque no. Verear habemus sea ut. His nibh scripta in. In sea vocibus facilisis. Sed ea cibo eripuit vituperata, pri eius debitis ne. Eos et wisi legimus, vel cu paulo doctus vidisse. Iudico dicant nostrum nec an, in eos harum vitae, te quod vero salutandi nam. In detraxit eleifend duo, alterum iudicabit consectetuer per ad. Qui case possit omittam an, everti expetenda ut usu. Pro discere graecis liberavisse in. Ne docendi corpora quaestio eum, has vivendo suavitate accommodare an. Mei commune detraxit intellegebat ea, duo malis mundi abhorreant ei, cu mentitum recusabo 
+                </p>
+                 
+                <div
+                  class="more_imgs"
+                >
+                  <p>
+                    <b>
+                      More Images
+                    </b>
+                  </p>
+                   
+                  <div
+                    class="row"
+                  >
+                    <div
+                      class="col-6 col-sm-3 col-md-3 col-lg-3"
+                    >
+                      <img
+                        alt=""
+                        class="img-responsive"
+                        src="@/assets/signin.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-6 col-sm-3 col-md-3 col-lg-3"
+                    >
+                      <img
+                        alt=""
+                        class="img-responsive"
+                        src="@/assets/signin.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-6 col-sm-3 col-md-3 col-lg-3"
+                    >
+                      <img
+                        alt=""
+                        class="img-responsive"
+                        src="@/assets/signin.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-6 col-sm-3 col-md-3 col-lg-3"
+                    >
+                      <img
+                        alt=""
+                        class="img-responsive"
+                        src="@/assets/signin.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-6 col-sm-3 col-md-3 col-lg-3"
+                    >
+                      <img
+                        alt=""
+                        class="img-responsive"
+                        src="@/assets/signin.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-6 col-sm-3 col-md-3 col-lg-3"
+                    >
+                      <img
+                        alt=""
+                        class="img-responsive"
+                        src="@/assets/signin.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-6 col-sm-3 col-md-3 col-lg-3"
+                    >
+                      <img
+                        alt=""
+                        class="img-responsive"
+                        src="@/assets/signin.jpg"
+                      />
+                    </div>
+                     
+                    <div
+                      class="col-6 col-sm-3 col-md-3 col-lg-3"
+                    >
+                      <img
+                        alt=""
+                        class="img-responsive"
+                        src="@/assets/signin.jpg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <br />
+           
+          <div
+            class="card about_content--creator"
+          >
+            <p>
+              <span
+                style="font-weight: 600;"
+              >
+                The Content Creator
+              </span>
+            </p>
+            <br />
+             
+            <div
+              class="media"
+            >
+              <img
+                class="img-responsive mr-3"
+                src="@/assets/photo4.jpg"
+              />
+               
+              <div
+                class="media-body"
+              >
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-12 col-sm-9 col-md-9 col-lg-9"
+                  >
+                    <h5
+                      class="mt-0"
+                    >
+                      <b>
+                        John Doe
+                      </b>
+                    </h5>
+                     
+                    <p>
+                      Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpretaris, sed diceret concludatque no. Verear habemus nibh scripta in.
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-12 col-sm-3 col-md-3 col-lg-3"
+                  >
+                    <p>
+                      <button
+                        class="btn btn-primary"
+                      >
+                        Follow
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <br />
+           
+          <div
+            class="card comment_content--creator"
+          >
+            <p
+              class="mb-2"
+            >
+              <span
+                style="font-weight: 600;"
+              >
+                Comments
+              </span>
+            </p>
+             
+            <p>
+              Want to Join the conversation ? 
+              <a>
+                Sign Up
+              </a>
+            </p>
+            <br />
+             
+            <div
+              class="media"
+            >
+              <img
+                alt=""
+                class="img-responsive mr-3"
+                src="@/assets/signin-image.jpg"
+              />
+               
+              <div
+                class="media-body"
+              >
+                <h5
+                  class="mt-0"
+                >
+                  John Doe . 
+                  <small>
+                    1 min(s) ago
+                  </small>
+                </h5>
+                 
+                <p>
+                  Lorem ipsum dolor sit amet,.
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="media"
+            >
+              <img
+                alt=""
+                class="img-responsive mr-3"
+                src="@/assets/signin-image.jpg"
+              />
+               
+              <div
+                class="media-body"
+              >
+                <h5
+                  class="mt-0"
+                >
+                  John Doe . 
+                  <small>
+                    1 min(s) ago
+                  </small>
+                </h5>
+                 
+                <p>
+                  Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpretaris, sed diceret concludatque no. Verear habemus nibh scripta in.
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="media"
+            >
+              <img
+                alt=""
+                class="img-responsive mr-3"
+                src="@/assets/signin-image.jpg"
+              />
+               
+              <div
+                class="media-body"
+              >
+                <h5
+                  class="mt-0"
+                >
+                  John Doe . 
+                  <small>
+                    1 min(s) ago
+                  </small>
+                </h5>
+                 
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi alias, labore expedita amet suscipit officia. Aliquam fugiat, ea in dolorem minima, suscipit atque quia placeat voluptatem quasi, esse architecto numquam corrupti. Eos possimus, inventore a iste incidunt sapiente eum rerum.
+                </p>
+              </div>
+            </div>
+             
+            <p
+              class="text-center"
+            >
+              <button
+                class="btn btn-primary"
+              >
+                More Comments
+              </button>
+            </p>
+          </div>
+          <br />
+           
+          <div
+            class="card"
+          >
+            <div
+              class="card-body"
+            >
+              <main
+                class="container-fluid bl-recommendations"
+              >
+                <div
+                  class="bl-recommendations--header"
+                >
+                  <p
+                    class="font-weight-bold title"
+                  >
+                    Recommendations
+                  </p>
+                   
+                  <p
+                    class="subtitle"
+                  >
+                    
+      Lorem ipsum dolor sit amet, vel accumsan
+    
+                  </p>
+                </div>
+                 
+                <section
+                  class="VueCarousel"
+                >
+                  <div
+                    class="VueCarousel-wrapper"
+                  >
+                    <div
+                      class="VueCarousel-inner"
+                      role="listbox"
+                      style="transform: translate(0px, 0); visibility: hidden; height: auto;"
+                    >
+                      <div
+                        class="VueCarousel-slide"
+                        tabindex="-1"
+                      >
+                        <main
+                          class="card recommendation-card"
+                        >
+                          <img
+                            alt="..."
+                            class="card-img-top"
+                            src="@/assets/photo-4.jpg"
+                          />
+                           
+                          <div
+                            class="card-body"
+                          >
+                            <h5
+                              class="card-title"
+                            >
+                              Category
+                            </h5>
+                             
+                            <div
+                              class="card-text recommendation-card--content"
+                            >
+                              <p
+                                class="font-weight-bold recommendation-card--content__text"
+                              >
+                                
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+      
+                              </p>
+                               
+                              <p
+                                class="recommendation-card--content__username"
+                              >
+                                <a
+                                  class="btn btn-primary initials"
+                                  href="#"
+                                  role="button"
+                                />
+                                 
+                                <span
+                                  class="font-weight-bold name"
+                                >
+                                  Johndoe
+                                </span>
+                                 
+                                <span
+                                  class="time"
+                                >
+                                  1 min ago
+                                </span>
+                              </p>
+                            </div>
+                             
+                            <div
+                              class="card-text row actions"
+                            >
+                              <div
+                                class="col-7 views"
+                              >
+                                <i
+                                  class="fal fa-eye"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  123
+                                </span>
+                              </div>
+                               
+                              <div
+                                class="col-5 row others"
+                              >
+                                <div
+                                  class="col-9 likes"
+                                >
+                                  <p
+                                    class="thumbs-up"
+                                  >
+                                    <i
+                                      class="fal fa-thumbs-up"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      18
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-up"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-thumbs-up"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      18
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-down"
+                                  >
+                                    <i
+                                      class="fal fa-thumbs-down"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      1
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-down"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-thumbs-down"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      1
+                                    </span>
+                                  </p>
+                                </div>
+                                 
+                                <div
+                                  class="col-3 ellipsis"
+                                >
+                                  <i
+                                    class="fal fa-ellipsis-h"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </main>
+                      </div>
+                       
+                      <div
+                        class="VueCarousel-slide"
+                        tabindex="-1"
+                      >
+                        <main
+                          class="card recommendation-card"
+                        >
+                          <img
+                            alt="..."
+                            class="card-img-top"
+                            src="@/assets/photo-4.jpg"
+                          />
+                           
+                          <div
+                            class="card-body"
+                          >
+                            <h5
+                              class="card-title"
+                            >
+                              Category
+                            </h5>
+                             
+                            <div
+                              class="card-text recommendation-card--content"
+                            >
+                              <p
+                                class="font-weight-bold recommendation-card--content__text"
+                              >
+                                
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+      
+                              </p>
+                               
+                              <p
+                                class="recommendation-card--content__username"
+                              >
+                                <a
+                                  class="btn btn-primary initials"
+                                  href="#"
+                                  role="button"
+                                />
+                                 
+                                <span
+                                  class="font-weight-bold name"
+                                >
+                                  Johndoe
+                                </span>
+                                 
+                                <span
+                                  class="time"
+                                >
+                                  1 min ago
+                                </span>
+                              </p>
+                            </div>
+                             
+                            <div
+                              class="card-text row actions"
+                            >
+                              <div
+                                class="col-7 views"
+                              >
+                                <i
+                                  class="fal fa-eye"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  123
+                                </span>
+                              </div>
+                               
+                              <div
+                                class="col-5 row others"
+                              >
+                                <div
+                                  class="col-9 likes"
+                                >
+                                  <p
+                                    class="thumbs-up"
+                                  >
+                                    <i
+                                      class="fal fa-thumbs-up"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      18
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-up"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-thumbs-up"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      18
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-down"
+                                  >
+                                    <i
+                                      class="fal fa-thumbs-down"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      1
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-down"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-thumbs-down"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      1
+                                    </span>
+                                  </p>
+                                </div>
+                                 
+                                <div
+                                  class="col-3 ellipsis"
+                                >
+                                  <i
+                                    class="fal fa-ellipsis-h"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </main>
+                      </div>
+                       
+                      <div
+                        class="VueCarousel-slide"
+                        tabindex="-1"
+                      >
+                        <main
+                          class="card recommendation-card"
+                        >
+                          <img
+                            alt="..."
+                            class="card-img-top"
+                            src="@/assets/photo-4.jpg"
+                          />
+                           
+                          <div
+                            class="card-body"
+                          >
+                            <h5
+                              class="card-title"
+                            >
+                              Category
+                            </h5>
+                             
+                            <div
+                              class="card-text recommendation-card--content"
+                            >
+                              <p
+                                class="font-weight-bold recommendation-card--content__text"
+                              >
+                                
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+      
+                              </p>
+                               
+                              <p
+                                class="recommendation-card--content__username"
+                              >
+                                <a
+                                  class="btn btn-primary initials"
+                                  href="#"
+                                  role="button"
+                                />
+                                 
+                                <span
+                                  class="font-weight-bold name"
+                                >
+                                  Johndoe
+                                </span>
+                                 
+                                <span
+                                  class="time"
+                                >
+                                  1 min ago
+                                </span>
+                              </p>
+                            </div>
+                             
+                            <div
+                              class="card-text row actions"
+                            >
+                              <div
+                                class="col-7 views"
+                              >
+                                <i
+                                  class="fal fa-eye"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  123
+                                </span>
+                              </div>
+                               
+                              <div
+                                class="col-5 row others"
+                              >
+                                <div
+                                  class="col-9 likes"
+                                >
+                                  <p
+                                    class="thumbs-up"
+                                  >
+                                    <i
+                                      class="fal fa-thumbs-up"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      18
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-up"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-thumbs-up"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      18
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-down"
+                                  >
+                                    <i
+                                      class="fal fa-thumbs-down"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      1
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-down"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-thumbs-down"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      1
+                                    </span>
+                                  </p>
+                                </div>
+                                 
+                                <div
+                                  class="col-3 ellipsis"
+                                >
+                                  <i
+                                    class="fal fa-ellipsis-h"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </main>
+                      </div>
+                       
+                      <div
+                        class="VueCarousel-slide"
+                        tabindex="-1"
+                      >
+                        <main
+                          class="card recommendation-card"
+                        >
+                          <img
+                            alt="..."
+                            class="card-img-top"
+                            src="@/assets/photo-4.jpg"
+                          />
+                           
+                          <div
+                            class="card-body"
+                          >
+                            <h5
+                              class="card-title"
+                            >
+                              Category
+                            </h5>
+                             
+                            <div
+                              class="card-text recommendation-card--content"
+                            >
+                              <p
+                                class="font-weight-bold recommendation-card--content__text"
+                              >
+                                
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+      
+                              </p>
+                               
+                              <p
+                                class="recommendation-card--content__username"
+                              >
+                                <a
+                                  class="btn btn-primary initials"
+                                  href="#"
+                                  role="button"
+                                />
+                                 
+                                <span
+                                  class="font-weight-bold name"
+                                >
+                                  Johndoe
+                                </span>
+                                 
+                                <span
+                                  class="time"
+                                >
+                                  1 min ago
+                                </span>
+                              </p>
+                            </div>
+                             
+                            <div
+                              class="card-text row actions"
+                            >
+                              <div
+                                class="col-7 views"
+                              >
+                                <i
+                                  class="fal fa-eye"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  123
+                                </span>
+                              </div>
+                               
+                              <div
+                                class="col-5 row others"
+                              >
+                                <div
+                                  class="col-9 likes"
+                                >
+                                  <p
+                                    class="thumbs-up"
+                                  >
+                                    <i
+                                      class="fal fa-thumbs-up"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      18
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-up"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-thumbs-up"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      18
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-down"
+                                  >
+                                    <i
+                                      class="fal fa-thumbs-down"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      1
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-down"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-thumbs-down"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      1
+                                    </span>
+                                  </p>
+                                </div>
+                                 
+                                <div
+                                  class="col-3 ellipsis"
+                                >
+                                  <i
+                                    class="fal fa-ellipsis-h"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </main>
+                      </div>
+                       
+                      <div
+                        class="VueCarousel-slide"
+                        tabindex="-1"
+                      >
+                        <main
+                          class="card recommendation-card"
+                        >
+                          <img
+                            alt="..."
+                            class="card-img-top"
+                            src="@/assets/photo-4.jpg"
+                          />
+                           
+                          <div
+                            class="card-body"
+                          >
+                            <h5
+                              class="card-title"
+                            >
+                              Category
+                            </h5>
+                             
+                            <div
+                              class="card-text recommendation-card--content"
+                            >
+                              <p
+                                class="font-weight-bold recommendation-card--content__text"
+                              >
+                                
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+      
+                              </p>
+                               
+                              <p
+                                class="recommendation-card--content__username"
+                              >
+                                <a
+                                  class="btn btn-primary initials"
+                                  href="#"
+                                  role="button"
+                                />
+                                 
+                                <span
+                                  class="font-weight-bold name"
+                                >
+                                  Johndoe
+                                </span>
+                                 
+                                <span
+                                  class="time"
+                                >
+                                  1 min ago
+                                </span>
+                              </p>
+                            </div>
+                             
+                            <div
+                              class="card-text row actions"
+                            >
+                              <div
+                                class="col-7 views"
+                              >
+                                <i
+                                  class="fal fa-eye"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  123
+                                </span>
+                              </div>
+                               
+                              <div
+                                class="col-5 row others"
+                              >
+                                <div
+                                  class="col-9 likes"
+                                >
+                                  <p
+                                    class="thumbs-up"
+                                  >
+                                    <i
+                                      class="fal fa-thumbs-up"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      18
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-up"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-thumbs-up"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      18
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-down"
+                                  >
+                                    <i
+                                      class="fal fa-thumbs-down"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      1
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="thumbs-down"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-thumbs-down"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      1
+                                    </span>
+                                  </p>
+                                </div>
+                                 
+                                <div
+                                  class="col-3 ellipsis"
+                                >
+                                  <i
+                                    class="fal fa-ellipsis-h"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </main>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="VueCarousel-pagination"
+                    data-v-438fd353=""
+                    style="display: none;"
+                  >
+                    <ul
+                      class="VueCarousel-dot-container"
+                      data-v-438fd353=""
+                      role="tablist"
+                    />
+                  </div>
+                   
+                  <!---->
+                </section>
+              </main>
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
+         
+        <div
+          class="col-12 col-sm-4 col-md-4 col-lg-4 related__articles"
+        >
+          <div
+            class="card"
+          >
+            <div
+              class="content_card_wrapper--contest"
+            >
+              <h3>
+                Photo Contest Competition
+              </h3>
+               
+              <p>
+                The Story Behind Photos
+              </p>
+               
+              <p>
+                <button
+                  class="btn btn-primary"
+                >
+                  Learn More
+                </button>
+              </p>
+               
+              <img
+                alt=""
+                class="img-responsive mr-3"
+                src="@/assets/Mask Group 15.svg"
+              />
+            </div>
+          </div>
+           
+          <div
+            class="bl-footer"
+          >
+            <div
+              class="row company-name"
+            >
+              <div
+                class="col-sm-3 font-weight-bold text-lowercase"
+              >
+                bloverse
+              </div>
+               
+              <p
+                class="col-sm-9"
+              >
+                <span
+                  class="text-capitalize dots"
+                >
+                  terms
+                </span>
+                 
+                <span
+                  class="text-capitalize dots"
+                >
+                  privacy
+                </span>
+                 
+                <span
+                  class="text-capitalize"
+                >
+                  feedback
+                </span>
+              </p>
+            </div>
+             
+            <p
+              class="row company-rights text-capitalize"
+            >
+              
+                2018 Bloverse. All Right Reserved
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</span>
+`;
