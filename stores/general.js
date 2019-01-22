@@ -136,9 +136,9 @@ export default {
       let response = await Api.put('applicants/' + id + '/', {status}, true);
       return response.statusCode === 200;   
     },
-    async getAllPublishedPosts({ commit, state }, { category = "", country = "" }) {
+    async getAllPublishedPosts({ commit, state }, { prevCategory = "", category = "", country = "" }) {
       try {
-        if(state.postsPagingData.next === null) {
+        if(state.postsPagingData.next === null || prevCategory !== category) {
           commit('setPublishedPostsLoading', true);
           let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
           commit('setPostsPagingData', response.data.pagination);
@@ -149,7 +149,7 @@ export default {
           commit('setPostsPagingData', response.data.data.pagination);
           response.data.data.posts.forEach((data) => {
             commit('addPublishedPosts', data);
-          })
+          });
         }
       } catch (error) {
         alert('Posts feed empty'); 
@@ -177,7 +177,7 @@ export default {
     },
     publishedPostsIsLoading({ commit }, loading) {
       commit('setPublishedPostsLoading', loading);
-    }
+    },
   },
   mutations: {
     setTinyMiceValue(state, value) {
@@ -227,7 +227,7 @@ export default {
     },
     setRelatedPosts(state, posts) {
       state.relatedPosts = posts
-    }
+    },
   },
   getters: {
     acceptedApplicants(state) {

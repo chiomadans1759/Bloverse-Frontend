@@ -45,6 +45,7 @@ export default {
   },
   methods: {
     ...mapActions(["getAllPublishedPosts"]),
+    ...mapState(["general"]),
 
     loadMore() {
       let self = this
