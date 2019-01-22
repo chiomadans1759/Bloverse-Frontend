@@ -30,7 +30,7 @@ import Privacy from '../src/views/Privacy.vue';
 
 import Signin from '../src/views/general/Signin/SigninPage.vue';
 import AboutUs from '../src/views/general/about/about.vue';
-import ForgotPassword from '../src/views/general/forgotPassword/ForgotPasswordPage.vue';
+import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
 import consumerSignup from '../src/views/consumers/SignUpPage/SignUpPage';
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 import Homepage from '../src/views/general/Home/Homepage.vue';
