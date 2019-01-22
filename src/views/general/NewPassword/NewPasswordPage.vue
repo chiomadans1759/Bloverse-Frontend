@@ -28,8 +28,8 @@
         />
 
         <text-input
-          id="password"
-          name="password"
+          id="confirmPassword"
+          name="confirmPassword"
           type="password"
           placeholder="Confirm Password"
           :value="password"

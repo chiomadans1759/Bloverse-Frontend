@@ -2,68 +2,66 @@
 
 exports[`SigninView Component should render correctly 1`] = `
 <div
-  class="main-container"
+  class="sign-in-container"
 >
   <div
     class="top"
   >
-    <div>
-      <span
-        class="top-left-container"
+    <span
+      class="top-left-container"
+    >
+      <a
+        href="/"
       >
-        <a
-          href="/"
-        >
-          <i
-            class="fal fa-long-arrow-left fa-2x"
-          />
-           
-          <span>
-            Back
-          </span>
-        </a>
+        <i
+          class="fal fa-long-arrow-left fa-2x"
+        />
          
-        <a
-          class="router-link"
+        <span
+          class="back-text"
         >
-          <img
-            class="logo"
-            src="@/assets/Logo - White.svg"
-          />
-        </a>
-      </span>
-    </div>
+          Back
+        </span>
+      </a>
+       
+      <a
+        class="router-link"
+      >
+        <img
+          class="logo"
+          src="@/assets/Logo - White.svg"
+        />
+         
+        <img
+          class="blue-logo"
+          src="@/assets/Logo.svg"
+        />
+      </a>
+    </span>
   </div>
    
   <div
-    class="content"
+    class="sign-in-content d-flex flex-column justify-content-center align-items-center"
   >
-    <div
-      class="mainSection"
-    >
-      <h2
-        class="welcome-text"
+    <div>
+      <h4
+        class="sign-in-intro-one"
       >
-        Welcome back
-      </h2>
+        Welcome Back
+      </h4>
        
-      <br />
-      <br />
-       
-      <h2
-        class="intro-text"
+      <h5
+        class="sign-in-intro-two"
       >
         Login With
-      </h2>
-       
-      <br />
+      </h5>
        
       <div
         class="social-login"
       >
         <div>
           <button
-            class="btn btn-light social-button"
+            class="btn btn-light sign-in-social-button sign-in-facebook-btn"
           >
             <img
               src="@/assets/facebook-logo-light.svg"
@@ -75,7 +73,7 @@ exports[`SigninView Component should render correctly 1`] = `
          
         <div>
           <button
-            class="btn btn-light social-button"
+            class="btn btn-light sign-in-social-button"
           >
             <img
               height="25"
@@ -85,8 +83,6 @@ exports[`SigninView Component should render correctly 1`] = `
           </button>
         </div>
       </div>
-       
-      <br />
        
       <div
         class="grid-container"
@@ -115,88 +111,86 @@ exports[`SigninView Component should render correctly 1`] = `
           />
         </div>
       </div>
-       
-      <br />
-       
-      <div
-        class="form-section"
-      >
-        <input
-          class="defaultClass text-input"
-          id="email"
-          name="email"
-          placeholder="Email"
-          type="email"
-        />
-         
-        <br />
-        <br />
-         
-        <input
-          class="defaultClass text-input"
-          id="password"
-          name="password"
-          placeholder="Password"
-          type="password"
-        />
-         
-        <br />
-        <br />
-         
-        <p
-          class="forgot-password-link"
+    </div>
+     
+    <div
+      class="sign-in-form-section"
+    >
+      <form>
+        <div
+          class="form-group"
         >
-          <a>
-            Forgot password ?
-          </a>
-        </p>
-         
-        <br />
-         
-        <div>
-          <button
-            class="btn btn-primary primary-button"
-          >
-            Login
-          </button>
+          <input
+            class="form-control defaultClass"
+            id="email"
+            name="email"
+            placeholder="Email"
+          />
         </div>
-         
-        <br />
-        <br />
-         
-        <div>
-          <button
-            class="btn btn-outline-secondary secondary-button"
-          >
-            <h2
-              class="new-bloverse-text"
-            >
-              New to bloverse? 
-        
-              <a
-                class="signup-text"
-              >
-                Sign Up
-              </a>
-            </h2>
-          </button>
+      </form>
+       
+      <form>
+        <div
+          class="form-group"
+        >
+          <input
+            class="form-control defaultClass"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
         </div>
+      </form>
+       
+      <p
+        class="forgot-password-link d-flex justify-content-end"
+      >
+        <a>
+          Forgot password ?
+        </a>
+      </p>
+       
+      <div>
+        <button
+          class="btn btn-primary sign-in-primary-button"
+        >
+          Login
+        </button>
       </div>
        
-      <br />
-      <br />
-       
+      <div>
+        <button
+          class="btn btn-outline-secondary secondary-button"
+        >
+          <h2
+            class="sign-up-new-bloverse-text"
+          >
+            New to Bloverse?
+          
+            <a
+              class="signup-login-text"
+            >
+              Sign Up
+            </a>
+          </h2>
+        </button>
+      </div>
+    </div>
+     
+    <div
+      class="signup-creator-text"
+    >
       <h2
-        class="creator-text"
+        class="sign-up-creator-text"
       >
         Content creator? 
-    
+      
         <a
-          class="router-link apply-now-text"
+          class="router-link sign-up-apply-now-text"
         >
           
-      Apply
-    
+        Apply
+      
         </a>
       </h2>
     </div>
@@ -209,9 +203,9 @@ exports[`SigninView Component should render correctly 1`] = `
       <span
         class="bloverse"
       >
-        bloverse
+        Bloverse
       </span>
-       2019 All rights reserved
+       2019. All Right Reserved
     </p>
   </div>
 </div>
