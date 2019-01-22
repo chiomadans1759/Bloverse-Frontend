@@ -3,8 +3,8 @@
   <nav class="navbar navbar-expand-lg navbar-light px-5"
     :class="{ 'transparent': isTransparent, 'alt-button': isTransparent }">
     <router-link to="/" class="router-link">
-      <img class="logo" v-if="!isTransparent" src="@/assets/Logo.svg" />
-      <img class="logo" v-if="isTransparent" src="@/assets/Logo - White.svg" />
+      <img class="nav-logo" v-if="!isTransparent" src="@/assets/Logo.svg" />
+      <img class="nav-logo" v-if="isTransparent" src="@/assets/Logo - White.svg" />
     </router-link>
     <div class="form-inline my-2 my-lg-0 navbar-toggler mobile-view" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -13,7 +13,7 @@
         <span id="option-icon"/>
       </a>
       <div class="dropdown-menu dropdown-mobile-view" aria-labelledby="navbarDropdown">
-        <router-link to="/abouts" class="dropdown-item">About</router-link>
+        <router-link to="/about" class="dropdown-item">About</router-link>
         <router-link to="/photocontest" class="dropdown-item">Photo Contest</router-link>
         <router-link to="/terms-and-conditions" class="dropdown-item">Terms</router-link>
         <router-link to="/privacy-policies" class="dropdown-item">Privacy</router-link>

@@ -20,7 +20,7 @@ exports[`PhotoContest Component should render correctly 1`] = `
           <!---->
            
           <img
-            class="logo"
+            class="nav-logo"
             src="@/assets/Logo - White.svg"
           />
         </a>

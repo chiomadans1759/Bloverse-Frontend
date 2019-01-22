@@ -9,7 +9,7 @@
   font-weight: 100;
 }
 
-.logo {
+.nav-logo {
   height: rem(40px)
 }
 
@@ -187,8 +187,8 @@ nav {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .logo {
-    margin: rem(-54px);
+  .nav-logo {
+    margin: -0.375rem;
   }
 
   .mobile-view {
@@ -223,8 +223,8 @@ nav {
 }
 
 @media only screen and (max-width: 375px) {
-  .logo {
-    margin: rem(-52px);
+  .nav-logo {
+    margin: -0.25rem;
   }
 
   .mobile-view {
@@ -238,7 +238,7 @@ nav {
 }
 
 @media only screen and (max-width: 350px) {
-  .logo {
+  .nav-logo {
     margin: rem(-44px);
   }
 
@@ -253,8 +253,8 @@ nav {
 }
 
 @media only screen and (max-width: 360px) {
-  .logo {
-    margin: rem(-55px);
+  .nav-logo {
+    margin: -0.4375rem;
   }
 
   .mobile-view {
@@ -268,8 +268,8 @@ nav {
 }
 
 @media only screen and (max-width: 320px) {
-  .logo {
-    margin: rem(-53px);
+  .nav-logo {
+    margin: -1.3125rem;
   }
 
   .mobile-view {
