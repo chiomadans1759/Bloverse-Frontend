@@ -22,5 +22,5 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import './photocontestcard.scss';
+@import './Photocontestcard.scss';
 </style>
