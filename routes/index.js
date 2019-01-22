@@ -23,7 +23,7 @@ import AdminHome from '../src/views/admin/Home.vue';
 import NotFound from '../src/views/NotFound.vue';
 import About from '../src/views/About.vue';
 import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPage.vue';
-import Privacy from '../src/views/Privacy.vue';
+import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicy.vue';
 
 import Signin from '../src/views/general/Signin/SigninPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
