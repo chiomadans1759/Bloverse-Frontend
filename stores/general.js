@@ -15,6 +15,7 @@ export default {
     publishedPosts: [],
     publishedPostsLoading: false,
     postsPagingData: {
+      data_has_fetched: false,
       next: null,
       previous: null
     },
@@ -136,15 +137,16 @@ export default {
       let response = await Api.put('applicants/' + id + '/', {status}, true);
       return response.statusCode === 200;   
     },
-    async getAllPublishedPosts({ commit, state }, { prevCategory = "", category = "", country = "" }) {
+    async getAllPublishedPosts({ commit, state }, { category = "", country = "" }) {
       try {
-        if(state.postsPagingData.next === null || prevCategory !== category) {
+        if(state.postsPagingData.next === null && state.postsPagingData.data_has_fetched === false) {
           commit('setPublishedPostsLoading', true);
           let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
           commit('setPostsPagingData', response.data.pagination);
           commit('setPublishedPosts', response.data.posts);
           commit('setPublishedPostsLoading', false);
-        }else {
+          commit("setDataFetched", true);
+        }else if(state.postsPagingData.next !== null) {
           let response = await axios.get(state.postsPagingData.next);
           commit('setPostsPagingData', response.data.data.pagination);
           response.data.data.posts.forEach((data) => {
@@ -200,6 +202,9 @@ export default {
     },
     setPublishedPosts(state, posts) {
       state.publishedPosts = posts;
+    },
+    setDataFetched(state, nature) {
+      state.data_has_fetched = nature
     },
     addPublishedPosts(state, posts) {
       state.publishedPosts.push(posts)

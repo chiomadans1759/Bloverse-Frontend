@@ -53,11 +53,9 @@ export default {
       $(window).scroll(() => {
         // eslint-disable-next-line 
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
-          const nextPageLink = this.general.postsPagingData.next;
-          if (nextPageLink !== null) {
-            const category = this.general.activeCategory.id;
-            self.getAllPublishedPosts({ category, country: "" });
-          }
+          if(this.general.publishedPosts.length > 9) { 
+            self.getAllPublishedPosts({ category: "", country: "" });
+          } 
         }
       });
     }
