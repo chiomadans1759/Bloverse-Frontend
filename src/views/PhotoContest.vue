@@ -30,9 +30,15 @@
                                     How to enter:
                                 </h1>
                                 <ol>
-                                    <li><a href="">Apply</a> to be a content creator</li>
-                                    <li>Submit the lifestyle photo and the story behind it as a published post on bloverse</li>
-                                    <li>Share your article on instagram, facebook, twitter followed by the hashtag <span class="font-weight-bold">#JoinTheBloverse</span></li>
+                                    <li>
+                                        <router-link to="/creators">Apply</router-link> to be a content creator
+                                    </li>
+                                    <li>
+                                        Submit the lifestyle photo and the story behind it as a published post on bloverse
+                                    </li>
+                                    <li>
+                                        Share your article on instagram, facebook and twitter.
+                                    </li>
                                 </ol>
                             </div>
                 </div>
