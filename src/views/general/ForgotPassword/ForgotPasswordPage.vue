@@ -1,54 +1,56 @@
 <template>
-  <div class="main-container">
-     <div class="top">
-      <div>
+  <div class="forgot-password-container">
+    <div class="top">
         <span class="top-left-container">
           <a href="/">
             <i class="fal fa-long-arrow-left fa-2x"></i>
-            <span>Back</span>
+            <span class="back-text">Back</span>
           </a>
           <router-link to="/" class="router-link">
             <img class="logo" src="@/assets/Logo - White.svg" />
+            <img class="blue-logo" src="@/assets/Logo.svg">
           </router-link>
         </span>
-      </div>
     </div>
-    <div class="content">
-      <div class="signinSection">
-       <h2 class="welcome-text">Forgot Password</h2>
-        <br/>
-        <h2 class="intro-text">Enter your email address and <br> we will send you a link to reset your password</h2>
-        <br/>
-      
-        <div class="form-section">
-          <text-input
-            id="email" name="email" type="email" placeholder="Email" 
-            :value="email" :onChange="onChange" custom-class="text-input" />
-          <br/><br/>
-          <Button customClass="btn btn-primary primary-button">Send</Button>
-          <br/>
-          <div class="grid-container">
-            <div class="grid-item">
-              <hr class="hr-text" />
-            </div>
-            <div class="middle-grid-item"><p>Or</p></div>
-            <div class="grid-item">
-              <hr class="hr-text" />
-            </div>
+    <div class="forgot-password-content d-flex flex-column justify-content-center align-items-center">
+        <h4 class="forgot-password-intro-one">Forgot Password</h4>
+        <h5 class="forgot-password-intro-two">Enter your email address and 
+        <br/> we will send you a link to reset 
+        <br/> your password</h5>
+
+      <div class="forgot-password-form-section">
+        <text-input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Email"
+          :value="email"
+          :onChange="onChange"
+          custom-class="text-input"
+        />
+        <Button customClass="btn btn-primary password-primary-button">Send</Button>
+
+        <div class="password-grid-container">
+          <div class="password-grid-item">
+            <hr class="password-hr-text" />
           </div>
-          <br>
-          <Button customClass="btn btn-outline-secondary secondary-button">
-            <h2 class="new-bloverse-text">Create <router-link to="/register" class="router-link apply-now-text">
-            new Account
-          </router-link></h2>
-          </Button>
+          <div class="password-middle-grid-item">
+            <p><strong class="password-or-text">Or</strong></p>
+          </div>
+          <div class="password-grid-item">
+            <hr class="password-hr-text" />
+          </div>
         </div>
-        <br/><br/>
-    
+
+        <Button customClass="btn btn-outline-secondary secondary-button">
+          <h2 class="sign-up-new-bloverse-text">Create
+            <router-link to="/register" class="signup-login-text">new account</router-link>
+          </h2>
+        </Button>
       </div>
     </div>
-    <div class="bottom">
-      <p><span class="bloverse">bloverse</span> 2018 All rights reserved</p>
+    <div class="password-bottom">
+      <p><span class="bloverse">Bloverse</span> {{year}}. All Right reserved</p>
     </div>
   </div>
 </template>
@@ -61,6 +63,7 @@ export default {
   data() {
     return {
       email: '',
+      year: new Date().getFullYear()
     }
   },
   components: {
@@ -74,3 +77,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  @import './ForgotPasswordPage.scss';
+</style>

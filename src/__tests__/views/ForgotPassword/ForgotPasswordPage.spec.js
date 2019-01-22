@@ -1,7 +1,7 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
 import ForgotPassword from '@/views/general/ForgotPassword/ForgotPasswordPage.vue';
 
-describe('ForgotPassword Component', () => {
+describe('ForgotPassword Page', () => {
   it('should render correctly', () => {
 
     const wrapper = mount(ForgotPassword, {

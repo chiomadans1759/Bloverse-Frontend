@@ -1,0 +1,190 @@
+@import 'sass-rem';
+
+.sign-up-container {
+  padding-top: rem(20px);
+  padding-bottom: rem(20px);
+  background-color: #333333;
+  min-height: 100vh;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-image:
+        linear-gradient(rgba(37, 42, 48, 0.2), rgba(37, 42, 48, 0.2)),
+        url('../../../assets/signin-image.jpg');
+}
+
+.sign-up-content {
+  min-height: calc(100vh - 60px);
+  position: relative;
+}
+
+.sign-up-intro-one {
+  font-size: rem(24px);
+  font-weight: bolder;
+  margin: rem(40px) 0 rem(8px) 0;
+}
+
+.sign-up-intro-two {
+  font-size: rem(16px);
+  margin-bottom: rem(24px);
+}
+
+.sign-up-intro-three {
+  font-size: rem(16px);
+  font-weight: bolder;
+  margin-bottom: rem(8px);
+}
+
+.sign-up-social-button {
+  width: rem(281px);
+  height: rem(38px);
+  border-radius: 0 !important;
+}
+
+.sign-up-social-button:hover {
+  background-color: #ffffff !important;
+}
+
+.sign-up-facebook-btn {
+  margin-bottom: rem(-10px);
+}
+
+.sign-up-terms-and-privacy {
+  font-size: rem(16px);
+  margin: rem(8px) 0 rem(24px) 0;
+  width: rem(281px);
+}
+
+.sign-up-link-text {
+  color: #096DD9;
+}
+
+.signup-creator-text {
+  width: rem(281px);
+  text-align: left;
+  margin-bottom: rem(70px);
+}
+
+.sign-up-creator-text {
+  font-size: rem(14px);
+  text-align: left;
+}
+
+.sign-up-apply-now-text {
+  font-size: rem(14px);
+  color: #096DD9 !important;
+}
+
+
+// These styles apply to other pages 
+.sign-up-new-bloverse-text {
+  font-size: 14px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 1.9fr;
+}
+
+.grid-item {
+  opacity: .5;
+}
+
+.middle-grid-item {
+  text-align: center;
+  font-size: rem(16px);
+  margin: rem(24px) 0 rem(24px) 0;
+}
+
+.hr-text {
+  line-height: 0em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  text-align: left;
+  height: rem(2em);
+  opacity: .8;
+  width: 100%;
+  margin: rem(24px) 0 rem(24px) 0;
+}
+
+.hr-text:before {
+  content: '';
+  background: #ad938a;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: rem(1px);
+}
+
+.new-bloverse-text > .signup-login-text {
+  color: #096DD9 !important;
+}
+
+.back-text {
+  font-size: rem(16px);
+}
+
+.top-left-container {
+  margin-left: 5%;
+}
+
+.top-left-container > a {
+  color: #ffffff;
+}
+
+.top-left-container > a > svg {
+  vertical-align: middle;
+}
+
+.top-left-container > a > span {
+  padding-left: rem(10px);
+}
+
+.logo {
+  height: rem(40px);
+  padding-left: rem(20px);
+}
+
+.blue-logo {
+  height: rem(40px);
+  visibility: hidden;
+}
+
+.primary-button {
+  background-image: linear-gradient( to left, #2F80ED, #003CE1);
+  width: rem(281px);
+  height: rem(38px);
+  margin-bottom: rem(8px);
+  border-radius: 0 !important;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media (min-width: 320px) and (max-width: 480px) {
+.sign-up-container {
+    background-color: #F5F5F5;
+    color: #252525;
+    background-image: none;
+  }
+
+  .sign-up-new-bloverse-text {
+    color: #565656;
+  }
+
+  .logo {
+    visibility: hidden;
+    padding-left: 0.25rem;
+  }
+
+  .blue-logo {
+    visibility: visible;
+  }
+
+  .sign-up-social-button {
+    background-color: #ffffff !important;
+  }
+}

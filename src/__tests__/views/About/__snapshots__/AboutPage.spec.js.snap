@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About Page should render correctly 1`] = `
+<main
+  id="about-body"
+>
+  <div
+    class="gen_title"
+  >
+    <h1
+      id="about-title"
+    >
+      
+        Welcome To Bloverse
+      
+    </h1>
+     
+    <p
+      id="about-subtitle"
+    >
+      
+        Where the people are connected to creators
+      
+    </p>
+  </div>
+   
+  <div>
+    <div
+      class="about-body"
+    >
+      <div
+        class="about-body-container"
+      >
+        <img
+          alt=""
+          src="@/assets/photo1.png"
+        />
+         
+        <div
+          id="about-body-text"
+        >
+          <h1>
+            About Us
+          </h1>
+           
+          <p>
+            We are Bloverse, a content creation platform fostering a global community of engaged and insightful individuals. Together with our global community we are revolutionising the creation and consumption of content
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div>
+    <div
+      class="about-body"
+    >
+      <div
+        class="about-body-container2"
+      >
+        <img
+          alt=""
+          src="@/assets/photo2.png"
+        />
+         
+        <div
+          id="about-body-text"
+        >
+          <h1>
+            Goal
+          </h1>
+           
+          <p>
+            Our goal is to give everyone a voice and a safe space to express it. With our data-driven approach we aim to ensure that you make the most of your data, with a personalized experienced that ensures you are never far away from the stories that matter to you, whilst also being exposed to the numerous angles to each story that are blocked out by the mainstream media.Our goal is to give everyone a voice and a safe space to express it. With our data-driven approach we aim to ensure that you make the most of your data, with a personalized experienced that ensures you are never far away from the stories that matter to you, whilst also being exposed to the numerous angles to each story that are blocked out by the mainstream media.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div>
+    <div
+      class="about-body"
+    >
+      <div
+        class="about-body-container3"
+      >
+        <img
+          alt=""
+          src="@/assets/photo3.png"
+        />
+         
+        <div
+          id="about-body-text"
+        >
+          <h1
+            id=""
+          >
+            Mission
+          </h1>
+           
+          <p>
+            Leveraging state-of-the-art AI techniques, we want to create a content-driven social platform that gives journalists and other content creators a medium to share quality content to an ever-engaging community of people who want to be a part of the story.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div>
+    <div
+      class="about-body"
+    >
+      <div
+        class="about-body-container4"
+      >
+        <img
+          alt=""
+          src="@/assets/photo4.jpg"
+        />
+         
+        <div
+          id="about-body-text"
+        >
+          <h1>
+            The Users
+          </h1>
+           
+          <p>
+            For you, the users, we want you to take part and enjoy interacting with content from across the globe, things that are important to you and to make your voice heard. Bloverse filters content by interests, country, comments and interactions to ensure you consume what is relevant to you. With our ranking system we aim to prevent information overload and attempting to fight fake news by ensuring that you consume content from those who know what they are talking about.
+          </p>
+          <p
+            id="about-strong"
+          >
+             #Jointhebloverse
+          </p>
+          <p />
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    id="about-footer"
+  >
+    <a
+      class="about-get-started"
+    >
+      
+    Get Started
+  
+    </a>
+  </div>
+   
+  <br />
+  <br />
+  <br />
+</main>
+`;
