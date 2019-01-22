@@ -45,7 +45,7 @@ const routes = [
   },
   { path: '/login', component: Signin},
 
-  { path: '/forgotpassword', component: ForgotPassword , name:'forgotpassword'},
+  { path: '/forgotpassword', component: ForgotPassword},
 
   { path: '/register', component: consumerSignup},
 
