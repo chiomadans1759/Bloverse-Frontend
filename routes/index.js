@@ -26,6 +26,7 @@ import NotFound from '../src/views/NotFound.vue';
 import About from '../src/views/About.vue';
 import Terms from '../src/views/TermsAndConditions.vue';
 import Privacy from '../src/views/Privacy.vue';
+import Settings from '@/views/Settings.vue'
 
 import Signin from '../src/views/general/Signin/SigninPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
@@ -41,6 +42,7 @@ const routes = [
       { path: '/about', component: About},
       { path: '/terms-and-conditions', component: Terms},
       { path: '/privacy-policies', component: Privacy},
+      { path: '/settings', component: Settings}
     ]
   },
   { path: '/login', component: Signin},
