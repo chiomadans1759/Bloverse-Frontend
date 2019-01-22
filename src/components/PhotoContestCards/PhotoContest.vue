@@ -75,5 +75,5 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import './photocontest.scss';
+@import './Photocontest.scss';
 </style>
