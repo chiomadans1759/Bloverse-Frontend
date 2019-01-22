@@ -6,7 +6,7 @@ import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
 
 
-import PostDisplay from '../src/views/general/singlePost/singlepost';
+import PostDisplay from '../src/views/general/SinglePost/SinglePostPage.vue';
 
 
 import MyProfile from '../src/views/journalists/MyProfile.vue';
@@ -29,7 +29,7 @@ import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPag
 import Privacy from '../src/views/Privacy.vue';
 
 import Signin from '../src/views/general/Signin/SigninPage.vue';
-import AboutUs from '../src/views/general/about/about.vue';
+import AboutUs from '../src/views/general/About/AboutPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
 import consumerSignup from '../src/views/consumers/SignUpPage/SignUpPage';
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';

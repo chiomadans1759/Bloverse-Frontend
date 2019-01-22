@@ -11,14 +11,12 @@
       </p>
     </div>
   
-  <!-- <div class="about-body-container"> -->
     <about-card :customClass="'about-body-container'">
 
     <img src="@/assets/photo1.png" alt="">
     <div id="about-body-text">
       <h1>About Us</h1>
       <p>We are Bloverse, a content creation platform fostering a global community of engaged and insightful individuals. Together with our global community we are revolutionising the creation and consumption of content</p>
-    <!-- </div> -->
  </div>
 </about-card>
 <about-card :customClass="'about-body-container2'">
@@ -46,22 +44,21 @@
 
 </about-card>
 <div id="about-footer">
- <login-button class="btn btn-outline-primary" >GET STARTED</login-button>
-
-
+  <router-link class="about-get-started" to="/login">
+    Get Started
+  </router-link>
 </div>
 <br><br><br>
 </main>
 </template>
 
 <script>
-import aboutCard from '@/components/aboutCard/about-card.vue'
-import LoginButton from '@/components/LoginButton.vue'
+import aboutCard from '@/components/AboutCard/AboutCard.vue'
 
 export default {
-  components: { LoginButton , aboutCard}
+  components: { aboutCard }
 }
 </script>
 <style lang="scss">
-  @import './about.scss';
+  @import './AboutPage.scss';
 </style>
