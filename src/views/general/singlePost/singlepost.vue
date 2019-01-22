@@ -116,11 +116,11 @@
                 </div>
                  <p class="text-center"><button class="btn btn-primary">More Comments</button></p>
               </div><br>
-              <div class="card">
+              <!-- <div class="card">
                 <div class="card-body">
                   <trends />
                 </div>
-              </div><br>
+              </div><br> -->
               <div class="card">
                 <div class="card-body">
                   <recommendations />

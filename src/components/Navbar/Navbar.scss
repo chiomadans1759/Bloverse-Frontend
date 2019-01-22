@@ -13,6 +13,12 @@
   height: rem(40px)
 }
 
+ .router-link-exact-active {
+   /*background-color: indianred;*/
+   cursor: pointer;
+   font-weight: 900;
+   color: #073cec !important;
+ }
 nav {
   font-size: rem(14px);
   border-bottom: rem(1px) solid #e6e6e6;
