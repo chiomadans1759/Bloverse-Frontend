@@ -126,6 +126,7 @@ export default {
     filterCategory(id, name) {
       this.current_category = id;
       this.$store.dispatch("getAllPublishedPosts", {
+        prevCategory: this.general.activeCategory,
         category: id,
         country: ""
       });
