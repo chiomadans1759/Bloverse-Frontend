@@ -8,6 +8,36 @@
     }
   ],
   "env": {
+    "VUE_APP_API": {
+      "required": true
+    },
+    "VUE_APP_URL": {
+      "required": true
+    },
+    "VUE_APP_HASH_SALT": {
+      "required": true
+    },
+    "VUE_APP_CL_UPLOAD_PRESET": {
+      "required": true
+    },
+    "VUE_APP_CL_API_KEY": {
+      "required": true
+    },
+    "VUE_APP_CL_CLOUD_NAME": {
+      "required": true
+    },
+    "VUE_APP_CL_FOLDER": {
+      "required": true
+    },
+    "VUE_APP_SECRET_KEY": {
+      "required": true
+    },
+    "VUE_APP_BLOVERSEOPS": {
+      "required": true
+    },
+    "NODE_ENV": {
+      "required": true
+    }
   },
   "formation": {
     "web": {
