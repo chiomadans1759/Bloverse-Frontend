@@ -23,9 +23,9 @@ import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
 
 import NotFound from '../src/views/NotFound.vue';
-import Terms from '../src/views/TermsAndConditions.vue';
-import Privacy from '../src/views/Privacy.vue';
-import Settings from '@/views/Settings.vue'
+import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPage.vue';
+import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicy.vue';
+import Settings from '@/views/consumers/Settings/Settings.vue'
 
 import AboutUs from '../src/views/general/About/AboutPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';

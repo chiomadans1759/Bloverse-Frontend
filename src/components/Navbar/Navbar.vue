@@ -49,7 +49,6 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <router-link to="/terms-and-conditions" class="dropdown-item">Terms</router-link>
             <router-link to="/privacy-policies" class="dropdown-item">Privacy</router-link>
-            <router-link to="/settings" class="dropdown-item">Settings</router-link>
             <a class="dropdown-item" href="#">FAQ</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Feedback</a>
