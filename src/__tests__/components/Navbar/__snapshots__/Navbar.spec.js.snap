@@ -108,6 +108,8 @@ exports[`Navbar Component should render correctly 1`] = `
           
         </a>
       </div>
+       
+      <!---->
     </div>
      
     <div
@@ -224,6 +226,463 @@ exports[`Navbar Component should render correctly 1`] = `
             Get Started
           
         </a>
+         
+        <div
+          class="nav-item dropdown initials"
+        >
+          <!---->
+           
+          <div
+            aria-labelledby="navbarDropdown"
+            class="dropdown-menu"
+          >
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              <span
+                class="icon-profile"
+              >
+                <i
+                  class="fal fa-user-circle"
+                />
+              </span>
+              
+                Profile
+              
+            </a>
+             
+            <div
+              class="dropdown-divider"
+            />
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              <span
+                class="icon-settings"
+              >
+                <i
+                  class="fal fa-cog"
+                />
+              </span>
+              
+                Settings
+              
+            </a>
+             
+            <div
+              class="dropdown-divider"
+            />
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              <span
+                class="icon-power"
+              >
+                <i
+                  class="far fa-power-off"
+                />
+              </span>
+              
+                Sign Out
+              
+            </a>
+          </div>
+        </div>
+         
+        <span
+          class="vl bg-light"
+        />
+         
+        <a
+          class="publish-link"
+        >
+          
+            Publish
+          
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+`;
+
+exports[`Navbar Component should render initials button 1`] = `
+<header
+  id="feeds-header"
+>
+  <nav
+    class="navbar navbar-expand-lg navbar-light px-5"
+  >
+    <a
+      class="router-link"
+    >
+      <img
+        class="logo"
+        src="@/assets/Logo.svg"
+      />
+       
+      <!---->
+    </a>
+     
+    <div
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      class="form-inline my-2 my-lg-0 navbar-toggler mobile-view"
+      data-target="#navbarSupportedContent"
+      data-toggle="collapse"
+    >
+      <a
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="nav-link dropdown-toggle"
+        data-toggle="dropdown"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+      >
+        <span
+          id="option-icon"
+        />
+         
+        <span
+          id="option-icon"
+        />
+         
+        <span
+          id="option-icon"
+        />
+      </a>
+       
+      <div
+        aria-labelledby="navbarDropdown"
+        class="dropdown-menu dropdown-mobile-view"
+      >
+        <a
+          class="dropdown-item"
+        >
+          About
+        </a>
+         
+        <a
+          class="dropdown-item"
+        >
+          Photo Contest
+        </a>
+         
+        <a
+          class="dropdown-item"
+        >
+          Terms
+        </a>
+         
+        <a
+          class="dropdown-item"
+        >
+          Privacy
+        </a>
+         
+        <a
+          class="dropdown-item"
+          href="#"
+        >
+          FAQ
+        </a>
+         
+        <div
+          class="dropdown-divider"
+        />
+         
+        <a
+          class="dropdown-item"
+          href="#"
+        >
+          Feedback
+        </a>
+      </div>
+       
+      <div>
+        <span
+          class="vl bg-light"
+        />
+         
+        <!---->
+      </div>
+       
+      <div
+        class="nav-item dropdown initials"
+      >
+        <a
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="dropdown-toggle initials-link"
+          data-toggle="dropdown"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          to="/login"
+        >
+          
+          MD
+        
+        </a>
+         
+        <div
+          aria-labelledby="navbarDropdown"
+          class="dropdown-menu"
+        >
+          <a
+            class="dropdown-item"
+            href="#"
+          >
+            <span
+              class="icon-profile"
+            >
+              <i
+                class="fal fa-user-circle"
+              />
+            </span>
+            
+            Profile
+          
+          </a>
+           
+          <div
+            class="dropdown-divider"
+          />
+           
+          <a
+            class="dropdown-item"
+            href="#"
+          >
+            <span
+              class="icon-settings"
+            >
+              <i
+                class="fal fa-cog"
+              />
+            </span>
+            
+            Settings
+          
+          </a>
+           
+          <div
+            class="dropdown-divider"
+          />
+           
+          <a
+            class="dropdown-item"
+            href="#"
+          >
+            <span
+              class="icon-power"
+            >
+              <i
+                class="far fa-power-off"
+              />
+            </span>
+            
+            Sign Out
+          
+          </a>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="collapse navbar-collapse"
+    >
+      <ul
+        class="navbar-nav ml-auto"
+      >
+        <li
+          class="nav-item active"
+        >
+          <a
+            class="nav-link"
+          >
+             Home 
+            <span
+              class="sr-only"
+            >
+              (current)
+            </span>
+          </a>
+        </li>
+         
+        <li
+          class="nav-item"
+        >
+          <a
+            class="nav-link"
+          >
+            About
+          </a>
+        </li>
+         
+        <li
+          class="nav-item"
+        >
+          <a
+            class="nav-link"
+            href="/photo-contest"
+          >
+            Photo Contest
+          </a>
+        </li>
+         
+        <li
+          class="nav-item dropdown pr-4"
+        >
+          <a
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+          >
+            <span
+              id="option-icon"
+            />
+             
+            <span
+              id="option-icon"
+            />
+             
+            <span
+              id="option-icon"
+            />
+          </a>
+           
+          <div
+            aria-labelledby="navbarDropdown"
+            class="dropdown-menu"
+          >
+            <a
+              class="dropdown-item"
+            >
+              Terms
+            </a>
+             
+            <a
+              class="dropdown-item"
+            >
+              Privacy
+            </a>
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              FAQ
+            </a>
+             
+            <div
+              class="dropdown-divider"
+            />
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              Feedback
+            </a>
+          </div>
+        </li>
+      </ul>
+       
+      <div
+        class="form-inline my-2 my-lg-0 pr-4"
+      >
+        <!---->
+         
+        <div
+          class="nav-item dropdown initials"
+        >
+          <a
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="dropdown-toggle initials-link"
+            data-toggle="dropdown"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            to="/login"
+          >
+            
+              MD
+            
+          </a>
+           
+          <div
+            aria-labelledby="navbarDropdown"
+            class="dropdown-menu"
+          >
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              <span
+                class="icon-profile"
+              >
+                <i
+                  class="fal fa-user-circle"
+                />
+              </span>
+              
+                Profile
+              
+            </a>
+             
+            <div
+              class="dropdown-divider"
+            />
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              <span
+                class="icon-settings"
+              >
+                <i
+                  class="fal fa-cog"
+                />
+              </span>
+              
+                Settings
+              
+            </a>
+             
+            <div
+              class="dropdown-divider"
+            />
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              <span
+                class="icon-power"
+              >
+                <i
+                  class="far fa-power-off"
+                />
+              </span>
+              
+                Sign Out
+              
+            </a>
+          </div>
+        </div>
          
         <span
           class="vl bg-light"

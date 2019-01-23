@@ -11,4 +11,19 @@ describe('Navbar Component', () => {
 
     expect(wrapper.element).toMatchSnapshot();
   });
+  
+  it('should render initials button', () => {
+    const wrapper = mount(Navbar, {
+      stubs: {
+        RouterLink: RouterLinkStub
+      },
+      propsData: {
+        isLogin: true
+      }
+    });
+    
+    const initialsButton = wrapper.findAll('.initials');
+    expect(initialsButton.length).toEqual(2);
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });

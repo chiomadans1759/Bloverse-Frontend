@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbar isLogin="isLogin" />
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -13,7 +13,12 @@ import TheFooter from '@/components/TheFooter';
 import Navbar from '@/components/Navbar/Navbar.vue';
 
 export default {
-  components: { TheFooter, Navbar }
+  components: { TheFooter, Navbar },
+  data() {
+    return {
+      isLoginL: true
+    }
+  }
 }
 </script>
 
