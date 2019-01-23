@@ -18,7 +18,7 @@
       <Form :model="post" ref="basicCreatePostForm" class="travel-form" :rules="validatePostForm" style="margin-top: 6rem;">
         <Row type="flex" justify="space-between">
           <Col :sm="24" id="create-post">
-            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true"/><br>
+            <DisplayImage v-model="post.imageUrl" width="100%" :can-edit="true"/><br>
             <FormItem prop="title" :error="errors.title">
               <div class="alert alert-danger py-0" role="alert" v-if="post.title != undefined && post.title.length == 150">
                 150 maximum characters for title exceeded.
@@ -114,7 +114,6 @@
       <Modal
         v-model="previewPost"
         width="70%"
-        :loading="loading"
       >
         <div v-if="!post.title">
           <h1 class="text-center" style="padding:100px;">NOTHING TO PREVIEW YET</h1>
@@ -188,7 +187,7 @@ export default {
     return {
       slug: null,
       post: {
-        keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }]
+        keyPoints: [{ index: 1, value: '', }, { index: 2, value: '', }, { index: 3, value: '', }]
       },
       errors: {},
       previewPost:false,
@@ -276,13 +275,21 @@ export default {
 
     ...mapMutations(["setPost", "clearPost"]),
     previewPosts(){
-      this.previewPost = true;
+      if(this.post.title == '') {
+        window.onbeforeunload = function(event)
+        {
+          return confirm("Fill in a title");
+        };
+      } else {
+        this.previewPost = true;
+      }
+      
     },
     setPost(params){
       this.post = {...this.post, ...params};
     },
     clearPost(){
-      this.post = { keyPoints: [{ index: 1, value: '', }, { index: 1, value: '', }, { index: 1, value: '', }] }
+      this.post = { keyPoints: [{ index: 1, value: '', }, { index: 2, value: '', }, { index: 3, value: '', }] }
     },
     handleModalChange(status){
       if(!status)
@@ -382,7 +389,7 @@ export default {
         });
       } else {
         this.setPost({
-          category: this.auth.loggedInUser.category.id,
+          category: this.auth.loggedInUser.category,
           country: this.auth.loggedInUser.country.id
         });
       }
@@ -575,7 +582,7 @@ export default {
     background: #aca7a7;
     border: 0.1px solid grey;
     width: 100%;
-    height: 400px !important;
+    height: 500px !important;
   }
 
   div#modalfocus .ivu-modal-mask {

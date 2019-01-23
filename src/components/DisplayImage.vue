@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-12">
     <div class="mother-div">
-      <section id="img-display" style="height:220px; width: 100%;">
+      <section id="img-display" style="height:400px; width: 100%;">
         <image-chooser
           :show="displayChooser"
           @closeModal="displayChooser=false"

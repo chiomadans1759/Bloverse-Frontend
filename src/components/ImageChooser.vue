@@ -101,14 +101,11 @@ export default {
 }
 
 #img-footer button {
-  margin-right: 1rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
+  margin: 1rem 1rem 0 1rem;
 }
 
 #img-upload {
   padding: 0;
-  margin: 0 -16px;
 }
 
 #wrapper {
