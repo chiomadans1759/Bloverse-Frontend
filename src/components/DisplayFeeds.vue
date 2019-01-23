@@ -45,6 +45,7 @@ export default {
   },
   methods: {
     ...mapActions(["getAllPublishedPosts"]),
+    ...mapState(["general"]),
 
     loadMore() {
       let self = this
@@ -52,7 +53,9 @@ export default {
       $(window).scroll(() => {
         // eslint-disable-next-line 
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
-          self.getAllPublishedPosts({ category: "", country: "" });
+          if(this.general.publishedPosts.length > 9) { 
+            self.getAllPublishedPosts({ category: "", country: "" });
+          } 
         }
       });
     }
