@@ -1,5 +1,5 @@
 <template>
-  <div id="auth-sign-in">
+  <div id="video-modal">
     <iframe :src="source" allow="autoplay" frameborder="0" allowfullscreen></iframe>
     <button type="button" class="close" aria-label="Close">
       <span aria-hidden="true" @click="closeModal()">
@@ -28,8 +28,9 @@ export default {
 
 
 <style scoped>
-#auth-sign-in {
-  width: 100%;
+#video-modal {
+  width: 100% !important;
+  left: 0%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -40,13 +41,13 @@ export default {
   height: 100vh;
 }
 
-iframe {
+#video-modal iframe {
   width: 60%;
   height: 70%;
   object-fit: fill;
 }
 
-.close span {
+#video-modal .close span {
   color: #fff;
   position: absolute;
   top: 5%;
@@ -54,21 +55,21 @@ iframe {
 }
 
 @media only screen and (max-width: 420px) {
-  iframe {
+  #video-modal iframe {
     width: 99%;
     height: 30%;
   }
 }
 
 @media only screen and (max-width: 640px) {
-  iframe {
+  #video-modal iframe {
     width: 60%;
     height: 40%;
   }
 }
 
 @media only screen and (max-width: 840px) {
-  iframe {
+  #video-modal iframe {
     width: 90%;
     height: 45%;
   }
