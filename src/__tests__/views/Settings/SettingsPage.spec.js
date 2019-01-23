@@ -1,7 +1,7 @@
 import { mount, RouterLinkStub } from '@vue/test-utils';
 import Settings from '@/views/consumer/Settings/Settings.vue';
 
-describe('Terms And Conditions', () => {
+describe('Settings', () => {
   it('should render correctly', () => {
     const wrapper = mount(Settings, {
       stubs: {

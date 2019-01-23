@@ -76,6 +76,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import './Settings';
+  @import './SettingsPage';
 </style>
 
