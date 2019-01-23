@@ -19,11 +19,11 @@
   .btn-toggle {
     padding: 0;
     position: relative;
-    border: none;
-    height: 1.5rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    height: 1.625rem;
     width: 3rem;
-    background: rgb(131, 128, 128);
-    border-radius: 1.5rem;
+    background: #b7b7b7;
+    border-radius: 0.125rem !important;
     &.btn-sm:focus {
       outline: none;
     }
@@ -52,17 +52,19 @@
 #settings .btn-toggle.btn-sm {
   &:before {
     content: 'Off';
-    left: -0.5rem;
+    left: 1rem;
+    text-transform: capitalize;
   }
   &:after {
     content: 'On';
     right: -0.5rem;
     opacity: 0.5;
+    text-transform: capitalize;
   }
   > .square {
     position: absolute;
     top: 0.1875rem;
-    left: 0.1875rem;
+    left: 0.14rem;
     width: 1.125rem;
     height: 1.125rem;
     background: #ffffff;
@@ -122,5 +124,7 @@
     margin-bottom: 1rem;
     border: 0;
     border-top: 0.09rem solid rgba(0, 0, 0, 0.1);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
   }
 }
