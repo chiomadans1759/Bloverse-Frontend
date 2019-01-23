@@ -1,5 +1,5 @@
 <template>
-  <Modal v-model="show" :closable="false" :mask-closable="false">
+  <Modal  v-model="show" :closable="false" :mask-closable="false">
     <header slot="header">
       <h4>Image Upload</h4>
     </header>
@@ -35,12 +35,12 @@
           </form>
         </div>
       </div>
-      <footer slot="footer" id="img-footer">
-        <Button type="error" @click.native="discardModal">DISCARD & EXIT</Button>
-        <Button type="warning" :disabled="!image" @click.native="removeImage">Remove Image</Button>
-        <Button type="success" :disabled="!image" @click.native="imageOk">DONE</Button>
-      </footer>
     </section>
+    <footer slot="footer" id="img-footer">
+      <Button type="error" @click.native="discardModal">DISCARD & EXIT</Button>
+      <Button type="warning" :disabled="!image" @click.native="removeImage">Remove Image</Button>
+      <Button type="success" :disabled="!image" @click.native="imageOk">DONE</Button>
+    </footer>
   </Modal>
 </template>
 
@@ -101,14 +101,11 @@ export default {
 }
 
 #img-footer button {
-  margin-right: 1rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
+  margin: 1rem 1rem 0 1rem;
 }
 
 #img-upload {
   padding: 0;
-  margin: 0 -16px;
 }
 
 #wrapper {

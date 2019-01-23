@@ -1,11 +1,11 @@
 <template>
   <main id="create-basic-post">
-    <Modal v-model="publishModal">
+    <Modal v-model="publishModal" @on-visible-change="handleModalChange">
       <Alert type="success">Success</Alert>
       <div class="text-center">
         <p>Your post has been successfully published</p>
         <div class="posts">
-          <social-buttons :slug="post.slug"></social-buttons>
+          <social-buttons :slug="slug"></social-buttons>
         </div>
       </div>
       <div slot="footer">
@@ -18,7 +18,7 @@
       <Form :model="post" ref="basicCreatePostForm" class="travel-form" :rules="validatePostForm" style="margin-top: 6rem;">
         <Row type="flex" justify="space-between">
           <Col :sm="24" id="create-post">
-            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true"/><br>
+            <DisplayImage v-model="post.imageUrl" width="100%" :can-edit="true"/><br>
             <FormItem prop="title" :error="errors.title">
               <div class="alert alert-danger py-0" role="alert" v-if="post.title != undefined && post.title.length == 150">
                 150 maximum characters for title exceeded.
@@ -114,7 +114,6 @@
       <Modal
         v-model="previewPost"
         width="70%"
-        :loading="loading"
       >
         <div v-if="!post.title">
           <h1 class="text-center" style="padding:100px;">NOTHING TO PREVIEW YET</h1>
@@ -128,7 +127,7 @@
             <ul v-for="(keypoint) in post.keyPoints" :key="keypoint.value">
               <li>{{keypoint.value}}</li>
             </ul>
-            <p v-html="post.body"></p>
+            <p v-html="post.body" id="content"></p>
             <div class="text-center mt-4 mx-5">
               <Button
                 id="btn-publish"
@@ -139,28 +138,18 @@
             </div>
           </div>
         </div>
+        <div slot="footer"></div>
       </Modal>
     </div>
   </main>
 </template>
 
 <script>
+
 import {
-  Row,
-  Col,
-  Card,
-  Input,
-  Upload,
-  Icon,
-  Button,
-  Select,
-  Option,
-  Modal,
-  Alert,
-  Form,
-  FormItem,
-  DatePicker
+  Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, Form, FormItem, DatePicker
 } from "iview";
+
 import { mapState, mapActions, mapMutations } from "vuex";
 import { VueEditor } from "vue2-editor";
 import SocialButtons from '@/components/SocialButtons'
@@ -196,6 +185,10 @@ export default {
 
   data: function() {
     return {
+      slug: null,
+      post: {
+        keyPoints: [{ index: 1, value: '', }, { index: 2, value: '', }, { index: 3, value: '', }]
+      },
       errors: {},
       previewPost:false,
       max: 150,
@@ -274,16 +267,7 @@ export default {
   },
 
   computed: {
-    post: {
-      get() {
-        return this.$store.state.journalist.post;
-      },
-      set(props) {
-        this.$store.commit("setPost", props);
-      }
-    },
-
-    ...mapState(["general", "auth"])
+    ...mapState(["general", "auth", "journalist"])
   },
 
   methods: {
@@ -291,7 +275,28 @@ export default {
 
     ...mapMutations(["setPost", "clearPost"]),
     previewPosts(){
-      this.previewPost = true;
+      if(this.post.title == '') {
+        window.onbeforeunload = function(event)
+        {
+          return confirm("Fill in a title");
+        };
+      } else {
+        this.previewPost = true;
+      }
+      
+    },
+    setPost(params){
+      this.post = {...this.post, ...params};
+    },
+    clearPost(){
+      this.post = { keyPoints: [{ index: 1, value: '', }, { index: 2, value: '', }, { index: 3, value: '', }] }
+    },
+    handleModalChange(status){
+      if(!status)
+        this.takeToMyPosts();
+    },
+    takeToMyPosts(){
+      this.$router.push({path: `/creators/${this.auth.loggedInUser.userName}/posts`})
     },
     handleProcessPost: async function(shouldPublish = false) {
       this.errors = {};
@@ -309,21 +314,32 @@ export default {
           }
           if (this.post.imageUrl) {
             this.isPublishing = true;
-            let success = await this.processPost({
+            let response = await this.processPost({
               shouldPublish,
-              shouldUploadImage: this.isNewImage
+              shouldUploadImage: this.isNewImage,
+              post: this.post
             });
+            
+            let success = !!response.id;
+
             this.isPublishing = false;
-            if (success === true) {
+            if (success) {
+              this.post = response;
               this.$Message.success("Post successfully saved");
               this.publishModal = shouldPublish;
 
-              //remove once social share after publish works fine
-              console.log('3. slug', this.post.slug) // eslint-disable-line no-console
+              if(shouldPublish){
+                this.slug = this.post.slug //gets value of slug before clearing post object - for purpose of social share
+                this.clearTinyMceEditor();
+                this.clearPost()
+              }else{
+                //perform action if save as draft
+
+                // uncomment next line if edit features now work well.
+                //this.takeToMyPosts()
+              }
 
               this.previewPost = false;
-              this.clearTinyMceEditor();
-              this.$store.commit("clearPost");
               
             }
             if (success.errors) {
@@ -373,7 +389,7 @@ export default {
         });
       } else {
         this.setPost({
-          category: this.auth.loggedInUser.category.id,
+          category: this.auth.loggedInUser.category,
           country: this.auth.loggedInUser.country.id
         });
       }
@@ -481,6 +497,11 @@ export default {
   }
 }
 
+#create-basic-post .previewMade #content {
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
 .container-fluid.previewMade p {
   padding: 0px 13px;
   margin-top: 2%;
@@ -561,7 +582,7 @@ export default {
     background: #aca7a7;
     border: 0.1px solid grey;
     width: 100%;
-    height: 400px !important;
+    height: 500px !important;
   }
 
   div#modalfocus .ivu-modal-mask {

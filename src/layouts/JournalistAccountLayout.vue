@@ -2,22 +2,22 @@
   <main id="journalist-account-layout">
     <JournalistAccountSidebar class="left"/>
     <div class="right">
-      <div class="container">
-        <router-view class="px-lg-6"></router-view>
-        <!-- <journalist-account-footer class="mt-5" /> -->
+      <div class="mobile">
+        <router-link to="/" class="router-link">
+          <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
+        </router-link>
       </div>
+      <router-view class="px-lg-6"></router-view>
     </div>
   </main>
 </template>
 
 <script>
 import JournalistAccountSidebar from "@/components/JournalistAccountSidebar";
-import JournalistAccountFooter from "@/components/JournalistAccountFooter";
 
 export default {
   components: {
-    JournalistAccountSidebar,
-    JournalistAccountFooter
+    JournalistAccountSidebar
   }
 };
 </script>
@@ -36,17 +36,26 @@ export default {
   width: 20%;
   height: 100%;
   position: fixed;
+  z-index: 1000;
 }
 
 #journalist-account-layout .right {
   float: right;
   width: 80%;
   height: auto !important;
+  z-index: 10;
 }
 
-#journalist-account-layout footer {
-  height: 10rem;
-  width: 100%;
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .mobile {
+    display: block;
+    margin-top: .5rem;
+    text-align: center;
+  }
 }
 </style>
 
