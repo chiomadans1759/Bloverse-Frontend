@@ -31,7 +31,7 @@ app.get('/redirect/:uri', async function (req, res) {
       keypointString = keypoint.join('. ')
     else
       keypointString = `Captured ${moment(duration, "YYYY-MM-DD").fromNow()} in ${location} using a ${device_type}`
-    
+
     author = `${author.first_name} ${author.last_name}`
     res.render('post', { baseUrl: process.env.VUE_APP_URL, keypointString, title, slug, image_url, author })
   }catch(err){
@@ -40,10 +40,20 @@ app.get('/redirect/:uri', async function (req, res) {
   }
 })
 
+app.enable('trust proxy');
+app.use(function(req, res, next) {
+  if (process.env.NODE_ENV === 'production' && !req.secure) {
+    return res.redirect('https://' + req.headers.host + req.url);
+  }
+
+  next();
+});
+
 app.get('*', function (req, res) {
-  res.sendFile(__dirname + '/dist/index.html')
-})
+  res.sendFile(__dirname + '/dist/index.html');
+});
 
 var port = process.env.PORT || 5001;
+
 app.listen(port);
 console.log('server started ' + port); // eslint-disable-line no-console
