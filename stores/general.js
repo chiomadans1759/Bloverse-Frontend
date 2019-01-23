@@ -157,6 +157,14 @@ export default {
         alert('Posts feed empty'); 
       }
     },
+    async filterPosts({ commit }, { category = "", country = "" }) {
+      commit('setPublishedPostsLoading', true);
+      let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
+      commit('setPostsPagingData', response.data.pagination);
+      commit('setPublishedPosts', response.data.posts);
+      commit('setPublishedPostsLoading', false);
+      commit("setDataFetched", true);
+    },
     async getAllDraftPosts({ commit }, { category = "", country = "" }) {
       let response = await Api.get(`posts?is_published=false&category=${category}&country=${country}`);
       commit('setDraftPosts', response.data.posts);
