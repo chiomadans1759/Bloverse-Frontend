@@ -26,16 +26,10 @@ import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicyPage.vue';
 import Settings from '@/views/consumers/Settings/SettingsPage.vue'
 import Category from '@/views/consumers/Category/CategoryPage'
 
-<<<<<<< HEAD
 import AboutUs from '../src/views/general/About/AboutPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
-=======
-import Signin from '../src/views/general/Signin/SigninPage.vue';
-import AboutUs from '../src/views/general/about/about.vue';
-import ForgotPassword from '../src/views/general/forgotPassword/ForgotPasswordPage.vue';
-import consumerSignup from '../src/views/consumers/SignUpPage/SignUpPage';
+
 import Region from '../src/views/general/regionPage/regionPage';
->>>>>>> Customise Region Page V2 UI [0.5]
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 import Homepage from '../src/views/general/Home/Homepage.vue';
 import SigninPage from '../src/views/general/Signin/SigninPage.vue';
