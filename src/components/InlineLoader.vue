@@ -2,7 +2,6 @@
   <div class="bl-inline-spinner" :class="customClass">
     <i class="demo-spin-icon-load ivu-icon ivu-icon-ios-loading"  />
   </div>
-  
 </template>
 
 <script>

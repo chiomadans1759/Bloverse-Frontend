@@ -2,12 +2,13 @@
   <header id="feeds-header">
     <Row class="feeds-row" type="flex" justify="space-between" align="middle">
       <Col>
-        <router-link to="/" class="router-link"><img class="logo" src="./../assets/Asset 1.svg" style="height:50px" /><span id="logo-text">bloverse</span></router-link>
-      </Col>
-      <span class="button-links">
-        <router-link to="/creators/login" id="login-button">login</router-link>
-        <router-link to="/creators/apply" id="apply-button">apply</router-link>
-      </span>
+     <router-link to="/" class="router-link"><img class="logo" src="./../assets/Asset 1.svg" style="height:50px" /><span id="logo-text">bloverse</span></router-link>
+     </Col>
+     <span class="button-links">|
+     <router-link to="/creators/login" id="login-button">login</router-link>
+     <router-link to="/creators/apply" id="apply-button">apply</router-link>
+     </span> 
+     
     </Row>
   </header>
 </template>

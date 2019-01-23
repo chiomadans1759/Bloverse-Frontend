@@ -20,6 +20,32 @@ export default {
   name: "post-social-share",
   props: ["slug"],
   components: { SocialButtons },
+  methods: {
+    doShare(media) {
+      switch (media) {
+      /* eslint-disable */
+      case "facebook":
+        FB.ui( // eslint-disable-line no-undef
+          {
+            method: "share",
+            display: "popup",
+            href: `${this.$BASE_URL}redirect/${this.slug}`
+          },
+          function(response) {
+            // Count facebook share here
+          }
+        );
+        break;
+      case "twitter":
+        twttr.events.bind("tweet", function(event) { // eslint-disable-line no-undef
+          // Count tweet here
+        });
+        break;
+      default:
+        alert("Funtionality not available");
+      }
+    }
+  }
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <main id="draft-card">
-    <router-link :to="`/posts/${post.slug}`">
+    <router-link to="#">
       <div class="card" v-if="post.category === 7">
         <img class="card-img-top" :src="post.image_url">
         <div class="card-body">

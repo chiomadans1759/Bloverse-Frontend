@@ -24,7 +24,6 @@ if (getJWT() == null) {
   localJWT = null;
 } else {
   localJWT = simpleCrypto.decrypt(getJWT());
-
 }
 
 

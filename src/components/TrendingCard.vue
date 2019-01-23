@@ -4,10 +4,11 @@
       <img class="card-img" :src="post.image_url" alt="Card image">
       <div class="card-img-overlay">
         <h5 class="card-title">{{category}}</h5>
-        <p class="card-text">{{post.title | reduceText}}</p>
+        <p class="card-text">{{post.title | truncate(50)}}</p>
         <div class="author mt-4">
           <img class="rounded mr-3" :src="post.author.image_url" alt>
-          <span>{{post.author.first_name}} {{post.author.last_name}}</span>
+          <span id="desktop">{{author_fullname | truncate(30)}}</span>
+          <span id="mobile">{{author_fullname | truncate(10)}}</span>
         </div>
       </div>
     </div>
@@ -24,8 +25,11 @@ export default {
   },
   data() {
     return {
-      pages: null
+      author_fullname: null
     };
+  },
+  created() {
+    this.author_fullname = `${this.post.author.first_name} ${this.post.author.last_name}`
   },
   computed: {
     ...mapState(["general"]),
@@ -38,15 +42,6 @@ export default {
         return postCategory.name;
       }
     }
-  },
-  filters: {
-    reduceText(text) {
-      if (text.length > 50) {
-        return text.substring(0, 50) + "...";
-      } else {
-        return text;
-      }
-    }
   }
 };
 </script>
@@ -55,11 +50,6 @@ export default {
   #trending-card {
     height: auto;
     margin: 0rem 0rem 5rem;
-  }
-
-  #trend-card-heading {
-    font-size: 16px;
-    font-weight: 800;
   }
 
   #trending-card .card {
@@ -91,52 +81,9 @@ export default {
     border-radius: 4px !important;
   }
 
-  #trending-card .carousel-indicators {
-    top: 13rem;
-  }
-
-  #trending-card .carousel-indicators li {
-    margin: 0rem 1rem;
-    background: #096dd9;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    opacity: 0.6;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-  }
-
-  #trending-card .carousel-indicators li.active {
-    margin: 0rem 1rem;
-    background: #096dd9;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    opacity: 1;
-    width: 8px;
-    height: 8px;
-    margin-top: -2px;
-  }
-
-  #trending-card .carousel-control-next {
-    margin-top: 4.5rem;
-    margin-right: -1.2rem !important;
-    border-radius: 50%;
-    width: 38px;
-    height: 38px;
-    background: #bdc3c7;
-    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
-    background: linear-gradient(to right, #2c3e50, #bdc3c7);
-    filter: blur(0.5px);
-  }
-
-  @media only screen and (max-width: 980px) {
-    #trending-card .carousel-indicators li {
-      width: 5px;
-      height: 5px;
-    }
-
-    #trending-card .carousel-indicators li.active {
-      width: 8px;
-      height: 8px;
-    }
+  #trending-card .card .card-text {
+    position: absolute;
+    top: 70px;
   }
 
   #trending-card .card .card-img-overlay {
@@ -147,25 +94,37 @@ export default {
   #trending-card .card .card-img-overlay .card-title {
     font-size: 13px;
     position: absolute;
-    bottom: 7rem;
+    top: 30px;
   }
 
   #trending-card .card .card-img-overlay .card-text {
     font-weight: 700;
     font-size: 13px;
     position: absolute;
-    bottom: 4rem;
+    top: 70px;
+  }
+
+  #trending-card .card .author {
+    position: absolute;
+    top: 100px;
+  }
+
+  #trending-card .card .author #mobile {
+    display: none;
   }
 
   @media only screen and (max-width: 980px) {
     #trending-card .card .card-img-overlay .card-text {
       font-size: 11px;
     }
-  }
 
-  #trending-card .card .card-img-overlay .author {
-    position: absolute;
-    bottom: 1.5rem;
+    #trending-card .card .author #desktop {
+      display: none;
+    }
+
+    #trending-card .card .author #mobile {
+      display: block;
+    }
   }
 
   #trending-card .card .card-img-overlay .author img {
@@ -198,6 +157,11 @@ export default {
 
     #trending-card .card .card-img-overlay {
       padding-top: 3rem;
+    }
+
+    #trending-card .card .author {
+      position: absolute;
+      top: 110px;
     }
   }
 </style>
