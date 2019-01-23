@@ -1,10 +1,11 @@
 @import 'sass-rem';
+
 .img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
-.card{
+.card {
 	padding: rem(3px);
 }
 .post_wrapper{
@@ -15,7 +16,7 @@
 		    width: rem(30px);
 		    border-radius: rem(5px);
 		}
-		 h5 {
+		h5 {
 		    margin-top: rem(9px) !important;
 		    display: block;
 		    font-size: rem(16px);
@@ -37,7 +38,7 @@
 	}
 	.more_imgs {
 	    margin-top: 5%;
-	     p b {
+	    p b {
 		    color: #000;
 		    font-weight: 900;
 		}
@@ -48,7 +49,7 @@
 			padding: rem(0px 1px);
 		}
 		img{
-			    margin-bottom: -0.8% !important;
+			margin-bottom: -0.8% !important;
 		}
 	}
 	.keypoint_reg {
@@ -58,9 +59,8 @@
 		    font-size: rem(15px);
 		    margin-bottom: rem(12px);
 		}
-		 ul {
-		    /* padding: 0px 2px); */
-		    padding: rem(12px 24px);
+		ul {
+			padding: rem(12px 24px);
 		}
 		p b {
 		    font-weight: 900;
@@ -69,18 +69,17 @@
 	}
 	.content_card_wrapper {
 	    padding: rem(36px);
-	     h1 {
+	    h1 {
 		    font-size: rem(27px);
 		    font-weight: 700;
 		    line-height: rem(34px);
 		    color: #000;
 		}
-		 p {
+		p {
 		    color: #5a5a5a;
 		    font-size: rem(16px);
 		    font-weight: 100;
 		}
-
 	}
 	.about_content--creator{
 		padding: rem(35px 30px);
@@ -89,7 +88,7 @@
 		    width: rem(110px);
 		    border-radius: rem(7px);
 		}
-		 p b{
+		p b{
 		    font-weight: 900;
 		    font-size: rem(8px);
 		    color: #000;
@@ -98,7 +97,6 @@
 		p {
 		    font-size: rem(16px);
 		    color: #565656;
-		    /* display: block; */
 		}
 		button {
 		    float: right;
@@ -118,12 +116,12 @@
 		.media{
 			margin-bottom: 4%; 
 		}
-		 p b{
+		p b{
 		    font-weight: 900;
 		    font-size: rem(8px);
 		    color: #000;
 		}
-		 h5 {
+		h5 {
 		    font-size: rem(16px);
 		    color: #000;
 		    margin-bottom: rem(2px);
@@ -132,10 +130,8 @@
 		p {
 		    font-size: rem(16px);
 		    color: #565656;
-		    /* display: block; */
 		}
 		button {
-		    /*float: right;*/
 		    background: transparent;
 		    margin-top: 3%;
 		    border-color: #096DD9;
@@ -143,9 +139,8 @@
 		}
 	}
 	a.img_fetch {
-	        height: rem(465px);
+	    height: rem(465px);
 	    overflow: hidden;
-	    /* text-align: center; */
 	    display: block;
 	}
 }
@@ -204,37 +199,68 @@
 		
 	}
 }
+.bl-footer {
+    display: block;
+    height: rem(37px);
+    margin: rem(24px) 0;
+    .company-name {
+        height: rem(15px);
+        margin: 0;
+        margin-bottom: 0;  
+        padding: 0;
+        &>div{
+        border-right: rem(1px) solid rgba(0, 0, 0, 0.15);
+        padding: 0;
+        font-size: rem(16px);
+        }
+        &>p {
+        padding: 0 rem(10px);
+        &>span {
+            margin: auto rem(5px);
+        }
+        }
+        .dots::after {
+        content: '\2022';
+        color: #096DD9;
+        margin-left: rem(5px);
+        font-weight: 900;
+        }
+    }
+    .company-rights {
+		font-size: rem(10px);
+		height: rem(13px);
+		color: #868686;
+		margin: 0;
+		padding-top: rem(10px);
+    }
+}
 
 @media( max-width : 585px ) {
-.post_wrapper a.img_fetch {
-    height: rem(225px) !important;
-    overflow: hidden;
-    /* text-align: center; */
-    display: block;
-}
-.post_wrapper .content_card_wrapper {
-    padding: rem(36px 10px);
-}
+	.post_wrapper a.img_fetch {
+	height: rem(225px) !important;
+	overflow: hidden;
+	display: block;
+	}
+	.post_wrapper .content_card_wrapper {
+	padding: rem(36px 10px);
+	}
 
-.post_wrapper .content_card_wrapper p {
-    color: #5a5a5a;
-    font-size: rem(15px);
-    font-weight: 100;
-}
-.post_wrapper .content_card_wrapper h1 {
-    font-size: rem(24px);
-    font-weight: 700;
-    line-height: rem(34px);
-    color: #000;
-}
-.post_wrapper .about_content--creator img{
+	.post_wrapper .content_card_wrapper p {
+	color: #5a5a5a;
+	font-size: rem(15px);
+	font-weight: 100;
+	}
+	.post_wrapper .content_card_wrapper h1 {
+	font-size: rem(24px);
+	font-weight: 700;
+	line-height: rem(34px);
+	color: #000;
+	}
+	.post_wrapper .about_content--creator img{
 	height: rem(50px);
 	width:rem(50px);
-}
-.post_wrapper .more_imgs img {
-    margin-bottom: 4.2% !important;
-}
-}
-@media( max-width : 989px ) {
-
+	}
+	.post_wrapper .more_imgs img {
+	margin-bottom: 4.2% !important;
+	}
 }

@@ -5,9 +5,9 @@
         <div class="col-9 row title--text">
           <span class="col-3">category</span>
           <p class="col-5 col-sm-6 font-weight-bold description">
-            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            <router-link to="/posts/rere">Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
             Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret</router-link>
           </p>
           <p class="col-4 col-sm-3 username">
             <a class="btn btn-primary initials" href="#" role="button">SM</a>

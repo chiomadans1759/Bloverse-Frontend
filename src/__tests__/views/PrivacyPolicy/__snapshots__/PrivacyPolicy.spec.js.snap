@@ -1,0 +1,268 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrivacyPolicy Component should render correctly 1`] = `
+<main
+  class="privacy"
+>
+  <div
+    class="container privacy-container"
+  >
+    <div
+      class="row privacy-header"
+    >
+      <h1
+        id="l1"
+      >
+        Privacy Policy
+      </h1>
+       
+      <p
+        class="date-updated"
+      >
+        <span>
+          Last updated:
+        </span>
+        
+                19 December, 2018
+            
+      </p>
+    </div>
+     
+    <div
+      class="row privacy-content"
+    >
+      <div
+        class="col-md-8 col-sm-12 privacy-texts"
+      >
+        <p>
+           We understand that when you use our services, you’re trusting us with your information. This privacy policy 
+                    has been compiled to better serve our users who are concerned with how their 'Personally Identifiable Information'
+                    (PII) is being used on Bloverse. PII, as described in US privacy law and information security, is information that
+                    can be used on its own or with other information to identify, contact, or locate a single person, or to identify 
+                    an individual in context. 
+          <br />
+          <br />
+          Please read our privacy policy carefully to get a clear understanding of how we collect, 
+                    use, protect or otherwise handle your Personally Identifiable Information in accordance with our platform.
+                
+        </p>
+         
+        <h5
+          id="l2"
+        >
+          What personal information do we collect from the people that visit our blog, website or app?
+        </h5>
+         
+        <p>
+          
+                    When registering on Bloverse you may be asked to fill our contact form which requires you enter your name, email address, 
+                    phone number or other details to help you with your experience.
+                
+        </p>
+         
+        <h5
+          id="l3"
+        >
+          When do we collect information?
+        </h5>
+         
+        <p>
+          When you register on Bloverse, we collect the personal information that you voluntarily provide to us when registering through your access device.
+        </p>
+         
+        <h5
+          id="l4"
+        >
+          Do we use 'cookies'?
+        </h5>
+         
+        <p>
+          Yes. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your Web browser 
+                    (if you allow) that enables the site's or service provider's systems to recognize your browser and capture and remember certain
+                    information. 
+          <b>
+            For instance, we use cookies to help us remember and process your area of interests (amidst our various categories 
+                    of contents, be it Sports, Entertainment, Politics, Business, Health and Technology) based on your interactions on our platform.
+          </b>
+          <br />
+          <br />
+          
+                    We also use cookies to help us compile aggregate data about site traffic and site interaction so that we can offer better site 
+                    experiences in the future.
+                
+        </p>
+         
+        <h5
+          id="l5"
+        >
+          How we collect your data?
+        </h5>
+         
+        <ul
+          class="data-collection-info"
+        >
+          We collect your data in three different ways:
+                    
+          <li>
+            Through your voluntary input when asked to fill our contact form
+          </li>
+           
+          <li>
+            Automatically, on visiting our website
+          </li>
+           
+          <li>
+            Through cookies
+          </li>
+        </ul>
+      </div>
+       
+      <div
+        class="col-md-4 privacy-outline"
+      >
+        <ul
+          class="position-sticky"
+        >
+          <li
+            class="active header"
+          >
+            <a
+              href="#l1"
+            >
+              Bloverse Privacy Policy
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l2"
+            >
+              What personal information do we collect from the people that visit our blog, website or app?
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l3"
+            >
+              When do we collect information?
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l4"
+            >
+              Do we use 'cookies'?
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l5"
+            >
+              How we collect your data
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l6"
+            >
+              How do we use user information?
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l7"
+            >
+              Payment Providers
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l8"
+            >
+              Third-party disclosure
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l9"
+            >
+              Third-party links
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l10"
+            >
+              Google
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l11"
+            >
+              How does our site handle Do Not Track signals?
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l12"
+            >
+              Does our site allow third-party behavioral tracking?
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l13"
+            >
+              COPPA (Children Online Privacy Protection Act)
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l14"
+            >
+              Personal Information Retention
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l15"
+            >
+              Rights to change data and control account
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l16"
+            >
+              Changes to Our Privacy Policy
+            </a>
+          </li>
+           
+          <li>
+            <a
+              href="#l17"
+            >
+              Contacting Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+`;

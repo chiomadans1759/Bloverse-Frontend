@@ -1,14 +1,18 @@
 <template>
-  <input
-    class="defaultClass"
-    :id="id"
-    :name="name"
-    :value="value"
-    :type="type"
-    :placeholder="placeholder"
-    :class="customClass"
-    @change="onChange"
-    />
+  <form>
+    <div class="form-group">
+      <input 
+        :type="email" 
+        class="form-control defaultClass" 
+        :class="customClass"
+        :id="id" 
+        :name="name"
+        :value="value"
+        :placeholder="placeholder"
+        @change="onChange"
+      />
+    </div>
+  </form>
 </template>
 
 <script>

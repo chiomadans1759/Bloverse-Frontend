@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutCard Compoenent should render correctly 1`] = `
+<div>
+  <div
+    class="about-body"
+  >
+    <div />
+  </div>
+</div>
+`;

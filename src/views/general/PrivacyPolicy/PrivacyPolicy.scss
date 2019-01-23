@@ -1,0 +1,116 @@
+@import 'sass-rem';
+
+.affix {
+  top: rem(20px);
+  z-index: 9999 !important;
+}
+.privacy{
+    background-color: #F5F5F5;
+    width:70%;
+    margin:auto;
+}
+ 
+.privacy-outline {
+  ul {
+    padding-bottom:3rem;
+    li {  
+      list-style-type: none;
+      font-size: rem(14px);
+      padding: rem(5px) rem(2px) rem(5px) rem(16px);
+      font-weight:400;
+      &.header {
+        font-weight: 800;
+        color: #000000;
+        &>a {
+          color: #000000
+        }
+      }
+      &:not(.header) > a {
+        color:#868686;
+        font-weight:500;
+        &:hover {
+          color: #000000;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.privacy-container {
+  h1 {
+    font-weight:700;
+    letter-spacing: rem(2px);
+  }
+  .privacy-content {
+    margin: 0;
+  }
+  .privacy-header {
+    margin: 0;
+    flex-direction: column;
+    .date-updated {
+      text-transform: capitalize;
+      font-size: rem(14px);
+      color:#565656;
+      font-weight:600;
+      letter-spacing: rem(2px);
+      padding:1rem 0 2rem 0;
+      font-weight: 600;
+      &>span {
+        font-weight: 500;
+      }
+    }
+  }
+  .data-collection-info {
+    list-style: none;
+    li::before {
+      content: "\2022";
+      color: #2F80ED;
+      font-size: rem(16px);
+      font-weight: 800;
+      display: inline-block; 
+      width: 1em;
+      margin-left: -1em;
+    }
+  }
+}
+.privacy-texts {
+  font-size: rem(14px);
+  background-color: #fff; 
+  padding:1rem 2.5rem 3rem 2.5rem;
+  margin-bottom: 6rem;
+}
+.privacy-texts h5{ 
+    font-weight:700;
+    padding:1rem 0;
+    letter-spacing: rem(2px);
+}
+.privacy-texts p{ 
+    line-height: 2;
+}
+.privacy-texts li{
+    list-style-position: inside;
+    margin-left:1rem;
+    line-height:2;
+}
+@media screen and (max-width: 700px) {
+.privacy-outline{
+      display:none;  
+    } 
+.privacy-container {
+    width:100%;
+    .privacy-content {
+      h5 {
+        font-size: rem(18px)
+      }
+    }
+}
+.privacy{
+    width:90%;
+}
+}
+@media screen and (max-width: 850px) {
+.privacy{
+    width:95%;
+}
+}

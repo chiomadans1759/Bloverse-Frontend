@@ -4,10 +4,7 @@ import store from '../stores';
 import GeneralLayout from '@/layouts/GeneralLayout';
 import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
-
-
-import PostDisplay from '../src/views/general/singlePost/singlepost';
-
+import PostDisplay from '../src/views/general/singlePost/SinglePostPage.vue';
 
 import MyProfile from '../src/views/journalists/MyProfile.vue';
 import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
@@ -26,14 +23,16 @@ import NotFound from '../src/views/NotFound.vue';
 
 import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPage.vue';
 
-import Privacy from '../src/views/Privacy.vue';
+import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicy.vue';
 
-import Signin from '../src/views/general/Signin/SigninPage.vue';
-import AboutUs from '../src/views/general/about/about.vue';
-import ForgotPassword from '../src/views/general/forgotPassword/ForgotPasswordPage.vue';
-import consumerSignup from '../src/views/consumers/SignUpPage/SignUpPage';
+
+import AboutUs from '../src/views/general/About/AboutPage.vue';
+import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 import Homepage from '../src/views/general/Home/Homepage.vue';
+import SigninPage from '../src/views/general/Signin/SigninPage.vue';
+import SignupPage from '../src/views/consumers/SignUp/SignUpPage.vue';
+import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vue';
 
 const routes = [
   {
@@ -47,17 +46,21 @@ const routes = [
       { path: '/privacy-policies', component: Privacy},
     ]
   },
+
   {
     path: '/', component: BlankBase,
     children: [
-      { path: '/photo-contest', component: PhotoContest},
+      { path: '/photocontest', component: PhotoContest},
     ]
   },
-  { path: '/login', component: Signin},
 
-  { path: '/forgotpassword', component: ForgotPassword , name:'forgotpassword'},
+  { path: '/forgotpassword', component: ForgotPassword},
 
-  { path: '/register', component: consumerSignup},
+  { path: '/login', component: SigninPage},
+
+  { path: '/register', component: SignupPage},
+
+  { path: '/newpassword', component: NewPasswordPage},
 
   {
     path: '/admin', component: BlankBase,
