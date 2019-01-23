@@ -74,5 +74,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import './PrivacyPolicy.scss';
+    @import './PrivacyPolicyPage.scss';
 </style>

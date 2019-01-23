@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PrivacyPolicy Component should render correctly 1`] = `
+exports[`PrivacyPolicy Page should render correctly 1`] = `
 <main
   class="privacy"
 >
