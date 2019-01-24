@@ -151,12 +151,7 @@ export default {
 }
 </script>
 
-<<<<<<< HEAD:src/views/general/regionPage/regionPage.vue
-<style lang="scss">
-  @import './regionPage.scss';
-=======
 <style lang="scss" scoped="true">
   @import './RegionPage.scss';
->>>>>>> brach out:src/views/consumers/Region/RegionPage.vue
 </style>
 

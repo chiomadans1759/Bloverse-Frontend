@@ -30,7 +30,7 @@ import Category from '@/views/consumers/Category/CategoryPage'
 import AboutUs from '../src/views/general/About/AboutPage.vue';
 
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
-import Region from '../src/views/consumers/Region/regionPage';
+import Region from '../src/views/consumers/Region/RegionPage';
 
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 import Homepage from '../src/views/general/Home/Homepage.vue';
