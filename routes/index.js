@@ -20,11 +20,10 @@ import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
 
 import NotFound from '../src/views/NotFound.vue';
-
 import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPage.vue';
 
-import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicy.vue';
-
+import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicyPage.vue';
+import Settings from '@/views/consumers/Settings/SettingsPage.vue'
 
 import AboutUs from '../src/views/general/About/AboutPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
@@ -44,6 +43,7 @@ const routes = [
       { path: '/about', component: AboutUs , name:"about"},
       { path: '/terms-and-conditions', component: Terms},
       { path: '/privacy-policies', component: Privacy},
+      { path: '/settings', component: Settings}
     ]
   },
 

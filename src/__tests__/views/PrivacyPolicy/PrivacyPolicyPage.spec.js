@@ -1,7 +1,7 @@
 import { mount, RouterLinkStub  } from '@vue/test-utils'
-import PrivacyPolicy from '@/views/general/PrivacyPolicy/PrivacyPolicy.vue';
+import PrivacyPolicy from '@/views/general/PrivacyPolicy/PrivacyPolicyPage.vue';
 
-describe('PrivacyPolicy Component', () => {
+describe('PrivacyPolicy Page', () => {
   it('should render correctly', () => {
 
     const wrapper = mount(PrivacyPolicy, {
