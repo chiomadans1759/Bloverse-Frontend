@@ -11,10 +11,6 @@
   font-weight: 700;
 }
 
-.active {
-  border-bottom: rem(1px) solid #004ded !important;
-}
-
 nav {
   margin: rem(0px);
   padding: rem(0px);
@@ -44,6 +40,53 @@ nav {
 .terms-title > p {
   font-size: rem(14px);
 }
+
+
+.contest-text {
+  font-size: 1rem;
+  color: #767676;
+}
+
+.contest-header {
+  font-size: 1rem;
+}
+
+.contest-title {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.contest-content {
+  padding-top: 1.5rem;
+}
+
+.navigation-bar {
+  background-color: #ffffff;
+}
+
+.terms-content {
+  background-color: #ffffff;
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: #565656 !important;
+  border: none !important;
+  height: 3.75rem;
+}
+
+.nav-link.active {
+  border-bottom: 0.125rem solid #004ded !important;
+}
+
+.photocontest {
+  padding: 1.5rem;
+}
+
+.nav-tabs {
+  border-bottom: 0.125rem solid rgba(0, 0, 0, 0.15);
+}
+
 
 @media screen and (max-width: 800px) {
   .terms-container{
