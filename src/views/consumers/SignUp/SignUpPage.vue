@@ -102,6 +102,7 @@
         </h2>
       </div>
     </div>
+    <author-card />
     <div class="bottom">
       <p><span class="bloverse">Bloverse</span> {{year}}. All Right reserved</p>
     </div>
@@ -111,6 +112,7 @@
 <script>
 import Button from "../../../components/Button/Button.vue";
 import TextInput from "../../../components/TextInput/TextInput.vue";
+import AuthorCard from "../../../components/AuthorCard/AuthorCard.vue";
 
 export default {
   data() {
@@ -125,12 +127,23 @@ export default {
   },
   components: {
     Button,
-    TextInput
+    TextInput,
+    AuthorCard,
   },
   methods: {
     onChange: function(event) {
       this[event.target.name] = event.target.value;
     }
+  },
+  mounted() {
+    /* eslint-disable */
+    hideTawkBot();
+    window.onload = function() {
+      hideTawkBot();
+    };
+  },
+  destroyed() {
+    showTawkBot();
   }
 };
 </script>
