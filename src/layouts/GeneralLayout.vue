@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="general-layout">
     <Navbar />
     <transition name="fade" mode="out-in">
       <router-view></router-view>

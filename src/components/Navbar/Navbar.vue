@@ -6,7 +6,11 @@
       <img class="nav-logo" v-if="!isTransparent" src="@/assets/Logo.svg" />
       <img class="nav-logo" v-if="isTransparent" src="@/assets/Logo - White.svg" />
     </router-link>
-    <div class="form-inline my-2 my-lg-0 navbar-toggler mobile-view" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="form-inline my-2 my-lg-0 navbar-toggler mobile-view"
+      data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span id="option-icon"/>
         <span id="option-icon"/>
@@ -23,9 +27,41 @@
       </div>
       <div>
          <span class="vl bg-light"></span>
-          <router-link class="get-started-link" to="/login">
+          <router-link class="get-started-link" to="/login" v-if="!isLogin">
             Get Started
           </router-link>
+      </div>
+
+      <!-- initials mobile -->
+      <div class="nav-item dropdown initials"  v-if="isLogin">
+        <a class="dropdown-toggle initials-link" to="/login"
+          href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"
+        >
+          MD
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a href="#" class="dropdown-item">
+            <span class="icon-profile">
+              <i class="fal fa-user-circle"></i>
+            </span>
+            Profile
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">
+            <span class="icon-settings">
+              <i class="fal fa-cog"></i>
+            </span>
+            Settings
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">
+            <span class="icon-power">
+              <i class="far fa-power-off"></i>
+            </span>
+            Sign Out
+          </a>
+        </div>
       </div>
     </div>
 
@@ -56,9 +92,41 @@
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0 pr-4" :class="{ 'alt-button': isTransparent }">
-          <router-link class="get-started-link" to="/login">
+          <router-link class="get-started-link" to="/login" v-if="!isLogin">
             Get Started
           </router-link>
+
+          <!-- initials -->
+          <div class="nav-item dropdown initials">
+            <a class="dropdown-toggle initials-link" to="/login" v-if="isLogin"
+              href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"
+            >
+              MD
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="#" class="dropdown-item">
+                <span class="icon-profile">
+                  <i class="fal fa-user-circle"></i>
+                </span>
+                Profile
+              </a>
+              <div class="dropdown-divider"></div>
+              <router-link class="dropdown-item" to="/settings">
+                <span class="icon-settings">
+                  <i class="fal fa-cog"></i>
+                </span>
+                Settings
+              </router-link>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <span class="icon-power">
+                  <i class="far fa-power-off"></i>
+                </span>
+                Sign Out
+              </a>
+            </div>
+          </div>
         <span class="vl bg-light"></span>
           <router-link class="publish-link" to="/creators/apply">
             Publish
@@ -84,6 +152,10 @@ export default {
       type: Boolean,
       default: false
     },
+    isLogin: {
+      type: Boolean,
+      default: true
+    },
   },
   methods: {
     ...mapActions(['clearSession'])
@@ -97,4 +169,3 @@ export default {
 <style lang="scss" scoped>
   @import './Navbar';
 </style>
-
