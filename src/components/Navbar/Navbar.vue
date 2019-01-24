@@ -1,13 +1,24 @@
 <template>
   <header id="feeds-header">
   <nav class="navbar navbar-expand-lg navbar-light px-5"
-    :class="{ 'transparent': isTransparent, 'alt-button': isTransparent }">
+    :class="{ 'transparent': isTransparent, 'alt-button': isTransparent }"
+  >
+    <a v-if="showBackArrow" class="backlink" href="/">
+      <i class="fal fa-long-arrow-left fa-2x back-icon"></i>
+      <span class="back-text">Back</span>
+    </a>
     <router-link to="/" class="router-link">
       <img class="nav-logo" v-if="!isTransparent" src="@/assets/Logo.svg" />
       <img class="nav-logo" v-if="isTransparent" src="@/assets/Logo - White.svg" />
     </router-link>
-    <div class="form-inline my-2 my-lg-0 navbar-toggler mobile-view" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div  v-if="showNavigations" data-target="#navbarSupportedContent"
+      data-toggle="collapse" class="form-inline my-2 my-lg-0 navbar-toggler mobile-view" 
+      aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+      >
         <span id="option-icon"/>
         <span id="option-icon"/>
         <span id="option-icon"/>
@@ -29,7 +40,7 @@
       </div>
     </div>
 
-    <div class="collapse navbar-collapse">
+    <div v-if="showNavigations" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto" :class="{ 'white-text': whiteText }">
         <li class="nav-item active">
           <router-link to="/" class="nav-link"> Home <span class="sr-only">(current)</span></router-link>
@@ -81,6 +92,18 @@ export default {
       default: false
     },
     whiteText: {
+      type: Boolean,
+      default: false
+    },
+    showBackArrow: {
+      type: Boolean,
+      default: false
+    },
+    showNavigations: {
+      type: Boolean,
+      default: true
+    },
+    isLogin: {
       type: Boolean,
       default: false
     },
