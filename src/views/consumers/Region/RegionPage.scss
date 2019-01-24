@@ -1,15 +1,9 @@
 @import 'sass-rem';
 
-
-
-
-
 .logo {
   height: rem(40px);
   padding-left: rem(20px);
 }
-
-
 .top {
     background: white;
     padding: rem(10px);
@@ -17,19 +11,15 @@
 .top-left-container {
   margin-left: 5%;
 }
-
 .top-left-container > a {
   color: #000;
 }
-
 .top-left-container > a > svg {
   vertical-align: middle;
 }
-
 .top-left-container > a > span {
   padding-left: rem(10px);
 }
-
 .content{
   h3{
     font-size: rem(18px);
@@ -37,16 +27,14 @@
     margin-bottom: 9px;
   }
   h5{
-    font-size: 14px;
+    font-size: rem(14px);
     color: #868686;
-
   }
   .card{
     margin-bottom: rem(14px);
     img{
       height: rem(220px);
       width: 100%;
-      /* float: right; */
       margin-top: rem(-38px);
       margin-bottom: rem(-29px);
     }

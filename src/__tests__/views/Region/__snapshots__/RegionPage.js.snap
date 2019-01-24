@@ -1,0 +1,480 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Region Page should render correctly 1`] = `
+<div
+  class="region-container"
+>
+  <div
+    class="top"
+  >
+    <div>
+      <span
+        class="top-left-container"
+      >
+        <a
+          href="/"
+        >
+          <i
+            class="fal fa-long-arrow-left fa-2x"
+          />
+           
+          <span>
+            Back
+          </span>
+        </a>
+         
+        <a
+          class="router-link"
+        >
+          <img
+            class="logo"
+            src="@/assets/Logo.svg"
+          />
+        </a>
+      </span>
+    </div>
+  </div>
+   
+  <div
+    class="content"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-2"
+        />
+         
+        <div
+          class="col-12 col-md-8 col-sm-8 col-lg-8"
+        >
+          <br />
+          <br />
+           
+          <h3>
+            Select Your Favourite Country
+          </h3>
+           
+          <h5>
+            Selected 
+            <b>
+              0
+            </b>
+             countries
+          </h5>
+           
+          <br />
+           
+          <div
+            class="row"
+          >
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/UK.svg"
+                />
+                 
+                <p>
+                  UK
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/france.svg"
+                />
+                 
+                <p>
+                  France
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/canada.svg"
+                />
+                 
+                <p>
+                  Canada
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/germany.svg"
+                />
+                 
+                <p>
+                  Germany
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/ghana.svg"
+                />
+                 
+                <p>
+                  Ghana
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/australia.svg"
+                />
+                 
+                <p>
+                  Australia
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/india.svg"
+                />
+                 
+                <p>
+                  India
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/ireland.svg"
+                />
+                 
+                <p>
+                  Ireland
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/kenya.svg"
+                />
+                 
+                <p>
+                  Kenya
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/itali.svg"
+                />
+                 
+                <p>
+                  Itali
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/mexico.svg"
+                />
+                 
+                <p>
+                  Mexico
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/SA.svg"
+                />
+                 
+                <p>
+                  South Africa
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/nigeria.svg"
+                />
+                 
+                <p>
+                  Nigeria
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/UAE.svg"
+                />
+                 
+                <p>
+                  UAE
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/US.svg"
+                />
+                 
+                <p>
+                  US
+                </p>
+              </div>
+            </div>
+             
+            <div
+              class="col-6 col-md-4 col-sm-4 col-lg-4"
+            >
+              <div
+                class="card"
+              >
+                <img
+                  alt=""
+                  src="@/assets/singapore.svg"
+                />
+                 
+                <p>
+                  Singapore
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="col-md-2"
+        />
+      </div>
+    </div>
+  </div>
+   
+  <footer
+    id="the-footer"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+        id="desktop"
+      >
+        <div
+          class="col"
+        >
+          <ul
+            class="list-inline"
+          >
+            <li
+              class="list-inline-item"
+            >
+              <a>
+                Bloverse
+              </a>
+            </li>
+             
+            <li
+              class="list-inline-item pl-4"
+            >
+              <a>
+                Terms
+              </a>
+            </li>
+             
+            <li
+              class="list-inline-item pl-2"
+            >
+              <a>
+                Privacy
+              </a>
+            </li>
+             
+            <li
+              class="list-inline-item pl-2"
+            >
+              <a>
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+         
+        <div
+          class="col-auto pt-2"
+        >
+          <p
+            id="year-text"
+          >
+            © 2019 Bloverse. All Right Reserved
+          </p>
+        </div>
+      </div>
+       
+      <div
+        class="row pt-2"
+        id="mobile"
+      >
+        <div
+          class="col-8"
+        >
+          <ul
+            class="list-inline"
+          >
+            <li
+              class="list-inline-item pl-4"
+              style="font-size: 15px;"
+            >
+              
+            bloverse
+          
+            </li>
+             
+            <li
+              class="list-inline-item pl-4"
+            >
+              <a
+                id="linkk"
+              >
+                Terms
+              </a>
+            </li>
+             
+            <li
+              class="list-inline-item pl-2"
+            >
+              <a
+                id="linkk"
+              >
+                Privacy
+              </a>
+            </li>
+             
+            <li
+              class="list-inline-item pl-2"
+            >
+              <a
+                id="linkk"
+              >
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+         
+        <div
+          class="col-12 pt-1"
+        >
+          <p
+            id="year-text"
+          >
+            © 2019 Bloverse. All Right Reserved
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+`;

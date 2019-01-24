@@ -4,6 +4,7 @@ import store from '../stores';
 import GeneralLayout from '@/layouts/GeneralLayout';
 import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
+
 import PostDisplay from '../src/views/general/SinglePost/SinglePostPage.vue';
 
 import MyProfile from '../src/views/journalists/MyProfile.vue';
@@ -27,9 +28,10 @@ import Settings from '@/views/consumers/Settings/SettingsPage.vue'
 import Category from '@/views/consumers/Category/CategoryPage'
 
 import AboutUs from '../src/views/general/About/AboutPage.vue';
-import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
 
-import Region from '../src/views/general/regionPage/regionPage';
+import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
+import Region from '../src/views/consumers/Region/regionPage';
+
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 import Homepage from '../src/views/general/Home/Homepage.vue';
 import SigninPage from '../src/views/general/Signin/SigninPage.vue';

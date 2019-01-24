@@ -25,97 +25,97 @@
             <div class="row">
               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/UK.svg')" @click="addToCountry('UK')" alt="">
+                  <img src="@/assets/UK.svg" @click="addToCountry('UK')" alt="">
                   <p>UK</p>
                 </div>
               </div>
               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/france.svg')" @click="addToCountry('france')" alt="">
+                  <img src="@/assets/france.svg" @click="addToCountry('france')" alt="">
                   <p>France</p>
                 </div>
               </div>
                <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/canada.svg')" @click="addToCountry('canada')" alt="">
+                  <img src="@/assets/canada.svg" @click="addToCountry('canada')" alt="">
                   <p>Canada</p>
                 </div>
               </div>
                <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/germany.svg')" @click="addToCountry('germany')" alt="">
+                  <img src="@/assets/germany.svg" @click="addToCountry('germany')" alt="">
                   <p>Germany</p>
                 </div>
               </div>
                <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/ghana.svg')" @click="addToCountry('ghana')" alt="">
+                  <img src="@/assets/ghana.svg" @click="addToCountry('ghana')" alt="">
                   <p>Ghana</p>
                 </div>
               </div>
                <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/australia.svg')" @click="addToCountry('australia')" alt="">
+                  <img src="@/assets/australia.svg" @click="addToCountry('australia')" alt="">
                   <p>Australia</p>
                 </div>
               </div>
                <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/india.svg')" @click="addToCountry('india')" alt="">
+                  <img src="@/assets/india.svg" @click="addToCountry('india')" alt="">
                   <p>India</p>
                 </div>
               </div>
                <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/ireland.svg')" @click="addToCountry('ireland')" alt="">
+                  <img src="@/assets/ireland.svg" @click="addToCountry('ireland')" alt="">
                   <p>Ireland</p>
                 </div>
               </div>
                <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/kenya.svg')" @click="addToCountry('kenya')" alt="">
+                  <img src="@/assets/kenya.svg" @click="addToCountry('kenya')" alt="">
                   <p>Kenya</p>
                 </div>
               </div>
                <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/itali.svg')" @click="addToCountry('itali')" alt="">
+                  <img src="@/assets/itali.svg" @click="addToCountry('itali')" alt="">
                   <p>Itali</p>
                 </div>
               </div>
                <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/mexico.svg')" @click="addToCountry('mexico')" alt="">
+                  <img src="@/assets/mexico.svg" @click="addToCountry('mexico')" alt="">
                   <p>Mexico</p>
                 </div>
               </div>
                <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/SA.svg')" @click="addToCountry('SA')" alt="">
+                  <img src="@/assets/SA.svg" @click="addToCountry('SA')" alt="">
                   <p>South Africa</p>
                 </div>
               </div>
               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/nigeria.svg')" @click="addToCountry('nigeria')" alt="">
+                  <img src="@/assets/nigeria.svg" @click="addToCountry('nigeria')" alt="">
                   <p>Nigeria</p>
                 </div>
               </div>
               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/UAE.svg')" @click="addToCountry('UAE')" alt="">
+                  <img src="@/assets/UAE.svg" @click="addToCountry('UAE')" alt="">
                   <p>UAE</p>
                 </div>
               </div>
               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/US.svg')" @click="addToCountry('US')" alt="">
+                  <img src="@/assets/US.svg" @click="addToCountry('US')" alt="">
                   <p>US</p>
                 </div>
               </div>
               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
                 <div class="card">
-                  <img :src="require('@/assets/singapore.svg')" @click="addToCountry('singapore')" alt="">
+                  <img src="@/assets/singapore.svg" @click="addToCountry('singapore')" alt="">
                   <p>Singapore</p>
 
                 </div>
@@ -134,7 +134,7 @@
 import TheFooter from '@/components/TheFooter';
 
 export default {
-  name:'regionPage',
+  name:'Region',
   data(){
     return{
       countries:[]
@@ -151,6 +151,12 @@ export default {
 }
 </script>
 
+<<<<<<< HEAD:src/views/general/regionPage/regionPage.vue
 <style lang="scss">
   @import './regionPage.scss';
+=======
+<style lang="scss" scoped="true">
+  @import './RegionPage.scss';
+>>>>>>> brach out:src/views/consumers/Region/RegionPage.vue
 </style>
+
