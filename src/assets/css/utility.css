@@ -17,3 +17,9 @@
 .text-link, .text-primary {
 	color: #2F80ED !important;
 }
+
+@media only screen and (max-width: 1000px) {
+	.general-layout {
+		overflow: hidden;
+	}
+}
