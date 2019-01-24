@@ -1,6 +1,5 @@
 <template>
   <main id="category-page">
-    <go-back-header></go-back-header>
     <div class="main">
     <div class="container">
       <div class="row d-flex justify-content-center align-items-center">
@@ -29,11 +28,10 @@
 </template>
 
 <script>
-import GoBackHeader from '@/components/GoBackHeader'
 import ChooseCatergory from '@/components/ChooseCategory'
 
 export default {
-  components: { GoBackHeader, ChooseCatergory }
+  components: { ChooseCatergory }
   
 }
 </script>
