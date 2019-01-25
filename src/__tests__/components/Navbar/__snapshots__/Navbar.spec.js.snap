@@ -7,6 +7,8 @@ exports[`Navbar Component should render correctly 1`] = `
   <nav
     class="navbar navbar-expand-lg navbar-light px-5"
   >
+    <!---->
+     
     <a
       class="router-link"
     >
@@ -396,6 +398,8 @@ exports[`Navbar Component should render initials button 1`] = `
   <nav
     class="navbar navbar-expand-lg navbar-light px-5"
   >
+    <!---->
+     
     <a
       class="router-link"
     >

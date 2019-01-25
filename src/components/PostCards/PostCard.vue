@@ -102,7 +102,6 @@
 </template>
 
 <script>
-import { transition } from 'vue';
 import feedCardImage from '../../assets/post-card-image.jpg';
 
 export default {
@@ -115,7 +114,6 @@ export default {
       dislikePost: false,
     }
   },
-  components: { transition },
   methods: {
     toggleKeypoints() {
       this.showKeypoints = !this.showKeypoints;

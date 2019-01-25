@@ -10,7 +10,7 @@
       <a href="#" class="text-capitalize">edit profile</a>
       <p class="text small">Update your information</p>
 
-      <a href="#" class="text-capitalize mt-3">change password</a>
+      <router-link to="/changepassword" class="text-capitalize mt-3">change password</router-link>
       <p class="text small">Update your information</p>
 
       <a href="#" class="text-capitalize mt-3">customize country</a>
@@ -57,7 +57,7 @@
             <a href="" class="text-capitalize">know more</a>
           </div>   
            <div>
-            <button type="button" class="btn btn-sm btn-primary text-capitalize">apply</button>
+            <router-link to="/creators/apply" class="btn btn-sm btn-primary text-capitalize">apply</router-link>
           </div>
 
         </div> 
