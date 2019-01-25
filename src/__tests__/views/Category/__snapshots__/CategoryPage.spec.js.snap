@@ -22,8 +22,10 @@ exports[`Category Page should render correctly 1`] = `
           <h5 class="pb-1">
             Select Your Interest
           </h5>
-          <p class="select-t">
-            Selected 0 countries
+         <p 
+          class="select-t"
+         >
+          Selected {{consumers.selectedCategories.length}} categories
           </p>
           <div>
            <choose-catergory>

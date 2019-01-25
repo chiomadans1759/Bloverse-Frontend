@@ -1,75 +1,75 @@
 const categoryData = [
   {
     imgURL: require("./assets/category/category1.jpg"),
-    name: "Category"
+    name: "Food"
   },
   {
     imgURL: require("./assets/category/category2.jpg"),
-    name: "Category"
+    name: "Politics"
   },
   {
     imgURL: require("./assets/category/category3.jpg"),
-    name: "Category"
+    name: "Entertainment"
   },
   {
     imgURL: require("./assets/category/category4.jpg"),
-    name: "Category"
+    name: "Business"
   },
   {
     imgURL: require("./assets/category/category5.jpg"),
-    name: "Category"
+    name: "Health"
   },
   {
     imgURL: require("./assets/category/category6.jpg"),
-    name: "Category"
+    name: "Technology"
   },
   {
     imgURL: require("./assets/category/category7.jpg"),
-    name: "Category"
+    name: "Photo Contest"
   },
   {
     imgURL: require("./assets/category/category8.jpg"),
-    name: "Category"
+    name: "Travel"
   },
   {
     imgURL: require("./assets/category/category9.jpg"),
-    name: "Category"
+    name: "Sports"
   },
   {
     imgURL: require("./assets/category/category10.jpg"),
-    name: "Category"
+    name: "Fashion"
   },
   {
     imgURL: require("./assets/category/category11.jpg"),
-    name: "Category"
+    name: "Gaming"
   },
   {
     imgURL: require("./assets/category/category12.jpg"),
-    name: "Category"
+    name: "Pet/Animals"
   },
   {
     imgURL: require("./assets/category/category13.jpg"),
-    name: "Category"
+    name: "Education"
   },
   {
     imgURL: require("./assets/category/category14.jpg"),
-    name: "Category"
+    name: "Law"
   },
   {
     imgURL: require("./assets/category/category15.jpg"),
-    name: "Category"
+    name: "Psycho"
   },
   {
     imgURL: require("./assets/category/category16.jpg"),
-    name: "Category"
+    name: "Other"
   },
   {
     imgURL: require("./assets/category/category17.jpg"),
-    name: "Category"
+    name: "Category-1"
   },
   {
     imgURL: require("./assets/category/category18.jpg"),
-    name: "Category"
+    name: "Category-2"
   },
 ]
 

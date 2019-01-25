@@ -5,7 +5,7 @@
       <div class="row d-flex justify-content-center align-items-center">
         <div class="col-sm-7 col-lg-6 pt-5">
           <h5 class="pb-1">Select Your Interest</h5>
-          <p class="select-t">Selected 0 countries</p>
+          <p class="select-t">Selected {{consumers.selectedCategories.length}} categories</p>
           <div>
            <choose-catergory></choose-catergory>
           </div>
@@ -20,7 +20,6 @@
               </div>
             </div>
           </div>
-          <footer></footer>
         </div>
     </div>
     </div>
@@ -29,10 +28,13 @@
 
 <script>
 import ChooseCatergory from '@/components/ChooseCategory'
+import { mapState } from 'vuex'
 
 export default {
-  components: { ChooseCatergory }
-  
+  components: { ChooseCatergory },
+  computed: {
+    ...mapState(['consumers'])
+  }
 }
 </script>
 
