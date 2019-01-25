@@ -49,7 +49,7 @@
               <img :src="post.author.image_url" class="author-imgg">
               <span class="detailss">
                 {{post.author.first_name}} {{post.author.last_name}}
-                <p>{{post.published | customizedTime}}</p>
+                <p>{{post.created | customizedTime}}</p>
               </span>
             </div>
             <h6 class="right">
