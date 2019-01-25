@@ -22,13 +22,13 @@
 }
 .content{
   h3{
-    font-size: rem(18px);
+    font-size: rem(27px);
     color: #353535;
-    margin-bottom: 9px;
+    font-weight: 900;
+    margin-bottom: 4px;
   }
-  h5{
-    font-size: rem(14px);
-    color: #868686;
+  input{
+    margin-bottom: 3%;
   }
   .card{
     margin-bottom: rem(14px);
@@ -46,4 +46,31 @@
   }
 
   }
+}
+.edit__profile--select{
+  -webkit-appearance:none;
+  border-radius: 4px 0px 0px 4px;
+  border-right: none;
+}
+.file_share svg{
+    color: #096DD9;
+    font-size: 31px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 16%;
+}
+.file_share input {
+    position: absolute;
+    width: 77%;
+    height: 100%;
+    opacity: 0;
+}
+
+.file_share {
+    height: 50px;
+    background: white;
+    border: 1px solid #096DD9;
+    border-radius: 9px;
+    margin-top: -13%;
 }

@@ -31,6 +31,7 @@ import AboutUs from '../src/views/general/About/AboutPage.vue';
 
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
 import Region from '../src/views/consumers/Region/RegionPage';
+import EditProfile from '../src/views/consumers/EditProfile/EditProfilePage';
 
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 import Homepage from '../src/views/general/Home/Homepage.vue';
@@ -65,6 +66,12 @@ const routes = [
 
   { path: '/forgotpassword', component: ForgotPassword},
 
+<<<<<<< HEAD
+=======
+  { path: '/regions', component: Region},
+  { path: '/editprofile', component: EditProfile},
+
+>>>>>>> Consumer Edit Profile Page V2 UI [0.5]
   { path: '/login', component: SigninPage},
 
   { path: '/register', component: SignupPage},
