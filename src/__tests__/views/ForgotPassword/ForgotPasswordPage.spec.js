@@ -2,6 +2,8 @@ import { mount, RouterLinkStub } from '@vue/test-utils'
 import ForgotPassword from '@/views/general/ForgotPassword/ForgotPasswordPage.vue';
 
 describe('ForgotPassword Page', () => {
+  global.hideTawkBot = jest.fn();
+  
   it('should render correctly', () => {
 
     const wrapper = mount(ForgotPassword, {

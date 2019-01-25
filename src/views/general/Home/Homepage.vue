@@ -173,7 +173,6 @@
             <post-cards />
             <photo-contest />
             <post-cards />
-            <recommendations />
           </div>
         </div>
 
