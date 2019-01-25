@@ -112,6 +112,31 @@ nav {
   font-size: rem(14px);
 }
 
+.initials {
+  &-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF3434;
+    border: rem(1px) solid #FF3434;
+    border-radius: 0.3rem;
+    color: #ffffff;
+    padding: rem(7px) rem(0px);
+    padding-left: rem(10px);
+    text-align: center;
+    text-decoration: none;
+    font-size: rem(14px);
+  }
+  .icon {
+    &-profile, &-settings {
+      color: #096DD9
+    }
+    &-power {
+      color: #FF3434
+    }
+  }
+}
+
 .publish-link {
   background-image: linear-gradient( to bottom, #2F80ED, #003CE1);
   border: rem(1.5px) solid #096DD9;

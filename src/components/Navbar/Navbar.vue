@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg navbar-light px-5"
     :class="{ 'transparent': isTransparent, 'alt-button': isTransparent }"
   >
-    <a v-if="showBackArrow" class="backlink" href="/">
+    <a v-if="showBackArrow" class="backlink" href="/settings">
       <i class="fal fa-long-arrow-left fa-2x back-icon"></i>
       <span class="back-text">Back</span>
     </a>
@@ -34,9 +34,41 @@
       </div>
       <div>
          <span class="vl bg-light"></span>
-          <router-link class="get-started-link" to="/login">
+          <router-link class="get-started-link" to="/login" v-if="!isLogin">
             Get Started
           </router-link>
+      </div>
+
+      <!-- initials mobile -->
+      <div class="nav-item dropdown initials"  v-if="isLogin">
+        <a class="dropdown-toggle initials-link" to="/login"
+          href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"
+        >
+          MD
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a href="#" class="dropdown-item">
+            <span class="icon-profile">
+              <i class="fal fa-user-circle"></i>
+            </span>
+            Profile
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">
+            <span class="icon-settings">
+              <i class="fal fa-cog"></i>
+            </span>
+            Settings
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">
+            <span class="icon-power">
+              <i class="far fa-power-off"></i>
+            </span>
+            Sign Out
+          </a>
+        </div>
       </div>
     </div>
 
@@ -67,9 +99,41 @@
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0 pr-4" :class="{ 'alt-button': isTransparent }">
-          <router-link class="get-started-link" to="/login">
+          <router-link class="get-started-link" to="/login" v-if="!isLogin">
             Get Started
           </router-link>
+
+          <!-- initials -->
+          <div class="nav-item dropdown initials">
+            <a class="dropdown-toggle initials-link" to="/login" v-if="isLogin"
+              href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"
+            >
+              MD
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="#" class="dropdown-item">
+                <span class="icon-profile">
+                  <i class="fal fa-user-circle"></i>
+                </span>
+                Profile
+              </a>
+              <div class="dropdown-divider"></div>
+              <router-link class="dropdown-item" to="/settings">
+                <span class="icon-settings">
+                  <i class="fal fa-cog"></i>
+                </span>
+                Settings
+              </router-link>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <span class="icon-power">
+                  <i class="far fa-power-off"></i>
+                </span>
+                Sign Out
+              </a>
+            </div>
+          </div>
         <span class="vl bg-light"></span>
           <router-link class="publish-link" to="/creators/apply">
             Publish
@@ -120,4 +184,3 @@ export default {
 <style lang="scss" scoped>
   @import './Navbar';
 </style>
-

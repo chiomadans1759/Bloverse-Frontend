@@ -34,7 +34,7 @@ import Homepage from '../src/views/general/Home/Homepage.vue';
 import SigninPage from '../src/views/general/Signin/SigninPage.vue';
 import SignupPage from '../src/views/consumers/SignUp/SignUpPage.vue';
 import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vue';
-import ChangePassword from '../src/views/general/ChangePassword/ChangePassword.vue';
+import ChangePassword from '../src/views/consumers/ChangePassword/ChangePassword.vue';
 
 const routes = [
   {
