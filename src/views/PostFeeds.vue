@@ -12,8 +12,8 @@
               label="name"
               placeholder="Country"
               v-model="general.country"
-              @input="filterCountry"
-              v-if=" allow || general.countries"
+              @input="filterCountry (country)"
+              v-if="allow || general.countries"
             ></v-select>
           </div>
           <div class="col-md-8" style="margin-top: -0.8rem;">
@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import { Row, Col, Card } from "iview";
 import vSelect from "vue-select";
 import DisplayFeeds from "@/components/DisplayFeeds.vue";
@@ -106,6 +106,8 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["filterPosts"]),
+
     showMoreCats() {
       this.other_cats = this.general.categories.slice(4);
       if (this.show_more == false) {
@@ -117,7 +119,7 @@ export default {
     },
 
     filterCountry(id) {
-      this.$store.dispatch("getAllPublishedPosts", {
+      this.filterPosts({
         category: this.general.activeCategory.id || "",
         country: this.general.country.id
       });
@@ -125,7 +127,7 @@ export default {
 
     filterCategory(id, name) {
       this.current_category = id;
-      this.$store.dispatch("getAllPublishedPosts", {
+      this.filterPosts({
         prevCategory: this.general.activeCategory,
         category: id,
         country: ""
