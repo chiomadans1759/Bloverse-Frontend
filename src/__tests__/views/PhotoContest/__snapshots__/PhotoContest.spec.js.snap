@@ -109,88 +109,16 @@ exports[`PhotoContest Component should render correctly 1`] = `
               class="vl bg-light"
             />
              
-            <!---->
-          </div>
-           
-          <div
-            class="nav-item dropdown initials"
-          >
             <a
-              aria-expanded="false"
-              aria-haspopup="true"
-              class="dropdown-toggle initials-link"
-              data-toggle="dropdown"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              to="/login"
+              class="get-started-link"
             >
               
-          MD
-        
+            Get Started
+          
             </a>
-             
-            <div
-              aria-labelledby="navbarDropdown"
-              class="dropdown-menu"
-            >
-              <a
-                class="dropdown-item"
-                href="#"
-              >
-                <span
-                  class="icon-profile"
-                >
-                  <i
-                    class="fal fa-user-circle"
-                  />
-                </span>
-                
-            Profile
-          
-              </a>
-               
-              <div
-                class="dropdown-divider"
-              />
-               
-              <a
-                class="dropdown-item"
-                href="#"
-              >
-                <span
-                  class="icon-settings"
-                >
-                  <i
-                    class="fal fa-cog"
-                  />
-                </span>
-                
-            Settings
-          
-              </a>
-               
-              <div
-                class="dropdown-divider"
-              />
-               
-              <a
-                class="dropdown-item"
-                href="#"
-              >
-                <span
-                  class="icon-power"
-                >
-                  <i
-                    class="far fa-power-off"
-                  />
-                </span>
-                
-            Sign Out
-          
-              </a>
-            </div>
           </div>
+           
+          <!---->
         </div>
          
         <div
@@ -300,25 +228,18 @@ exports[`PhotoContest Component should render correctly 1`] = `
           <div
             class="form-inline my-2 my-lg-0 pr-4 alt-button"
           >
-            <!---->
+            <a
+              class="get-started-link"
+            >
+              
+            Get Started
+          
+            </a>
              
             <div
               class="nav-item dropdown initials"
             >
-              <a
-                aria-expanded="false"
-                aria-haspopup="true"
-                class="dropdown-toggle initials-link"
-                data-toggle="dropdown"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                to="/login"
-              >
-                
-              MD
-            
-              </a>
+              <!---->
                
               <div
                 aria-labelledby="navbarDropdown"

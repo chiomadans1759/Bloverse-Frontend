@@ -2,6 +2,8 @@ import { mount, RouterLinkStub } from '@vue/test-utils'
 import SignUpPage from '@/views/consumers/SignUp/SignUpPage.vue';
 
 describe('Signup Page', () => {
+  global.hideTawkBot = jest.fn();
+
   it('should render correctly', () => {
 
     const wrapper = mount(SignUpPage, {

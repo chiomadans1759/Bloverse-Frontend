@@ -25,23 +25,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#bl-author-card {
-  position: fixed;
-  right: 2.5rem;
-  bottom: 1.5rem;
-  width: 12.125rem;
-  .author-image {
-    width: 2.5rem;
-    height: 2.5rem;
-    object-fit: cover;
-  }
-  .author-name {
-    font-size: 1rem;
-    color: #ffffff;
-  }
-  .message {
-    font-size: 0.875rem;
-    color: rbga(255, 255, 255, 0.65);
-  }
-}
+@import './CreatorCard.scss';
 </style>

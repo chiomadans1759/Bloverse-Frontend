@@ -2,6 +2,8 @@ import { mount, RouterLinkStub } from '@vue/test-utils'
 import NewPassword from '@/views/general/NewPassword/NewPasswordPage.vue';
 
 describe('NewPassword Page', () => {
+  global.hideTawkBot = jest.fn();
+  
   it('should render correctly', () => {
 
     const wrapper = mount(NewPassword, {

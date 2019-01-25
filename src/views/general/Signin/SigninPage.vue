@@ -77,7 +77,7 @@
       </div>
       
     </div>
-    <author-card />
+    <creator-card />
     <div class="bottom">
       <p><span class="bloverse">Bloverse</span> {{year}}. All Right Reserved</p>
     </div>
@@ -87,7 +87,7 @@
 <script>
 import Button from "../../../components/Button/Button.vue";
 import TextInput from "../../../components/TextInput/TextInput.vue";
-import AuthorCard from "../../../components/AuthorCard/AuthorCard.vue";
+import CreatorCard from "../../../components/CreatorCard/CreatorCard.vue";
 
 export default {
   data() {
@@ -100,7 +100,7 @@ export default {
   components: {
     Button,
     TextInput,
-    AuthorCard,
+    CreatorCard,
   },
   methods: {
     onChange: function(event) {

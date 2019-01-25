@@ -2,6 +2,8 @@ import { mount, RouterLinkStub } from '@vue/test-utils'
 import SigninView from '@/views/general/Signin/SigninPage.vue';
 
 describe('SigninView Component', () => {
+  global.hideTawkBot = jest.fn();
+  
   it('should render correctly', () => {
 
     const wrapper = mount(SigninView, {
