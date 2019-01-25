@@ -25,8 +25,7 @@
           @click="doShare('twitter')"
           :href="`https://twitter.com/intent/tweet?url=${this.$BASE_URL}redirect/${this.slug}`"
           data-lang="en"
-          data-show-count="false"
-        >
+          data-show-count="false">
           <svg height="34" width="34" class="social-icon">
             <use id="twitter" xlink:href="#twitter-icon"></use>
           </svg>

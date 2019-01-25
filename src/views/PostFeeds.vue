@@ -316,11 +316,9 @@ export default {
   color: #2f80ed;
   text-decoration: none !important;
 }
+</style>
 
-.v-select .dropdown-toggle .clear {
-  display: none !important;
-}
-
+<style>
 .dropdown-toggle:after {
   display: none !important;
 }

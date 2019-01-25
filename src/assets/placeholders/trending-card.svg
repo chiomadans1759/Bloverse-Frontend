@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="286" height="180" viewBox="0 0 286 180">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.369" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-opacity="0"/>
+      <stop offset="1"/>
+    </linearGradient>
+  </defs>
+  <g id="Card" transform="translate(-56 -178)">
+    <g id="BG">
+      <g id="photo-1499055985571-fe2014a8ed29" transform="translate(56 178)" fill="rgba(0,0,0,0.25)" stroke="rgba(0,0,0,0.2)" stroke-width="1">
+        <rect width="286" height="180" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="285" height="179" rx="3.5" fill="none"/>
+      </g>
+      <rect id="Overlay" width="286" height="180" rx="4" transform="translate(56 178)" opacity="0.45" fill="url(#linear-gradient)"/>
+    </g>
+    <g id="Avartar" transform="translate(21 -121)">
+      <rect id="Avatar" width="24" height="24" rx="2" transform="translate(59 443)" fill="rgba(0,0,0,0.08)"/>
+      <rect id="Rectangle_32" data-name="Rectangle 32" width="60" height="15" transform="translate(91 448)" fill="rgba(0,0,0,0.08)"/>
+    </g>
+    <rect id="Rectangle_29" data-name="Rectangle 29" width="70" height="12" transform="translate(80 245)" fill="rgba(0,0,0,0.08)"/>
+    <rect id="Rectangle_30" data-name="Rectangle 30" width="238" height="16" transform="translate(80 266)" fill="rgba(0,0,0,0.08)"/>
+    <rect id="Rectangle_31" data-name="Rectangle 31" width="238" height="16" transform="translate(80 288)" fill="rgba(0,0,0,0.08)"/>
+  </g>
+</svg>
