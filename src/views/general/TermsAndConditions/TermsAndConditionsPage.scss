@@ -1,5 +1,9 @@
 @import 'sass-rem';
 
+.terms-nav .nav-link {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
 .terms {
   font-family: Montserrat, Regular;
   color: #2d2d2d;
@@ -12,8 +16,8 @@
 }
 
 nav {
-  margin: rem(0px);
-  padding: rem(0px);
+  margin: 0;
+  padding: 0;
 }
 
 .sub-content {
@@ -97,7 +101,23 @@ nav {
     display: none;
   }
 
+  .terms-container{
+    width:100% !important;
+  }
+
   .terms-title {
     padding-left: rem(20px);
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 600){
+  .terms-container{
+    width:80% !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .terms-container{
+    width:50% !important;
   }
 }

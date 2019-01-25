@@ -2,7 +2,7 @@
 
 exports[`PostCard Component should render correctly 1`] = `
 <main
-  class="card bl-postcard"
+  class="card bl-postcard undefined"
   id="bl-postcard"
 >
   <div

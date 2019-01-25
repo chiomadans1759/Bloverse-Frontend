@@ -140,9 +140,60 @@ exports[`RecommendationCard Component should render correctly 1`] = `
         <div
           class="col-3 ellipsis"
         >
-          <i
-            class="fal fa-ellipsis-h"
-          />
+          <span
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+          >
+            <i
+              class="fal fa-ellipsis-h"
+            />
+          </span>
+           
+          <div
+            aria-labelledby="dropdownMenuReference"
+            class="dropdown-menu bl-dropdown-menu"
+          >
+            <div
+              class="d-flex bl-dropdown-menu__countries"
+            >
+              <div
+                class="favourite-countries"
+              >
+                <p
+                  class="dropdown-item country"
+                >
+                  <i
+                    class="fal fa-comment-dots"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    67
+                  </span>
+                </p>
+                 
+                <p
+                  class="dropdown-item country"
+                >
+                  <i
+                    class="fal fa-share"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    67
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
