@@ -11,7 +11,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
   />
    
   <div
-    class="profile-edit-icon d-flex justify-content-end p-3 "
+    class="profile-edit-icon d-flex justify-content-end p-3"
   >
     <i
       class="fal fa-user-edit fa-2x"
@@ -52,6 +52,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
         />
       </span>
        +234 000 000 0000
+    
     </p>
      
     <p>
@@ -63,6 +64,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
         />
       </span>
        email@bloverse.com
+    
     </p>
      
     <p>
@@ -74,6 +76,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
         />
       </span>
        Lagos, Nigeria
+    
     </p>
      
     <div
@@ -82,9 +85,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
       <p
         class="profile__text"
       >
-        
         Some quick example text to build on the card title and make up the bulk of the card's content.
-      
       </p>
     </div>
      
@@ -92,12 +93,16 @@ exports[`ProfileCard Component should render correctly 1`] = `
       class="follow d-flex justify-content-between"
     >
       <a
-        href=""
+        data-toggle="modal"
+        href="#following-modal"
       >
         Following
       </a>
+       
       <span
         class="border rounded px-1 mr-2"
+        data-toggle="modal"
+        href="#following-modal"
         id="number"
       >
         5
@@ -108,11 +113,259 @@ exports[`ProfileCard Component should render correctly 1`] = `
   <div
     class="card-footer text-muted bg-white"
   >
+    Member Since:
     
-    Member Since: 
     <strong>
-       December, 2018
+      December, 2018
     </strong>
   </div>
+   
+  <main
+    id="bl-modal"
+  >
+    <div
+      aria-hidden="true"
+      aria-labelledby="customModal"
+      class="modal fade"
+      id="following-modal"
+      role="dialog"
+      tabindex="-1"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <h5
+              class="modal-title"
+              id="customModal"
+            >
+              Following
+            </h5>
+             
+            <button
+              aria-label="Close"
+              class="close"
+              data-dismiss="modal"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+           
+          <div
+            class="modal-body"
+          >
+            <div
+              class="bl-modal-content"
+            >
+              <div
+                class="row align-items-center mt-2 mb-2"
+              >
+                <div
+                  class="col-3 col-md-2 d-flex justify-content-center"
+                >
+                  <img
+                    class="user-image img-fluid"
+                    src="@/assets/smiling-author.jpg"
+                  />
+                </div>
+                 
+                <div
+                  class="col-9 col-sm-9 col-md-6 pl-0"
+                >
+                  <p
+                    class="username"
+                  >
+                    
+            JohnDoe
+            
+                    <span
+                      class="sub-span point d-inline d-md-none"
+                    >
+                      <a
+                        href="#"
+                      >
+                        Unfollow
+                      </a>
+                    </span>
+                  </p>
+                   
+                  <p
+                    class="sub-text"
+                  >
+                    <span
+                      class="sub-span"
+                    >
+                      24
+                    </span>
+                     Followers
+            
+                    <span
+                      class="sub-span point"
+                    >
+                      234
+                    </span>
+                     Articles
+          
+                  </p>
+                </div>
+                 
+                <div
+                  class="d-none d-sm-none col-md-4 d-md-flex justify-content-end"
+                >
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                  >
+                    Following
+                  </button>
+                </div>
+              </div>
+               
+              <div
+                class="row align-items-center mt-2 mb-2"
+              >
+                <div
+                  class="col-3 col-md-2 d-flex justify-content-center"
+                >
+                  <img
+                    class="user-image img-fluid"
+                    src="@/assets/smiling-author.jpg"
+                  />
+                </div>
+                 
+                <div
+                  class="col-9 col-sm-9 col-md-6 pl-0"
+                >
+                  <p
+                    class="username"
+                  >
+                    
+            JohnDoe
+            
+                    <span
+                      class="sub-span point d-inline d-md-none"
+                    >
+                      <a
+                        href="#"
+                      >
+                        Unfollow
+                      </a>
+                    </span>
+                  </p>
+                   
+                  <p
+                    class="sub-text"
+                  >
+                    <span
+                      class="sub-span"
+                    >
+                      24
+                    </span>
+                     Followers
+            
+                    <span
+                      class="sub-span point"
+                    >
+                      234
+                    </span>
+                     Articles
+          
+                  </p>
+                </div>
+                 
+                <div
+                  class="d-none d-sm-none col-md-4 d-md-flex justify-content-end"
+                >
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                  >
+                    Following
+                  </button>
+                </div>
+              </div>
+               
+              <div
+                class="row align-items-center mt-2 mb-2"
+              >
+                <div
+                  class="col-3 col-md-2 d-flex justify-content-center"
+                >
+                  <img
+                    class="user-image img-fluid"
+                    src="@/assets/smiling-author.jpg"
+                  />
+                </div>
+                 
+                <div
+                  class="col-9 col-sm-9 col-md-6 pl-0"
+                >
+                  <p
+                    class="username"
+                  >
+                    
+            JohnDoe
+            
+                    <span
+                      class="sub-span point d-inline d-md-none"
+                    >
+                      <a
+                        href="#"
+                      >
+                        Unfollow
+                      </a>
+                    </span>
+                  </p>
+                   
+                  <p
+                    class="sub-text"
+                  >
+                    <span
+                      class="sub-span"
+                    >
+                      24
+                    </span>
+                     Followers
+            
+                    <span
+                      class="sub-span point"
+                    >
+                      234
+                    </span>
+                     Articles
+          
+                  </p>
+                </div>
+                 
+                <div
+                  class="d-none d-sm-none col-md-4 d-md-flex justify-content-end"
+                >
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                  >
+                    Following
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+  </main>
 </main>
 `;

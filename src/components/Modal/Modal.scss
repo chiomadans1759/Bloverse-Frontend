@@ -1,0 +1,34 @@
+@import 'sass-rem';
+
+#bl-modal {
+  .bl-modal-content {
+    max-height: rem(150px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .user-image {
+    object-fit: cover;
+    height: rem(40px);
+    width: rem(40px);
+  }
+  .username {
+    font-weight: 900;
+    .sub-span.point {
+      font-weight: 100;
+    }
+  }
+  .sub-span {
+    font-weight: 900;
+  }
+  .sub-span.point::before {
+    content: '\25CF';
+    color: #2F80ED;
+    font-weight: 900;
+    padding-left: rem(10px);
+    padding-right: rem(10px);
+  }
+  .sub-text {
+    color: rgba(0, 0, 0, 0.45);
+  }
+}
+

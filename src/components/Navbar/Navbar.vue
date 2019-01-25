@@ -48,19 +48,19 @@
           MD
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a href="#" class="dropdown-item">
+          <router-link to="/profile" class="dropdown-item">
             <span class="icon-profile">
               <i class="fal fa-user-circle"></i>
             </span>
             Profile
-          </a>
+          </router-link>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">
+          <router-link class="dropdown-item" to="/settings">
             <span class="icon-settings">
               <i class="fal fa-cog"></i>
             </span>
             Settings
-          </a>
+          </router-link>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">
             <span class="icon-power">
@@ -112,12 +112,12 @@
               MD
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a href="#" class="dropdown-item">
+              <router-link to="/profile" class="dropdown-item">
                 <span class="icon-profile">
                   <i class="fal fa-user-circle"></i>
                 </span>
                 Profile
-              </a>
+              </router-link>
               <div class="dropdown-divider"></div>
               <router-link class="dropdown-item" to="/settings">
                 <span class="icon-settings">
@@ -169,7 +169,7 @@ export default {
     },
     isLogin: {
       type: Boolean,
-      default: false
+      default: true
     },
   },
   methods: {
