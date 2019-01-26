@@ -1,10 +1,10 @@
-import Api from '../src/utils/Api';
+import Api from '@/utils/Api';
 
 export default {
   state: {
     journalistPosts: {},
     draftPosts: {},
-    metrics: {},
+    metrics: {}
   },
   actions: {
     async processPost({ commit, rootState, state, dispatch }, params) {

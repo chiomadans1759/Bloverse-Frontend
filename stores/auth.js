@@ -34,7 +34,10 @@ export default {
       imageUrl: 'https://res.cloudinary.com/naera/image/upload/v1512417704/u7aoterwekcq0thkng3j.png'
     },
     applicant: {
-      articleURLs: ['']
+      articleURLs: [''],
+      category: {
+        id: ''
+      }
     },
     loggedInUser: user,
     shouldRegister: false,
@@ -62,6 +65,12 @@ export default {
       applicant.categoryId = state.applicant.category.id;
       applicant.countryId = state.applicant.country.id;
       applicant.phone = state.applicant.phoneCode + state.applicant.phoneNumber;
+
+      // if(state.applicant.category.id == undefined) {
+      //   applicant.categoryId = '';
+      // }else {
+      //   applicant.categoryId = state.applicant.category.id;
+      // }
 
       if (!state.applicant.linkedInUsername) {
         applicant.linkedInUrl = "";
