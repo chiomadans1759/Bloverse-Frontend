@@ -53,8 +53,7 @@
                 <a
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'grid'}"
-                  @click.prevent="toggleLayout('grid')"
-                >
+                  @click.prevent="toggleLayout('grid')">
                   <i class="fal fa-grip-horizontal fa-1x"></i>
                 </a>
               </li>
@@ -62,8 +61,7 @@
                 <a
                   href="#"
                   :class="{'active': general.activeFeedLayout == 'stack'}"
-                  @click.prevent="toggleLayout('stack')"
-                >
+                  @click.prevent="toggleLayout('stack')">
                   <i class="far fa-layer-group fa-1x"></i>
                 </a>
               </li>

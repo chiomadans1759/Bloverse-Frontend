@@ -89,7 +89,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["addToCategories"])
+    ...mapActions(["addToCategories"]) 
   }
 };
 </script>

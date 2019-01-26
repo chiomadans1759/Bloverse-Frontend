@@ -10,6 +10,12 @@
     </div>
     <div v-if="general.publishedPosts.length">
       <Row id="card-rows" :gutter="32" v-if="general.activeFeedLayout == 'grid'">
+        <section v-if="!general.publishedPosts">
+          <Col class="mt-5" :xs="24" :sm="12" :md="8" v-for="(post, index) in 6" :key="index">
+            <img src="@/assets/placeholders/feed-card.svg" alt="">
+          </Col>
+        </section>
+        
         <Col :xs="24" :sm="12" :md="8" v-for="post in general.publishedPosts" :key="post.id">
           <FeedCard :post="post"/>
         </Col>
