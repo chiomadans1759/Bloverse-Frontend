@@ -1,10 +1,41 @@
-import { mount } from '@vue/test-utils';
-import Category from '@/views/consumers/CategoryPage/CategoryPage.vue';
+import { mount, createLocalVue, RouterLinkStub  } from '@vue/test-utils';
+import Category from '@/views/consumers/Category/CategoryPage.vue';
+import categoryData from '@/fixtures/category.js';
 
-describe('Category Page', () => {
-  it('should render correctly', () => {
+import Vuex from 'vuex';
 
-    const wrapper = mount(Category, {})
-    expect(wrapper.element).toMatchSnapshot();
+const localVue = createLocalVue();
+localVue.use(Vuex);
+
+describe('ChooseCategory Component', () => {
+  let actions
+  let store
+
+  beforeEach(() => {
+    actions = {
+      addToCategories: jest.fn()
+    }
+    store = new Vuex.Store({
+      state: {
+        consumers: {
+          selectedCategories: [...categoryData],
+        }
+      },
+      actions
+    })
   });
+
+  it('dispatches "actionInput" when input event value is "input"', () => {
+    const wrapper = mount(Category, { 
+      store, 
+      localVue,
+      stubs: {
+        RouterLink: RouterLinkStub
+      }
+    });
+
+    wrapper.find('.overlay').trigger('click');
+    expect(actions.addToCategories).toHaveBeenCalled();
+    expect(wrapper.element).toMatchSnapshot();
+  })
 });

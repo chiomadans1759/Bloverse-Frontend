@@ -5,7 +5,7 @@
         <div>
           <div class="card p-0">
             <div class="category-img-wrapper" @click="addToCategories(category.name)" id="cat-img">
-              <span class="overlay" v-show="$store.state.consumers.selectedCategories.includes(category.name)">
+              <span id="cat-span" class="overlay" v-show="$store.state.consumers.selectedCategories.includes(category.name)">
                 <div class="circle"></div>
                   <i class="fal fa-check fa-1x overlay-icon"></i>
               </span>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import categoryData from '@/category'
+import categoryData from '@/fixtures/category';
 import { mapActions } from 'vuex'
 
 export default {
@@ -29,7 +29,6 @@ export default {
     return {
       categoryData,
       categories:[]
-    
     }
   },
   methods: {
@@ -39,52 +38,6 @@ export default {
 }
 </script>
 
-<style scoped>
-
-#choose-category .card{
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-}
-
-#choose-category .categoryname{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-#choose-category ul{
-  list-style-type: none !important;
-}
-
-#choose-category ul > li .cat-div:nth-child(3n+0) {
-  padding-right: 0 !important;
-}
-
-#choose-category .category-img-wrapper {
-  position: relative;
-  height: 10rem;
-  overflow: hidden;
-  padding: .25rem .25rem 0;
-} 
-
-#choose-category .overlay {
-  position: absolute;
-  top: -10%;
-  right: 5%;
-  color: #096DD9;
-}
-
-#choose-category .overlay-icon {
-  position: absolute;
-  right: 36%;
-  color: #ffffff;
-  top: 49%;
-}
-
-#choose-category .circle:before {
-  content: ' \25CF';
-  font-size: 3rem;
-}
-
+<style lang="scss" scoped>
+@import './ChooseCategory.scss';
 </style>
