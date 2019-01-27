@@ -19,6 +19,7 @@ app.use(serveStatic(path.join(__dirname, '/dist'), {
   "index": false
 }))
 
+// the section below url for web crawlers - SPA sites pages are difficult to be accessed by crawlers
 app.get('/redirect/:uri', async function (req, res) {
 
   let post, keypointString;
@@ -39,6 +40,7 @@ app.get('/redirect/:uri', async function (req, res) {
     return;
   }
 })
+// the section above handles url for web crawlers
 
 app.enable('trust proxy');
 app.use(function(req, res, next) {
