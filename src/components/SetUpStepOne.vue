@@ -32,20 +32,20 @@
       </FormItem>
       <section>
         <Select
-          v-show="general.categories"
-          class="my-select auth-category-disabled"
-          placeholder="Category*"
-          v-model="user.category"
-          disabled>
-          <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
-        </Select>
-        <Select
-          v-show="general.universities"
+          v-if="user.university"
           class="my-select auth-category-disabled"
           placeholder="University*"
           v-model="user.university"
           disabled>
           <Option v-for="(item, index) in general.universities" :value="item" :key="index">{{ item }}</Option>
+        </Select>
+        <Select
+          v-else
+          class="my-select auth-category-disabled"
+          placeholder="Category*"
+          v-model="user.category"
+          disabled>
+          <Option v-for="item in general.categories" :value="item.id" :key="item.id">{{ item.name }}</Option>
         </Select>
       </section>
       <FormItem>
