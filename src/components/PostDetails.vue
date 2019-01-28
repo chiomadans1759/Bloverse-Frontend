@@ -9,7 +9,7 @@
           <h5 class="card-header-title text-uppercase" v-if="show">{{category.name}}</h5>
         </div>
         <div class="col-auto">
-          <h6 class="text-secondary text-uppercase">{{general.currentPost.created | customizedTime}}</h6>
+          <h6 class="text-secondary text-uppercase">{{general.currentPost.published | customizedTime}}</h6>
         </div>
       </div>
     </div>
