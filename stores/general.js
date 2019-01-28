@@ -1,5 +1,6 @@
 import axios from 'axios';
-import Api from '../src/utils/Api'
+import Api from '@/utils/Api'
+import universities from '@/utils/universities.js'
 
 export default {
   state: {
@@ -27,6 +28,7 @@ export default {
     metrics: {},
     modal: { show: false, currentComponent: null },
     relatedPosts: {},
+    universities: universities
   },
   actions: {
     async setGeneralData({ commit }) {
@@ -156,6 +158,14 @@ export default {
       } catch (error) {
         alert('Posts feed empty'); 
       }
+    },
+    async filterPosts({ commit }, { category = "", country = "" }) {
+      commit('setPublishedPostsLoading', true);
+      let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
+      commit('setPostsPagingData', response.data.pagination);
+      commit('setPublishedPosts', response.data.posts);
+      commit('setPublishedPostsLoading', false);
+      commit("setDataFetched", true);
     },
     async getAllDraftPosts({ commit }, { category = "", country = "" }) {
       let response = await Api.get(`posts?is_published=false&category=${category}&country=${country}`);
