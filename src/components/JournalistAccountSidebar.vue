@@ -81,11 +81,11 @@
           <div class="avatar avatar-sm pt-2" style="display: flex;">
             <img
               id="author-img"
-              :src="auth.loggedInUser.imageUrl"
+              :src="auth.loggedInUser.image_url"
               alt="Author's Image"
               class="avatar-img rounded"
             >
-            <span class="mt-2">{{auth.loggedInUser.firstName}}&nbsp;{{auth.loggedInUser.lastName}}</span>
+            <span class="mt-2">{{auth.loggedInUser.first_name}}&nbsp;{{auth.loggedInUser.last_name}}</span>
           </div>
         </footer>
         <journalist-account-footer class="mt-5"/>
