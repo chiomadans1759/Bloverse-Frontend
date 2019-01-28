@@ -1,6 +1,13 @@
 <template>
   <main id="trending">
     <h4 class="mb-4 text-bold" id="trend-card-heading">Top Stories</h4>
+
+    <section class="row" v-if="!general.trendingPost.length">
+      <div class="col-md-3" v-for="(post, index) in 4" :key="index">
+        <img style="width: 100%;" src="@/assets/placeholders/trending-card.svg" alt="">
+      </div>
+    </section>
+
     <div class="desktop">
       <div
         id="carouselExampleIndicators"

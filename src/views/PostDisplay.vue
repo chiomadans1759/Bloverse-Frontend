@@ -92,6 +92,9 @@ export default {
 
     await this.getPostBySlug({ slug });
     this.postDetails = this.general.currentPost;
+  },
+  beforeDestroy: function(){
+    this.general.currentPost = {}
   }
 };
 </script>

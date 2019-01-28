@@ -1,5 +1,9 @@
 <template>
   <main id="post-author">
+    <section v-if="!author">
+      <img src="@/assets/placeholders/author-card.svg" alt="">
+    </section>
+
     <div class="container">
       <div class="row">
         <div class="col-2">
