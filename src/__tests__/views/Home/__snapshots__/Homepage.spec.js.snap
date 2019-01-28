@@ -803,7 +803,7 @@ exports[`Homepage Component should render correctly 1`] = `
             id="bl-postcards"
           >
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div
@@ -1088,7 +1088,7 @@ exports[`Homepage Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div
@@ -1373,7 +1373,7 @@ exports[`Homepage Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div
@@ -1658,7 +1658,7 @@ exports[`Homepage Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div
@@ -2528,7 +2528,7 @@ exports[`Homepage Component should render correctly 1`] = `
             id="bl-postcards"
           >
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div
@@ -2813,7 +2813,7 @@ exports[`Homepage Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div
@@ -3098,7 +3098,7 @@ exports[`Homepage Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div
@@ -3383,7 +3383,7 @@ exports[`Homepage Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div
@@ -4052,7 +4052,7 @@ exports[`Homepage Component should render correctly 1`] = `
             id="bl-postcards"
           >
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div
@@ -4337,7 +4337,7 @@ exports[`Homepage Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div
@@ -4622,7 +4622,7 @@ exports[`Homepage Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div
@@ -4907,7 +4907,7 @@ exports[`Homepage Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card bl-postcard undefined"
+              class="card bl-postcard"
               id="bl-postcard"
             >
               <div

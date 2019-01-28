@@ -1,5 +1,7 @@
 <template>
-  <main id="bl-postcard" :class="`card bl-postcard ${customClass}`">
+  <main id="bl-postcard" class="card bl-postcard"
+    :class="[{ hideCardBorder: hideCardBorder }]"
+  >
     <div class="card-body bl-postcard-body">
       <div class="card-title row title">
         <div class="col-9 row title--text">
@@ -110,9 +112,10 @@ import feedCardImage from '../../assets/post-card-image.jpg';
 export default {
   name: 'PostCard',
   props: {
-    customClass: {
-      type: String,
-    }
+    hideCardBorder: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -134,11 +137,6 @@ export default {
       this.dislikePost = !this.dislikePost;
       this.likePost = false;
     }
-  },
-  computed: {
-    keypointToggleIcon() {
-      return this.showKeypoints ? 'fa-angle-down' : 'fa-angle-up';
-    },
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="container my-3 mb-5">
     <div class="row">
-      <div class="col-lg-5">
+      <div class="col-lg-5  d-none d-sm-block">
         <div class="col-lg-12 mr-2">
           <profile />
         </div>
@@ -43,42 +43,72 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-7 bg-white border right-content">
+
+      <!-- on mobile view only -->
+      <div class="d-inline-flex d-sm-none initials">
+        <a class="initials-link" href="#" id="navbarDropdown" role="button">
+          SM
+        </a>
+        <i class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"></i>
+      </div>
+      <!-- on mobile view only ends -->
+
+      <div class="col-lg-7 border right-content bg-white bl-content">
         <div class="border-bottom">
-          <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-center profile-navbar">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white
+            justify-content-center profile-navbar"
+          >
             <div class="">
-              <ul class="navbar-nav ">
+              <ul class="navbar-nav flex-row">
                 <li class="nav-item active mr-4 py-2">
-                  <router-link to="#" class="nav-link"> Read Later <span class="number--active border rounded px-1 ml-2">5</span> <span class="sr-only">(current)</span></router-link>
+                  <router-link to="#" class="nav-link">
+                    Read Later
+                    <span class="number--active border rounded px-1 ml-2">5</span>
+                    <span class="sr-only">(current)</span>
+                  </router-link>
                 </li>
                 <li class="nav-item py-2">
-                  <router-link to="#" class="nav-link">Previously Read <span class="number border rounded px-1 ml-2">13</span></router-link>
+                  <router-link to="#" class="nav-link">
+                    Previously Read
+                    <span class="number border rounded px-1 ml-2">13</span>
+                  </router-link>
                 </li>
               </ul>
             </div>
           </nav>
         </div>
-        <div class="border-bottom mx-4">
-           <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-end profile-navbar">
+
+        <div class="border-bottom mx-4 d-none d-sm-block">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white
+            justify-content-end profile-navbar"
+          >
             <div class="">
               <ul class="navbar-nav layout-nav">
                 <li :class="['nav-item', 'mr-4', 'py-2', {'active': showListView}]">
                   <span @click="toggleView('list')" to="#" class="nav-link">
-                    <span v-show='showListView'> <i class="fal fa-th-list mr-1 icon--active"></i></span>
-                    <span v-show='!showListView'><i class="fal fa-th-list mr-1 icon"></i></span>
+                    <span v-show='showListView'>
+                        <i class="fal fa-th-list mr-1 icon--active"></i>
+                      </span>
+                    <span v-show='!showListView'>
+                      <i class="fal fa-th-list mr-1 icon"></i>
+                    </span>
                      List <span class="sr-only">(current)</span></span>
                 </li>
                 <li :class="['nav-item', 'mr-4', 'py-2', {'active': !showListView}]">
                   <span @click="toggleView('grid')" to="#" class="nav-link">
-                    <span v-show="!showListView"><i class="fal fa-th-large mr-1 icon--active"></i></span>
-                    <span v-show="showListView"><i class="fal fa-th-large mr-1 icon"></i></span>
+                    <span v-show="!showListView">
+                      <i class="fal fa-th-large mr-1 icon--active"></i>
+                    </span>
+                    <span v-show="showListView">
+                      <i class="fal fa-th-large mr-1 icon"></i>
+                    </span>
                      Grid </span>
                 </li>
               </ul>
             </div>
           </nav>
         </div>
-        <div class="row m-4 p-2" v-show="!showListView">
+        <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex">
           <div class="col-lg-6 my-2">
             <recommendation-card type="consumer"/>
           </div>
@@ -95,12 +125,18 @@
             <recommendation-card type="consumer"/>
           </div>
         </div>
-        <div class="col-lg-12 my-2" v-show="showListView">
-          <post-card customClass="consumer"/>
-          <post-card customClass="consumer"/>
-          <post-card customClass="consumer"/>
-          <post-card customClass="consumer"/>
-          <post-card customClass="consumer"/>
+
+        <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
+          <post-card :hideCardBorder="hideCardBorder" />
+          <post-card :hideCardBorder="hideCardBorder" />
+          <post-card :hideCardBorder="hideCardBorder" />
+          <post-card :hideCardBorder="hideCardBorder" />
+          <post-card :hideCardBorder="hideCardBorder" />
+        </div>
+
+        <!-- mobile view -->
+        <div class="row d-sm-none">
+          <post-cards :hideCardBorder="hideCardBorder" />
         </div>
       </div>
     </div>
@@ -112,7 +148,8 @@ import RecommendationCard from '@/components/Recommendations/RecommendationCard'
 import Profile from '@/components/ProfileCard/ProfileCard';
 import CountryCard from '@/components/CountryCard/CountryCard';
 import CategoryCard from '@/components/CategoryCard/CategoryCard';
-import PostCard from '@/components/PostCards/PostCard'
+import PostCard from '@/components/PostCards/PostCard';
+import PostCards from '@/components/PostCards/PostCards';
 
 export default {
   components: {
@@ -120,11 +157,13 @@ export default {
     Profile,
     CountryCard,
     CategoryCard,
-    PostCard
+    PostCard,
+    PostCards,
   },
   data() {
     return {
       showListView: false,
+      hideCardBorder: true,
     }
   },
   methods: {
