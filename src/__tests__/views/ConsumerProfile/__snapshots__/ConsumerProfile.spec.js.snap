@@ -160,6 +160,12 @@ exports[`Profile Component should render correctly 1`] = `
                       Following
                     </h5>
                      
+                    <div>
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                     
                     <button
                       aria-label="Close"
                       class="close"

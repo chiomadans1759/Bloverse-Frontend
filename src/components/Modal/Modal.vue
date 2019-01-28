@@ -10,8 +10,14 @@
     >
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="customModal">{{title}}</h5>
+          <div class="modal-header" :class="{ darkBackground: dark }">
+            <h5 v-if="title" class="modal-title" id="customModal">{{title}}</h5>
+            <div>
+              <h6 v-if="altTitle">
+                <strong class="alt-title">{{altTitle}}</strong>
+              </h6>
+              <h6 v-if="subTitle" class="mt-2 sub-title">{{subTitle}}</h6>
+            </div>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -20,7 +26,7 @@
             <slot></slot>
           </div>
           <div v-if="!hideFooter" class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{closeText}}</button>
+            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">{{closeText}}</button>
             <button type="button" class="btn btn-primary">{{actionText}}</button>
           </div>
         </div>
@@ -36,7 +42,7 @@ export default {
     title: {
       type: String,
       required: false,
-      default: "Modal Title"
+      default: ""
     },
     target: {
       type: String,
@@ -61,7 +67,22 @@ export default {
       type: Boolean,
       required: false,
       default: false
-    }
+    },
+    dark: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    altTitle: {
+      type: String,
+      required: false,
+      default: ""
+    },
+    subTitle: {
+      type: String,
+      required: false,
+      default: ""
+    },
   }
 };
 </script>

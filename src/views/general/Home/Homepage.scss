@@ -311,6 +311,13 @@
       margin: 0;
     }
   }
+  .bl-modal-content {
+    textarea {
+      width: 100%;
+      height: rem(100px);
+      outline: none;
+    }
+  }
 }
 
 @media screen and (min-width: 760px) {

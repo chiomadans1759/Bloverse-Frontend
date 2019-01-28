@@ -91,7 +91,8 @@ exports[`Navbar Component should render correctly 1`] = `
          
         <a
           class="dropdown-item"
-          href="#"
+          data-toggle="modal"
+          href="#feedback-modal"
         >
           Feedback
         </a>
@@ -280,7 +281,8 @@ exports[`Navbar Component should render correctly 1`] = `
              
             <a
               class="dropdown-item"
-              href="#"
+              data-toggle="modal"
+              href="#feedback-modal"
             >
               Feedback
             </a>
@@ -479,7 +481,8 @@ exports[`Navbar Component should render initials button 1`] = `
          
         <a
           class="dropdown-item"
-          href="#"
+          data-toggle="modal"
+          href="#feedback-modal"
         >
           Feedback
         </a>
@@ -598,7 +601,8 @@ exports[`Navbar Component should render initials button 1`] = `
              
             <a
               class="dropdown-item"
-              href="#"
+              data-toggle="modal"
+              href="#feedback-modal"
             >
               Feedback
             </a>
