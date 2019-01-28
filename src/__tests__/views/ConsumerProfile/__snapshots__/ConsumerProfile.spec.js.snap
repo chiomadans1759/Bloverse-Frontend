@@ -8,7 +8,7 @@ exports[`Profile Component should render correctly 1`] = `
     class="row"
   >
     <div
-      class="col-lg-5"
+      class="col-lg-5  d-none d-sm-block"
     >
       <div
         class="col-lg-12 mr-2"
@@ -715,17 +715,37 @@ exports[`Profile Component should render correctly 1`] = `
     </div>
      
     <div
-      class="col-lg-7 bg-white border right-content"
+      class="d-inline-flex d-sm-none initials"
+    >
+      <a
+        class="initials-link"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+      >
+        
+        SM
+      
+      </a>
+       
+      <i
+        class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"
+      />
+    </div>
+     
+    <div
+      class="col-lg-7 border right-content bg-white bl-content"
     >
       <div
         class="border-bottom"
       >
         <nav
-          class="navbar navbar-expand-lg navbar-light bg-white justify-content-center profile-navbar"
+          class="navbar navbar-expand-lg navbar-light bg-white
+          justify-content-center profile-navbar"
         >
           <div>
             <ul
-              class="navbar-nav "
+              class="navbar-nav flex-row"
             >
               <li
                 class="nav-item active mr-4 py-2"
@@ -733,7 +753,9 @@ exports[`Profile Component should render correctly 1`] = `
                 <a
                   class="nav-link"
                 >
-                   Read Later 
+                  
+                  Read Later
+                  
                   <span
                     class="number--active border rounded px-1 ml-2"
                   >
@@ -754,7 +776,9 @@ exports[`Profile Component should render correctly 1`] = `
                 <a
                   class="nav-link"
                 >
-                  Previously Read 
+                  
+                  Previously Read
+                  
                   <span
                     class="number border rounded px-1 ml-2"
                   >
@@ -768,10 +792,11 @@ exports[`Profile Component should render correctly 1`] = `
       </div>
        
       <div
-        class="border-bottom mx-4"
+        class="border-bottom mx-4 d-none d-sm-block"
       >
         <nav
-          class="navbar navbar-expand-lg navbar-light bg-white justify-content-end profile-navbar"
+          class="navbar navbar-expand-lg navbar-light bg-white
+          justify-content-end profile-navbar"
         >
           <div>
             <ul
@@ -837,7 +862,7 @@ exports[`Profile Component should render correctly 1`] = `
       </div>
        
       <div
-        class="row m-4 p-2"
+        class="row m-4 p-2 d-none d-sm-flex"
       >
         <div
           class="col-lg-6 my-2"
@@ -1795,1343 +1820,1154 @@ exports[`Profile Component should render correctly 1`] = `
         </div>
       </div>
        
+      <!---->
+       
       <div
-        class="col-lg-12 my-2"
-        style="display: none;"
+        class="row d-sm-none"
       >
         <main
-          class="card bl-postcard consumer"
-          id="bl-postcard"
+          class="container bl-postcards"
+          id="bl-postcards"
         >
-          <div
-            class="card-body bl-postcard-body"
+          <main
+            class="card bl-postcard hideCardBorder"
+            id="bl-postcard"
           >
             <div
-              class="card-title row title"
+              class="card-body bl-postcard-body"
             >
               <div
-                class="col-9 row title--text"
-              >
-                <span
-                  class="col-3"
-                >
-                  category
-                </span>
-                 
-                <p
-                  class="col-5 col-sm-6 font-weight-bold description"
-                >
-                  <a>
-                    Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-                  </a>
-                </p>
-                 
-                <p
-                  class="col-4 col-sm-3 username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="col-3 title--image"
-                style="background-image: url(test-file-stub);"
-              />
-            </div>
-             
-            <div
-              class="card-text keypoints"
-              style="display: none;"
-            >
-              <span
-                class="font-weight-bold text-capitalize"
-              >
-                keypoint
-              </span>
-               
-              <ul
-                class="keypoints--lists"
-              >
-                <li>
-                  Phasellus iaculis nequeghjhjjkjjkjkhjk
-                </li>
-                 
-                <li>
-                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
-                </li>
-                 
-                <li>
-                  Vestibulum laoreet porttitor sem
-                </li>
-              </ul>
-            </div>
-             
-            <div
-              class="card-text row actions"
-            >
-              <div
-                class="col-5 col-sm-7 col-md-5 col-lg-7 views"
-              >
-                <i
-                  class="fal fa-eye"
-                />
-                 
-                <span
-                  class="count"
-                >
-                  123
-                </span>
-              </div>
-               
-              <div
-                class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                class="card-title row title"
               >
                 <div
-                  class="col-7 col-sm-4 likes"
+                  class="col-9 row title--text"
                 >
-                  <p
-                    class="thumbs-up"
+                  <span
+                    class="col-3"
                   >
-                    <i
-                      class="fal fa-thumbs-up"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      18
-                    </span>
+                    category
+                  </span>
+                   
+                  <p
+                    class="col-5 col-sm-6 font-weight-bold description"
+                  >
+                    <a>
+                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                    </a>
                   </p>
                    
                   <p
-                    class="thumbs-up"
-                    style="display: none;"
+                    class="col-4 col-sm-3 username"
                   >
-                    <i
-                      class="fas fa-thumbs-up"
-                    />
-                     
-                    <span
-                      class="count"
+                    <a
+                      class="btn btn-primary initials"
+                      href="#"
+                      role="button"
                     >
-                      18
+                      SM
+                    </a>
+                    
+           
+          
+                    <span
+                      class="font-weight-normal name"
+                    >
+                      Johndoe
                     </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-down"
-                  >
-                    <i
-                      class="fal fa-thumbs-down"
-                    />
-                     
+                    
+           
+          
                     <span
-                      class="count"
+                      class="time"
                     >
-                      1
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-down"
-                    style="display: none;"
-                  >
-                    <i
-                      class="fas fa-thumbs-down"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
+                      1 min ago
                     </span>
                   </p>
                 </div>
                  
                 <div
-                  class="col-3 col-sm-7 comments"
+                  class="col-3 title--image"
+                  style="background-image: url(test-file-stub);"
+                />
+              </div>
+               
+              <div
+                class="card-text keypoints"
+                style="display: none;"
+              >
+                <span
+                  class="font-weight-bold text-capitalize"
                 >
-                  <p
-                    class="coment"
-                  >
-                    <i
-                      class="fal fa-comment-dots"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      67
-                    </span>
-                  </p>
+                  keypoint
+                </span>
+                 
+                <ul
+                  class="keypoints--lists"
+                >
+                  <li>
+                    Phasellus iaculis nequeghjhjjkjjkjkhjk
+                  </li>
                    
-                  <p
-                    class="share"
-                  >
-                    <i
-                      class="fal fa-share"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
+                  <li>
+                    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                  </li>
                    
+                  <li>
+                    Vestibulum laoreet porttitor sem
+                  </li>
+                </ul>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                >
                   <div
-                    class="ellipsis"
+                    class="col-7 col-sm-4 likes"
                   >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
+                    <p
+                      class="thumbs-up"
                     >
                       <i
-                        class="fal fa-ellipsis-h"
+                        class="fal fa-thumbs-up"
                       />
-                    </span>
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 col-sm-7 comments"
+                  >
+                    <p
+                      class="coment"
+                    >
+                      <i
+                        class="fal fa-comment-dots"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        67
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="share"
+                    >
+                      <i
+                        class="fal fa-share"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
                      
                     <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
+                      class="ellipsis"
                     >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
                       <div
-                        class="d-flex bl-dropdown-menu__countries"
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
                       >
                         <div
-                          class="favourite-countries"
+                          class="d-flex bl-dropdown-menu__countries"
                         >
-                          <p
-                            class="dropdown-item country"
+                          <div
+                            class="favourite-countries"
                           >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
+                            <p
+                              class="dropdown-item country"
                             >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
                              
-                            <span
-                              class="count"
+                            <p
+                              class="dropdown-item country"
                             >
-                              67
-                            </span>
-                          </p>
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                 
-                <div
-                  class="col-2 col-sm-1 toggle-keypoints"
-                  style="display: none;"
-                >
-                  <i
-                    class="fal fa-angle-up"
-                  />
-                </div>
-                 
-                <div
-                  class="col-2 col-sm-1 toggle-keypoints"
-                >
-                  <i
-                    class="fal fa-angle-down"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-         
-        <main
-          class="card bl-postcard consumer"
-          id="bl-postcard"
-        >
-          <div
-            class="card-body bl-postcard-body"
-          >
-            <div
-              class="card-title row title"
-            >
-              <div
-                class="col-9 row title--text"
-              >
-                <span
-                  class="col-3"
-                >
-                  category
-                </span>
-                 
-                <p
-                  class="col-5 col-sm-6 font-weight-bold description"
-                >
-                  <a>
-                    Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-                  </a>
-                </p>
-                 
-                <p
-                  class="col-4 col-sm-3 username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="col-3 title--image"
-                style="background-image: url(test-file-stub);"
-              />
-            </div>
-             
-            <div
-              class="card-text keypoints"
-              style="display: none;"
-            >
-              <span
-                class="font-weight-bold text-capitalize"
-              >
-                keypoint
-              </span>
-               
-              <ul
-                class="keypoints--lists"
-              >
-                <li>
-                  Phasellus iaculis nequeghjhjjkjjkjkhjk
-                </li>
-                 
-                <li>
-                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
-                </li>
-                 
-                <li>
-                  Vestibulum laoreet porttitor sem
-                </li>
-              </ul>
-            </div>
-             
-            <div
-              class="card-text row actions"
-            >
-              <div
-                class="col-5 col-sm-7 col-md-5 col-lg-7 views"
-              >
-                <i
-                  class="fal fa-eye"
-                />
-                 
-                <span
-                  class="count"
-                >
-                  123
-                </span>
-              </div>
-               
-              <div
-                class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
-              >
-                <div
-                  class="col-7 col-sm-4 likes"
-                >
-                  <p
-                    class="thumbs-up"
-                  >
-                    <i
-                      class="fal fa-thumbs-up"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      18
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-up"
-                    style="display: none;"
-                  >
-                    <i
-                      class="fas fa-thumbs-up"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      18
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-down"
-                  >
-                    <i
-                      class="fal fa-thumbs-down"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-down"
-                    style="display: none;"
-                  >
-                    <i
-                      class="fas fa-thumbs-down"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
-                </div>
-                 
-                <div
-                  class="col-3 col-sm-7 comments"
-                >
-                  <p
-                    class="coment"
-                  >
-                    <i
-                      class="fal fa-comment-dots"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      67
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="share"
-                  >
-                    <i
-                      class="fal fa-share"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
                    
                   <div
-                    class="ellipsis"
+                    class="col-2 col-sm-1 toggle-keypoints"
+                    style="display: none;"
                   >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
+                    <i
+                      class="fal fa-angle-up"
+                    />
+                  </div>
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                  >
+                    <i
+                      class="fal fa-angle-down"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+           
+          <main
+            class="card bl-postcard hideCardBorder"
+            id="bl-postcard"
+          >
+            <div
+              class="card-body bl-postcard-body"
+            >
+              <div
+                class="card-title row title"
+              >
+                <div
+                  class="col-9 row title--text"
+                >
+                  <span
+                    class="col-3"
+                  >
+                    category
+                  </span>
+                   
+                  <p
+                    class="col-5 col-sm-6 font-weight-bold description"
+                  >
+                    <a>
+                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="col-4 col-sm-3 username"
+                  >
+                    <a
+                      class="btn btn-primary initials"
                       href="#"
-                      id="navbarDropdown"
                       role="button"
                     >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
+                      SM
+                    </a>
+                    
+           
+          
+                    <span
+                      class="font-weight-normal name"
+                    >
+                      Johndoe
                     </span>
+                    
+           
+          
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="col-3 title--image"
+                  style="background-image: url(test-file-stub);"
+                />
+              </div>
+               
+              <div
+                class="card-text keypoints"
+                style="display: none;"
+              >
+                <span
+                  class="font-weight-bold text-capitalize"
+                >
+                  keypoint
+                </span>
+                 
+                <ul
+                  class="keypoints--lists"
+                >
+                  <li>
+                    Phasellus iaculis nequeghjhjjkjjkjkhjk
+                  </li>
+                   
+                  <li>
+                    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                  </li>
+                   
+                  <li>
+                    Vestibulum laoreet porttitor sem
+                  </li>
+                </ul>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                >
+                  <div
+                    class="col-7 col-sm-4 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 col-sm-7 comments"
+                  >
+                    <p
+                      class="coment"
+                    >
+                      <i
+                        class="fal fa-comment-dots"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        67
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="share"
+                    >
+                      <i
+                        class="fal fa-share"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
                      
                     <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
+                      class="ellipsis"
                     >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
                       <div
-                        class="d-flex bl-dropdown-menu__countries"
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
                       >
                         <div
-                          class="favourite-countries"
+                          class="d-flex bl-dropdown-menu__countries"
                         >
-                          <p
-                            class="dropdown-item country"
+                          <div
+                            class="favourite-countries"
                           >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
+                            <p
+                              class="dropdown-item country"
                             >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
                              
-                            <span
-                              class="count"
+                            <p
+                              class="dropdown-item country"
                             >
-                              67
-                            </span>
-                          </p>
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                 
-                <div
-                  class="col-2 col-sm-1 toggle-keypoints"
-                  style="display: none;"
-                >
-                  <i
-                    class="fal fa-angle-up"
-                  />
-                </div>
-                 
-                <div
-                  class="col-2 col-sm-1 toggle-keypoints"
-                >
-                  <i
-                    class="fal fa-angle-down"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-         
-        <main
-          class="card bl-postcard consumer"
-          id="bl-postcard"
-        >
-          <div
-            class="card-body bl-postcard-body"
-          >
-            <div
-              class="card-title row title"
-            >
-              <div
-                class="col-9 row title--text"
-              >
-                <span
-                  class="col-3"
-                >
-                  category
-                </span>
-                 
-                <p
-                  class="col-5 col-sm-6 font-weight-bold description"
-                >
-                  <a>
-                    Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-                  </a>
-                </p>
-                 
-                <p
-                  class="col-4 col-sm-3 username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="col-3 title--image"
-                style="background-image: url(test-file-stub);"
-              />
-            </div>
-             
-            <div
-              class="card-text keypoints"
-              style="display: none;"
-            >
-              <span
-                class="font-weight-bold text-capitalize"
-              >
-                keypoint
-              </span>
-               
-              <ul
-                class="keypoints--lists"
-              >
-                <li>
-                  Phasellus iaculis nequeghjhjjkjjkjkhjk
-                </li>
-                 
-                <li>
-                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
-                </li>
-                 
-                <li>
-                  Vestibulum laoreet porttitor sem
-                </li>
-              </ul>
-            </div>
-             
-            <div
-              class="card-text row actions"
-            >
-              <div
-                class="col-5 col-sm-7 col-md-5 col-lg-7 views"
-              >
-                <i
-                  class="fal fa-eye"
-                />
-                 
-                <span
-                  class="count"
-                >
-                  123
-                </span>
-              </div>
-               
-              <div
-                class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
-              >
-                <div
-                  class="col-7 col-sm-4 likes"
-                >
-                  <p
-                    class="thumbs-up"
-                  >
-                    <i
-                      class="fal fa-thumbs-up"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      18
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-up"
-                    style="display: none;"
-                  >
-                    <i
-                      class="fas fa-thumbs-up"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      18
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-down"
-                  >
-                    <i
-                      class="fal fa-thumbs-down"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-down"
-                    style="display: none;"
-                  >
-                    <i
-                      class="fas fa-thumbs-down"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
-                </div>
-                 
-                <div
-                  class="col-3 col-sm-7 comments"
-                >
-                  <p
-                    class="coment"
-                  >
-                    <i
-                      class="fal fa-comment-dots"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      67
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="share"
-                  >
-                    <i
-                      class="fal fa-share"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
                    
                   <div
-                    class="ellipsis"
+                    class="col-2 col-sm-1 toggle-keypoints"
+                    style="display: none;"
                   >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
+                    <i
+                      class="fal fa-angle-up"
+                    />
+                  </div>
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                  >
+                    <i
+                      class="fal fa-angle-down"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+           
+          <main
+            class="card bl-postcard hideCardBorder"
+            id="bl-postcard"
+          >
+            <div
+              class="card-body bl-postcard-body"
+            >
+              <div
+                class="card-title row title"
+              >
+                <div
+                  class="col-9 row title--text"
+                >
+                  <span
+                    class="col-3"
+                  >
+                    category
+                  </span>
+                   
+                  <p
+                    class="col-5 col-sm-6 font-weight-bold description"
+                  >
+                    <a>
+                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="col-4 col-sm-3 username"
+                  >
+                    <a
+                      class="btn btn-primary initials"
                       href="#"
-                      id="navbarDropdown"
                       role="button"
                     >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
+                      SM
+                    </a>
+                    
+           
+          
+                    <span
+                      class="font-weight-normal name"
+                    >
+                      Johndoe
                     </span>
+                    
+           
+          
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="col-3 title--image"
+                  style="background-image: url(test-file-stub);"
+                />
+              </div>
+               
+              <div
+                class="card-text keypoints"
+                style="display: none;"
+              >
+                <span
+                  class="font-weight-bold text-capitalize"
+                >
+                  keypoint
+                </span>
+                 
+                <ul
+                  class="keypoints--lists"
+                >
+                  <li>
+                    Phasellus iaculis nequeghjhjjkjjkjkhjk
+                  </li>
+                   
+                  <li>
+                    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                  </li>
+                   
+                  <li>
+                    Vestibulum laoreet porttitor sem
+                  </li>
+                </ul>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                >
+                  <div
+                    class="col-7 col-sm-4 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 col-sm-7 comments"
+                  >
+                    <p
+                      class="coment"
+                    >
+                      <i
+                        class="fal fa-comment-dots"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        67
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="share"
+                    >
+                      <i
+                        class="fal fa-share"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
                      
                     <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
+                      class="ellipsis"
                     >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
                       <div
-                        class="d-flex bl-dropdown-menu__countries"
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
                       >
                         <div
-                          class="favourite-countries"
+                          class="d-flex bl-dropdown-menu__countries"
                         >
-                          <p
-                            class="dropdown-item country"
+                          <div
+                            class="favourite-countries"
                           >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
+                            <p
+                              class="dropdown-item country"
                             >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
                              
-                            <span
-                              class="count"
+                            <p
+                              class="dropdown-item country"
                             >
-                              67
-                            </span>
-                          </p>
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                 
-                <div
-                  class="col-2 col-sm-1 toggle-keypoints"
-                  style="display: none;"
-                >
-                  <i
-                    class="fal fa-angle-up"
-                  />
-                </div>
-                 
-                <div
-                  class="col-2 col-sm-1 toggle-keypoints"
-                >
-                  <i
-                    class="fal fa-angle-down"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-         
-        <main
-          class="card bl-postcard consumer"
-          id="bl-postcard"
-        >
-          <div
-            class="card-body bl-postcard-body"
-          >
-            <div
-              class="card-title row title"
-            >
-              <div
-                class="col-9 row title--text"
-              >
-                <span
-                  class="col-3"
-                >
-                  category
-                </span>
-                 
-                <p
-                  class="col-5 col-sm-6 font-weight-bold description"
-                >
-                  <a>
-                    Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-                  </a>
-                </p>
-                 
-                <p
-                  class="col-4 col-sm-3 username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="col-3 title--image"
-                style="background-image: url(test-file-stub);"
-              />
-            </div>
-             
-            <div
-              class="card-text keypoints"
-              style="display: none;"
-            >
-              <span
-                class="font-weight-bold text-capitalize"
-              >
-                keypoint
-              </span>
-               
-              <ul
-                class="keypoints--lists"
-              >
-                <li>
-                  Phasellus iaculis nequeghjhjjkjjkjkhjk
-                </li>
-                 
-                <li>
-                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
-                </li>
-                 
-                <li>
-                  Vestibulum laoreet porttitor sem
-                </li>
-              </ul>
-            </div>
-             
-            <div
-              class="card-text row actions"
-            >
-              <div
-                class="col-5 col-sm-7 col-md-5 col-lg-7 views"
-              >
-                <i
-                  class="fal fa-eye"
-                />
-                 
-                <span
-                  class="count"
-                >
-                  123
-                </span>
-              </div>
-               
-              <div
-                class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
-              >
-                <div
-                  class="col-7 col-sm-4 likes"
-                >
-                  <p
-                    class="thumbs-up"
-                  >
-                    <i
-                      class="fal fa-thumbs-up"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      18
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-up"
-                    style="display: none;"
-                  >
-                    <i
-                      class="fas fa-thumbs-up"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      18
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-down"
-                  >
-                    <i
-                      class="fal fa-thumbs-down"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-down"
-                    style="display: none;"
-                  >
-                    <i
-                      class="fas fa-thumbs-down"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
-                </div>
-                 
-                <div
-                  class="col-3 col-sm-7 comments"
-                >
-                  <p
-                    class="coment"
-                  >
-                    <i
-                      class="fal fa-comment-dots"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      67
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="share"
-                  >
-                    <i
-                      class="fal fa-share"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
                    
                   <div
-                    class="ellipsis"
+                    class="col-2 col-sm-1 toggle-keypoints"
+                    style="display: none;"
                   >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
+                    <i
+                      class="fal fa-angle-up"
+                    />
+                  </div>
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                  >
+                    <i
+                      class="fal fa-angle-down"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+           
+          <main
+            class="card bl-postcard hideCardBorder"
+            id="bl-postcard"
+          >
+            <div
+              class="card-body bl-postcard-body"
+            >
+              <div
+                class="card-title row title"
+              >
+                <div
+                  class="col-9 row title--text"
+                >
+                  <span
+                    class="col-3"
+                  >
+                    category
+                  </span>
+                   
+                  <p
+                    class="col-5 col-sm-6 font-weight-bold description"
+                  >
+                    <a>
+                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="col-4 col-sm-3 username"
+                  >
+                    <a
+                      class="btn btn-primary initials"
                       href="#"
-                      id="navbarDropdown"
                       role="button"
                     >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
+                      SM
+                    </a>
+                    
+           
+          
+                    <span
+                      class="font-weight-normal name"
+                    >
+                      Johndoe
                     </span>
+                    
+           
+          
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="col-3 title--image"
+                  style="background-image: url(test-file-stub);"
+                />
+              </div>
+               
+              <div
+                class="card-text keypoints"
+                style="display: none;"
+              >
+                <span
+                  class="font-weight-bold text-capitalize"
+                >
+                  keypoint
+                </span>
+                 
+                <ul
+                  class="keypoints--lists"
+                >
+                  <li>
+                    Phasellus iaculis nequeghjhjjkjjkjkhjk
+                  </li>
+                   
+                  <li>
+                    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                  </li>
+                   
+                  <li>
+                    Vestibulum laoreet porttitor sem
+                  </li>
+                </ul>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                >
+                  <div
+                    class="col-7 col-sm-4 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 col-sm-7 comments"
+                  >
+                    <p
+                      class="coment"
+                    >
+                      <i
+                        class="fal fa-comment-dots"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        67
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="share"
+                    >
+                      <i
+                        class="fal fa-share"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
                      
                     <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
+                      class="ellipsis"
                     >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
                       <div
-                        class="d-flex bl-dropdown-menu__countries"
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
                       >
                         <div
-                          class="favourite-countries"
+                          class="d-flex bl-dropdown-menu__countries"
                         >
-                          <p
-                            class="dropdown-item country"
+                          <div
+                            class="favourite-countries"
                           >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
+                            <p
+                              class="dropdown-item country"
                             >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
                              
-                            <span
-                              class="count"
+                            <p
+                              class="dropdown-item country"
                             >
-                              67
-                            </span>
-                          </p>
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                 
-                <div
-                  class="col-2 col-sm-1 toggle-keypoints"
-                  style="display: none;"
-                >
-                  <i
-                    class="fal fa-angle-up"
-                  />
-                </div>
-                 
-                <div
-                  class="col-2 col-sm-1 toggle-keypoints"
-                >
-                  <i
-                    class="fal fa-angle-down"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-         
-        <main
-          class="card bl-postcard consumer"
-          id="bl-postcard"
-        >
-          <div
-            class="card-body bl-postcard-body"
-          >
-            <div
-              class="card-title row title"
-            >
-              <div
-                class="col-9 row title--text"
-              >
-                <span
-                  class="col-3"
-                >
-                  category
-                </span>
-                 
-                <p
-                  class="col-5 col-sm-6 font-weight-bold description"
-                >
-                  <a>
-                    Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-                  </a>
-                </p>
-                 
-                <p
-                  class="col-4 col-sm-3 username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="col-3 title--image"
-                style="background-image: url(test-file-stub);"
-              />
-            </div>
-             
-            <div
-              class="card-text keypoints"
-              style="display: none;"
-            >
-              <span
-                class="font-weight-bold text-capitalize"
-              >
-                keypoint
-              </span>
-               
-              <ul
-                class="keypoints--lists"
-              >
-                <li>
-                  Phasellus iaculis nequeghjhjjkjjkjkhjk
-                </li>
-                 
-                <li>
-                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
-                </li>
-                 
-                <li>
-                  Vestibulum laoreet porttitor sem
-                </li>
-              </ul>
-            </div>
-             
-            <div
-              class="card-text row actions"
-            >
-              <div
-                class="col-5 col-sm-7 col-md-5 col-lg-7 views"
-              >
-                <i
-                  class="fal fa-eye"
-                />
-                 
-                <span
-                  class="count"
-                >
-                  123
-                </span>
-              </div>
-               
-              <div
-                class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
-              >
-                <div
-                  class="col-7 col-sm-4 likes"
-                >
-                  <p
-                    class="thumbs-up"
-                  >
-                    <i
-                      class="fal fa-thumbs-up"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      18
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-up"
-                    style="display: none;"
-                  >
-                    <i
-                      class="fas fa-thumbs-up"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      18
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-down"
-                  >
-                    <i
-                      class="fal fa-thumbs-down"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="thumbs-down"
-                    style="display: none;"
-                  >
-                    <i
-                      class="fas fa-thumbs-down"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
-                </div>
-                 
-                <div
-                  class="col-3 col-sm-7 comments"
-                >
-                  <p
-                    class="coment"
-                  >
-                    <i
-                      class="fal fa-comment-dots"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      67
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="share"
-                  >
-                    <i
-                      class="fal fa-share"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      1
-                    </span>
-                  </p>
                    
                   <div
-                    class="ellipsis"
+                    class="col-2 col-sm-1 toggle-keypoints"
+                    style="display: none;"
                   >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                    >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
-                    </span>
-                     
-                    <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
-                    >
-                      <div
-                        class="d-flex bl-dropdown-menu__countries"
-                      >
-                        <div
-                          class="favourite-countries"
-                        >
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    <i
+                      class="fal fa-angle-up"
+                    />
                   </div>
-                </div>
-                 
-                <div
-                  class="col-2 col-sm-1 toggle-keypoints"
-                  style="display: none;"
-                >
-                  <i
-                    class="fal fa-angle-up"
-                  />
-                </div>
-                 
-                <div
-                  class="col-2 col-sm-1 toggle-keypoints"
-                >
-                  <i
-                    class="fal fa-angle-down"
-                  />
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                  >
+                    <i
+                      class="fal fa-angle-down"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </main>
         </main>
       </div>
     </div>

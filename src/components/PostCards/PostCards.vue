@@ -1,9 +1,9 @@
 <template>
   <main id="bl-postcards" class="container bl-postcards">
-    <post-card />
-    <post-card />
-    <post-card />
-    <post-card />
+    <post-card :hideCardBorder="hideCardBorder" />
+    <post-card :hideCardBorder="hideCardBorder" />
+    <post-card :hideCardBorder="hideCardBorder" />
+    <post-card :hideCardBorder="hideCardBorder" />
   </main>
 </template>
 
@@ -12,7 +12,13 @@ import PostCard from './PostCard';
 
 export default {
   name: 'PostCards',
-  components: { PostCard }
+  components: { PostCard },
+  props: {
+    hideCardBorder: {
+      type: Boolean,
+      default: false,
+    },
+  }
 }
 </script>
 

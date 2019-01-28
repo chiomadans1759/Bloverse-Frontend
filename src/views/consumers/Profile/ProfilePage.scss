@@ -113,3 +113,37 @@ a {
     padding-top: rem(10px);
   }
 }
+
+.bl-contents {
+  background-color: transparent !important;
+}
+
+.initials {
+  padding: 0 rem(10px);
+  padding-bottom: rem(18px);
+  &-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: rem(24px);
+    width: rem(24px);
+    background-color: #8C40FF;
+    border: rem(1px) solid #8C40FF;
+    border-radius: 0.3rem;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: rem(10px);
+  }
+  &-arrow {
+    margin: 0 rem(10px);
+    color: #0885e7;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .bl-contents {
+    background-color: #ffffff !important;
+  }
+}
