@@ -8,14 +8,14 @@
           <div class="col-12 col-md-4 col-sm-4 col-lg-4">
             <br>
             <br>
-            <br>
+            
             <h3>Edit Profile</h3>
 
             <br>
-            <br>
+            <br><br>
             <form action>
               <div class="row">
-                <div class="col-12 col-md-3 col-sm-3 col-lg-3 pr-0">
+                <div class="col-3 col-md-3 col-sm-3 col-lg-3 pr-0">
                   <div class="file_share">
                     <input
                       type="file"
@@ -26,7 +26,7 @@
                     <i class="fal fa-plus"></i>
                   </div>
                 </div>
-                <div class="col-12 col-md-9 col-sm-9 col-lg-9">
+                <div class="col-9 col-md-9 col-sm-9 col-lg-9">
                   <input
                     type="text"
                     class="form-control"
@@ -57,7 +57,7 @@
                 v-on:change="onChange"
               >
               <div class="row">
-                <div class="col-md-3 pr-0">
+                <div class="col-md-3 col-3 pr-0">
                   <select
                     name="countrycode"
                     id="countrycode"
@@ -73,7 +73,7 @@
                     <option value="+234">+234</option>
                   </select>
                 </div>
-                <div class="col-md-9 pl-0">
+                <div class="col-md-9 col-9 pl-0">
                   <input
                     type="number"
                     class="form-control"
@@ -111,9 +111,11 @@
                 rows="4"
                 class="form-control"
                 v-on:change="onChange"
-              >Bio</textarea>
+              ></textarea>
               <br>
-              <button type="submit" class="btn btn-primary btn-block">Save</button>
+              <span class="d-flex justify-content-end span-text">0&#x3C;124</span>
+              <br />
+              <button type="submit" class="btn btn-primary btn-block edit-btn">Save</button>
             </form>
           </div>
           <div class="col-md-4"></div>
@@ -133,7 +135,7 @@ export default {
       user: {
         firstname: "",
         lastname: "",
-        bio: "",
+        bio: "Bio",
         phone: "",
         location: "",
         countrycode: "",
@@ -150,9 +152,10 @@ export default {
       this[event.target.name] = event.target.value;
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped="true">
 @import "./EditProfilePage.scss";
 </style>
+

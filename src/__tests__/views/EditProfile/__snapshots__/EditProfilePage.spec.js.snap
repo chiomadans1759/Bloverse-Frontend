@@ -62,14 +62,13 @@ exports[`EditProfile Page should render correctly 1`] = `
            
           <br />
            
-          <br />
-           
           <h3>
             Edit Profile
           </h3>
            
           <br />
            
+          <br />
           <br />
            
           <form
@@ -79,7 +78,7 @@ exports[`EditProfile Page should render correctly 1`] = `
               class="row"
             >
               <div
-                class="col-12 col-md-3 col-sm-3 col-lg-3 pr-0"
+                class="col-3 col-md-3 col-sm-3 col-lg-3 pr-0"
               >
                 <div
                   class="file_share"
@@ -97,7 +96,7 @@ exports[`EditProfile Page should render correctly 1`] = `
               </div>
                
               <div
-                class="col-12 col-md-9 col-sm-9 col-lg-9"
+                class="col-9 col-md-9 col-sm-9 col-lg-9"
               >
                 <input
                   class="form-control"
@@ -129,7 +128,7 @@ exports[`EditProfile Page should render correctly 1`] = `
               class="row"
             >
               <div
-                class="col-md-3 pr-0"
+                class="col-md-3 col-3 pr-0"
               >
                 <select
                   class="form-control edit__profile--select"
@@ -175,7 +174,7 @@ exports[`EditProfile Page should render correctly 1`] = `
               </div>
                
               <div
-                class="col-md-9 pl-0"
+                class="col-md-9 col-9 pl-0"
               >
                 <input
                   class="form-control"
@@ -209,14 +208,20 @@ exports[`EditProfile Page should render correctly 1`] = `
               id="bio"
               name="bio"
               rows="4"
+            />
+             
+            <br />
+             
+            <span
+              class="d-flex justify-content-end span-text"
             >
-              Bio
-            </textarea>
+              0&lt;124
+            </span>
              
             <br />
              
             <button
-              class="btn btn-primary btn-block"
+              class="btn btn-primary btn-block edit-btn"
               type="submit"
             >
               Save
