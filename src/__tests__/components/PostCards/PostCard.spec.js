@@ -1,4 +1,4 @@
-import { mount, RouterLinkStub  } from '@vue/test-utils'
+import { mount, RouterLinkStub } from '@vue/test-utils'
 import PostCard from '@/components/PostCards/PostCard.vue';
 
 describe('PostCard Component', () => {
@@ -60,5 +60,13 @@ describe('PostCard Component', () => {
 
     expect(wrapper.vm.likePost).toBe(false);
     expect(wrapper.vm.dislikePost).toBe(true);
+  });
+
+  it('sets the correct default data', () => {
+    expect(typeof PostCard.data).toBe('function')
+    const defaultData = PostCard.data()
+    expect(defaultData.showKeypoints).toBe(false)
+    expect(defaultData.likePost).toBe(false);
+    expect(defaultData.dislikePost).toBe(false)
   });
 });

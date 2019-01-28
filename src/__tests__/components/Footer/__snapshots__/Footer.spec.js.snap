@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component should render correctly 1`] = `
+<div
+  class="footer-container"
+>
+  <p>
+    <span
+      class="bloverse"
+    >
+      Bloverse
+    </span>
+     2019. All rights reserved
+  </p>
+</div>
+`;
