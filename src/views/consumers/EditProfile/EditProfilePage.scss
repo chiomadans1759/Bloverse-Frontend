@@ -1,0 +1,146 @@
+@import 'sass-rem';
+
+.logo {
+  height: rem(40px);
+  padding-left: rem(20px);
+}
+.top {
+    background: white;
+    padding: rem(10px);
+}
+.top-left-container {
+  margin-left: 5%;
+}
+.top-left-container > a {
+  color: #000000 !important;
+}
+.top-left-container > a > svg {
+  vertical-align: middle;
+}
+.top-left-container > a > span {
+  padding-left: rem(10px);
+}
+.content{
+  h3{
+    font-size: rem(27px);
+    color: #353535;
+    font-weight: 900;
+    margin-bottom: rem(4px);
+  }
+  select{
+    border-radius: rem(2px) !important;
+  }
+  input{@import 'sass-rem';
+
+    .logo {
+      height: rem(40px);
+      padding-left: rem(20px);
+    }
+    .top {
+        background: white;
+        padding: rem(10px);
+    }
+    .top-left-container {
+      margin-left: 5%;
+    }
+    .top-left-container > a {
+      color: #000000 !important;
+    }
+    .top-left-container > a > svg {
+      vertical-align: middle;
+    }
+    .top-left-container > a > span {
+      padding-left: rem(10px);
+    }
+    .content{
+      h3{
+        font-size: rem(27px);
+        color: #353535;
+        font-weight: 900;
+        margin-bottom: rem(4px);
+      }
+      select{
+        border-radius: rem(2px) !important;
+      }
+      input{
+        margin-bottom: 3%;
+        border-radius: rem(2px) !important;
+      }
+      #bio{
+        resize: none;
+        border-radius: rem(2px) !important;
+      }
+      .file_share {
+        height: 4.525rem;
+        background: white;
+        border: 0.0625rem solid #096DD9;
+        border-radius: rem(5px);
+        margin-top: -44%;
+      
+        svg{
+          color: #096DD9;
+          font-size: rem(18px);
+          display: block;
+          text-align: center;
+          margin: 29% auto;
+      }
+      input {
+        position: absolute;
+        width: 84%;
+        height: 100%;
+        opacity: 0;
+    }
+    
+    }
+      
+    }
+    .edit__profile--select{
+      -webkit-appearance:none;
+      border-radius: rem(4px) 0 0 rem(4px);
+      border-right: none;
+    }
+    
+    margin-bottom: 3%;
+    border-radius: rem(2px) !important;
+  }
+  #bio{
+    resize: none;
+    border-radius: rem(2px) !important;
+  }
+  .file_share {
+    height: 4.525rem;
+    background: white;
+    border: 0.0625rem solid #096DD9;
+    border-radius: rem(5px);
+    margin-top: -44%;
+  
+    svg{
+      color: #096DD9;
+      font-size: rem(18px);
+      display: block;
+      text-align: center;
+      margin: 29% auto;
+  }
+  input {
+    position: absolute;
+    width: 84%;
+    height: 100%;
+    opacity: 0;
+}
+
+}
+  
+}
+.edit__profile--select{
+  -webkit-appearance:none;
+  border-radius: rem(4px) 0 0 rem(4px);
+  border-right: none;
+}
+
+.edit-btn {
+  background-image: linear-gradient( to left, #2F80ED, #003CE1);
+}
+
+.span-text {
+  color: #B7B7B7;
+}

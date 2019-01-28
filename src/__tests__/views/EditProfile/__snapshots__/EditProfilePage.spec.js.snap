@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditProfile Page should render correctly 1`] = `
+<div
+  class="edit-container"
+>
+  <header
+    id="feeds-header"
+  >
+    <nav
+      class="navbar navbar-expand-lg navbar-light px-5"
+    >
+      <a
+        class="backlink"
+        href="/settings"
+      >
+        <i
+          class="fal fa-long-arrow-left fa-2x back-icon"
+        />
+         
+        <span
+          class="back-text"
+        >
+          Back
+        </span>
+      </a>
+       
+      <a
+        class="router-link"
+      >
+        <img
+          class="nav-logo"
+          src="@/assets/Logo.svg"
+        />
+         
+        <!---->
+      </a>
+       
+      <!---->
+       
+      <!---->
+    </nav>
+  </header>
+   
+  <div
+    class="content"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-4"
+        />
+         
+        <div
+          class="col-12 col-md-4 col-sm-4 col-lg-4"
+        >
+          <br />
+           
+          <br />
+           
+          <h3>
+            Edit Profile
+          </h3>
+           
+          <br />
+           
+          <br />
+          <br />
+           
+          <form
+            action=""
+          >
+            <div
+              class="row"
+            >
+              <div
+                class="col-3 col-md-3 col-sm-3 col-lg-3 pr-0"
+              >
+                <div
+                  class="file_share"
+                >
+                  <input
+                    id="profile-image"
+                    name="profileImage"
+                    type="file"
+                  />
+                   
+                  <i
+                    class="fal fa-plus"
+                  />
+                </div>
+              </div>
+               
+              <div
+                class="col-9 col-md-9 col-sm-9 col-lg-9"
+              >
+                <input
+                  class="form-control"
+                  id="username"
+                  name="username"
+                  placeholder="User Name"
+                  type="text"
+                />
+              </div>
+            </div>
+             
+            <input
+              class="form-control"
+              id="firstName"
+              name="firstName"
+              placeholder="First Name"
+              type="text"
+            />
+             
+            <input
+              class="form-control"
+              id="lastName"
+              name="lastName"
+              placeholder="Last Name"
+              type="text"
+            />
+             
+            <div
+              class="row"
+            >
+              <div
+                class="col-md-3 col-3 pr-0"
+              >
+                <select
+                  class="form-control edit__profile--select"
+                  id="countrycode"
+                  name="countrycode"
+                >
+                  <option
+                    value=""
+                  >
+                    +234
+                  </option>
+                   
+                  <option
+                    value="+234"
+                  >
+                    +234
+                  </option>
+                   
+                  <option
+                    value="+234"
+                  >
+                    +234
+                  </option>
+                   
+                  <option
+                    value="+234"
+                  >
+                    +234
+                  </option>
+                   
+                  <option
+                    value="+234"
+                  >
+                    +234
+                  </option>
+                   
+                  <option
+                    value="+234"
+                  >
+                    +234
+                  </option>
+                </select>
+              </div>
+               
+              <div
+                class="col-md-9 col-9 pl-0"
+              >
+                <input
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="000 000 0000"
+                  type="number"
+                />
+              </div>
+            </div>
+             
+            <input
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Email Adddress"
+              type="email"
+            />
+             
+            <input
+              class="form-control"
+              id="location"
+              name="location"
+              placeholder="Lagos Nigeria"
+              type="text"
+            />
+             
+            <textarea
+              class="form-control"
+              cols="30"
+              id="bio"
+              name="bio"
+              rows="4"
+            />
+             
+            <br />
+             
+            <span
+              class="d-flex justify-content-end span-text"
+            >
+              0&lt;124
+            </span>
+             
+            <br />
+             
+            <button
+              class="btn btn-primary btn-block edit-btn"
+              type="submit"
+            >
+              Save
+            </button>
+          </form>
+        </div>
+         
+        <div
+          class="col-md-4"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

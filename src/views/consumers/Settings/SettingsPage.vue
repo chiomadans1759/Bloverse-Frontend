@@ -7,7 +7,7 @@
     <div class="card p-4">
       <h6 class="pb-3">Profile</h6>
 
-      <a href="#" class="text-capitalize">edit profile</a>
+      <router-link to="/edit/profile" class="text-capitalize">edit profile</router-link>
       <p class="text small">Update your information</p>
 
       <router-link to="/changepassword" class="text-capitalize mt-3">change password</router-link>
