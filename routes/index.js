@@ -36,6 +36,7 @@ import SignupPage from '../src/views/consumers/SignUp/SignUpPage.vue';
 import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vue';
 import ChangePassword from '../src/views/consumers/ChangePassword/ChangePassword.vue';
 import Profile from '../src/views/consumers/Profile/ProfilePage.vue';
+import EditProfile from '../src/views/consumers/EditProfile/EditProfilePage';
 
 const routes = [
   {
@@ -69,6 +70,7 @@ const routes = [
 
   { path: "/changepassword", component: ChangePassword },
 
+  { path: '/edit/profile', component: EditProfile },
 
   {
     path: '/admin', component: BlankBase,

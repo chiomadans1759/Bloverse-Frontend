@@ -9,7 +9,7 @@ describe('Settings Page', () => {
         RouterLink: RouterLinkStub
       }
     });
-    expect(wrapper.find(RouterLinkStub).props().to).toBe('/changepassword')
+    expect(wrapper.find(RouterLinkStub).props().to).toBe('/edit/profile')
     expect(wrapper.element).toMatchSnapshot();
   });
 });

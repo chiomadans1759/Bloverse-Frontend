@@ -30,7 +30,6 @@ exports[`Settings Page should render correctly 1`] = `
            
           <a
             class="text-capitalize"
-            href="#"
           >
             edit profile
           </a>
