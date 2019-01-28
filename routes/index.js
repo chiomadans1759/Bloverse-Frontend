@@ -1,196 +1,127 @@
+import Vue from 'vue';
+import Router from 'vue-router';
+import { LoadingBar } from 'iview';
 import store from '../stores';
 
-
+// Layouts
 import GeneralLayout from '@/layouts/GeneralLayout';
 import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
 
+// Client Views
 import PostFeeds from '../src/views/PostFeeds.vue';
 import PostDisplay from '../src/views/PostDisplay.vue';
 import PhotoContest from '../src/views/PhotoContest.vue';
-
-
 import MyProfile from '../src/views/journalists/MyProfile.vue';
 import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
 import MyPosts from '../src/views/journalists/MyPosts.vue';
 import CreatePost from '../src/views/journalists/CreatePost.vue';
-
-// import JournalistLanding from '../src/views/journalists/Landing.vue';
 import JournalistApply from '../src/views/journalists/AuthenticationApply.vue';
 import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
 import JournalistLanding from '../src/views/journalists/Landing.vue';
 
+// Admin Views
 import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
 
+// Other views
 import NotFound from '../src/views/NotFound.vue';
 import About from '../src/views/About.vue';
 import Terms from '../src/views/TermsAndConditions.vue';
 import Privacy from '../src/views/Privacy.vue';
 
-/*
+Vue.use(Router);
 
-import FrequentlyAskedQuestions from '../src/views/DocsFAQ.vue';
-import HouseRules from '../src/views/DocsHouseRules.vue';
-import RankingSystem from '../src/views/DocsRankingSystem.vue';
-import PublishGuide from '../src/views/DocsPublishGuide.vue';
-
- 
-import ConsumerSignIn from '../src/views/consumers/ConsumerSignIn.vue';
-import SelectCountry from '../src/views/consumers/SelectCountry.vue';
-import SelectCategory from '../src/views/consumers/SelectCategory.vue';
-import ConsumerModal from '../src/views/consumers/ConsumerModal.vue';
-import ConsumerLandingPage from '../src/views/consumers/ConsumerLandingPage.vue';
-import ConsumersTrending from '../src/views/consumers/ConsumersTrending.vue';
-import ConsumerProfile from '../src/views/consumers/ConsumerProfile.vue';
-
-*/
-
-const routes = [
-  {
-    path: '/', component: GeneralLayout,
-    children: [
-      { path: '', component: PostFeeds },
-      { path: 'posts', redirect: '/' },
-      { path: 'posts/:slug', component: PostDisplay },
-      { path: '/about', component: About},
-      { path: '/terms-and-conditions', component: Terms},
-      { path: '/privacy-policies', component: Privacy}
-    ]
-  },
-  
-  {
-    path: '/photocontest', component: PhotoContest,
-  },
-
-  {
-    path: '/admin', component: BlankBase,
-    children: [
-      { path: '', redirect: 'dashboard' },
-      {
-        path: 'dashboard', component: AdminHome, meta: { admin: true, auth: true }, beforeEnter(to, from, next) {
-          if (store.getters.isAnAdmin) {
-            next();
-          } else {
-
-            next('/admin/login');
-          }
-          next();
-        }
-      },
-      { path: 'login', component: AdminLogin }
-    ]
-  },
-  {
-    path: '/creators',
-    component: BlankBase,
-    children: [
-      { path: '', component: JournalistLanding },
-      { path: 'apply', component: JournalistApply },
-      {
-        path: 'setup', component: JournalistSetUp,
-        beforeEnter(to, from, next) {
-          if (store.getters.isAllowedToRegister) {
-            next()
-          } else {
-            next('creators/verify')
-          }
-        }
-      },
-      { path: 'verify', component: JournalistVerify },
-      {
-        path: ':username', component: JournalistAccountLayout, meta: { journalist: true, auth: true }, beforeEnter(to, from, next) {
-          if (store.getters.isAJournalist) {
-            next();
-          } else {
-            next('/creators');
-
-          }
+const router = new Router({
+  routes: [
+    {
+      path: '/', component: GeneralLayout,
+      children: [
+        { path: '', component: PostFeeds },
+        { path: 'posts', redirect: '/' },
+        { path: 'posts/:slug', component: PostDisplay },
+        { path: '/about', component: About },
+        { path: '/terms-and-conditions', component: Terms },
+        { path: '/privacy-policies', component: Privacy }
+      ]
+    },
+    { path: '/photocontest', component: PhotoContest },
+    {
+      path: '/admin', component: BlankBase,
+      children: [
+        { path: '', redirect: 'dashboard' },
+        { path: 'login', component: AdminLogin },
+        { path: 'dashboard', component: AdminHome, meta: { admin: true } }
+      ]
+    },
+    {
+      path: '/creators',
+      component: BlankBase,
+      children: [
+        { path: '', component: JournalistLanding },
+        { path: 'apply', component: JournalistApply },
+        { path: 'setup', component: JournalistSetUp },
+        { path: 'verify', component: JournalistVerify },
+        { path: ':username', component: JournalistAccountLayout, meta: { journalist: true }, 
+          children: [
+            { path: '', component: MyProfile },
+            { path: 'dashboard', name: 'journalist-dashboard', component: DashBoardHome },
+            { path: 'posts', name: 'posts', component: BlankBase, meta: { journalist: true },
+              children: [
+                { path: '', name: 'all-posts', component: MyPosts },
+                { path: 'create', name: 'create-post', component: CreatePost },
+                { path: ':slug/edit', name: 'edit-post', component: CreatePost },
+              ]
+            }
+          ]
         },
-        children: [
-          { path: '', component: MyProfile,beforeEnter(to, from, next) {
-            if (store.getters.isAJournalist) {
-              next();
-            } else {
-              next('/creators');
+      ]
+    },
+    { path: "*", component: NotFound },
+    { path: '/creators/*', component: NotFound }
+  ]
+});
 
-            }
-          }
-          },
-          { path: 'dashboard', name: 'journalist-dashboard', component: DashBoardHome,beforeEnter(to, from, next) {
-            if (store.getters.isAJournalist) {
-              next();
-            } else {
-              next('/creators');
-
-            }
-          }
-          },
-          {
-            path: 'posts', component: BlankBase, meta: { journalist: true, auth: true },
-            children: [
-              { path: '', name: 'all-posts', component: MyPosts, beforeEnter(to, from, next) {
-                if (store.getters.isAJournalist) {
-                  next();
-                } else {
-                  next('/creators');
-
-                }
-              }
-              },
-              { path: 'create', name: 'create-post', component: CreatePost, beforeEnter(to, from, next) {
-                if (store.getters.isAJournalist) {
-                  next();
-                } else {
-                  next('/creators');
-
-                }
-              } 
-              },
-              { path: ':slug/edit', component: CreatePost, beforeEnter(to, from, next) {
-                if (store.getters.isAJournalist) {
-                  next();
-                } else {
-                  next('/creators');
-
-                }
-              } 
-              },
-            ]
-          }
-        ]
-      },
-    ]
-  },
-  /*
-  { path: '/faq/:person', component: FrequentlyAskedQuestions },
-  { path: '/rules/:person', component: HouseRules },
-  { path: '/guides', component: PublishGuide },
-  { path: '/ranking/:person', component: RankingSystem },
-  { path: '/web', component: BaseConsumer, // All pages for the new user features should reside here
-    children: [
-      { path: '', component: ConsumerLandingPage },
-      { path: 'country', component: SelectCountry },
-      { path: 'category', component: SelectCategory },
-      { path: 'modal', component: ConsumerModal },
-      { path: 'profile', component: ConsumerProfile},
-      { path: 'trending', component: ConsumersTrending }
-    ]
-  },
-  { path: '/login', component: ConsumerSignIn },
-  */
-  { path: "*", component: NotFound },
-  { path: '/creators/*', component: NotFound, beforeEnter(to, from, next) {
+// Nav Guard
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.journalist)) {
     if (store.getters.isAJournalist) {
       next();
     } else {
-      next('/creators');
-
+      next({
+        path: '/creators',
+        query: {
+          redirect: to.fullPath
+        }
+      });
     }
-  } 
+  } else if (to.matched.some(record => record.meta.admin)) {
+    if (store.getters.isAnAdmin) {
+      next();
+    } else {
+      next({
+        path: '/admin/login',
+        query: {
+          redirect: to.fullPath
+        }
+      });
+    }
+  } else {
+    next();
   }
-]
+});
 
+router.beforeEach((to, from, next) => {
+  /* eslint-disable */
+  LoadingBar.start();
+  next()
+});
 
-export default routes;
+router.afterEach((to, from, next) => { // eslint-disable-line no-unused-vars
+  gtag('set', 'page', to.path); // eslint-disable-line no-undef
+  gtag('send', 'pageview'); // eslint-disable-line no-undef
+  LoadingBar.finish();
+});
+
+export default router;

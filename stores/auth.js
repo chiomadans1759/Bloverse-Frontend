@@ -248,13 +248,15 @@ export default {
     },
     isAnAdmin(state) {
       if (state.loggedInUser) {
-        return state.loggedInUser.type === 'Admin';
+        state.loggedInUser.type === 'Admin';
+        return true;
       }
       return false;
     },
     isAJournalist(state) {
       if (state.loggedInUser) {
-        return state.loggedInUser.type === 'journalist';
+        state.loggedInUser.type === 'journalist';
+        return true;
       }
       return false;
     },

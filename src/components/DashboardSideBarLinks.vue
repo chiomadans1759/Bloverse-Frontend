@@ -1,6 +1,6 @@
 <template>
   <div class="links-wrapper">
-    <router-link class="router-link" :to="`/creators/${auth.loggedInUser.userName}/dashboard`">
+    <router-link class="router-link" :to="`/creators/${auth.loggedInUser.username}/dashboard`">
       <Icon class="icon" type="ios-home"></Icon>
     </router-link>
     <span class="icons">Home</span> 
@@ -8,7 +8,7 @@
       <Icon class="icon" type="ios-document"></Icon>
     </router-link>
     <span class="icons1">Create posts</span>
-    <router-link class="router-link" :to="`/creators/${auth.loggedInUser.userName}/posts`">
+    <router-link class="router-link" :to="`/creators/${auth.loggedInUser.username}/posts`">
       <Icon class="icon" type="logo-rss"></Icon>
     </router-link>
     <span class="icons2">My Posts</span>

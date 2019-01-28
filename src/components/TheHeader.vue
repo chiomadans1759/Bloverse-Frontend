@@ -47,20 +47,17 @@
                   <div class="dropdown-menu mt-4" aria-labelledby="dropdownMenuButton">
                     <router-link
                       :to="`/creators/${auth.loggedInUser.username}/dashboard`"
-                      class="dropdown-item pl-4 pr-0"
-                    >
+                      class="dropdown-item pl-4 pr-0">
                       <i class="far fa-th-large mr-1"></i> Dashboard
                     </router-link>
                     <router-link
                       :to="`/creators/${auth.loggedInUser.username}/posts/create`"
-                      class="dropdown-item pl-4 pr-0"
-                    >
+                      class="dropdown-item pl-4 pr-0">
                       <i class="far fa-plus mr-1"></i> Create Post
                     </router-link>
                     <router-link
                       :to="`/creators/${auth.loggedInUser.username}/posts`"
-                      class="dropdown-item pl-4 pr-0"
-                    >
+                      class="dropdown-item pl-4 pr-0">
                       <i class="fa fa-grip-horizontal mr-1"></i> Your Posts
                     </router-link>
                     <div class="dropdown-divider"></div>
