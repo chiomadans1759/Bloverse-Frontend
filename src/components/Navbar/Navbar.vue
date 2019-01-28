@@ -30,7 +30,7 @@
         <router-link to="/privacy-policies" class="dropdown-item">Privacy</router-link>
         <a class="dropdown-item" href="#">FAQ</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Feedback</a>
+        <a data-toggle="modal" href="#feedback-modal" class="dropdown-item">Feedback</a>
       </div>
       <div>
          <span class="vl bg-light"></span>
@@ -94,7 +94,7 @@
             <router-link to="/privacy-policies" class="dropdown-item">Privacy</router-link>
             <a class="dropdown-item" href="#">FAQ</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Feedback</a>
+            <a data-toggle="modal" href="#feedback-modal" class="dropdown-item">Feedback</a>
           </div>
         </li>
       </ul>

@@ -199,13 +199,28 @@
               <p class="col-sm-9">
                 <span class="text-capitalize dots">terms</span>
                 <span class="text-capitalize dots">privacy</span>
-                <span class="text-capitalize">feedback</span>
+                <span data-toggle="modal" href="#feedback-modal" class="text-capitalize">feedback</span>
               </p>
             </div>
             <p class="row company-rights text-capitalize">2018 Bloverse. All Right Reserved</p>
           </div>
         </div>
       </div>
+      <modal
+        target="feedback-modal"
+        altTitle="Send Us Some Feedback"
+        actionText="Send Feedback"
+        dark
+        subTitle="Found a bug? Have a suggestion?. Fill out the form below and we'll take a look!"
+        >
+        <div class="bl-modal-content">
+          <p>Enter your feedback here!</p>
+          <textarea class="form-control mb-2 p-1"></textarea>
+          <label class="ml-1 mr-3"><input type='radio' name='feedback-type'>  Bug</label>
+          <label class="mr-3"><input type='radio' name='feedback-type'>  Comment</label>
+          <label class="mr-3"><input type='radio' name='feedback-type'>  Other</label>
+        </div>
+      </modal>
     </div>
   </main>
 </template>
@@ -216,6 +231,7 @@ import Trends from "@/components/Trends/Trends";
 import Recommendations from "@/components/Recommendations/Recommendations.vue";
 import PhotoContest from "@/components/PhotoContestCards/PhotoContest";
 import CountryOptions from "@/components/CountryOptions/CountryOptions";
+import Modal from "@/components/Modal/Modal";
 
 export default {
   name: "Homepage",
@@ -225,6 +241,7 @@ export default {
     Recommendations,
     PhotoContest,
     CountryOptions,
+    Modal,
   }
 };
 </script>
