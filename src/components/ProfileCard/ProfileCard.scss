@@ -1,0 +1,53 @@
+@import 'sass-rem';
+
+.profile-img {
+  width: rem(64px);
+  height: rem(64px);
+}
+
+.profile-name {
+  font-size: rem(20px);
+  font-weight: 700;
+}
+
+.avatar {
+  display: flex;
+  justify-content: end;
+  align-items: baseline;
+}
+
+.profile-edit-icon {
+  margin-top: rem(-88px);
+  color: #ffffff;
+  font-weight: 100;
+}
+
+.profile-body {
+  color: #848384;
+}
+
+#number {
+  border: rem(1px) solid #3d98eb !important;
+  color: #3d98eb;
+}
+
+.profile {
+  &__text {
+    font-size: rem(16px);
+    font-weight: 500;
+    color: #6c6c6c;
+    font-family: Montserrat;
+  }
+
+  p {
+    font-size: rem(16px);
+  }
+
+  a {
+    font-size: rem(14px);
+  }
+
+  .card-footer {
+    font-size: rem(14px);
+  }
+}

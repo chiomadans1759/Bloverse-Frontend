@@ -1,5 +1,5 @@
 <template>
-  <main id="bl-postcard" class="card bl-postcard">
+  <main id="bl-postcard" :class="`card bl-postcard ${customClass}`">
     <div class="card-body bl-postcard-body">
       <div class="card-title row title">
         <div class="col-9 row title--text">
@@ -9,7 +9,10 @@
             Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
             Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret</router-link>
           </p>
-          <p class="col-4 col-sm-3 username">
+          <p class="col-4 col-sm-3 username" v-if="customClass === 'consumer'">
+            <span class="time">1 min ago</span>
+          </p>
+          <p class="col-4 col-sm-3 username" v-else>
             <a class="btn btn-primary initials" href="#" role="button">SM</a>
             &nbsp;
             <span class="font-weight-normal name">Johndoe</span>
@@ -106,6 +109,11 @@ import feedCardImage from '../../assets/post-card-image.jpg';
 
 export default {
   name: 'PostCard',
+  props: {
+    customClass: {
+      type: String,
+    }
+  },
   data() {
     return {
       feedCardImage,

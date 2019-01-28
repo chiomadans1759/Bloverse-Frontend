@@ -35,6 +35,7 @@ import SigninPage from '../src/views/general/Signin/SigninPage.vue';
 import SignupPage from '../src/views/consumers/SignUp/SignUpPage.vue';
 import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vue';
 import ChangePassword from '../src/views/consumers/ChangePassword/ChangePassword.vue';
+import Profile from '../src/views/consumers/Profile/ProfilePage.vue';
 
 const routes = [
   {
@@ -46,7 +47,8 @@ const routes = [
       { path: '/about', component: AboutUs , name:"about"},
       { path: '/terms-and-conditions', component: Terms},
       { path: '/privacy-policies', component: Privacy},
-      { path: '/settings', component: Settings}
+      { path: '/settings', component: Settings},
+      { path: '/profile', component: Profile},
     ]
   },
 
