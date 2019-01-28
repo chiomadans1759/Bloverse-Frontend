@@ -101,7 +101,7 @@ export default {
           if (success === true) {
             this.setModal({ show: false });
             this.$Message.success("You have been successfully logged in");
-            let username = this.auth.loggedInUser.userName;
+            let username = this.auth.loggedInUser.username;
             this.$router.push(`/creators/${username}/dashboard`);
           } else
             this.$Message.error({

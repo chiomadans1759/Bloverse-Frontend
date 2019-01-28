@@ -1,5 +1,8 @@
 <template>
   <main class="card p-0" id="post-details">
+    <section v-if="!general.currentPost">
+      <img src="@/assets/placeholders/post.svg" alt="">
+    </section>
     <div class="card-header border-0">
       <div class="row pt-4">
         <div class="col">
@@ -15,10 +18,9 @@
       <img class="post-img" :src="general.currentPost.image_url">
 
       <h1 class="post-title mt-4">{{general.currentPost.title}}</h1>
-      <ul class="post-keypoints">
+      <ul class="post-keypoints" v-if="point !== ''">
         <li v-for="point in general.currentPost.keypoint" 
-          :key="point.id" 
-          v-if="point !== ''"
+          :key="point.id"
         >{{point}}</li>
       </ul>
       <div class="post-content">

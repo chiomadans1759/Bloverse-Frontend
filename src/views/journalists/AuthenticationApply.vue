@@ -20,6 +20,7 @@
                 </FormItem>
               </Col>
             </Row>
+
             <Row type="flex" justify="space-between">
               <Col :sm="11" :xs="24">
                 <FormItem prop="email" :error="errors.email">
@@ -113,6 +114,7 @@
       </div>
     </div>
     </div>
+
     <!-- Success Modal -->
     <div class="modal fade pt-5" id="successModal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
       <div class="modal-dialog pt-5" role="document">
@@ -515,5 +517,11 @@ export default {
   .code-dropdown {
     width: 5rem;
   }
+}
+</style>
+
+<style>
+.dropdown-toggle:after {
+  display: none !important;
 }
 </style>

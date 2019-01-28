@@ -97,7 +97,7 @@ export default {
           this.$Message.success(
             "Registration successfull, You are being redirected to login"
           );
-          let username = this.auth.loggedInUser.userName;
+          let username = this.auth.loggedInUser.username;
           this.$router.push(`/creators/${username}/dashboard`);
         }
       } else this.$Message.error("Something went wrong");
