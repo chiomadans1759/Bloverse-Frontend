@@ -4,15 +4,15 @@
       <div class="dashboard-image">
         <img :src="auth.loggedInUser.imageUrl">
       </div>
-      <a id="home" :href="`/creators/${auth.loggedInUser.userName}/dashboard`">
+      <a id="home" :href="`/creators/${auth.loggedInUser.username}/dashboard`">
         <i class="far fa-th-large"></i>
         <span>Dashboard</span>
       </a>
-      <a id="home" :href="`/creators/${auth.loggedInUser.userName}/posts/create`">
+      <a id="home" :href="`/creators/${auth.loggedInUser.username}/posts/create`">
         <i class="fal fa-plus"></i>
         <span>Create Content</span>
       </a>
-      <a id="home" :href="`/creators/${auth.loggedInUser.userName}/posts`">
+      <a id="home" :href="`/creators/${auth.loggedInUser.username}/posts`">
         <i class="fal fa-rocket"></i>
         <span>My Posts</span>
       </a>
@@ -42,7 +42,7 @@
         <ul class="list-unstyled">
           <li class="list-item">
             <router-link
-              :to="`/creators/${auth.loggedInUser.userName}/dashboard`"
+              :to="`/creators/${auth.loggedInUser.username}/dashboard`"
               :class="{'active': currentRoute == 'journalist-dashboard'}"
             >
               <i class="far fa-th-large"></i>
@@ -51,7 +51,7 @@
           </li>
           <li class="list-item">
             <router-link
-              :to="`/creators/${auth.loggedInUser.userName}/posts/create`"
+              :to="`/creators/${auth.loggedInUser.username}/posts/create`"
               :class="{'active': currentRoute == 'create-post'}"
             >
               <i class="fal fa-plus"></i>
@@ -60,7 +60,7 @@
           </li>
           <li class="list-item">
             <router-link
-              :to="`/creators/${auth.loggedInUser.userName}/posts`"
+              :to="`/creators/${auth.loggedInUser.username}/posts`"
               :class="{'active': currentRoute == 'all-posts'}"
             >
               <i class="fal fa-rocket"></i>
