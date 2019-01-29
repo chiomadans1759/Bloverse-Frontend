@@ -1,17 +1,24 @@
 <template>
   <header id="feeds-header">
   <nav class="navbar navbar-expand-lg navbar-light px-5"
-    :class="{ 'transparent': isTransparent, 'alt-button': isTransparent }">
+    :class="{ 'transparent': isTransparent, 'alt-button': isTransparent }"
+  >
+    <a v-if="showBackArrow" class="backlink" href="/settings">
+      <i class="fal fa-long-arrow-left fa-2x back-icon"></i>
+      <span class="back-text">Back</span>
+    </a>
     <router-link to="/" class="router-link">
       <img class="nav-logo" v-if="!isTransparent" src="@/assets/Logo.svg" />
       <img class="nav-logo" v-if="isTransparent" src="@/assets/Logo - White.svg" />
     </router-link>
-    <div class="form-inline my-2 my-lg-0 navbar-toggler mobile-view"
-      data-toggle="collapse" data-target="#navbarSupportedContent"
+    <div  v-if="showNavigations" data-target="#navbarSupportedContent"
+      data-toggle="collapse" class="form-inline my-2 my-lg-0 navbar-toggler mobile-view" 
       aria-controls="navbarSupportedContent" aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+      >
         <span id="option-icon"/>
         <span id="option-icon"/>
         <span id="option-icon"/>
@@ -23,7 +30,7 @@
         <router-link to="/privacy-policies" class="dropdown-item">Privacy</router-link>
         <a class="dropdown-item" href="#">FAQ</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Feedback</a>
+        <a data-toggle="modal" href="#feedback-modal" class="dropdown-item">Feedback</a>
       </div>
       <div>
          <span class="vl bg-light"></span>
@@ -41,19 +48,19 @@
           MD
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a href="#" class="dropdown-item">
+          <router-link to="/profile" class="dropdown-item">
             <span class="icon-profile">
               <i class="fal fa-user-circle"></i>
             </span>
             Profile
-          </a>
+          </router-link>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">
+          <router-link class="dropdown-item" to="/settings">
             <span class="icon-settings">
               <i class="fal fa-cog"></i>
             </span>
             Settings
-          </a>
+          </router-link>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">
             <span class="icon-power">
@@ -65,7 +72,7 @@
       </div>
     </div>
 
-    <div class="collapse navbar-collapse">
+    <div v-if="showNavigations" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto" :class="{ 'white-text': whiteText }">
         <li class="nav-item active">
           <router-link to="/" class="nav-link"> Home <span class="sr-only">(current)</span></router-link>
@@ -87,7 +94,7 @@
             <router-link to="/privacy-policies" class="dropdown-item">Privacy</router-link>
             <a class="dropdown-item" href="#">FAQ</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Feedback</a>
+            <a data-toggle="modal" href="#feedback-modal" class="dropdown-item">Feedback</a>
           </div>
         </li>
       </ul>
@@ -105,12 +112,12 @@
               MD
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a href="#" class="dropdown-item">
+              <router-link to="/profile" class="dropdown-item">
                 <span class="icon-profile">
                   <i class="fal fa-user-circle"></i>
                 </span>
                 Profile
-              </a>
+              </router-link>
               <div class="dropdown-divider"></div>
               <router-link class="dropdown-item" to="/settings">
                 <span class="icon-settings">
@@ -151,6 +158,14 @@ export default {
     whiteText: {
       type: Boolean,
       default: false
+    },
+    showBackArrow: {
+      type: Boolean,
+      default: false
+    },
+    showNavigations: {
+      type: Boolean,
+      default: true
     },
     isLogin: {
       type: Boolean,

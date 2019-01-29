@@ -244,6 +244,10 @@
   }
 }
 
+.hideCardBorder {
+  border: none !important;
+}
+
 @media screen and (min-width: 760px) {
   .bl-postcard {
     &-body {

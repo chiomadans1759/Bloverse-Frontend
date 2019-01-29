@@ -246,8 +246,7 @@ exports[`Homepage Component should render correctly 1`] = `
           class="list-inline categories-list"
         >
           <li
-            class="list-inline-item categories-list-item bl-mobile-hide
-            d-none d-lg-inline-block"
+            class="list-inline-item categories-list-item bl-mobile-hide d-none d-lg-inline-block"
           >
             <a
               class="active"
@@ -279,8 +278,7 @@ exports[`Homepage Component should render correctly 1`] = `
           </li>
            
           <li
-            class="list-inline-item categories-list-item bl-mobile-show
-            d-inline-block d-lg-none"
+            class="list-inline-item categories-list-item bl-mobile-show d-inline-block d-lg-none"
           >
             <a
               aria-expanded="false"
@@ -301,7 +299,7 @@ exports[`Homepage Component should render correctly 1`] = `
              
             <div
               aria-labelledby="navbarDropdown"
-              class="dropdown-menu dropdown-menu-left more-categories "
+              class="dropdown-menu dropdown-menu-left more-categories"
             >
               <div
                 class="d-flex more-categories__categories"
@@ -312,9 +310,7 @@ exports[`Homepage Component should render correctly 1`] = `
                   <p
                     class="header"
                   >
-                    
                     Favourite Categories
-                  
                   </p>
                    
                   <p
@@ -358,9 +354,7 @@ exports[`Homepage Component should render correctly 1`] = `
                   <p
                     class="header"
                   >
-                    
                     Other Categories
-                  
                   </p>
                    
                   <p
@@ -528,7 +522,7 @@ exports[`Homepage Component should render correctly 1`] = `
              
             <div
               aria-labelledby="navbarDropdown"
-              class="dropdown-menu dropdown-menu-left more-categories "
+              class="dropdown-menu dropdown-menu-left more-categories"
             >
               <div
                 class="d-flex more-categories__categories"
@@ -539,9 +533,7 @@ exports[`Homepage Component should render correctly 1`] = `
                   <p
                     class="header"
                   >
-                    
                     Favourite Categories
-                  
                   </p>
                    
                   <p
@@ -585,9 +577,7 @@ exports[`Homepage Component should render correctly 1`] = `
                   <p
                     class="header"
                   >
-                    
                     Other Categories
-                  
                   </p>
                    
                   <p
@@ -780,25 +770,19 @@ exports[`Homepage Component should render correctly 1`] = `
             <p
               class="dropdown-item country"
             >
-              
               Most Viewed
-            
             </p>
              
             <p
               class="dropdown-item country"
             >
-              
               Most commented
-            
             </p>
              
             <p
               class="dropdown-item country"
             >
-              
               Most Shared
-            
             </p>
           </div>
         </div>
@@ -5383,9 +5367,60 @@ exports[`Homepage Component should render correctly 1`] = `
                             <div
                               class="col-3 ellipsis"
                             >
-                              <i
-                                class="fal fa-ellipsis-h"
-                              />
+                              <span
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                class="nav-link dropdown-toggle"
+                                data-toggle="dropdown"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                              >
+                                <i
+                                  class="fal fa-ellipsis-h"
+                                />
+                              </span>
+                               
+                              <div
+                                aria-labelledby="dropdownMenuReference"
+                                class="dropdown-menu bl-dropdown-menu"
+                              >
+                                <div
+                                  class="d-flex bl-dropdown-menu__countries"
+                                >
+                                  <div
+                                    class="favourite-countries"
+                                  >
+                                    <p
+                                      class="dropdown-item country"
+                                    >
+                                      <i
+                                        class="fal fa-comment-dots"
+                                      />
+                                       
+                                      <span
+                                        class="count"
+                                      >
+                                        67
+                                      </span>
+                                    </p>
+                                     
+                                    <p
+                                      class="dropdown-item country"
+                                    >
+                                      <i
+                                        class="fal fa-share"
+                                      />
+                                       
+                                      <span
+                                        class="count"
+                                      >
+                                        67
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -5536,9 +5571,60 @@ exports[`Homepage Component should render correctly 1`] = `
                             <div
                               class="col-3 ellipsis"
                             >
-                              <i
-                                class="fal fa-ellipsis-h"
-                              />
+                              <span
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                class="nav-link dropdown-toggle"
+                                data-toggle="dropdown"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                              >
+                                <i
+                                  class="fal fa-ellipsis-h"
+                                />
+                              </span>
+                               
+                              <div
+                                aria-labelledby="dropdownMenuReference"
+                                class="dropdown-menu bl-dropdown-menu"
+                              >
+                                <div
+                                  class="d-flex bl-dropdown-menu__countries"
+                                >
+                                  <div
+                                    class="favourite-countries"
+                                  >
+                                    <p
+                                      class="dropdown-item country"
+                                    >
+                                      <i
+                                        class="fal fa-comment-dots"
+                                      />
+                                       
+                                      <span
+                                        class="count"
+                                      >
+                                        67
+                                      </span>
+                                    </p>
+                                     
+                                    <p
+                                      class="dropdown-item country"
+                                    >
+                                      <i
+                                        class="fal fa-share"
+                                      />
+                                       
+                                      <span
+                                        class="count"
+                                      >
+                                        67
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -5689,9 +5775,60 @@ exports[`Homepage Component should render correctly 1`] = `
                             <div
                               class="col-3 ellipsis"
                             >
-                              <i
-                                class="fal fa-ellipsis-h"
-                              />
+                              <span
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                class="nav-link dropdown-toggle"
+                                data-toggle="dropdown"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                              >
+                                <i
+                                  class="fal fa-ellipsis-h"
+                                />
+                              </span>
+                               
+                              <div
+                                aria-labelledby="dropdownMenuReference"
+                                class="dropdown-menu bl-dropdown-menu"
+                              >
+                                <div
+                                  class="d-flex bl-dropdown-menu__countries"
+                                >
+                                  <div
+                                    class="favourite-countries"
+                                  >
+                                    <p
+                                      class="dropdown-item country"
+                                    >
+                                      <i
+                                        class="fal fa-comment-dots"
+                                      />
+                                       
+                                      <span
+                                        class="count"
+                                      >
+                                        67
+                                      </span>
+                                    </p>
+                                     
+                                    <p
+                                      class="dropdown-item country"
+                                    >
+                                      <i
+                                        class="fal fa-share"
+                                      />
+                                       
+                                      <span
+                                        class="count"
+                                      >
+                                        67
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -5842,9 +5979,60 @@ exports[`Homepage Component should render correctly 1`] = `
                             <div
                               class="col-3 ellipsis"
                             >
-                              <i
-                                class="fal fa-ellipsis-h"
-                              />
+                              <span
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                class="nav-link dropdown-toggle"
+                                data-toggle="dropdown"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                              >
+                                <i
+                                  class="fal fa-ellipsis-h"
+                                />
+                              </span>
+                               
+                              <div
+                                aria-labelledby="dropdownMenuReference"
+                                class="dropdown-menu bl-dropdown-menu"
+                              >
+                                <div
+                                  class="d-flex bl-dropdown-menu__countries"
+                                >
+                                  <div
+                                    class="favourite-countries"
+                                  >
+                                    <p
+                                      class="dropdown-item country"
+                                    >
+                                      <i
+                                        class="fal fa-comment-dots"
+                                      />
+                                       
+                                      <span
+                                        class="count"
+                                      >
+                                        67
+                                      </span>
+                                    </p>
+                                     
+                                    <p
+                                      class="dropdown-item country"
+                                    >
+                                      <i
+                                        class="fal fa-share"
+                                      />
+                                       
+                                      <span
+                                        class="count"
+                                      >
+                                        67
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -5995,9 +6183,60 @@ exports[`Homepage Component should render correctly 1`] = `
                             <div
                               class="col-3 ellipsis"
                             >
-                              <i
-                                class="fal fa-ellipsis-h"
-                              />
+                              <span
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                class="nav-link dropdown-toggle"
+                                data-toggle="dropdown"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                              >
+                                <i
+                                  class="fal fa-ellipsis-h"
+                                />
+                              </span>
+                               
+                              <div
+                                aria-labelledby="dropdownMenuReference"
+                                class="dropdown-menu bl-dropdown-menu"
+                              >
+                                <div
+                                  class="d-flex bl-dropdown-menu__countries"
+                                >
+                                  <div
+                                    class="favourite-countries"
+                                  >
+                                    <p
+                                      class="dropdown-item country"
+                                    >
+                                      <i
+                                        class="fal fa-comment-dots"
+                                      />
+                                       
+                                      <span
+                                        class="count"
+                                      >
+                                        67
+                                      </span>
+                                    </p>
+                                     
+                                    <p
+                                      class="dropdown-item country"
+                                    >
+                                      <i
+                                        class="fal fa-share"
+                                      />
+                                       
+                                      <span
+                                        class="count"
+                                      >
+                                        67
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -6026,8 +6265,7 @@ exports[`Homepage Component should render correctly 1`] = `
       </div>
        
       <div
-        class="col-sm-4 d-none d-md-inline-block
-        bl-homepage__content--publishedPosts__competition"
+        class="col-sm-4 d-none d-md-inline-block bl-homepage__content--publishedPosts__competition"
       >
         <div
           class="card contest-advert"
@@ -6038,19 +6276,17 @@ exports[`Homepage Component should render correctly 1`] = `
             <h1
               class="card-title text-capitalize"
             >
+              Photo Contest
               
-              Photo Contest 
               <br />
-               Competition
+              Competition
             
             </h1>
              
             <p
               class="card-text text-capitalize caption"
             >
-              
               'The story behind photos'
-            
             </p>
              
             <a
@@ -6058,9 +6294,7 @@ exports[`Homepage Component should render correctly 1`] = `
               href="#"
               role="button"
             >
-              
               Know more
-            
             </a>
           </div>
         </div>
@@ -6094,6 +6328,8 @@ exports[`Homepage Component should render correctly 1`] = `
                
               <span
                 class="text-capitalize"
+                data-toggle="modal"
+                href="#feedback-modal"
               >
                 feedback
               </span>
@@ -6103,13 +6339,133 @@ exports[`Homepage Component should render correctly 1`] = `
           <p
             class="row company-rights text-capitalize"
           >
-            
             2018 Bloverse. All Right Reserved
-          
           </p>
         </div>
       </div>
     </div>
+     
+    <main
+      id="bl-modal"
+    >
+      <div
+        aria-hidden="true"
+        aria-labelledby="customModal"
+        class="modal fade"
+        id="feedback-modal"
+        role="dialog"
+        tabindex="-1"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered"
+          role="document"
+        >
+          <div
+            class="modal-content"
+          >
+            <div
+              class="modal-header darkBackground"
+            >
+              <!---->
+               
+              <div>
+                <h6>
+                  <strong
+                    class="alt-title"
+                  >
+                    Send Us Some Feedback
+                  </strong>
+                </h6>
+                 
+                <h6
+                  class="mt-2 sub-title"
+                >
+                  Found a bug? Have a suggestion?. Fill out the form below and we'll take a look!
+                </h6>
+              </div>
+               
+              <button
+                aria-label="Close"
+                class="close"
+                data-dismiss="modal"
+                type="button"
+              >
+                <span
+                  aria-hidden="true"
+                >
+                  ×
+                </span>
+              </button>
+            </div>
+             
+            <div
+              class="modal-body"
+            >
+              <div
+                class="bl-modal-content"
+              >
+                <p>
+                  Enter your feedback here!
+                </p>
+                 
+                <textarea
+                  class="form-control mb-2 p-1"
+                />
+                 
+                <label
+                  class="ml-1 mr-3"
+                >
+                  <input
+                    name="feedback-type"
+                    type="radio"
+                  />
+                    Bug
+                </label>
+                 
+                <label
+                  class="mr-3"
+                >
+                  <input
+                    name="feedback-type"
+                    type="radio"
+                  />
+                    Comment
+                </label>
+                 
+                <label
+                  class="mr-3"
+                >
+                  <input
+                    name="feedback-type"
+                    type="radio"
+                  />
+                    Other
+                </label>
+              </div>
+            </div>
+             
+            <div
+              class="modal-footer"
+            >
+              <button
+                class="btn btn-outline-primary"
+                data-dismiss="modal"
+                type="button"
+              >
+                Close
+              </button>
+               
+              <button
+                class="btn btn-primary"
+                type="button"
+              >
+                Send Feedback
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 </main>
 `;

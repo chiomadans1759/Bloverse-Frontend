@@ -9,10 +9,13 @@
           Some quick example text to build on the card title and make up the bulk of the card's content.
           Some quick example text to build on the card title and make up the bulk of the card's content.
         </p>
-        <p class="recommendation-card--content__username">
-            <a class="btn btn-primary initials" href="#" role="button"></a>
-            <span class="font-weight-bold name">Johndoe</span>
-            <span class="time">1 min ago</span>
+        <p class="recommendation-card--content__username" v-if="type === 'consumer'">
+          <span class="time">1 min ago</span>
+        </p>
+        <p class="recommendation-card--content__username" v-else>
+          <a class="btn btn-primary initials" href="#" role="button"></a>
+          <span class="font-weight-bold name">Johndoe</span>
+          <span class="time">1 min ago</span>
         </p>
       </div>
       <div class="card-text row actions">
@@ -40,7 +43,31 @@
             </p>
           </div>
           <div class="col-3 ellipsis">
-            <i class="fal fa-ellipsis-h"></i>
+            <span
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fal fa-ellipsis-h"></i>
+            </span>
+            <div class="dropdown-menu bl-dropdown-menu" aria-labelledby="dropdownMenuReference">
+              <div class="d-flex bl-dropdown-menu__countries">
+                <div class="favourite-countries">
+                  <p class="dropdown-item country">
+                    <i class="fal fa-comment-dots"></i>
+                    <span class="count">67</span>
+                  </p>
+                  <p class="dropdown-item country">
+                    <i class="fal fa-share"></i>
+                    <span class="count">67</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -49,15 +76,20 @@
 </template>
 
 <script>
-import { Carousel, Slide } from 'vue-carousel';
+import { Carousel, Slide } from "vue-carousel";
 
 export default {
-  name: 'RecommendationCard',
+  name: "RecommendationCard",
+  props: {
+    type: {
+      type: String
+    }
+  },
   data() {
     return {
       likePost: false,
-      dislikePost: false,
-    }
+      dislikePost: false
+    };
   },
   components: { Carousel, Slide },
   methods: {
@@ -68,11 +100,11 @@ export default {
     toggleDislike() {
       this.dislikePost = !this.dislikePost;
       this.likePost = false;
-    },
+    }
   }
-}
+};
 </script>
 
 <style lang='scss' scoped>
-@import './RecommendationCard.scss';
+@import "./RecommendationCard.scss";
 </style>

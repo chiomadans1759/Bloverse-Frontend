@@ -210,6 +210,20 @@ nav {
   top: rem(45px);
 }
 
+#feeds-header {
+  .backlink {
+    margin: 0 rem(-5px);
+    color: #565656;
+    font-size: rem(16px);
+    .back-icon {
+      margin: rem(-6px) rem(10px);
+    }
+    .back-text {
+      margin: 0 rem(5px);
+    }
+  }
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .nav-logo {
@@ -319,6 +333,11 @@ nav {
   .dropdown-mobile-view {
     left: rem(472px);
     top: rem(65px);
+  }
+  #feeds-header {
+    .backlink {
+      margin: 0 rem(16px);
+    }
   }
 }
 

@@ -1,5 +1,7 @@
 <template>
-  <main id="bl-postcard" class="card bl-postcard">
+  <main id="bl-postcard" class="card bl-postcard"
+    :class="[{ hideCardBorder: hideCardBorder }]"
+  >
     <div class="card-body bl-postcard-body">
       <div class="card-title row title">
         <div class="col-9 row title--text">
@@ -9,7 +11,10 @@
             Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
             Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret</router-link>
           </p>
-          <p class="col-4 col-sm-3 username">
+          <p class="col-4 col-sm-3 username" v-if="customClass === 'consumer'">
+            <span class="time">1 min ago</span>
+          </p>
+          <p class="col-4 col-sm-3 username" v-else>
             <a class="btn btn-primary initials" href="#" role="button">SM</a>
             &nbsp;
             <span class="font-weight-normal name">Johndoe</span>
@@ -102,11 +107,16 @@
 </template>
 
 <script>
-import { transition } from 'vue';
 import feedCardImage from '../../assets/post-card-image.jpg';
 
 export default {
   name: 'PostCard',
+  props: {
+    hideCardBorder: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       feedCardImage,
@@ -115,7 +125,6 @@ export default {
       dislikePost: false,
     }
   },
-  components: { transition },
   methods: {
     toggleKeypoints() {
       this.showKeypoints = !this.showKeypoints;
@@ -128,11 +137,6 @@ export default {
       this.dislikePost = !this.dislikePost;
       this.likePost = false;
     }
-  },
-  computed: {
-    keypointToggleIcon() {
-      return this.showKeypoints ? 'fa-angle-down' : 'fa-angle-up';
-    },
   }
 }
 </script>

@@ -1,0 +1,2976 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Component should render correctly 1`] = `
+<div
+  class="container my-3 mb-5"
+>
+  <div
+    class="row"
+  >
+    <div
+      class="col-lg-5  d-none d-sm-block"
+    >
+      <div
+        class="col-lg-12 mr-2"
+      >
+        <main
+          class="card profile"
+        >
+          <img
+            alt="..."
+            class="card-img-top"
+            src="@/assets/Avatar.png"
+          />
+           
+          <div
+            class="profile-edit-icon d-flex justify-content-end p-3"
+          >
+            <i
+              class="fal fa-user-edit fa-2x"
+            />
+          </div>
+           
+          <div
+            class="avatar mx-4"
+          >
+            <img
+              alt="..."
+              class="profile-img rounded"
+              src="@/assets/Avatar2.png"
+            />
+             
+            <span
+              class="profile-name pl-3"
+            >
+              Johndoe
+            </span>
+          </div>
+           
+          <div
+            class="card-body profile-body"
+          >
+            <h5
+              class="card-title"
+            >
+              John Doe
+            </h5>
+             
+            <p>
+              <span
+                class="pr-2 pb-5"
+              >
+                <i
+                  class="fal fa-phone"
+                />
+              </span>
+               +234 000 000 0000
+    
+            </p>
+             
+            <p>
+              <span
+                class="pr-2 py-1"
+              >
+                <i
+                  class="fal fa-envelope"
+                />
+              </span>
+               email@bloverse.com
+    
+            </p>
+             
+            <p>
+              <span
+                class="pr-2"
+              >
+                <i
+                  class="fal fa-map-marker-alt"
+                />
+              </span>
+               Lagos, Nigeria
+    
+            </p>
+             
+            <div
+              class="py-4 profile-content"
+            >
+              <p
+                class="profile__text"
+              >
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+            </div>
+             
+            <div
+              class="follow d-flex justify-content-between"
+            >
+              <a
+                data-toggle="modal"
+                href="#following-modal"
+              >
+                Following
+              </a>
+               
+              <span
+                class="border rounded px-1 mr-2"
+                data-toggle="modal"
+                href="#following-modal"
+                id="number"
+              >
+                5
+              </span>
+            </div>
+          </div>
+           
+          <div
+            class="card-footer text-muted bg-white"
+          >
+            Member Since:
+    
+            <strong>
+              December, 2018
+            </strong>
+          </div>
+           
+          <main
+            id="bl-modal"
+          >
+            <div
+              aria-hidden="true"
+              aria-labelledby="customModal"
+              class="modal fade"
+              id="following-modal"
+              role="dialog"
+              tabindex="-1"
+            >
+              <div
+                class="modal-dialog modal-dialog-centered"
+                role="document"
+              >
+                <div
+                  class="modal-content"
+                >
+                  <div
+                    class="modal-header"
+                  >
+                    <h5
+                      class="modal-title"
+                      id="customModal"
+                    >
+                      Following
+                    </h5>
+                     
+                    <div>
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                     
+                    <button
+                      aria-label="Close"
+                      class="close"
+                      data-dismiss="modal"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                      >
+                        ×
+                      </span>
+                    </button>
+                  </div>
+                   
+                  <div
+                    class="modal-body"
+                  >
+                    <div
+                      class="bl-modal-content"
+                    >
+                      <div
+                        class="row align-items-center mt-2 mb-2"
+                      >
+                        <div
+                          class="col-3 col-md-2 d-flex justify-content-center"
+                        >
+                          <img
+                            class="user-image img-fluid"
+                            src="@/assets/smiling-author.jpg"
+                          />
+                        </div>
+                         
+                        <div
+                          class="col-9 col-sm-9 col-md-6 pl-0"
+                        >
+                          <p
+                            class="username"
+                          >
+                            
+            JohnDoe
+            
+                            <span
+                              class="sub-span point d-inline d-md-none"
+                            >
+                              <a
+                                href="#"
+                              >
+                                Unfollow
+                              </a>
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="sub-text"
+                          >
+                            <span
+                              class="sub-span"
+                            >
+                              24
+                            </span>
+                             Followers
+            
+                            <span
+                              class="sub-span point"
+                            >
+                              234
+                            </span>
+                             Articles
+          
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="d-none d-sm-none col-md-4 d-md-flex justify-content-end"
+                        >
+                          <button
+                            class="btn btn-outline-primary"
+                            type="button"
+                          >
+                            Following
+                          </button>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="row align-items-center mt-2 mb-2"
+                      >
+                        <div
+                          class="col-3 col-md-2 d-flex justify-content-center"
+                        >
+                          <img
+                            class="user-image img-fluid"
+                            src="@/assets/smiling-author.jpg"
+                          />
+                        </div>
+                         
+                        <div
+                          class="col-9 col-sm-9 col-md-6 pl-0"
+                        >
+                          <p
+                            class="username"
+                          >
+                            
+            JohnDoe
+            
+                            <span
+                              class="sub-span point d-inline d-md-none"
+                            >
+                              <a
+                                href="#"
+                              >
+                                Unfollow
+                              </a>
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="sub-text"
+                          >
+                            <span
+                              class="sub-span"
+                            >
+                              24
+                            </span>
+                             Followers
+            
+                            <span
+                              class="sub-span point"
+                            >
+                              234
+                            </span>
+                             Articles
+          
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="d-none d-sm-none col-md-4 d-md-flex justify-content-end"
+                        >
+                          <button
+                            class="btn btn-outline-primary"
+                            type="button"
+                          >
+                            Following
+                          </button>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="row align-items-center mt-2 mb-2"
+                      >
+                        <div
+                          class="col-3 col-md-2 d-flex justify-content-center"
+                        >
+                          <img
+                            class="user-image img-fluid"
+                            src="@/assets/smiling-author.jpg"
+                          />
+                        </div>
+                         
+                        <div
+                          class="col-9 col-sm-9 col-md-6 pl-0"
+                        >
+                          <p
+                            class="username"
+                          >
+                            
+            JohnDoe
+            
+                            <span
+                              class="sub-span point d-inline d-md-none"
+                            >
+                              <a
+                                href="#"
+                              >
+                                Unfollow
+                              </a>
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="sub-text"
+                          >
+                            <span
+                              class="sub-span"
+                            >
+                              24
+                            </span>
+                             Followers
+            
+                            <span
+                              class="sub-span point"
+                            >
+                              234
+                            </span>
+                             Articles
+          
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="d-none d-sm-none col-md-4 d-md-flex justify-content-end"
+                        >
+                          <button
+                            class="btn btn-outline-primary"
+                            type="button"
+                          >
+                            Following
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+          </main>
+        </main>
+      </div>
+       
+      <div
+        class="col-lg-12 mt-2"
+      >
+        <main
+          class="card country-card p-3"
+        >
+          <div
+            class="header d-flex justify-content-between "
+          >
+            <h5>
+              <strong>
+                Country
+              </strong>
+            </h5>
+             
+            <span
+              class="icon"
+            >
+              <i
+                class="fal fa-edit icon mr-2"
+              />
+            </span>
+          </div>
+           
+          <div
+            class="mt-1"
+          >
+            <p
+              class="country-title"
+            >
+              Lorem ipsum dolor sit amet
+            </p>
+             
+            <div
+              class="country-list d-flex flex-wrap mt-2"
+            >
+              <div
+                class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
+              >
+                <img
+                  alt="..."
+                  class="country-image rounded-circle "
+                  src="@/assets/mexico.svg"
+                />
+                 
+                <span
+                  class="pl-2"
+                >
+                  Mexico
+                </span>
+              </div>
+               
+              <div
+                class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
+              >
+                <img
+                  alt="..."
+                  class="country-image rounded-circle"
+                  src="@/assets/mexico.svg"
+                />
+                 
+                <span
+                  class="pl-2"
+                >
+                  France
+                </span>
+              </div>
+               
+              <div
+                class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
+              >
+                <img
+                  alt="..."
+                  class="country-image rounded-circle"
+                  src="@/assets/mexico.svg"
+                />
+                 
+                <span
+                  class="pl-2"
+                >
+                  Ghana
+                </span>
+              </div>
+               
+              <div
+                class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
+              >
+                <img
+                  alt="..."
+                  class="country-image rounded-circle"
+                  src="@/assets/mexico.svg"
+                />
+                 
+                <span
+                  class="pl-2"
+                >
+                  Kenya
+                </span>
+              </div>
+               
+              <div
+                class="country border rounded p-2 my-2 mr-2 d-flex justify-content-center align-items-center"
+              >
+                <img
+                  alt="..."
+                  class="country-image rounded-circle"
+                  src="@/assets/mexico.svg"
+                />
+                 
+                <span
+                  class="pl-2"
+                >
+                  Nigeria
+                </span>
+              </div>
+               
+              <div
+                class="country border rounded p-2 my-2 mr-2 d-flex justify-content-center align-items-center"
+              >
+                <img
+                  alt="..."
+                  class="country-image rounded-circle"
+                  src="@/assets/mexico.svg"
+                />
+                 
+                <span
+                  class="pl-2"
+                >
+                  UK
+                </span>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+       
+      <div
+        class="col-lg-12 mt-2"
+      >
+        <main
+          class="card category-card p-3"
+        >
+          <div
+            class="header d-flex justify-content-between "
+          >
+            <h5>
+              <strong>
+                Interest
+              </strong>
+            </h5>
+             
+            <span
+              class="edit-icon"
+            >
+              <i
+                class="fal fa-edit mr-2"
+              />
+            </span>
+          </div>
+           
+          <div
+            class="mt-1"
+          >
+            <p
+              class="category-title"
+            >
+              Lorem ipsum dolor sit amet
+            </p>
+             
+            <div
+              class="category-list d-flex flex-wrap mt-2"
+            >
+              <div
+                class="category border rounded my-1 mr-2 p-2"
+              >
+                <span>
+                  Category One
+                </span>
+              </div>
+               
+              <div
+                class="category border rounded my-1 mr-2 p-2"
+              >
+                <span>
+                  Category Two
+                </span>
+              </div>
+               
+              <div
+                class="category border rounded my-1 mr-2 p-2"
+              >
+                <span>
+                  Category Three
+                </span>
+              </div>
+               
+              <div
+                class="category border rounded my-1 mr-2 p-2"
+              >
+                <span>
+                  Category Four
+                </span>
+              </div>
+               
+              <div
+                class="category border rounded my-1 mr-2 p-2"
+              >
+                <span>
+                  Category Five
+                </span>
+              </div>
+               
+              <div
+                class="category border rounded my-1 mr-2 p-2"
+              >
+                <span>
+                  Category Six
+                </span>
+              </div>
+               
+              <div
+                class="category border rounded my-1 mr-2 p-2"
+              >
+                <span>
+                  Category Seven
+                </span>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+       
+      <div
+        class="col-lg-12 mt-2"
+      >
+        <div
+          class="card contest-advert bg-white"
+        >
+          <div
+            class="card-img-overlay"
+          >
+            <h3
+              class="card-title text-capitalize"
+            >
+              
+              Become a Content Creator
+            
+            </h3>
+             
+            <p
+              class="card-text text-capitalize caption"
+            >
+              
+              Publish your article to the world
+            
+            </p>
+             
+            <span
+              class="d-flex justify-content-between mb-0"
+            >
+              <a
+                class="mt-4"
+                href=""
+              >
+                Know more
+              </a>
+               
+              <a
+                class="btn know-more-btn"
+                href="#"
+                role="button"
+              >
+                
+                Apply
+              
+              </a>
+            </span>
+          </div>
+        </div>
+         
+        <div
+          class="bl-footer"
+        >
+          <div
+            class="row company-name d-flex justify-content-center align-items-center"
+          >
+            <div
+              class="col-sm-3 text-lowercase"
+            >
+              bloverse
+            </div>
+             
+            <p
+              class="col-sm-9"
+            >
+              <span
+                class="text-capitalize dots"
+              >
+                terms
+              </span>
+               
+              <span
+                class="text-capitalize dots"
+              >
+                privacy
+              </span>
+               
+              <span
+                class="text-capitalize"
+              >
+                feedback
+              </span>
+            </p>
+          </div>
+           
+          <p
+            class="row company-rights text-capitalize"
+          >
+            
+            2018 Bloverse. All Right Reserved
+          
+          </p>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="d-inline-flex d-sm-none initials"
+    >
+      <a
+        class="initials-link"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+      >
+        
+        SM
+      
+      </a>
+       
+      <i
+        class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"
+      />
+    </div>
+     
+    <div
+      class="col-lg-7 border right-content bg-white bl-content"
+    >
+      <div
+        class="border-bottom"
+      >
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-white
+          justify-content-center profile-navbar"
+        >
+          <div>
+            <ul
+              class="navbar-nav flex-row"
+            >
+              <li
+                class="nav-item active mr-4 py-2"
+              >
+                <a
+                  class="nav-link"
+                >
+                  
+                  Read Later
+                  
+                  <span
+                    class="number--active border rounded px-1 ml-2"
+                  >
+                    5
+                  </span>
+                   
+                  <span
+                    class="sr-only"
+                  >
+                    (current)
+                  </span>
+                </a>
+              </li>
+               
+              <li
+                class="nav-item py-2"
+              >
+                <a
+                  class="nav-link"
+                >
+                  
+                  Previously Read
+                  
+                  <span
+                    class="number border rounded px-1 ml-2"
+                  >
+                    13
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+       
+      <div
+        class="border-bottom mx-4 d-none d-sm-block"
+      >
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-white
+          justify-content-end profile-navbar"
+        >
+          <div>
+            <ul
+              class="navbar-nav layout-nav"
+            >
+              <li
+                class="nav-item mr-4 py-2"
+              >
+                <span
+                  class="nav-link"
+                  to="#"
+                >
+                  <span
+                    style="display: none;"
+                  >
+                    <i
+                      class="fal fa-th-list mr-1 icon--active"
+                    />
+                  </span>
+                   
+                  <span>
+                    <i
+                      class="fal fa-th-list mr-1 icon"
+                    />
+                  </span>
+                  
+                   List 
+                  <span
+                    class="sr-only"
+                  >
+                    (current)
+                  </span>
+                </span>
+              </li>
+               
+              <li
+                class="nav-item mr-4 py-2 active"
+              >
+                <span
+                  class="nav-link"
+                  to="#"
+                >
+                  <span>
+                    <i
+                      class="fal fa-th-large mr-1 icon--active"
+                    />
+                  </span>
+                   
+                  <span
+                    style="display: none;"
+                  >
+                    <i
+                      class="fal fa-th-large mr-1 icon"
+                    />
+                  </span>
+                  
+                   Grid 
+                </span>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+       
+      <div
+        class="row m-4 p-2 d-none d-sm-flex"
+      >
+        <div
+          class="col-lg-6 my-2"
+        >
+          <main
+            class="card recommendation-card"
+          >
+            <img
+              alt="..."
+              class="card-img-top"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-body"
+            >
+              <h5
+                class="card-title"
+              >
+                Category
+              </h5>
+               
+              <div
+                class="card-text recommendation-card--content"
+              >
+                <p
+                  class="font-weight-bold recommendation-card--content__text"
+                >
+                  
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+      
+                </p>
+                 
+                <p
+                  class="recommendation-card--content__username"
+                >
+                  <span
+                    class="time"
+                  >
+                    1 min ago
+                  </span>
+                </p>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-5 row others"
+                >
+                  <div
+                    class="col-9 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 ellipsis"
+                  >
+                    <span
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                    >
+                      <i
+                        class="fal fa-ellipsis-h"
+                      />
+                    </span>
+                     
+                    <div
+                      aria-labelledby="dropdownMenuReference"
+                      class="dropdown-menu bl-dropdown-menu"
+                    >
+                      <div
+                        class="d-flex bl-dropdown-menu__countries"
+                      >
+                        <div
+                          class="favourite-countries"
+                        >
+                          <p
+                            class="dropdown-item country"
+                          >
+                            <i
+                              class="fal fa-comment-dots"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="dropdown-item country"
+                          >
+                            <i
+                              class="fal fa-share"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="col-lg-6 my-2"
+        >
+          <main
+            class="card recommendation-card"
+          >
+            <img
+              alt="..."
+              class="card-img-top"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-body"
+            >
+              <h5
+                class="card-title"
+              >
+                Category
+              </h5>
+               
+              <div
+                class="card-text recommendation-card--content"
+              >
+                <p
+                  class="font-weight-bold recommendation-card--content__text"
+                >
+                  
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+      
+                </p>
+                 
+                <p
+                  class="recommendation-card--content__username"
+                >
+                  <span
+                    class="time"
+                  >
+                    1 min ago
+                  </span>
+                </p>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-5 row others"
+                >
+                  <div
+                    class="col-9 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 ellipsis"
+                  >
+                    <span
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                    >
+                      <i
+                        class="fal fa-ellipsis-h"
+                      />
+                    </span>
+                     
+                    <div
+                      aria-labelledby="dropdownMenuReference"
+                      class="dropdown-menu bl-dropdown-menu"
+                    >
+                      <div
+                        class="d-flex bl-dropdown-menu__countries"
+                      >
+                        <div
+                          class="favourite-countries"
+                        >
+                          <p
+                            class="dropdown-item country"
+                          >
+                            <i
+                              class="fal fa-comment-dots"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="dropdown-item country"
+                          >
+                            <i
+                              class="fal fa-share"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="col-lg-6 my-2"
+        >
+          <main
+            class="card recommendation-card"
+          >
+            <img
+              alt="..."
+              class="card-img-top"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-body"
+            >
+              <h5
+                class="card-title"
+              >
+                Category
+              </h5>
+               
+              <div
+                class="card-text recommendation-card--content"
+              >
+                <p
+                  class="font-weight-bold recommendation-card--content__text"
+                >
+                  
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+      
+                </p>
+                 
+                <p
+                  class="recommendation-card--content__username"
+                >
+                  <span
+                    class="time"
+                  >
+                    1 min ago
+                  </span>
+                </p>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-5 row others"
+                >
+                  <div
+                    class="col-9 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 ellipsis"
+                  >
+                    <span
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                    >
+                      <i
+                        class="fal fa-ellipsis-h"
+                      />
+                    </span>
+                     
+                    <div
+                      aria-labelledby="dropdownMenuReference"
+                      class="dropdown-menu bl-dropdown-menu"
+                    >
+                      <div
+                        class="d-flex bl-dropdown-menu__countries"
+                      >
+                        <div
+                          class="favourite-countries"
+                        >
+                          <p
+                            class="dropdown-item country"
+                          >
+                            <i
+                              class="fal fa-comment-dots"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="dropdown-item country"
+                          >
+                            <i
+                              class="fal fa-share"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="col-lg-6 my-2"
+        >
+          <main
+            class="card recommendation-card"
+          >
+            <img
+              alt="..."
+              class="card-img-top"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-body"
+            >
+              <h5
+                class="card-title"
+              >
+                Category
+              </h5>
+               
+              <div
+                class="card-text recommendation-card--content"
+              >
+                <p
+                  class="font-weight-bold recommendation-card--content__text"
+                >
+                  
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+      
+                </p>
+                 
+                <p
+                  class="recommendation-card--content__username"
+                >
+                  <span
+                    class="time"
+                  >
+                    1 min ago
+                  </span>
+                </p>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-5 row others"
+                >
+                  <div
+                    class="col-9 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 ellipsis"
+                  >
+                    <span
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                    >
+                      <i
+                        class="fal fa-ellipsis-h"
+                      />
+                    </span>
+                     
+                    <div
+                      aria-labelledby="dropdownMenuReference"
+                      class="dropdown-menu bl-dropdown-menu"
+                    >
+                      <div
+                        class="d-flex bl-dropdown-menu__countries"
+                      >
+                        <div
+                          class="favourite-countries"
+                        >
+                          <p
+                            class="dropdown-item country"
+                          >
+                            <i
+                              class="fal fa-comment-dots"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="dropdown-item country"
+                          >
+                            <i
+                              class="fal fa-share"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="col-lg-6 my-2"
+        >
+          <main
+            class="card recommendation-card"
+          >
+            <img
+              alt="..."
+              class="card-img-top"
+              src="@/assets/photo-4.jpg"
+            />
+             
+            <div
+              class="card-body"
+            >
+              <h5
+                class="card-title"
+              >
+                Category
+              </h5>
+               
+              <div
+                class="card-text recommendation-card--content"
+              >
+                <p
+                  class="font-weight-bold recommendation-card--content__text"
+                >
+                  
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+      
+                </p>
+                 
+                <p
+                  class="recommendation-card--content__username"
+                >
+                  <span
+                    class="time"
+                  >
+                    1 min ago
+                  </span>
+                </p>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-5 row others"
+                >
+                  <div
+                    class="col-9 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 ellipsis"
+                  >
+                    <span
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                    >
+                      <i
+                        class="fal fa-ellipsis-h"
+                      />
+                    </span>
+                     
+                    <div
+                      aria-labelledby="dropdownMenuReference"
+                      class="dropdown-menu bl-dropdown-menu"
+                    >
+                      <div
+                        class="d-flex bl-dropdown-menu__countries"
+                      >
+                        <div
+                          class="favourite-countries"
+                        >
+                          <p
+                            class="dropdown-item country"
+                          >
+                            <i
+                              class="fal fa-comment-dots"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="dropdown-item country"
+                          >
+                            <i
+                              class="fal fa-share"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <div
+        class="row d-sm-none"
+      >
+        <main
+          class="container bl-postcards"
+          id="bl-postcards"
+        >
+          <main
+            class="card bl-postcard hideCardBorder"
+            id="bl-postcard"
+          >
+            <div
+              class="card-body bl-postcard-body"
+            >
+              <div
+                class="card-title row title"
+              >
+                <div
+                  class="col-9 row title--text"
+                >
+                  <span
+                    class="col-3"
+                  >
+                    category
+                  </span>
+                   
+                  <p
+                    class="col-5 col-sm-6 font-weight-bold description"
+                  >
+                    <a>
+                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="col-4 col-sm-3 username"
+                  >
+                    <a
+                      class="btn btn-primary initials"
+                      href="#"
+                      role="button"
+                    >
+                      SM
+                    </a>
+                    
+           
+          
+                    <span
+                      class="font-weight-normal name"
+                    >
+                      Johndoe
+                    </span>
+                    
+           
+          
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="col-3 title--image"
+                  style="background-image: url(test-file-stub);"
+                />
+              </div>
+               
+              <div
+                class="card-text keypoints"
+                style="display: none;"
+              >
+                <span
+                  class="font-weight-bold text-capitalize"
+                >
+                  keypoint
+                </span>
+                 
+                <ul
+                  class="keypoints--lists"
+                >
+                  <li>
+                    Phasellus iaculis nequeghjhjjkjjkjkhjk
+                  </li>
+                   
+                  <li>
+                    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                  </li>
+                   
+                  <li>
+                    Vestibulum laoreet porttitor sem
+                  </li>
+                </ul>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                >
+                  <div
+                    class="col-7 col-sm-4 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 col-sm-7 comments"
+                  >
+                    <p
+                      class="coment"
+                    >
+                      <i
+                        class="fal fa-comment-dots"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        67
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="share"
+                    >
+                      <i
+                        class="fal fa-share"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <div
+                      class="ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                    style="display: none;"
+                  >
+                    <i
+                      class="fal fa-angle-up"
+                    />
+                  </div>
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                  >
+                    <i
+                      class="fal fa-angle-down"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+           
+          <main
+            class="card bl-postcard hideCardBorder"
+            id="bl-postcard"
+          >
+            <div
+              class="card-body bl-postcard-body"
+            >
+              <div
+                class="card-title row title"
+              >
+                <div
+                  class="col-9 row title--text"
+                >
+                  <span
+                    class="col-3"
+                  >
+                    category
+                  </span>
+                   
+                  <p
+                    class="col-5 col-sm-6 font-weight-bold description"
+                  >
+                    <a>
+                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="col-4 col-sm-3 username"
+                  >
+                    <a
+                      class="btn btn-primary initials"
+                      href="#"
+                      role="button"
+                    >
+                      SM
+                    </a>
+                    
+           
+          
+                    <span
+                      class="font-weight-normal name"
+                    >
+                      Johndoe
+                    </span>
+                    
+           
+          
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="col-3 title--image"
+                  style="background-image: url(test-file-stub);"
+                />
+              </div>
+               
+              <div
+                class="card-text keypoints"
+                style="display: none;"
+              >
+                <span
+                  class="font-weight-bold text-capitalize"
+                >
+                  keypoint
+                </span>
+                 
+                <ul
+                  class="keypoints--lists"
+                >
+                  <li>
+                    Phasellus iaculis nequeghjhjjkjjkjkhjk
+                  </li>
+                   
+                  <li>
+                    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                  </li>
+                   
+                  <li>
+                    Vestibulum laoreet porttitor sem
+                  </li>
+                </ul>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                >
+                  <div
+                    class="col-7 col-sm-4 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 col-sm-7 comments"
+                  >
+                    <p
+                      class="coment"
+                    >
+                      <i
+                        class="fal fa-comment-dots"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        67
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="share"
+                    >
+                      <i
+                        class="fal fa-share"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <div
+                      class="ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                    style="display: none;"
+                  >
+                    <i
+                      class="fal fa-angle-up"
+                    />
+                  </div>
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                  >
+                    <i
+                      class="fal fa-angle-down"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+           
+          <main
+            class="card bl-postcard hideCardBorder"
+            id="bl-postcard"
+          >
+            <div
+              class="card-body bl-postcard-body"
+            >
+              <div
+                class="card-title row title"
+              >
+                <div
+                  class="col-9 row title--text"
+                >
+                  <span
+                    class="col-3"
+                  >
+                    category
+                  </span>
+                   
+                  <p
+                    class="col-5 col-sm-6 font-weight-bold description"
+                  >
+                    <a>
+                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="col-4 col-sm-3 username"
+                  >
+                    <a
+                      class="btn btn-primary initials"
+                      href="#"
+                      role="button"
+                    >
+                      SM
+                    </a>
+                    
+           
+          
+                    <span
+                      class="font-weight-normal name"
+                    >
+                      Johndoe
+                    </span>
+                    
+           
+          
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="col-3 title--image"
+                  style="background-image: url(test-file-stub);"
+                />
+              </div>
+               
+              <div
+                class="card-text keypoints"
+                style="display: none;"
+              >
+                <span
+                  class="font-weight-bold text-capitalize"
+                >
+                  keypoint
+                </span>
+                 
+                <ul
+                  class="keypoints--lists"
+                >
+                  <li>
+                    Phasellus iaculis nequeghjhjjkjjkjkhjk
+                  </li>
+                   
+                  <li>
+                    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                  </li>
+                   
+                  <li>
+                    Vestibulum laoreet porttitor sem
+                  </li>
+                </ul>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                >
+                  <div
+                    class="col-7 col-sm-4 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 col-sm-7 comments"
+                  >
+                    <p
+                      class="coment"
+                    >
+                      <i
+                        class="fal fa-comment-dots"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        67
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="share"
+                    >
+                      <i
+                        class="fal fa-share"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <div
+                      class="ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                    style="display: none;"
+                  >
+                    <i
+                      class="fal fa-angle-up"
+                    />
+                  </div>
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                  >
+                    <i
+                      class="fal fa-angle-down"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+           
+          <main
+            class="card bl-postcard hideCardBorder"
+            id="bl-postcard"
+          >
+            <div
+              class="card-body bl-postcard-body"
+            >
+              <div
+                class="card-title row title"
+              >
+                <div
+                  class="col-9 row title--text"
+                >
+                  <span
+                    class="col-3"
+                  >
+                    category
+                  </span>
+                   
+                  <p
+                    class="col-5 col-sm-6 font-weight-bold description"
+                  >
+                    <a>
+                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="col-4 col-sm-3 username"
+                  >
+                    <a
+                      class="btn btn-primary initials"
+                      href="#"
+                      role="button"
+                    >
+                      SM
+                    </a>
+                    
+           
+          
+                    <span
+                      class="font-weight-normal name"
+                    >
+                      Johndoe
+                    </span>
+                    
+           
+          
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="col-3 title--image"
+                  style="background-image: url(test-file-stub);"
+                />
+              </div>
+               
+              <div
+                class="card-text keypoints"
+                style="display: none;"
+              >
+                <span
+                  class="font-weight-bold text-capitalize"
+                >
+                  keypoint
+                </span>
+                 
+                <ul
+                  class="keypoints--lists"
+                >
+                  <li>
+                    Phasellus iaculis nequeghjhjjkjjkjkhjk
+                  </li>
+                   
+                  <li>
+                    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                  </li>
+                   
+                  <li>
+                    Vestibulum laoreet porttitor sem
+                  </li>
+                </ul>
+              </div>
+               
+              <div
+                class="card-text row actions"
+              >
+                <div
+                  class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                >
+                  <i
+                    class="fal fa-eye"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    123
+                  </span>
+                </div>
+                 
+                <div
+                  class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                >
+                  <div
+                    class="col-7 col-sm-4 likes"
+                  >
+                    <p
+                      class="thumbs-up"
+                    >
+                      <i
+                        class="fal fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-up"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-up"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        18
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                    >
+                      <i
+                        class="fal fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="thumbs-down"
+                      style="display: none;"
+                    >
+                      <i
+                        class="fas fa-thumbs-down"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 col-sm-7 comments"
+                  >
+                    <p
+                      class="coment"
+                    >
+                      <i
+                        class="fal fa-comment-dots"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        67
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="share"
+                    >
+                      <i
+                        class="fal fa-share"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        1
+                      </span>
+                    </p>
+                     
+                    <div
+                      class="ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                    style="display: none;"
+                  >
+                    <i
+                      class="fal fa-angle-up"
+                    />
+                  </div>
+                   
+                  <div
+                    class="col-2 col-sm-1 toggle-keypoints"
+                  >
+                    <i
+                      class="fal fa-angle-down"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>
+`;

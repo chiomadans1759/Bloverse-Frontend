@@ -30,7 +30,6 @@ exports[`Settings Page should render correctly 1`] = `
            
           <a
             class="text-capitalize"
-            href="#"
           >
             edit profile
           </a>
@@ -43,7 +42,6 @@ exports[`Settings Page should render correctly 1`] = `
            
           <a
             class="text-capitalize mt-3"
-            href="#"
           >
             change password
           </a>
@@ -192,12 +190,11 @@ exports[`Settings Page should render correctly 1`] = `
             </div>
              
             <div>
-              <button
+              <a
                 class="btn btn-sm btn-primary text-capitalize"
-                type="button"
               >
                 apply
-              </button>
+              </a>
             </div>
           </div>
         </div>

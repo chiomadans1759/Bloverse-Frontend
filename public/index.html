@@ -59,6 +59,21 @@
   </script>
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
+
+    function hideTawkBot() {
+      var iFrames = document.querySelectorAll('[title="chat widget"]');
+      iFrames.forEach((iFrame) => {
+        iFrame.style.display = "none";
+      });
+    }
+
+    function showTawkBot() {
+      var iFrames = document.querySelectorAll('[title="chat widget"]');
+      iFrames.forEach((iFrame) => {
+        iFrame.style.display = "block";
+      });
+    }
+
     var Tawk_API = Tawk_API || {},
       Tawk_LoadStart = new Date();
     (function () {

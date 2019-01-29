@@ -32,6 +32,9 @@ import Homepage from '../src/views/general/Home/Homepage.vue';
 import SigninPage from '../src/views/general/Signin/SigninPage.vue';
 import SignupPage from '../src/views/consumers/SignUp/SignUpPage.vue';
 import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vue';
+import ChangePassword from '../src/views/consumers/ChangePassword/ChangePassword.vue';
+import Profile from '../src/views/consumers/Profile/ProfilePage.vue';
+import EditProfile from '../src/views/consumers/EditProfile/EditProfilePage';
 
 const routes = [
   {
@@ -43,7 +46,8 @@ const routes = [
       { path: '/about', component: AboutUs , name:"about"},
       { path: '/terms-and-conditions', component: Terms},
       { path: '/privacy-policies', component: Privacy},
-      { path: '/settings', component: Settings}
+      { path: '/settings', component: Settings},
+      { path: '/profile', component: Profile},
     ]
   },
 
@@ -61,6 +65,10 @@ const routes = [
   { path: '/register', component: SignupPage},
 
   { path: '/newpassword', component: NewPasswordPage},
+
+  { path: "/changepassword", component: ChangePassword },
+
+  { path: '/edit/profile', component: EditProfile },
 
   {
     path: '/admin', component: BlankBase,
