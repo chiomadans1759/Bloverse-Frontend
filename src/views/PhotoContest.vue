@@ -40,10 +40,14 @@
               <h1 class="title">How to enter:</h1>
               <ol>
                 <li>
-                  <router-link to="/creators">Apply</router-link>to be a content creator
+                  <router-link to="/creators">Apply</router-link>as a content creator
                 </li>
-                <li>Submit the lifestyle photo and the story behind it as a published post on bloverse</li>
-                <li>Share your article on instagram, facebook and twitter.</li>
+                <li>Submit ‘Story Behind The Photo’ post</li>
+                <li>Share on IG, FB, Twitter (take a screenshot of your article and upload to your IG account, put link in post comments or Bio)</li>
+                <li>Include hashtags #JointheBloverse #Bloverse #bloverse{country} e.g #bloverseNigeria</li>
+                <li>Tag our official handle while you are sharing @bloverse on IG and FB, and @bloverse_world on Twitter</li>
+                <li>Tag three other content creators while sharing</li>
+                <li>Follow us on social media (@bloverse on IG, @bloverse_world on twitter, and @bloverse on FB)</li>
               </ol>
             </div>
           </div>

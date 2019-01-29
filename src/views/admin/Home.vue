@@ -18,37 +18,39 @@
     <div id="admin-body">
       <Row type="flex" justify="space-around" style="padding:20px; margin:20px">
         <Col span="6" class="status">
-          <a href="#">
-            <Card :border="true">
-              <p slot="title" style="font-size: 25px; color: #5b6270">TOTAL</p>
-              <p style="padding: 5px; color: blue; font-size: 40px;">
-                <b>{{stats.total}}</b>
-              </p>
-            </Card>
-          </a>
+          <Card :border="true">
+            <p slot="title" style="font-size: 25px; color: #5b6270">TOTAL</p>
+            <p style="padding: 5px; color: blue; font-size: 40px;">
+              <b>{{stats.total}}</b>
+            </p>
+          </Card>
         </Col>
-        <Col span="6" class="status">
-          <a href="#">
-            <Card shodow>
-              <p slot="title" style="font-size: 25px; color: #5b6270">ACCEPTED</p>
-              <p style="padding: 5px; color: blue; font-size: 40px;">
-                <b>{{stats.accepted}}</b>
-              </p>
-            </Card>
-          </a>
+        <Col span="6" class="status" @click="selectedCategory = 'pending'">
+          <Card :border="true">
+            <p slot="title" style="font-size: 25px; color: #5b6270">PENDING</p>
+            <p style="padding: 5px; color: blue; font-size: 40px;">
+              <b>{{stats.pending}}</b>
+            </p>
+          </Card>
         </Col>
-        <Col span="6" class="status">
-          <a href="#">
-            <Card :bordered="true">
-              <p slot="title" style="font-size: 25px; color: #5b6270">REJECTED</p>
-              <p style="padding: 5px; color: blue; font-size: 40px;">
-                <b>{{stats.rejected}}</b>
-              </p>
-            </Card>
-          </a>
+        <Col span="6" class="status" @click="selectedCategory = 'accepted'">
+          <Card shodow>
+            <p slot="title" style="font-size: 25px; color: #5b6270">ACCEPTED</p>
+            <p style="padding: 5px; color: blue; font-size: 40px;">
+              <b>{{stats.accepted}}</b>
+            </p>
+          </Card>
+        </Col>
+        <Col span="6" class="status" @click="selectedCategory = 'rejected'">
+          <Card :bordered="true">
+            <p slot="title" style="font-size: 25px; color: #5b6270">REJECTED</p>
+            <p style="padding: 5px; color: blue; font-size: 40px;">
+              <b>{{stats.rejected}}</b>
+            </p>
+          </Card>
         </Col>
       </Row>
-      <DisplayApplicants></DisplayApplicants>
+      <DisplayApplicants @finishedProcess="getApplicantsAndSetData" :tableData="selectedCategoryData"></DisplayApplicants>
     </div>
   </div>
 </template>
@@ -61,7 +63,9 @@ import DisplayApplicants from "../../components/DisplayApplicantsTable.vue";
 export default {
   data() {
     return {
-      ready: false
+      ready: false,
+      selectedCategory: 'pending',
+      selectedCategoryData: []
     };
   },
   components: {
@@ -75,25 +79,50 @@ export default {
   },
   computed: {
     stats: function() {
-      let total, accepted, rejected;
+      let total, accepted, rejected, pending;
 
       accepted = this.acceptedApplicants.length;
       rejected = this.rejectedApplicants.length;
-      total = this.general.applicants.length;
+      pending = this.pendingApplicants.length;
 
-      return { accepted, rejected, total };
+      total = accepted + rejected + pending;
+
+      return { accepted, rejected, pending, total};
     },
     ...mapState(["general"]),
-    ...mapGetters(["acceptedApplicants", "rejectedApplicants"])
+    ...mapGetters(["acceptedApplicants", "rejectedApplicants", "pendingApplicants"])
+  },
+  watch: {
+    selectedCategory(val){
+      this.getDataForCategory(val)
+    }
   },
   methods: {
-    ...mapActions(["getAllApplicants", "clearSession"]),
+    ...mapActions(["clearSession", "getAllApplicants"]),
+    getDataForCategory(category){
+      //gets data of applicants for the current category
+      switch(category){
+      case 'pending':
+        this.selectedCategoryData = this.pendingApplicants;
+        break;
+      case 'accepted':
+        this.selectedCategoryData = this.acceptedApplicants;
+        break;
+      case 'rejected':
+        this.selectedCategoryData = this.rejectedApplicants;
+        break;
+      }
+    },
+    async getApplicantsAndSetData(){
+      await this.getAllApplicants();
+      this.getDataForCategory(this.selectedCategory)
+    },
     logOut() {
       if (this.clearSession()) this.$router.push("/admin/login");
     }
   },
   async created() {
-    await this.getAllApplicants();
+    await this.getApplicantsAndSetData();
   }
 };
 </script>
@@ -103,6 +132,7 @@ export default {
   min-height: 150px;
   padding: 20px;
   text-align: center;
+  cursor: pointer;
 }
 
 body {

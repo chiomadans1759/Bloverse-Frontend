@@ -33,7 +33,7 @@ export default {
   actions: {
     async setGeneralData({ commit }) {
       let response, categories, countries;
-
+      commit('setLoading', true);
       response = await Api.get('categories/');
 
       switch (response.statusCode) {
@@ -65,6 +65,7 @@ export default {
         })
         commit('setCountries', countries);
         commit('setCategories', categories);
+        commit('setLoading', false);
         return true;
       }
       return false;
@@ -250,7 +251,7 @@ export default {
       return state.applicants.filter(applicant => applicant.status === 2);
     },
     pendingApplicants(state) {
-      // Filter pending applicants
+      // Filter pending applicants, get other applicants except young voices
       return state.applicants.filter(applicant => applicant.status === 1);
     },
     rejectedApplicants(state) {

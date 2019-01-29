@@ -56,7 +56,7 @@
 <script>
 import Vue from "vue";
 import { Row, Col, Table, Input, Page, Select, Option, Button } from "iview";
-import { mapState, mapGetters, mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 import TableExpand from "./JournalistMoreDetails.vue";
 import SelectStatus from "./SelectJournalistStatus.vue";
 
@@ -65,6 +65,7 @@ Vue.component("SelectStatus", SelectStatus);
 
 export default {
   name: "MyTable",
+  props: ['tableData'],
   components: { Row, Col, Table, Input, Page, Select, Option, Button },
   data: function() {
     return {
@@ -164,11 +165,7 @@ export default {
     },
     // Process pending users to produce a format that matches the table data
     users() {
-      let users;
-      users = this.pendingApplicants.filter(user => {
-        return !this.processedUsersId.includes(user.id);
-      });
-      users = users.map(user => {
+      const users = this.tableData.map(user => {
         let {
           id,
           first_name,
@@ -180,12 +177,13 @@ export default {
           articles,
           status,
           country,
-          category
+          category,
+          university
         } = user;
 
         const name = `${first_name} ${last_name}`;
         category = this.general.categories.find(cat => cat.id === category);
-        category = category.name;
+        category = category ? category.name : university;
         country = this.general.countries.find(con => con.id === country);
         country = country.name;
 
@@ -211,7 +209,6 @@ export default {
     },
 
     ...mapState(["general"]),
-    ...mapGetters(["pendingApplicants"])
   },
   methods: {
     changeSelection(selections) {
@@ -219,15 +216,12 @@ export default {
     },
     async processSelectedUsers() {
       this.updatingUsersStatus = true;
-      const processedUsers = await this.rejectAcceptApplicants(
-        this.selectedUsers
-      );
-      const currentProcessedUsersId = processedUsers.map(user => user.id);
-      this.processedUsersId.push(...currentProcessedUsersId);
-
+      await this.rejectAcceptApplicants(this.selectedUsers);
+      this.$emit('finishedProcess')
       this.$Message.success("Process Successfull");
       this.updatingUsersStatus = false;
       this.$emit("updated");
+      this.selectedUsers = null;
     },
     ...mapActions(["rejectAcceptApplicants"])
   },
@@ -236,7 +230,7 @@ export default {
       label: category.name,
       value: category.name
     }));
-    this.tblColumns[4].filters = this.general.countries.map(country => ({
+    this.tblColumns[4].filters = this.general.categories.map(country => ({
       label: country.name,
       value: country.name
     }));
