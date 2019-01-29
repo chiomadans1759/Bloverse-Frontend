@@ -177,7 +177,6 @@
             <post-cards/>
             <photo-contest/>
             <post-cards/>
-            <recommendations/>
           </div>
         </div>
 
@@ -190,7 +189,7 @@
                 <br>Competition
               </h1>
               <p class="card-text text-capitalize caption">'The story behind photos'</p>
-              <a role="button" href="#" class="btn know-more-btn">Know more</a>
+              <router-link role="button" to="/photocontest" class="btn know-more-btn">Know more</router-link>
             </div>
           </div>
           <div class="bl-footer">
@@ -202,7 +201,7 @@
                 <span data-toggle="modal" href="#feedback-modal" class="text-capitalize">feedback</span>
               </p>
             </div>
-            <p class="row company-rights text-capitalize">2018 Bloverse. All Right Reserved</p>
+            <p class="row company-rights text-capitalize">2019 Bloverse. All Right Reserved</p>
           </div>
         </div>
       </div>
@@ -228,7 +227,6 @@
 <script>
 import PostCards from "@/components/PostCards/PostCards";
 import Trends from "@/components/Trends/Trends";
-import Recommendations from "@/components/Recommendations/Recommendations.vue";
 import PhotoContest from "@/components/PhotoContestCards/PhotoContest";
 import CountryOptions from "@/components/CountryOptions/CountryOptions";
 import Modal from "@/components/Modal/Modal";
@@ -238,7 +236,6 @@ export default {
   components: {
     PostCards,
     Trends,
-    Recommendations,
     PhotoContest,
     CountryOptions,
     Modal,

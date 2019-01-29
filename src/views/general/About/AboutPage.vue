@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import aboutCard from '@/components/aboutCard/AboutCard.vue'
+import aboutCard from '@/components/AboutCard/AboutCard.vue'
 
 export default {
   components: { aboutCard }

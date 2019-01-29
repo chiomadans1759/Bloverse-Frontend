@@ -568,5 +568,127 @@ exports[`Creator Home Page should render correctly 1`] = `
       </span>
     </p>
   </div>
+   
+  <main
+    id="bl-modal"
+  >
+    <div
+      aria-hidden="true"
+      aria-labelledby="customModal"
+      class="modal fade"
+      id="feedback-modal"
+      role="dialog"
+      tabindex="-1"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header darkBackground"
+          >
+            <!---->
+             
+            <div>
+              <h6>
+                <strong
+                  class="alt-title"
+                >
+                  Send Us Some Feedback
+                </strong>
+              </h6>
+               
+              <h6
+                class="mt-2 sub-title"
+              >
+                Found a bug? Have a suggestion?. Fill out the form below and we'll take a look!
+              </h6>
+            </div>
+             
+            <button
+              aria-label="Close"
+              class="close"
+              data-dismiss="modal"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+           
+          <div
+            class="modal-body"
+          >
+            <div
+              class="bl-modal-content"
+            >
+              <p>
+                Enter your feedback here!
+              </p>
+               
+              <textarea
+                class="form-control mb-2 p-1"
+              />
+               
+              <label
+                class="ml-1 mr-3"
+              >
+                <input
+                  name="feedback-type"
+                  type="radio"
+                />
+                  Bug
+              </label>
+               
+              <label
+                class="mr-3"
+              >
+                <input
+                  name="feedback-type"
+                  type="radio"
+                />
+                  Comment
+              </label>
+               
+              <label
+                class="mr-3"
+              >
+                <input
+                  name="feedback-type"
+                  type="radio"
+                />
+                  Other
+              </label>
+            </div>
+          </div>
+           
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-outline-primary"
+              data-dismiss="modal"
+              type="button"
+            >
+              Close
+            </button>
+             
+            <button
+              class="btn btn-primary"
+              type="button"
+            >
+              Send Feedback
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </main>
 `;
