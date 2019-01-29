@@ -190,15 +190,15 @@
                 <br>Competition
               </h1>
               <p class="card-text text-capitalize caption">'The story behind photos'</p>
-              <a role="button" href="#" class="btn know-more-btn">Know more</a>
+              <router-link role="button" to="/creators/apply" class="btn know-more-btn">Know more</router-link>
             </div>
           </div>
           <div class="bl-footer">
             <div class="row company-name">
               <div class="col-sm-3 font-weight-bold text-lowercase">bloverse</div>
               <p class="col-sm-9">
-                <span class="text-capitalize dots">terms</span>
-                <span class="text-capitalize dots">privacy</span>
+                <span class="text-capitalize dots"><router-link to="/terms-and-conditions">terms</router-link></span>
+                <span class="text-capitalize dots"><router-link to="/privacy-policies">privacy</router-link></span>
                 <span data-toggle="modal" href="#feedback-modal" class="text-capitalize">feedback</span>
               </p>
             </div>

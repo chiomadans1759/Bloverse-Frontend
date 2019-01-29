@@ -4,10 +4,7 @@ import store from '../stores';
 import GeneralLayout from '@/layouts/GeneralLayout';
 import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
-
-
 import PostDisplay from '../src/views/general/SinglePost/SinglePostPage.vue';
-
 
 import MyProfile from '../src/views/journalists/MyProfile.vue';
 import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
@@ -24,6 +21,7 @@ import AdminHome from '../src/views/admin/Home.vue';
 
 import NotFound from '../src/views/NotFound.vue';
 import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPage.vue';
+
 import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicyPage.vue';
 import Settings from '@/views/consumers/Settings/SettingsPage.vue'
 

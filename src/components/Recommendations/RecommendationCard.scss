@@ -27,6 +27,9 @@
     &__text {
       height: 60%;
       overflow: hidden;
+       a{
+          color: #333333;
+        }
     }
     &__username {
       margin: rem(8px) auto;

@@ -5,9 +5,9 @@
       <h5 class="card-title">Category</h5>
       <div class="card-text recommendation-card--content">
         <p class="font-weight-bold recommendation-card--content__text">
+          <router-link to="/posts/rere">Some quick example text to build on the card title and make up the bulk of the card's content.
           Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
+          Some quick example text to build on the card title and make up the bulk of the card's content.</router-link>
         </p>
         <p class="recommendation-card--content__username" v-if="type === 'consumer'">
           <span class="time">1 min ago</span>

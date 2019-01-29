@@ -2003,9 +2003,9 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="card-text font-weight-bold trendCard--text"
                           >
-                            
-        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
-      
+                            <a>
+                              Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+                            </a>
                           </p>
                            
                           <p
@@ -2056,9 +2056,9 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="card-text font-weight-bold trendCard--text"
                           >
-                            
-        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
-      
+                            <a>
+                              Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+                            </a>
                           </p>
                            
                           <p
@@ -2109,9 +2109,9 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="card-text font-weight-bold trendCard--text"
                           >
-                            
-        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
-      
+                            <a>
+                              Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+                            </a>
                           </p>
                            
                           <p
@@ -2162,9 +2162,9 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="card-text font-weight-bold trendCard--text"
                           >
-                            
-        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
-      
+                            <a>
+                              Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+                            </a>
                           </p>
                            
                           <p
@@ -2215,9 +2215,9 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="card-text font-weight-bold trendCard--text"
                           >
-                            
-        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
-      
+                            <a>
+                              Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+                            </a>
                           </p>
                            
                           <p
@@ -2268,9 +2268,9 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="card-text font-weight-bold trendCard--text"
                           >
-                            
-        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
-      
+                            <a>
+                              Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+                            </a>
                           </p>
                            
                           <p
@@ -2321,9 +2321,9 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="card-text font-weight-bold trendCard--text"
                           >
-                            
-        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
-      
+                            <a>
+                              Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+                            </a>
                           </p>
                            
                           <p
@@ -2374,9 +2374,9 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="card-text font-weight-bold trendCard--text"
                           >
-                            
-        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
-      
+                            <a>
+                              Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+                            </a>
                           </p>
                            
                           <p
@@ -2427,9 +2427,9 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="card-text font-weight-bold trendCard--text"
                           >
-                            
-        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
-      
+                            <a>
+                              Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+                            </a>
                           </p>
                            
                           <p
@@ -2480,9 +2480,9 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="card-text font-weight-bold trendCard--text"
                           >
-                            
-        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
-      
+                            <a>
+                              Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+                            </a>
                           </p>
                            
                           <p
@@ -5252,11 +5252,11 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="font-weight-bold recommendation-card--content__text"
                           >
-                            
+                            <a>
+                              Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-      
+                            </a>
                           </p>
                            
                           <p
@@ -5456,11 +5456,11 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="font-weight-bold recommendation-card--content__text"
                           >
-                            
+                            <a>
+                              Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-      
+                            </a>
                           </p>
                            
                           <p
@@ -5660,11 +5660,11 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="font-weight-bold recommendation-card--content__text"
                           >
-                            
+                            <a>
+                              Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-      
+                            </a>
                           </p>
                            
                           <p
@@ -5864,11 +5864,11 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="font-weight-bold recommendation-card--content__text"
                           >
-                            
+                            <a>
+                              Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-      
+                            </a>
                           </p>
                            
                           <p
@@ -6068,11 +6068,11 @@ exports[`Homepage Component should render correctly 1`] = `
                           <p
                             class="font-weight-bold recommendation-card--content__text"
                           >
-                            
+                            <a>
+                              Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-      
+                            </a>
                           </p>
                            
                           <p
@@ -6291,7 +6291,6 @@ exports[`Homepage Component should render correctly 1`] = `
              
             <a
               class="btn know-more-btn"
-              href="#"
               role="button"
             >
               Know more
@@ -6317,13 +6316,17 @@ exports[`Homepage Component should render correctly 1`] = `
               <span
                 class="text-capitalize dots"
               >
-                terms
+                <a>
+                  terms
+                </a>
               </span>
                
               <span
                 class="text-capitalize dots"
               >
-                privacy
+                <a>
+                  privacy
+                </a>
               </span>
                
               <span
