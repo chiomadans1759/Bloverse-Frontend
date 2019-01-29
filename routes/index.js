@@ -4,7 +4,7 @@ import store from '../stores';
 import GeneralLayout from '@/layouts/GeneralLayout';
 import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
-import PostDisplay from '../src/views/general/singlePost/SinglePostPage.vue';
+import PostDisplay from '../src/views/general/SinglePost/SinglePostPage.vue';
 
 import MyProfile from '../src/views/journalists/MyProfile.vue';
 import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';

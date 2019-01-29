@@ -297,6 +297,9 @@
           margin: auto rem(5px);
         }
       }
+      .dots a{
+        color: #000;
+      }
       .dots::after {
         content: '\2022';
         color: #096DD9;

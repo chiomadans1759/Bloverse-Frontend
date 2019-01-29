@@ -25,9 +25,9 @@ exports[`Trend Component should render correctly 1`] = `
       <p
         class="card-text font-weight-bold trendCard--text"
       >
-        
-        Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
-      
+        <a>
+          Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpret
+        </a>
       </p>
        
       <p

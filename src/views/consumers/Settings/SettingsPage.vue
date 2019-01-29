@@ -13,7 +13,7 @@
       <router-link to="/changepassword" class="text-capitalize mt-3">change password</router-link>
       <p class="text small">Update your information</p>
 
-      <a href="#" class="text-capitalize mt-3">customize country</a>
+     <router-link to="/regions" class="text-capitalize mt-3">customize country</router-link>
       <p class="text small">Update your information</p>
 
       <a href="#" class="text-capitalize mt-3">customize category</a>

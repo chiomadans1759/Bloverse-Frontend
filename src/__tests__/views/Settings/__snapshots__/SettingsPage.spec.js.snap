@@ -54,7 +54,6 @@ exports[`Settings Page should render correctly 1`] = `
            
           <a
             class="text-capitalize mt-3"
-            href="#"
           >
             customize country
           </a>

@@ -10,7 +10,7 @@
             <h2 class="paragraph">'The Story Behind The Photo'</h2>
             <br />
             <div class="publish-link-container mb-3 mb-sm-0">
-              <router-link to="/" class="publish-link btn">
+              <router-link to="/creators/apply" class="publish-link btn">
                 Publish a Photo Contest
               </router-link>
             </div>
@@ -96,7 +96,7 @@
                   </div>
                   <div class="contestant-bottom">
                     <div class="contestant-link-container">
-                      <router-link to="/" class="contestant-link btn">
+                      <router-link to="/creators/apply" class="contestant-link btn">
                         Join the contestants
                       </router-link>
                     </div>
@@ -122,7 +122,7 @@
                   <li>Like this post</li>
                   <li>Follow us on instagram <span class="bold-text">@bloverse</span></li>
                   <li>Tag two friends with the hashtag <span class="bold-text">#JoinTheBloverse</span></li>
-                  <li><router-link to="/">Apply</router-link> to be a content creator</li>
+                  <li><router-link to="/creators/apply">Apply</router-link> to be a content creator</li>
                   <li>Submit the lifestyle photo and the story behind it as a published post on bloverse</li>
                   <li>Share your article on instagram, facebook, twitter followed by the hashtag <span class="bold-text">#JoinTheBloverse</span></li>
                 </ol>
@@ -262,7 +262,7 @@
               Pakistan, India, Singapore, Philippines, Hong Kong, Kenya, South Africa, Nigeria 
               and Ghana.</h2>
               <h2 class="footer-text">
-              For complete contest rules. <router-link to="/">click here</router-link>
+              For complete contest rules. <router-link to="/terms-and-conditions">click here</router-link>
               </h2>
             </div>
             <br />

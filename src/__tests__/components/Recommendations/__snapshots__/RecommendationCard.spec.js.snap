@@ -25,11 +25,11 @@ exports[`RecommendationCard Component should render correctly 1`] = `
       <p
         class="font-weight-bold recommendation-card--content__text"
       >
-        
+        <a>
+          Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
         Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-      
+        </a>
       </p>
        
       <p
