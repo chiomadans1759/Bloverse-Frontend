@@ -1,18 +1,6 @@
 <template>
   <div class="region-container">
-    <div class="top">
-      <div>
-        <span class="top-left-container">
-          <a href="/">
-            <i class="fal fa-long-arrow-left fa-2x"></i>
-            <span>Back</span>
-          </a>
-          <router-link to="/" class="router-link">
-            <img class="logo" src="@/assets/Logo.svg" />
-          </router-link>
-        </span>
-      </div>
-    </div>
+     <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" />
     <div class="content">
       <div class="container">
         <div class="row">
@@ -20,107 +8,19 @@
           <div class="col-md-2"></div>
           <div class="col-12 col-md-8 col-sm-8 col-lg-8">
             <h3>Select Your Favourite Country</h3>
-            <h5>Selected <b>{{countries.length}}</b> countries</h5>
+            <h5>Selected <b>{{selected2.length}}</b> countries</h5>
             <br />
             <div class="row">
-              <div class="col-6 col-md-4 col-sm-4 col-lg-4">
+               <div class="col-6 col-md-4 col-sm-4 col-lg-4" v-for="(item) in countries" :key="item.id"  :class="{highlight:selected2.includes(item.id)}" @click="selected2.includes(item.id) ? selected2.splice(selected2.indexOf(item.id), 1) : selected2.push(item.id)">
                 <div class="card">
-                  <img src="@/assets/UK.svg" @click="addToCountry('UK')" alt="">
-                  <p>UK</p>
+                  <img src="'@/assets/'+item.image_id +'.svg'" alt="">
+                  <p>{{item.country_name}}</p>
                 </div>
               </div>
-              <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/france.svg" @click="addToCountry('france')" alt="">
-                  <p>France</p>
-                </div>
-              </div>
-               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/canada.svg" @click="addToCountry('canada')" alt="">
-                  <p>Canada</p>
-                </div>
-              </div>
-               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/germany.svg" @click="addToCountry('germany')" alt="">
-                  <p>Germany</p>
-                </div>
-              </div>
-               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/ghana.svg" @click="addToCountry('ghana')" alt="">
-                  <p>Ghana</p>
-                </div>
-              </div>
-               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/australia.svg" @click="addToCountry('australia')" alt="">
-                  <p>Australia</p>
-                </div>
-              </div>
-               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/india.svg" @click="addToCountry('india')" alt="">
-                  <p>India</p>
-                </div>
-              </div>
-               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/ireland.svg" @click="addToCountry('ireland')" alt="">
-                  <p>Ireland</p>
-                </div>
-              </div>
-               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/kenya.svg" @click="addToCountry('kenya')" alt="">
-                  <p>Kenya</p>
-                </div>
-              </div>
-               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/itali.svg" @click="addToCountry('itali')" alt="">
-                  <p>Itali</p>
-                </div>
-              </div>
-               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/mexico.svg" @click="addToCountry('mexico')" alt="">
-                  <p>Mexico</p>
-                </div>
-              </div>
-               <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/SA.svg" @click="addToCountry('SA')" alt="">
-                  <p>South Africa</p>
-                </div>
-              </div>
-              <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/nigeria.svg" @click="addToCountry('nigeria')" alt="">
-                  <p>Nigeria</p>
-                </div>
-              </div>
-              <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/UAE.svg" @click="addToCountry('UAE')" alt="">
-                  <p>UAE</p>
-                </div>
-              </div>
-              <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/US.svg" @click="addToCountry('US')" alt="">
-                  <p>US</p>
-                </div>
-              </div>
-              <div class="col-6 col-md-4 col-sm-4 col-lg-4">
-                <div class="card">
-                  <img src="@/assets/singapore.svg" @click="addToCountry('singapore')" alt="">
-                  <p>Singapore</p>
 
-                </div>
-              </div>
+            
             </div>
+            <br><br><br>
           </div>
           <div class="col-md-2"></div>
         </div>
@@ -132,16 +32,108 @@
 </template>
 <script>
 import TheFooter from '@/components/TheFooter';
+import Navbar from '@/components/Navbar/Navbar.vue';
 
 export default {
   name:'Region',
   data(){
     return{
-      countries:[]
+      countries:[
+        {
+          "id": 0 , 
+          "image_id":"UK",
+          "country_name": "UK"
+        },
+        {
+          "id": 1 , 
+          "image_id":"france",
+          "country_name": "France"
+        },
+        {
+          "id": 2 , 
+          "image_id":"canada",
+          "country_name": "Canada"
+        },
+        {
+          "id": 3 , 
+          "image_id":"germany",
+          "country_name": "Germany"
+        },
+        {
+          "id": 4 , 
+          "image_id":"ghana",
+          "country_name": "Ghana"
+        },
+        {
+          "id": 5 , 
+          "image_id":"australia",
+          "country_name": "Australia"
+        },
+        {
+          "id": 6 , 
+          "image_id":"india",
+          "country_name": "India"
+        },
+        {
+          "id": 7 , 
+          "image_id":"ireland",
+          "country_name": "Ireland"
+        },
+        {
+          "id": 8 , 
+          "image_id":"kenya",
+          "country_name": "Kenya"
+        },
+        {
+          "id": 9 , 
+          "image_id":"itali",
+          "country_name": "Itali"
+        },
+        {
+          "id": 10 , 
+          "image_id":"mexico",
+          "country_name": "Mexico"
+        },
+        {
+          "id": 11 , 
+          "image_id":"kenya",
+          "country_name": "Kenya"
+        },
+        {
+          "id": 12 , 
+          "image_id":"SA",
+          "country_name": "South Africa"
+        },
+        {
+          "id": 13 , 
+          "image_id":"nigeria",
+          "country_name": "Nigeria"
+        },
+        {
+          "id": 14 , 
+          "image_id":"UAE",
+          "country_name": "UAE"
+        },
+        {
+          "id": 15 , 
+          "image_id":"US",
+          "country_name": "US"
+        },
+        {
+          "id": 16 , 
+          "image_id":"singapore",
+          "country_name": "Singapore"
+        },
+      ],
+      selected: undefined,
+      selected2: [],
+      showNavigations: false,
+      showBackArrow: true,
     }
   },
   components:{
-    TheFooter
+    TheFooter,
+    Navbar
   },
   methods:{
     addToCountry(key){
