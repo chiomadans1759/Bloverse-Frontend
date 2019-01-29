@@ -1,5 +1,6 @@
 <template>
   <main id="create-basic-post">
+    <!-- SUCCESS MODAL -->
     <Modal v-model="publishModal" @on-visible-change="handleModalChange">
       <Alert type="success">Success</Alert>
       <div class="text-center">
@@ -9,33 +10,50 @@
         </div>
       </div>
       <div slot="footer">
-        <router-link :to="`/creators/${auth.loggedInUser.userName}/posts`">Go to all Post
+        <router-link :to="`/creators/${auth.loggedInUser.username}/posts`">Go to all Post
           <Icon type="md-arrow-round-forward"/>
         </router-link>
       </div>
     </Modal>
+
     <div id="mobile" :class="{ isTravel: isTravel }">
-      <Form :model="post" ref="basicCreatePostForm" class="travel-form" :rules="validatePostForm" style="margin-top: 6rem;">
+      <Form
+        :model="post"
+        ref="basicCreatePostForm"
+        class="travel-form"
+        :rules="validatePostForm"
+        style="margin-top: 6rem;">
         <Row type="flex" justify="space-between">
+
           <Col :sm="24" id="create-post">
-            <DisplayImage v-model="post.imageUrl" width="100%" :can-edit="true"/><br>
+            <Row type="flex" justify="space-between">
+              <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="true"/>
+            </Row>
+            
+            <br>
+
             <FormItem prop="title" :error="errors.title">
-              <div class="alert alert-danger py-0" role="alert" v-if="post.title != undefined && post.title.length == 150">
+              <div
+                class="alert alert-danger py-0"
+                role="alert"
+                v-if="post.title != undefined && post.title.length == 150">
                 150 maximum characters for title exceeded.
               </div>
-              <Input id="form-control" placeholder="What's your title?" v-model="post.title" :maxlength="max"/>
+              <Input
+                id="form-control"
+                placeholder="What's your title?"
+                v-model="post.title"
+                :maxlength="max" />
             </FormItem>
+
             <Row type="flex" justify="space-between">
               <Col :sm="11">
                 <Select v-model="post.category" placeholder="Choose Category" :disabled="isTravel">
                   <Option
-                    v-for="item in general.categories"
-                    :value="item.id"
-                    :key="item.id"
-                    v-if="item.name != 'All'"
-                  >
-                    {{item.name}}
-                  </Option>
+                    v-for="cat in general.categories"
+                    :value="cat.id"
+                    :key="cat.id"
+                  >{{cat.name}}</Option>
                 </Select>
               </Col>
               <Col :sm="11">
@@ -45,20 +63,20 @@
                     :value="item.id"
                     :key="item.id"
                     v-if="item.name != 'All'"
-                  >
-                    {{item.name}}
-                  </Option>
+                  >{{item.name}}</Option>
                 </Select>
               </Col>
-            </Row><br>
+            </Row>
+
+            <br>
+
             <section>
               <div class="key-points" v-if="isTravel">
                 <input
                   v-model="post.location"
                   ref="autocomplete"
                   placeholder="Location"
-                  class="search-location"
-                >
+                  class="search-location">
                 <FormItem prop="duration">
                   <DatePicker
                     v-model="post.duration"
@@ -66,8 +84,8 @@
                     type="date"
                     placement="bottom-end"
                     placeholder="Time Taken"
-                    style="width: 100%"
-                  ></DatePicker>
+                    style="width: 100%">
+                  </DatePicker>
                 </FormItem>
                 <FormItem prop="deviceType">
                   <Select placeholder="Device Used" id="keypoint" v-model="post.deviceType">
@@ -75,34 +93,40 @@
                       v-for="item in deviceList"
                       :value="item.value"
                       :key="item.value"
-                    >
-                      {{ item.label }}
-                    </Option>
+                    >{{ item.label }}</Option>
                   </Select>
                 </FormItem>
               </div>
+              
               <div class="keypoints" v-else>
                 <FormItem
                   v-for="(keypoint, index) in post.keyPoints"
                   :key="index"
                   :prop="`keyPoints.${index}.value`"
-                  :rules="{required: index === 0, message: 'Please provide at least one keypoint', trigger: 'change' }"
-                >
+                  :rules="{required: index === 0, message: 'Please provide at least one keypoint', trigger: 'change' }">
                   <Input :placeholder="`Keypoint ${index+1}`" v-model="keypoint.value"/>
                 </FormItem>
               </div>
             </section>
+
             <div class="row">
               <div class="col-md-12">
-                <tinymce class="form-control required" v-model="post.body"></tinymce>
+                <tinymce class="form-control required" v-model="general.tinyMiceValue"></tinymce>
               </div>
-            </div><br>
+            </div>
+
+            <br>
+
             <div>
               <Button id="btn-draft" @click="handleProcessPost()" class="text-uppercase mt-3">
-                <span v-if="post.id">Save Changes</span>
-                <span v-else>Save as draft</span>
+                <span>{{ post.id ? 'Save Changes' : 'Save as draft' }}</span>
               </Button>
-              <a @click="previewPosts()" class="float-right btn btn-primary btn-md text-white">Preview</a>
+              <button
+                type="button"
+                @click="previewPosts()"
+                class="float-right btn btn-primary btn-md text-white">
+                Preview
+              </button>
             </div>
           </Col>
         </Row>
@@ -111,18 +135,15 @@
 
     <!-- PREVIEW POST  -->
     <div id="modalfocus">
-      <Modal
-        v-model="previewPost"
-        width="70%"
-      >
+      <Modal v-model="previewPost" width="70%" :loading="loading">
         <div v-if="!post.title">
           <h1 class="text-center" style="padding:100px;">NOTHING TO PREVIEW YET</h1>
         </div>
         <div v-if="post.title">
           <div class="container-fluid previewMade">
             <h4>Preview</h4>
-              <!-- <p>{{post.category}}</p> -->
-            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="false" />
+            <!-- <p>{{post.category}}</p> -->
+            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="false"/>
             <h1>{{post.title}}</h1>
             <ul v-for="(keypoint) in post.keyPoints" :key="keypoint.value">
               <li>{{keypoint.value}}</li>
@@ -132,9 +153,8 @@
               <Button
                 id="btn-publish"
                 :disabled="post.is_published || this.isPublishing"
-                @click="handleProcessPost(true)">
-                {{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}
-              </Button>
+                @click="handleProcessPost(true)"
+              >{{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}</Button>
             </div>
           </div>
         </div>
@@ -145,16 +165,26 @@
 </template>
 
 <script>
-
 import {
-  Row, Col, Card, Input, Upload, Icon, Button, Select, Option, Modal, Alert, Form, FormItem, DatePicker
+  Row,
+  Col,
+  Card,
+  Input,
+  Upload,
+  Icon,
+  Button,
+  Select,
+  Option,
+  Modal,
+  Alert,
+  Form,
+  FormItem,
+  DatePicker
 } from "iview";
-
 import { mapState, mapActions, mapMutations } from "vuex";
 import { VueEditor } from "vue2-editor";
-import SocialButtons from '@/components/SocialButtons'
-
-import { Push } from 'vue-burger-menu';
+import SocialButtons from "@/components/SocialButtons";
+import { Push } from "vue-burger-menu";
 import DisplayImage from "./DisplayImage";
 import Tinymce from "./Tinymce";
 
@@ -180,17 +210,20 @@ export default {
     FormItem,
     Push
   },
-
   props: ["isTravel"],
-
   data: function() {
     return {
       slug: null,
+      loading: false,
       post: {
-        keyPoints: [{ index: 1, value: '', }, { index: 2, value: '', }, { index: 3, value: '', }]
+        keyPoints: [
+          { index: 1, value: "" },
+          { index: 2, value: "" },
+          { index: 3, value: "" }
+        ]
       },
       errors: {},
-      previewPost:false,
+      previewPost: false,
       max: 150,
       validatePostForm: {
         deviceType: [
@@ -237,7 +270,6 @@ export default {
           value: "Techno",
           label: "Techno"
         },
-
         {
           value: "Infinix",
           label: "Infinix"
@@ -265,38 +297,46 @@ export default {
       ]
     };
   },
-
   computed: {
-    ...mapState(["general", "auth", "journalist"])
+    ...mapState(["general", "auth", "journalist"]),
+    isEditPage() {
+      return this.$route.fullPath.includes("edit");
+    },
+    isCreatePage() {
+      return this.$route.fullPath.includes("create");
+    }
   },
-
   methods: {
-    ...mapActions(["processPost"]),
-
+    ...mapActions(["processPost", "getPostBySlug"]),
     ...mapMutations(["setPost", "clearPost"]),
-    previewPosts(){
-      if(this.post.title == '') {
-        window.onbeforeunload = function(event)
-        {
+    previewPosts() {
+      if (this.post.title == "") {
+        window.onbeforeunload = function(event) {
           return confirm("Fill in a title");
         };
       } else {
         this.previewPost = true;
       }
-      
     },
-    setPost(params){
-      this.post = {...this.post, ...params};
+    setPost(params) {
+      this.post = { ...this.post, ...params };
     },
-    clearPost(){
-      this.post = { keyPoints: [{ index: 1, value: '', }, { index: 2, value: '', }, { index: 3, value: '', }] }
+    clearPost() {
+      this.post = {
+        keyPoints: [
+          { index: 1, value: "" },
+          { index: 2, value: "" },
+          { index: 3, value: "" }
+        ],
+      };
     },
-    handleModalChange(status){
-      if(!status)
-        this.takeToMyPosts();
+    handleModalChange(status) {
+      if (!status) this.takeToMyPosts();
     },
-    takeToMyPosts(){
-      this.$router.push({path: `/creators/${this.auth.loggedInUser.userName}/posts`})
+    takeToMyPosts() {
+      this.$router.push({
+        path: `/creators/${this.auth.loggedInUser.username}/posts`
+      });
     },
     handleProcessPost: async function(shouldPublish = false) {
       this.errors = {};
@@ -306,7 +346,6 @@ export default {
         }
         this.post.location = this.$refs.autocomplete.value;
       }
-
       this.$refs.basicCreatePostForm.validate(async valid => {
         if (valid) {
           if (!this.post.body || !this.post.body.trim()) {
@@ -314,33 +353,29 @@ export default {
           }
           if (this.post.imageUrl) {
             this.isPublishing = true;
+            this.post.body = this.general.tinyMiceValue
             let response = await this.processPost({
               shouldPublish,
               shouldUploadImage: this.isNewImage,
               post: this.post
             });
-            
             let success = !!response.id;
-
             this.isPublishing = false;
             if (success) {
               this.post = response;
               this.$Message.success("Post successfully saved");
               this.publishModal = shouldPublish;
-
-              if(shouldPublish){
-                this.slug = this.post.slug //gets value of slug before clearing post object - for purpose of social share
+              this.$router.push(`/creators/${this.auth.loggedInUser.username}/posts`)
+              if (shouldPublish) {
+                this.slug = this.post.slug; //gets value of slug before clearing post object - for purpose of social share
                 this.clearTinyMceEditor();
-                this.clearPost()
-              }else{
+                this.clearPost();
+              } else {
                 //perform action if save as draft
-
                 // uncomment next line if edit features now work well.
                 //this.takeToMyPosts()
               }
-
               this.previewPost = false;
-              
             }
             if (success.errors) {
               this.handleError(success.errors);
@@ -352,24 +387,20 @@ export default {
         }
       });
     },
-
     handleError(errors) {
       let fieldErrors, varClient;
       let clientServer = {
         message: "title"
       };
-
       Object.keys(errors).forEach(field => {
         fieldErrors = errors[field];
         varClient = clientServer[field];
         this.$set(this.errors, varClient, fieldErrors);
       });
     },
-
     clearTinyMceEditor() {
-      this.$store.commit("setTinyMiceValue", "<p></p>");
+      this.$store.commit("setTinyMiceValue", "");
     },
-
     checkTravel() {
       if (this.isTravel) {
         this.setPost({
@@ -381,7 +412,6 @@ export default {
             this.$refs.autocomplete,
             { types: ["geocode"] }
           );
-
           this.autocomplete.addListener("place_changed", () => {
             let place = this.autocomplete.getPlace();
             this.post.location = place.formatted_address;
@@ -395,19 +425,39 @@ export default {
       }
     }
   },
-
   watch: {
     "post.imageUrl": function() {
       this.isNewImage = true;
     },
-
     isTravel: function() {
       this.checkTravel();
+    },
+    isEditPage: function(isOnEditPage) {
+      if (isOnEditPage === false) {
+        this.clearTinyMceEditor();
+        this.clearPost();
+      }
     }
   },
-
-  mounted() {
+  async mounted() {
     this.checkTravel();
+  },
+  async created() {
+    let { slug } = this.$route.params;
+    await this.getPostBySlug({ slug });
+    const keyPoints = this.general.currentPost.keypoint.map((k, i) => ({
+      index: i + 1,
+      value: k
+    }));
+    this.post = {
+      ...this.post,
+      keyPoints,
+      ...this.general.currentPost,
+      imageUrl: this.general.currentPost.image_url,
+      body: this.general.currentPost.body
+    };
+    
+    this.$store.commit("setTinyMiceValue", this.general.currentPost.body);
   }
 };
 </script>
@@ -416,12 +466,10 @@ export default {
 #create-basic-post #form-control {
   height: 3rem !important;
 }
-
 .isTravel {
   position: relative;
   top: -1.6rem;
 }
-
 #create-basic-post {
   display: flex;
   flex-direction: column;
@@ -429,7 +477,6 @@ export default {
   min-height: 120vh;
   margin-top: -80px;
 }
-
 .search-location {
   width: 100%;
   padding: 0.3rem 1.25rem;
@@ -437,161 +484,136 @@ export default {
   display: inline-block;
   box-sizing: border-box;
 }
-
 .delete-btn {
   margin: 0.6em;
   width: 10rem;
 }
-
 #display-post #image {
   width: 100%;
   height: auto;
 }
-
 #display-post #title {
   padding: 0 1.5rem;
   margin-bottom: 2rem;
 }
-
 #display-post #body {
   padding: 0 1.5rem;
   margin-top: 2rem;
 }
-
 #modal-focus p {
   width: 100% !important;
   object-fit: contain;
 }
-
 @media screen and (max-width: 360px) {
   #mobile {
     display: flex;
     flex-direction: column;
   }
-
   #every {
     display: flex;
     flex-direction: column;
   }
 }
-
 @media screen and (max-width: 600px) {
   #mobile {
     display: flex;
     flex-direction: column;
   }
-
   #every {
     display: flex;
     flex-direction: column;
   }
-
   #btn-draft {
     width: 100%;
     margin-bottom: 5px;
   }
-
   #btn-publish {
     width: 100%;
     margin-bottom: 10px;
   }
 }
-
 #create-basic-post .previewMade #content {
   width: 100% !important;
   overflow-x: hidden !important;
 }
-
 .container-fluid.previewMade p {
   padding: 0px 13px;
   margin-top: 2%;
 }
-
 .container-fluid.previewMade ul {
   padding: 0px 30px;
 }
-
 .container-fluid.previewMade h1 {
   font-size: 29px;
   padding: 0px 11px;
   margin-bottom: 2%;
 }
-
 .container-fluid.previewMade div {
   margin-top: 2%;
   margin-bottom: 2%;
 }
-
 .container-fluid.previewMade {
   padding: 29px;
 }
 </style>
 
 <style>
-  #upload-post-image .ivu-upload-drag {
-    display: flex;
-    width: 200px;
-    height: 200px;
-  }
-
-  .ivu-btn {
-    font-size: 18px;
-    width: 200px;
-    font-weight: bold;
-    line-height: 21px;
-  }
-
-  #btn-draft {
-    background-color: white;
-    color: var(--primary);
-    padding: 0px !important;
-    background: transparent !important;
-    border: none !important;
-    font-size: 12px;
-    margin-top: 0.5rem;
-  }
-
-  #btn-publish {
-    background-color: var(--primary);
-    color: white;
-    width: 20%;
-    height: 2.5rem;
-  }
-
-  .red-border {
-    border: 1px solid red;
-  }
-
-  .keypoints .ivu-input-wrapper {
-    margin: 0.5rem 0;
-  }
-  .posts {
-    position: relative;
-  }
-  .ivu-modal-close .ivu-icon-ios-close {
-    font-size: 31px;
-    color: #999;
-    transition: color .2s ease;
-    top: 1px;
-    margin-top: 0;
-    float: right;
-    right: 0px !important;
-  }
-
-  .container-fluid.previewMade section#img-display {
-    background: #aca7a7;
-    border: 0.1px solid grey;
-    width: 100%;
-    height: 500px !important;
-  }
-
-  div#modalfocus .ivu-modal-mask {
-    background: #fff;
-  }
-
-  div#modalfocus .ivu-modal-content {
-    box-shadow: none !important;
-    border: 1px solid #d9d9d9;
-    border-radius: 1px !important;
-  }
+#upload-post-image .ivu-upload-drag {
+  display: flex;
+  width: 200px;
+  height: 200px;
+}
+.ivu-btn {
+  font-size: 18px;
+  width: 200px;
+  font-weight: bold;
+  line-height: 21px;
+}
+#btn-draft {
+  background-color: white;
+  color: var(--primary);
+  padding: 0px !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 12px;
+  margin-top: 0.5rem;
+}
+#btn-publish {
+  background-color: var(--primary);
+  color: white;
+  width: 20%;
+  height: 2.5rem;
+}
+.red-border {
+  border: 1px solid red;
+}
+.keypoints .ivu-input-wrapper {
+  margin: 0.5rem 0;
+}
+.posts {
+  position: relative;
+}
+.ivu-modal-close .ivu-icon-ios-close {
+  font-size: 31px;
+  color: #999;
+  transition: color 0.2s ease;
+  top: 1px;
+  margin-top: 0;
+  float: right;
+  right: 0px !important;
+}
+.container-fluid.previewMade section#img-display {
+  background: #aca7a7;
+  border: 0.1px solid grey;
+  width: 100%;
+  height: 500px !important;
+}
+div#modalfocus .ivu-modal-mask {
+  background: #fff;
+}
+div#modalfocus .ivu-modal-content {
+  box-shadow: none !important;
+  border: 1px solid #d9d9d9;
+  border-radius: 1px !important;
+}
 </style>

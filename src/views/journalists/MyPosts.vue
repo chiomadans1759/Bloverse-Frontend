@@ -29,7 +29,7 @@
       <br>
       <router-link
         class="btn btn-primary"
-        :to="`/creators/${auth.loggedInUser.userName}/posts/create`"
+        :to="`/creators/${auth.loggedInUser.username}/posts/create`"
       >Create Posts Here</router-link>
     </div>
   </main>
@@ -38,7 +38,6 @@
 <script>
 import { Row, Col, Button, Card } from "iview";
 import { mapState, mapActions } from "vuex";
-
 import FeedCard from "@/components/FeedCard.vue";
 import DraftCard from "@/components/DraftCard.vue";
 
@@ -51,7 +50,6 @@ export default {
   components: { Row, Col, FeedCard, Button, Card, DraftCard },
   computed: {
     ...mapState(["journalist", "general", "auth"]),
-
     showPosts: function() {
       return this.journalist.posts && this.journalist.posts.length > 0;
     }
@@ -70,12 +68,10 @@ export default {
       "getMyPosts",
       "clearSession"
     ]),
-
     logOut() {
       this.clearSession();
       this.$router.push("/creators");
     },
-
     currentSection(section) {
       this.current_section = section;
     }
@@ -91,24 +87,19 @@ export default {
   padding-left: 1rem;
   height: auto !important;
 }
-
 #all-posts .btn-group .btn:first-child {
   border-radius: 4px !important;
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
 }
-
 #all-posts .btn-group .btn:last-child {
   border-radius: 4px !important;
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
 }
-
 #all-posts .btn-group .btn-default {
   background: transparent !important;
   border-color: #2f80ed !important;
   color: #2f80ed !important;
 }
-
-
 </style>
