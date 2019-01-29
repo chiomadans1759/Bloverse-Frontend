@@ -152,13 +152,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["getMyMetrics", "clearSession"]),
-
-    logOut() {
-      this.clearSession();
-      this.$router.push("/creators");
-    },
-
+    ...mapActions(["getMyMetrics"]),
     computePosition(key) {
       const target = key[key.length - 1];
       const dataMap = {
