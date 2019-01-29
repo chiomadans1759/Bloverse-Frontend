@@ -33,6 +33,7 @@ import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPa
 import Country from '@/views/consumers/Country/CountryPage';
 
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
+import Creators from '../src/views/journalists/CreatorLanding/CreatorLandingPage'
 import Homepage from '../src/views/general/Home/Homepage.vue';
 import SigninPage from '../src/views/general/Signin/SigninPage.vue';
 import SignupPage from '../src/views/consumers/SignUp/SignUpPage.vue';
@@ -52,6 +53,7 @@ const routes = [
       { path: '/terms-and-conditions', component: Terms},
       { path: '/privacy-policies', component: Privacy},
       { path: '/settings', component: Settings},
+
       { path: '/profile', component: Profile},
     ]
   },
@@ -60,6 +62,7 @@ const routes = [
     path: '/', component: BlankBase,
     children: [
       { path: '/photocontest', component: PhotoContest},
+      { path: '/creators', component:Creators},
     ]
   },
 
