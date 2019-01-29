@@ -9,7 +9,7 @@
         </div>
         <div class="col-auto">
           <div v-if="!auth.loggedInUser">
-            <router-link to="/photocontest" class="btn btn-link text-uppercase">
+            <router-link to="/creators/photocontest" class="btn btn-link text-uppercase">
               photo contest
             </router-link>
             <login-button class="pt-2 mr-3" />

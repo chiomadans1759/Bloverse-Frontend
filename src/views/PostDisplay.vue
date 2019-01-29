@@ -3,12 +3,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <post-details></post-details>
+          <post-details :post="post"></post-details>
         </div>
         <div class="col-md-4 pt-3">
-          <post-author :author="general.currentPost.author" class="mb-5"></post-author>
-          <post-social-share :slug="general.currentPost.slug"></post-social-share>
-          <related-posts :post_id="general.currentPost.id"/>
+          <post-author :author="post.author" class="mb-5"></post-author>
+          <post-social-share :slug="post.slug"></post-social-share>
+          <related-posts />
         </div>
       </div>
     </div>
@@ -28,9 +28,8 @@ import {
   Form,
   Button
 } from "iview";
-import { mapGetters, mapState, mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share";
-import Loading from "@/components/Loading";
 import PostDetails from "@/components/PostDetails.vue";
 import PostAuthor from "@/components/PostAuthor.vue";
 import PostSocialShare from "@/components/PostSocialShare";
@@ -51,7 +50,6 @@ export default {
     Facebook,
     Twitter,
     Linkedin,
-    Loading,
     PostDetails,
     PostAuthor,
     PostSocialShare,
@@ -59,42 +57,44 @@ export default {
   },
   data: function() {
     return {
-      newComment: "",
-      postDetails: {}
+      post: {},
     };
   },
 
   computed: {
     url() {
-      return `${this.$BASE_URL}posts/${this.general.currentPost.slug}`;
+      return `${this.$BASE_URL}posts/${this.post.slug}`;
     },
-
     ...mapState(["general", "auth"]),
-    ...mapGetters(["isLoggedIn"]),
-
     category() {
       if (this.general.categories) {
         const postCategory = this.general.categories.find(
-          category => category.id === this.general.currentPost.category
+          category => category.id === this.post.category
         );
         return postCategory.name;
       }
     }
   },
   methods: {
-    ...mapActions(["getPostBySlug"])
+    ...mapActions(["getPostBySlug"]),
+    async getPostForDisplay(){
+      // fetch the data when the view is created and the data is
+      // already being observed
+      let { slug } = this.$route.params;
+
+      this.post = await this.getPostBySlug({ slug });
+    }
   },
-
+  watch: {
+    async '$route'(to, from) {
+      await this.getPostForDisplay()
+    }
+  },
   async created() {
-    // fetch the data when the view is created and the data is
-    // already being observed
-    let { slug } = this.$route.params;
-
-    await this.getPostBySlug({ slug });
-    this.postDetails = this.general.currentPost;
+    await this.getPostForDisplay()
   },
   beforeDestroy: function(){
-    this.general.currentPost = {}
+    this.post = {}
   }
 };
 </script>

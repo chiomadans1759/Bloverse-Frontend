@@ -35,6 +35,13 @@ Vue.use(Router);
 
 const router = new Router({
   mode: 'history',
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  },
   routes: [
     {
       path: '/', component: GeneralLayout,
@@ -47,7 +54,6 @@ const router = new Router({
         { path: '/privacy-policies', component: Privacy }
       ]
     },
-    { path: '/photocontest', component: PhotoContest },
     {
       path: '/admin', component: BlankBase,
       children: [
@@ -64,6 +70,7 @@ const router = new Router({
         { path: 'apply', component: JournalistApply },
         { path: 'setup', component: JournalistSetUp },
         { path: 'verify', component: JournalistVerify },
+        { path: 'photocontest', component: PhotoContest },
         { path: ':username', component: JournalistAccountLayout, meta: { journalist: true }, 
           children: [
             { path: '', component: MyProfile },

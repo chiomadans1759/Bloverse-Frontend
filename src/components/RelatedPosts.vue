@@ -1,7 +1,7 @@
 <template>
   <div class="pagee">
     <!-- Desktop Layout -->
-    <div class="card related-posts-card" v-show="posts.length > 0">
+    <div class="card related-posts-card" v-if="posts.length > 0">
       <div class="card-header">
         <h3 class="card-header-title">Most Read Topics</h3>
       </div>
@@ -26,7 +26,7 @@
     </div>
 
     <!-- Mobile Layout -->
-    <div class="related-card">
+    <div class="related-card" v-if="posts.length > 0">
       <h4
         style="font-family: 'Montserrat', sans-serif; margin-top: 4rem; font-weight: bold;">
         Most Read Topics
@@ -72,47 +72,19 @@ import { mapActions, mapState } from "vuex";
 
 export default {
   name: "related-posts",
-  props: {
-    post_id: Number
-  },
   components: { Row, Col, Card, Carousel, Slide, Avatar },
-  data() {
-    return {
-      posts: {}
-    };
-  },
   methods: {
-    ...mapActions(["getSimilarPosts"]),
-
-    async getData() {
-      await this.getSimilarPosts({
-        post_id: await this.post_id,
-        threshold: 1.75
-      });
-      if (this.general.relatedPosts.length > 0) {
-        this.posts = this.general.relatedPosts;
-      } else {
-        await this.getSimilarPosts({
-          post_id: await this.post_id,
-          threshold: 1
-        });
-        if (this.general.relatedPosts.length > 0) {
-          this.posts = this.general.relatedPosts;
-        } else {
-          this.posts = this.general.trendingPost.splice(0, 6);
-        }
-      }
-    },
-
-    getTrending() {
-      this.posts = this.general.trendingPost.splice(0, 6);
-    }
+    ...mapActions(["getAllTrendingPosts"])
   },
   async created() {
-    await this.getTrending();
+    await this.getAllTrendingPosts();
   },
   computed: {
-    ...mapState(["general"])
+    ...mapState(["general"]),
+    posts(){
+      let posts = this.general.trendingPost;
+      return posts.splice(0, 6);
+    }
   }
 };
 </script>
@@ -253,7 +225,7 @@ export default {
     }
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 600px) {
     .related-card {
       display: none;
     }

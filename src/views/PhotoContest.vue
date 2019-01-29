@@ -14,7 +14,7 @@
             <div class="mb-5">
               <p class="display-2 font-weight-normal mb-3">Bloverse Photo Contest</p>
               <p class="lead">‘The Story Behind The Photo’</p>
-              <a class="btn btn-primary mt-5">Publish a Photo Contest</a>
+              <router-link to="/creators/apply" class="btn btn-primary mt-5">Enter Photo Contest</router-link>
             </div>
             <div class="pt-3">
               <button @click.prevent="showVid()" class="btn rounded-circle btn-play">
@@ -40,7 +40,7 @@
               <h1 class="title">How to enter:</h1>
               <ol>
                 <li>
-                  <router-link to="/creators">Apply</router-link>as a content creator
+                  <router-link to="/creators">Apply</router-link> as a content creator
                 </li>
                 <li>Submit ‘Story Behind The Photo’ post</li>
                 <li>Share on IG, FB, Twitter (take a screenshot of your article and upload to your IG account, put link in post comments or Bio)</li>

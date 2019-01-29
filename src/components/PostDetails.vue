@@ -1,9 +1,9 @@
 <template>
   <main class="card p-0" id="post-details">
-    <section v-if="!general.currentPost">
+    <section v-if="!post">
       <img src="@/assets/placeholders/post.svg" alt="">
     </section>
-    <div v-if="general.currentPost.is_published === true">
+    <div v-if="post.is_published === true">
       <div class="card-header border-0">
         <div class="row pt-4">
           <div class="col">
@@ -12,23 +12,24 @@
           <div class="col-auto">
             <h6
               class="text-secondary text-uppercase"
-            >{{general.currentPost.created | customizedTime}}</h6>
+            >{{post.created | customizedTime}}</h6>
           </div>
         </div>
       </div>
       <!-- card body -->
       <div class="card-body">
-        <img class="post-img" :src="general.currentPost.image_url">
+        <img class="post-img" :src="post.image_url">
 
-        <h1 class="post-title mt-4">{{general.currentPost.title}}</h1>
+        <h1 class="post-title mt-4">{{post.title}}</h1>
         <ul class="post-keypoints" v-if="point !== ''">
           <li
-            v-for="point in general.currentPost.keypoint"
+            v-for="point in post.keypoint"
+            v-if="point"
             :key="point.id"
           >{{point}}</li>
         </ul>
         <div class="post-content">
-          <div class="post-content-body" v-html="general.currentPost.body"></div>
+          <div class="post-content-body" v-html="post.body"></div>
         </div>
       </div>
     </div>
@@ -40,6 +41,7 @@ import { mapState } from "vuex";
 
 export default {
   name: "post-details",
+  props: ["post"],
   data() {
     return {
       show: false,
@@ -59,7 +61,7 @@ export default {
     category() {
       if (this.general.categories) {
         const postCategory = this.general.categories.find(
-          category => category.id === this.general.currentPost.category
+          category => category.id === this.post.category
         );
         return postCategory;
       }

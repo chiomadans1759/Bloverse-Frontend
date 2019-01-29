@@ -22,7 +22,6 @@ export default {
     },
     draftPosts: [],
     trendingPost: [],
-    currentPost: {},
     journalists: [],
     loading: false,
     metrics: {},
@@ -177,17 +176,9 @@ export default {
       let response = await Api.get(`posts/trending/`);
       commit('setTrendingPost', response.data.post);
     },
-    async getPostBySlug({
-      commit
-    }, {
-      slug
-    }) {
+    async getPostBySlug({commit}, {slug}) {
       let response = await Api.get(`posts?slug=${slug}`)
-      commit('setCurrentPost', response.data.posts[0]);
-    },
-    async getSimilarPosts({ commit }, { post_id, threshold }) {
-      let response = await Api.get(`posts/${post_id}/similar/?threshold=${threshold}`);
-      commit('setRelatedPosts', response.data.posts);
+      return response.data.posts[0];
     },
     publishedPostsIsLoading({ commit }, loading) {
       commit('setPublishedPostsLoading', loading);
@@ -232,9 +223,6 @@ export default {
     },
     setLoading(state, loading) {
       state.loading = loading;
-    },
-    setCurrentPost(state, post) {
-      state.currentPost = post;
     },
     setMetrics(state, metrics) {
       state.metrics = metrics
