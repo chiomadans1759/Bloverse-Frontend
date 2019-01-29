@@ -12,4 +12,30 @@ describe('RecommendationCard Component', () => {
 
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it('should toggle like button', () => {
+    const wrapper = mount(RecommendationCard, {
+      stubs: {
+        RouterLink: RouterLinkStub
+      }
+    });
+
+    wrapper.findAll('.thumbs-up').at(0).trigger('click');
+
+    expect(wrapper.vm.likePost).toBe(true);
+    expect(wrapper.vm.dislikePost).toBe(false);
+  });
+
+  it('should toggle dislike button', () => {
+    const wrapper = mount(RecommendationCard, {
+      stubs: {
+        RouterLink: RouterLinkStub
+      }
+    });
+
+    wrapper.findAll('.thumbs-down').at(0).trigger('click');
+
+    expect(wrapper.vm.likePost).toBe(false);
+    expect(wrapper.vm.dislikePost).toBe(true);
+  })
 });
