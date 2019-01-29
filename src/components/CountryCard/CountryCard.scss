@@ -17,3 +17,15 @@
   color: #096DD9;
   font-size: rem(20px);
 }
+
+main.card {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+@media screen and (min-width: 700px) {
+  main.card {
+    border: 1px solid rgba(0, 0, 0, 0.09) !important;
+    border-radius: 4px !important;
+  }
+}

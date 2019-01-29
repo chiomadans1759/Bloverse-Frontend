@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-5  d-none d-sm-block">
         <div class="col-lg-12 mr-2">
-          <profile />
+          <profile v-if="showMobileProfile" :hideMobileUserInfo="hideMobileUserInfo" />
         </div>
         <div class="col-lg-12 mt-2">
           <country-card />
@@ -45,16 +45,18 @@
       </div>
 
       <!-- on mobile view only -->
-      <div class="d-inline-flex d-sm-none initials">
-        <a class="initials-link" href="#" id="navbarDropdown" role="button">
+      <div v-if="showMobileProfile" class="d-inline-flex d-sm-none initials"
+        @click="showMobileUserInfo"
+      >
+        <button class="initials-link" id="navbarDropdown" role="button">
           SM
-        </a>
+        </button>
         <i class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"></i>
       </div>
       <!-- on mobile view only ends -->
 
       <div class="col-lg-7 border right-content bg-white bl-content">
-        <div class="border-bottom">
+        <div  v-if="showMobileProfile" class="border-bottom">
           <nav class="navbar navbar-expand-lg navbar-light bg-white
             justify-content-center profile-navbar"
           >
@@ -127,17 +129,21 @@
         </div>
 
         <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
-          <post-card :hideCardBorder="hideCardBorder" />
-          <post-card :hideCardBorder="hideCardBorder" />
-          <post-card :hideCardBorder="hideCardBorder" />
-          <post-card :hideCardBorder="hideCardBorder" />
-          <post-card :hideCardBorder="hideCardBorder" />
+          <post-card :hideCardBorder="hideCardBorder" customClass="consumer" />
+          <post-card :hideCardBorder="hideCardBorder" customClass="consumer" />
+          <post-card :hideCardBorder="hideCardBorder" customClass="consumer" />
+          <post-card :hideCardBorder="hideCardBorder" customClass="consumer" />
+          <post-card :hideCardBorder="hideCardBorder" customClass="consumer" />
         </div>
 
         <!-- mobile view -->
         <div class="row d-sm-none">
-          <post-cards :hideCardBorder="hideCardBorder" />
+          <post-cards v-if="showMobileProfile" :hideCardBorder="hideCardBorder" />
+          <user-info-mobile v-if="!showMobileProfile"
+            :hideMobileUserInfo="hideMobileUserInfo"
+          />
         </div>
+        <!-- mobile view ends -->
       </div>
     </div>
   </div>
@@ -150,6 +156,7 @@ import CountryCard from '@/components/CountryCard/CountryCard';
 import CategoryCard from '@/components/CategoryCard/CategoryCard';
 import PostCard from '@/components/PostCards/PostCard';
 import PostCards from '@/components/PostCards/PostCards';
+import UserInfoMobile from './UserInfoMobile/UserInfoMobile';
 
 export default {
   components: {
@@ -159,17 +166,25 @@ export default {
     CategoryCard,
     PostCard,
     PostCards,
+    UserInfoMobile,
   },
   data() {
     return {
       showListView: false,
       hideCardBorder: true,
+      showMobileProfile: true,
     }
   },
   methods: {
     toggleView(type) {
       this.showListView = type === 'list';
-    }
+    },
+    showMobileUserInfo() {
+      this.showMobileProfile = false;
+    },
+    hideMobileUserInfo() {
+      this.showMobileProfile = true;
+    },
   }
 }
 </script>

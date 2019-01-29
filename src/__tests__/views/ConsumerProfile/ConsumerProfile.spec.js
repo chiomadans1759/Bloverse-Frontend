@@ -11,4 +11,14 @@ describe('Profile Component', () => {
     });
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it('should toggle `showMobileProfile`', () => {
+    const wrapper = mount(Profile, {
+      stubs: { RouterLink: RouterLinkStub },
+    });
+
+    wrapper.find('.initials').trigger('click');
+    
+    expect(wrapper.vm.showMobileProfile).toBe(false);
+  })
 });

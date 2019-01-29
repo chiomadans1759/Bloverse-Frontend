@@ -12,3 +12,13 @@
   font-size: rem(20px);
   color: #096DD9;
 }
+
+main.card {
+  border-radius: 0 !important;
+}
+
+@media screen and (min-width: 700px) {
+  main.card {
+    border-radius: 4px !important;
+  }
+}
