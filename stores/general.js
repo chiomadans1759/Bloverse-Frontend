@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Api from '@/utils/Api'
-import universities from '@/utils/universities.js'
 
 export default {
   state: {
@@ -28,7 +27,6 @@ export default {
     metrics: {},
     modal: { show: false, currentComponent: null },
     relatedPosts: {},
-    universities: universities,
     showDrafts: false
   },
   actions: {
