@@ -1,0 +1,833 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChooseCategory Component dispatches "actionInput" when input event value is "input" 1`] = `
+<main
+  id="category-page"
+>
+  <div
+    class="main"
+  >
+    <header
+      id="feeds-header"
+    >
+      <nav
+        class="navbar navbar-expand-lg navbar-light px-5"
+      >
+        <a
+          class="backlink"
+          href="/settings"
+        >
+          <i
+            class="fal fa-long-arrow-left fa-2x back-icon"
+          />
+           
+          <span
+            class="back-text"
+          >
+            Back
+          </span>
+        </a>
+         
+        <a
+          class="router-link"
+        >
+          <img
+            class="nav-logo"
+            src="@/assets/Logo.svg"
+          />
+           
+          <!---->
+        </a>
+         
+        <!---->
+         
+        <!---->
+      </nav>
+    </header>
+     
+    <div
+      class="container"
+    >
+      <div
+        class="row d-flex justify-content-center align-items-center"
+      >
+        <div
+          class="col-sm-7 col-lg-6 pt-5"
+        >
+          <h5
+            class="pb-1"
+          >
+            Select Your Interest
+          </h5>
+           
+          <p
+            class="select-t"
+          >
+            Selected 18 categories
+          </p>
+           
+          <div>
+            <div
+              id="choose-category"
+            >
+              <ul
+                class="row d-flex flex-wrap"
+              >
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Food
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Politics
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Entertainment
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Business
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Health
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Technology
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Photo Contest
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Travel
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Sports
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Fashion
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Gaming
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Pet/Animals
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Education
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Law
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Psycho
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Other
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Category-1
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="col-6 col-md-4 col-lg-4 col-xl-4 mb-3"
+                >
+                  <div>
+                    <div
+                      class="card p-0"
+                    >
+                      <div
+                        class="category-img-wrapper"
+                        id="cat-img"
+                      >
+                        <span
+                          class="overlay"
+                          id="cat-span"
+                          style="display: none;"
+                        >
+                          <div
+                            class="circle"
+                          />
+                           
+                          <i
+                            class="fal fa-check fa-1x overlay-icon"
+                          />
+                        </span>
+                         
+                        <img
+                          alt=""
+                          class="categoryname"
+                          src="test-file-stub"
+                        />
+                      </div>
+                       
+                      <p
+                        class="p-2"
+                      >
+                        Category-2
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="card category-footer py-2 rounded-0"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row d-flex justify-content-center"
+          >
+            <div
+              class="col-sm-7 col-lg-6 d-flex justify-content-between"
+            >
+              <button
+                class="btn btn-link btn-sm"
+                type="button"
+              >
+                Skip
+              </button>
+               
+              <button
+                class="btn btn-sm btn-primary"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;

@@ -5,7 +5,7 @@ export default {
     feedCategories: {},
     recentlyReadFeeds: {},
     RecentComments: {},
-    postsFeed: {}
+    postsFeed: {},
   },
   mutations: {
     setConsumerCountry(state, payload) {

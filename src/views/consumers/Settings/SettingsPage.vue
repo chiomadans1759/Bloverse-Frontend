@@ -16,7 +16,7 @@
      <router-link to="/regions" class="text-capitalize mt-3">customize country</router-link>
       <p class="text small">Update your information</p>
 
-      <a href="#" class="text-capitalize mt-3">customize category</a>
+      <router-link to="/choosecategory" class="text-capitalize mt-3">customize category</router-link>
       <p class="text small">Update your information</p>
 
       <a href="#" class="text-capitalize mt-3">feedback</a>
