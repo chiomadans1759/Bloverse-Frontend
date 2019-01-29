@@ -11,16 +11,13 @@ export default {
     var vm = this,
       // use jquery temporary
       options = $.extend(true, {}, this.tinymceOptions); // eslint-disable-line no-undef
-
     // make an deep copy of options;should not modify tinymceOptions
     options.selector = undefined;
     options.target = vm.$el; // use options.target instand of options.selector
     var oldSetup = options.setup || function() {};
-
     options.setup = function(editor) {
       //Decorate origni one
       oldSetup(editor);
-
       // Bind keyup
       editor.on("keyup", function(e) {
         // update model value;
@@ -28,11 +25,9 @@ export default {
         // Dom to model,this was a problem,when input in editor ? it will focus in the first line first word;
         vm.$emit("input", value); // who recieve this event?
       });
-
       editor.on("blur", function() {
         vm.allowSetContent = true;
       });
-
       editor.on("focus", function() {
         vm.allowSetContent = false;
       });
@@ -42,7 +37,6 @@ export default {
       // eslint-disable-line no-undef
       var icon_url =
         "https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-twitter-s.png";
-
       editor.on("init", function(args) {
         this.editor_id = args.target.id;
       });
@@ -50,11 +44,9 @@ export default {
         text: false,
         icon: true,
         image: icon_url,
-
         onclick: function() {
           editor.windowManager.open({
             title: "Twitter Embed",
-
             body: [
               {
                 type: "textbox",
@@ -66,7 +58,7 @@ export default {
             ],
             onsubmit: function(e) {
               var tweetEmbedCode = e.data.twitter;
-                // eslint-disable-line no-undef
+              // eslint-disable-line no-undef
               $.ajax({
                 // eslint-disable-line no-undef
                 url: "https://publish.twitter.com/oembed?url=" + tweetEmbedCode,
@@ -110,11 +102,11 @@ export default {
         }
       });
     });
-
     tinymce.init(options).then(function(editors) {
       // eslint-disable-line no-undef
       vm.editor = editors[0];
       vm.setup(vm.editor);
+      vm.editor.setContent(vm.general.tinyMiceValue);
     });
   },
   watch: {
@@ -125,10 +117,11 @@ export default {
       }
     },
     "general.tinyMiceValue": function(content) {
-      this.editor.setContent(content);
+      if (this.editor && this.allowSetContent) {
+        this.editor.setContent(content);
+      }
     }
   },
-
   computed: {
     ...mapState(["general"])
   },
@@ -150,9 +143,7 @@ export default {
           "undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
         toolbar2:
           "print preview media | forecolor backcolor emoticons | codesample | twitter_url",
-
         valid_elements: "+*[*]",
-
         extended_valid_elements:
           "+iframe[width|height|name|align|class|frameborder|allowfullscreen|allow|src|*]," +
           "script[language|type|async|src|charset]" +
@@ -172,15 +163,12 @@ export default {
         // images_upload_url: 'postAcceptor.php',
         // here we add custom filepicker only to Image dialog
         file_picker_types: "image",
-
         file_picker_callback: function(cb, value, meta) {
           var input = document.createElement("input");
           input.setAttribute("type", "file");
           input.setAttribute("accept", "image/*");
-
           input.onchange = function() {
             var file = this.files[0];
-
             var reader = new FileReader();
             reader.onload = function() {
               // Note: Now we need to register the blob in TinyMCEs image blob

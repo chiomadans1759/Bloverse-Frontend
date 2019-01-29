@@ -28,7 +28,8 @@ export default {
     metrics: {},
     modal: { show: false, currentComponent: null },
     relatedPosts: {},
-    universities: universities
+    universities: universities,
+    showDrafts: false
   },
   actions: {
     async setGeneralData({ commit }) {
@@ -122,7 +123,7 @@ export default {
 
       return false;
     },
-    async rejectAcceptApplicants({dispatch}, applicants) {
+    async rejectAcceptApplicants({ dispatch }, applicants) {
       let processedUsers = [];
       applicants.forEach(async applicant => {
         if (applicant.status === 1)
@@ -137,19 +138,19 @@ export default {
     },
     async processApplicant(context, applicant) {
       let { id, status } = applicant;
-      let response = await Api.put('applicants/' + id + '/', {status}, true);
-      return response.statusCode === 200;   
+      let response = await Api.put('applicants/' + id + '/', { status }, true);
+      return response.statusCode === 200;
     },
     async getAllPublishedPosts({ commit, state }, { category = "", country = "" }) {
       try {
-        if(state.postsPagingData.next === null && state.postsPagingData.data_has_fetched === false) {
+        if (state.postsPagingData.next === null && state.postsPagingData.data_has_fetched === false) {
           commit('setPublishedPostsLoading', true);
           let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
           commit('setPostsPagingData', response.data.pagination);
           commit('setPublishedPosts', response.data.posts);
           commit('setPublishedPostsLoading', false);
           commit("setDataFetched", true);
-        }else if(state.postsPagingData.next !== null) {
+        } else if (state.postsPagingData.next !== null) {
           let response = await axios.get(state.postsPagingData.next);
           commit('setPostsPagingData', response.data.data.pagination);
           response.data.data.posts.forEach((data) => {
@@ -157,7 +158,7 @@ export default {
           });
         }
       } catch (error) {
-        alert('Posts feed empty'); 
+        alert('Posts feed empty');
       }
     },
     async filterPosts({ commit }, { category = "", country = "" }) {
@@ -190,7 +191,7 @@ export default {
     },
     publishedPostsIsLoading({ commit }, loading) {
       commit('setPublishedPostsLoading', loading);
-    },
+    }
   },
   mutations: {
     setTinyMiceValue(state, value) {
@@ -243,7 +244,7 @@ export default {
     },
     setRelatedPosts(state, posts) {
       state.relatedPosts = posts
-    },
+    }
   },
   getters: {
     acceptedApplicants(state) {

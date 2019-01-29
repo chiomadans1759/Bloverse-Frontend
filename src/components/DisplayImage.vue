@@ -9,7 +9,7 @@
         />
         <div class="img-wrapper" @mouseover="imageHover = true" @mouseleave="imageHover = false">
           <i class="fal fa-file-upload fa-4x"></i>
-          <p>Add Picture</p>
+          <p>{{this.currImage ? 'Change Picture' : 'Add Picture'}}</p>
           <img v-if="currImage" :src="currImage" :alt="alt">
           <div v-else style="display: flex; width: 100%; height: 100%">
             <h2 style="margin: auto">NO IMAGE</h2>
@@ -65,13 +65,11 @@ export default {
     display: flex;
     width: 100%;
   }
-
   section#img-display {
     background: #aca7a7;
     border: 0.1px solid grey;
     width: 100%;
   }
-
   .img-wrapper {
     height: 100% !important;
     width: 100% !important;
@@ -81,7 +79,6 @@ export default {
     justify-content: space-evenly;
     align-items: center;
   }
-
   .img-wrapper img {
     height: 100%;
     width: 100%;
@@ -90,18 +87,15 @@ export default {
     top: 0px;
     object-fit: cover;
   }
-
   .img-wrapper p {
     text-align: center;
     color: black;
     font-size: 20px;
     font-weight: 600;
   }
-
   .img-wrapper .fal {
     font-size: 20px;
   }
-
   .img-wrapper #activate-upload {
     position: absolute;
     color: white;
