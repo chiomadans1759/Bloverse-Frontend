@@ -134,6 +134,7 @@
                   <a
                     class="d-flex justify-content-center align-items-center rounded-circle facebook-color"
                     href="https://www.facebook.com/bloverse/"
+                    target="_blank"
                   >
                     <i class="fab fa-facebook-f"></i>
                   </a>
@@ -142,6 +143,7 @@
                   <a
                     class="d-flex justify-content-center align-items-center rounded-circle twitter-color"
                     href="https://twitter.com/bloverse_world"
+                    target="_blank"
                   >
                     <i class="fab fa-twitter"></i>
                   </a>
@@ -150,8 +152,18 @@
                   <a
                     class="d-flex justify-content-center align-items-center rounded-circle linkedin-color"
                     href="https://www.linkedin.com/company/bloverse1/"
+                    target="_blank"
                   >
                     <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="d-flex justify-content-center align-items-center rounded-circle instagram-color"
+                    href="https://www.instagram.com/bloverse"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
                   </a>
                 </li>
               </ul>
@@ -302,6 +314,9 @@ ul.social-round li a {
 }
 .linkedin-color {
   background-color: #0077b5;
+}
+.instagram-color {
+  background-color: #fb3958;
 }
 .reward .card.silver {
   border-color: #bcbec0 !important;
