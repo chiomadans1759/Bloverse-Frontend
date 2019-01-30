@@ -77,16 +77,11 @@
                   ref="autocomplete"
                   placeholder="Location"
                   class="search-location">
-                <FormItem prop="duration">
-                  <DatePicker
-                    v-model="post.duration"
-                    id="keypoint"
-                    type="date"
-                    placement="bottom-end"
-                    placeholder="Time Taken"
-                    style="width: 100%">
-                  </DatePicker>
-                </FormItem>
+                  <input 
+                   class="form-control mt-2 mb-4" 
+                   type="date" 
+                   id="example-datetime-local-input" 
+                   v-model="post.duration" >
                 <FormItem prop="deviceType">
                   <Select placeholder="Device Used" id="keypoint" v-model="post.deviceType">
                     <Option
@@ -139,16 +134,33 @@
         <div v-if="!post.title">
           <h1 class="text-center" style="padding:100px;">NOTHING TO PREVIEW YET</h1>
         </div>
-        <div v-if="post.title">
+        <div v-if="post.title && post.category != 7">
           <div class="container-fluid previewMade">
             <h4>Preview</h4>
-            <!-- <p>{{post.category}}</p> -->
             <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="false"/>
             <h1>{{post.title}}</h1>
             <ul v-for="(keypoint) in post.keyPoints" :key="keypoint.value">
               <li>{{keypoint.value}}</li>
             </ul>
-            <p v-html="post.body" id="content"></p>
+            <p v-html="general.tinyMiceValue" id="content"></p>
+            <div class="text-center mt-4 mx-5">
+              <Button
+                id="btn-publish"
+                :disabled="post.is_published || this.isPublishing"
+                @click="handleProcessPost(true)"
+              >{{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}</Button>
+            </div>
+          </div>
+        </div>
+        <div v-else-if="post.title && post.category == 7">
+          <div class="container-fluid previewMade">
+            <h4>Preview</h4>
+            <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="false"/>
+            <h1>{{post.title}}</h1>
+            <p>{{post.location}}</p>
+            <p>{{post.duration}}</p>
+            <p>{{post.deviceType}}</p>
+            <p v-html="general.tinyMiceValue" id="content"></p>
             <div class="text-center mt-4 mx-5">
               <Button
                 id="btn-publish"
@@ -217,9 +229,9 @@ export default {
       loading: false,
       post: {
         keyPoints: [
+          { index: 0, value: "" },
           { index: 1, value: "" },
-          { index: 2, value: "" },
-          { index: 3, value: "" }
+          { index: 2, value: "" }
         ]
       },
       errors: {},
@@ -324,9 +336,9 @@ export default {
     clearPost() {
       this.post = {
         keyPoints: [
+          { index: 0, value: "" },
           { index: 1, value: "" },
-          { index: 2, value: "" },
-          { index: 3, value: "" }
+          { index: 2, value: "" }
         ],
       };
     },
