@@ -135,7 +135,7 @@
             </div>
           </div>
         <span class="vl bg-light"></span>
-          <router-link class="publish-link" to="/creators/apply">
+          <router-link class="publish-link" to="/creators">
             Publish
           </router-link>
       </div>
