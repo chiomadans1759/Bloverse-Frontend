@@ -49,9 +49,10 @@ const router = new Router({
         { path: '', component: PostFeeds },
         { path: 'posts', redirect: '/' },
         { path: 'posts/:slug', component: PostDisplay },
-        { path: '/about', component: About },
-        { path: '/terms-and-conditions', component: Terms },
-        { path: '/privacy-policies', component: Privacy }
+        { path: 'about', component: About },
+        { path: 'terms-and-conditions', component: Terms },
+        { path: 'privacy-policies', component: Privacy },
+        { path: 'photocontest', redirect: '/creators/photocontest' }
       ]
     },
     {
@@ -124,12 +125,6 @@ router.beforeEach((to, from, next) => {
   /* eslint-disable */
   LoadingBar.start();
   next()
-});
-
-router.afterEach((to, from, next) => { // eslint-disable-line no-unused-vars
-  gtag('set', 'page', to.path); // eslint-disable-line no-undef
-  gtag('send', 'pageview'); // eslint-disable-line no-undef
-  LoadingBar.finish();
 });
 
 export default router;

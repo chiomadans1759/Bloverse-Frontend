@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <title>Bloverse</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130020413-1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<% VUE_APP_VIEW_ID %>"></script>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
@@ -29,7 +29,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'UA-130020413-1');
+    gtag('config', `${VUE_APP_VIEW_ID}`);
   </script>
   <div id="app"></div>
   <!-- <script type="text/javascript" src="static/js/jquery.min.js"></script> -->
