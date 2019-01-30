@@ -1,7 +1,10 @@
 <template>
   <main class="card profile">
     <img src="@/assets/Avatar.png" class="card-img-top" alt="...">
-    <div class="profile-edit-icon d-flex justify-content-end p-3">
+    <div class="profile-edit-icon d-flex justify-content-between p-3">
+      <span class="d-inline d-sm-none" @click="hideMobileUserInfo">
+        <i class="fal fa-long-arrow-left fa-2x back-arrow"></i>
+      </span>
       <i class="fal fa-user-edit fa-2x"></i>
     </div>
     <div class="avatar mx-4">
@@ -35,8 +38,8 @@
         <span class="border rounded px-1 mr-2" data-toggle="modal" href="#following-modal" id="number">5</span>
       </div>
     </div>
-    <div class="card-footer text-muted bg-white">Member Since:
-      <strong>December, 2018</strong>
+    <div class="card-footer text-muted bg-white footer-color">Member Since:
+      <span class="text-dark">27 December, 2018</span>
     </div>
     <modal target="following-modal" title="Following" hideFooter>
       <div class="bl-modal-content">
@@ -112,6 +115,12 @@ export default {
   name: "ProfileCard",
   components: {
     Modal
+  },
+  props: {
+    hideMobileUserInfo: {
+      type: Function,
+      required: true,
+    }
   }
 };
 </script>
