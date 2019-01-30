@@ -94,7 +94,7 @@
               </Col>
               <Col :sm="11" :xs="24" v-if="young_voices == true">
                 <FormItem prop="university" :error="errors.university">
-                  <v-select :options="general.universities" label="institution" placeholder="University*" class="my-select" v-model="applicant.university">
+                  <v-select :options="universities" label="institution" placeholder="University*" class="my-select" v-model="applicant.university">
                   </v-select>
                 </FormItem>
               </Col>
@@ -157,6 +157,7 @@ import LoginButton from "@/components/LoginButton"
 import { mapState, mapActions } from "vuex";
 import vSelect from "vue-select";
 import countryFlags from "../../countryFlags.js";
+import universities from '@/utils/universities.js';
 
 export default {
   components: {
@@ -178,6 +179,19 @@ export default {
     'applicant.phoneNumber': function(newValue){
       const result = newValue.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, "");
       this.$nextTick(() => this.applicant.phoneNumber = result);  
+    },
+
+    'applicant.country': function() {
+      if(this.young_voices == true) {
+        let index = universities.findIndex(obj => obj.country == this.applicant.country.name);
+        if(index > -1) {
+          let unis
+          universities.forEach((v, i, arr) => {
+            unis = arr[index].universities
+          })
+          this.universities = unis
+        }
+      }
     }
   },
   data() {
@@ -189,6 +203,7 @@ export default {
       countries: {},
       categories: {},
       young_voices: false,
+      universities: [],
       validateApplication: {
         firstName: [
           {
