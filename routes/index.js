@@ -24,6 +24,7 @@ import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPag
 
 import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicyPage.vue';
 import Settings from '@/views/consumers/Settings/SettingsPage.vue'
+import Category from '@/views/consumers/Category/CategoryPage'
 
 import AboutUs from '../src/views/general/About/AboutPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
@@ -65,6 +66,8 @@ const routes = [
   { path: '/register', component: SignupPage},
 
   { path: '/newpassword', component: NewPasswordPage},
+
+  { path: '/choosecategory', component: Category},
 
   { path: "/changepassword", component: ChangePassword },
 
