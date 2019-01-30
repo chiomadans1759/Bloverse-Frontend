@@ -49,9 +49,10 @@ const router = new Router({
         { path: '', component: PostFeeds },
         { path: 'posts', redirect: '/' },
         { path: 'posts/:slug', component: PostDisplay },
-        { path: '/about', component: About },
-        { path: '/terms-and-conditions', component: Terms },
-        { path: '/privacy-policies', component: Privacy }
+        { path: 'about', component: About },
+        { path: 'terms-and-conditions', component: Terms },
+        { path: 'privacy-policies', component: Privacy },
+        { path: 'photocontest', redirect: '/creators/photocontest' }
       ]
     },
     {
