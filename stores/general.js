@@ -24,6 +24,7 @@ export default {
     journalists: [],
     loading: false,
     metrics: {},
+    currentPost: {},
     modal: { show: false, currentComponent: null },
     relatedPosts: {},
     showDrafts: false
@@ -176,7 +177,9 @@ export default {
     },
     async getPostBySlug({commit}, {slug}) {
       let response = await Api.get(`posts?slug=${slug}`)
-      return response.data.posts[0];
+      // console.log(response.data.posts[0])
+      // return response.data.posts[0];
+      commit('setCurrentPost', response.data.posts[0])
     },
     publishedPostsIsLoading({ commit }, loading) {
       commit('setPublishedPostsLoading', loading);
@@ -215,6 +218,9 @@ export default {
     },
     setDraftPosts(state, posts) {
       state.draftPosts = posts;
+    },
+    setCurrentPost(state, post) {
+      state.currentPost = post
     },
     setJournalists(state, journalists) {
       state.journalists = journalists;
