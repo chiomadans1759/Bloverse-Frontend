@@ -177,8 +177,6 @@ export default {
     },
     async getPostBySlug({commit}, {slug}) {
       let response = await Api.get(`posts?slug=${slug}`)
-      // console.log(response.data.posts[0])
-      // return response.data.posts[0];
       commit('setCurrentPost', response.data.posts[0])
     },
     publishedPostsIsLoading({ commit }, loading) {
