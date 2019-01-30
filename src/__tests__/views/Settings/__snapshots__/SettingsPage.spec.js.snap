@@ -110,7 +110,7 @@ exports[`Settings Page should render correctly 1`] = `
               <p
                 class="text small"
               >
-                 Subscribe to receive article digest of your interest
+                Subscribe to receive article digest of your interest
               </p>
             </div>
              
@@ -140,7 +140,7 @@ exports[`Settings Page should render correctly 1`] = `
               <p
                 class="text small"
               >
-                 Receive article digest
+                Receive article digest
               </p>
             </div>
              
