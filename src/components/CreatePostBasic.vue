@@ -51,6 +51,7 @@
                 <Select v-model="post.category" placeholder="Choose Category" :disabled="isTravel">
                   <Option
                     v-for="cat in general.categories"
+                    v-show="cat.name != 'Photo Contest'"
                     :value="cat.id"
                     :key="cat.id"
                   >{{cat.name}}</Option>
