@@ -5,7 +5,7 @@
         <router-link to="/" class="router-link">
           <img class="logo" src="@/assets/Asset 1.svg" style="height: 40px">
         </router-link>
-        <h3 id="form-instruction">Please fill the form to become a journalist on bloverse</h3>
+        <h3 id="form-instruction">Setup your Content Creator Account in 2 steps</h3>
         <Row type="flex" id="auth-one-two">
           <Col class="steps-container">
             <div class="steps">
