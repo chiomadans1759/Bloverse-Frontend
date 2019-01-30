@@ -1,9 +1,9 @@
 <template>
   <main id="photo-contest">
     <photo-contest-header/>
+
     <section
-      class="text-center text-white my-0 position-relative d-flex justify-content-center align-items-center top-section"
-    >
+      class="text-center text-white my-0 position-relative d-flex justify-content-center align-items-center top-section">
       <div class>
         <div class="overlay"></div>
         <img class="img-fluid w-100" src="@/assets/photo5.jpg" alt>
@@ -26,12 +26,12 @@
             <video-modal
               v-if="show_video"
               @close="closeVid"
-              source="https://www.youtube.com/embed/CjKVWRErsN8"
-            />
+              source="https://www.youtube.com/embed/CjKVWRErsN8" />
           </div>
         </div>
       </div>
     </section>
+
     <section class="detail-wrap">
       <div class="container">
         <div class="row justify-content-center align-items-center detail-content">
@@ -119,6 +119,7 @@
         </div>
       </div>
     </section>
+    
     <section>
       <div class="container">
         <div class="row justify-content-center">
