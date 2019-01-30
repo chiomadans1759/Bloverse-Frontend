@@ -1,6 +1,6 @@
 <template>
   <div class="edit-container">
-    <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" />
+    <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations"/>
     <div class="content">
       <div class="container">
         <div class="row">
@@ -8,11 +8,12 @@
           <div class="col-12 col-md-4 col-sm-4 col-lg-4">
             <br>
             <br>
-            
+
             <h3>Edit Profile</h3>
 
             <br>
-            <br><br>
+            <br>
+            <br>
             <form action>
               <div class="row">
                 <div class="col-3 col-md-3 col-sm-3 col-lg-3 pr-0">
@@ -114,7 +115,7 @@
               ></textarea>
               <br>
               <span class="d-flex justify-content-end span-text">0&#x3C;124</span>
-              <br />
+              <br>
               <button type="submit" class="btn btn-primary btn-block edit-btn">Save</button>
             </form>
           </div>
@@ -126,7 +127,7 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar/Navbar.vue';
+import Navbar from "@/components/Navbar/Navbar.vue";
 
 export default {
   name: "EditProfile",
@@ -143,7 +144,7 @@ export default {
         profileimage: ""
       },
       showNavigations: false,
-      showBackArrow: true,
+      showBackArrow: true
     };
   },
   components: { Navbar },
@@ -152,10 +153,9 @@ export default {
       this[event.target.name] = event.target.value;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped="true">
 @import "./EditProfilePage.scss";
 </style>
-

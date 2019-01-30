@@ -30,7 +30,7 @@ import Category from '@/views/consumers/Category/CategoryPage'
 import AboutUs from '../src/views/general/About/AboutPage.vue';
 
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
-import Region from '../src/views/consumers/Region/RegionPage';
+import Country from '@/views/consumers/Country/CountryPage';
 
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 import Homepage from '../src/views/general/Home/Homepage.vue';
@@ -65,7 +65,7 @@ const routes = [
 
   { path: '/forgotpassword', component: ForgotPassword},
 
-  { path: '/editprofile', component: EditProfile},
+  { path: '/edit/profile', component: EditProfile},
 
   { path: '/login', component: SigninPage},
 
@@ -79,7 +79,7 @@ const routes = [
 
   { path: '/edit/profile', component: EditProfile },
 
-  { path: '/regions', component: Region},
+  { path: '/choosecountry', component: Country},
 
   {
     path: '/admin', component: BlankBase,

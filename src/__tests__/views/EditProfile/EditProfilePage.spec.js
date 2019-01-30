@@ -60,6 +60,5 @@ describe('EditProfile Page', () => {
     expect(wrapper.vm.username).toBe('test333');
     expect(wrapper.vm.phone).toBe('080123456');
     expect(wrapper.vm.location).toBe('nigeria');
-
   });
 });
