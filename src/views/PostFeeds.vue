@@ -122,6 +122,7 @@ export default {
     },
 
     filterCountry(country) {
+      this.active_country = country
       this.filterPosts({
         category: this.active_category.id || "",
         country: this.country.id
