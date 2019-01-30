@@ -103,7 +103,7 @@ export default {
         id: ""
       },
       active_category: {
-        name: "",
+        name: "All",
         id: ""
       }
     };
