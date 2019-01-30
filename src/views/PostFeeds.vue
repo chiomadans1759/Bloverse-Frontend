@@ -12,7 +12,7 @@
               label="name"
               placeholder="Country"
               v-model="general.country"
-              @input="filterCountry (country)"
+              @input="filterCountry(country)"
               v-if="allow || general.countries"
             ></v-select>
           </div>
@@ -128,7 +128,7 @@ export default {
       this.filterPosts({
         prevCategory: this.general.activeCategory,
         category: id,
-        country: ""
+        country: this.general.country.id
       });
       this.general.activeCategory = { id, name };
       this.show_more = false;
