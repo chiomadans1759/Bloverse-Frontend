@@ -186,12 +186,10 @@ import {
   DatePicker
 } from "iview";
 import { mapState, mapActions } from "vuex";
-import { VueEditor } from "vue2-editor";
 import SocialButtons from "@/components/SocialButtons";
 import { Push } from "vue-burger-menu";
 import DisplayImage from "./DisplayImage";
 import Tinymce from "./Tinymce";
-import Api from "@/utils/Api";
 
 export default {
   components: {
@@ -207,7 +205,6 @@ export default {
     Modal,
     Alert,
     SocialButtons,
-    VueEditor,
     DisplayImage,
     DatePicker,
     Tinymce,
@@ -334,7 +331,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["processPost"]),
+    ...mapActions(["processPost", "getPostBySlug"]),
 
     previewPosts() {
       if (this.post.title == "") {
@@ -463,11 +460,10 @@ export default {
       }
     },
 
-    async getPostBySlug() {
+    async postData() {
       let slug = this.$route.params.slug;
       if (slug) {
-        let response = await Api.get(`posts?slug=${this.$route.params.slug}`);
-        let post = response.data.posts[0];
+        let post = await this.getPostBySlug({ slug });
         const keyPoints = post.keypoint.map((k, i) => ({
           index: i + 1,
           value: k
@@ -499,7 +495,7 @@ export default {
     await this.checkTravel();
   },
   async created() {
-    await this.getPostBySlug();
+    await this.postData();
   }
 };
 </script>

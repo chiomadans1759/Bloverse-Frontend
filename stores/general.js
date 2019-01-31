@@ -175,6 +175,10 @@ export default {
     },
     publishedPostsIsLoading({ commit }, loading) {
       commit('setPublishedPostsLoading', loading);
+    },
+    async getPostBySlug({commit}, {slug}) {
+      let response = await Api.get(`posts?slug=${slug}`)
+      return response.data.posts[0]
     }
   },
   mutations: {
