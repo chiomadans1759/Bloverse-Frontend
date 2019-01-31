@@ -185,7 +185,7 @@ export default {
         category = this.general.categories.find(cat => cat.id === category);
         category = category ? category.name : university;
         country = this.general.countries.find(con => con.id === country);
-        country = country.name;
+        country = country && country.name;
 
         return {
           id,
