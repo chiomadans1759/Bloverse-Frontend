@@ -10,7 +10,7 @@ export default {
     async processPost({ commit, rootState, state, dispatch }, params) {
       let { post } = params;
       if (params.shouldUploadImage) {
-        let newUrl = await dispatch('doUpload', post.imageUrl, {root: true});
+        let newUrl = await dispatch('doUpload', post.image_url, {root: true});
         post.imageUrl = newUrl
       }
 

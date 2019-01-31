@@ -6,7 +6,10 @@
 import { mapState } from "vuex";
 /* eslint-disable */
 export default {
-  props: ["value", "options"],
+  props: ['value', "options"],
+  created() {
+    console.log(this.value)
+  },
   mounted() {
     var vm = this,
       // use jquery temporary
@@ -113,11 +116,6 @@ export default {
     value: function(content) {
       if (this.editor && this.allowSetContent) {
         // setContent will let editor focus in first line and first world
-        this.editor.setContent(content);
-      }
-    },
-    "general.tinyMiceValue": function(content) {
-      if (this.editor && this.allowSetContent) {
         this.editor.setContent(content);
       }
     }
