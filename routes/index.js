@@ -35,7 +35,7 @@ Vue.use(Router);
 
 const router = new Router({
   mode: 'history',
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
     } else {
@@ -72,11 +72,13 @@ const router = new Router({
         { path: 'setup', component: JournalistSetUp },
         { path: 'verify', component: JournalistVerify },
         { path: 'photocontest', component: PhotoContest },
-        { path: ':username', component: JournalistAccountLayout, meta: { journalist: true }, 
+        {
+          path: ':username', component: JournalistAccountLayout, meta: { journalist: true },
           children: [
             { path: '', component: MyProfile },
             { path: 'dashboard', name: 'journalist-dashboard', component: DashBoardHome },
-            { path: 'posts', name: 'posts', component: BlankBase, meta: { journalist: true },
+            {
+              path: 'posts', name: 'posts', component: BlankBase, meta: { journalist: true },
               children: [
                 { path: '', name: 'all-posts', component: MyPosts },
                 { path: 'create', name: 'create-post', component: CreatePost },

@@ -3,7 +3,7 @@
     <section v-if="!post">
       <img src="@/assets/placeholders/post.svg" alt="">
     </section>
-    <div v-if="post.is_published === true">
+    <div>
       <div class="card-header border-0">
         <div class="row pt-4">
           <div class="col">
@@ -21,7 +21,7 @@
         <img class="post-img" :src="post.image_url">
 
         <h1 class="post-title mt-4">{{post.title}}</h1>
-        <ul class="post-keypoints" v-if="point !== ''">
+        <ul class="post-keypoints">
           <li
             v-for="point in post.keypoint"
             v-if="point"
