@@ -126,9 +126,7 @@ exports[`Creator Home Page should render correctly 1`] = `
               role="button"
               to="/login"
             >
-              
-          MD
-        
+              MD
             </a>
              
             <div
@@ -204,7 +202,8 @@ exports[`Creator Home Page should render correctly 1`] = `
               <a
                 class="nav-link"
               >
-                 Home 
+                Home
+            
                 <span
                   class="sr-only"
                 >
@@ -315,9 +314,7 @@ exports[`Creator Home Page should render correctly 1`] = `
                 role="button"
                 to="/login"
               >
-                
-              MD
-            
+                MD
               </a>
                
               <div
@@ -335,8 +332,8 @@ exports[`Creator Home Page should render correctly 1`] = `
                     />
                   </span>
                   
-                Profile
-              
+              Profile
+            
                 </a>
                  
                 <div
@@ -354,8 +351,8 @@ exports[`Creator Home Page should render correctly 1`] = `
                     />
                   </span>
                   
-                Settings
-              
+              Settings
+            
                 </a>
                  
                 <div
@@ -374,8 +371,8 @@ exports[`Creator Home Page should render correctly 1`] = `
                     />
                   </span>
                   
-                Sign Out
-              
+              Sign Out
+            
                 </a>
               </div>
             </div>
@@ -387,9 +384,7 @@ exports[`Creator Home Page should render correctly 1`] = `
             <a
               class="publish-link"
             >
-              
-            Publish
-          
+              Publish
             </a>
           </div>
         </div>

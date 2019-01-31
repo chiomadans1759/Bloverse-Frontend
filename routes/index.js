@@ -23,11 +23,10 @@ import NotFound from '../src/views/NotFound.vue';
 import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPage.vue';
 
 import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicyPage.vue';
-import Settings from '@/views/consumers/Settings/SettingsPage.vue'
+import Settings from '@/views/general/Settings/SettingsPage.vue'
 import Category from '@/views/consumers/Category/CategoryPage'
 
 import Country from '@/views/consumers/Country/CountryPage';
-
 
 import AboutUs from '../src/views/general/About/AboutPage.vue';
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
