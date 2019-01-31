@@ -75,15 +75,6 @@ export default {
     },
     ...mapState(["auth"])
   },
-  watch: {
-    "user.firstName": async val => {
-      await this.generateUsername();
-    },
-
-    "user.lastName": async val => {
-      await this.generateUsername();
-    }
-  },
   methods: {
     updateCurrentPage(newPage) {
       this.currentPage = newPage;
