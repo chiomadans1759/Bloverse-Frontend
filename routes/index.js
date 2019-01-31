@@ -40,6 +40,7 @@ import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vu
 import ChangePassword from '../src/views/consumers/ChangePassword/ChangePassword.vue';
 import Profile from '../src/views/consumers/Profile/ProfilePage.vue';
 import EditProfile from '../src/views/consumers/EditProfile/EditProfilePage';
+import CreatorProfile from '../src/views/journalists/Profile/ProfilePage';
 
 const routes = [
   {
@@ -107,6 +108,7 @@ const routes = [
     children: [
       { path: '', component: JournalistLanding },
       { path: 'apply', component: JournalistApply },
+      { path: 'profile', component: CreatorProfile },
       {
         path: 'setup', component: JournalistSetUp,
         beforeEnter(to, from, next) {

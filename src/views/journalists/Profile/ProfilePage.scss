@@ -1,0 +1,124 @@
+@import 'sass-rem';
+
+#bl-profile-page {
+  .publish-container {
+    padding: rem(16px) rem(24px) rem(16px) rem(24px);
+    margin-top: rem(8px);
+    .publish-link-container {
+      padding: rem(10px);
+      text-align: center;
+      .publish-link {
+        background-image: linear-gradient( to right, #003CE1, #2F80ED);
+        color: #ffffff;
+        padding: rem(10px);
+        font-size: rem(14px);
+        width: 100%;
+      }
+    }
+  }
+
+  .contest-advert {
+    background: #ffffff;
+    background-image: url('../../../assets/Mask-group-15.svg');
+    background-position: right;
+    background-repeat: no-repeat;
+    height: rem(180px);
+    margin: auto;
+    margin-bottom: auto;
+    border: rem(1px) solid #d9d9d9;
+    border-radius: 0 !important;
+    width: auto;
+    padding: rem(24px);
+    border: rem(1px) solid green;
+    &>img {
+      border-radius: 0;
+    }
+    .card-img-overlay {
+      .card-title {
+        color: #252525;
+        padding-right: rem(20px); 
+        font-size: rem(25px);
+      }
+      .caption {
+        color:#868686;
+        font-size: rem(16px);
+      }
+      .know-more-btn {
+        margin: rem(16px) 0;
+        height: rem(31px);
+        background-image: linear-gradient( to right, #2F80ED, #003CE1);
+        border: rem(0px);
+        padding: rem(5px) rem(8px);
+        font-size: rem(14px);
+        text-transform: capitalize;
+        text-align: center;
+        color: #ffffff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .initials {
+    padding: 0 rem(10px);
+    padding-bottom: rem(18px);
+    &-link {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: rem(24px);
+      width: rem(24px);
+      background-color: #8C40FF;
+      border: rem(1px) solid #8C40FF;
+      border-radius: 0.3rem;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: rem(10px);
+    }
+    &-arrow {
+      margin: 0 rem(10px);
+      color: #0885e7;
+    }
+  }
+
+  .right-section {
+    height: fit-content;
+  }
+
+  .top-card {
+    background-image: linear-gradient(to right top, #5b86e5, #0c9def, #00b1ef, #00c2e7, #36d1dc);
+    height: rem(176px);
+    overflow: hidden;
+    .card-title {
+      font-size: rem(16px);
+    }
+    .sub-text {
+      font-size: rem(14px);
+    }
+    .card-icon {
+      position: absolute;
+      top: rem(-35px);
+      right: rem(-35px);
+      color: #ffffff;
+      opacity: 0.1;
+      height: rem(200px);
+      width: rem(200px);
+    }
+  }
+
+  .first-circle {
+    color: #007bff;
+  }
+
+  .second-circle {
+    color: #5E91C9;
+  }
+
+  .third-circle {
+    color:#83A1C2;
+  }
+}
+.popover-container {
+  padding: 5px;
+}

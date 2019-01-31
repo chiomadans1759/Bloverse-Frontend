@@ -33,9 +33,45 @@
           class="profile__text"
         >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
-      <div class="follow d-flex justify-content-between">
+      <div v-if="!hideFollowing" class="follow d-flex justify-content-between">
         <a data-toggle="modal" href="#following-modal">Following</a>
         <span class="border rounded px-1 mr-2" data-toggle="modal" href="#following-modal" id="number">5</span>
+      </div>
+      <div v-if="displayFollowers" class="follow d-flex align-items-center">
+        <a data-toggle="" href="#">Followers</a>
+        <span class="badge followers-icon badge-primary ml-2">5</span>
+      </div>
+    </div>
+    <div v-if="displayInterest" class="interests">
+      <category-card dontUseCard />
+    </div>
+    <div class="social p-3">
+      <h5 class="mb-2"><strong>Social Media</strong></h5>
+      <div class="row">
+        <div class="col-4">
+          <div class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center">
+            <img class="social-icon" src="@/assets/facebook-square.svg" alt="facebook" />
+            <h6 class="social-text text-center">Facebook</h6>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center">
+            <img class="social-icon" src="@/assets/twitter-square.svg" alt="facebook" />
+            <h6 class="social-text text-center">Twitter</h6>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center">
+            <img class="social-icon" src="@/assets/instagram-square.svg" alt="facebook" />
+            <h6 class="social-text text-center">Instagram</h6>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center">
+            <img class="social-icon" src="@/assets/linkedin-square.svg" alt="facebook" />
+            <h6 class="social-text text-center">Linkedin</h6>
+          </div>
+        </div>
       </div>
     </div>
     <div class="card-footer text-muted bg-white footer-color">Member Since:
@@ -110,16 +146,30 @@
 
 <script>
 import Modal from "@/components/Modal/Modal";
+import CategoryCard from '@/components/CategoryCard/CategoryCard';
 
 export default {
   name: "ProfileCard",
   components: {
-    Modal
+    Modal,
+    CategoryCard,
   },
   props: {
     hideMobileUserInfo: {
       type: Function,
       required: true,
+    },
+    displayInterest: {
+      type: Boolean,
+      default: false,
+    },
+    hideFollowing: {
+      type: Boolean,
+      default: false,
+    },
+    displayFollowers: {
+      type: Boolean,
+      default: false,
     }
   }
 };

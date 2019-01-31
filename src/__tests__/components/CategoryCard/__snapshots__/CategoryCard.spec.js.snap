@@ -2,7 +2,7 @@
 
 exports[`CategoryCard Component should render correctly 1`] = `
 <main
-  class="card category-card p-3"
+  class="category-card p-3 card"
 >
   <div
     class="header d-flex justify-content-between "
