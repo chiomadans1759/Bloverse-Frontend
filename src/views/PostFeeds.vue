@@ -11,8 +11,8 @@
               :options="general.countries"
               label="name"
               placeholder="Country"
-              v-model="general.country"
-              @input="filterCountry (country)"
+              v-model="country"
+              @input="filterCountry(country)"
               v-if="allow || general.countries"
             ></v-select>
           </div>
@@ -21,7 +21,7 @@
               <li class="list-inline-item" v-for="category in filteredCatList" :key="category.id">
                 <a
                   href="#"
-                  :class="{ 'active': category.name == $store.state.general.activeCategory.name }"
+                  :class="{ 'active': category.name == active_category.name }"
                   @click.prevent="filterCategory(category.id, category.name)"
                   style="font-family: 'Montserrat', sans-serif;"
                 >{{category.name}}</a>
@@ -40,7 +40,7 @@
                     <a
                       href="#"
                       @click.prevent="filterCategory(cat.id, cat.name)"
-                      :class="{ 'active': cat.name == $store.state.general.activeCategory.name }"
+                      :class="{ 'active': cat.name == active_category.name }"
                     >{{cat.name}}</a>
                   </li>
                 </div>
@@ -97,10 +97,15 @@ export default {
       allow: false,
       show_more: false,
       other_cats: {},
-      country: {
+      country: "",
+      active_country: {
+        name: "",
         id: ""
       },
-      current_category: ""
+      active_category: {
+        name: "All",
+        id: ""
+      }
     };
   },
   methods: {
@@ -116,21 +121,22 @@ export default {
       }
     },
 
-    filterCountry(id) {
+    filterCountry(country) {
+      this.active_country = country
       this.filterPosts({
-        category: this.general.activeCategory.id || "",
-        country: this.general.country.id
+        category: this.active_category.id || "",
+        country: this.country.id
       });
     },
 
     filterCategory(id, name) {
       this.current_category = id;
       this.filterPosts({
-        prevCategory: this.general.activeCategory,
+        prevCategory: this.active_category,
         category: id,
-        country: ""
+        country: this.active_country.id
       });
-      this.general.activeCategory = { id, name };
+      this.active_category = { id, name };
       this.show_more = false;
     },
 

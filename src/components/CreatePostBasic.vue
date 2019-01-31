@@ -51,6 +51,7 @@
                 <Select v-model="post.category" placeholder="Choose Category" :disabled="isTravel">
                   <Option
                     v-for="cat in general.categories"
+                    v-show="cat.name != 'Photo Contest'"
                     :value="cat.id"
                     :key="cat.id"
                   >{{cat.name}}</Option>
@@ -187,6 +188,7 @@ import SocialButtons from "@/components/SocialButtons";
 import { Push } from "vue-burger-menu";
 import DisplayImage from "./DisplayImage";
 import Tinymce from "./Tinymce";
+import devices from "../utils/devices.json";
 
 export default {
   components: {
@@ -257,44 +259,7 @@ export default {
       isPublishing: false,
       publishModal: false,
       isNewImage: false,
-      deviceList: [
-        {
-          value: "IPhone",
-          label: "IPhone"
-        },
-        {
-          value: "Samsung",
-          label: "Samsung"
-        },
-        {
-          value: "Techno",
-          label: "Techno"
-        },
-        {
-          value: "Infinix",
-          label: "Infinix"
-        },
-        {
-          value: "Gionee",
-          label: "Gionee"
-        },
-        {
-          value: "Nokia",
-          label: "Nokia"
-        },
-        {
-          value: "ZTE",
-          label: "ZTE"
-        },
-        {
-          value: "Lenovo",
-          label: "Lenovo"
-        },
-        {
-          value: "LG",
-          label: "LG"
-        }
-      ]
+      deviceList: devices
     };
   },
   computed: {
