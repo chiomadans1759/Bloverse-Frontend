@@ -1143,6 +1143,50 @@ exports[`Profile Component should render correctly 1`] = `
               </span>
             </div>
           </div>
+           
+          <div
+            class="bl-footer"
+          >
+            <div
+              class="row company-name d-flex justify-content-center align-items-center"
+            >
+              <div
+                class="col-sm-3 text-lowercase"
+              >
+                bloverse
+              </div>
+               
+              <p
+                class="col-sm-9"
+              >
+                <span
+                  class="text-capitalize dots"
+                >
+                  terms
+                </span>
+                 
+                <span
+                  class="text-capitalize dots"
+                >
+                  privacy
+                </span>
+                 
+                <span
+                  class="text-capitalize"
+                >
+                  feedback
+                </span>
+              </p>
+            </div>
+             
+            <p
+              class="row company-rights text-capitalize"
+            >
+              
+              2018 Bloverse. All Right Reserved
+            
+            </p>
+          </div>
         </div>
       </div>
        
@@ -1480,6 +1524,19 @@ exports[`Profile Component should render correctly 1`] = `
         </div>
       </div>
     </div>
+  </div>
+   
+  <div
+    class="footer-container d-block d-lg-none d-xl-none"
+  >
+    <p>
+      <span
+        class="bloverse"
+      >
+        Bloverse
+      </span>
+       2019. All rights reserved
+    </p>
   </div>
 </main>
 `;

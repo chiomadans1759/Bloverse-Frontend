@@ -36,6 +36,19 @@
                 </span>
               </div>
             </div>
+            <div class="bl-footer">
+              <div class="row company-name d-flex justify-content-center align-items-center">
+                <div class="col-sm-3 text-lowercase">bloverse</div>
+                <p class="col-sm-9">
+                  <span class="text-capitalize dots">terms</span>
+                  <span class="text-capitalize dots">privacy</span>
+                  <span class="text-capitalize">feedback</span>
+                </p>
+              </div>
+              <p class="row company-rights text-capitalize">
+                2018 Bloverse. All Right Reserved
+              </p>
+            </div>
           </div>
         </div>
         <!-- on mobile view only -->
@@ -141,6 +154,7 @@
         </div>
       </div>
     </div>
+    <Footer class="d-block d-lg-none d-xl-none" />
   </main>
 </template>
 
@@ -148,6 +162,7 @@
 import Navbar from '@/components/Navbar/Navbar.vue';
 import Profile from '@/components/ProfileCard/ProfileCard';
 import CategoryCard from '@/components/CategoryCard/CategoryCard';
+import Footer from '@/components/Footer/Footer';
 import CreatorProfileActionsCard from '@/components/CreatorProfileActionsCard/CreatorProfileActionsCard';
 import { GChart } from "vue-google-charts";
 import { setupCalendar, DatePicker  } from 'v-calendar';
@@ -165,6 +180,7 @@ export default {
     CreatorProfileActionsCard,
     GChart,
     DatePicker,
+    Footer,
   },
   data() {
     return {
