@@ -2,10 +2,10 @@
   <div style="width: 32%;">
     <Form id="form-setup-one" ref="stepOneForm" :model="user" :rules="validateUserFields">
       <FormItem prop="firstName">
-        <Input class="my-input" v-model="user.firstName" placeholder="First name*"/>
+        <Input class="my-input" v-model="user.firstName" @input="generateUsername" placeholder="First name*"/>
       </FormItem>
       <FormItem prop="lastName">
-        <Input class="my-input" v-model="user.lastName" placeholder="Last name*"/>
+        <Input class="my-input" v-model="user.lastName" @input="generateUsername" placeholder="Last name*"/>
       </FormItem>
       <FormItem>
         <Input class="my-input" v-model="user.email" placeholder="Email*" readonly/>
@@ -37,7 +37,7 @@
           placeholder="University*"
           v-model="user.university"
           disabled>
-          <Option v-for="(item, index) in general.universities" :value="item" :key="index">{{ item }}</Option>
+          <Option v-for="(item, index) in universities" :value="item" :key="index">{{ item }}</Option>
         </Select>
         <Select
           v-else
@@ -74,10 +74,32 @@ import {
   Form,
   FormItem
 } from "iview";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import countryFlags from "../countryFlags.js";
+import universities from "@/utils/universities.js";
 
 export default {
+  mounted(){
+  
+    let country_index = this.general.countries.findIndex(obj => obj.id == this.user.country);
+    if(country_index > -1) {
+      let unis
+      this.general.countries.forEach((v, i, arr) => {
+        unis = arr[country_index]
+      })
+      this.country = unis
+    }
+
+    let index = universities.findIndex(obj => obj.country == this.country.name);
+    if(index > -1) {
+      let unis
+      universities.forEach((v, i, arr) => {
+        unis = arr[index].universities
+      })
+      this.universities = unis
+    }
+
+  },
   props: { user: Object },
   components: { Row, Col, Button, Icon, Input, Select, Option, Form, FormItem },
   watch: {
@@ -107,7 +129,9 @@ export default {
           }
         ]
       },
-      phoneCode: "+1"
+      phoneCode: "+1",
+      country:{},
+      universities:[]
     };
   },
   computed: {
@@ -128,7 +152,8 @@ export default {
   methods: {
     toNext() {
       this.$emit("toNext");
-    }
+    },
+    ...mapActions(["generateUsername"])
   }
 };
 </script>

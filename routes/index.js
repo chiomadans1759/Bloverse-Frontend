@@ -129,4 +129,10 @@ router.beforeEach((to, from, next) => {
   next()
 });
 
+router.afterEach((to, from, next) => { // eslint-disable-line no-unused-vars
+  gtag('set', 'page', to.path); // eslint-disable-line no-undef
+  gtag('send', 'pageview'); // eslint-disable-line no-undef
+  LoadingBar.finish();
+});
+
 export default router;

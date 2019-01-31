@@ -1,0 +1,38 @@
+[
+  {
+    "value": "IPhone",
+    "label": "IPhone"
+  },
+  {
+    "value": "Samsung",
+    "label": "Samsung"
+  },
+  {
+    "value": "Techno",
+    "label": "Techno"
+  },
+  {
+    "value": "Infinix",
+    "label": "Infinix"
+  },
+  {
+    "value": "Gionee",
+    "label": "Gionee"
+  },
+  {
+    "value": "Nokia",
+    "label": "Nokia"
+  },
+  {
+    "value": "ZTE",
+    "label": "ZTE"
+  },
+  {
+    "value": "Lenovo",
+    "label": "Lenovo"
+  },
+  {
+    "value": "LG",
+    "label": "LG"
+  }
+]

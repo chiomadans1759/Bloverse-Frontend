@@ -219,10 +219,15 @@ export default {
     },
     setUsername(state, username) {
       state.newUser.username = username;
-
     },
     setShouldRegister(state, value) {
       state.shouldRegister = value;
+
+      /* I find the logic here to be wrong and not fitting the purpose of this function, 
+        allowing it go for the purpose of launching the site as soon as possible. 
+        the mutation setNewUser() should be called in AuthenticationVerify component immediately after calling setShouldRegister()
+        it will perform the function below
+      */
       state.newUser.firstName = state.applicant.first_name;
       state.newUser.lastName = state.applicant.last_name;
       state.newUser.applicant = state.applicant.id;
@@ -232,6 +237,7 @@ export default {
       state.newUser.country = state.applicant.country;
       state.newUser.gender = '';
       state.newUser.about = '';
+      state.newUser.university = state.applicant.university;
       state.newUser.code = state.applicant.phone_number.substring(0,4);
     },
 
