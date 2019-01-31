@@ -9,7 +9,7 @@
         </div>
         <div class="col-auto">
           <div v-if="!auth.loggedInUser">
-            <router-link to="/photocontest" class="btn btn-link text-uppercase">
+            <router-link to="/creators/photocontest" class="btn btn-link text-uppercase">
               photo contest
             </router-link>
             <login-button class="pt-2 mr-3" />
@@ -23,7 +23,7 @@
                 <div class="avatar avatar-sm pt-2">
                   <img
                     id="author-img"
-                    :src="auth.loggedInUser.imageUrl"
+                    :src="auth.loggedInUser.image_url"
                     alt="Author's Image"
                     class="avatar-img rounded"
                   >
@@ -37,9 +37,8 @@
                     style="font-size: 14px;"
                     data-toggle="dropdown"
                     aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    {{auth.loggedInUser.firstName}} {{auth.loggedInUser.lastName}}
+                    aria-expanded="false">
+                    {{auth.loggedInUser.first_name}} {{auth.loggedInUser.last_name}}
                     <i
                       style="font-size: 12px;"
                       class="far fa-chevron-down ml-1"
@@ -47,21 +46,18 @@
                   </a>
                   <div class="dropdown-menu mt-4" aria-labelledby="dropdownMenuButton">
                     <router-link
-                      :to="`/creators/${auth.loggedInUser.userName}/dashboard`"
-                      class="dropdown-item pl-4 pr-0"
-                    >
+                      :to="`/creators/${auth.loggedInUser.username}/dashboard`"
+                      class="dropdown-item pl-4 pr-0">
                       <i class="far fa-th-large mr-1"></i> Dashboard
                     </router-link>
                     <router-link
-                      :to="`/creators/${auth.loggedInUser.userName}/posts/create`"
-                      class="dropdown-item pl-4 pr-0"
-                    >
+                      :to="`/creators/${auth.loggedInUser.username}/posts/create`"
+                      class="dropdown-item pl-4 pr-0">
                       <i class="far fa-plus mr-1"></i> Create Post
                     </router-link>
                     <router-link
-                      :to="`/creators/${auth.loggedInUser.userName}/posts`"
-                      class="dropdown-item pl-4 pr-0"
-                    >
+                      :to="`/creators/${auth.loggedInUser.username}/posts`"
+                      class="dropdown-item pl-4 pr-0">
                       <i class="fa fa-grip-horizontal mr-1"></i> Your Posts
                     </router-link>
                     <div class="dropdown-divider"></div>

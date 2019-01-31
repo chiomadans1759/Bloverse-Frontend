@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Api from '../src/utils/Api'
+import Api from '@/utils/Api'
 
 export default {
   state: {
@@ -21,17 +21,17 @@ export default {
     },
     draftPosts: [],
     trendingPost: [],
-    currentPost: {},
     journalists: [],
     loading: false,
     metrics: {},
     modal: { show: false, currentComponent: null },
     relatedPosts: {},
+    showDrafts: false
   },
   actions: {
     async setGeneralData({ commit }) {
       let response, categories, countries;
-
+      commit('setLoading', true);
       response = await Api.get('categories/');
 
       switch (response.statusCode) {
@@ -63,6 +63,7 @@ export default {
         })
         commit('setCountries', countries);
         commit('setCategories', categories);
+        commit('setLoading', false);
         return true;
       }
       return false;
@@ -119,7 +120,7 @@ export default {
 
       return false;
     },
-    async rejectAcceptApplicants({dispatch}, applicants) {
+    async rejectAcceptApplicants({ dispatch }, applicants) {
       let processedUsers = [];
       applicants.forEach(async applicant => {
         if (applicant.status === 1)
@@ -134,19 +135,19 @@ export default {
     },
     async processApplicant(context, applicant) {
       let { id, status } = applicant;
-      let response = await Api.put('applicants/' + id + '/', {status}, true);
-      return response.statusCode === 200;   
+      let response = await Api.put('applicants/' + id + '/', { status }, true);
+      return response.statusCode === 200;
     },
     async getAllPublishedPosts({ commit, state }, { category = "", country = "" }) {
       try {
-        if(state.postsPagingData.next === null && state.postsPagingData.data_has_fetched === false) {
+        if (state.postsPagingData.next === null && state.postsPagingData.data_has_fetched === false) {
           commit('setPublishedPostsLoading', true);
           let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
           commit('setPostsPagingData', response.data.pagination);
           commit('setPublishedPosts', response.data.posts);
           commit('setPublishedPostsLoading', false);
           commit("setDataFetched", true);
-        }else if(state.postsPagingData.next !== null) {
+        } else if (state.postsPagingData.next !== null) {
           let response = await axios.get(state.postsPagingData.next);
           commit('setPostsPagingData', response.data.data.pagination);
           response.data.data.posts.forEach((data) => {
@@ -154,8 +155,16 @@ export default {
           });
         }
       } catch (error) {
-        alert('Posts feed empty'); 
+        alert('Posts feed empty');
       }
+    },
+    async filterPosts({ commit }, { category = "", country = "" }) {
+      commit('setPublishedPostsLoading', true);
+      let response = await Api.get(`posts?is_published=true&category=${category}&country=${country}`);
+      commit('setPostsPagingData', response.data.pagination);
+      commit('setPublishedPosts', response.data.posts);
+      commit('setPublishedPostsLoading', false);
+      commit("setDataFetched", true);
     },
     async getAllDraftPosts({ commit }, { category = "", country = "" }) {
       let response = await Api.get(`posts?is_published=false&category=${category}&country=${country}`);
@@ -165,21 +174,13 @@ export default {
       let response = await Api.get(`posts/trending/`);
       commit('setTrendingPost', response.data.post);
     },
-    async getPostBySlug({
-      commit
-    }, {
-      slug
-    }) {
+    async getPostBySlug({commit}, {slug}) {
       let response = await Api.get(`posts?slug=${slug}`)
-      commit('setCurrentPost', response.data.posts[0]);
-    },
-    async getSimilarPosts({ commit }, { post_id, threshold }) {
-      let response = await Api.get(`posts/${post_id}/similar/?threshold=${threshold}`);
-      commit('setRelatedPosts', response.data.posts);
+      return response.data.posts[0];
     },
     publishedPostsIsLoading({ commit }, loading) {
       commit('setPublishedPostsLoading', loading);
-    },
+    }
   },
   mutations: {
     setTinyMiceValue(state, value) {
@@ -221,9 +222,6 @@ export default {
     setLoading(state, loading) {
       state.loading = loading;
     },
-    setCurrentPost(state, post) {
-      state.currentPost = post;
-    },
     setMetrics(state, metrics) {
       state.metrics = metrics
     },
@@ -232,7 +230,7 @@ export default {
     },
     setRelatedPosts(state, posts) {
       state.relatedPosts = posts
-    },
+    }
   },
   getters: {
     acceptedApplicants(state) {
@@ -240,7 +238,7 @@ export default {
       return state.applicants.filter(applicant => applicant.status === 2);
     },
     pendingApplicants(state) {
-      // Filter pending applicants
+      // Filter pending applicants, get other applicants except young voices
       return state.applicants.filter(applicant => applicant.status === 1);
     },
     rejectedApplicants(state) {

@@ -1,6 +1,6 @@
 <template>
   <main id="draft-card">
-    <router-link to="#">
+    <router-link :to="`/creators/${auth.loggedInUser.username}/posts/${post.slug}/edit`">
       <div class="card" v-if="post.category === 7">
         <img class="card-img-top" :src="post.image_url">
         <div class="card-body">
@@ -32,13 +32,9 @@
               &nbsp;&nbsp;{{post.location}}
             </li>
           </ul>
-          <p class="read-more">
-            <router-link :to="`posts/${post.slug}`">
-              <h5>READ STORY</h5>
-            </router-link>
-          </p>
         </div>
       </div>
+
       <div class="card" v-else>
         <img class="card-img-top" :src="post.image_url">
         <div class="card-body">
@@ -75,15 +71,11 @@
               &nbsp;{{post.keypoint[2] | truncate(75)}}
             </li>
           </ul>
-          <p class="read-more">
-            <router-link :to="`posts/${post.slug}`">
-              <h5>READ STORY</h5>
-            </router-link>
-          </p>
           <h4
             class="empty-class"
-            v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]"
-          >No KeyPoints Available for this post</h4>
+            v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]">
+            No KeyPoints Available for this post
+          </h4>
         </div>
       </div>
     </router-link>
@@ -99,7 +91,7 @@ export default {
     post: Object
   },
   computed: {
-    ...mapState(["general"]),
+    ...mapState(["general", "auth"]),
     category() {
       const postCategory = this.general.categories.find(
         category => category.id === this.post.category
@@ -114,38 +106,32 @@ export default {
   #draft-card {
     margin-top: 4rem;
   }
-
   #draft-card .card {
     height: 394px;
     width: 100%;
     border-radius: none;
     margin-bottom: -2rem;
   }
-
   #draft-card .card:hover {
     transition: 0.5s ease;
     cursor: pointer;
   }
-
   #draft-card .card-img-top {
     height: 220px;
     width: 100%;
     border-radius: 0;
     object-fit: cover;
   }
-
   #draft-card .card-title {
     text-transform: uppercase;
     font-size: 13px;
     color: #353535;
   }
-
   #draft-card .card-titlee {
     text-transform: uppercase;
     font-size: 13px;
     color: #096dd9;
   }
-
   #draft-card .card-text {
     font-size: 16px;
     color: #34323d;
@@ -154,37 +140,31 @@ export default {
     height: 64px;
     font-weight: 600;
   }
-
   #draft-card .author-imgg {
     width: 34px;
     height: 34px;
     object-fit: cover;
   }
-
   #draft-card .foott {
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
   }
-
   #draft-card .foott .further {
     display: flex;
     justify-content: space-between;
   }
-
   #draft-card .foott .right {
     color: #353535 !important;
     font-size: 12px;
     margin-top: 0.6rem;
   }
-
   #draft-card .foott span {
     margin-left: 0.5rem;
     color: #353535;
     font-size: 12px;
     font-weight: 500;
   }
-
   #draft-card .foott p {
     color: #353535;
     font-size: 12px;
@@ -192,14 +172,12 @@ export default {
     text-transform: uppercase;
     opacity: 0.4;
   }
-
   #draft-card .overlay .empty-class {
     text-align: center;
     font-size: 19px;
     margin-top: 10rem;
     color: #fff;
   }
-
   #draft-card .overlay p {
     text-align: left;
     color: #fff;
@@ -208,7 +186,6 @@ export default {
     margin-left: 3rem;
     margin-top: 2rem;
   }
-
   #draft-card .overlay .travel-deets {
     list-style-type: none;
     color: #fff;
@@ -216,13 +193,11 @@ export default {
     margin-left: 3rem;
     margin-top: 5rem;
   }
-
   #draft-card .overlay .travel-deets li {
     color: #fff;
     font-size: 15px;
     margin-bottom: 2rem;
   }
-
   #draft-card .overlay {
     position: absolute;
     top: 0;
@@ -236,7 +211,6 @@ export default {
     background-color: rgba(13, 13, 15, 0.849);
     overflow-x: none;
   }
-
   #draft-card .overlay-content h3 {
     font-size: 16px;
     margin-bottom: 1rem;
@@ -244,7 +218,6 @@ export default {
     margin-top: 1rem;
     font-weight: bold;
   }
-
   #draft-card .overlay-content h2 {
     font-size: 16px;
     margin-bottom: 1rem;
@@ -252,22 +225,18 @@ export default {
     margin-top: 1rem;
     font-weight: bold;
   }
-
   #draft-card .overlay .overlay-content li {
     margin-bottom: 1rem;
   }
-
   #draft-card .read-more {
     margin-left: 16rem !important;
     position: absolute;
     bottom: 0 !important;
     margin-bottom: 1.5rem;
   }
-
   #draft-card .overlay-content #consumer-keypoints {
     margin-bottom: 1rem;
   }
-
   #draft-card .overlay-content {
     color: white;
     font-size: 20px;
@@ -282,7 +251,6 @@ export default {
     width: 95%;
     list-style-type: none;
   }
-
   #draft-card:hover .overlay {
     opacity: 1;
   }

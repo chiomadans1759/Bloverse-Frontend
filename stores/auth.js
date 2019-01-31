@@ -34,7 +34,10 @@ export default {
       imageUrl: 'https://res.cloudinary.com/naera/image/upload/v1512417704/u7aoterwekcq0thkng3j.png'
     },
     applicant: {
-      articleURLs: ['']
+      articleURLs: [''],
+      category: {
+        id: ''
+      }
     },
     loggedInUser: user,
     shouldRegister: false,
@@ -62,6 +65,12 @@ export default {
       applicant.categoryId = state.applicant.category.id;
       applicant.countryId = state.applicant.country.id;
       applicant.phone = state.applicant.phoneCode + state.applicant.phoneNumber;
+
+      // if(state.applicant.category.id == undefined) {
+      //   applicant.categoryId = '';
+      // }else {
+      //   applicant.categoryId = state.applicant.category.id;
+      // }
 
       if (!state.applicant.linkedInUsername) {
         applicant.linkedInUrl = "";
@@ -210,10 +219,15 @@ export default {
     },
     setUsername(state, username) {
       state.newUser.username = username;
-
     },
     setShouldRegister(state, value) {
       state.shouldRegister = value;
+
+      /* I find the logic here to be wrong and not fitting the purpose of this function, 
+        allowing it go for the purpose of launching the site as soon as possible. 
+        the mutation setNewUser() should be called in AuthenticationVerify component immediately after calling setShouldRegister()
+        it will perform the function below
+      */
       state.newUser.firstName = state.applicant.first_name;
       state.newUser.lastName = state.applicant.last_name;
       state.newUser.applicant = state.applicant.id;
@@ -223,6 +237,7 @@ export default {
       state.newUser.country = state.applicant.country;
       state.newUser.gender = '';
       state.newUser.about = '';
+      state.newUser.university = state.applicant.university;
       state.newUser.code = state.applicant.phone_number.substring(0,4);
     },
 
@@ -239,13 +254,15 @@ export default {
     },
     isAnAdmin(state) {
       if (state.loggedInUser) {
-        return state.loggedInUser.type === 'Admin';
+        state.loggedInUser.type === 'Admin';
+        return true;
       }
       return false;
     },
     isAJournalist(state) {
       if (state.loggedInUser) {
-        return state.loggedInUser.type === 'journalist';
+        state.loggedInUser.type === 'journalist';
+        return true;
       }
       return false;
     },
