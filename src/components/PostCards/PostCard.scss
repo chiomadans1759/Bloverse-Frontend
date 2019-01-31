@@ -162,6 +162,20 @@
           .ellipsis {
             cursor: pointer;
             font-size: rem(25px);
+            .dropdown-item{
+              font-size: 17px;
+              padding:.55rem 1.5rem;
+              svg{
+                color: #096DD9 !important;
+              }
+              .badges{
+                float: right;
+                color: #096DD9;
+                border:1px solid #096DD9;
+                border-radius: 3px;
+                padding: 0px 3px;
+              }
+            }
             .dropdown-toggle {
               #option-icon {
                 display: inline-block;

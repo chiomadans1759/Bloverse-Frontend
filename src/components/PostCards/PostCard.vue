@@ -78,12 +78,30 @@
                 <div class="d-flex bl-dropdown-menu__countries">
                   <div class="favourite-countries">
                     <p class="dropdown-item country">
-                      <i class="fal fa-comment-dots"></i>
-                      <span class="count">67</span>
+                      Report Post
+                    </p>
+                    <hr><hr>
+                    <p class="dropdown-item country">
+                      <i class="fal fa-plus"></i>
+                      <span class="count">Creators Profile</span>
                     </p>
                     <p class="dropdown-item country">
+                      <i class="far fa-bookmark"></i>
+                      <span class="count">Read Later</span>
+                    </p>
+                    <hr><hr>
+                     <p class="dropdown-item country">
+                      <i class="fal fa-book-open"></i>
+                      <span class="count">Read Story</span>
+                    </p>
+                    <hr><hr>
+                     <p class="dropdown-item country">
+                      <i class="fal fa-comment-dots"></i>
+                      <span class="count">Comment <span class="badges">5</span></span>
+                    </p>
+                     <p class="dropdown-item country">
                       <i class="fal fa-share"></i>
-                      <span class="count">67</span>
+                      <span class="count">Share <span class="badges">5</span></span>
                     </p>
                   </div>
                 </div>
