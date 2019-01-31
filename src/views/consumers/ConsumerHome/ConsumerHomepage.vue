@@ -232,7 +232,7 @@ import CountryOptions from "@/components/CountryOptions/CountryOptions";
 import Modal from "@/components/Modal/Modal";
 
 export default {
-  name: "Homepage",
+  name: "ConsumerHomePage",
   components: {
     PostCards,
     Trends,

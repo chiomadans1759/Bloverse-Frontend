@@ -57,7 +57,7 @@ exports[`ChooseCountry Component dispatches "actionInput" when input event value
           <h5
             class="pb-1"
           >
-            Select Your Interest
+            Select Your Favourite Country
           </h5>
            
           <p

@@ -13,13 +13,13 @@
             <router-link to="/changepassword" class="text-capitalize mt-3">change password</router-link>
             <p class="text small">Update your information</p>
 
-            <a href="#" class="text-capitalize mt-3">customize country</a>
+            <router-link to="/choosecountry" class="text-capitalize mt-3">customize country</router-link>
             <p class="text small">Update your information</p>
 
-            <a href="#" class="text-capitalize mt-3">customize category</a>
+            <router-link to="/choosecategory" class="text-capitalize mt-3">customize category</router-link>
             <p class="text small">Update your information</p>
 
-            <a href="#" class="text-capitalize mt-3" v-if="!isCreator">feedback</a>
+            <a data-toggle="modal" href="#feedback-modal" class="text-capitalize mt-3" v-if="!isCreator">give feedback</a>
             <p class="text small" v-if="!isCreator">Update your information</p>
 
             <p class="text-capitalize font-weight-bold pt-4 auth">authorization</p>
@@ -104,10 +104,7 @@
                 <p class="text small mb-2">Publish your article to the world</p>
               </div>
               <div>
-                <router-link
-                  to="#"
-                  class="btn btn-sm btn-primary text-capitalize"
-                >get started</router-link>
+                <router-link to="#" class="btn btn-sm btn-primary text-capitalize">get started</router-link>
               </div>
             </div>
             <div class="d-flex justify-content-between align-items-center" v-if="!isCreator">
@@ -126,12 +123,36 @@
           </div>
         </div>
       </div>
+      <modal
+        target="feedback-modal"
+        altTitle="Send Us Some Feedback"
+        actionText="Send Feedback"
+        dark
+        subTitle="Found a bug? Have a suggestion?. Fill out the form below and we'll take a look!"
+      >
+        <div class="bl-modal-content">
+          <p>Enter your feedback here!</p>
+          <textarea class="form-control mb-2 p-1"></textarea>
+          <label class="ml-1 mr-3">
+            <input type="radio" name="feedback-type"> Bug
+          </label>
+          <label class="mr-3">
+            <input type="radio" name="feedback-type"> Comment
+          </label>
+          <label class="mr-3">
+            <input type="radio" name="feedback-type"> Other
+          </label>
+        </div>
+      </modal>
     </div>
   </main>
 </template>
 
 <script>
+import Modal from "@/components/Modal/Modal";
+
 export default {
+  components: { Modal },
   props: {
     isCreator: {
       type: Boolean,
