@@ -232,6 +232,7 @@ export default {
       state.newUser.country = state.applicant.country;
       state.newUser.gender = '';
       state.newUser.about = '';
+      state.newUser.university = state.applicant.university;
       state.newUser.code = state.applicant.phone_number.substring(0,4);
     },
 
