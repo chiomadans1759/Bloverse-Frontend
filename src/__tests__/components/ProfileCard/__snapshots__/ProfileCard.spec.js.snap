@@ -11,8 +11,16 @@ exports[`ProfileCard Component should render correctly 1`] = `
   />
    
   <div
-    class="profile-edit-icon d-flex justify-content-end p-3"
+    class="profile-edit-icon d-flex justify-content-between p-3"
   >
+    <span
+      class="d-inline d-sm-none"
+    >
+      <i
+        class="fal fa-long-arrow-left fa-2x back-arrow"
+      />
+    </span>
+     
     <i
       class="fal fa-user-edit fa-2x"
     />
@@ -111,13 +119,15 @@ exports[`ProfileCard Component should render correctly 1`] = `
   </div>
    
   <div
-    class="card-footer text-muted bg-white"
+    class="card-footer text-muted bg-white footer-color"
   >
     Member Since:
     
-    <strong>
-      December, 2018
-    </strong>
+    <span
+      class="text-dark"
+    >
+      27 December, 2018
+    </span>
   </div>
    
   <main

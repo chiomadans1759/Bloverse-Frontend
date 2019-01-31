@@ -6,7 +6,7 @@
 }
 
 .profile-name {
-  font-size: rem(20px);
+  font-size: rem(18px);
   font-weight: 700;
 }
 
@@ -24,6 +24,17 @@
 
 .profile-body {
   color: #848384;
+}
+
+main.card {
+  border-radius: 0 !important;
+  .card-img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  span>svg.back-arrow {
+    color: #ffffff;
+  }
 }
 
 #number {
@@ -50,5 +61,72 @@
 
   .card-footer {
     font-size: rem(14px);
+  }
+}
+
+.footer-color {
+  color: rgba(0, 0, 0, .5);
+}
+
+@media screen and (min-width: 700px) {
+  .profile-img {
+    width: rem(64px);
+    height: rem(64px);
+  }
+  
+  .profile-name {
+    font-size: rem(20px);
+    font-weight: 700;
+  }
+  
+  .avatar {
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+  }
+  
+  .profile-edit-icon {
+    margin-top: rem(-88px);
+    color: #ffffff;
+    font-weight: 100;
+  }
+  
+  .profile-body {
+    color: #848384;
+  }
+
+  main.card {
+    border-radius: rem(4px) !important;
+    .card-image-top {
+      border-top-left-radius: calc(.25rem - 1px);
+      border-top-right-radius: calc(.25rem - 1px);
+    }
+  }
+
+  #number {
+    border: rem(1px) solid #3d98eb !important;
+    color: #3d98eb;
+    cursor: pointer;
+  }
+  
+  .profile {
+    &__text {
+      font-size: rem(16px);
+      font-weight: 500;
+      color: #6c6c6c;
+      font-family: Montserrat;
+    }
+  
+    p {
+      font-size: rem(16px);
+    }
+  
+    a {
+      font-size: rem(14px);
+    }
+  
+    .card-footer {
+      font-size: rem(14px);
+    }
   }
 }

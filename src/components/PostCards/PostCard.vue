@@ -116,6 +116,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    customClass: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {

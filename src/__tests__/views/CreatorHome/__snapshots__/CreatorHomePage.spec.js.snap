@@ -1,0 +1,689 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Creator Home Page should render correctly 1`] = `
+<main
+  class="container-fluid p-0"
+  id="bl-creators"
+>
+  <div
+    class="top-section-container"
+  >
+    <header
+      id="feeds-header"
+    >
+      <nav
+        class="navbar navbar-expand-lg navbar-light px-5 transparent alt-button"
+      >
+        <!---->
+         
+        <a
+          class="router-link"
+        >
+          <!---->
+           
+          <img
+            class="nav-logo"
+            src="@/assets/Logo - White.svg"
+          />
+        </a>
+         
+        <div
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          class="form-inline my-2 my-lg-0 navbar-toggler mobile-view"
+          data-target="#navbarSupportedContent"
+          data-toggle="collapse"
+        >
+          <a
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+          >
+            <span
+              id="option-icon"
+            />
+             
+            <span
+              id="option-icon"
+            />
+             
+            <span
+              id="option-icon"
+            />
+          </a>
+           
+          <div
+            aria-labelledby="navbarDropdown"
+            class="dropdown-menu dropdown-mobile-view"
+          >
+            <a
+              class="dropdown-item"
+            >
+              About
+            </a>
+             
+            <a
+              class="dropdown-item"
+            >
+              Photo Contest
+            </a>
+             
+            <a
+              class="dropdown-item"
+            >
+              Terms
+            </a>
+             
+            <a
+              class="dropdown-item"
+            >
+              Privacy
+            </a>
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              FAQ
+            </a>
+             
+            <div
+              class="dropdown-divider"
+            />
+             
+            <a
+              class="dropdown-item"
+              data-toggle="modal"
+              href="#feedback-modal"
+            >
+              Feedback
+            </a>
+          </div>
+           
+          <div>
+            <span
+              class="vl bg-light"
+            />
+             
+            <!---->
+          </div>
+           
+          <div
+            class="nav-item dropdown initials"
+          >
+            <a
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="dropdown-toggle initials-link"
+              data-toggle="dropdown"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              to="/login"
+            >
+              MD
+            </a>
+             
+            <div
+              aria-labelledby="navbarDropdown"
+              class="dropdown-menu"
+            >
+              <a
+                class="dropdown-item"
+              >
+                <span
+                  class="icon-profile"
+                >
+                  <i
+                    class="fal fa-user-circle"
+                  />
+                </span>
+                
+            Profile
+          
+              </a>
+               
+              <div
+                class="dropdown-divider"
+              />
+               
+              <a
+                class="dropdown-item"
+              >
+                <span
+                  class="icon-settings"
+                >
+                  <i
+                    class="fal fa-cog"
+                  />
+                </span>
+                
+            Settings
+          
+              </a>
+               
+              <div
+                class="dropdown-divider"
+              />
+               
+              <a
+                class="dropdown-item"
+                href="#"
+              >
+                <span
+                  class="icon-power"
+                >
+                  <i
+                    class="far fa-power-off"
+                  />
+                </span>
+                
+            Sign Out
+          
+              </a>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="collapse navbar-collapse"
+        >
+          <ul
+            class="navbar-nav ml-auto white-text"
+          >
+            <li
+              class="nav-item active"
+            >
+              <a
+                class="nav-link"
+              >
+                Home
+            
+                <span
+                  class="sr-only"
+                >
+                  (current)
+                </span>
+              </a>
+            </li>
+             
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+              >
+                About
+              </a>
+            </li>
+             
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/photocontest"
+              >
+                Photo Contest
+              </a>
+            </li>
+             
+            <li
+              class="nav-item dropdown pr-4"
+            >
+              <a
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+              >
+                <span
+                  id="option-icon"
+                />
+                 
+                <span
+                  id="option-icon"
+                />
+                 
+                <span
+                  id="option-icon"
+                />
+              </a>
+               
+              <div
+                aria-labelledby="navbarDropdown"
+                class="dropdown-menu"
+              >
+                <a
+                  class="dropdown-item"
+                >
+                  Terms
+                </a>
+                 
+                <a
+                  class="dropdown-item"
+                >
+                  Privacy
+                </a>
+                 
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  FAQ
+                </a>
+                 
+                <div
+                  class="dropdown-divider"
+                />
+                 
+                <a
+                  class="dropdown-item"
+                  data-toggle="modal"
+                  href="#feedback-modal"
+                >
+                  Feedback
+                </a>
+              </div>
+            </li>
+          </ul>
+           
+          <div
+            class="form-inline my-2 my-lg-0 pr-4 alt-button"
+          >
+            <!---->
+             
+            <div
+              class="nav-item dropdown initials"
+            >
+              <a
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle initials-link"
+                data-toggle="dropdown"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                to="/login"
+              >
+                MD
+              </a>
+               
+              <div
+                aria-labelledby="navbarDropdown"
+                class="dropdown-menu"
+              >
+                <a
+                  class="dropdown-item"
+                >
+                  <span
+                    class="icon-profile"
+                  >
+                    <i
+                      class="fal fa-user-circle"
+                    />
+                  </span>
+                  
+              Profile
+            
+                </a>
+                 
+                <div
+                  class="dropdown-divider"
+                />
+                 
+                <a
+                  class="dropdown-item"
+                >
+                  <span
+                    class="icon-settings"
+                  >
+                    <i
+                      class="fal fa-cog"
+                    />
+                  </span>
+                  
+              Settings
+            
+                </a>
+                 
+                <div
+                  class="dropdown-divider"
+                />
+                 
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  <span
+                    class="icon-power"
+                  >
+                    <i
+                      class="far fa-power-off"
+                    />
+                  </span>
+                  
+              Sign Out
+            
+                </a>
+              </div>
+            </div>
+             
+            <span
+              class="vl bg-light"
+            />
+             
+            <a
+              class="publish-link"
+            >
+              Publish
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+     
+    <div
+      class="container"
+    >
+      <div
+        class="welcome__link"
+      >
+        <h1
+          class="title"
+        >
+          Interactive stories from
+          
+          <br />
+          the global community
+        
+        </h1>
+         
+        <p
+          class="paragraph"
+        >
+          Connecting creators to the people
+        </p>
+         
+        <br />
+         
+        <div
+          class="publish-link-container mb-3 mb-sm-0"
+        >
+          <a
+            class="btn btn-default"
+          >
+            Apply
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="metrics"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-2"
+        />
+         
+        <div
+          class="col-md-8"
+        >
+          <div
+            class="card"
+          >
+            <div
+              class="row text-center"
+            >
+              <div
+                class="col-md-4 col-12 col-sm-4 col-lg-4"
+              >
+                <h1>
+                  5.6m
+                </h1>
+                 
+                <p>
+                  Content Published
+                </p>
+              </div>
+               
+              <div
+                class="col-md-4 col-12 col-sm-4 col-lg-4"
+              >
+                <h1>
+                  5.6k
+                </h1>
+                 
+                <p>
+                  Content Creator
+                </p>
+              </div>
+               
+              <div
+                class="col-md-4 col-12 col-sm-4 col-lg-4"
+              >
+                <h1>
+                  1.8m
+                </h1>
+                 
+                <p>
+                  Visitors
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="col-md-2"
+        />
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="playVideo"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-3"
+        />
+         
+        <div
+          class="col-md-6"
+        >
+          <video
+            class="col-12"
+            controls="controls"
+            id="video-element"
+            style="display: none;"
+          >
+            <source
+              src="@/assets/photocontest.mp4"
+              type="video/mp4"
+            />
+          </video>
+           
+          <div
+            class="video-button play"
+          >
+            <button>
+              <i
+                class="fas fa-play video-controls"
+              />
+               
+              <p>
+                Watch Video
+              </p>
+            </button>
+          </div>
+        </div>
+         
+        <div
+          class="col-md-3"
+        />
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="copyright text-center mt-13"
+  >
+    <p
+      class="title"
+    >
+      <b>
+        bloverse
+      </b>
+       
+      <span
+        class="sub-text"
+      >
+        2018. All Right Reserved
+      </span>
+    </p>
+  </div>
+   
+  <main
+    id="bl-modal"
+  >
+    <div
+      aria-hidden="true"
+      aria-labelledby="customModal"
+      class="modal fade"
+      id="feedback-modal"
+      role="dialog"
+      tabindex="-1"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header darkBackground"
+          >
+            <!---->
+             
+            <div>
+              <h6>
+                <strong
+                  class="alt-title"
+                >
+                  Send Us Some Feedback
+                </strong>
+              </h6>
+               
+              <h6
+                class="mt-2 sub-title"
+              >
+                Found a bug? Have a suggestion?. Fill out the form below and we'll take a look!
+              </h6>
+            </div>
+             
+            <button
+              aria-label="Close"
+              class="close"
+              data-dismiss="modal"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+           
+          <div
+            class="modal-body"
+          >
+            <div
+              class="bl-modal-content"
+            >
+              <p>
+                Enter your feedback here!
+              </p>
+               
+              <textarea
+                class="form-control mb-2 p-1"
+              />
+               
+              <label
+                class="ml-1 mr-3"
+              >
+                <input
+                  name="feedback-type"
+                  type="radio"
+                />
+                  Bug
+              </label>
+               
+              <label
+                class="mr-3"
+              >
+                <input
+                  name="feedback-type"
+                  type="radio"
+                />
+                  Comment
+              </label>
+               
+              <label
+                class="mr-3"
+              >
+                <input
+                  name="feedback-type"
+                  type="radio"
+                />
+                  Other
+              </label>
+            </div>
+          </div>
+           
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-outline-primary"
+              data-dismiss="modal"
+              type="button"
+            >
+              Close
+            </button>
+             
+            <button
+              class="btn btn-primary"
+              type="button"
+            >
+              Send Feedback
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</main>
+`;

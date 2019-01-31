@@ -1,15 +1,12 @@
 import { mount, RouterLinkStub } from '@vue/test-utils';
-import ProfileCard from '@/components/ProfileCard/ProfileCard.vue';
+import UserInfoMobile from '@/components/UserInfoMobile/UserInfoMobile.vue';
 
-describe('ProfileCard Component', () => {
+describe('CountryCard Component', () => {
   it('should render correctly', () => {
 
-    const wrapper = mount(ProfileCard, {
+    const wrapper = mount(UserInfoMobile, {
       stubs: {
         RouterLink: RouterLinkStub
-      },
-      propsData: {
-        hideMobileUserInfo: jest.fn()
       }
     });
     expect(wrapper.element).toMatchSnapshot();

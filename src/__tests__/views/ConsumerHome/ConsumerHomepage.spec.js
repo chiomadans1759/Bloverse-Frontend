@@ -1,10 +1,10 @@
 import { mount, RouterLinkStub  } from '@vue/test-utils'
-import Homepage from '@/views/general/Home/Homepage.vue';
+import ConsumerHomepage from '@/views/consumers/ConsumerHome/ConsumerHomePage.vue';
 
 describe('Homepage Component', () => {
   it('should render correctly', () => {
 
-    const wrapper = mount(Homepage, {
+    const wrapper = mount(ConsumerHomepage, {
       stubs: {
         RouterLink: RouterLinkStub
       }
