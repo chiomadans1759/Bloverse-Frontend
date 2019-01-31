@@ -131,10 +131,11 @@
     <!-- PREVIEW POST  -->
     <div id="modalfocus">
       <Modal v-model="previewPost" width="70%" :loading="loading">
-        <div v-if="!post.title">
+         <post-details v-if="hasContent" :post="post"></post-details>
+         <div >
           <h1 class="text-center" style="padding:100px;">NOTHING TO PREVIEW YET</h1>
         </div>
-        <div v-if="post.title && post.category != 7">
+        <!-- <div v-if="post.title && post.category != 7">
           <div class="container-fluid previewMade">
             <h4>Preview</h4>
             <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="false"/>
@@ -151,8 +152,8 @@
               >{{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}</Button>
             </div>
           </div>
-        </div>
-        <div v-else-if="post.title && post.category == 7">
+        </div> -->
+        <!-- <div v-else-if="post.title && post.category == 7">
           <div class="container-fluid previewMade">
             <h4>Preview</h4>
             <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="false"/>
@@ -169,7 +170,7 @@
               >{{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}</Button>
             </div>
           </div>
-        </div>
+        </div> -->
         <div slot="footer"></div>
       </Modal>
     </div>
@@ -198,6 +199,7 @@ import { VueEditor } from "vue2-editor";
 import SocialButtons from "@/components/SocialButtons";
 import { Push } from "vue-burger-menu";
 import DisplayImage from "./DisplayImage";
+import PostDetails from "@/components/PostDetails.vue";
 import Tinymce from "./Tinymce";
 
 export default {
@@ -220,7 +222,8 @@ export default {
     Tinymce,
     Form,
     FormItem,
-    Push
+    Push,
+    PostDetails
   },
   props: ["isTravel"],
   data: function() {
@@ -316,6 +319,9 @@ export default {
     },
     isCreatePage() {
       return this.$route.fullPath.includes("create");
+    },
+    hasContent(){
+      return Object.keys(this.post).length > 1
     }
   },
   methods: {

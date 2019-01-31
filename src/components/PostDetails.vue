@@ -21,10 +21,10 @@
         <img class="post-img" :src="post.image_url">
 
         <h1 class="post-title mt-4">{{post.title}}</h1>
-        <ul class="post-keypoints" v-if="point !== ''">
+        <ul class="post-keypoints">
           <li
             v-for="point in post.keypoint"
-            v-if="point"
+            v-if="!!point"
             :key="point.id"
           >{{point}}</li>
         </ul>
