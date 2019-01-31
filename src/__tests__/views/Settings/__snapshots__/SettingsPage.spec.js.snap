@@ -54,6 +54,7 @@ exports[`Settings Page should render correctly 1`] = `
            
           <a
             class="text-capitalize mt-3"
+            href="#"
           >
             customize country
           </a>
@@ -66,6 +67,7 @@ exports[`Settings Page should render correctly 1`] = `
            
           <a
             class="text-capitalize mt-3"
+            href="#"
           >
             customize category
           </a>
@@ -129,6 +131,8 @@ exports[`Settings Page should render correctly 1`] = `
             </div>
           </div>
            
+          <!---->
+           
           <div
             class="pt-3 d-flex justify-content-between align-items-center"
           >
@@ -140,7 +144,7 @@ exports[`Settings Page should render correctly 1`] = `
               <p
                 class="text small"
               >
-                Receive article digest
+                All notifications
               </p>
             </div>
              
@@ -159,9 +163,13 @@ exports[`Settings Page should render correctly 1`] = `
             </div>
           </div>
            
+          <!---->
+           
           <div
             class="hr"
           />
+           
+          <!---->
            
           <div
             class="d-flex justify-content-between align-items-center"
@@ -181,7 +189,6 @@ exports[`Settings Page should render correctly 1`] = `
                
               <a
                 class="text-capitalize"
-                href=""
               >
                 know more
               </a>
