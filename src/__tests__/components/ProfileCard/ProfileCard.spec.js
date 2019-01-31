@@ -9,9 +9,15 @@ describe('ProfileCard Component', () => {
         RouterLink: RouterLinkStub
       },
       propsData: {
-        hideMobileUserInfo: jest.fn()
+        hideMobileUserInfo: jest.fn(),
+        displayInterest: true,
+        hideFollowing: true,
+        displayFollowers: true,
       }
     });
     expect(wrapper.element).toMatchSnapshot();
+    expect(wrapper.props().displayInterest).toBeTruthy();
+    expect(wrapper.props().hideFollowing).toBeTruthy();
+    expect(wrapper.props().displayFollowers).toBeTruthy();
   });
 });

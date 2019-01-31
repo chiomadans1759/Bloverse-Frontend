@@ -36,5 +36,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import './CreatorActionsCard';
+  @import './CreatorProfileActionsCard';
 </style>

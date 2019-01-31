@@ -1,5 +1,6 @@
 <template>
   <main id="bl-profile-page">
+    <Navbar />
     <div class="container my-3 mb-5">
       <div class="row">
         <div class="col-lg-5 d-none d-sm-block mb-4">
@@ -16,7 +17,7 @@
             </div>
           </div>
           <div class="col-lg-12 mt-2">
-            <CreatorActionsCard />
+            <CreatorProfileActionsCard />
           </div>
           <div class="col-lg-12 mr-2 mt-2">
             <div class="card contest-advert bg-white">
@@ -144,9 +145,10 @@
 </template>
 
 <script>
+import Navbar from '@/components/Navbar/Navbar.vue';
 import Profile from '@/components/ProfileCard/ProfileCard';
 import CategoryCard from '@/components/CategoryCard/CategoryCard';
-import CreatorActionsCard from '@/components/CreatorActionsCard/CreatorActionsCard';
+import CreatorProfileActionsCard from '@/components/CreatorProfileActionsCard/CreatorProfileActionsCard';
 import { GChart } from "vue-google-charts";
 import { setupCalendar, DatePicker  } from 'v-calendar';
 import 'v-calendar/lib/v-calendar.min.css';
@@ -157,9 +159,10 @@ setupCalendar({
 
 export default {
   components: {
+    Navbar,
     Profile,
     CategoryCard,
-    CreatorActionsCard,
+    CreatorProfileActionsCard,
     GChart,
     DatePicker,
   },

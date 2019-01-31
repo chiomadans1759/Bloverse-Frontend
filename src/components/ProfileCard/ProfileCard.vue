@@ -43,7 +43,7 @@
       </div>
     </div>
     <div v-if="displayInterest" class="interests">
-      <category-card dontUseCard />
+      <category-card hideCardClass />
     </div>
     <div class="social p-3">
       <h5 class="mb-2"><strong>Social Media</strong></h5>
@@ -157,7 +157,8 @@ export default {
   props: {
     hideMobileUserInfo: {
       type: Function,
-      required: true,
+      required: false,
+      default: () => {},
     },
     displayInterest: {
       type: Boolean,
