@@ -62,7 +62,7 @@
           >
             <div class="">
               <ul class="navbar-nav flex-row">
-                <li class="nav-item mr-4 py-2" @click="toggleReadLater"
+                <li class="nav-item mr-4 py-2 read-later" @click="toggleReadLater"
                   :class="{'active': !showPrevRead}"
                 >
                   <router-link to="#" class="nav-link">
@@ -75,7 +75,7 @@
                     <span class="sr-only">(current)</span>
                   </router-link>
                 </li>
-                <li class="nav-item py-2" @click="togglePrevRead"
+                <li class="nav-item py-2 prev-read" @click="togglePrevRead"
                   :class="{'active': showPrevRead}"
                 >
                   <router-link to="#" class="nav-link">
@@ -100,7 +100,7 @@
             <div class="">
               <ul class="navbar-nav layout-nav">
                 <li :class="['nav-item', 'mr-4', 'py-2', {'active': showListView}]">
-                  <span @click="toggleView('list')" to="#" class="nav-link">
+                  <span @click="toggleView('list')" to="#" class="nav-link list-view">
                     <span v-show='showListView'>
                         <i class="fal fa-th-list mr-1 icon--active"></i>
                       </span>
@@ -110,7 +110,7 @@
                      List <span class="sr-only">(current)</span></span>
                 </li>
                 <li :class="['nav-item', 'mr-4', 'py-2', {'active': !showListView}]">
-                  <span @click="toggleView('grid')" to="#" class="nav-link">
+                  <span @click="toggleView('grid')" to="#" class="nav-link grid-view">
                     <span v-show="!showListView">
                       <i class="fal fa-th-large mr-1 icon--active"></i>
                     </span>

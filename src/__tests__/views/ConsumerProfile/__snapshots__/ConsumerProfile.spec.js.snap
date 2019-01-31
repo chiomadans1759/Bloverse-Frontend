@@ -26,7 +26,7 @@ exports[`Profile Component should render correctly 1`] = `
             class="profile-edit-icon d-flex justify-content-between p-3"
           >
             <span
-              class="d-inline d-sm-none"
+              class="d-inline d-sm-none bl-back-arrow"
             >
               <i
                 class="fal fa-long-arrow-left fa-2x back-arrow"
@@ -757,7 +757,7 @@ exports[`Profile Component should render correctly 1`] = `
               class="navbar-nav flex-row"
             >
               <li
-                class="nav-item mr-4 py-2 active"
+                class="nav-item mr-4 py-2 read-later active"
               >
                 <a
                   class="nav-link"
@@ -782,7 +782,7 @@ exports[`Profile Component should render correctly 1`] = `
               </li>
                
               <li
-                class="nav-item py-2"
+                class="nav-item py-2 prev-read"
               >
                 <a
                   class="nav-link"
@@ -819,7 +819,7 @@ exports[`Profile Component should render correctly 1`] = `
                 class="nav-item mr-4 py-2"
               >
                 <span
-                  class="nav-link"
+                  class="nav-link list-view"
                   to="#"
                 >
                   <span
@@ -849,7 +849,7 @@ exports[`Profile Component should render correctly 1`] = `
                 class="nav-item mr-4 py-2 active"
               >
                 <span
-                  class="nav-link"
+                  class="nav-link grid-view"
                   to="#"
                 >
                   <span>

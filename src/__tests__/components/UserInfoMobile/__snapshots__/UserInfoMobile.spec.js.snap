@@ -18,7 +18,7 @@ exports[`CountryCard Component should render correctly 1`] = `
       class="profile-edit-icon d-flex justify-content-between p-3"
     >
       <span
-        class="d-inline d-sm-none"
+        class="d-inline d-sm-none bl-back-arrow"
       >
         <i
           class="fal fa-long-arrow-left fa-2x back-arrow"

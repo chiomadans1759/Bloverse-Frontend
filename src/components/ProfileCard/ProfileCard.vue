@@ -2,7 +2,7 @@
   <main class="card profile">
     <img src="@/assets/Avatar.png" class="card-img-top" alt="...">
     <div class="profile-edit-icon d-flex justify-content-between p-3">
-      <span class="d-inline d-sm-none" @click="hideMobileUserInfo">
+      <span class="d-inline d-sm-none bl-back-arrow" @click="hideMobileUserInfo">
         <i class="fal fa-long-arrow-left fa-2x back-arrow"></i>
       </span>
       <i class="fal fa-user-edit fa-2x"></i>
