@@ -3,7 +3,6 @@ import Api from '@/utils/Api'
 
 export default {
   state: {
-    tinyMiceValue: "",
     categories: null,
     countries: null,
     activeCategory: {

@@ -111,7 +111,7 @@
 
             <div class="row">
               <div class="col-md-12">
-                <tinymce class="form-control required" v-model="general.tinyMiceValue"></tinymce>
+                <tinymce class="form-control required" v-model="tinyMiceValue"></tinymce>
               </div>
             </div>
 
@@ -142,7 +142,6 @@
         <div v-if="post.title">
           <div class="container-fluid previewMade">
             <h4>Preview</h4>
-            <!-- <p>{{post.category}}</p> -->
             <DisplayImage v-model="post.imageUrl" height="200px" width="100%" :can-edit="false"/>
             <h1>{{post.title}}</h1>
             <ul v-for="(keypoint) in post.keyPoints" :key="keypoint.value">
@@ -215,6 +214,7 @@ export default {
     return {
       slug: null,
       loading: false,
+      tinyMiceValue: "",
       post: {
         keyPoints: [
           { index: 1, value: "" },
@@ -315,6 +315,7 @@ export default {
           return confirm("Fill in a title");
         };
       } else {
+        this.post.body = this.tinyMiceValue;
         this.previewPost = true;
       }
     },
@@ -353,7 +354,6 @@ export default {
           }
           if (this.post.imageUrl) {
             this.isPublishing = true;
-            this.post.body = this.general.tinyMiceValue
             let response = await this.processPost({
               shouldPublish,
               shouldUploadImage: this.isNewImage,
