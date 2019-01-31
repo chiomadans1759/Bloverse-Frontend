@@ -84,12 +84,12 @@
                     id="keypoint"
                     type="date"
                     placement="bottom-end"
-                    placeholder="Time Taken"
+                    placeholder="Date Taken"
                     style="width: 100%"
                   ></DatePicker>
                 </FormItem>
-                <FormItem prop="deviceType">
-                  <Select placeholder="Device Used" id="keypoint" v-model="post.deviceType">
+                <FormItem prop="device_type">
+                  <Select placeholder="Device Used" id="keypoint" v-model="post.device_type">
                     <Option
                       v-for="item in deviceList"
                       :value="item.value"
@@ -101,12 +101,10 @@
 
               <div class="keypoints" v-else>
                 <FormItem
-                  v-for="(keypoint, index) in post.keyPoints"
+                  v-for="(val, index) in 3"
                   :key="index"
-                  :prop="`keyPoints.${index}.value`"
-                  :rules="{required: index === 0, message: 'Please provide at least one keypoint', trigger: 'change' }"
                 >
-                  <Input :placeholder="`Keypoint ${index+1}`" v-model="keypoint.value"/>
+                  <Input :placeholder="`Keypoint ${index+1}`" v-model="post.keypoint[index]"/>
                 </FormItem>
               </div>
             </section>
@@ -143,26 +141,17 @@
       <Modal v-model="previewPost" width="70%" :loading="loading">
         <div v-if="!post.title">
           <h1 class="text-center" style="padding:100px;">NOTHING TO PREVIEW YET</h1>
-        </div>
-        <div v-if="post.title">
-          <div class="container-fluid previewMade">
-            <h4>Preview</h4>
-            <DisplayImage v-model="post.image_url" height="200px" width="100%" :can-edit="false"/>
-            <h1>{{post.title}}</h1>
-            <ul v-for="(keypoint) in post.keyPoints" :key="keypoint.value">
-              <li>{{keypoint.value}}</li>
-            </ul>
-            <p v-html="post.body" id="content"></p>
-            <div class="text-center mt-4 mx-5">
-              <Button
-                id="btn-publish"
-                :disabled="post.is_published || this.isPublishing"
-                @click="handleProcessPost(true)"
-              >{{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}</Button>
-            </div>
+        </div>       
+        <PostDetails v-else :post="postDetails" />
+        <div slot="footer">
+          <div class="text-center mt-4 mx-5">
+            <Button
+              id="btn-publish"
+              :disabled="post.is_published || this.isPublishing"
+              @click="handleProcessPost(true)"
+            >{{ isPublishing ? 'PUBLISHING ...' : 'PUBLISH' }}</Button>
           </div>
         </div>
-        <div slot="footer"></div>
       </Modal>
     </div>
   </main>
@@ -190,6 +179,7 @@ import SocialButtons from "@/components/SocialButtons";
 import { Push } from "vue-burger-menu";
 import DisplayImage from "./DisplayImage";
 import Tinymce from "./Tinymce";
+import PostDetails from "./PostDetails"
 
 export default {
   components: {
@@ -210,7 +200,8 @@ export default {
     Tinymce,
     Form,
     FormItem,
-    Push
+    Push,
+    PostDetails
   },
   props: ["isTravel"],
   data: function() {
@@ -239,18 +230,12 @@ export default {
       },
       tinyMiceValue: null,
       post_content: false,
-      post: {
-        keyPoints: [
-          { index: 1, value: "" },
-          { index: 2, value: "" },
-          { index: 3, value: "" }
-        ]
-      },
+      post: { keypoint: [], body: "" },
       errors: {},
       previewPost: false,
       max: 150,
       validatePostForm: {
-        deviceType: [
+        device_type: [
           {
             required: true,
             type: "string",
@@ -328,6 +313,17 @@ export default {
     },
     isCreatePage() {
       return this.$route.fullPath.includes("create");
+    },
+    postDetails(){
+
+      let { keyPoints:keypoint } = this.post;
+
+      let details = { keypoint };
+
+      details = {...details, ...this.post};
+      details.body = this.tinyMiceValue;
+
+      return details;
     }
   },
   methods: {
@@ -349,13 +345,7 @@ export default {
     },
 
     clearPost() {
-      this.post = {
-        keyPoints: [
-          { index: 1, value: "" },
-          { index: 2, value: "" },
-          { index: 3, value: "" }
-        ]
-      };
+      this.post = { keypoint: []};
     },
 
     handleModalChange(status) {
@@ -384,6 +374,7 @@ export default {
           }
           if (this.post.image_url) {
             this.isPublishing = true;
+
             let response = await this.processPost({
               shouldPublish,
               shouldUploadImage: this.isNewImage,
@@ -409,8 +400,8 @@ export default {
               }
               this.previewPost = false;
             }
-            if (success.errors) {
-              this.handleError(success.errors);
+            if (response.errors) {
+              this.handleError(response.errors);
               this.$Message.error("Something went wrong");
             }
           } else this.$Message.error("You must select an image");
@@ -454,7 +445,7 @@ export default {
         });
       } else {
         this.setPost({
-          category: this.auth.loggedInUser.category,
+          category: this.auth.loggedInUser.category.id,
           country: this.auth.loggedInUser.country.id
         });
       }
@@ -464,12 +455,7 @@ export default {
       let slug = this.$route.params.slug;
       if (slug) {
         let post = await this.getPostBySlug({ slug });
-        const keyPoints = post.keypoint.map((k, i) => ({
-          index: i + 1,
-          value: k
-        }));
         this.post = post;
-        this.post.keyPoints = keyPoints;
         this.tinyMiceValue = post.body;
         this.showTiny = true;
       } else {
