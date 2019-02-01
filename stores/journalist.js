@@ -17,7 +17,7 @@ export default {
       let userId = rootState.auth.loggedInUser.id;
 
       let { 
-        id, title, body, keypoint, image_url, category, country, location, duration, device_type
+        id, title, body, keypoint=[], image_url, category, country, location, duration, device_type
       } = post;
       
 
@@ -43,11 +43,11 @@ export default {
       case 200:
       case 201: {
         let { 
-          id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published: isPublished = false, 
+          id, title, body, keypoint, image_url, category, country, is_published: isPublished = false, 
           slug, location, duration, device_type
         } = response.data.post;
 
-        let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, location, duration, device_type };
+        let updatedPost = { id, keypoint, image_url, title, body, category, country, isPublished, slug, location, duration, device_type };
 
         return updatedPost;
       }
