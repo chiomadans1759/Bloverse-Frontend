@@ -3,7 +3,6 @@ import Api from '@/utils/Api'
 
 export default {
   state: {
-    tinyMiceValue: "",
     categories: null,
     countries: null,
     activeCategory: {
@@ -174,18 +173,15 @@ export default {
       let response = await Api.get(`posts/trending/`);
       commit('setTrendingPost', response.data.post);
     },
-    async getPostBySlug({commit}, {slug}) {
-      let response = await Api.get(`posts?slug=${slug}`)
-      return response.data.posts[0];
-    },
     publishedPostsIsLoading({ commit }, loading) {
       commit('setPublishedPostsLoading', loading);
+    },
+    async getPostBySlug({commit}, {slug}) {
+      let response = await Api.get(`posts?slug=${slug}`)
+      return response.data.posts[0]
     }
   },
   mutations: {
-    setTinyMiceValue(state, value) {
-      state.tinyMiceValue = value;
-    },
     setModal(state, modal) {
       state.modal = modal
     },

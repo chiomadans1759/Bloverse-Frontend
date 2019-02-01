@@ -10,62 +10,23 @@ export default {
     async processPost({ commit, rootState, state, dispatch }, params) {
       let { post } = params;
       if (params.shouldUploadImage) {
-        let newUrl = await dispatch('doUpload', post.imageUrl, {root: true});
-        post.imageUrl = newUrl
+        let newUrl = await dispatch('doUpload', post.image_url, {root: true});
+        post.image_url = newUrl
       }
 
       let userId = rootState.auth.loggedInUser.id;
-      let payload;
 
-      let postId;
+      let { 
+        id, title, body, keypoint, image_url, category, country, location, duration, device_type
+      } = post;
+      
 
-      if (post.category === 7) {
-        let {
-          id,
-          title,
-          location,
-          duration,
-          deviceType: device_type,
-          imageUrl: image_url,
-          category,
-          country,
-          body
-        } = post;
-        postId = id;
-        payload = {
-          id,
-          title,
-          location,
-          duration,
-          device_type,
-          image_url,
-          category,
-          country,
-          body,
-          is_published: params.shouldPublish
-        };
-      } else {
-        let {
-          id,
-          title,
-          body,
-          keyPoints: keypoint,
-          imageUrl: image_url,
-          category,
-          country
-        } = post;
-        postId = id;
-        payload = {
-          id,
-          keypoint: keypoint.map(point => point.value),
-          image_url,
-          title,
-          body,
-          category,
-          country,
-          is_published: params.shouldPublish
-        };
-      }
+      let payload = { 
+        id, title, location, duration, device_type, image_url, category, country, body, is_published: params.shouldPublish, keypoint
+      };
+
+      if(keypoint === null || (!!keypoint && keypoint.length < 1))
+        delete payload.keypoint
 
       let response;
 
@@ -73,7 +34,7 @@ export default {
          it updates if it finds an Id
       */
       if (post.id) {
-        response = await Api.put('journalists/' + userId + '/posts/' + postId, payload, true);
+        response = await Api.put('journalists/' + userId + '/posts/' + post.id, payload, true);
       } else {
         response = await Api.post('journalists/' + userId + '/posts/', payload, true);
       }
@@ -82,16 +43,16 @@ export default {
       case 200:
       case 201: {
         let { 
-          id, title, body, keypoint: keyPoints, image_url: imageUrl, category, country, is_published: isPublished = false, 
+          id, title, body, keypoint, image_url, category, country, is_published: isPublished = false, 
           slug, location, duration, device_type
         } = response.data.post;
 
-        let updatedPost = { id, keyPoints, imageUrl, title, body, category, country, isPublished, slug, location, duration, device_type };
+        let updatedPost = { id, keypoint, image_url, title, body, category, country, isPublished, slug, location, duration, device_type };
 
         return updatedPost;
       }
       default:
-        return { errors: response };
+        return response;
       }
     },
     async getMyPosts({ commit, rootState }) {
