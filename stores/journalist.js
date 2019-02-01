@@ -17,7 +17,7 @@ export default {
       let userId = rootState.auth.loggedInUser.id;
 
       let { 
-        id, title, body, keypoint=[], image_url, category, country, location, duration, device_type
+        id, title, body, keypoint, image_url, category, country, location, duration, device_type
       } = post;
       
 
@@ -25,7 +25,7 @@ export default {
         id, title, location, duration, device_type, image_url, category, country, body, is_published: params.shouldPublish, keypoint
       };
 
-      if(keypoint.length < 1)
+      if(keypoint === null || (!!keypoint && keypoint.length < 1))
         delete payload.keypoint
 
       let response;
