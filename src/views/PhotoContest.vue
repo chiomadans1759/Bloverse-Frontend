@@ -26,7 +26,7 @@
             <video-modal
               v-if="show_video"
               @close="closeVid"
-              source="https://www.youtube.com/embed/CjKVWRErsN8" />
+              source="https://www.youtube.com/embed/GYQHF-prJiQ" />
           </div>
         </div>
       </div>
