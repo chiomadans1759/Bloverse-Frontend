@@ -1,5 +1,5 @@
 <template>
-  <header id="feeds-header">
+  <header id="the-header">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col">
@@ -7,12 +7,27 @@
             <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
           </router-link>
         </div>
+
+        <div class="col-auto">
+          <div class="dropdown" id="mobile-dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-ellipsis-h-alt"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <router-link to="/creators/photocontest" class="btn btn-link text-uppercase dropdown-item">
+                photo contest
+              </router-link>
+              <login-button class="pt-2 mr-3 dropdown-item" /> 
+            </div>
+          </div>
+        </div>
+
         <div class="col-auto">
           <div v-if="!auth.loggedInUser">
-            <router-link to="/creators/photocontest" class="btn btn-link text-uppercase">
+            <!-- <router-link to="/creators/photocontest" class="btn btn-link text-uppercase">
               photo contest
             </router-link>
-            <login-button class="pt-2 mr-3" />
+            <login-button class="pt-2 mr-3" /> -->
             <router-link to="/creators" class="btn btn-primary btn-md text-uppercase">
               create
             </router-link>
@@ -92,23 +107,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  #feeds-header {
+  #the-header {
     height: 8rem;
     padding-top: 2rem;
   }
 
-  #feeds-header #author-img {
+  #the-header #author-img {
     width: 32px;
     height: 32px;
   }
 
-  .dropdown-menu {
+  #the-header .dropdown-menu {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 4px;
   }
 
-  #feeds-header .dropdown-item i {
+  #the-header .dropdown-item i {
     font-size: 10px !important;
+  }
+
+  #the-header #mobile-dropdown .btn {
+    background-color: transparent !important;
   }
 </style>
 

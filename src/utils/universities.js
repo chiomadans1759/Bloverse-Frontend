@@ -146,6 +146,15 @@ let data = [
 			"Dublin Business School",
 			"Dublin institute of technology"
 		]
+	},
+	{
+		"country": "Germany",
+		"universities": [
+			"AMD Akademie mode & design",
+			"University of applied sciences Berlin",
+			"City university of applied sciences Bremen",
+			"Johannes Gutenberg University Mainz"
+		]
 	}
 ]
 
