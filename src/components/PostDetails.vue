@@ -92,7 +92,7 @@ export default {
 }
 #post-details .post-img {
   width: 100%;
-  height: 398px;
+  height: auto;
   margin-bottom: 1rem;
   object-fit: cover;
 }
