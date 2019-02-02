@@ -330,7 +330,11 @@ export default {
           return this.$Message.error("You must select a location");
         }
         this.post.location = this.$refs.autocomplete.value;
+      }else if(this.post.keypoint.length < 1){
+        return this.$Message.error("You must include at least 1 keypoint for post");
       }
+
+      
       this.$refs.basicCreatePostForm.validate(async valid => {
         if (valid) {
           this.post.body = this.tinyMiceValue;
@@ -351,23 +355,14 @@ export default {
               this.post = response;
               this.$Message.success("Post successfully saved");
               this.publishModal = shouldPublish;
-              this.$router.push(
-                `/creators/${this.auth.loggedInUser.username}/posts`
-              );
-              if (shouldPublish) {
-                this.slug = this.post.slug; //gets value of slug before clearing post object - for purpose of social share
-                this.clearTinyMceEditor();
-                this.clearPost();
-              } else {
-                //perform action if save as draft
-                // uncomment next line if edit features now work well.
-                //this.takeToMyPosts()
-              }
-              this.previewPost = false;
+              this.takeToMyPosts()
             }
-            if (response.errors) {
+
+            if (response.statusText === 'error') {
+              return this.$Message.error(response.message);
+            }else {
               this.handleError(response.errors);
-              this.$Message.error("Something went wrong");
+              return this.$Message.error("Something went wrong");
             }
           } else this.$Message.error("You must select an image");
         } else {
