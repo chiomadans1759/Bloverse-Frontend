@@ -74,6 +74,3 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
-
-gtag('set', 'page', router.currentRoute.path); // eslint-disable-line no-undef
-gtag('send', 'pageview'); // eslint-disable-line no-undef
