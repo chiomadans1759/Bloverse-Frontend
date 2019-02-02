@@ -330,7 +330,11 @@ export default {
           return this.$Message.error("You must select a location");
         }
         this.post.location = this.$refs.autocomplete.value;
+      }else if(this.post.keypoint.length < 1){
+        return this.$Message.error("You must include at least 1 keypoint for post");
       }
+
+      
       this.$refs.basicCreatePostForm.validate(async valid => {
         if (valid) {
           this.post.body = this.tinyMiceValue;
@@ -355,10 +359,10 @@ export default {
             }
 
             if (response.statusText === 'error') {
-              this.$Message.error(response.message);
+              return this.$Message.error(response.message);
             }else {
               this.handleError(response.errors);
-              this.$Message.error("Something went wrong");
+              return this.$Message.error("Something went wrong");
             }
           } else this.$Message.error("You must select an image");
         } else {
