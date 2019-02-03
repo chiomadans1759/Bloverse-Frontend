@@ -42,8 +42,6 @@ import CreatorProfile from '../src/views/journalists/Profile/ProfilePage';
 
 import CreatorApply from '../src/views/journalists/CreatorApply/CreatorApplyPage.vue';
 
-import CreatorApply from '../src/views/journalists/CreatorApply/CreatorApplyPage.vue';
-
 const routes = [
   {
     path: '/', component: GeneralLayout,

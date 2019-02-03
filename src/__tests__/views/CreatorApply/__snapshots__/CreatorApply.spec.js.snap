@@ -157,27 +157,10 @@ exports[`Creator Apply Component should render correctly 1`] = `
           <label
             for=""
           >
-             Bloverse Young Voices?
+            Bloverse Young Voices?
           </label>
-          <br />
            
-          <div
-            class="custom-control custom-radio custom-control-inline"
-          >
-            <input
-              class="custom-control-input"
-              id="customRadioInline1"
-              name="customRadioInline1"
-              type="radio"
-            />
-             
-            <label
-              class="custom-control-label"
-              for="customRadioInline1"
-            >
-              No
-            </label>
-          </div>
+          <br />
            
           <div
             class="custom-control custom-radio custom-control-inline"
@@ -187,15 +170,68 @@ exports[`Creator Apply Component should render correctly 1`] = `
               id="customRadioInline2"
               name="customRadioInline1"
               type="radio"
+              value="yes"
             />
              
             <label
-              class="custom-control-label"
+              class="custom-control-label pt-1"
               for="customRadioInline2"
             >
               Yes
             </label>
           </div>
+           
+          <div
+            class="custom-control custom-radio custom-control-inline"
+          >
+            <input
+              class="custom-control-input"
+              id="customRadioInline1"
+              name="customRadioInline1"
+              type="radio"
+              value="no"
+            />
+             
+            <label
+              class="custom-control-label pt-1"
+              for="customRadioInline1"
+            >
+              No
+            </label>
+          </div>
+        </div>
+         
+        <div
+          class="form-group"
+        >
+          <select
+            class="custom-select"
+            style="display: none;"
+          >
+            <option
+              selected="selected"
+            >
+              Select your institution*
+            </option>
+             
+            <option
+              value="1"
+            >
+              Mexico
+            </option>
+             
+            <option
+              value="2"
+            >
+              UK
+            </option>
+             
+            <option
+              value="3"
+            >
+              Ghana
+            </option>
+          </select>
         </div>
          
         <div
@@ -251,76 +287,78 @@ exports[`Creator Apply Component should render correctly 1`] = `
           </span>
         </div>
          
-        <div
-          class="form-group"
-        >
-          <label
-            class="d-flex flex-column"
-            for=""
-          >
-            <strong>
-              Links
-            </strong>
-             
-            <span>
-              Ipsu m lorem torem di
-            </span>
-          </label>
-        </div>
-         
-        <div
-          class="form-group"
-        >
-          <input
-            aria-describedby="emailHelp"
-            class="form-control"
-            id="exampleInputEmail1"
-            placeholder="Instagram Link"
-            type="text"
-          />
-        </div>
-         
-        <div
-          class="form-group"
-        >
-          <input
-            aria-describedby="emailHelp"
-            class="form-control"
-            id="exampleInputEmail1"
-            placeholder="LinkedIn Link"
-            type="text"
-          />
-        </div>
-         
-        <div
-          class="form-group"
-        >
-          <input
-            aria-describedby="emailHelp"
-            class="form-control"
-            id="exampleInputEmail1"
-            placeholder="Twitter Link"
-            type="text"
-          />
-        </div>
-         
         <div>
-          <input
-            aria-describedby="emailHelp"
-            class="form-control"
-            id="exampleInputEmail1"
-            placeholder="Link to written article"
-            type="text"
-          />
-           
-          <ul />
-           
-          <span
-            class="float-right pt-2 pb-3 link"
-            id="add-article"
+          <div
+            class="form-group"
           >
-            Add More link To Written Article
-          </span>
+            <label
+              class="d-flex flex-column"
+              for=""
+            >
+              <strong>
+                Links
+              </strong>
+               
+              <span>
+                Ipsu m lorem torem di
+              </span>
+            </label>
+          </div>
+           
+          <div
+            class="form-group"
+          >
+            <input
+              aria-describedby="emailHelp"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="Instagram Link"
+              type="text"
+            />
+          </div>
+           
+          <div
+            class="form-group"
+          >
+            <input
+              aria-describedby="emailHelp"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="LinkedIn Link"
+              type="text"
+            />
+          </div>
+           
+          <div
+            class="form-group"
+          >
+            <input
+              aria-describedby="emailHelp"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="Twitter Link"
+              type="text"
+            />
+          </div>
+           
+          <div>
+            <input
+              aria-describedby="emailHelp"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="Link to written article"
+              type="text"
+            />
+             
+            <ul />
+             
+            <span
+              class="float-right pt-2 pb-3 link"
+              id="add-article"
+            >
+              Add More link To Written Article
+            </span>
+          </div>
         </div>
          
         <div
@@ -337,17 +375,15 @@ exports[`Creator Apply Component should render correctly 1`] = `
           <label
             class="pb-4"
           >
+            By creating an account, you agree to our
             
-              By creating an account, you agree to our
-              
             <a
               class="sign-up-link-text"
             >
-              Terms
+              Terms 
             </a>
+            and
             
-              and
-              
             <a
               class="sign-up-link-text"
             >
@@ -360,7 +396,7 @@ exports[`Creator Apply Component should render correctly 1`] = `
           >
             <span>
               Have an account?
-                
+              
               <a
                 class="signup-login-text"
               >

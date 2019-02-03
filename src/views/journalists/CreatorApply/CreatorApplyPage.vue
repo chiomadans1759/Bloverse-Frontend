@@ -7,7 +7,7 @@
           <span class="back-text">Back</span>
         </a>
         <router-link to="/" class="router-link pl-4">
-            <img class="nav-logo" src="@/assets/Logo.svg" />
+          <img class="nav-logo" src="@/assets/Logo.svg">
         </router-link>
       </span>
     </div>
@@ -19,20 +19,40 @@
         </div>
         <div class="col-12 pt-4">
           <div class="form-group">
-            <input type="text" class="form-control" aria-describedby="firstName" placeholder="First Name*">
+            <input
+              type="text"
+              class="form-control"
+              aria-describedby="firstName"
+              placeholder="First Name*"
+            >
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" aria-describedby="lastName" placeholder="Last Name*">
+            <input
+              type="text"
+              class="form-control"
+              aria-describedby="lastName"
+              placeholder="Last Name*"
+            >
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email">
+            <input
+              type="email"
+              class="form-control"
+              aria-describedby="emailHelp"
+              placeholder="Email"
+            >
           </div>
           <div class="form-group">
             <div class="input-group mb-2 mr-sm-2">
               <div class="input-group-prepend">
                 <div class="input-group-text">+234</div>
               </div>
-              <input type="number" class="form-control" id="inlineFormInputGroupUsername2" placeholder="000 000 0000">
+              <input
+                type="number"
+                class="form-control"
+                id="inlineFormInputGroupUsername2"
+                placeholder="000 000 0000"
+              >
             </div>
           </div>
           <div class="form-group">
@@ -44,19 +64,42 @@
             </select>
           </div>
           <div class="form-group">
-            <label for=""> Bloverse Young Voices?</label><br>
+            <label for>Bloverse Young Voices?</label>
+            <br>
 
             <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-              <label class="custom-control-label" for="customRadioInline1">No</label>
+              <input
+                type="radio"
+                id="customRadioInline2"
+                name="customRadioInline1"
+                class="custom-control-input"
+                v-model="youngVoice"
+                value="yes"
+              >
+              <label class="custom-control-label pt-1" for="customRadioInline2">Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-              <label class="custom-control-label" for="customRadioInline2">Yes</label>
+              <input
+                type="radio"
+                id="customRadioInline1"
+                name="customRadioInline1"
+                class="custom-control-input"
+                v-model="youngVoice"
+                value="no"
+              >
+              <label class="custom-control-label pt-1" for="customRadioInline1">No</label>
             </div>
           </div>
+          <div class="form-group">
+            <select class="custom-select" v-show="isYoungVoice">
+              <option selected>Select your institution*</option>
+              <option value="1">Mexico</option>
+              <option value="2">UK</option>
+              <option value="3">Ghana</option>
+            </select>
+          </div>
           <div class="form-group pb-5">
-            <label for="" class="d-flex flex-column">
+            <label for class="d-flex flex-column">
               <strong>Category</strong>
               <span>Ipsu m lorem torem di</span>
             </label>
@@ -67,62 +110,116 @@
               <option value="3">Ghana</option>
             </select>
             <ul>
-              <li v-for="(input, index) in categoryInputs" v-bind:key="index" class="mt-2 d-flex justify-content-center align-items-center">
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Category" v-model="input.one">
-                <span @click="deleteField(index, 'category')" class="p-1"><i class="fal fa-trash-alt"></i></span>
+              <li
+                v-for="(input, index) in categoryInputs"
+                v-bind:key="index"
+                class="mt-2 d-flex justify-content-center align-items-center"
+              >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Category"
+                  v-model="input.one"
+                >
+                <span @click="deleteField(index, 'category')" class="p-1">
+                  <i class="fal fa-trash-alt"></i>
+                </span>
               </li>
             </ul>
             <span class="float-right pt-1 link" @click="addField('category')">Add More Category</span>
           </div>
-          <div class="form-group">
-            <label for="" class="d-flex flex-column">
-              <strong>Links</strong>
-              <span>Ipsu m lorem torem di</span>
-            </label>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Instagram Link">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="LinkedIn Link">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Twitter Link">
-          </div>
-          <div class="">
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Link to written article">
-            <ul>
-              <li v-for="(input, index) in articleInputs" v-bind:key="index" class="mt-2 d-flex justify-content-center align-items-center">
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Link to written article" v-model="input.one">
-                <span @click="deleteField(index, 'article')" class="p-1 delete-field"><i class="fal fa-trash-alt"></i></span>
-              </li>
-            </ul>
-            <span class="float-right pt-2 pb-3 link" id="add-article" @click="addField('article')">Add More link To Written Article</span>
+          <div v-show="!isYoungVoice">
+            <div class="form-group">
+              <label for class="d-flex flex-column">
+                <strong>Links</strong>
+                <span>Ipsu m lorem torem di</span>
+              </label>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Instagram Link"
+              >
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="LinkedIn Link"
+              >
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Twitter Link"
+              >
+            </div>
+            <div class>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Link to written article"
+              >
+              <ul>
+                <li
+                  v-for="(input, index) in articleInputs"
+                  v-bind:key="index"
+                  class="mt-2 d-flex justify-content-center align-items-center"
+                >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Link to written article"
+                    v-model="input.one"
+                  >
+                  <span @click="deleteField(index, 'article')" class="p-1 delete-field">
+                    <i class="fal fa-trash-alt"></i>
+                  </span>
+                </li>
+              </ul>
+              <span
+                class="float-right pt-2 pb-3 link"
+                id="add-article"
+                @click="addField('article')"
+              >Add More link To Written Article</span>
+            </div>
           </div>
           <div class="form-group">
             <Button customClass="btn btn-primary btn-block edit-btn mb-4">Apply</Button>
 
-              <label class="pb-4">
-                By creating an account, you agree to our
-                <router-link to="/terms-and-conditions" class="sign-up-link-text">Terms</router-link>
-                and
-                <router-link to="/privacy-policies" class="sign-up-link-text">Privacy</router-link>
-              </label>
+            <label class="pb-4">By creating an account, you agree to our
+              <router-link to="/terms-and-conditions" class="sign-up-link-text">Terms </router-link>and
+              <router-link to="/privacy-policies" class="sign-up-link-text">Privacy</router-link>
+            </label>
 
-              <div class="border p-3 bg-white creator-apply__login">
-                <span class="">Have an account?
-                  <router-link to="/login" class="signup-login-text">Login</router-link>
-                </span>
-              </div>
+            <div class="border p-3 bg-white creator-apply__login">
+              <span class>Have an account?
+                <router-link to="/login" class="signup-login-text">Login</router-link>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
-import Button from '@/components/Button/Button.vue';
+import Button from "@/components/Button/Button.vue";
 
 export default {
   components: {
@@ -132,36 +229,43 @@ export default {
     return {
       articleInputs: [],
       categoryInputs: [],
-    }
+      isYoungVoice: false,
+      youngVoice: ""
+    };
   },
   methods: {
     addField(type) {
-      if (type === 'article') {
+      if (type === "article") {
         this.articleInputs.push({
-          one: '',
+          one: ""
         });
       }
 
-      if (type == 'category') {
+      if (type == "category") {
         this.categoryInputs.push({
-          one: '',
-        })
+          one: ""
+        });
       }
     },
 
     deleteField(index, type) {
-      if (type === 'article') {
+      if (type === "article") {
         this.articleInputs.splice(index, 1);
       }
 
-      if (type == 'category') {
+      if (type == "category") {
         this.categoryInputs.splice(index, 1);
       }
     }
+  },
+  watch: {
+    youngVoice: function(value) {
+      this.isYoungVoice = value === "yes";
+    }
   }
-}
+};
 </script>
 
 <style lang="scss">
-@import './CreatorApplyPage';
+@import "./CreatorApplyPage";
 </style>
