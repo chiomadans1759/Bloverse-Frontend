@@ -62,10 +62,36 @@ main.card {
   .card-footer {
     font-size: rem(14px);
   }
+
+  .interests {
+    .category-text {
+      font-size: rem(12px);
+    }
+  }
+  .social {
+    .social-icon {
+      height: rem(14px);
+      width: rem(14px);
+    }
+    .social-text {
+      font-size: rem(12px);
+    }
+  }
+
+  .followers-icon {
+    background-color: #096DD9;
+    width: rem(22px);
+    height: rem(16px);
+    color: #ffffff;
+  }
 }
 
 .footer-color {
   color: rgba(0, 0, 0, .5);
+}
+
+.bl-modal-content {
+  max-height: rem(240px) !important;
 }
 
 @media screen and (min-width: 700px) {

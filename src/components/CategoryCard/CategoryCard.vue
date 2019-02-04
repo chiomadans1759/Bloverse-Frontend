@@ -1,5 +1,5 @@
 <template>
-  <main class="card category-card p-3">
+  <main class="category-card p-3" :class="{ card: !hideCardClass }">
     <div class="header d-flex justify-content-between ">
       <h5><strong>Interest</strong></h5>
       <span class="edit-icon"><i class="fal fa-edit mr-2"></i></span>
@@ -35,7 +35,13 @@
 
 <script>
 export default {
-  name: 'CategoryCard'
+  name: 'CategoryCard',
+  props: {
+    hideCardClass: {
+      type: Boolean,
+      default: false,
+    }
+  }
 }
 </script>
 

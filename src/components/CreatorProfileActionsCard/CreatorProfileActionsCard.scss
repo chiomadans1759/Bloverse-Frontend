@@ -1,0 +1,12 @@
+@import 'sass-rem';
+
+#bl-actions{
+  .badge {
+    background-color: #7b7979;
+    width: rem(22px);
+    height: rem(16px);
+    color: #ffffff;
+    border: rem(1px) solid #7b7979;
+    border-radius: rem(2px);
+  }
+}

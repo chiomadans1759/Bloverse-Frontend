@@ -128,6 +128,106 @@ exports[`Profile Component should render correctly 1`] = `
                 5
               </span>
             </div>
+             
+            <!---->
+          </div>
+           
+          <!---->
+           
+          <div
+            class="social p-3"
+          >
+            <h5
+              class="mb-2"
+            >
+              <strong>
+                Social Media
+              </strong>
+            </h5>
+             
+            <div
+              class="d-flex flex-wrap"
+            >
+              <div
+                class="mr-2"
+              >
+                <div
+                  class="border rounded p-2 mb-1 d-flex align-items-center"
+                >
+                  <img
+                    alt="facebook"
+                    class="social-icon"
+                    src="@/assets/facebook-square.svg"
+                  />
+                   
+                  <h6
+                    class="social-text text-center pl-2"
+                  >
+                    Facebook
+                  </h6>
+                </div>
+              </div>
+               
+              <div
+                class="mr-2"
+              >
+                <div
+                  class="border rounded p-2 mb-1 d-flex align-items-center"
+                >
+                  <img
+                    alt="facebook"
+                    class="social-icon"
+                    src="@/assets/twitter-square.svg"
+                  />
+                   
+                  <h6
+                    class="social-text text-center pl-2"
+                  >
+                    Twitter
+                  </h6>
+                </div>
+              </div>
+               
+              <div
+                class="mr-2"
+              >
+                <div
+                  class="border rounded p-2 mb-1 d-flex align-items-center"
+                >
+                  <img
+                    alt="facebook"
+                    class="social-icon"
+                    src="@/assets/instagram-square.svg"
+                  />
+                   
+                  <h6
+                    class="social-text text-center pl-2"
+                  >
+                    Instagram
+                  </h6>
+                </div>
+              </div>
+               
+              <div
+                class="mr-2"
+              >
+                <div
+                  class="border rounded p-2 mb-1 d-flex align-items-center"
+                >
+                  <img
+                    alt="facebook"
+                    class="social-icon"
+                    src="@/assets/linkedin-square.svg"
+                  />
+                   
+                  <h6
+                    class="social-text text-center pl-2"
+                  >
+                    Linkedin
+                  </h6>
+                </div>
+              </div>
+            </div>
           </div>
            
           <div
@@ -538,7 +638,7 @@ exports[`Profile Component should render correctly 1`] = `
         class="col-lg-12 mt-2"
       >
         <main
-          class="card category-card p-3"
+          class="category-card p-3 card"
         >
           <div
             class="header d-flex justify-content-between "
