@@ -33,7 +33,7 @@
                 </div>
               </Col>
             </Col>
-            <video-modal v-if="thumbnail" @close="modalClose" source="https://www.youtube.com/embed/EjRM4DMdnGw?autoplay=1"/>
+            <video-modal v-if="thumbnail" @close="modalClose" source="https://www.youtube.com/embed/RTYw6KbvaOs?autoplay=1"/>
             <Col :md="12" :sm="14" :xs="24" class="right2">
               <Col offset="2" :md="12" :sm="20" :xs="20" class="right-contain2">
                 <h2>About Us</h2>
