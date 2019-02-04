@@ -1,38 +1,30 @@
 <template>
   <main id="bl-profile-page">
-    <Navbar />
+    <Navbar/>
     <div class="container my-3 mb-5">
       <div class="row">
         <div class="col-lg-5 d-none d-sm-block mb-4">
           <div class="col-lg-12 mr-2">
-            <profile displayInterest hideFollowing displayFollowers />
+            <profile displayInterest hideFollowing displayFollowers/>
           </div>
           <div class="col-lg-12 mr-2">
             <div class="bg-white publish-container">
               <div class="publish-link-container">
-                <router-link to="/" class="publish-link btn">
-                  Publish An Article
-                </router-link>
+                <router-link to="/" class="publish-link btn">Publish An Article</router-link>
               </div>
             </div>
           </div>
           <div class="col-lg-12 mt-2">
-            <CreatorProfileActionsCard />
+            <CreatorProfileActionsCard/>
           </div>
           <div class="col-lg-12 mr-2 mt-2">
             <div class="card contest-advert bg-white">
               <div class="card-img-overlay">
-                <h3 class="card-title text-capitalize">
-                  Become a Content Consumer
-                </h3>
-                <p class="card-text text-capitalize caption">
-                  Publish your article to the world
-                </p>
+                <h3 class="card-title text-capitalize">Become a Content Consumer</h3>
+                <p class="card-text text-capitalize caption">Publish your article to the world</p>
                 <span class="d-flex justify-content-between mb-0">
-                  <a href="" class="mt-4">Know more</a>
-                  <a role="button" href="#" class="btn know-more-btn">
-                    Apply
-                  </a>
+                  <a href class="mt-4">Know more</a>
+                  <a role="button" href="#" class="btn know-more-btn">Apply</a>
                 </span>
               </div>
             </div>
@@ -45,20 +37,16 @@
                   <span class="text-capitalize">feedback</span>
                 </p>
               </div>
-              <p class="row company-rights text-capitalize">
-                2018 Bloverse. All Right Reserved
-              </p>
+              <p class="row company-rights text-capitalize">2018 Bloverse. All Right Reserved</p>
             </div>
           </div>
         </div>
         <!-- on mobile view only -->
-      <div class="d-inline-flex d-sm-none initials">
-        <a class="initials-link" href="#" id="navbarDropdown" role="button">
-          SM
-        </a>
-        <i class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"></i>
-      </div>
-      <!-- on mobile view only ends -->
+        <div class="d-inline-flex d-sm-none initials">
+          <a class="initials-link" href="#" id="navbarDropdown" role="button">SM</a>
+          <i class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"></i>
+        </div>
+        <!-- on mobile view only ends -->
         <div class="col-12 col-lg-7 col-xl-7 bg-white right-section p-0">
           <div class="mt-4 px-4">
             <div class="row">
@@ -74,8 +62,12 @@
                     </div>
                   </div>
                   <div class="p-3">
-                    <p class="sub-text text-white"><span class="font-weight-bold">2</span> today</p>
-                    <p class="sub-text text-white"><span class="font-weight-bold">6</span> this week</p>
+                    <p class="sub-text text-white">
+                      <span class="font-weight-bold">2</span> today
+                    </p>
+                    <p class="sub-text text-white">
+                      <span class="font-weight-bold">6</span> this week
+                    </p>
                   </div>
                 </div>
               </div>
@@ -92,38 +84,54 @@
                   </div>
                   <div class="p-3">
                     <p class="sub-text text-white">
-                      <span class="font-weight-bold">6</span> of 
-                      <span class="font-weight-bold">94</span> Nigeria <span class="fal fa-long-arrow-up"></span></p>
+                      <span class="font-weight-bold">6</span> of
+                      <span class="font-weight-bold">94</span> Nigeria
+                      <span class="fal fa-long-arrow-up"></span>
+                    </p>
                     <p class="sub-text text-white">
-                      <span class="font-weight-bold">5,064</span> of 
-                      <span class="font-weight-bold">9,124</span> Global <span class="fal fa-long-arrow-down"></span></p>
+                      <span class="font-weight-bold">5,064</span> of
+                      <span class="font-weight-bold">9,124</span> Global
+                      <span class="fal fa-long-arrow-down"></span>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="mt-4">
-            <p class="px-4">Total number of views
+            <p class="px-4">
+              Total number of views
               <span>
-                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Last 24 hours
-                </a>
+                <a
+                  class="dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >Last 24 hours</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Last 3 days</a>
                   <a class="dropdown-item" href="#">Last 7 days</a>
                   <a class="dropdown-item" href="#">Last 30 days</a>
                   <div class="dropdown-divider"></div>
-                  <a href="#" class="dropdown-item">Custom Date</a>
-                  <DatePicker
-                    mode='range'
-                    v-model='selectedDate'
-                    show-caps>
-                  </DatePicker>
+                  <a data-toggle="modal" href="#custom-date-modal" class="dropdown-item">Choose Custom Date</a>
                 </div>
               </span>
             </p>
-            <div class="p-0 p-lg-2 p-xl-2">
-              <GChart type="GeoChart" :data="chartData" :options="chartOptions" ref="chartData" />
+            <modal target="custom-date-modal" title="Custom Date" actionText="Apply Filter">
+              <div class="bl-modal-content">
+                <p>Choose Date Range:</p>
+                <DatePicker
+                  mode="range"
+                  v-model="selectedDate"
+                  show-caps
+                  :input-props='{ class: "form-control", readonly: true }'></DatePicker>
+              </div>
+            </modal>
+            <div class="p-0 p-lg-2 p-xl-2 gchart-container">
+              <GChart type="GeoChart" :data="chartData" :options="chartOptions" ref="chartData"/>
             </div>
           </div>
           <div class="mt-4 px-4">
@@ -154,22 +162,23 @@
         </div>
       </div>
     </div>
-    <Footer class="d-block d-lg-none d-xl-none" />
+    <Footer class="d-block d-lg-none d-xl-none"/>
   </main>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar/Navbar.vue';
-import Profile from '@/components/ProfileCard/ProfileCard';
-import CategoryCard from '@/components/CategoryCard/CategoryCard';
-import Footer from '@/components/Footer/Footer';
-import CreatorProfileActionsCard from '@/components/CreatorProfileActionsCard/CreatorProfileActionsCard';
+import Navbar from "@/components/Navbar/Navbar.vue";
+import Profile from "@/components/ProfileCard/ProfileCard";
+import CategoryCard from "@/components/CategoryCard/CategoryCard";
+import Modal from "@/components/Modal/Modal";
+import Footer from "@/components/Footer/Footer";
+import CreatorProfileActionsCard from "@/components/CreatorProfileActionsCard/CreatorProfileActionsCard";
 import { GChart } from "vue-google-charts";
-import { setupCalendar, DatePicker  } from 'v-calendar';
-import 'v-calendar/lib/v-calendar.min.css';
+import { setupCalendar, DatePicker } from "v-calendar";
+import "v-calendar/lib/v-calendar.min.css";
 
 setupCalendar({
-  firstDayOfWeek: 2,
+  firstDayOfWeek: 2
 });
 
 export default {
@@ -181,34 +190,35 @@ export default {
     GChart,
     DatePicker,
     Footer,
+    Modal
   },
   data() {
     return {
       chartData: [
-        ['Country', 'Popularity'],
-        ['Nigeria', 600],
-        ['Kenya', 500],
-        ['Mexico', 600],
+        ["Country", "Popularity"],
+        ["Nigeria", 600],
+        ["Kenya", 500],
+        ["Mexico", 600]
       ],
       chartOptions: {
         chart: {
-          backgroundColor: '#f5f5f5',
-          datalessRegionColor: '#c2c2c2',
+          backgroundColor: "#f5f5f5",
+          datalessRegionColor: "#c2c2c2"
         },
-        colorAxis: {colors: ['#c5c5c5', '#2F80ED']},
+        colorAxis: { colors: ["#c5c5c5", "#2F80ED"] },
         legend: {},
-        keepAspectRatio: true,
+        keepAspectRatio: true
       },
       selectedDate: {
-        start: new Date(2018, 0, 9),
-        end: new Date(2018, 0, 18)
-      },
-    }
-  },
-}
+        start: null,
+        end: null
+      }
+    };
+  }
+};
 </script>
 
 <style scoped lang="scss">
-  @import './ProfilePage';
+@import "./ProfilePage";
 </style>
 

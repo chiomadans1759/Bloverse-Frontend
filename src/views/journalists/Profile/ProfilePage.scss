@@ -164,6 +164,11 @@
   }
 }
 
-.popover-container {
-  padding: rem(5px);
+.bl-modal-content {
+  height: rem(350px);
+  max-height: rem(350px) !important;
+
+  .popover-container {
+    padding: rem(5px);
+  }
 }

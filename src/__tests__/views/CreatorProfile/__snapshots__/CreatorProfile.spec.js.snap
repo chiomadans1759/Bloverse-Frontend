@@ -623,13 +623,13 @@ exports[`Profile Component should render correctly 1`] = `
               </h5>
                
               <div
-                class="row"
+                class="d-flex flex-wrap"
               >
                 <div
-                  class="col-4"
+                  class="mr-2"
                 >
                   <div
-                    class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center"
+                    class="border rounded p-2 mb-1 d-flex align-items-center"
                   >
                     <img
                       alt="facebook"
@@ -638,7 +638,7 @@ exports[`Profile Component should render correctly 1`] = `
                     />
                      
                     <h6
-                      class="social-text text-center"
+                      class="social-text text-center pl-2"
                     >
                       Facebook
                     </h6>
@@ -646,10 +646,10 @@ exports[`Profile Component should render correctly 1`] = `
                 </div>
                  
                 <div
-                  class="col-4"
+                  class="mr-2"
                 >
                   <div
-                    class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center"
+                    class="border rounded p-2 mb-1 d-flex align-items-center"
                   >
                     <img
                       alt="facebook"
@@ -658,7 +658,7 @@ exports[`Profile Component should render correctly 1`] = `
                     />
                      
                     <h6
-                      class="social-text text-center"
+                      class="social-text text-center pl-2"
                     >
                       Twitter
                     </h6>
@@ -666,10 +666,10 @@ exports[`Profile Component should render correctly 1`] = `
                 </div>
                  
                 <div
-                  class="col-4"
+                  class="mr-2"
                 >
                   <div
-                    class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center"
+                    class="border rounded p-2 mb-1 d-flex align-items-center"
                   >
                     <img
                       alt="facebook"
@@ -678,7 +678,7 @@ exports[`Profile Component should render correctly 1`] = `
                     />
                      
                     <h6
-                      class="social-text text-center"
+                      class="social-text text-center pl-2"
                     >
                       Instagram
                     </h6>
@@ -686,10 +686,10 @@ exports[`Profile Component should render correctly 1`] = `
                 </div>
                  
                 <div
-                  class="col-4"
+                  class="mr-2"
                 >
                   <div
-                    class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center"
+                    class="border rounded p-2 mb-1 d-flex align-items-center"
                   >
                     <img
                       alt="facebook"
@@ -698,7 +698,7 @@ exports[`Profile Component should render correctly 1`] = `
                     />
                      
                     <h6
-                      class="social-text text-center"
+                      class="social-text text-center pl-2"
                     >
                       Linkedin
                     </h6>
@@ -987,9 +987,7 @@ exports[`Profile Component should render correctly 1`] = `
               <a
                 class="publish-link btn"
               >
-                
                 Publish An Article
-              
               </a>
             </div>
           </div>
@@ -1108,17 +1106,13 @@ exports[`Profile Component should render correctly 1`] = `
               <h3
                 class="card-title text-capitalize"
               >
-                
                 Become a Content Consumer
-              
               </h3>
                
               <p
                 class="card-text text-capitalize caption"
               >
-                
                 Publish your article to the world
-              
               </p>
                
               <span
@@ -1136,9 +1130,7 @@ exports[`Profile Component should render correctly 1`] = `
                   href="#"
                   role="button"
                 >
-                  
                   Apply
-                
                 </a>
               </span>
             </div>
@@ -1182,9 +1174,7 @@ exports[`Profile Component should render correctly 1`] = `
             <p
               class="row company-rights text-capitalize"
             >
-              
               2018 Bloverse. All Right Reserved
-            
             </p>
           </div>
         </div>
@@ -1199,9 +1189,7 @@ exports[`Profile Component should render correctly 1`] = `
           id="navbarDropdown"
           role="button"
         >
-          
-        SM
-      
+          SM
         </a>
          
         <i
@@ -1264,6 +1252,7 @@ exports[`Profile Component should render correctly 1`] = `
                       2
                     </span>
                      today
+                  
                   </p>
                    
                   <p
@@ -1275,6 +1264,7 @@ exports[`Profile Component should render correctly 1`] = `
                       6
                     </span>
                      this week
+                  
                   </p>
                 </div>
               </div>
@@ -1325,14 +1315,15 @@ exports[`Profile Component should render correctly 1`] = `
                     >
                       6
                     </span>
-                     of 
+                     of
                     
                     <span
                       class="font-weight-bold"
                     >
                       94
                     </span>
-                     Nigeria 
+                     Nigeria
+                    
                     <span
                       class="fal fa-long-arrow-up"
                     />
@@ -1346,14 +1337,15 @@ exports[`Profile Component should render correctly 1`] = `
                     >
                       5,064
                     </span>
-                     of 
+                     of
                     
                     <span
                       class="font-weight-bold"
                     >
                       9,124
                     </span>
-                     Global 
+                     Global
+                    
                     <span
                       class="fal fa-long-arrow-down"
                     />
@@ -1370,6 +1362,7 @@ exports[`Profile Component should render correctly 1`] = `
           <p
             class="px-4"
           >
+            
             Total number of views
             
             <span>
@@ -1382,9 +1375,7 @@ exports[`Profile Component should render correctly 1`] = `
                 id="navbarDropdown"
                 role="button"
               >
-                
                 Last 24 hours
-              
               </a>
                
               <div
@@ -1418,30 +1409,116 @@ exports[`Profile Component should render correctly 1`] = `
                  
                 <a
                   class="dropdown-item"
-                  href="#"
+                  data-toggle="modal"
+                  href="#custom-date-modal"
                 >
-                  Custom Date
+                  Choose Custom Date
                 </a>
-                 
-                <div
-                  class="popover-container"
-                  data-v-1ad2436f=""
-                >
-                  <!---->
-                   
-                  <input
-                    data-v-1ad2436f=""
-                    placeholder="MM/DD/YYYY - MM/DD/YYYY"
-                    style="min-width: 150px;"
-                    type="text"
-                  />
-                </div>
               </div>
             </span>
           </p>
            
+          <main
+            id="bl-modal"
+          >
+            <div
+              aria-hidden="true"
+              aria-labelledby="customModal"
+              class="modal fade"
+              id="custom-date-modal"
+              role="dialog"
+              tabindex="-1"
+            >
+              <div
+                class="modal-dialog modal-dialog-centered"
+                role="document"
+              >
+                <div
+                  class="modal-content"
+                >
+                  <div
+                    class="modal-header"
+                  >
+                    <h5
+                      class="modal-title"
+                      id="customModal"
+                    >
+                      Custom Date
+                    </h5>
+                     
+                    <div>
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                     
+                    <button
+                      aria-label="Close"
+                      class="close"
+                      data-dismiss="modal"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                      >
+                        ×
+                      </span>
+                    </button>
+                  </div>
+                   
+                  <div
+                    class="modal-body"
+                  >
+                    <div
+                      class="bl-modal-content"
+                    >
+                      <p>
+                        Choose Date Range:
+                      </p>
+                       
+                      <div
+                        class="popover-container"
+                        data-v-1ad2436f=""
+                      >
+                        <!---->
+                         
+                        <input
+                          class="form-control"
+                          data-v-1ad2436f=""
+                          placeholder="DD/MM/YYYY - DD/MM/YYYY"
+                          readonly="readonly"
+                          style="min-width: 150px;"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="modal-footer"
+                  >
+                    <button
+                      class="btn btn-outline-primary"
+                      data-dismiss="modal"
+                      type="button"
+                    >
+                      Close
+                    </button>
+                     
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                    >
+                      Apply Filter
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+           
           <div
-            class="p-0 p-lg-2 p-xl-2"
+            class="p-0 p-lg-2 p-xl-2 gchart-container"
           >
             <div />
           </div>

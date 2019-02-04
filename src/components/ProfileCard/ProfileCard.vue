@@ -47,29 +47,29 @@
     </div>
     <div class="social p-3">
       <h5 class="mb-2"><strong>Social Media</strong></h5>
-      <div class="row">
-        <div class="col-4">
-          <div class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center">
+      <div class="d-flex flex-wrap">
+        <div class="mr-2">
+          <div class="border rounded p-2 mb-1 d-flex align-items-center">
             <img class="social-icon" src="@/assets/facebook-square.svg" alt="facebook" />
-            <h6 class="social-text text-center">Facebook</h6>
+            <h6 class="social-text text-center pl-2">Facebook</h6>
           </div>
         </div>
-        <div class="col-4">
-          <div class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center">
+        <div class="mr-2">
+          <div class="border rounded p-2 mb-1 d-flex align-items-center">
             <img class="social-icon" src="@/assets/twitter-square.svg" alt="facebook" />
-            <h6 class="social-text text-center">Twitter</h6>
+            <h6 class="social-text text-center pl-2">Twitter</h6>
           </div>
         </div>
-        <div class="col-4">
-          <div class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center">
+        <div class="mr-2">
+          <div class="border rounded p-2 mb-1 d-flex align-items-center">
             <img class="social-icon" src="@/assets/instagram-square.svg" alt="facebook" />
-            <h6 class="social-text text-center">Instagram</h6>
+            <h6 class="social-text text-center pl-2">Instagram</h6>
           </div>
         </div>
-        <div class="col-4">
-          <div class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center">
+        <div class="mr-2">
+          <div class="border rounded p-2 mb-1 d-flex align-items-center">
             <img class="social-icon" src="@/assets/linkedin-square.svg" alt="facebook" />
-            <h6 class="social-text text-center">Linkedin</h6>
+            <h6 class="social-text text-center pl-2">Linkedin</h6>
           </div>
         </div>
       </div>

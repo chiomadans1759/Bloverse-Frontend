@@ -90,6 +90,10 @@ main.card {
   color: rgba(0, 0, 0, .5);
 }
 
+.bl-modal-content {
+  max-height: rem(240px) !important;
+}
+
 @media screen and (min-width: 700px) {
   .profile-img {
     width: rem(64px);

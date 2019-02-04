@@ -225,13 +225,13 @@ exports[`ProfileCard Component should render correctly 1`] = `
     </h5>
      
     <div
-      class="row"
+      class="d-flex flex-wrap"
     >
       <div
-        class="col-4"
+        class="mr-2"
       >
         <div
-          class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center"
+          class="border rounded p-2 mb-1 d-flex align-items-center"
         >
           <img
             alt="facebook"
@@ -240,7 +240,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
           />
            
           <h6
-            class="social-text text-center"
+            class="social-text text-center pl-2"
           >
             Facebook
           </h6>
@@ -248,10 +248,10 @@ exports[`ProfileCard Component should render correctly 1`] = `
       </div>
        
       <div
-        class="col-4"
+        class="mr-2"
       >
         <div
-          class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center"
+          class="border rounded p-2 mb-1 d-flex align-items-center"
         >
           <img
             alt="facebook"
@@ -260,7 +260,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
           />
            
           <h6
-            class="social-text text-center"
+            class="social-text text-center pl-2"
           >
             Twitter
           </h6>
@@ -268,10 +268,10 @@ exports[`ProfileCard Component should render correctly 1`] = `
       </div>
        
       <div
-        class="col-4"
+        class="mr-2"
       >
         <div
-          class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center"
+          class="border rounded p-2 mb-1 d-flex align-items-center"
         >
           <img
             alt="facebook"
@@ -280,7 +280,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
           />
            
           <h6
-            class="social-text text-center"
+            class="social-text text-center pl-2"
           >
             Instagram
           </h6>
@@ -288,10 +288,10 @@ exports[`ProfileCard Component should render correctly 1`] = `
       </div>
        
       <div
-        class="col-4"
+        class="mr-2"
       >
         <div
-          class="border rounded p-2 mb-1 d-flex justify-content-around align-items-center"
+          class="border rounded p-2 mb-1 d-flex align-items-center"
         >
           <img
             alt="facebook"
@@ -300,7 +300,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
           />
            
           <h6
-            class="social-text text-center"
+            class="social-text text-center pl-2"
           >
             Linkedin
           </h6>
