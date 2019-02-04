@@ -3,7 +3,7 @@
     <section v-if="!post">
       <img src="@/assets/placeholders/post.svg" alt="">
     </section>
-    <div>
+    <section v-if="post.category == 7">
       <div class="card-header border-0">
         <div class="row pt-4">
           <div class="col">
@@ -16,7 +16,41 @@
           </div>
         </div>
       </div>
-      <!-- card body -->
+
+      <div class="card-body">
+        <img class="post-img" :src="post.image_url">
+
+        <h1 class="post-title mt-4">{{post.title}}</h1>
+        <ul class="list-unstyled mt-4">
+          <li class="text-muted mb-1">
+            <i class="fas fa-camera-retro"></i>
+            Device Used: {{post.device_type}}
+          </li>
+          <li class="text-muted">
+            <i class="fas fa-map-marker-alt"></i>
+            Location: {{post.location}}
+          </li>
+        </ul>
+        <div class="post-content">
+          <div class="post-content-body" v-html="post.body"></div>
+        </div>
+      </div>
+    </section>
+
+    <section v-else>
+      <div class="card-header border-0">
+        <div class="row pt-4">
+          <div class="col">
+            <h5 class="card-header-title text-uppercase" v-if="show">{{category.name}}</h5>
+          </div>
+          <div class="col-auto">
+            <h6
+              class="text-secondary text-uppercase"
+            >{{post.created | customizedTime}}</h6>
+          </div>
+        </div>
+      </div>
+      
       <div class="card-body">
         <img class="post-img" :src="post.image_url">
 
@@ -32,7 +66,7 @@
           <div class="post-content-body" v-html="post.body"></div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 </template>
 
