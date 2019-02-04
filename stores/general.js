@@ -154,7 +154,7 @@ export default {
           });
         }
       } catch (error) {
-        alert('Posts feed empty');
+        // alert('Posts feed empty');
       }
     },
     async filterPosts({ commit }, { category = "", country = "" }) {
