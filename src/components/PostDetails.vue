@@ -22,13 +22,7 @@
         <img class="post-img" :src="post.image_url">
 
         <h1 class="post-title mt-4">{{post.title}}</h1>
-        <ul class="post-keypoints mt-4" v-show="post.category != 7">
-          <li
-            v-for="point in post.keypoint"
-            :key="point.id"
-          >{{point}}</li>
-        </ul>
-        <ul class="list-unstyled mt-4" v-show="post.category == 7">
+        <ul class="list-unstyled mt-4" v-if="post.category == 7">
           <li class="text-muted mb-1">
             <i class="fas fa-camera-retro"></i>
             Device Used: {{post.device_type}}
@@ -37,6 +31,13 @@
             <i class="fas fa-map-marker-alt"></i>
             Location: {{post.location}}
           </li>
+        </ul>
+        <ul class="post-keypoints mt-4" v-else>
+          <li
+            v-for="point in post.keypoint"
+            :key="point.id"
+            v-if="point"
+          >{{point}}</li>
         </ul>
         <div class="post-content">
           <div class="post-content-body" v-html="post.body"></div>
