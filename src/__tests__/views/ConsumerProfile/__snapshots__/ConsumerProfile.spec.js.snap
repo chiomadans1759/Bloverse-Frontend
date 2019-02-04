@@ -1961,9 +1961,11 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-5 col-sm-6 font-weight-bold description"
                   >
                     <a>
-                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                      
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          
                     </a>
                   </p>
                    
@@ -2172,6 +2174,96 @@ exports[`Profile Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
                               <i
                                 class="fal fa-comment-dots"
                               />
@@ -2179,7 +2271,13 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
                               </span>
                             </p>
                              
@@ -2193,7 +2291,13 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
                               </span>
                             </p>
                           </div>
@@ -2246,9 +2350,11 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-5 col-sm-6 font-weight-bold description"
                   >
                     <a>
-                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                      
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          
                     </a>
                   </p>
                    
@@ -2457,6 +2563,96 @@ exports[`Profile Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
                               <i
                                 class="fal fa-comment-dots"
                               />
@@ -2464,7 +2660,13 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
                               </span>
                             </p>
                              
@@ -2478,7 +2680,13 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
                               </span>
                             </p>
                           </div>
@@ -2531,9 +2739,11 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-5 col-sm-6 font-weight-bold description"
                   >
                     <a>
-                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                      
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          
                     </a>
                   </p>
                    
@@ -2742,6 +2952,96 @@ exports[`Profile Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
                               <i
                                 class="fal fa-comment-dots"
                               />
@@ -2749,7 +3049,13 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
                               </span>
                             </p>
                              
@@ -2763,7 +3069,13 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
                               </span>
                             </p>
                           </div>
@@ -2816,9 +3128,11 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-5 col-sm-6 font-weight-bold description"
                   >
                     <a>
-                      Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+                      
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          
                     </a>
                   </p>
                    
@@ -3027,6 +3341,96 @@ exports[`Profile Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
                               <i
                                 class="fal fa-comment-dots"
                               />
@@ -3034,7 +3438,13 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
                               </span>
                             </p>
                              
@@ -3048,7 +3458,13 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
                               </span>
                             </p>
                           </div>
