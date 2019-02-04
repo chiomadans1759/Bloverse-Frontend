@@ -62,11 +62,35 @@ describe('PostCard Component', () => {
     expect(wrapper.vm.dislikePost).toBe(true);
   });
 
+  it('should toggle the read later icon', () => {
+    const wrapper = mount(PostCard, {
+      stubs: { RouterLink: RouterLinkStub },
+    });
+
+
+    wrapper.findAll('.toggle-bookmark').at(1).trigger('click');
+
+    expect(wrapper.vm.addBookmark).toBe(true);
+  });
+
+  it('should toggle the read story icon', () => {
+    const wrapper = mount(PostCard, {
+      stubs: { RouterLink: RouterLinkStub },
+    });
+
+
+    wrapper.findAll('.toggle-story').at(1).trigger('click');
+
+    expect(wrapper.vm.readStory).toBe(true);
+  });
+
   it('sets the correct default data', () => {
     expect(typeof PostCard.data).toBe('function')
     const defaultData = PostCard.data()
     expect(defaultData.showKeypoints).toBe(false)
     expect(defaultData.likePost).toBe(false);
-    expect(defaultData.dislikePost).toBe(false)
+    expect(defaultData.dislikePost).toBe(false);
+    expect(defaultData.addBookmark).toBe(false);
+    expect(defaultData.readStory).toBe(false);
   });
 });

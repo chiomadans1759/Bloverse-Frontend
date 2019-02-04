@@ -162,6 +162,20 @@
           .ellipsis {
             cursor: pointer;
             font-size: rem(25px);
+            .dropdown-item{
+              font-size: rem(17px);
+              padding:.55rem 1.5rem;
+              svg{
+                color: #096DD9 !important;
+              }
+              .badges{
+                float: right;
+                color: #096DD9;
+                border: rem(1px) solid #096DD9;
+                border-radius: rem(3px);
+                padding: 0 rem(3px);
+              }
+            }
             .dropdown-toggle {
               #option-icon {
                 display: inline-block;
@@ -270,7 +284,7 @@
 
 @media screen and (min-width: 1020px) {
   .bl-postcard {
-    border: 1px solid #d9d9d9;
+    border: rem(1px) solid #d9d9d9;
     border-radius: 0 !important;
     background: #ffffff;
     margin-bottom:rem(8px);

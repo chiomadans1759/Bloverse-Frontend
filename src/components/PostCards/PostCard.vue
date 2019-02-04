@@ -1,15 +1,15 @@
 <template>
-  <main id="bl-postcard" class="card bl-postcard"
-    :class="[{ hideCardBorder: hideCardBorder }]"
-  >
+  <main id="bl-postcard" class="card bl-postcard" :class="[{ hideCardBorder: hideCardBorder }]">
     <div class="card-body bl-postcard-body">
       <div class="card-title row title">
         <div class="col-9 row title--text">
           <span class="col-3">category</span>
           <p class="col-5 col-sm-6 font-weight-bold description">
-            <router-link to="/posts/rere">Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
-            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret</router-link>
+            <router-link to="/posts/rere">
+              Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+              Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+              Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            </router-link>
           </p>
           <p class="col-4 col-sm-3 username" v-if="customClass === 'consumer'">
             <span class="time">1 min ago</span>
@@ -22,10 +22,7 @@
             <span class="time">1 min ago</span>
           </p>
         </div>
-        <div class="col-3 title--image"
-          :style="{backgroundImage: 'url(' + feedCardImage + ')'}"
-        >
-        </div>
+        <div class="col-3 title--image" :style="{backgroundImage: 'url(' + feedCardImage + ')'}"></div>
       </div>
       <div class="card-text keypoints" v-show="showKeypoints">
         <span class="font-weight-bold text-capitalize">keypoint</span>
@@ -69,33 +66,74 @@
               <span class="count">1</span>
             </p>
             <div class="ellipsis">
-              <span class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              <span
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
               >
                 <i class="fal fa-ellipsis-h"></i>
               </span>
               <div class="dropdown-menu bl-dropdown-menu" aria-labelledby="dropdownMenuReference">
                 <div class="d-flex bl-dropdown-menu__countries">
                   <div class="favourite-countries">
+                    <p class="dropdown-item country">Report Post</p>
+                    <hr>
+                    <hr>
+                    <p class="dropdown-item country">
+                      <i class="fal fa-plus"></i>
+                      <span class="count">Creators Profile</span>
+                    </p>
+                    <p class="dropdown-item country toggle-bookmark"  v-show="!addBookmark" @click="toggleBookmark()">
+                      <i class="fal fa-bookmark"></i>
+                      <span class="count">Read Later</span>
+                    </p>
+                    <p class="dropdown-item country toggle-bookmark" v-show="addBookmark" @click="toggleBookmark()">
+                      <i class="fas fa-bookmark"></i>
+                      <span class="count">Read Later</span>
+                    </p>
+                    <hr>
+                    <hr>
+                    <p class="dropdown-item country toggle-story" v-show="!readStory" @click="toggleReadStory()">
+                      <i class="fal fa-book-open"></i>
+                      <span class="count">Read Story</span>
+                    </p>
+                    <p class="dropdown-item country toggle-story" v-show="readStory" @click="toggleReadStory()">
+                      <i class="fas fa-book-open"></i>
+                      <span class="count">Read Story</span>
+                    </p>
+                    <hr>
+                    <hr>
                     <p class="dropdown-item country">
                       <i class="fal fa-comment-dots"></i>
-                      <span class="count">67</span>
+                      <span class="count">Comment
+                        <span class="badges">5</span>
+                      </span>
                     </p>
                     <p class="dropdown-item country">
                       <i class="fal fa-share"></i>
-                      <span class="count">67</span>
+                      <span class="count">Share
+                        <span class="badges">5</span>
+                      </span>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div v-show="showKeypoints" class="col-2 col-sm-1 toggle-keypoints"
+          <div
+            v-show="showKeypoints"
+            class="col-2 col-sm-1 toggle-keypoints"
             @click="toggleKeypoints()"
           >
             <i class="fal fa-angle-up"></i>
           </div>
-          <div v-show="!showKeypoints" class="col-2 col-sm-1 toggle-keypoints"
+          <div
+            v-show="!showKeypoints"
+            class="col-2 col-sm-1 toggle-keypoints"
             @click="toggleKeypoints()"
           >
             <i class="fal fa-angle-down"></i>
@@ -107,19 +145,19 @@
 </template>
 
 <script>
-import feedCardImage from '../../assets/post-card-image.jpg';
+import feedCardImage from "../../assets/post-card-image.jpg";
 
 export default {
-  name: 'PostCard',
+  name: "PostCard",
   props: {
     hideCardBorder: {
       type: Boolean,
-      default: false,
+      default: false
     },
     customClass: {
       type: String,
-      default: '',
-    },
+      default: ""
+    }
   },
   data() {
     return {
@@ -127,7 +165,9 @@ export default {
       showKeypoints: false,
       likePost: false,
       dislikePost: false,
-    }
+      addBookmark: false,
+      readStory: false,
+    };
   },
   methods: {
     toggleKeypoints() {
@@ -140,11 +180,17 @@ export default {
     toggleDislike() {
       this.dislikePost = !this.dislikePost;
       this.likePost = false;
+    },
+    toggleBookmark() {
+      this.addBookmark = !this.addBookmark;
+    },
+    toggleReadStory() {
+      this.readStory = !this.readStory;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  @import './PostCard.scss';
+@import "./PostCard.scss";
 </style>
