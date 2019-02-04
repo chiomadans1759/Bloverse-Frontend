@@ -54,9 +54,9 @@
                 <a href="#">Unfollow</a>
               </span>
             </p>
-            <p class="sub-text">
-              <span class="sub-span">24</span> Followers
-              <span class="sub-span point">234</span> Articles
+            <p class="sub-text d-flex flex-wrap">
+              <span><span class="sub-span">24</span> Followers</span>
+              <span><span class="sub-span point">234</span> Articles</span>
             </p>
           </div>
           <div class="d-none d-sm-none col-md-4 d-md-flex justify-content-end">
@@ -74,9 +74,9 @@
                 <a href="#">Unfollow</a>
               </span>
             </p>
-            <p class="sub-text">
-              <span class="sub-span">24</span> Followers
-              <span class="sub-span point">234</span> Articles
+            <p class="sub-text d-flex flex-wrap">
+              <span><span class="sub-span">24</span> Followers</span>
+              <span><span class="sub-span point">234</span> Articles</span>
             </p>
           </div>
           <div class="d-none d-sm-none col-md-4 d-md-flex justify-content-end">
@@ -94,9 +94,9 @@
                 <a href="#">Unfollow</a>
               </span>
             </p>
-            <p class="sub-text">
-              <span class="sub-span">24</span> Followers
-              <span class="sub-span point">234</span> Articles
+            <p class="sub-text d-flex flex-wrap">
+              <span><span class="sub-span">24</span> Followers</span>
+              <span><span class="sub-span point">234</span> Articles</span>
             </p>
           </div>
           <div class="d-none d-sm-none col-md-4 d-md-flex justify-content-end">
