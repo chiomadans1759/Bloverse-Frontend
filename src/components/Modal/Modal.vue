@@ -8,7 +8,7 @@
       aria-labelledby="customModal"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-dialog" :class="{ 'modal-dialog-centered': !modalTop }" role="document">
         <div class="modal-content">
           <div class="modal-header" :class="{ darkBackground: dark }">
             <h5 v-if="title" class="modal-title" id="customModal">{{title}}</h5>
@@ -83,6 +83,10 @@ export default {
       required: false,
       default: ""
     },
+    modalTop: {
+      type: Boolean,
+      default: false
+    }
   }
 };
 </script>

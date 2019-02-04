@@ -1,0 +1,412 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Creator Apply Component should render correctly 1`] = `
+<div
+  class="container-fluid creator-apply"
+>
+  <div
+    class="row p-3 ml-4"
+  >
+    <span
+      class="top-left-container d-flex justify-content-center align-items-center"
+    >
+      <a
+        class="d-flex justify-content-around"
+        href="/"
+      >
+        <i
+          class="fal fa-long-arrow-left fa-2x"
+        />
+         
+        <span
+          class="back-text"
+        >
+          Back
+        </span>
+      </a>
+       
+      <a
+        class="router-link pl-4"
+      >
+        <img
+          class="nav-logo"
+          src="@/assets/Logo.svg"
+        />
+      </a>
+    </span>
+  </div>
+   
+  <div
+    class="row py-5 d-flex"
+  >
+    <div
+      class="offset-lg-4 col-lg-3 offset-md-3 col-md-6 col-sm-12"
+    >
+      <div
+        class="col-12"
+      >
+        <h1
+          class="creator-apply__title"
+        >
+          Apply
+        </h1>
+         
+        <p
+          class="creator-apply__sub-title pt-2"
+        >
+          Join Bloverse as acontent creator
+        </p>
+      </div>
+       
+      <div
+        class="col-12 pt-4"
+      >
+        <div
+          class="form-group"
+        >
+          <input
+            aria-describedby="firstName"
+            class="form-control"
+            placeholder="First Name*"
+            type="text"
+          />
+        </div>
+         
+        <div
+          class="form-group"
+        >
+          <input
+            aria-describedby="lastName"
+            class="form-control"
+            placeholder="Last Name*"
+            type="text"
+          />
+        </div>
+         
+        <div
+          class="form-group"
+        >
+          <input
+            aria-describedby="emailHelp"
+            class="form-control"
+            placeholder="Email"
+            type="email"
+          />
+        </div>
+         
+        <div
+          class="form-group"
+        >
+          <div
+            class="input-group mb-2 mr-sm-2"
+          >
+            <div
+              class="input-group-prepend"
+            >
+              <div
+                class="input-group-text"
+              >
+                +234
+              </div>
+            </div>
+             
+            <input
+              class="form-control"
+              id="inlineFormInputGroupUsername2"
+              placeholder="000 000 0000"
+              type="number"
+            />
+          </div>
+        </div>
+         
+        <div
+          class="form-group"
+        >
+          <select
+            class="custom-select"
+          >
+            <option
+              selected="selected"
+            >
+              Lagos, Nigeria*
+            </option>
+             
+            <option
+              value="1"
+            >
+              Mexico
+            </option>
+             
+            <option
+              value="2"
+            >
+              UK
+            </option>
+             
+            <option
+              value="3"
+            >
+              Ghana
+            </option>
+          </select>
+        </div>
+         
+        <div
+          class="form-group"
+        >
+          <label
+            for=""
+          >
+            Bloverse Young Voices?
+          </label>
+           
+          <br />
+           
+          <div
+            class="custom-control custom-radio custom-control-inline"
+          >
+            <input
+              class="custom-control-input"
+              id="customRadioInline2"
+              name="customRadioInline1"
+              type="radio"
+              value="yes"
+            />
+             
+            <label
+              class="custom-control-label pt-1"
+              for="customRadioInline2"
+            >
+              Yes
+            </label>
+          </div>
+           
+          <div
+            class="custom-control custom-radio custom-control-inline"
+          >
+            <input
+              class="custom-control-input"
+              id="customRadioInline1"
+              name="customRadioInline1"
+              type="radio"
+              value="no"
+            />
+             
+            <label
+              class="custom-control-label pt-1"
+              for="customRadioInline1"
+            >
+              No
+            </label>
+          </div>
+        </div>
+         
+        <div
+          class="form-group"
+        >
+          <select
+            class="custom-select"
+            style="display: none;"
+          >
+            <option
+              selected="selected"
+            >
+              Select your institution*
+            </option>
+             
+            <option
+              value="1"
+            >
+              Mexico
+            </option>
+             
+            <option
+              value="2"
+            >
+              UK
+            </option>
+             
+            <option
+              value="3"
+            >
+              Ghana
+            </option>
+          </select>
+        </div>
+         
+        <div
+          class="form-group pb-5"
+        >
+          <label
+            class="d-flex flex-column"
+            for=""
+          >
+            <strong>
+              Category
+            </strong>
+             
+            <span>
+              Ipsu m lorem torem di
+            </span>
+          </label>
+           
+          <select
+            class="custom-select"
+          >
+            <option
+              selected="selected"
+            >
+              Choose category*
+            </option>
+             
+            <option
+              value="1"
+            >
+              Mexico
+            </option>
+             
+            <option
+              value="2"
+            >
+              UK
+            </option>
+             
+            <option
+              value="3"
+            >
+              Ghana
+            </option>
+          </select>
+           
+          <ul />
+           
+          <span
+            class="float-right pt-1 link"
+          >
+            Add More Category
+          </span>
+        </div>
+         
+        <div>
+          <div
+            class="form-group"
+          >
+            <label
+              class="d-flex flex-column"
+              for=""
+            >
+              <strong>
+                Links
+              </strong>
+               
+              <span>
+                Ipsu m lorem torem di
+              </span>
+            </label>
+          </div>
+           
+          <div
+            class="form-group"
+          >
+            <input
+              aria-describedby="emailHelp"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="Instagram Link"
+              type="text"
+            />
+          </div>
+           
+          <div
+            class="form-group"
+          >
+            <input
+              aria-describedby="emailHelp"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="LinkedIn Link"
+              type="text"
+            />
+          </div>
+           
+          <div
+            class="form-group"
+          >
+            <input
+              aria-describedby="emailHelp"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="Twitter Link"
+              type="text"
+            />
+          </div>
+           
+          <div>
+            <input
+              aria-describedby="emailHelp"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="Link to written article"
+              type="text"
+            />
+             
+            <ul />
+             
+            <span
+              class="float-right pt-2 pb-3 link"
+              id="add-article"
+            >
+              Add More link To Written Article
+            </span>
+          </div>
+        </div>
+         
+        <div
+          class="form-group"
+        >
+          <div>
+            <button
+              class="btn btn-primary btn-block edit-btn mb-4"
+            >
+              Apply
+            </button>
+          </div>
+           
+          <label
+            class="pb-4"
+          >
+            By creating an account, you agree to our
+            
+            <a
+              class="sign-up-link-text"
+            >
+              Terms 
+            </a>
+            and
+            
+            <a
+              class="sign-up-link-text"
+            >
+              Privacy
+            </a>
+          </label>
+           
+          <div
+            class="border p-3 bg-white creator-apply__login"
+          >
+            <span>
+              Have an account?
+              
+              <a
+                class="signup-login-text"
+              >
+                Login
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

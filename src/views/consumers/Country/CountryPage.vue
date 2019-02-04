@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
           <div class="col-sm-7 col-lg-6 pt-5">
-            <h5 class="pb-1">Select Your Interest</h5>
+            <h5 class="pb-1">Select Your Favourite Country</h5>
             <p class="select-t">Selected {{consumers.selectedCountries.length}} countries</p>
             <div>
               <choose-country></choose-country>

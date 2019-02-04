@@ -6,6 +6,7 @@ describe('Modal component', () => {
     const wrapper =  mount(Modal, {
       propsData: {
         target: 'target',
+        modalTop: false,
       }
     });
 
@@ -20,6 +21,7 @@ describe('Modal component', () => {
         actionText: 'Save changes',
         closeText: 'Close',
         target: 'target',
+        modalTop: true,
       }
     });
 
@@ -28,5 +30,6 @@ describe('Modal component', () => {
     expect(wrapper.props().actionText).toBe('Save changes');
     expect(wrapper.props().closeText).toBe('Close');
     expect(wrapper.props().target).toBe('target');
+    expect(wrapper.props().modalTop).toBeTruthy();
   })
 });

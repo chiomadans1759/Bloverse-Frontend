@@ -1,0 +1,61 @@
+@import 'sass-rem';
+
+.creator-apply {
+  background-color: #F5F5F5;
+  color: #000000;
+
+  .nav-logo {
+    height: 2.5rem;
+  }
+
+  .top-left-container > a {
+    color: #000000;
+  }
+
+  .link {
+    color: #2F80ED;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: block;
+  }
+
+  &__title {
+    color: #252525;
+  }
+
+  &__sub-title {
+    color: #565656;
+    font-size: rem(14px);
+  }
+
+  &__login {
+    font-size: rem(16px);
+  }
+
+  select {
+    font-size: rem(14px);
+  }
+
+  .form-group > label {
+    font-size: rem(14px);
+  }
+
+  ::placeholder {
+    font-size: rem(14px);
+  }
+
+  .edit-btn {
+    background-image: linear-gradient( to left, #2F80ED, #003CE1);
+  }
+
+  .fa-trash-alt{
+    color: red;
+    cursor: pointer;
+  }
+}
