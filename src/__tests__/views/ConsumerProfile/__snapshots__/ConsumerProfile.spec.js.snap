@@ -63,7 +63,9 @@ exports[`Profile Component should render correctly 1`] = `
               John Doe
             </h5>
              
-            <p>
+            <p
+              class="contact"
+            >
               <span
                 class="pr-2 pb-5"
               >
@@ -511,7 +513,7 @@ exports[`Profile Component should render correctly 1`] = `
         class="col-lg-12 mt-2"
       >
         <main
-          class="card country-card p-3"
+          class="card country-card p-4 p-sm-3"
         >
           <div
             class="header d-flex justify-content-between "
@@ -647,7 +649,7 @@ exports[`Profile Component should render correctly 1`] = `
         class="col-lg-12 mt-2"
       >
         <main
-          class="category-card p-3 card"
+          class="card category-card p-4 p-sm-3"
         >
           <div
             class="header d-flex justify-content-between "

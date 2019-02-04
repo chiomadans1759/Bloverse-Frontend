@@ -13,7 +13,7 @@
     </div>
     <div class="card-body profile-body">
       <h5 class="card-title">John Doe</h5>
-      <p>
+      <p class="contact">
         <span class="pr-2 pb-5">
           <i class="fal fa-phone"></i>
         </span> +234 000 000 0000
@@ -177,5 +177,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./ProfileCard";
+  @import "./ProfileCard";
 </style>

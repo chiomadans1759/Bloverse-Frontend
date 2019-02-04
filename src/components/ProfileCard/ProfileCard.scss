@@ -24,6 +24,13 @@
 
 .profile-body {
   color: #848384;
+  &>h5 {
+    font-size: rem(16px)
+  }
+
+  p {
+    font-size: rem(14px) !important;
+  }
 }
 
 main.card {
@@ -119,6 +126,13 @@ main.card {
   
   .profile-body {
     color: #848384;
+    &>h5 {
+      font-size: rem(18px)
+    }
+
+    p {
+      font-size: 1rem !important;
+    }
   }
 
   main.card {

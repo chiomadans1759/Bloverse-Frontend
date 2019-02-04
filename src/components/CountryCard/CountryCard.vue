@@ -1,5 +1,5 @@
 <template>
-  <main class="card country-card p-3">
+  <main class="card country-card p-4 p-sm-3">
     <div class="header d-flex justify-content-between ">
       <h5><strong>Country</strong></h5>
       <span class="icon"><i class="fal fa-edit icon mr-2"></i></span>
