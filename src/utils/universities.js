@@ -155,6 +155,39 @@ let data = [
 			"City university of applied sciences Bremen",
 			"Johannes Gutenberg University Mainz"
 		]
+	},
+	{
+		"country": "Australia",
+		"universities": [
+			"Australian National University (ANU)",
+			"University of Adelaide",
+			"University of Technology, Sydney (UTS)",
+			"University of Newcastle",
+			"University of Wollongong",
+			"Macquarie University",
+			"Queensland University of Technology (QUT)",
+			"RMIT University",
+			"Curtin University",
+			"University of South Australia (UNISA)",
+			"Deakin University",
+			"University of Tasmania",
+			"Griffith University",
+			"La Trobe University",
+			"James Cook University (JCU)",
+			"Flinders University",
+			"University of Canberra",
+			"Western Sydney University",
+			"Central Queensland University",
+			"Charles Darwin University",
+			"Victoria University",
+			"Edith Cowan University (ECU)",
+			"University of Southern Queensland",
+			"Australian Catholic University",
+			"Charles Sturt University",
+			"Southern Cross University",
+			"University of New England",
+			"University of the Sunshine Coast"
+		]
 	}
 ]
 
