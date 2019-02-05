@@ -412,7 +412,7 @@ exports[`Profile Component should render correctly 1`] = `
               class="profile-edit-icon d-flex justify-content-between p-3"
             >
               <span
-                class="d-inline d-sm-none"
+                class="d-inline d-sm-none bl-back-arrow"
               >
                 <i
                   class="fal fa-long-arrow-left fa-2x back-arrow"
@@ -806,22 +806,25 @@ exports[`Profile Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="sub-text"
+                              class="sub-text d-flex flex-wrap"
                             >
-                              <span
-                                class="sub-span"
-                              >
-                                24
+                              <span>
+                                <span
+                                  class="sub-span"
+                                >
+                                  24
+                                </span>
+                                 Followers
                               </span>
-                               Followers
-            
-                              <span
-                                class="sub-span point"
-                              >
-                                234
+                               
+                              <span>
+                                <span
+                                  class="sub-span point"
+                                >
+                                  234
+                                </span>
+                                 Articles
                               </span>
-                               Articles
-          
                             </p>
                           </div>
                            
@@ -870,22 +873,25 @@ exports[`Profile Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="sub-text"
+                              class="sub-text d-flex flex-wrap"
                             >
-                              <span
-                                class="sub-span"
-                              >
-                                24
+                              <span>
+                                <span
+                                  class="sub-span"
+                                >
+                                  24
+                                </span>
+                                 Followers
                               </span>
-                               Followers
-            
-                              <span
-                                class="sub-span point"
-                              >
-                                234
+                               
+                              <span>
+                                <span
+                                  class="sub-span point"
+                                >
+                                  234
+                                </span>
+                                 Articles
                               </span>
-                               Articles
-          
                             </p>
                           </div>
                            
@@ -934,22 +940,25 @@ exports[`Profile Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="sub-text"
+                              class="sub-text d-flex flex-wrap"
                             >
-                              <span
-                                class="sub-span"
-                              >
-                                24
+                              <span>
+                                <span
+                                  class="sub-span"
+                                >
+                                  24
+                                </span>
+                                 Followers
                               </span>
-                               Followers
-            
-                              <span
-                                class="sub-span point"
-                              >
-                                234
+                               
+                              <span>
+                                <span
+                                  class="sub-span point"
+                                >
+                                  234
+                                </span>
+                                 Articles
                               </span>
-                               Articles
-          
                             </p>
                           </div>
                            
