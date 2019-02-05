@@ -1,13 +1,18 @@
 <template>
   <main id="auth-apply">
-    <!-- <Modal v-model="isSuccess" :width="726" id="success-modal">
-      <Alert type="success">Success!</Alert>
-      <p>
-        Your application has been sent to bloverse. A message will be sent to your mail to
-        continue the verification and approval process in 48hrs.
-      </p>
-      <div slot="footer"></div>
-    </Modal> -->
+    <modal  
+      target="successModal"
+      title="Your application has been sent to bloverse."
+      dark
+      actionText="Return"
+      closeText=""
+
+
+    >
+    <div class="modal-body">
+      <p>A message will be sent to your mail to continue the verification and approval process in 48hrs.</p>
+    </div>
+    </modal>
 
     <div class="container mt-5">
       <div class="row justify-content-center">
@@ -141,7 +146,6 @@ import {
   Col,
   Input,
   Checkbox,
-  Modal,
   Alert,
   Button,
   Select,
@@ -151,6 +155,7 @@ import LoginButton from "@/components/LoginButton"
 import { mapState, mapActions } from "vuex";
 import vSelect from "vue-select";
 import countryFlags from "../../countryFlags.js";
+import Modal from "@/components/Modal/Modal"
 
 export default {
   components: {
