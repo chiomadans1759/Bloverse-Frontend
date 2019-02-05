@@ -3,7 +3,8 @@
     <section v-if="!post">
       <img src="@/assets/placeholders/post.svg" alt="">
     </section>
-    <div>
+
+    <section v-else>
       <div class="card-header border-0">
         <div class="row pt-4">
           <div class="col">
@@ -16,23 +17,33 @@
           </div>
         </div>
       </div>
-      <!-- card body -->
+      
       <div class="card-body">
         <img class="post-img" :src="post.image_url">
 
         <h1 class="post-title mt-4">{{post.title}}</h1>
-        <ul class="post-keypoints">
+        <ul class="list-unstyled mt-4" v-if="post.category == 7">
+          <li class="text-muted mb-1">
+            <i class="fas fa-camera-retro"></i>
+            Device Used: {{post.device_type}}
+          </li>
+          <li class="text-muted">
+            <i class="fas fa-map-marker-alt"></i>
+            Location: {{post.location}}
+          </li>
+        </ul>
+        <ul class="post-keypoints mt-4" v-else>
           <li
             v-for="point in post.keypoint"
-            v-if="point"
             :key="point.id"
+            v-if="point"
           >{{point}}</li>
         </ul>
         <div class="post-content">
           <div class="post-content-body" v-html="post.body"></div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 </template>
 
@@ -92,7 +103,7 @@ export default {
 }
 #post-details .post-img {
   width: 100%;
-  height: 398px;
+  height: auto;
   margin-bottom: 1rem;
   object-fit: cover;
 }
