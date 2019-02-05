@@ -188,6 +188,37 @@ let data = [
 			"University of New England",
 			"University of the Sunshine Coast"
 		]
+	},
+	{
+		"country": "Canada",
+		"universities": [
+			"Queen's University",
+			"University of Calgary",
+			"Western University",
+			"University of Waterloo",
+			"Université de Montréal",
+			"McMaster University",
+			"University of Alberta",
+			"University of British Columbia",
+			"McGill University",
+			"University of Toronto",
+			"Simon Fraser University",
+			"Dalhousie University",
+			"University of Ottawa",
+			"University of Victoria",
+			"Laval University",
+			"University of Saskatchewan",
+			"Concordia University",
+			"York University",
+			"Université du Québec",
+			"University of Guelph",
+			"University of Manitoba",
+			"Carleton University",
+			"Memorial University of Newfoundland",
+			"Université de Sherbrooke",
+			"University of Windsor",
+			"Ryerson University"
+		]
 	}
 ]
 
