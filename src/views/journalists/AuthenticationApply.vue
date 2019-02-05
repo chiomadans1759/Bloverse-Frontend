@@ -1,19 +1,5 @@
 <template>
   <main id="auth-apply">
-    <modal  
-      target="successModal"
-      title="Your application has been sent to bloverse."
-      dark
-      actionText="Return"
-      closeText=""
-
-
-    >
-    <div class="modal-body">
-      <p>A message will be sent to your mail to continue the verification and approval process in 48hrs.</p>
-    </div>
-    </modal>
-
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
@@ -155,7 +141,6 @@ import LoginButton from "@/components/LoginButton"
 import { mapState, mapActions } from "vuex";
 import vSelect from "vue-select";
 import countryFlags from "../../countryFlags.js";
-import Modal from "@/components/Modal/Modal"
 
 export default {
   components: {
@@ -165,7 +150,6 @@ export default {
     Col,
     Input,
     Checkbox,
-    Modal,
     Alert,
     Button,
     vSelect,

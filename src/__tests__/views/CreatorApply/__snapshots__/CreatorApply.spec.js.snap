@@ -364,7 +364,10 @@ exports[`Creator Apply Component should render correctly 1`] = `
         <div
           class="form-group"
         >
-          <div>
+          <div
+            data-toggle="modal"
+            href="#success-modal"
+          >
             <button
               class="btn btn-primary btn-block edit-btn mb-4"
             >
@@ -380,7 +383,7 @@ exports[`Creator Apply Component should render correctly 1`] = `
             <a
               class="sign-up-link-text"
             >
-              Terms 
+              Terms
             </a>
             and
             
@@ -408,5 +411,88 @@ exports[`Creator Apply Component should render correctly 1`] = `
       </div>
     </div>
   </div>
+   
+  <main
+    id="bl-modal"
+  >
+    <div
+      aria-hidden="true"
+      aria-labelledby="customModal"
+      class="modal fade"
+      id="success-modal"
+      role="dialog"
+      tabindex="-1"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered"
+        role="document"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header darkBackground"
+          >
+            <h5
+              class="modal-title"
+              id="customModal"
+            >
+              Your application has been sent to bloverse.
+            </h5>
+             
+            <div>
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <button
+              aria-label="Close"
+              class="close"
+              data-dismiss="modal"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+           
+          <div
+            class="modal-body"
+          >
+            <div
+              class="modal-body"
+            >
+              <p>
+                A message will be sent to your mail to continue the verification and approval process in 48hrs.
+              </p>
+            </div>
+          </div>
+           
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-outline-primary"
+              data-dismiss="modal"
+              type="button"
+            >
+              Close
+            </button>
+             
+            <button
+              class="btn btn-primary"
+              type="button"
+            >
+              Return
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </div>
 `;
