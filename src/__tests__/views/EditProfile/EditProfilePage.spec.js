@@ -1,5 +1,5 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
-import EditProfilePage from '@/views/consumers/EditProfile/EditProfilePage.vue';
+import EditProfilePage from '@/views/general/EditProfile/EditProfilePage.vue';
 
 describe('EditProfile Page', () => {
   it('should render correctly', () => {

@@ -44,6 +44,13 @@
 
             <div class="pt-3 d-flex justify-content-between align-items-center" v-if="isCreator">
               <div class="pr-2">
+               <router-link to="/creators/email-settings" class="text-capitalize">Manage Email Preferences</router-link>
+                <p class="text small">Customize email notifications</p>
+              </div>
+            </div>
+
+            <div class="pt-3 d-flex justify-content-between align-items-center" v-if="isCreator">
+              <div class="pr-2">
                 <p class="text-capitalize">switch to consumer account</p>
                 <p class="text small">switch to consumer view</p>
               </div>
@@ -156,7 +163,7 @@ export default {
   props: {
     isCreator: {
       type: Boolean,
-      default: false
+      default: true
     }
   }
 };
