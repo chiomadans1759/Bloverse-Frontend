@@ -199,10 +199,15 @@
             </div>
           </div>
           <div class="form-group">
-            <Button customClass="btn btn-primary btn-block edit-btn mb-4">Apply</Button>
+            <!-- Call to target the modal pending when the application starts working  -->
+            <Button
+              data-toggle="modal"
+              href="#success-modal"
+              customClass="btn btn-primary btn-block edit-btn mb-4"
+            >Apply</Button>
 
             <label class="pb-4">By creating an account, you agree to our
-              <router-link to="/terms-and-conditions" class="sign-up-link-text">Terms </router-link>and
+              <router-link to="/terms-and-conditions" class="sign-up-link-text">Terms</router-link>and
               <router-link to="/privacy-policies" class="sign-up-link-text">Privacy</router-link>
             </label>
 
@@ -215,15 +220,28 @@
         </div>
       </div>
     </div>
+    <!-- Modal for when a creator has successfully applied -->
+    <modal
+      target="success-modal"
+      title="Your application has been sent to bloverse."
+      dark
+      actionText="Return"
+    >
+      <div class="modal-body">
+        <p>A message will be sent to your mail to continue the verification and approval process in 48hrs.</p>
+      </div>
+    </modal>
   </div>
 </template>
 
 <script>
 import Button from "@/components/Button/Button.vue";
+import Modal from "@/components/Modal/Modal";
 
 export default {
   components: {
-    Button
+    Button,
+    Modal
   },
   data() {
     return {

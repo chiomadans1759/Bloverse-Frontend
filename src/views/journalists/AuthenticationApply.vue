@@ -1,14 +1,5 @@
 <template>
   <main id="auth-apply">
-    <!-- <Modal v-model="isSuccess" :width="726" id="success-modal">
-      <Alert type="success">Success!</Alert>
-      <p>
-        Your application has been sent to bloverse. A message will be sent to your mail to
-        continue the verification and approval process in 48hrs.
-      </p>
-      <div slot="footer"></div>
-    </Modal> -->
-
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
@@ -141,7 +132,6 @@ import {
   Col,
   Input,
   Checkbox,
-  Modal,
   Alert,
   Button,
   Select,
@@ -160,7 +150,6 @@ export default {
     Col,
     Input,
     Checkbox,
-    Modal,
     Alert,
     Button,
     vSelect,
