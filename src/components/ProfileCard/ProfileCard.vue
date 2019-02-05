@@ -2,7 +2,7 @@
   <main class="card profile">
     <img src="@/assets/Avatar.png" class="card-img-top" alt="...">
     <div class="profile-edit-icon d-flex justify-content-between p-3">
-      <span class="d-inline d-sm-none" @click="hideMobileUserInfo">
+      <span class="d-inline d-sm-none bl-back-arrow" @click="hideMobileUserInfo">
         <i class="fal fa-long-arrow-left fa-2x back-arrow"></i>
       </span>
       <i class="fal fa-user-edit fa-2x"></i>
@@ -90,9 +90,9 @@
                 <a href="#">Unfollow</a>
               </span>
             </p>
-            <p class="sub-text">
-              <span class="sub-span">24</span> Followers
-              <span class="sub-span point">234</span> Articles
+            <p class="sub-text d-flex flex-wrap">
+              <span><span class="sub-span">24</span> Followers</span>
+              <span><span class="sub-span point">234</span> Articles</span>
             </p>
           </div>
           <div class="d-none d-sm-none col-md-4 d-md-flex justify-content-end">
@@ -110,9 +110,9 @@
                 <a href="#">Unfollow</a>
               </span>
             </p>
-            <p class="sub-text">
-              <span class="sub-span">24</span> Followers
-              <span class="sub-span point">234</span> Articles
+            <p class="sub-text d-flex flex-wrap">
+              <span><span class="sub-span">24</span> Followers</span>
+              <span><span class="sub-span point">234</span> Articles</span>
             </p>
           </div>
           <div class="d-none d-sm-none col-md-4 d-md-flex justify-content-end">
@@ -130,9 +130,9 @@
                 <a href="#">Unfollow</a>
               </span>
             </p>
-            <p class="sub-text">
-              <span class="sub-span">24</span> Followers
-              <span class="sub-span point">234</span> Articles
+            <p class="sub-text d-flex flex-wrap">
+              <span><span class="sub-span">24</span> Followers</span>
+              <span><span class="sub-span point">234</span> Articles</span>
             </p>
           </div>
           <div class="d-none d-sm-none col-md-4 d-md-flex justify-content-end">

@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-5  d-none d-sm-block">
         <div class="col-lg-12 mr-2">
-          <profile :hideMobileUserInfo="hideMobileUserInfo" />
+          <profile v-if="showMobileProfile" :hideMobileUserInfo="hideMobileUserInfo" />
         </div>
         <div class="col-lg-12 mt-2">
           <country-card />
@@ -62,17 +62,29 @@
           >
             <div class="">
               <ul class="navbar-nav flex-row">
-                <li class="nav-item active mr-4 py-2">
+                <li class="nav-item mr-4 py-2 read-later" @click="toggleReadLater"
+                  :class="{'active': !showPrevRead}"
+                >
                   <router-link to="#" class="nav-link">
                     Read Later
-                    <span class="number--active border rounded px-1 ml-2">5</span>
+                    <span class="border rounded px-1 ml-2"
+                    :class="{'number': showPrevRead, 'number--active': !showPrevRead}"
+                    >
+                      5
+                    </span>
                     <span class="sr-only">(current)</span>
                   </router-link>
                 </li>
-                <li class="nav-item py-2">
+                <li class="nav-item py-2 prev-read" @click="togglePrevRead"
+                  :class="{'active': showPrevRead}"
+                >
                   <router-link to="#" class="nav-link">
                     Previously Read
-                    <span class="number border rounded px-1 ml-2">13</span>
+                    <span class="border rounded px-1 ml-2"
+                      :class="{'number': !showPrevRead, 'number--active': showPrevRead}"
+                    >
+                      13
+                    </span>
                   </router-link>
                 </li>
               </ul>
@@ -80,6 +92,7 @@
           </nav>
         </div>
 
+        <!-- view navigation -->
         <div class="border-bottom mx-4 d-none d-sm-block">
           <nav class="navbar navbar-expand-lg navbar-light bg-white
             justify-content-end profile-navbar"
@@ -87,7 +100,7 @@
             <div class="">
               <ul class="navbar-nav layout-nav">
                 <li :class="['nav-item', 'mr-4', 'py-2', {'active': showListView}]">
-                  <span @click="toggleView('list')" to="#" class="nav-link">
+                  <span @click="toggleView('list')" to="#" class="nav-link list-view">
                     <span v-show='showListView'>
                         <i class="fal fa-th-list mr-1 icon--active"></i>
                       </span>
@@ -97,7 +110,7 @@
                      List <span class="sr-only">(current)</span></span>
                 </li>
                 <li :class="['nav-item', 'mr-4', 'py-2', {'active': !showListView}]">
-                  <span @click="toggleView('grid')" to="#" class="nav-link">
+                  <span @click="toggleView('grid')" to="#" class="nav-link grid-view">
                     <span v-show="!showListView">
                       <i class="fal fa-th-large mr-1 icon--active"></i>
                     </span>
@@ -110,31 +123,75 @@
             </div>
           </nav>
         </div>
-        <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex">
-          <div class="col-lg-6 my-2">
-            <recommendation-card type="consumer"/>
-          </div>
-          <div class="col-lg-6 my-2">
-            <recommendation-card type="consumer"/>
-          </div>
-          <div class="col-lg-6 my-2">
-            <recommendation-card type="consumer"/>
-          </div>
-          <div class="col-lg-6 my-2">
-            <recommendation-card type="consumer"/>
-          </div>
-          <div class="col-lg-6 my-2">
-            <recommendation-card type="consumer"/>
-          </div>
-        </div>
+        <!-- view navigation ends -->
 
-        <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
-          <post-card :hideCardBorder="hideCardBorder" customClass="consumer" />
-          <post-card :hideCardBorder="hideCardBorder" customClass="consumer" />
-          <post-card :hideCardBorder="hideCardBorder" customClass="consumer" />
-          <post-card :hideCardBorder="hideCardBorder" customClass="consumer" />
-          <post-card :hideCardBorder="hideCardBorder" customClass="consumer" />
+        <!-- read-later content -->
+        <div v-if="!showPrevRead" class="d-none d-sm-block">
+          <!-- grid view  -->
+          <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex">
+            <div class="col-lg-6 my-2">
+              <recommendation-card type="consumer"/>
+            </div>
+            <div class="col-lg-6 my-2">
+              <recommendation-card type="consumer"/>
+            </div>
+            <div class="col-lg-6 my-2">
+              <recommendation-card type="consumer"/>
+            </div>
+            <div class="col-lg-6 my-2">
+              <recommendation-card type="consumer"/>
+            </div>
+            <div class="col-lg-6 my-2">
+              <recommendation-card type="consumer"/>
+            </div>
+          </div>
+          <!-- grid view ends -->
+
+          <!-- list view -->
+          <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
+            <post-card :hideCardBorder="hideCardBorder" />
+            <post-card :hideCardBorder="hideCardBorder" />
+            <post-card :hideCardBorder="hideCardBorder" />
+            <post-card :hideCardBorder="hideCardBorder" />
+            <post-card :hideCardBorder="hideCardBorder" />
+          </div>
+          <!-- list view ends  -->
         </div>
+        <!-- read-later content ends -->
+
+        <!-- previously-read content -->
+        <div v-if="showPrevRead" class="d-none d-sm-block">
+          <!-- grid view  -->
+          <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex">
+            <div class="col-lg-6 my-2">
+              <recommendation-card type="consumer"/>
+            </div>
+            <div class="col-lg-6 my-2">
+              <recommendation-card type="consumer"/>
+            </div>
+            <div class="col-lg-6 my-2">
+              <recommendation-card type="consumer"/>
+            </div>
+            <div class="col-lg-6 my-2">
+              <recommendation-card type="consumer"/>
+            </div>
+            <div class="col-lg-6 my-2">
+              <recommendation-card type="consumer"/>
+            </div>
+          </div>
+          <!-- grid view ends -->
+
+          <!-- list view -->
+          <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
+            <post-card :hideCardBorder="hideCardBorder" />
+            <post-card :hideCardBorder="hideCardBorder" />
+            <post-card :hideCardBorder="hideCardBorder" />
+            <post-card :hideCardBorder="hideCardBorder" />
+            <post-card :hideCardBorder="hideCardBorder" />
+          </div>
+          <!-- list view ends  -->
+        </div>
+        <!-- previously-read content ends -->
 
         <!-- mobile view -->
         <div class="row d-sm-none">
@@ -156,7 +213,7 @@ import CountryCard from '@/components/CountryCard/CountryCard';
 import CategoryCard from '@/components/CategoryCard/CategoryCard';
 import PostCard from '@/components/PostCards/PostCard';
 import PostCards from '@/components/PostCards/PostCards';
-import UserInfoMobile from '@/components//UserInfoMobile/UserInfoMobile';
+import UserInfoMobile from '@/components/UserInfoMobile/UserInfoMobile';
 
 export default {
   components: {
@@ -172,12 +229,19 @@ export default {
     return {
       showListView: false,
       hideCardBorder: true,
+      showPrevRead: false,
       showMobileProfile: true,
     }
   },
   methods: {
     toggleView(type) {
       this.showListView = type === 'list';
+    },
+    togglePrevRead() {
+      this.showPrevRead = true;
+    },
+    toggleReadLater() {
+      this.showPrevRead = false;
     },
     showMobileUserInfo() {
       this.showMobileProfile = false;
