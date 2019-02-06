@@ -1494,7 +1494,7 @@ exports[`Profile Component should render correctly 1`] = `
                         <input
                           class="form-control"
                           data-v-1ad2436f=""
-                          placeholder="DD/MM/YYYY - DD/MM/YYYY"
+                          placeholder="MM/DD/YYYY - MM/DD/YYYY"
                           readonly="readonly"
                           style="min-width: 150px;"
                           type="text"

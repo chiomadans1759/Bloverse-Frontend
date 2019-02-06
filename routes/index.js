@@ -31,7 +31,7 @@ import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPa
 
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 import CreatorHomePage from '../src/views/journalists/CreatorHome/CreatorHomePage'
-import ConsumerHomepage from '../src/views/consumers/ConsumerHome/ConsumerHomepage.vue';
+import ConsumerHomePage from '@/views/consumers/ConsumerHome/ConsumerHomePage.vue'
 import SigninPage from '../src/views/general/Signin/SigninPage.vue';
 import SignupPage from '../src/views/consumers/SignUp/SignUpPage.vue';
 import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vue';
@@ -46,7 +46,7 @@ const routes = [
   {
     path: '/', component: GeneralLayout,
     children: [
-      { path: '', component: ConsumerHomepage },
+      { path: '', component: ConsumerHomePage },
       { path: 'posts', redirect: '/' },
       { path: 'posts/:slug', component: PostDisplay },
       { path: '/about', component: AboutUs, name: "about" },
