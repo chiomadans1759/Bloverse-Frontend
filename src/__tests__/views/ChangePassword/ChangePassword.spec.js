@@ -1,5 +1,5 @@
 import { mount, RouterLinkStub  } from '@vue/test-utils'
-import ChangePassword from '@/views/consumers/ChangePassword/ChangePassword.vue';
+import ChangePassword from '@/views/general/ChangePassword/ChangePassword.vue';
 
 describe('ChangePassword Component', () => {
   it('should render correctly', () => {
