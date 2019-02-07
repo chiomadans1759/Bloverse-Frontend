@@ -39,6 +39,7 @@ import ChangePassword from '../src/views/consumers/ChangePassword/ChangePassword
 import Profile from '../src/views/consumers/Profile/ProfilePage.vue';
 import EditProfile from '../src/views/consumers/EditProfile/EditProfilePage';
 import CreatorProfile from '../src/views/journalists/Profile/ProfilePage';
+import Drafts from '../src/views/journalists/Drafts/DraftsPage';
 
 import CreatorApply from '../src/views/journalists/CreatorApply/CreatorApplyPage.vue';
 
@@ -107,6 +108,7 @@ const routes = [
       { path: '', component: CreatorHomePage },
       { path: 'apply', component: CreatorApply },
       { path: 'profile', component: CreatorProfile },
+      { path: 'drafts', component: Drafts },
       {
         path: 'setup', component: JournalistSetUp,
         beforeEnter(to, from, next) {

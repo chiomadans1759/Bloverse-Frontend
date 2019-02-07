@@ -1,0 +1,24 @@
+@import 'sass-rem';
+
+#bl-creator-add {
+    position: fixed;
+    right: 2.5rem;
+    bottom: 4.5rem;
+  .button-container {
+    background-color: #2F80ED;
+    height: rem(38px);
+    width: rem(38px);
+    border-radius: 50%;
+    .icon {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffff;
+    }
+  }
+}
+
+#bl-creator-add:hover {
+  cursor: pointer;
+}
