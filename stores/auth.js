@@ -64,7 +64,8 @@ export default {
       const applicant = {}
       applicant.categoryId = state.applicant.category.id;
       applicant.countryId = state.applicant.country.id;
-      applicant.phone = state.applicant.phoneCode + state.applicant.phoneNumber;
+      applicant.code = state.applicant.code;
+      applicant.number = state.applicant.number;
 
       // if(state.applicant.category.id == undefined) {
       //   applicant.categoryId = '';
@@ -232,13 +233,13 @@ export default {
       state.newUser.lastName = state.applicant.last_name;
       state.newUser.applicant = state.applicant.id;
       state.newUser.email = state.applicant.email;
-      state.newUser.phone = state.applicant.phone_number.substring(4);
+      state.newUser.phone = state.applicant.phone.number;
       state.newUser.category = state.applicant.category;
       state.newUser.country = state.applicant.country;
       state.newUser.gender = '';
       state.newUser.about = '';
       state.newUser.university = state.applicant.university;
-      state.newUser.code = state.applicant.phone_number.substring(0,4);
+      state.newUser.code = state.applicant.phone.code;
     },
 
     setApplicantIds(state, {
