@@ -22,6 +22,9 @@
             <a data-toggle="modal" href="#feedback-modal" class="text-capitalize mt-3" v-if="!isCreator">give feedback</a>
             <p class="text small" v-if="!isCreator">Update your information</p>
 
+            <router-link to="/creators/social-media" class="text-capitalize mt-3" v-if="!isCreator">Update Social Media</router-link>
+            <p class="text small" v-if="!isCreator">Update your social media information</p>
+
             <p class="text-capitalize font-weight-bold pt-4 auth">authorization</p>
 
             <div class="pt-3 d-flex justify-content-between align-items-center" v-if="!isCreator">
