@@ -5,6 +5,7 @@
         <div class="col">
           <router-link to="/" class="router-link">
             <img class="logo" src="@/assets/Logo - White.svg" style="height: 40px" />
+            <span class="text-white">beta</span>
           </router-link>
         </div>
 
