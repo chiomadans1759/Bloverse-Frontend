@@ -28,13 +28,13 @@
                 </FormItem>
               </Col>
               <Col :sm="11" :xs="24">
-                <FormItem prop="phone" :error="errors.phoneNumber">
-                    <select v-model="applicant.phoneCode" class="code-dropdown app_select_style">
+                <FormItem prop="phone" :error="errors.number">
+                    <select v-model="applicant.code" class="code-dropdown app_select_style">
                     <option class="country-dropdown"  v-for="(val, index) in countriesCodeFlag" :value="val.code" :key="index">
                       <img :src="val.imgURL" style="height:15px, background:url"/> {{ val.code }}
                     </option>
                   </select>
-                  <input class="my-input app_input_style" type="text" v-model="applicant.phoneNumber" placeholder="Digits after code here " />
+                  <input class="my-input app_input_style" type="text" v-model="applicant.number" placeholder="Digits after code here " />
                 </FormItem>
               </Col>
             </Row>
@@ -175,10 +175,10 @@ export default {
     Option,
     LoginButton
   },
-  watch: {//watch for changes in the applicant phoneNumber
-    'applicant.phoneNumber': function(newValue){
+  watch: {//watch for changes in the applicant number
+    'applicant.number': function(newValue){
       const result = newValue.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, "");
-      this.$nextTick(() => this.applicant.phoneNumber = result);  
+      this.$nextTick(() => this.applicant.number = result);  
     },
 
     'applicant.country': function() {
@@ -223,7 +223,7 @@ export default {
           { required: true, message: "Email cannot be blank", trigger: "blur" },
           { type: "email", message: "The email is not valid", trigger: "blur" }
         ],
-        phoneNumber: [
+        number: [
           { required: true, message: "Phone cannot be blank", trigger: "blur" }
         ],
         country: [
@@ -293,7 +293,7 @@ export default {
         first_name: "firstName",
         last_name: "lastName",
         email: "email",
-        phone_number: "phoneNumber",
+        phone_number: "number",
         linkedin_url: "linkedIn",
         twitter_url: "twitter",
         articles: "articles",
@@ -360,7 +360,7 @@ export default {
   created: function() {
     this.setCountries()
     this.setCategories()
-    this.applicant.phoneCode = "+1";
+    this.applicant.code = "+1";
     this.applicant.articleProtocols = ["https://", "https://", "https://"];
   }
 };
