@@ -21,9 +21,11 @@
         </div>
       </div>
       <div class="row mb-3">
-        <div class="col-12">
-          <h6 class="text-primary"><i class="fal fa-trash-alt"></i> Trash</h6>
-          <p class="text-muted mt-2">Update your information</p>
+        <div class="col-8">
+          <router-link to="/creators/trash">
+            <h6 class="text-primary"><i class="fal fa-trash-alt"></i> Trash</h6>
+            <p class="text-muted mt-2">Update your information</p>
+          </router-link>
         </div>
       </div>
     </div>

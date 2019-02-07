@@ -1,0 +1,272 @@
+@import 'sass-rem';
+
+.bl-trashItem {
+  border: none !important;
+  border-radius: 0 !important;
+  background: #ffffff;
+  margin-bottom:rem(4px);
+  &-body {
+    background: #ffffff;
+    .title {
+      margin: rem(0px) auto;
+      margin-top: 0;
+      height: auto;
+      &--text {
+        padding: 0;
+        height: 100%;
+        margin: 0 auto;
+        flex-direction: column;
+        &>span {
+          max-width: none;
+          width: 100%;
+          font-size: rem(14px);
+          text-align: left;
+          color: #868686;
+          text-transform: capitalize;
+          padding: 0;
+        }
+        a{
+          color: #333333;
+        }
+        .description {
+          max-width: none;
+          width: 100%;
+          height: rem(40px);
+          font-size: rem(14px);
+          text-align: left;
+          color: #252525;
+          padding: 0;
+          padding-right: rem(16px);
+          padding-bottom: rem(5px);
+          overflow: hidden; 
+        }
+        .username {
+          display: flex;
+          align-items: center;
+          max-width: none;
+          width: 100%;
+          text-transform: capitalize;
+          padding: 0;
+          font-size: rem(14px);
+          color: #565656;
+          .initials {
+            height: rem(16px);
+            width: rem(16px);
+            font-size: rem(8px);
+            text-align: center;
+            color: #ffffff;
+            padding: 0;
+            padding-top: rem(2.5px);
+            padding-bottom: rem(1.5px);
+            background-color: #8C40FF;
+            border: none;
+          }
+          .name {
+            color: #565656;
+            font-weight: 500;
+            font-size: rem(14px);
+          }
+          .name::after {
+            content: '\2022';
+            color: #2F80ED;
+            margin-left: rem(5px);
+            font-weight: 800;
+          }
+          .time {
+            font-size: rem(12px);
+            color: #868686;
+          }
+        }
+      }
+      &--image {
+        display: inline-flex;
+        justify-content: flex-start;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: rem(52px);
+        width: rem(62px);
+      }
+    }
+
+    .actions {
+      height: rem(21px);
+      margin: rem(5px) auto;
+      margin-bottom: 0;
+      .views {
+        color: #868686;
+        padding: 0;
+        cursor: pointer;
+      }
+      .others {
+        margin:0;
+        padding: 0;
+        color: #2F80ED;
+        .undo {
+          cursor: pointer;
+          margin-right: rem(20px);
+          font-size: rem(14px);         
+        }
+        .delete {
+          color: #2F80ED;
+          cursor: pointer;
+          font-size: rem(14px);         
+        }
+        .text {
+          margin: rem(7px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .bl-trashItem {
+    &-body {
+      .title {
+        height: rem(100px);        
+        &--text {
+          .description {
+            font-size: rem(11px);
+            overflow: hidden;
+          }
+        }
+      }
+      .actions .others .comments {
+        .coment, .share {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .bl-trashItem {
+    border: none !important;
+    border-radius: 0 !important;
+    background: #ffffff;
+    margin-bottom:rem(8px);
+    &-body {
+      background: #ffffff;
+      .title {
+        margin: rem(12px) auto;
+        margin-top: 0;
+        height: rem(125px);
+        &--text {
+          padding: 0;
+          height: 100%;
+          margin: auto;
+          flex-direction: column;
+          &>span {
+            max-width: none;
+            width: 100%;
+            font-size: rem(16px);
+            text-align: left;
+            color: #868686;
+            text-transform: capitalize;
+            padding: 0;
+          }
+          .description {
+            max-width: none;
+            width: 100%;
+            height: auto;
+            font-size: rem(20px);
+            text-align: left;
+            color: #252525;
+            padding: 0;
+            padding-right: rem(16px);
+            padding-bottom: rem(5px); 
+          }
+          .username {
+            display: flex;
+            align-items: center;
+            max-width: none;
+            width: 100%;
+            text-transform: capitalize;
+            padding: 0;
+            font-size: rem(16px);
+            color: #565656;
+            .initials {
+              height: rem(24px);
+              width: rem(24px);
+              font-size: rem(10px);
+              text-align: center;
+              padding: 0;
+              padding-top: rem(2.5px);
+              padding-bottom: rem(1.5px);
+              background-color: #8C40FF;
+              border: none;
+            }
+            .name {
+              color: #565656;
+              font-weight: 500;
+              font-size: rem(16px);
+            }
+            .name::after {
+              content: '\2022';
+              color: #2F80ED;
+              margin-left: rem(5px);
+              font-weight: 800;
+            }
+            .time {
+              font-size: rem(14px);
+              color: #868686;
+            }
+          }
+        }
+        &--image {
+          display: inline-flex;
+          justify-content: flex-start;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          height: rem(118px);
+          .feed-image {
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      .actions {
+        height: rem(21px);
+        margin: rem(12px) auto;
+        margin-bottom: 0;
+        .count {
+          margin: rem(7px);
+          color: #252525;
+        }
+        .views {
+          color: #868686;
+          padding: 0;
+          cursor: pointer;
+        }
+        .others {
+          margin:0;
+          padding: 0;
+          color: #2F80ED;
+          .undo {
+            cursor: pointer;
+            margin-right: rem(10px);            
+          }
+          .delete {
+            cursor: pointer;
+          }
+          .text {
+            margin: rem(7px);
+          }
+        }
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+};
+
+.svg-inline--fa.fa-w-14 {
+  color: #2F80ED;
+}
