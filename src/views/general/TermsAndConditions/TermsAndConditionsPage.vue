@@ -5,7 +5,7 @@
             <h1 class="font-weight-bold mb-2">Terms And Conditions</h1>
             <p class="last-update text-capitalize">Last Updated <span class="date">19 December, 2018</span></p>
           </div>
-          <div class="terms-content border mt-4">
+          <div class="terms-content border mt-4 container p-0">
             <div class="navigation-bar">
               <ul class="nav nav-tabs mb-3 justify-content-center" id="pills-tab" role="tablist">
                 <li class="nav-item">

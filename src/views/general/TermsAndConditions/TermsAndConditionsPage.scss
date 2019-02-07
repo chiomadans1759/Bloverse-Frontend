@@ -80,16 +80,13 @@ nav {
 }
 
 .nav-link.active {
-  border-bottom: 0.125rem solid #004ded !important;
+  border-bottom: 0.0625rem solid #004ded !important;
 }
 
 .photocontest {
   padding: 1.5rem;
 }
 
-.nav-tabs {
-  border-bottom: 0.125rem solid rgba(0, 0, 0, 0.15);
-}
 
 
 @media screen and (max-width: 800px) {

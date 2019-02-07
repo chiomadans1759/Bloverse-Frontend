@@ -1,47 +1,47 @@
 import store from '../stores';
 
-
+// App Layout
 import GeneralLayout from '@/layouts/GeneralLayout';
 import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
-import PostDisplay from '../src/views/general/SinglePost/SinglePostPage.vue';
 
+// General Layout Pages
+import ConsumerHomepage from '../src/views/consumers/ConsumerHome/ConsumerHomepage.vue';
+import PostDisplay from '../src/views/general/SinglePost/SinglePostPage.vue';
+import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPage.vue';
+import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicyPage.vue';
+import Settings from '@/views/general/Settings/SettingsPage.vue';
+import AboutUs from '../src/views/general/About/AboutPage.vue';
+import ConsumerProfile from '../src/views/consumers/Profile/ProfilePage.vue';
+
+// Blank Base Layout Pages
+import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
+import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
+import EditProfile from '../src/views/general/EditProfile/EditProfilePage';
+import SigninPage from '../src/views/general/Signin/SigninPage.vue';
+import SignupPage from '../src/views/consumers/SignUp/SignUpPage.vue';
+import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vue';
+import Category from '@/views//general/Category/CategoryPage';
+import Country from '@/views/general/Country/CountryPage';
+import ChangePassword from '../src/views/general/ChangePassword/ChangePassword.vue';
+
+// Creator Layout Pages
+import CreatorHomePage from '../src/views/journalists/CreatorHome/CreatorHomePage';
+import CreatorApply from '../src/views/journalists/CreatorApply/CreatorApplyPage.vue';
+import CreatorProfile from '../src/views/journalists/Profile/ProfilePage';
+import EmailPrefrence from '../src/views/journalists/EmailPrefrence/EmailPrefrencePage.vue';
+import Drafts from '../src/views/journalists/Drafts/DraftsPage';
+
+// Version one routes
 import MyProfile from '../src/views/journalists/MyProfile.vue';
 import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
 import MyPosts from '../src/views/journalists/MyPosts.vue';
 import CreatePost from '../src/views/journalists/CreatePost.vue';
-
 import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
-
 import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
-
 import NotFound from '../src/views/NotFound.vue';
-import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPage.vue';
-
-import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicyPage.vue';
-import Settings from '@/views/general/Settings/SettingsPage.vue'
-import Category from '@/views/consumers/Category/CategoryPage'
-
-import Country from '@/views/consumers/Country/CountryPage';
-
-import AboutUs from '../src/views/general/About/AboutPage.vue';
-import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
-
-import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
-import CreatorHomePage from '../src/views/journalists/CreatorHome/CreatorHomePage'
-import ConsumerHomepage from '../src/views/consumers/ConsumerHome/ConsumerHomepage.vue';
-import SigninPage from '../src/views/general/Signin/SigninPage.vue';
-import SignupPage from '../src/views/consumers/SignUp/SignUpPage.vue';
-import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vue';
-import ChangePassword from '../src/views/consumers/ChangePassword/ChangePassword.vue';
-import Profile from '../src/views/consumers/Profile/ProfilePage.vue';
-import EditProfile from '../src/views/consumers/EditProfile/EditProfilePage';
-import CreatorProfile from '../src/views/journalists/Profile/ProfilePage';
-import Drafts from '../src/views/journalists/Drafts/DraftsPage';
-
-import CreatorApply from '../src/views/journalists/CreatorApply/CreatorApplyPage.vue';
 
 const routes = [
   {
@@ -50,11 +50,11 @@ const routes = [
       { path: '', component: ConsumerHomepage },
       { path: 'posts', redirect: '/' },
       { path: 'posts/:slug', component: PostDisplay },
-      { path: '/about', component: AboutUs, name: "about" },
+      { path: '/about', component: AboutUs },
       { path: '/terms-and-conditions', component: Terms },
       { path: '/privacy-policies', component: Privacy },
       { path: '/settings', component: Settings },
-      { path: '/profile', component: Profile },
+      { path: '/profile', component: ConsumerProfile },
     ]
   },
 
@@ -64,23 +64,14 @@ const routes = [
       { path: '/photocontest', component: PhotoContest },
     ]
   },
-
   { path: '/forgotpassword', component: ForgotPassword },
-
   { path: '/edit/profile', component: EditProfile },
-
   { path: '/login', component: SigninPage },
-
   { path: '/register', component: SignupPage },
-
   { path: '/newpassword', component: NewPasswordPage },
-
   { path: '/choosecategory', component: Category },
-
   { path: "/changepassword", component: ChangePassword },
-
   { path: '/edit/profile', component: EditProfile },
-
   { path: '/choosecountry', component: Country },
 
   {
@@ -107,6 +98,7 @@ const routes = [
     children: [
       { path: '', component: CreatorHomePage },
       { path: 'apply', component: CreatorApply },
+      { path: 'email-settings', component: EmailPrefrence },
       { path: 'profile', component: CreatorProfile },
       { path: 'drafts', component: Drafts },
       {

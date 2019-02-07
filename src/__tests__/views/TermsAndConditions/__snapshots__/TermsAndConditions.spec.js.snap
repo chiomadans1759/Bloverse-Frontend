@@ -29,7 +29,7 @@ exports[`Terms And Conditions should render correctly 1`] = `
     </div>
      
     <div
-      class="terms-content border mt-4"
+      class="terms-content border mt-4 container p-0"
     >
       <div
         class="navigation-bar"
