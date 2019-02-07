@@ -64,13 +64,8 @@ export default {
       const applicant = {}
       applicant.categoryId = state.applicant.category.id;
       applicant.countryId = state.applicant.country.id;
-      applicant.phone = state.applicant.phoneCode + state.applicant.phoneNumber;
-
-      // if(state.applicant.category.id == undefined) {
-      //   applicant.categoryId = '';
-      // }else {
-      //   applicant.categoryId = state.applicant.category.id;
-      // }
+      applicant.code = state.applicant.code;
+      applicant.number = state.applicant.number; 
 
       if (!state.applicant.linkedInUsername) {
         applicant.linkedInUrl = "";
@@ -198,7 +193,7 @@ export default {
     clearApplicant(state) {
       state.applicant = {
         articleURLs: [],
-        phoneNumber: '',
+        number: '',
         linkedInUsername: '',
         twitterUsername: ''
       };

@@ -1,280 +1,342 @@
 /* eslint-disable */
 let data = [
-	{
-		"country": "Nigeria",
-		"universities": [
-			"Abia State University",
-			"Abubakar Tafawa Balewa University",
-			"Achievers University, Owo",
-			"Adamawa State University",
-			"Adekunle Ajasin University",
-			"Adeleke University",
-			"Afe Babalola University",
-			"African University of Science and Technology",
-			"Ahmadu Bello University",
-			"Federal University of Technology, Minna",
-			"Federal University of Technology, Owerri",
-			"Babcock University",
-			"American University of Nigeria",
-			"Federal University of Technology, Akure",
-			"University of Abuja",
-			"University of Ibadan",
-			"University of Jos",
-			"University of Lagos",
-			"University of Nigeria",
-			"University of Port Harcourt",
-			"University of Ilorin",
-			"University of Benin",
-			"Obafemi Awolowo University",
-			"Lagos State University",
-			"Ladoke Akintola University of Technology",
-			"Bowen University",
-			"Bells University of Technology"
-		]
-	},
-	{
-		"country": "Kenya",
-		"universities": [
-			"United States international university",
-			"Kenyatta university",
-			"Nairobi university",
-			"Riara university",
-			"Kenya Methodist",
-			"Multimedia university of Kenya",
-			"Zetech university",
-			"Daystar university",
-			"Africa nazarene university",
-			"Karatina university",
-			"St. Paul’s university"
-		]
-	},
-	{
-		"country": "Ghana",
-		"universities": [
-			"Allstairs media college",
-			"Olive school of Journalism",
-			"Pentecost university college",
-			"Ghana institute of journalism"
-		]
-	},
-	{
-		"country": "South Africa",
-		"universities": [
-			"Pearson",
-			"Tshwane university of technology",
-			"Rhodes University",
-			"University of Johannesburg",
-			"University of Stellenbosch"
-		]
-	},
-	{
-		"country": "Philippines",
-		"universities": [
-			"University Of Santo Tomas",
-			"University Of The Philippines",
-			"Bulacan state university",
-			"Cavite state university",
-			"Ateneo de Manila University",
-			"University of the east"
-		]
-	},
-	{
-		"country": "Hong Kong",
-		"universities": [
-			"University of Hong Kong",
-			"Hong Kong Baptist university",
-			"Missouri school of journalism",
-			"Chinese university of Hong Kong"
-		]
-	},
-	{
-		"country": "India",
-		"universities": [
-			"Lovely professional university",
-			"Asian college of journalism",
-			"Kumaun university",
-			"Guru Nanak dev university"
-		]
-	},
-	{
-		"country": "Singapore",
-		"universities": [
-			"Nanyang technological university",
-			"National university Singapore"
-		]
-	},
-	{
-		"country": "Netherlands",
-		"universities": [
-			"University of Amsterdam"
-		]
-	},
-	{
-		"country": "UAE",
-		"universities": [
-			"American University of Sharjah",
-			"Murdoch University",
-			"Middlesex University Dubai",
-			"Canadian University Dubai",
-			"Manipal University Dubai"
-		]
-	},
-	{
-		"country": "Wales",
-		"universities": [
-			"Cardiff university",
-			"University of South Wales",
-			"Cardiff metropolitan university"
-		]
-	},
-	{
-		"country": "Nothern Ireland",
-		"universities": [
-			"Queens university",
-			"Ulster university",
-			"Aberystwyth university"
-		]
-	},
-	{
-		"country": "Ireland",
-		"universities": [
-			"Maynooth university",
-			"Griffith College",
-			"Dublin City University",
-			"Rathmines college",
-			"National University of Ireland",
-			"Dublin Business School",
-			"Dublin institute of technology"
-		]
-	},
-	{
-		"country": "Germany",
-		"universities": [
-			"AMD Akademie mode & design",
-			"University of applied sciences Berlin",
-			"City university of applied sciences Bremen",
-			"Johannes Gutenberg University Mainz"
-		]
-	},
-	{
-		"country": "Australia",
-		"universities": [
-			"Australian National University (ANU)",
-			"University of Adelaide",
-			"University of Technology, Sydney (UTS)",
-			"University of Newcastle",
-			"University of Wollongong",
-			"Macquarie University",
-			"Queensland University of Technology (QUT)",
-			"RMIT University",
-			"Curtin University",
-			"University of South Australia (UNISA)",
-			"Deakin University",
-			"University of Tasmania",
-			"Griffith University",
-			"La Trobe University",
-			"James Cook University (JCU)",
-			"Flinders University",
-			"University of Canberra",
-			"Western Sydney University",
-			"Central Queensland University",
-			"Charles Darwin University",
-			"Victoria University",
-			"Edith Cowan University (ECU)",
-			"University of Southern Queensland",
-			"Australian Catholic University",
-			"Charles Sturt University",
-			"Southern Cross University",
-			"University of New England",
-			"University of the Sunshine Coast"
-		]
-	},
-	{
-		"country": "Canada",
-		"universities": [
-			"Queen's University",
-			"University of Calgary",
-			"Western University",
-			"University of Waterloo",
-			"Université de Montréal",
-			"McMaster University",
-			"University of Alberta",
-			"University of British Columbia",
-			"McGill University",
-			"University of Toronto",
-			"Simon Fraser University",
-			"Dalhousie University",
-			"University of Ottawa",
-			"University of Victoria",
-			"Laval University",
-			"University of Saskatchewan",
-			"Concordia University",
-			"York University",
-			"Université du Québec",
-			"University of Guelph",
-			"University of Manitoba",
-			"Carleton University",
-			"Memorial University of Newfoundland",
-			"Université de Sherbrooke",
-			"University of Windsor",
-			"Ryerson University"
-		]
-	},
-	{
-		"country": "Pakistan",
-		"universities": [
-			"University of the Punjab",
-			"National University of Sciences and Technology",
-			"University of Management and Technology",
-			"Lahore University of Management Sciences",
-			"COMSATS Institute of Information Technology",
-			"Aga Khan University",
-			"Bahauddin Zakariya University",
-			"National University of Computer and Emerging Sciences",
-			"University of Karachi",
-			"International Islamic University, Islamabad",
-			"Government College University, Faisalabad",
-			"University of Sargodha",
-			"The University of Lahore",
-			"Bahria University",
-			"Institute of Business Administration",
-			"University of Engineering and Technology, Lahore",
-			"University of Agriculture, Faisalabad",
-			"Quaid-i-Azam University",
-			"University of Central Punjab",
-			"University of Sindh",
-			"Ghulam Ishaq Khan Institute of Engineering Sciences and Technology",
-			"The Islamia University of Bahawalpur",
-			"Hajvery University",
-			"Riphah International University",
-			"NED University of Engineering and Technology",
-			"Khyber Medical University",
-			"University of Health Sciences, Lahore",
-			"Mehran University of Engineering and Technology",
-			"Forman Christian College",
-			"National University of Modern Languages",
-			"University of Gujrat",
-			"University of Peshawar",
-			"National University of Medical Sciences",
-			"Shaheed Zulfiqar Ali Bhutto Institute of Science and Technology",
-			"Sukkur Institute of Business Administration",
-			"Pir Mehr Ali Shah Arid Agriculture University",
-			"Balochistan University of Information Technology, Engineering and Management Sciences",
-			"Hamdard University",
-			"Pakistan Institute of Engineering and Applied Sciences",
-			"Superior Group of Colleges",
-			"Information Technology University",
-			"Pakistan Institute of Development Economics",
-			"Government College University, Lahore",
-			"University of Engineering and Technology, Taxila",
-			"Air University",
-			"Iqra University",
-			"University of Veterinary and Animal Sciences",
-			"The University of Agriculture, Peshawar",
-			"Federal Urdu University of Arts, Sciences and Technology",
-			"Sir Syed University of Engineering and Technology"
-		]
-	}
+    {
+        "country": "Nigeria",
+        "universities": [
+            "Abia State University",
+            "Abubakar Tafawa Balewa University",
+            "Achievers University, Owo",
+            "Adamawa State University",
+            "Adekunle Ajasin University",
+            "Adeleke University",
+            "Afe Babalola University",
+            "African University of Science and Technology",
+            "Ahmadu Bello University",
+            "Federal University of Technology, Minna",
+            "Federal University of Technology, Owerri",
+            "Babcock University",
+            "American University of Nigeria",
+            "Federal University of Technology, Akure",
+            "University of Abuja",
+            "University of Ibadan",
+            "University of Jos",
+            "University of Lagos",
+            "University of Nigeria",
+            "University of Port Harcourt",
+            "University of Ilorin",
+            "University of Benin",
+            "Obafemi Awolowo University",
+            "Lagos State University",
+            "Ladoke Akintola University of Technology",
+            "Bowen University",
+            "Bells University of Technology"
+        ]
+    },
+    {
+        "country": "Kenya",
+        "universities": [
+            "United States international university",
+            "Kenyatta university",
+            "Nairobi university",
+            "Riara university",
+            "Kenya Methodist",
+            "Multimedia university of Kenya",
+            "Zetech university",
+            "Daystar university",
+            "Africa nazarene university",
+            "Karatina university",
+            "St. Paul’s university"
+        ]
+    },
+    {
+        "country": "Ghana",
+        "universities": [
+            "Allstairs media college",
+            "Olive school of Journalism",
+            "Pentecost university college",
+            "Ghana institute of journalism"
+        ]
+    },
+    {
+        "country": "South Africa",
+        "universities": [
+            "Pearson",
+            "Tshwane university of technology",
+            "Rhodes University",
+            "University of Johannesburg",
+            "University of Stellenbosch"
+        ]
+    },
+    {
+        "country": "Philippines",
+        "universities": [
+            "University Of Santo Tomas",
+            "University Of The Philippines",
+            "Bulacan state university",
+            "Cavite state university",
+            "Ateneo de Manila University",
+            "University of the east"
+        ]
+    },
+    {
+        "country": "Hong Kong",
+        "universities": [
+            "University of Hong Kong",
+            "Hong Kong Baptist university",
+            "Missouri school of journalism",
+            "Chinese university of Hong Kong"
+        ]
+    },
+    {
+        "country": "India",
+        "universities": [
+            "Lovely professional university",
+            "Asian college of journalism",
+            "Kumaun university",
+            "Guru Nanak dev university"
+        ]
+    },
+    {
+        "country": "Singapore",
+        "universities": [
+            "Nanyang technological university",
+            "National university Singapore",
+            "Singapore Management University",
+            "Nanyang Technological University, Singapore (NTU)",
+            "National University of Singapore (NUS)",
+            "Lee Kuan Yew School of Public Policy, National University of Singapore",
+            "S. Rajaratnam School Of International Studies",
+            "New York University Tisch School of the Arts Asia",
+            "Management Development Institute of Singapore",
+            "Hyper Island Institute of Higher Education"
+        ]
+    },
+    {
+        "country": "Netherlands",
+        "universities": [
+            "University of Amsterdam",
+            "Tilburg University",
+            "University of Amsterdam",
+            "Radboud University",
+            "Erasmus University Rotterdam",
+            "Utrecht University",
+            "Leiden University",
+            "Vrije Universiteit Amsterdam",
+            "University of Groningen",
+            "Delft University of Technology",
+            "University of Twente",
+            "Wageningen University",
+            "Maastricht University",
+            "Saxion Universities of Professional Education",
+            "Stenden University of Applied Sciences",
+            "Webster University - Leiden",
+            "Holland Education Consortium"
+        ]
+    },
+    {
+        "country": "UAE",
+        "universities": [
+            "American University of Sharjah",
+            "Murdoch University",
+            "Middlesex University Dubai",
+            "Canadian University Dubai",
+            "Manipal University Dubai"
+        ]
+    },
+    {
+        "country": "Wales",
+        "universities": [
+            "Cardiff university",
+            "University of South Wales",
+            "Cardiff metropolitan university"
+        ]
+    },
+    {
+        "country": "Nothern Ireland",
+        "universities": [
+            "Queens university",
+            "Ulster university",
+            "Aberystwyth university"
+        ]
+    },
+    {
+        "country": "Ireland",
+        "universities": [
+            "Maynooth university",
+            "Griffith College",
+            "Dublin City University",
+            "Rathmines college",
+            "National University of Ireland",
+            "Dublin Business School",
+            "Dublin institute of technology"
+        ]
+    },
+    {
+        "country": "Australia",
+        "universities": [
+            "Australia National University",
+            "University Of Melbourne",
+            "RMIT University",
+            "Deakin University",
+            "Monash University",
+            "University Of New South Wales",
+            "University Of Technology Sydney",
+            "University Of Wollongong",
+            "University Of Sydney",
+            "Western Sydney University",
+            "La Trobe University",
+            "Queensland University of Technology (QUT)",
+            "Curtin University",
+            "The University of Queensland",
+            "The University of Western Australia",
+            "Macquarie University",
+            "The University of Adelaide",
+            "University of South Australia",
+            "Griffith University"           
+        ]
+    },
+    {
+        "country": "Pakistan",
+        "universities": [
+            "University of the Punjab",
+            "Aga Khan University",
+            "International Islamic University, Islamabad",
+            "Government College University, Faisalabad",
+            "Bahria University",
+            "The University of Lahore",
+            "Bahauddin Zakariya University",
+            "Riphah Institute of Media Sciences",
+            "Riphah International University",
+            "Ziauddin College Of Media Services"           
+        ]
+    },
+    {
+        "country": "Canada",
+        "universities": [
+            "University of Calgary",
+            "Mount Royal University",
+            "Southern Alberta Institute Of Technology",
+            "Western University",
+            "Humber College",
+            "Seneca College",
+            "Guelph-Humber University",
+            "Centennial College",
+            "Wilfrid Laurier University",
+            "Ryerson University",
+            "Université de Montréal",
+            "Concordia University",
+            "University of Toronto",
+            "University of British Columbia",
+            "University of Regina",
+            "University of Ottawa",
+            "Université du Québec à  Montréal (UQAM)",
+            "University of Guelph",
+            "York University",
+            "Queen's University at Kingston",
+            "McMaster University",
+            "University of Waterloo",
+            "The University of Western Ontario",
+            "Dalhousie University",
+            "University of Alberta",
+            "Simon Fraser University",
+            "University of Saskatchewan",
+            "Carleton University",
+            "Université de Sherbrooke",
+            "CALDO Consoritum"
+        ]
+    },
+    {
+        "country": "Germany",
+        "universities": [
+            "AMD Akademie mode & design",
+            "University of applied sciences Berlin",
+            "City university of applied sciences Bremen",
+            "Johannes Gutenberg University Mainz",
+            "Axel Springer Akademie",
+            "Ludwig-Maximilians-Universität München",
+            "Universität Hamburg",
+            "Justus-Liebig-University Giessen",
+            "TU Dortmund University"          
+        ]
+    },
+    {
+        "country": "France",
+        "universities": [
+            "ESCP Europe Business School",
+            "Grenoble Ecole de Management",
+            "Ecole de Management de Normandie",
+            "BSB - Burgundy School of Business",
+            "EDHEC Business School",
+            "NEOMA Business School",
+            "Leonard de Vinci Group - Paris La Defense",
+            "ESSEC Business School",
+            "Université Paris-Sud",
+            "Sorbonne University",
+            "École Normale Supérieure de Lyon",
+            "Toulouse Business School",
+            "Aix-Marseille University",
+            "University of Bordeaux",
+            "Université Paul Sabatier Toulouse III",
+            "University Paris 2 Panthéon-Assas",
+            "Paris College of Art",
+            "American University of Paris (AUP)",
+            "Université Paris Descartes",
+            "Sciences Po",
+            "Université de Cergy-Pontoise",
+            "Université Charles-de-Gaulle Lille 3",
+            "Université PSL"
+        ]
+    },
+    {
+        "country": "Mexico",
+        "universities": [
+            "Universidad de Guadalajara (UDG)",
+            "Universidad Autónoma de Sinaloa (UAS)",
+            "Benemérita Universidad Autónoma de Puebla",
+            "Universidad Panamericana (UP)",
+            "Universidad Autónoma del Estado de México (UAEMex)"
+        ]
+    },
+    {
+        "country": "United States Of America",
+        "universities": [
+            "Northwestern University",
+            "EW Scripps school of journalism and Mass Communication",
+            "University of Wisconsin",
+            "UC Berkeley",
+            "California State Polytechnic University",
+            "Marist College",
+            "Boston University",
+            "Northeastern University",
+            "University of Massachusetts",
+            "Ithaca college",
+            "Husson University",
+            "University Of New Hampshire",
+            "Lasell college",
+            "Emerson college",
+            "University of Florida",
+            "University of Miami",
+            "Syracuse University",
+            "Florida International University",
+            "Biola University",
+            "University of Southern California",
+            "California State University",
+            "Columbia Journalism School",
+            "Fordham University",
+            "Rutgers University",
+            "Georgetown University",
+            "American university",
+            "Howard University",
+            "George Washington University",
+            "Temple University",
+            "Rowan University",
+            "Penn state university",
+            "University of Mississippi",
+            "University of Houston",
+            "University of Missouri",
+            "University of North Texas"
+        ]
+    }   
 ]
 
 module.exports = data
