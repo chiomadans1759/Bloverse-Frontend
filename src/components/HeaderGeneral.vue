@@ -6,8 +6,8 @@
           <img
             class="logo"
             src="./../assets/Logo - White.svg"
-            style="height:40px; margin-bottom: 1rem;"
-          >
+            style="height:40px;">
+          <span class="text-white">beta</span>
         </router-link>
       </Col>
       <Col class="header-button">
