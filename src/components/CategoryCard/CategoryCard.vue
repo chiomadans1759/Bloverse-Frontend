@@ -1,5 +1,5 @@
 <template>
-  <main class="category-card p-3" :class="{ card: !hideCardClass }">
+  <main class="card category-card p-4 p-sm-3">
     <div class="header d-flex justify-content-between ">
       <h5><strong>Interest</strong></h5>
       <span class="edit-icon"><i class="fal fa-edit mr-2"></i></span>
