@@ -57,7 +57,7 @@
         <!-- on mobile view only ends -->
 
         <div class="px-0 px-md-3 col-lg-7">
-          <h5 class="font-weight-bold mb-4 pl-3 pl-md-0">Drafts</h5>
+          <h5 class="font-weight-bold mb-4 pl-3 pl-md-0">Draft</h5>
           <div class="border bg-white bl-content right-content">
             <DraftItemCard />
             <DraftItemCard />
@@ -67,28 +67,24 @@
         </div>
       </div>
     </div>
-    <creator-add-icon class="d-block d-md-none" />
+    <creator-publish-icon class="d-block d-md-none" />
     <Footer class="d-block d-lg-none d-xl-none"/>
   </main>
 </template>
 
 <script>
 import Profile from '@/components/ProfileCard/ProfileCard';
-import CountryCard from '@/components/CountryCard/CountryCard';
-import CategoryCard from '@/components/CategoryCard/CategoryCard';
 import Navbar from "@/components/Navbar/Navbar.vue";
 import Footer from "@/components/Footer/Footer";
 import CreatorProfileActionsCard from "@/components/CreatorProfileActionsCard/CreatorProfileActionsCard";
 import DraftItemCard from '@/components/DraftItemCard/DraftItemCard';
-import CreatorAddIcon from '@/components/CreatorAddIcon/CreatorAddIcon';
+import CreatorPublishIcon from '@/components/CreatorPublishIcon/CreatorPublishIcon';
 
 export default {
   components: {
     Navbar,
     Profile,
-    CountryCard,
-    CategoryCard,
-    CreatorAddIcon,
+    CreatorPublishIcon,
     CreatorProfileActionsCard,
     DraftItemCard,
     Footer,

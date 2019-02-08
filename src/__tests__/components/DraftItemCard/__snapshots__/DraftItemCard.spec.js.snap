@@ -23,15 +23,13 @@ exports[`DraftItemCard Component should render correctly 1`] = `
         <p
           class="col-5 col-sm-6 font-weight-bold description"
         >
-          <router-link
-            to="/posts/rere"
-          >
+          <a>
             
             Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
             Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
             Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
           
-          </router-link>
+          </a>
         </p>
          
         <p

@@ -13,5 +13,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './CreatorAddIcon.scss';
+@import './CreatorPublishIcon.scss';
 </style>
