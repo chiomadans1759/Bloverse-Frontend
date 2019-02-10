@@ -73,13 +73,13 @@ exports[`RecommendationCard Component should render correctly 1`] = `
       </div>
        
       <div
-        class="col-5 row others"
+        class="col-5 row others centerEle"
       >
         <div
           class="col-9 likes"
         >
           <p
-            class="thumbs-up"
+            class="thumbs-up centerEle"
           >
             <i
               class="fal fa-thumbs-up"
@@ -93,7 +93,7 @@ exports[`RecommendationCard Component should render correctly 1`] = `
           </p>
            
           <p
-            class="thumbs-up"
+            class="thumbs-up centerEle"
             style="display: none;"
           >
             <i
@@ -108,7 +108,7 @@ exports[`RecommendationCard Component should render correctly 1`] = `
           </p>
            
           <p
-            class="thumbs-down"
+            class="thumbs-down centerEle"
           >
             <i
               class="fal fa-thumbs-down"
@@ -122,7 +122,7 @@ exports[`RecommendationCard Component should render correctly 1`] = `
           </p>
            
           <p
-            class="thumbs-down"
+            class="thumbs-down centerEle"
             style="display: none;"
           >
             <i
@@ -156,7 +156,7 @@ exports[`RecommendationCard Component should render correctly 1`] = `
            
           <div
             aria-labelledby="dropdownMenuReference"
-            class="dropdown-menu bl-dropdown-menu"
+            class="dropdown-menu bl-dropdown-menu top-dropdown"
           >
             <div
               class="d-flex bl-dropdown-menu__countries"
@@ -167,19 +167,64 @@ exports[`RecommendationCard Component should render correctly 1`] = `
                 <p
                   class="dropdown-item country"
                 >
+                  Report Post
+                </p>
+                 
+                <hr />
+                 
+                <hr />
+                 
+                <p
+                  class="dropdown-item country pt-3"
+                  style="display: none;"
+                >
                   <i
-                    class="fal fa-comment-dots"
+                    class="fal fa-times"
                   />
                    
                   <span
                     class="count"
                   >
-                    67
+                    Remove
                   </span>
                 </p>
                  
                 <p
                   class="dropdown-item country"
+                >
+                  <i
+                    class="fal fa-plus "
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    Creators Profile
+                  </span>
+                </p>
+                 
+                <p
+                  class="dropdown-item country"
+                >
+                  <i
+                    class="fal fa-comment-dots "
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    Comment
+                      
+                    <span
+                      class="badges"
+                    >
+                      5
+                    </span>
+                  </span>
+                </p>
+                 
+                <p
+                  class="dropdown-item country hidden-lg-down pb-3"
                 >
                   <i
                     class="fal fa-share"
@@ -188,7 +233,75 @@ exports[`RecommendationCard Component should render correctly 1`] = `
                   <span
                     class="count"
                   >
-                    67
+                    Share
+                      
+                    <span
+                      class="badges"
+                    >
+                      5
+                    </span>
+                  </span>
+                </p>
+                 
+                <p
+                  class="dropdown-item country toggle-bookmark"
+                >
+                  <i
+                    class="fal fa-bookmark"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    Read Later
+                  </span>
+                </p>
+                 
+                <p
+                  class="dropdown-item country toggle-bookmark"
+                  style="display: none;"
+                >
+                  <i
+                    class="fas fa-bookmark"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    Read Later
+                  </span>
+                </p>
+                 
+                <hr />
+                 
+                <hr />
+                 
+                <p
+                  class="dropdown-item country toggle-story"
+                >
+                  <i
+                    class="fal fa-book-open"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    Read Story
+                  </span>
+                </p>
+                 
+                <p
+                  class="dropdown-item country toggle-story"
+                  style="display: none;"
+                >
+                  <i
+                    class="fas fa-book-open"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    Read Story
                   </span>
                 </p>
               </div>

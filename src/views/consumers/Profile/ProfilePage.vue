@@ -123,71 +123,68 @@
             </div>
           </nav>
         </div>
-        <!-- view navigation ends -->
 
-        <!-- read-later content -->
-        <div v-if="!showPrevRead && !noSavedPost" class="d-none d-sm-block">
-          <!-- grid view  -->
-          <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex">
-            <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+        <div v-if="!showPrevRead">
+          <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex flex-wrap">
+            <div class="col-lg-6 col-md-6 my-2">
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
-            <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+            <div class="col-lg-6 col-md-6 my-2">
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
-            <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+            <div class="col-lg-6 col-md-6 my-2">
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
-            <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+            <div class="col-lg-6 col-md-6 my-2">
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
-            <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+            <div class="col-lg-6 col-md-6 my-2">
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
+            <!-- list view ends  -->
           </div>
-          <!-- grid view ends -->
 
           <!-- list view -->
-          <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
+            <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
+              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+            </div>
+            <!-- list view ends  -->
           </div>
-          <!-- list view ends  -->
-        </div>
         <!-- read-later content ends -->
 
         <!-- previously-read content -->
-        <div v-if="showPrevRead" class="d-none d-sm-block">
+        <div v-else class="d-none d-sm-block">
           <!-- grid view  -->
           <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex">
             <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
             <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
             <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
             <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
             <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
           </div>
           <!-- grid view ends -->
 
           <!-- list view -->
           <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
+            <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+            <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+            <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+            <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+            <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
           </div>
           <!-- list view ends  -->
         </div>

@@ -985,17 +985,15 @@ exports[`Profile Component should render correctly 1`] = `
         </nav>
       </div>
        
-      <div
-        class="d-none d-sm-block"
-      >
+      <div>
         <div
-          class="row m-4 p-2 d-none d-sm-flex"
+          class="row m-4 p-2 d-none d-sm-flex flex-wrap"
         >
           <div
-            class="col-lg-6 my-2"
+            class="col-lg-6 col-md-6 my-2"
           >
             <main
-              class="card recommendation-card"
+              class="card recommendation-card profile-card"
             >
               <img
                 alt="..."
@@ -1054,13 +1052,13 @@ exports[`Profile Component should render correctly 1`] = `
                   </div>
                    
                   <div
-                    class="col-5 row others"
+                    class="col-5 row others centerEle"
                   >
                     <div
                       class="col-9 likes"
                     >
                       <p
-                        class="thumbs-up"
+                        class="thumbs-up centerEle"
                       >
                         <i
                           class="fal fa-thumbs-up"
@@ -1074,7 +1072,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-up"
+                        class="thumbs-up centerEle"
                         style="display: none;"
                       >
                         <i
@@ -1089,7 +1087,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-down"
+                        class="thumbs-down centerEle"
                       >
                         <i
                           class="fal fa-thumbs-down"
@@ -1103,7 +1101,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-down"
+                        class="thumbs-down centerEle"
                         style="display: none;"
                       >
                         <i
@@ -1137,7 +1135,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -1148,19 +1146,63 @@ exports[`Profile Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country pt-3"
+                            >
                               <i
-                                class="fal fa-comment-dots"
+                                class="fal fa-times"
                               />
                                
                               <span
                                 class="count"
                               >
-                                67
+                                Remove
                               </span>
                             </p>
                              
                             <p
                               class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country hidden-lg-down pb-3"
                             >
                               <i
                                 class="fal fa-share"
@@ -1169,7 +1211,76 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
                               </span>
                             </p>
                           </div>
@@ -1183,10 +1294,10 @@ exports[`Profile Component should render correctly 1`] = `
           </div>
            
           <div
-            class="col-lg-6 my-2"
+            class="col-lg-6 col-md-6 my-2"
           >
             <main
-              class="card recommendation-card"
+              class="card recommendation-card profile-card"
             >
               <img
                 alt="..."
@@ -1245,13 +1356,13 @@ exports[`Profile Component should render correctly 1`] = `
                   </div>
                    
                   <div
-                    class="col-5 row others"
+                    class="col-5 row others centerEle"
                   >
                     <div
                       class="col-9 likes"
                     >
                       <p
-                        class="thumbs-up"
+                        class="thumbs-up centerEle"
                       >
                         <i
                           class="fal fa-thumbs-up"
@@ -1265,7 +1376,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-up"
+                        class="thumbs-up centerEle"
                         style="display: none;"
                       >
                         <i
@@ -1280,7 +1391,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-down"
+                        class="thumbs-down centerEle"
                       >
                         <i
                           class="fal fa-thumbs-down"
@@ -1294,7 +1405,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-down"
+                        class="thumbs-down centerEle"
                         style="display: none;"
                       >
                         <i
@@ -1328,7 +1439,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -1339,19 +1450,63 @@ exports[`Profile Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country pt-3"
+                            >
                               <i
-                                class="fal fa-comment-dots"
+                                class="fal fa-times"
                               />
                                
                               <span
                                 class="count"
                               >
-                                67
+                                Remove
                               </span>
                             </p>
                              
                             <p
                               class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country hidden-lg-down pb-3"
                             >
                               <i
                                 class="fal fa-share"
@@ -1360,7 +1515,76 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
                               </span>
                             </p>
                           </div>
@@ -1374,10 +1598,10 @@ exports[`Profile Component should render correctly 1`] = `
           </div>
            
           <div
-            class="col-lg-6 my-2"
+            class="col-lg-6 col-md-6 my-2"
           >
             <main
-              class="card recommendation-card"
+              class="card recommendation-card profile-card"
             >
               <img
                 alt="..."
@@ -1436,13 +1660,13 @@ exports[`Profile Component should render correctly 1`] = `
                   </div>
                    
                   <div
-                    class="col-5 row others"
+                    class="col-5 row others centerEle"
                   >
                     <div
                       class="col-9 likes"
                     >
                       <p
-                        class="thumbs-up"
+                        class="thumbs-up centerEle"
                       >
                         <i
                           class="fal fa-thumbs-up"
@@ -1456,7 +1680,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-up"
+                        class="thumbs-up centerEle"
                         style="display: none;"
                       >
                         <i
@@ -1471,7 +1695,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-down"
+                        class="thumbs-down centerEle"
                       >
                         <i
                           class="fal fa-thumbs-down"
@@ -1485,7 +1709,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-down"
+                        class="thumbs-down centerEle"
                         style="display: none;"
                       >
                         <i
@@ -1519,7 +1743,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -1530,19 +1754,63 @@ exports[`Profile Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country pt-3"
+                            >
                               <i
-                                class="fal fa-comment-dots"
+                                class="fal fa-times"
                               />
                                
                               <span
                                 class="count"
                               >
-                                67
+                                Remove
                               </span>
                             </p>
                              
                             <p
                               class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country hidden-lg-down pb-3"
                             >
                               <i
                                 class="fal fa-share"
@@ -1551,7 +1819,76 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
                               </span>
                             </p>
                           </div>
@@ -1565,10 +1902,10 @@ exports[`Profile Component should render correctly 1`] = `
           </div>
            
           <div
-            class="col-lg-6 my-2"
+            class="col-lg-6 col-md-6 my-2"
           >
             <main
-              class="card recommendation-card"
+              class="card recommendation-card profile-card"
             >
               <img
                 alt="..."
@@ -1627,13 +1964,13 @@ exports[`Profile Component should render correctly 1`] = `
                   </div>
                    
                   <div
-                    class="col-5 row others"
+                    class="col-5 row others centerEle"
                   >
                     <div
                       class="col-9 likes"
                     >
                       <p
-                        class="thumbs-up"
+                        class="thumbs-up centerEle"
                       >
                         <i
                           class="fal fa-thumbs-up"
@@ -1647,7 +1984,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-up"
+                        class="thumbs-up centerEle"
                         style="display: none;"
                       >
                         <i
@@ -1662,7 +1999,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-down"
+                        class="thumbs-down centerEle"
                       >
                         <i
                           class="fal fa-thumbs-down"
@@ -1676,7 +2013,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-down"
+                        class="thumbs-down centerEle"
                         style="display: none;"
                       >
                         <i
@@ -1710,7 +2047,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -1721,19 +2058,63 @@ exports[`Profile Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country pt-3"
+                            >
                               <i
-                                class="fal fa-comment-dots"
+                                class="fal fa-times"
                               />
                                
                               <span
                                 class="count"
                               >
-                                67
+                                Remove
                               </span>
                             </p>
                              
                             <p
                               class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country hidden-lg-down pb-3"
                             >
                               <i
                                 class="fal fa-share"
@@ -1742,7 +2123,76 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
                               </span>
                             </p>
                           </div>
@@ -1756,10 +2206,10 @@ exports[`Profile Component should render correctly 1`] = `
           </div>
            
           <div
-            class="col-lg-6 my-2"
+            class="col-lg-6 col-md-6 my-2"
           >
             <main
-              class="card recommendation-card"
+              class="card recommendation-card profile-card"
             >
               <img
                 alt="..."
@@ -1818,13 +2268,13 @@ exports[`Profile Component should render correctly 1`] = `
                   </div>
                    
                   <div
-                    class="col-5 row others"
+                    class="col-5 row others centerEle"
                   >
                     <div
                       class="col-9 likes"
                     >
                       <p
-                        class="thumbs-up"
+                        class="thumbs-up centerEle"
                       >
                         <i
                           class="fal fa-thumbs-up"
@@ -1838,7 +2288,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-up"
+                        class="thumbs-up centerEle"
                         style="display: none;"
                       >
                         <i
@@ -1853,7 +2303,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-down"
+                        class="thumbs-down centerEle"
                       >
                         <i
                           class="fal fa-thumbs-down"
@@ -1867,7 +2317,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class="thumbs-down"
+                        class="thumbs-down centerEle"
                         style="display: none;"
                       >
                         <i
@@ -1901,7 +2351,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -1912,19 +2362,63 @@ exports[`Profile Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country pt-3"
+                            >
                               <i
-                                class="fal fa-comment-dots"
+                                class="fal fa-times"
                               />
                                
                               <span
                                 class="count"
                               >
-                                67
+                                Remove
                               </span>
                             </p>
                              
                             <p
                               class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country hidden-lg-down pb-3"
                             >
                               <i
                                 class="fal fa-share"
@@ -1933,7 +2427,76 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                67
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
                               </span>
                             </p>
                           </div>
@@ -1949,8 +2512,6 @@ exports[`Profile Component should render correctly 1`] = `
          
         <!---->
       </div>
-       
-      <!---->
        
       <!---->
        
@@ -2078,7 +2639,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-7 col-sm-4 likes"
                   >
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                     >
                       <i
                         class="fal fa-thumbs-up"
@@ -2092,7 +2653,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2107,7 +2668,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                     >
                       <i
                         class="fal fa-thumbs-down"
@@ -2121,7 +2682,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2140,7 +2701,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-3 col-sm-7 comments"
                   >
                     <p
-                      class="coment"
+                      class="coment hideEle centerEle"
                     >
                       <i
                         class="fal fa-comment-dots"
@@ -2154,7 +2715,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="share"
+                      class="share hideEle centerEle"
                     >
                       <i
                         class="fal fa-share"
@@ -2186,7 +2747,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -2206,6 +2767,21 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
                             >
                               <i
                                 class="fal fa-plus"
@@ -2217,6 +2793,50 @@ exports[`Profile Component should render correctly 1`] = `
                                 Creators Profile
                               </span>
                             </p>
+                             
+                            <div
+                              class="d-md-none"
+                            >
+                              <p
+                                class="dropdown-item country"
+                              >
+                                <i
+                                  class="fal fa-comment-dots"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Comment
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                               
+                              <p
+                                class="dropdown-item country hidden-lg-down"
+                              >
+                                <i
+                                  class="fal fa-share"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Share
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                            </div>
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
@@ -2277,50 +2897,6 @@ exports[`Profile Component should render correctly 1`] = `
                                 class="count"
                               >
                                 Read Story
-                              </span>
-                            </p>
-                             
-                            <hr />
-                             
-                            <hr />
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-comment-dots"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Comment
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
-                              </span>
-                            </p>
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-share"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Share
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
                               </span>
                             </p>
                           </div>
@@ -2467,7 +3043,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-7 col-sm-4 likes"
                   >
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                     >
                       <i
                         class="fal fa-thumbs-up"
@@ -2481,7 +3057,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2496,7 +3072,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                     >
                       <i
                         class="fal fa-thumbs-down"
@@ -2510,7 +3086,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2529,7 +3105,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-3 col-sm-7 comments"
                   >
                     <p
-                      class="coment"
+                      class="coment hideEle centerEle"
                     >
                       <i
                         class="fal fa-comment-dots"
@@ -2543,7 +3119,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="share"
+                      class="share hideEle centerEle"
                     >
                       <i
                         class="fal fa-share"
@@ -2575,7 +3151,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -2595,6 +3171,21 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
                             >
                               <i
                                 class="fal fa-plus"
@@ -2606,6 +3197,50 @@ exports[`Profile Component should render correctly 1`] = `
                                 Creators Profile
                               </span>
                             </p>
+                             
+                            <div
+                              class="d-md-none"
+                            >
+                              <p
+                                class="dropdown-item country"
+                              >
+                                <i
+                                  class="fal fa-comment-dots"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Comment
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                               
+                              <p
+                                class="dropdown-item country hidden-lg-down"
+                              >
+                                <i
+                                  class="fal fa-share"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Share
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                            </div>
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
@@ -2666,50 +3301,6 @@ exports[`Profile Component should render correctly 1`] = `
                                 class="count"
                               >
                                 Read Story
-                              </span>
-                            </p>
-                             
-                            <hr />
-                             
-                            <hr />
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-comment-dots"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Comment
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
-                              </span>
-                            </p>
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-share"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Share
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
                               </span>
                             </p>
                           </div>
@@ -2856,7 +3447,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-7 col-sm-4 likes"
                   >
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                     >
                       <i
                         class="fal fa-thumbs-up"
@@ -2870,7 +3461,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2885,7 +3476,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                     >
                       <i
                         class="fal fa-thumbs-down"
@@ -2899,7 +3490,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2918,7 +3509,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-3 col-sm-7 comments"
                   >
                     <p
-                      class="coment"
+                      class="coment hideEle centerEle"
                     >
                       <i
                         class="fal fa-comment-dots"
@@ -2932,7 +3523,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="share"
+                      class="share hideEle centerEle"
                     >
                       <i
                         class="fal fa-share"
@@ -2964,7 +3555,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -2984,6 +3575,21 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
                             >
                               <i
                                 class="fal fa-plus"
@@ -2995,6 +3601,50 @@ exports[`Profile Component should render correctly 1`] = `
                                 Creators Profile
                               </span>
                             </p>
+                             
+                            <div
+                              class="d-md-none"
+                            >
+                              <p
+                                class="dropdown-item country"
+                              >
+                                <i
+                                  class="fal fa-comment-dots"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Comment
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                               
+                              <p
+                                class="dropdown-item country hidden-lg-down"
+                              >
+                                <i
+                                  class="fal fa-share"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Share
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                            </div>
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
@@ -3055,50 +3705,6 @@ exports[`Profile Component should render correctly 1`] = `
                                 class="count"
                               >
                                 Read Story
-                              </span>
-                            </p>
-                             
-                            <hr />
-                             
-                            <hr />
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-comment-dots"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Comment
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
-                              </span>
-                            </p>
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-share"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Share
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
                               </span>
                             </p>
                           </div>
@@ -3245,7 +3851,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-7 col-sm-4 likes"
                   >
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                     >
                       <i
                         class="fal fa-thumbs-up"
@@ -3259,7 +3865,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                       style="display: none;"
                     >
                       <i
@@ -3274,7 +3880,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                     >
                       <i
                         class="fal fa-thumbs-down"
@@ -3288,7 +3894,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                       style="display: none;"
                     >
                       <i
@@ -3307,7 +3913,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-3 col-sm-7 comments"
                   >
                     <p
-                      class="coment"
+                      class="coment hideEle centerEle"
                     >
                       <i
                         class="fal fa-comment-dots"
@@ -3321,7 +3927,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="share"
+                      class="share hideEle centerEle"
                     >
                       <i
                         class="fal fa-share"
@@ -3353,7 +3959,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -3373,6 +3979,21 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
                             >
                               <i
                                 class="fal fa-plus"
@@ -3384,6 +4005,50 @@ exports[`Profile Component should render correctly 1`] = `
                                 Creators Profile
                               </span>
                             </p>
+                             
+                            <div
+                              class="d-md-none"
+                            >
+                              <p
+                                class="dropdown-item country"
+                              >
+                                <i
+                                  class="fal fa-comment-dots"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Comment
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                               
+                              <p
+                                class="dropdown-item country hidden-lg-down"
+                              >
+                                <i
+                                  class="fal fa-share"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Share
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                            </div>
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
@@ -3444,50 +4109,6 @@ exports[`Profile Component should render correctly 1`] = `
                                 class="count"
                               >
                                 Read Story
-                              </span>
-                            </p>
-                             
-                            <hr />
-                             
-                            <hr />
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-comment-dots"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Comment
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
-                              </span>
-                            </p>
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-share"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Share
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
                               </span>
                             </p>
                           </div>
