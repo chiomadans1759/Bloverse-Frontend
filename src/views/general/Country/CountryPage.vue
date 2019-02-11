@@ -1,7 +1,7 @@
 <template>
   <main id="country-page">
     <div class="main">
-        <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" />
+        <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" customClass="back-nav"/>
       <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
           <div class="col-sm-7 col-lg-6 pt-5">

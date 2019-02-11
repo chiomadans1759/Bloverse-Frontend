@@ -1,9 +1,10 @@
 import { mount, RouterLinkStub  } from '@vue/test-utils'
-import CreatorProfileActionsCard from '@/components/CreatorProfileActionsCard/CreatorProfileActionsCard.vue';
+import NotFoundPage from "@/views/general/NotFoundPage/NotFoundPage.vue";
 
-describe('CreatorActionCard Component', () => {
+describe('Not Found Page', () => {
   it('should render correctly', () => {
-    const wrapper = mount(CreatorProfileActionsCard, {
+
+    const wrapper = mount(NotFoundPage, {
       stubs: {
         RouterLink: RouterLinkStub
       }

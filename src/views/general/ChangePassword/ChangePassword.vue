@@ -1,6 +1,6 @@
 <template>
   <main id="bl-change-password" class="container-fluid p-0 bl-change-password">
-    <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" />
+    <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" customClass="back-nav"/>
     <div class="container main-content">
       <div class="row change-password-form">
         <form>

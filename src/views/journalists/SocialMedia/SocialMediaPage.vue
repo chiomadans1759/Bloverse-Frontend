@@ -1,6 +1,6 @@
 <template>
   <main id="bl-social-media" class="container-fluid p-0 bl-social-media">
-    <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" />
+    <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" customClass="back-nav"/>
     <div class="container main-content">
       <div class="row social-media-form">
         <form>

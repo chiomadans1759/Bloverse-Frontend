@@ -141,7 +141,16 @@
   color: #0083e6 !important;
 }
 
+@media screen and (max-width: 1190px) and (min-width: 978px) {
+  .profile-card {
+    width: rem(240px) !important;
+  }
+}
+
 @media screen and (min-width: 1020px) {
+  .profile-card {
+    width: rem(240px) !important;
+  }
   .recommendation-card {
     border-radius: 0 !important;
     height: rem(344px);

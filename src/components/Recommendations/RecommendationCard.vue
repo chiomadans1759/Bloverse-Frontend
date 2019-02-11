@@ -1,5 +1,5 @@
 <template>
-  <main class="card recommendation-card">
+  <main :class="['card', 'recommendation-card', customClass]">
     <img src="@/assets/photo-4.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Category</h5>
@@ -83,6 +83,10 @@ export default {
   props: {
     type: {
       type: String
+    },
+    customClass: {
+      type: String,
+      required: false
     }
   },
   data() {

@@ -90,17 +90,9 @@ exports[`Settings Page should render correctly 1`] = `
             Update your information
           </p>
            
-          <a
-            class="text-capitalize mt-3"
-          >
-            Update Social Media
-          </a>
+          <!---->
            
-          <p
-            class="text small"
-          >
-            Update your social media information
-          </p>
+          <!---->
            
           <p
             class="text-capitalize font-weight-bold pt-4 auth"
