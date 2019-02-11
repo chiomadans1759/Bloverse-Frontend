@@ -2,9 +2,9 @@
   <header id="feeds-header">
     <nav
       class="navbar navbar-expand-lg navbar-light px-5"
-      :class="{ 'transparent': isTransparent, 'alt-button': isTransparent }"
+      :class="[{ 'transparent': isTransparent, 'alt-button': isTransparent }, customClass]"
     >
-      <a v-if="showBackArrow" class="backlink" href="/settings">
+      <a v-if="showBackArrow" class="backlink mr-4" href="/settings">
         <i class="fal fa-long-arrow-left fa-2x back-icon"></i>
         <span class="back-text">Back</span>
       </a>
@@ -88,7 +88,7 @@
       <div v-if="showNavigations" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto" :class="{ 'white-text': whiteText }">
           <li class="nav-item active">
-            <router-link to="/" class="nav-link">Home
+            <router-link :to="backLink" class="nav-link">Home
               <span class="sr-only">(current)</span>
             </router-link>
           </li>
@@ -190,7 +190,15 @@ export default {
     isLogin: {
       type: Boolean,
       default: true
-    }
+    },
+    backLink: {
+      type: String,
+      default: '/',
+    },
+    customClass: {
+      type: String,
+      required: false,
+    },
   }
 };
 </script>

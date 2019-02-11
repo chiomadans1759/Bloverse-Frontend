@@ -1,6 +1,6 @@
 <template>
   <div class="edit-container">
-    <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations"/>
+    <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" customClass="back-nav"/>
     <div class="content">
       <div class="container">
         <div class="row">

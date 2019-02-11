@@ -1,18 +1,18 @@
 <template>
-  <main id="country-page">
+  <main id="category-page">
     <div class="main">
-        <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" />
+        <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" customClass="back-nav"/>
       <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
           <div class="col-sm-7 col-lg-6 pt-5">
-            <h5 class="pb-1">Select Your Favourite Country</h5>
-            <p class="select-t">Selected {{consumers.selectedCountries.length}} countries</p>
+            <h5 class="pb-1">Select Your Interest</h5>
+            <p class="select-t">Selected {{consumers.selectedCategories.length}} categories</p>
             <div>
-              <choose-country></choose-country>
+              <choose-catergory></choose-catergory>
             </div>
           </div>
         </div>
-        <div class="card country-footer py-2 rounded-0">
+        <div class="card category-footer py-2 rounded-0">
           <div class="container">
             <div class="row d-flex justify-content-center">
               <div class="col-sm-7 col-lg-6 d-flex justify-content-between">
@@ -28,12 +28,12 @@
 </template>
 
 <script>
-import ChooseCountry from "@/components/ChooseCountry/ChooseCountry.vue";
+import ChooseCatergory from "@/components/ChooseCategory/ChooseCategory.vue";
 import Navbar from "@/components/Navbar/Navbar.vue";
 import { mapState } from "vuex";
 
 export default {
-  components: { ChooseCountry, Navbar },
+  components: { ChooseCatergory, Navbar },
   data() {
     return {
       showNavigations: false,
@@ -47,5 +47,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./CountryPage";
+@import "./CategoryPage";
 </style>

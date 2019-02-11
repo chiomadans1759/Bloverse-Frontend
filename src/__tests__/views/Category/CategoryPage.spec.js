@@ -1,5 +1,5 @@
 import { mount, createLocalVue, RouterLinkStub  } from '@vue/test-utils';
-import Category from '@/views/consumers/Category/CategoryPage.vue';
+import Category from '@/views/general/Category/CategoryPage.vue';
 import categoryData from '@/fixtures/category.js';
 
 import Vuex from 'vuex';

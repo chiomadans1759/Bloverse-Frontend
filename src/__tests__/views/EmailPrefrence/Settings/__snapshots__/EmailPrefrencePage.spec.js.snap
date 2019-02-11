@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Creator Email Settings Page should render properly 1`] = `
+<main
+  id="manage-email"
+>
+  <header
+    id="feeds-header"
+  >
+    <nav
+      class="navbar navbar-expand-lg navbar-light px-5 back-nav"
+    >
+      <a
+        class="backlink mr-4"
+        href="/settings"
+      >
+        <i
+          class="fal fa-long-arrow-left fa-2x back-icon"
+        />
+         
+        <span
+          class="back-text"
+        >
+          Back
+        </span>
+      </a>
+       
+      <a
+        class="router-link"
+      >
+        <img
+          class="nav-logo"
+          src="@/assets/Logo.svg"
+        />
+         
+        <!---->
+      </a>
+       
+      <!---->
+       
+      <!---->
+    </nav>
+  </header>
+   
+  <div
+    class="container py-4"
+  >
+    <div
+      class="offset-md-3 col-md-6"
+    >
+      <div
+        class="row"
+      >
+        <h1>
+          <strong>
+            Manage Email Preferences
+          </strong>
+        </h1>
+      </div>
+       
+      <div
+        class="row pt-5"
+      >
+        <div
+          class="card p-4"
+        >
+          <div
+            class="pt-3 d-flex justify-content-between align-items-center pb-3"
+          >
+            <div
+              class="pr-2"
+            >
+              <p
+                class="text-capitalize title"
+              >
+                Bloverse Article Digest
+              </p>
+               
+              <p
+                class="text small"
+              >
+                Discover top, new articles based on your selected categories.
+              </p>
+            </div>
+             
+            <div>
+              <button
+                aria-pressed="true"
+                autocomplete="off"
+                class="btn btn-sm btn-toggle active"
+                data-toggle="button"
+                type="button"
+              >
+                <div
+                  class="square"
+                />
+              </button>
+            </div>
+          </div>
+           
+          <div
+            class="pt-3 d-flex justify-content-between align-items-center pb-3"
+          >
+            <div
+              class="pr-2"
+            >
+              <p
+                class="text-capitalize title"
+              >
+                Recommendations
+              </p>
+               
+              <p
+                class="text small"
+              >
+                Discover trending, related articles that might interest you.
+              </p>
+            </div>
+             
+            <div>
+              <button
+                aria-pressed="true"
+                autocomplete="on"
+                class="btn btn-sm btn-toggle active"
+                data-toggle="button"
+                type="button"
+              >
+                <div
+                  class="square"
+                />
+              </button>
+            </div>
+          </div>
+           
+          <div
+            class="pt-3 d-flex justify-content-between align-items-center pb-3"
+          >
+            <div
+              class="pr-2"
+            >
+              <p
+                class="text-capitalize title"
+              >
+                Photo Contest
+              </p>
+               
+              <p
+                class="text small"
+              >
+                Discover top, new articles based on your selected categories.
+              </p>
+            </div>
+             
+            <div>
+              <button
+                aria-pressed="true"
+                autocomplete="on"
+                class="btn btn-sm btn-toggle active"
+                data-toggle="button"
+                type="button"
+              >
+                <div
+                  class="square"
+                />
+              </button>
+            </div>
+          </div>
+           
+          <div
+            class="pt-3 d-flex justify-content-between align-items-center pb-3"
+          >
+            <div
+              class="pr-2"
+            >
+              <p
+                class="text-capitalize title"
+              >
+                News & Announcements
+              </p>
+               
+              <p
+                class="text small"
+              >
+                Stay updated on new features and products that’ll improve your experience.
+              </p>
+            </div>
+             
+            <div>
+              <button
+                aria-pressed="true"
+                autocomplete="off"
+                class="btn btn-sm btn-toggle active"
+                data-toggle="button"
+                type="button"
+              >
+                <div
+                  class="square"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="footer-container"
+  >
+    <p>
+      <span
+        class="bloverse"
+      >
+        bloverse
+      </span>
+       2019. All Rights Reserved
+    
+    </p>
+  </div>
+</main>
+`;

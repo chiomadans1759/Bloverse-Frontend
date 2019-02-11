@@ -1,5 +1,5 @@
 import { mount, createLocalVue, RouterLinkStub } from '@vue/test-utils';
-import Country from '@/views/consumers/Country/CountryPage.vue';
+import Country from '@/views/general/Country/CountryPage.vue';
 import countryData from '@/fixtures/country.js';
 
 import Vuex from 'vuex';

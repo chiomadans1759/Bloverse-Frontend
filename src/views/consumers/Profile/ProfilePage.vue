@@ -55,7 +55,7 @@
       </div>
       <!-- on mobile view only ends -->
 
-      <div class="col-lg-7 border right-content bg-white bl-content">
+      <div class="col-lg-7 col-md-11 col-sm-12 border right-content bg-white bl-content">
         <div  v-if="showMobileProfile" class="border-bottom">
           <nav class="navbar navbar-expand-lg navbar-light bg-white
             justify-content-center profile-navbar"
@@ -98,7 +98,7 @@
             justify-content-end profile-navbar"
           >
             <div class="">
-              <ul class="navbar-nav layout-nav">
+              <ul class="navbar-nav flex-row layout-nav">
                 <li :class="['nav-item', 'mr-4', 'py-2', {'active': showListView}]">
                   <span @click="toggleView('list')" to="#" class="nav-link list-view">
                     <span v-show='showListView'>
@@ -123,37 +123,21 @@
             </div>
           </nav>
         </div>
-        <!-- view navigation ends -->
-
-        <!-- read-later content -->
-        <div v-if="!showPrevRead" class="d-none d-sm-block">
-          <!-- grid view  -->
-          <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex">
-            <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
-            </div>
-            <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
-            </div>
-            <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
-            </div>
-            <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
-            </div>
-            <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
-            </div>
+        <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex flex-wrap">
+          <div class="col-lg-6 col-md-6 my-2">
+            <recommendation-card type="consumer" customClass="profile-card"/>
           </div>
-          <!-- grid view ends -->
-
-          <!-- list view -->
-          <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
+          <div class="col-lg-6 col-md-6 my-2">
+            <recommendation-card type="consumer" customClass="profile-card"/>
+          </div>
+          <div class="col-lg-6 col-md-6 my-2">
+            <recommendation-card type="consumer" customClass="profile-card"/>
+          </div>
+          <div class="col-lg-6 col-md-6 my-2">
+            <recommendation-card type="consumer" customClass="profile-card"/>
+          </div>
+          <div class="col-lg-6 col-md-6 my-2">
+            <recommendation-card type="consumer" customClass="profile-card"/>
           </div>
           <!-- list view ends  -->
         </div>
