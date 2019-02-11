@@ -13,6 +13,7 @@ import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicyPage.vue';
 import Settings from '@/views/general/Settings/SettingsPage.vue';
 import AboutUs from '../src/views/general/About/AboutPage.vue';
 import ConsumerProfile from '../src/views/consumers/Profile/ProfilePage.vue';
+import NotFound from '../src/views/general/NotFoundPage/NotFoundPage.vue';
 
 // Blank Base Layout Pages
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
@@ -41,7 +42,6 @@ import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
 import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
-import NotFound from '../src/views/NotFound.vue';
 
 const routes = [
   {
