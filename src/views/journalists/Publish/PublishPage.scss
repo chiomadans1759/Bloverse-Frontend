@@ -1,0 +1,72 @@
+#publish-page {
+  background: #fff;
+  height: auto;
+  min-height: 100vh;
+  .form-control {
+    border: none;
+    background: #fff;
+    transition: none !important;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  .one::placeholder {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #868686;
+  }
+  .two {
+    &::placeholder {
+      color: #868686;
+    }
+    > input::placeholder {
+      font-weight: 600;
+      color: #868686;
+    }
+  }
+  .mytext {
+    overflow: hidden;
+    width: 100%;
+    border: 0;
+    background: #fff;
+    color: #222;
+    resize: none;
+    padding-bottom: 3rem;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  .text-icons {
+    list-style-type: none;
+    margin-top: 4.5rem;
+    position: fixed;
+    li {
+      margin-bottom: 1rem;
+    }
+    button {
+      background: transparent;
+      border: 0.063rem solid rgba(0, 0, 0, 0.15);
+      height: 2.375rem;
+      width: 2.375rem;
+    }
+  }
+  .icon-wrapper {
+    z-index: 1;
+  }
+  .inner-icons {
+    margin-left: 0.5rem;
+  }
+  .inner-icons div {
+    padding-right: 1rem;
+    p{
+      font-size: 0.625rem;
+    }
+    .embed {
+      border-radius: 0 !important;
+      margin-top: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+  }
+}
