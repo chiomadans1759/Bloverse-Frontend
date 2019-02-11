@@ -1,0 +1,2868 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Posts Component should render correctly 1`] = `
+<main
+  id="bl-profile-page"
+>
+  <header
+    id="feeds-header"
+  >
+    <nav
+      class="navbar navbar-expand-lg navbar-light px-5"
+    >
+      <!---->
+       
+      <a
+        class="router-link"
+      >
+        <img
+          class="nav-logo"
+          src="@/assets/Logo.svg"
+        />
+         
+        <!---->
+      </a>
+       
+      <div
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        class="form-inline my-2 my-lg-0 navbar-toggler mobile-view"
+        data-target="#navbarSupportedContent"
+        data-toggle="collapse"
+      >
+        <a
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="nav-link dropdown-toggle"
+          data-toggle="dropdown"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+        >
+          <span
+            id="option-icon"
+          />
+           
+          <span
+            id="option-icon"
+          />
+           
+          <span
+            id="option-icon"
+          />
+        </a>
+         
+        <div
+          aria-labelledby="navbarDropdown"
+          class="dropdown-menu dropdown-mobile-view"
+        >
+          <a
+            class="dropdown-item"
+          >
+            About
+          </a>
+           
+          <a
+            class="dropdown-item"
+          >
+            Photo Contest
+          </a>
+           
+          <a
+            class="dropdown-item"
+          >
+            Terms
+          </a>
+           
+          <a
+            class="dropdown-item"
+          >
+            Privacy
+          </a>
+           
+          <a
+            class="dropdown-item"
+            href="#"
+          >
+            FAQ
+          </a>
+           
+          <div
+            class="dropdown-divider"
+          />
+           
+          <a
+            class="dropdown-item"
+            data-toggle="modal"
+            href="#feedback-modal"
+          >
+            Feedback
+          </a>
+        </div>
+         
+        <div>
+          <span
+            class="vl bg-light"
+          />
+           
+          <!---->
+        </div>
+         
+        <div
+          class="nav-item dropdown initials"
+        >
+          <a
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="dropdown-toggle initials-link"
+            data-toggle="dropdown"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            to="/login"
+          >
+            MD
+          </a>
+           
+          <div
+            aria-labelledby="navbarDropdown"
+            class="dropdown-menu"
+          >
+            <a
+              class="dropdown-item"
+            >
+              <span
+                class="icon-profile"
+              >
+                <i
+                  class="fal fa-user-circle"
+                />
+              </span>
+              
+            Profile
+          
+            </a>
+             
+            <div
+              class="dropdown-divider"
+            />
+             
+            <a
+              class="dropdown-item"
+            >
+              <span
+                class="icon-settings"
+              >
+                <i
+                  class="fal fa-cog"
+                />
+              </span>
+              
+            Settings
+          
+            </a>
+             
+            <div
+              class="dropdown-divider"
+            />
+             
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              <span
+                class="icon-power"
+              >
+                <i
+                  class="far fa-power-off"
+                />
+              </span>
+              
+            Sign Out
+          
+            </a>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="collapse navbar-collapse"
+      >
+        <ul
+          class="navbar-nav ml-auto"
+        >
+          <li
+            class="nav-item active"
+          >
+            <a
+              class="nav-link"
+            >
+              Home
+            
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+            </a>
+          </li>
+           
+          <li
+            class="nav-item"
+          >
+            <a
+              class="nav-link"
+            >
+              About
+            </a>
+          </li>
+           
+          <li
+            class="nav-item"
+          >
+            <a
+              class="nav-link"
+              href="/photocontest"
+            >
+              Photo Contest
+            </a>
+          </li>
+           
+          <li
+            class="nav-item dropdown pr-4"
+          >
+            <a
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+            >
+              <span
+                id="option-icon"
+              />
+               
+              <span
+                id="option-icon"
+              />
+               
+              <span
+                id="option-icon"
+              />
+            </a>
+             
+            <div
+              aria-labelledby="navbarDropdown"
+              class="dropdown-menu"
+            >
+              <a
+                class="dropdown-item"
+              >
+                Terms
+              </a>
+               
+              <a
+                class="dropdown-item"
+              >
+                Privacy
+              </a>
+               
+              <a
+                class="dropdown-item"
+                href="#"
+              >
+                FAQ
+              </a>
+               
+              <div
+                class="dropdown-divider"
+              />
+               
+              <a
+                class="dropdown-item"
+                data-toggle="modal"
+                href="#feedback-modal"
+              >
+                Feedback
+              </a>
+            </div>
+          </li>
+        </ul>
+         
+        <div
+          class="form-inline my-2 my-lg-0 pr-4"
+        >
+          <!---->
+           
+          <div
+            class="nav-item dropdown initials"
+          >
+            <a
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="dropdown-toggle initials-link"
+              data-toggle="dropdown"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              to="/login"
+            >
+              MD
+            </a>
+             
+            <div
+              aria-labelledby="navbarDropdown"
+              class="dropdown-menu"
+            >
+              <a
+                class="dropdown-item"
+              >
+                <span
+                  class="icon-profile"
+                >
+                  <i
+                    class="fal fa-user-circle"
+                  />
+                </span>
+                
+              Profile
+            
+              </a>
+               
+              <div
+                class="dropdown-divider"
+              />
+               
+              <a
+                class="dropdown-item"
+              >
+                <span
+                  class="icon-settings"
+                >
+                  <i
+                    class="fal fa-cog"
+                  />
+                </span>
+                
+              Settings
+            
+              </a>
+               
+              <div
+                class="dropdown-divider"
+              />
+               
+              <a
+                class="dropdown-item"
+                href="#"
+              >
+                <span
+                  class="icon-power"
+                >
+                  <i
+                    class="far fa-power-off"
+                  />
+                </span>
+                
+              Sign Out
+            
+              </a>
+            </div>
+          </div>
+           
+          <span
+            class="vl bg-light"
+          />
+           
+          <a
+            class="publish-link"
+          >
+            Publish
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+   
+  <div
+    class="container my-3 mb-5"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-lg-5 d-none d-sm-block mb-4"
+      >
+        <div
+          class="col-lg-12 mr-2"
+        >
+          <main
+            class="card profile"
+          >
+            <img
+              alt="..."
+              class="card-img-top"
+              src="@/assets/Avatar.png"
+            />
+             
+            <div
+              class="profile-edit-icon d-flex justify-content-between p-3"
+            >
+              <span
+                class="d-inline d-sm-none bl-back-arrow"
+              >
+                <i
+                  class="fal fa-long-arrow-left fa-2x back-arrow"
+                />
+              </span>
+               
+              <i
+                class="fal fa-user-edit fa-2x"
+              />
+            </div>
+             
+            <div
+              class="avatar mx-4"
+            >
+              <img
+                alt="..."
+                class="profile-img rounded"
+                src="@/assets/Avatar2.png"
+              />
+               
+              <span
+                class="profile-name pl-3"
+              >
+                Johndoe
+              </span>
+            </div>
+             
+            <div
+              class="card-body profile-body"
+            >
+              <h5
+                class="card-title"
+              >
+                John Doe
+              </h5>
+               
+              <p
+                class="contact"
+              >
+                <span
+                  class="pr-2 pb-5"
+                >
+                  <i
+                    class="fal fa-phone"
+                  />
+                </span>
+                 +234 000 000 0000
+    
+              </p>
+               
+              <p>
+                <span
+                  class="pr-2 py-1"
+                >
+                  <i
+                    class="fal fa-envelope"
+                  />
+                </span>
+                 email@bloverse.com
+    
+              </p>
+               
+              <p>
+                <span
+                  class="pr-2"
+                >
+                  <i
+                    class="fal fa-map-marker-alt"
+                  />
+                </span>
+                 Lagos, Nigeria
+    
+              </p>
+               
+              <div
+                class="py-4 profile-content"
+              >
+                <p
+                  class="profile__text"
+                >
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+              </div>
+               
+              <!---->
+               
+              <div
+                class="follow d-flex align-items-center"
+              >
+                <a
+                  data-toggle=""
+                  href="#"
+                >
+                  Followers
+                </a>
+                 
+                <span
+                  class="badge followers-icon badge-primary ml-2"
+                >
+                  5
+                </span>
+              </div>
+            </div>
+             
+            <div
+              class="interests"
+            >
+              <main
+                class="card category-card p-4 p-sm-3"
+              >
+                <div
+                  class="header d-flex justify-content-between "
+                >
+                  <h5>
+                    <strong>
+                      Interest
+                    </strong>
+                  </h5>
+                   
+                  <span
+                    class="edit-icon"
+                  >
+                    <i
+                      class="fal fa-edit mr-2"
+                    />
+                  </span>
+                </div>
+                 
+                <div
+                  class="mt-1"
+                >
+                  <p
+                    class="category-title"
+                  >
+                    Lorem ipsum dolor sit amet
+                  </p>
+                   
+                  <div
+                    class="category-list d-flex flex-wrap mt-2"
+                  >
+                    <div
+                      class="category border rounded my-1 mr-2 p-2"
+                    >
+                      <span>
+                        Category One
+                      </span>
+                    </div>
+                     
+                    <div
+                      class="category border rounded my-1 mr-2 p-2"
+                    >
+                      <span>
+                        Category Two
+                      </span>
+                    </div>
+                     
+                    <div
+                      class="category border rounded my-1 mr-2 p-2"
+                    >
+                      <span>
+                        Category Three
+                      </span>
+                    </div>
+                     
+                    <div
+                      class="category border rounded my-1 mr-2 p-2"
+                    >
+                      <span>
+                        Category Four
+                      </span>
+                    </div>
+                     
+                    <div
+                      class="category border rounded my-1 mr-2 p-2"
+                    >
+                      <span>
+                        Category Five
+                      </span>
+                    </div>
+                     
+                    <div
+                      class="category border rounded my-1 mr-2 p-2"
+                    >
+                      <span>
+                        Category Six
+                      </span>
+                    </div>
+                     
+                    <div
+                      class="category border rounded my-1 mr-2 p-2"
+                    >
+                      <span>
+                        Category Seven
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </main>
+            </div>
+             
+            <div
+              class="social p-3"
+            >
+              <h5
+                class="mb-2"
+              >
+                <strong>
+                  Social Media
+                </strong>
+              </h5>
+               
+              <div
+                class="d-flex flex-wrap"
+              >
+                <div
+                  class="mr-2"
+                >
+                  <div
+                    class="border rounded p-2 mb-1 d-flex align-items-center"
+                  >
+                    <img
+                      alt="facebook"
+                      class="social-icon"
+                      src="@/assets/facebook-square.svg"
+                    />
+                     
+                    <h6
+                      class="social-text text-center pl-2"
+                    >
+                      Facebook
+                    </h6>
+                  </div>
+                </div>
+                 
+                <div
+                  class="mr-2"
+                >
+                  <div
+                    class="border rounded p-2 mb-1 d-flex align-items-center"
+                  >
+                    <img
+                      alt="facebook"
+                      class="social-icon"
+                      src="@/assets/twitter-square.svg"
+                    />
+                     
+                    <h6
+                      class="social-text text-center pl-2"
+                    >
+                      Twitter
+                    </h6>
+                  </div>
+                </div>
+                 
+                <div
+                  class="mr-2"
+                >
+                  <div
+                    class="border rounded p-2 mb-1 d-flex align-items-center"
+                  >
+                    <img
+                      alt="facebook"
+                      class="social-icon"
+                      src="@/assets/instagram-square.svg"
+                    />
+                     
+                    <h6
+                      class="social-text text-center pl-2"
+                    >
+                      Instagram
+                    </h6>
+                  </div>
+                </div>
+                 
+                <div
+                  class="mr-2"
+                >
+                  <div
+                    class="border rounded p-2 mb-1 d-flex align-items-center"
+                  >
+                    <img
+                      alt="facebook"
+                      class="social-icon"
+                      src="@/assets/linkedin-square.svg"
+                    />
+                     
+                    <h6
+                      class="social-text text-center pl-2"
+                    >
+                      Linkedin
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="card-footer text-muted bg-white footer-color"
+            >
+              Member Since:
+    
+              <span
+                class="text-dark"
+              >
+                27 December, 2018
+              </span>
+            </div>
+             
+            <main
+              id="bl-modal"
+            >
+              <div
+                aria-hidden="true"
+                aria-labelledby="customModal"
+                class="modal fade"
+                id="following-modal"
+                role="dialog"
+                tabindex="-1"
+              >
+                <div
+                  class="modal-dialog modal-dialog-centered"
+                  role="document"
+                >
+                  <div
+                    class="modal-content"
+                  >
+                    <div
+                      class="modal-header"
+                    >
+                      <h5
+                        class="modal-title"
+                        id="customModal"
+                      >
+                        Following
+                      </h5>
+                       
+                      <div>
+                        <!---->
+                         
+                        <!---->
+                      </div>
+                       
+                      <button
+                        aria-label="Close"
+                        class="close"
+                        data-dismiss="modal"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                        >
+                          ×
+                        </span>
+                      </button>
+                    </div>
+                     
+                    <div
+                      class="modal-body"
+                    >
+                      <div
+                        class="bl-modal-content"
+                      >
+                        <div
+                          class="row align-items-center mt-2 mb-2"
+                        >
+                          <div
+                            class="col-3 col-md-2 d-flex justify-content-center"
+                          >
+                            <img
+                              class="user-image img-fluid"
+                              src="@/assets/smiling-author.jpg"
+                            />
+                          </div>
+                           
+                          <div
+                            class="col-9 col-sm-9 col-md-6 pl-0"
+                          >
+                            <p
+                              class="username"
+                            >
+                              
+            JohnDoe
+            
+                              <span
+                                class="sub-span point d-inline d-md-none"
+                              >
+                                <a
+                                  href="#"
+                                >
+                                  Unfollow
+                                </a>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="sub-text d-flex flex-wrap"
+                            >
+                              <span>
+                                <span
+                                  class="sub-span"
+                                >
+                                  24
+                                </span>
+                                 Followers
+                              </span>
+                               
+                              <span>
+                                <span
+                                  class="sub-span point"
+                                >
+                                  234
+                                </span>
+                                 Articles
+                              </span>
+                            </p>
+                          </div>
+                           
+                          <div
+                            class="d-none d-sm-none col-md-4 d-md-flex justify-content-end"
+                          >
+                            <button
+                              class="btn btn-outline-primary"
+                              type="button"
+                            >
+                              Following
+                            </button>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="row align-items-center mt-2 mb-2"
+                        >
+                          <div
+                            class="col-3 col-md-2 d-flex justify-content-center"
+                          >
+                            <img
+                              class="user-image img-fluid"
+                              src="@/assets/smiling-author.jpg"
+                            />
+                          </div>
+                           
+                          <div
+                            class="col-9 col-sm-9 col-md-6 pl-0"
+                          >
+                            <p
+                              class="username"
+                            >
+                              
+            JohnDoe
+            
+                              <span
+                                class="sub-span point d-inline d-md-none"
+                              >
+                                <a
+                                  href="#"
+                                >
+                                  Unfollow
+                                </a>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="sub-text d-flex flex-wrap"
+                            >
+                              <span>
+                                <span
+                                  class="sub-span"
+                                >
+                                  24
+                                </span>
+                                 Followers
+                              </span>
+                               
+                              <span>
+                                <span
+                                  class="sub-span point"
+                                >
+                                  234
+                                </span>
+                                 Articles
+                              </span>
+                            </p>
+                          </div>
+                           
+                          <div
+                            class="d-none d-sm-none col-md-4 d-md-flex justify-content-end"
+                          >
+                            <button
+                              class="btn btn-outline-primary"
+                              type="button"
+                            >
+                              Following
+                            </button>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="row align-items-center mt-2 mb-2"
+                        >
+                          <div
+                            class="col-3 col-md-2 d-flex justify-content-center"
+                          >
+                            <img
+                              class="user-image img-fluid"
+                              src="@/assets/smiling-author.jpg"
+                            />
+                          </div>
+                           
+                          <div
+                            class="col-9 col-sm-9 col-md-6 pl-0"
+                          >
+                            <p
+                              class="username"
+                            >
+                              
+            JohnDoe
+            
+                              <span
+                                class="sub-span point d-inline d-md-none"
+                              >
+                                <a
+                                  href="#"
+                                >
+                                  Unfollow
+                                </a>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="sub-text d-flex flex-wrap"
+                            >
+                              <span>
+                                <span
+                                  class="sub-span"
+                                >
+                                  24
+                                </span>
+                                 Followers
+                              </span>
+                               
+                              <span>
+                                <span
+                                  class="sub-span point"
+                                >
+                                  234
+                                </span>
+                                 Articles
+                              </span>
+                            </p>
+                          </div>
+                           
+                          <div
+                            class="d-none d-sm-none col-md-4 d-md-flex justify-content-end"
+                          >
+                            <button
+                              class="btn btn-outline-primary"
+                              type="button"
+                            >
+                              Following
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     
+                    <!---->
+                  </div>
+                </div>
+              </div>
+            </main>
+          </main>
+        </div>
+         
+        <div
+          class="col-lg-12 mr-2"
+        >
+          <div
+            class="bg-white publish-container"
+          >
+            <div
+              class="publish-link-container"
+            >
+              <a
+                class="publish-link btn"
+              >
+                Publish An Article
+              </a>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="col-lg-12 mt-2"
+        >
+          <main
+            id="bl-actions"
+          >
+            <div
+              class="bg-white p-4"
+            >
+              <div
+                class="row mb-3"
+              >
+                <div
+                  class="col-8"
+                >
+                  <h6
+                    class="text-primary"
+                  >
+                    <i
+                      class="fal fa-rocket"
+                    />
+                     Posts
+                  </h6>
+                   
+                  <p
+                    class="text-muted mt-2"
+                  >
+                    Update your information
+                  </p>
+                </div>
+                 
+                <div
+                  class="col-4 d-flex justify-content-end align-items-center"
+                >
+                  <span
+                    class="badge badge-primary"
+                  >
+                    4
+                  </span>
+                </div>
+              </div>
+               
+              <div
+                class="row mb-3"
+              >
+                <div
+                  class="col-8"
+                >
+                  <a>
+                    <h6
+                      class="text-primary"
+                    >
+                      <i
+                        class="far fa-edit"
+                      />
+                       Drafts
+                    </h6>
+                     
+                    <p
+                      class="text-muted mt-2"
+                    >
+                      Update your information
+                    </p>
+                  </a>
+                </div>
+                 
+                <div
+                  class="col-4 d-flex justify-content-end align-items-center"
+                >
+                  <span
+                    class="badge badge-primary"
+                  >
+                    4
+                  </span>
+                </div>
+              </div>
+               
+              <div
+                class="row mb-3"
+              >
+                <div
+                  class="col-12"
+                >
+                  <h6
+                    class="text-primary"
+                  >
+                    <i
+                      class="fal fa-trash-alt"
+                    />
+                     Trash
+                  </h6>
+                   
+                  <p
+                    class="text-muted mt-2"
+                  >
+                    Update your information
+                  </p>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="col-lg-12 mr-2 mt-2"
+        >
+          <div
+            class="card contest-advert bg-white"
+          >
+            <div
+              class="card-img-overlay"
+            >
+              <h3
+                class="card-title text-capitalize"
+              >
+                Become a Content Consumer
+              </h3>
+               
+              <p
+                class="card-text text-capitalize caption"
+              >
+                Publish your article to the world
+              </p>
+               
+              <span
+                class="d-flex justify-content-between mb-0"
+              >
+                <a
+                  class="mt-4"
+                  href=""
+                >
+                  Know more
+                </a>
+                 
+                <a
+                  class="btn know-more-btn"
+                  href="#"
+                  role="button"
+                >
+                  Apply
+                </a>
+              </span>
+            </div>
+          </div>
+           
+          <div
+            class="bl-footer"
+          >
+            <div
+              class="row company-name d-flex justify-content-center align-items-center"
+            >
+              <div
+                class="col-sm-3 text-lowercase"
+              >
+                bloverse
+              </div>
+               
+              <p
+                class="col-sm-9"
+              >
+                <span
+                  class="text-capitalize dots"
+                >
+                  terms
+                </span>
+                 
+                <span
+                  class="text-capitalize dots"
+                >
+                  privacy
+                </span>
+                 
+                <span
+                  class="text-capitalize"
+                >
+                  feedback
+                </span>
+              </p>
+            </div>
+             
+            <p
+              class="row company-rights text-capitalize"
+            >
+              2018 Bloverse. All Right Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="d-inline-flex d-sm-none initials"
+      >
+        <a
+          class="initials-link"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+        >
+          SM
+        </a>
+         
+        <i
+          class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"
+        />
+      </div>
+       
+      <div
+        class="col-12 col-lg-7 col-xl-7  right-section p-0"
+      >
+        <h4>
+          <b>
+            Posts
+          </b>
+        </h4>
+         
+        <div
+          class="mt-4 px-4 bg-white"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="mx-4 d-none d-sm-block w-100"
+            >
+              <nav
+                class="navbar navbar-expand-lg navbar-light bg-white
+                justify-content-end profile-navbar  border_bottom"
+              >
+                <div>
+                  <ul
+                    class="navbar-nav flex-row layout-nav"
+                  >
+                    <li
+                      class="nav-item mr-4 py-2 active"
+                    >
+                      <span
+                        class="nav-link list-view"
+                        to="#"
+                      >
+                        <span>
+                          <i
+                            class="fal fa-th-list mr-1  icon--active"
+                          />
+                        </span>
+                         
+                         List 
+                        <span
+                          class="sr-only"
+                        >
+                          (current)
+                        </span>
+                      </span>
+                    </li>
+                     
+                    <li
+                      class="nav-item mr-4 py-2"
+                    >
+                      <span
+                        class="nav-link grid-view"
+                        to="#"
+                      >
+                        <span>
+                          <i
+                            class="fal fa-th-large mr-1"
+                          />
+                        </span>
+                        
+                        
+                         Grid 
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+             
+            <div
+              class="list_view creator_profile__post"
+            >
+              <main
+                class="container bl-postcards"
+                id="bl-postcards"
+              >
+                <main
+                  class="card bl-postcard hideCardBorder"
+                  id="bl-postcard"
+                >
+                  <div
+                    class="card-body bl-postcard-body"
+                  >
+                    <div
+                      class="card-title row title"
+                    >
+                      <div
+                        class="col-9 row title--text"
+                      >
+                        <span
+                          class="col-3"
+                        >
+                          category
+                        </span>
+                         
+                        <p
+                          class="col-5 col-sm-6 font-weight-bold description"
+                        >
+                          <a>
+                            
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          
+                          </a>
+                        </p>
+                         
+                        <p
+                          class="col-4 col-sm-3 username"
+                        >
+                          <a
+                            class="btn btn-primary initials"
+                            href="#"
+                            role="button"
+                          >
+                            SM
+                          </a>
+                          
+           
+          
+                          <span
+                            class="font-weight-normal name"
+                          >
+                            Johndoe
+                          </span>
+                          
+           
+          
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="col-3 title--image"
+                        style="background-image: url(test-file-stub);"
+                      />
+                    </div>
+                     
+                    <div
+                      class="card-text keypoints"
+                      style="display: none;"
+                    >
+                      <span
+                        class="font-weight-bold text-capitalize"
+                      >
+                        keypoint
+                      </span>
+                       
+                      <ul
+                        class="keypoints--lists"
+                      >
+                        <li>
+                          Phasellus iaculis nequeghjhjjkjjkjkhjk
+                        </li>
+                         
+                        <li>
+                          Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                        </li>
+                         
+                        <li>
+                          Vestibulum laoreet porttitor sem
+                        </li>
+                      </ul>
+                    </div>
+                     
+                    <div
+                      class="card-text row actions"
+                    >
+                      <div
+                        class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                      >
+                        <i
+                          class="fal fa-eye"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          123
+                        </span>
+                      </div>
+                       
+                      <div
+                        class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                      >
+                        <div
+                          class="col-7 col-sm-4 likes"
+                        >
+                          <p
+                            class="thumbs-up"
+                          >
+                            <i
+                              class="fal fa-thumbs-up"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              18
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-up"
+                            style="display: none;"
+                          >
+                            <i
+                              class="fas fa-thumbs-up"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              18
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-down"
+                          >
+                            <i
+                              class="fal fa-thumbs-down"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-down"
+                            style="display: none;"
+                          >
+                            <i
+                              class="fas fa-thumbs-down"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="col-3 col-sm-7 comments"
+                        >
+                          <p
+                            class="coment"
+                          >
+                            <i
+                              class="fal fa-comment-dots"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="share"
+                          >
+                            <i
+                              class="fal fa-share"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                           
+                          <div
+                            class="ellipsis"
+                          >
+                            <span
+                              aria-expanded="false"
+                              aria-haspopup="true"
+                              class="nav-link dropdown-toggle"
+                              data-toggle="dropdown"
+                              href="#"
+                              id="navbarDropdown"
+                              role="button"
+                            >
+                              <i
+                                class="fal fa-ellipsis-h"
+                              />
+                            </span>
+                             
+                            <div
+                              aria-labelledby="dropdownMenuReference"
+                              class="dropdown-menu bl-dropdown-menu"
+                            >
+                              <div
+                                class="d-flex bl-dropdown-menu__countries"
+                              >
+                                <div
+                                  class="favourite-countries"
+                                >
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    Report Post
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-plus"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Creators Profile
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-bookmark"
+                                  >
+                                    <i
+                                      class="fal fa-bookmark"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Later
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-bookmark"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-bookmark"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Later
+                                    </span>
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-story"
+                                  >
+                                    <i
+                                      class="fal fa-book-open"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Story
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-story"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-book-open"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Story
+                                    </span>
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-comment-dots"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Comment
+                      
+                                      <span
+                                        class="badges"
+                                      >
+                                        5
+                                      </span>
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-share"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Share
+                      
+                                      <span
+                                        class="badges"
+                                      >
+                                        5
+                                      </span>
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="col-2 col-sm-1 toggle-keypoints"
+                          style="display: none;"
+                        >
+                          <i
+                            class="fal fa-angle-up"
+                          />
+                        </div>
+                         
+                        <div
+                          class="col-2 col-sm-1 toggle-keypoints"
+                        >
+                          <i
+                            class="fal fa-angle-down"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </main>
+                 
+                <main
+                  class="card bl-postcard hideCardBorder"
+                  id="bl-postcard"
+                >
+                  <div
+                    class="card-body bl-postcard-body"
+                  >
+                    <div
+                      class="card-title row title"
+                    >
+                      <div
+                        class="col-9 row title--text"
+                      >
+                        <span
+                          class="col-3"
+                        >
+                          category
+                        </span>
+                         
+                        <p
+                          class="col-5 col-sm-6 font-weight-bold description"
+                        >
+                          <a>
+                            
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          
+                          </a>
+                        </p>
+                         
+                        <p
+                          class="col-4 col-sm-3 username"
+                        >
+                          <a
+                            class="btn btn-primary initials"
+                            href="#"
+                            role="button"
+                          >
+                            SM
+                          </a>
+                          
+           
+          
+                          <span
+                            class="font-weight-normal name"
+                          >
+                            Johndoe
+                          </span>
+                          
+           
+          
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="col-3 title--image"
+                        style="background-image: url(test-file-stub);"
+                      />
+                    </div>
+                     
+                    <div
+                      class="card-text keypoints"
+                      style="display: none;"
+                    >
+                      <span
+                        class="font-weight-bold text-capitalize"
+                      >
+                        keypoint
+                      </span>
+                       
+                      <ul
+                        class="keypoints--lists"
+                      >
+                        <li>
+                          Phasellus iaculis nequeghjhjjkjjkjkhjk
+                        </li>
+                         
+                        <li>
+                          Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                        </li>
+                         
+                        <li>
+                          Vestibulum laoreet porttitor sem
+                        </li>
+                      </ul>
+                    </div>
+                     
+                    <div
+                      class="card-text row actions"
+                    >
+                      <div
+                        class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                      >
+                        <i
+                          class="fal fa-eye"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          123
+                        </span>
+                      </div>
+                       
+                      <div
+                        class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                      >
+                        <div
+                          class="col-7 col-sm-4 likes"
+                        >
+                          <p
+                            class="thumbs-up"
+                          >
+                            <i
+                              class="fal fa-thumbs-up"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              18
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-up"
+                            style="display: none;"
+                          >
+                            <i
+                              class="fas fa-thumbs-up"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              18
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-down"
+                          >
+                            <i
+                              class="fal fa-thumbs-down"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-down"
+                            style="display: none;"
+                          >
+                            <i
+                              class="fas fa-thumbs-down"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="col-3 col-sm-7 comments"
+                        >
+                          <p
+                            class="coment"
+                          >
+                            <i
+                              class="fal fa-comment-dots"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="share"
+                          >
+                            <i
+                              class="fal fa-share"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                           
+                          <div
+                            class="ellipsis"
+                          >
+                            <span
+                              aria-expanded="false"
+                              aria-haspopup="true"
+                              class="nav-link dropdown-toggle"
+                              data-toggle="dropdown"
+                              href="#"
+                              id="navbarDropdown"
+                              role="button"
+                            >
+                              <i
+                                class="fal fa-ellipsis-h"
+                              />
+                            </span>
+                             
+                            <div
+                              aria-labelledby="dropdownMenuReference"
+                              class="dropdown-menu bl-dropdown-menu"
+                            >
+                              <div
+                                class="d-flex bl-dropdown-menu__countries"
+                              >
+                                <div
+                                  class="favourite-countries"
+                                >
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    Report Post
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-plus"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Creators Profile
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-bookmark"
+                                  >
+                                    <i
+                                      class="fal fa-bookmark"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Later
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-bookmark"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-bookmark"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Later
+                                    </span>
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-story"
+                                  >
+                                    <i
+                                      class="fal fa-book-open"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Story
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-story"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-book-open"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Story
+                                    </span>
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-comment-dots"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Comment
+                      
+                                      <span
+                                        class="badges"
+                                      >
+                                        5
+                                      </span>
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-share"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Share
+                      
+                                      <span
+                                        class="badges"
+                                      >
+                                        5
+                                      </span>
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="col-2 col-sm-1 toggle-keypoints"
+                          style="display: none;"
+                        >
+                          <i
+                            class="fal fa-angle-up"
+                          />
+                        </div>
+                         
+                        <div
+                          class="col-2 col-sm-1 toggle-keypoints"
+                        >
+                          <i
+                            class="fal fa-angle-down"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </main>
+                 
+                <main
+                  class="card bl-postcard hideCardBorder"
+                  id="bl-postcard"
+                >
+                  <div
+                    class="card-body bl-postcard-body"
+                  >
+                    <div
+                      class="card-title row title"
+                    >
+                      <div
+                        class="col-9 row title--text"
+                      >
+                        <span
+                          class="col-3"
+                        >
+                          category
+                        </span>
+                         
+                        <p
+                          class="col-5 col-sm-6 font-weight-bold description"
+                        >
+                          <a>
+                            
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          
+                          </a>
+                        </p>
+                         
+                        <p
+                          class="col-4 col-sm-3 username"
+                        >
+                          <a
+                            class="btn btn-primary initials"
+                            href="#"
+                            role="button"
+                          >
+                            SM
+                          </a>
+                          
+           
+          
+                          <span
+                            class="font-weight-normal name"
+                          >
+                            Johndoe
+                          </span>
+                          
+           
+          
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="col-3 title--image"
+                        style="background-image: url(test-file-stub);"
+                      />
+                    </div>
+                     
+                    <div
+                      class="card-text keypoints"
+                      style="display: none;"
+                    >
+                      <span
+                        class="font-weight-bold text-capitalize"
+                      >
+                        keypoint
+                      </span>
+                       
+                      <ul
+                        class="keypoints--lists"
+                      >
+                        <li>
+                          Phasellus iaculis nequeghjhjjkjjkjkhjk
+                        </li>
+                         
+                        <li>
+                          Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                        </li>
+                         
+                        <li>
+                          Vestibulum laoreet porttitor sem
+                        </li>
+                      </ul>
+                    </div>
+                     
+                    <div
+                      class="card-text row actions"
+                    >
+                      <div
+                        class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                      >
+                        <i
+                          class="fal fa-eye"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          123
+                        </span>
+                      </div>
+                       
+                      <div
+                        class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                      >
+                        <div
+                          class="col-7 col-sm-4 likes"
+                        >
+                          <p
+                            class="thumbs-up"
+                          >
+                            <i
+                              class="fal fa-thumbs-up"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              18
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-up"
+                            style="display: none;"
+                          >
+                            <i
+                              class="fas fa-thumbs-up"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              18
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-down"
+                          >
+                            <i
+                              class="fal fa-thumbs-down"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-down"
+                            style="display: none;"
+                          >
+                            <i
+                              class="fas fa-thumbs-down"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="col-3 col-sm-7 comments"
+                        >
+                          <p
+                            class="coment"
+                          >
+                            <i
+                              class="fal fa-comment-dots"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="share"
+                          >
+                            <i
+                              class="fal fa-share"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                           
+                          <div
+                            class="ellipsis"
+                          >
+                            <span
+                              aria-expanded="false"
+                              aria-haspopup="true"
+                              class="nav-link dropdown-toggle"
+                              data-toggle="dropdown"
+                              href="#"
+                              id="navbarDropdown"
+                              role="button"
+                            >
+                              <i
+                                class="fal fa-ellipsis-h"
+                              />
+                            </span>
+                             
+                            <div
+                              aria-labelledby="dropdownMenuReference"
+                              class="dropdown-menu bl-dropdown-menu"
+                            >
+                              <div
+                                class="d-flex bl-dropdown-menu__countries"
+                              >
+                                <div
+                                  class="favourite-countries"
+                                >
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    Report Post
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-plus"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Creators Profile
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-bookmark"
+                                  >
+                                    <i
+                                      class="fal fa-bookmark"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Later
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-bookmark"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-bookmark"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Later
+                                    </span>
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-story"
+                                  >
+                                    <i
+                                      class="fal fa-book-open"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Story
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-story"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-book-open"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Story
+                                    </span>
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-comment-dots"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Comment
+                      
+                                      <span
+                                        class="badges"
+                                      >
+                                        5
+                                      </span>
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-share"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Share
+                      
+                                      <span
+                                        class="badges"
+                                      >
+                                        5
+                                      </span>
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="col-2 col-sm-1 toggle-keypoints"
+                          style="display: none;"
+                        >
+                          <i
+                            class="fal fa-angle-up"
+                          />
+                        </div>
+                         
+                        <div
+                          class="col-2 col-sm-1 toggle-keypoints"
+                        >
+                          <i
+                            class="fal fa-angle-down"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </main>
+                 
+                <main
+                  class="card bl-postcard hideCardBorder"
+                  id="bl-postcard"
+                >
+                  <div
+                    class="card-body bl-postcard-body"
+                  >
+                    <div
+                      class="card-title row title"
+                    >
+                      <div
+                        class="col-9 row title--text"
+                      >
+                        <span
+                          class="col-3"
+                        >
+                          category
+                        </span>
+                         
+                        <p
+                          class="col-5 col-sm-6 font-weight-bold description"
+                        >
+                          <a>
+                            
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+          
+                          </a>
+                        </p>
+                         
+                        <p
+                          class="col-4 col-sm-3 username"
+                        >
+                          <a
+                            class="btn btn-primary initials"
+                            href="#"
+                            role="button"
+                          >
+                            SM
+                          </a>
+                          
+           
+          
+                          <span
+                            class="font-weight-normal name"
+                          >
+                            Johndoe
+                          </span>
+                          
+           
+          
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="col-3 title--image"
+                        style="background-image: url(test-file-stub);"
+                      />
+                    </div>
+                     
+                    <div
+                      class="card-text keypoints"
+                      style="display: none;"
+                    >
+                      <span
+                        class="font-weight-bold text-capitalize"
+                      >
+                        keypoint
+                      </span>
+                       
+                      <ul
+                        class="keypoints--lists"
+                      >
+                        <li>
+                          Phasellus iaculis nequeghjhjjkjjkjkhjk
+                        </li>
+                         
+                        <li>
+                          Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with
+                        </li>
+                         
+                        <li>
+                          Vestibulum laoreet porttitor sem
+                        </li>
+                      </ul>
+                    </div>
+                     
+                    <div
+                      class="card-text row actions"
+                    >
+                      <div
+                        class="col-5 col-sm-7 col-md-5 col-lg-7 views"
+                      >
+                        <i
+                          class="fal fa-eye"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          123
+                        </span>
+                      </div>
+                       
+                      <div
+                        class="col-7 col-sm-5 col-md-7 col-lg-5 row others"
+                      >
+                        <div
+                          class="col-7 col-sm-4 likes"
+                        >
+                          <p
+                            class="thumbs-up"
+                          >
+                            <i
+                              class="fal fa-thumbs-up"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              18
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-up"
+                            style="display: none;"
+                          >
+                            <i
+                              class="fas fa-thumbs-up"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              18
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-down"
+                          >
+                            <i
+                              class="fal fa-thumbs-down"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="thumbs-down"
+                            style="display: none;"
+                          >
+                            <i
+                              class="fas fa-thumbs-down"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="col-3 col-sm-7 comments"
+                        >
+                          <p
+                            class="coment"
+                          >
+                            <i
+                              class="fal fa-comment-dots"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              67
+                            </span>
+                          </p>
+                           
+                          <p
+                            class="share"
+                          >
+                            <i
+                              class="fal fa-share"
+                            />
+                             
+                            <span
+                              class="count"
+                            >
+                              1
+                            </span>
+                          </p>
+                           
+                          <div
+                            class="ellipsis"
+                          >
+                            <span
+                              aria-expanded="false"
+                              aria-haspopup="true"
+                              class="nav-link dropdown-toggle"
+                              data-toggle="dropdown"
+                              href="#"
+                              id="navbarDropdown"
+                              role="button"
+                            >
+                              <i
+                                class="fal fa-ellipsis-h"
+                              />
+                            </span>
+                             
+                            <div
+                              aria-labelledby="dropdownMenuReference"
+                              class="dropdown-menu bl-dropdown-menu"
+                            >
+                              <div
+                                class="d-flex bl-dropdown-menu__countries"
+                              >
+                                <div
+                                  class="favourite-countries"
+                                >
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    Report Post
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-plus"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Creators Profile
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-bookmark"
+                                  >
+                                    <i
+                                      class="fal fa-bookmark"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Later
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-bookmark"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-bookmark"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Later
+                                    </span>
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-story"
+                                  >
+                                    <i
+                                      class="fal fa-book-open"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Story
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country toggle-story"
+                                    style="display: none;"
+                                  >
+                                    <i
+                                      class="fas fa-book-open"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Read Story
+                                    </span>
+                                  </p>
+                                   
+                                  <hr />
+                                   
+                                  <hr />
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-comment-dots"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Comment
+                      
+                                      <span
+                                        class="badges"
+                                      >
+                                        5
+                                      </span>
+                                    </span>
+                                  </p>
+                                   
+                                  <p
+                                    class="dropdown-item country"
+                                  >
+                                    <i
+                                      class="fal fa-share"
+                                    />
+                                     
+                                    <span
+                                      class="count"
+                                    >
+                                      Share
+                      
+                                      <span
+                                        class="badges"
+                                      >
+                                        5
+                                      </span>
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         
+                        <div
+                          class="col-2 col-sm-1 toggle-keypoints"
+                          style="display: none;"
+                        >
+                          <i
+                            class="fal fa-angle-up"
+                          />
+                        </div>
+                         
+                        <div
+                          class="col-2 col-sm-1 toggle-keypoints"
+                        >
+                          <i
+                            class="fal fa-angle-down"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </main>
+              </main>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="footer-container d-block d-lg-none d-xl-none"
+  >
+    <p>
+      <span
+        class="bloverse"
+      >
+        Bloverse
+      </span>
+       2019. All rights reserved
+    </p>
+  </div>
+</main>
+`;

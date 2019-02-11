@@ -29,6 +29,7 @@ import ChangePassword from '../src/views/general/ChangePassword/ChangePassword.v
 import CreatorHomePage from '../src/views/journalists/CreatorHome/CreatorHomePage';
 import CreatorApply from '../src/views/journalists/CreatorApply/CreatorApplyPage.vue';
 import CreatorProfile from '../src/views/journalists/Profile/ProfilePage';
+import CreatorPosts from '../src/views/journalists/ProfilePost/ProfilePost';
 import EmailPrefrence from '../src/views/journalists/EmailPrefrence/EmailPrefrencePage.vue';
 import Drafts from '../src/views/journalists/Drafts/DraftsPage';
 
@@ -100,6 +101,7 @@ const routes = [
       { path: 'apply', component: CreatorApply },
       { path: 'email-settings', component: EmailPrefrence },
       { path: 'profile', component: CreatorProfile },
+      { path: 'profile/posts', component: CreatorPosts},
       { path: 'drafts', component: Drafts },
       {
         path: 'setup', component: JournalistSetUp,
