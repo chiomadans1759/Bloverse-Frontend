@@ -449,7 +449,9 @@ exports[`Drafts Component should render correctly 1`] = `
                 John Doe
               </h5>
                
-              <p>
+              <p
+                class="contact"
+              >
                 <span
                   class="pr-2 pb-5"
                 >
@@ -519,7 +521,7 @@ exports[`Drafts Component should render correctly 1`] = `
               class="interests"
             >
               <main
-                class="category-card p-3"
+                class="category-card p-4 p-sm-3"
               >
                 <div
                   class="header d-flex justify-content-between "

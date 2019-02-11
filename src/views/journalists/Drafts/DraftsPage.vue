@@ -8,7 +8,7 @@
             <profile 
               v-if="showMobileProfile"
               :hideMobileUserInfo="hideMobileUserInfo"
-              displayInterest hideFollowing displayFollowers/>
+              displayInterest hideFollowing displayFollowers />
           </div>
           <div class="col-lg-12 mr-2">
             <div class="bg-white publish-container">

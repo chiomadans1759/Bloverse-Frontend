@@ -31,6 +31,7 @@ import CreatorHomePage from '../src/views/journalists/CreatorHome/CreatorHomePag
 import CreatorApply from '../src/views/journalists/CreatorApply/CreatorApplyPage.vue';
 import CreatorProfile from '../src/views/journalists/Profile/ProfilePage';
 import EmailPrefrence from '../src/views/journalists/EmailPrefrence/EmailPrefrencePage.vue';
+import SocialMedia from '../src/views/journalists/SocialMedia/SocialMediaPage.vue';
 import Drafts from '../src/views/journalists/Drafts/DraftsPage';
 
 // Version one routes
@@ -100,6 +101,7 @@ const routes = [
       { path: 'apply', component: CreatorApply },
       { path: 'email-settings', component: EmailPrefrence },
       { path: 'profile', component: CreatorProfile },
+      { path: 'social-media', component: SocialMedia },
       { path: 'drafts', component: Drafts },
       {
         path: 'setup', component: JournalistSetUp,
