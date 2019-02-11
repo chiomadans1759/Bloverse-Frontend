@@ -181,7 +181,7 @@ import { Push } from "vue-burger-menu";
 import DisplayImage from "./DisplayImage";
 import Tinymce from "./Tinymce";
 import PostDetails from "./PostDetails"
-import devices from "../utils/devices.json";
+import devices from "@/utils/devices.json";
 
 export default {
   components: {

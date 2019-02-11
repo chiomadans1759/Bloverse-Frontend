@@ -16,17 +16,17 @@
     </div>
     <div class="card" id="create-card">
       <div class="card-body">
-        <BasicCreatePost :isTravel="isTravel"/>
+        <create-post :isTravel="isTravel"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import BasicCreatePost from "@/components/CreatePostBasic.vue";
+import CreatePost from "@/components/CreatePostBasic.vue";
 
 export default {
-  components: { BasicCreatePost },
+  components: { CreatePost },
   data() {
     return {
       isTravel: false

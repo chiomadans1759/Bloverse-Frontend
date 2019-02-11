@@ -298,7 +298,7 @@ let data = [
         ]
     },
     {
-        "country": "United States Of America",
+        "country": "United States",
         "universities": [
             "Northwestern University",
             "EW Scripps school of journalism and Mass Communication",

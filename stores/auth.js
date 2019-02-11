@@ -199,7 +199,7 @@ export default {
     clearApplicant(state) {
       state.applicant = {
         articleURLs: [],
-        phoneNumber: '',
+        number: '',
         linkedInUsername: '',
         twitterUsername: ''
       };
