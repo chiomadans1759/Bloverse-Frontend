@@ -20,11 +20,9 @@ export default {
       default: ""
     }
   }
-  
 }
 </script>
 
 <style lang="scss" scoped>
 @import './ErrorAlert'
 </style>
-
