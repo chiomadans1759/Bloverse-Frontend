@@ -5,15 +5,15 @@
          <i class="fal fa-arrow-left back-icon"></i>
          <span class="text-muted ml-2">Back</span>
       </a>
-      <p class="nav-link text-uppercase small" v-if="showThis">saving... to draft</p>
-      <button class="btn btn-sm btn-primary-outline preview" v-if="showThis">Preview to post</button>
+      <p class="nav-link text-uppercase small" href="#" v-if="showThis">saving... to draft</p>
+      <button class="btn btn-sm btn-primary-outline preview" href="#" v-if="showThis">Preview to post</button>
     </nav> 
      <div class="container">
        <div class="row">
         <div class="col-lg-1 icon-wrapper mt-4">
           <ul class="text-icons">
             <li>
-              <button class="btn rounded-circle d-flex justify-content-center show" @click.prevent="showTextBox">
+              <button class="btn rounded-circle d-flex justify-content-center" @click.prevent="showTextBox">
                 <i class="fal fa-font"></i>
               </button>
             </li>
