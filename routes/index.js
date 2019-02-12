@@ -33,6 +33,7 @@ import CreatorProfile from '../src/views/journalists/Profile/ProfilePage';
 import EmailPrefrence from '../src/views/journalists/EmailPrefrence/EmailPrefrencePage.vue';
 import SocialMedia from '../src/views/journalists/SocialMedia/SocialMediaPage.vue';
 import Drafts from '../src/views/journalists/Drafts/DraftsPage';
+import CreatorTrash from '../src/views/journalists/TrashPage/TrashPage.vue';
 
 // Version one routes
 import MyProfile from '../src/views/journalists/MyProfile.vue';
@@ -103,6 +104,7 @@ const routes = [
       { path: 'profile', component: CreatorProfile },
       { path: 'social-media', component: SocialMedia },
       { path: 'drafts', component: Drafts },
+      { path: 'trash', component: CreatorTrash },
       {
         path: 'setup', component: JournalistSetUp,
         beforeEnter(to, from, next) {
