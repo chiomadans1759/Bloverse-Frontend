@@ -142,8 +142,52 @@ a {
   }
 }
 
+.no-saved-posts {
+  height: 50vh;
+  &__msg {
+    width: rem(380px);
+    .bookmark {
+      text-align: center;
+      &-img {
+        width: rem(36px);
+        height: rem(50px);
+        color: #B7B7B7;
+        text-align: center;
+        margin: auto;
+      }
+    }
+    .message {
+      font-size: rem(16px);
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: 360px) { 
+  .no-saved-posts {
+    height: 55vh;
+  }
+}
+
 @media screen and (min-width: 700px) {
   .bl-contents {
     background-color: #ffffff !important;
+  }
+  
+  .bl-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .no-saved-posts {
+    height: 30%;
+    margin: rem(60px) 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .no-saved-posts {
+    height: 30%;
+    margin: 0;
   }
 }
