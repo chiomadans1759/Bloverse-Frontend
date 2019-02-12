@@ -1,9 +1,16 @@
 <template>
   <main id="publish-page">
-     <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" />
+    <nav class="nav container d-flex justify-content-between align-items-center publish-nav">
+      <a class="nav-link" @click.prevent="goBack">
+         <i class="fal fa-arrow-left back-icon"></i>
+         <span class="text-muted ml-2">Back</span>
+      </a>
+      <p class="nav-link text-uppercase small" href="#" v-if="showThis">saving... to draft</p>
+      <button class="btn btn-sm btn-primary-outline preview" href="#" v-if="showThis">Preview to post</button>
+    </nav> 
      <div class="container">
        <div class="row">
-        <div class="col-lg-1 icon-wrapper">
+        <div class="col-lg-1 icon-wrapper mt-4">
           <ul class="text-icons">
             <li>
               <button class="btn rounded-circle d-flex justify-content-center" @click.prevent="showTextBox">
@@ -47,7 +54,7 @@
                     <p>Upload</p>
                   </div>
                    <div>
-                    <button class="btn rounded-circle d-flex justify-content-center">
+                    <button class="btn rounded-circle d-flex justify-content-center text">
                       <i class="fal fa-link"></i>
                     </button>
                   <p>Embedded</p>
@@ -73,18 +80,30 @@
               </li>
           </ul>
         </div>
-        <div class="col-lg-7">
+        <div class="col-lg-6 mt-4">
           <form>
             <div class="form-group">
-              <input type="text" class="form-control p-0 mb-4 one" placeholder="Add a title" autofocus>
+              <input type="text" class="form-control p-0 one" placeholder="Add a title" autofocus>
             </div>
             <div class="form-group">
               <input type="text" class="form-control p-0 two" placeholder="Add keypoint">
             </div>
             <div class="form-group pb-4">
-              <textarea class="mytext" ref="autoText" v-if="textArea" @input="textareaResize"></textarea>
+              <textarea class="mytext" ref="autoText" v-model="textLength" v-if="textArea" @input="textareaResize"></textarea>
             </div>
           </form>
+        </div>
+        <div class="col-lg-3 err-alert" v-if="showMe">
+          <div class="d-flex justify-content-end mb-4">
+            <button class="btn rounded-circle d-flex justify-content-center text" @click.prevent="closeEntitySection">
+              <i class="fal fa-arrow-right"></i>
+            </button>
+          </div>
+          <error-alert>
+            <p>We have 3 articles that have similar title as yours. <a class="compare">Compare</a></p>
+          </error-alert>
+          <h6 class="my-4">Entities <span class="badge badge-primary">50</span></h6>
+          <entity-section></entity-section>
         </div>
       </div>
     </div>
@@ -92,25 +111,41 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar/Navbar.vue";
-import { Poptip } from "iview"
+import ErrorAlert from '@/components/ErrorAlert/ErrorAlert.vue'
+import EntitySection from '@/components/EntitySection/EntitySection.vue'
+import { Poptip } from 'iview'
 
 export default {
-  components: { Navbar, Poptip },
+  components: { ErrorAlert, Poptip, EntitySection },
   data() {
     return {
-      showNavigations: false,
-      showBackArrow: true,
-      textArea: false
+      textArea: false,
+      showMe: false,
+      textLength: "",
+      showThis: false
     }
   },
   methods: {
     textareaResize() {
       this.$refs.autoText.style.minHeight = this.$refs.autoText.scrollHeight + 'px';
+      if(this.textLength.length > 0) {
+        this.showMe = true;
+        this.showThis = true;
+      } else {
+        this.showMe = false;
+        this.showThis = false;
+      }
+      
     },
     showTextBox() {
       this.textArea = true;
       this.$nextTick(() => this.$refs.autoText.focus())
+    },
+    closeEntitySection() {
+      this.showMe = false
+    },
+    goBack() {
+      this.$router.go(-1);
     }
   }
 }
@@ -119,4 +154,3 @@ export default {
 <style lang="scss" scoped>
 @import "./PublishPage"
 </style>
-

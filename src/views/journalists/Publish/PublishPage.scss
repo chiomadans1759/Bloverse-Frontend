@@ -6,6 +6,9 @@
     border: none;
     background: #fff;
     transition: none !important;
+    margin-bottom: 2rem;
+    color: #252525;
+    font-weight: 600;
     &:focus {
       outline: none;
       box-shadow: none;
@@ -29,14 +32,29 @@
     overflow: hidden;
     width: 100%;
     border: 0;
+    margin-right: 1.5rem;
     background: #fff;
-    color: #222;
+    color: #565656;
     resize: none;
     padding-bottom: 3rem;
+    font-size: 1rem;
+    font-weight: 500;
     &:focus {
       outline: none;
       box-shadow: none;
     }
+  }
+
+  .back-icon {
+    color: #000000;
+  }
+  .publish-nav {
+    height: 3.5rem;
+  }
+  .preview {
+    border: 0.063rem solid #096DD9;
+    color: #096DD9;
+    background: transparent;
   }
   .text-icons {
     list-style-type: none;
@@ -54,6 +72,24 @@
   }
   .icon-wrapper {
     z-index: 1;
+  }
+
+  .text {
+    background: transparent;
+    border: 0.063rem solid rgba(0, 0, 0, 0.15);
+    height: 1.938rem;
+    width: 1.938rem;
+  }
+
+  .compare{
+    text-decoration: underline;
+  }
+  .err-alert {
+    position: fixed;
+    bottom: 0;
+    right: 7.063rem;
+    height: 80vh;
+    padding-bottom: 10%;
   }
   .inner-icons {
     margin-left: 0.5rem;
