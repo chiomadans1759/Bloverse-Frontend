@@ -172,11 +172,20 @@
       <div class="row bl-homepage__content--publishedPosts">
         <div class="col-sm-8 bl-homepage__content--publishedPosts__feeds">
           <div class="container-fluid feeds-posts">
-            <post-cards/>
-            <trends/>
-            <post-cards/>
-            <photo-contest/>
-            <post-cards/>
+            <div class="bl-homepage__no-feed card" v-if="noPublishedPost">
+              <div class="bl-homepage__no-feed--content">
+                <span><i class="fal fa-newspaper fa-3x greyColor"></i></span>
+                <p class="mt-4"><strong>No content for this filter result yet</strong></p>
+                <p class="text-center mt-2 greyColor">Explore the various categories available, read <br>articles and give feedback</p>
+              </div>
+            </div>
+              <div v-else>
+                <post-cards/>
+                <trends/>
+                <post-cards/>
+                <photo-contest/>
+                <post-cards/>
+              </div>
           </div>
         </div>
 
@@ -239,6 +248,11 @@ export default {
     PhotoContest,
     CountryOptions,
     Modal,
+  },
+  data() {
+    return {
+      noPublishedPost: false,
+    }
   }
 };
 </script>
