@@ -7,7 +7,7 @@
             <span class="back-text">Back</span>
           </a>
           <router-link to="/" class="router-link">
-            <img class="logo" src="@/assets/Logo - White.svg" />
+            <img class="logo" src="@/assets/Bloverse-white.svg" />
             <img class="blue-logo" src="@/assets/Logo.svg">
           </router-link>
         </span>
