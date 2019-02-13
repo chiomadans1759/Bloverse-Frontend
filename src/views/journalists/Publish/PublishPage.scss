@@ -56,6 +56,11 @@
     color: #096DD9;
     background: transparent;
   }
+
+  .click {
+    cursor: pointer;
+  }
+
   .text-icons {
     list-style-type: none;
     margin-top: 4.5rem;
@@ -81,6 +86,49 @@
     width: 1.938rem;
   }
 
+  .modal-full {
+    min-width: 100%;
+    margin: 0;
+    background: #ffffff;
+}
+
+ .modal-full .modal-content {
+    height: 100vh;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-dialog {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .modal-backdrop {
+    display: none;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
   .compare{
     text-decoration: underline;
   }
@@ -90,6 +138,12 @@
     right: 7.063rem;
     height: 80vh;
     padding-bottom: 10%;
+  }
+
+  .exclam {
+    width: 3rem; 
+    height: 3rem; 
+    padding-right: 0.5rem;
   }
   .inner-icons {
     margin-left: 0.5rem;
@@ -103,6 +157,45 @@
       border-radius: 0 !important;
       margin-top: 0.5rem;
       margin-bottom: 0.3rem;
+    }
+  }
+  @keyframes dot-keyframes {
+    0% {
+      opacity: .4;
+      transform: scale(1, 1);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.2, 1.2);
+    }
+  
+    100% {
+      opacity: .4;
+      transform: scale(1, 1);
+    }
+  }
+  
+  .loading-dots {
+    text-align: center;
+    width: 100%;
+    
+    &--dot {
+      animation: dot-keyframes 1.5s infinite ease-in-out;
+      background-color: #096DD9;
+      border-radius: 0.75rem;
+      display: inline-block;
+      height: 0.75rem;
+      width: 0.75rem;
+      margin-right: .5rem;
+      
+      &:nth-child(2) {
+        animation-delay: .5s;
+      }
+      
+      &:nth-child(3) {
+        animation-delay: 1s;
+      }
     }
   }
 }

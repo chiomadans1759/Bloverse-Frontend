@@ -351,5 +351,48 @@ exports[`PublishPage Component should render correctly 1`] = `
       <!---->
     </div>
   </div>
+   
+  <div
+    aria-hidden="true"
+    class="modal"
+    id="previewModal"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog modal-full"
+      role="document"
+    >
+      <div
+        class="modal-content"
+      >
+        <div
+          class="modal-body"
+        >
+          <div>
+            <div
+              class="loading-dots"
+            >
+              <div
+                class="loading-dots--dot"
+              />
+               
+              <div
+                class="loading-dots--dot"
+              />
+               
+              <div
+                class="loading-dots--dot"
+              />
+            </div>
+             
+            <p>
+              Scanning Article For Plagiarism...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 `;

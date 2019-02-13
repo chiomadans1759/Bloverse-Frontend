@@ -6,19 +6,19 @@
          <span class="text-muted ml-2">Back</span>
       </a>
       <p class="nav-link text-uppercase small" v-if="showThis">saving... to draft</p>
-      <button class="btn btn-sm btn-primary-outline preview" v-if="showThis">Preview to post</button>
+      <button class="btn btn-sm btn-primary-outline preview" @click.prevent="showPreview" v-if="showThis">Preview to post</button>
     </nav> 
      <div class="container">
        <div class="row">
         <div class="col-lg-1 icon-wrapper mt-4">
           <ul class="text-icons">
             <li>
-              <button class="btn rounded-circle d-flex justify-content-center show" @click.prevent="showTextBox">
+              <button class="btn rounded-circle d-flex justify-content-center show" v-if="hideMe" @click.prevent="showTextBox">
                 <i class="fal fa-font"></i>
               </button>
             </li>
             <li>
-              <Poptip placement="right">
+              <Poptip placement="right" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
                     <button class="btn rounded-circle d-flex justify-content-center">
@@ -45,7 +45,7 @@
               </Poptip>
             </li>
             <li>
-              <Poptip placement="right">
+              <Poptip placement="right" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
                     <button class="btn rounded-circle d-flex justify-content-center">
@@ -66,7 +66,7 @@
               </Poptip>
               </li>
             <li>
-              <Poptip placement="right">
+              <Poptip placement="right" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
                     <input type="text" placeholder="Enter a url link" class="embed">
@@ -105,24 +105,74 @@
           <h6 class="my-4">Entities <span class="badge badge-primary">50</span></h6>
           <entity-section></entity-section>
         </div>
+       </div>
       </div>
-    </div>
+
+
+      <!-- Publish Modal -->
+            <div class="modal" id="previewModal" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-full" role="document">
+                <div class="modal-content" v-if="content1">
+                  <div class="modal-body">
+                    <div>
+                      <div class="loading-dots">
+                      <div class="loading-dots--dot"></div>
+                      <div class="loading-dots--dot"></div>
+                      <div class="loading-dots--dot"></div>
+                    </div>
+                    <p>Scanning Article For Plagiarism...</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-content" v-else>
+                  <div class="modal-body">
+                    <div style="width: 45%">
+                    <error-alert1>
+                      <div class="d-flex justify-content-between">
+                        <i class="fal fa-exclamation-circle exclam"></i>
+                          <p>We detected some traces of plagiarism in this content. At bloverse we try to encourage unique and original content. <a class="compare">Compare</a></p>
+                      </div>
+                    </error-alert1>
+                      <div class="click" @click.prevent="toArticle">
+                        <i class="fal fa-arrow-left back-icon"></i>
+                        <span class="ml-2" style="color: #252525;">Return to article</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
   </main>
 </template>
 
 <script>
 import ErrorAlert from '@/components/ErrorAlert/ErrorAlert.vue'
+import ErrorAlert1 from '@/components/ErrorAlert1/ErrorAlert1.vue'
 import EntitySection from '@/components/EntitySection/EntitySection.vue'
 import { Poptip } from 'iview'
+import { setTimeout } from 'timers';
 
 export default {
-  components: { ErrorAlert, Poptip, EntitySection },
+  components: { ErrorAlert, ErrorAlert1, Poptip, EntitySection },
   data() {
     return {
       textArea: false,
       showMe: false,
       textLength: "",
-      showThis: false
+      showThis: false,
+      hideMe: true,
+      content1: true,
+      blurBackground: false
+    }
+  },
+  watch:{
+    content1: function(value){
+      if(value == true){
+        this.blurBackground = false
+      }else{
+        this.blurBackground = true
+      }
     }
   },
   methods: {
@@ -146,6 +196,20 @@ export default {
     },
     goBack() {
       this.$router.go(-1);
+    },
+    showPreview() {
+      /* eslint-disable */ 
+      $('#previewModal').modal('show');
+      this.hideMe = false;
+
+      setTimeout(()=>{
+        this.content1 = false
+      }, 3000)
+    },
+    toArticle() {
+      /* eslint-disable */ 
+      $('#previewModal').modal('hide');
+      this.hideMe = true;
     }
   }
 }
