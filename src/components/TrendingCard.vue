@@ -7,8 +7,12 @@
         <p class="card-text">{{post.title | truncate(50)}}</p>
         <div class="author mt-4">
           <img class="rounded mr-3" :src="post.author.image_url" alt>
-          <span id="desktop">{{author_fullname | truncate(30)}}</span>
-          <span id="mobile">{{author_fullname | truncate(10)}}</span>
+          <span id="desktop">
+            {{`${post.author.first_name} ${post.author.last_name}` | truncate(30)}}
+          </span>
+          <span id="mobile">
+            {{`${post.author.first_name} ${post.author.last_name}` | truncate(10)}}
+          </span>
         </div>
       </div>
     </div>
@@ -22,14 +26,6 @@ export default {
   name: "trending-card",
   props: {
     post: Object
-  },
-  data() {
-    return {
-      author_fullname: null
-    };
-  },
-  created() {
-    this.author_fullname = `${this.post.author.first_name} ${this.post.author.last_name}`
   },
   computed: {
     ...mapState(["general"]),
