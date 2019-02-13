@@ -25,9 +25,13 @@
               </div>
               <div class="row mt-4">
                 <div class="col">
-                  <p class="text-left">New to Bloverse ? &nbsp;
+                  <p class="text-left">New to Bloverse?
                     <router-link class="btn-link" to="/creators/apply" @click.native="close()">Apply</router-link>
                   </p>
+                </div>
+
+                <div class="col-auto">
+                  <router-link class="btn-link" to="/creators/forgot-password" @click.native="close()">Forgot Password</router-link>
                 </div>
               </div>
             </FormItem>
