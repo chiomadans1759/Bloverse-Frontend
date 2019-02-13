@@ -633,7 +633,7 @@ exports[`CountryCard Component should render correctly 1`] = `
   </main>
    
   <main
-    class="card category-card p-4 p-sm-3"
+    class="category-card p-4 p-sm-3 card"
   >
     <div
       class="header d-flex justify-content-between "

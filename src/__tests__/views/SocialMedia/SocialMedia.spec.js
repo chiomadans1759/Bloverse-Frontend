@@ -1,9 +1,10 @@
 import { mount, RouterLinkStub  } from '@vue/test-utils'
-import CreatorProfileActionsCard from '@/components/CreatorProfileActionsCard/CreatorProfileActionsCard.vue';
+import SocialMedia from '@/views/journalists/SocialMedia/SocialMediaPage.vue';
 
-describe('CreatorActionCard Component', () => {
+describe('SocialMedia Component', () => {
   it('should render correctly', () => {
-    const wrapper = mount(CreatorProfileActionsCard, {
+
+    const wrapper = mount(SocialMedia, {
       stubs: {
         RouterLink: RouterLinkStub
       }

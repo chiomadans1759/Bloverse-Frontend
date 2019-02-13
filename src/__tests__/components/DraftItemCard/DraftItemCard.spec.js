@@ -1,9 +1,10 @@
 import { mount, RouterLinkStub  } from '@vue/test-utils'
-import CreatorProfileActionsCard from '@/components/CreatorProfileActionsCard/CreatorProfileActionsCard.vue';
+import DraftItemCard from '@/components/DraftItemCard/DraftItemCard.vue';
 
-describe('CreatorActionCard Component', () => {
+describe('DraftItemCard Component', () => {
   it('should render correctly', () => {
-    const wrapper = mount(CreatorProfileActionsCard, {
+
+    const wrapper = mount(DraftItemCard , {
       stubs: {
         RouterLink: RouterLinkStub
       }
