@@ -20,6 +20,8 @@ import JournalistApply from '../src/views/journalists/AuthenticationApply.vue';
 import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
 import JournalistLanding from '../src/views/journalists/Landing.vue';
+import ForgotPassword from '@/views/journalists/ForgotPassword.vue';
+import ResetPassword from '@/views/journalists/ResetPassword.vue';
 
 // Admin Views
 import AdminLogin from '../src/views/admin/Login.vue';
@@ -72,6 +74,8 @@ const router = new Router({
         { path: 'setup', component: JournalistSetUp },
         { path: 'verify', component: JournalistVerify },
         { path: 'photocontest', component: PhotoContest },
+        { path: 'forgot-password', component: ForgotPassword },
+        { path: 'reset-password/:token', component: ResetPassword },
         {
           path: ':username', component: JournalistAccountLayout, meta: { journalist: true },
           children: [
