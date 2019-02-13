@@ -79,6 +79,14 @@ export default {
       let userId = rootState.auth.loggedInUser.id;
       let response = await Api.get(`metrics/journalists/${userId}/`);
       commit('setMyMetrics', response.data);
+    },
+    async requestPasswordChange({ commit }, email) {
+      let res = await Api.post('reset-password/', { email });
+      return res
+    },
+    async changePassword({ commit }, data) {
+      let res = await Api.post('reset-password/confirm/', data);
+      return res
     }
   },
   mutations: {
