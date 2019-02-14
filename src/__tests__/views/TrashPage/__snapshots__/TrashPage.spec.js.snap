@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Profile Component should render correctly 1`] = `
+exports[`TrashPage Component should render correctly 1`] = `
 <main
-  id="bl-profile-page"
+  id="bl-trash-page"
 >
   <header
     id="feeds-header"
@@ -1218,406 +1218,397 @@ exports[`Profile Component should render correctly 1`] = `
       </div>
        
       <div
-        class="col-12 col-lg-7 col-xl-7 bg-white right-section p-0"
+        class="col-12 col-lg-7 col-xl-7 bg-transparent right-section p-0 bl-trash-display"
       >
-        <div
-          class="mt-4 px-4"
+        <h5
+          class="font-weight-bold px-4 px-sm-0"
         >
-          <div
-            class="row"
-          >
-            <div
-              class="col-12 col-lg-6 col-lg-6 mb-4"
-            >
-              <div
-                class="card top-card"
-              >
-                <i
-                  class="card-icon fal fa-rocket"
-                />
-                 
-                <div
-                  class="card-body row"
-                >
-                  <div
-                    class="col-6 d-flex flex-column justify-content-between"
-                  >
-                    <h5
-                      class="card-title text-white font-weight-bold"
-                    >
-                      Published
-                    </h5>
-                  </div>
-                   
-                  <div
-                    class="col-6 d-flex justify-content-end"
-                  >
-                    <h2
-                      class="text-white"
-                    >
-                      3,252
-                    </h2>
-                  </div>
-                </div>
-                 
-                <div
-                  class="p-3"
-                >
-                  <p
-                    class="sub-text text-white"
-                  >
-                    <span
-                      class="font-weight-bold"
-                    >
-                      2
-                    </span>
-                     today
-                  
-                  </p>
-                   
-                  <p
-                    class="sub-text text-white"
-                  >
-                    <span
-                      class="font-weight-bold"
-                    >
-                      6
-                    </span>
-                     this week
-                  
-                  </p>
-                </div>
-              </div>
-            </div>
-             
-            <div
-              class="col-12 col-lg-6 col-lg-6"
-            >
-              <div
-                class="card top-card"
-              >
-                <i
-                  class="card-icon fal fa-stars"
-                />
-                 
-                <div
-                  class="card-body row"
-                >
-                  <div
-                    class="col-6 d-flex flex-column justify-content-between"
-                  >
-                    <h5
-                      class="card-title text-white font-weight-bold"
-                    >
-                      Points
-                    </h5>
-                  </div>
-                   
-                  <div
-                    class="col-6 d-flex justify-content-end"
-                  >
-                    <h2
-                      class="text-white"
-                    >
-                      0.05
-                    </h2>
-                  </div>
-                </div>
-                 
-                <div
-                  class="p-3"
-                >
-                  <p
-                    class="sub-text text-white"
-                  >
-                    <span
-                      class="font-weight-bold"
-                    >
-                      6
-                    </span>
-                     of
-                    
-                    <span
-                      class="font-weight-bold"
-                    >
-                      94
-                    </span>
-                     Nigeria
-                    
-                    <span
-                      class="fal fa-long-arrow-up"
-                    />
-                  </p>
-                   
-                  <p
-                    class="sub-text text-white"
-                  >
-                    <span
-                      class="font-weight-bold"
-                    >
-                      5,064
-                    </span>
-                     of
-                    
-                    <span
-                      class="font-weight-bold"
-                    >
-                      9,124
-                    </span>
-                     Global
-                    
-                    <span
-                      class="fal fa-long-arrow-down"
-                    />
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          Trash
+        </h5>
          
         <div
-          class="mt-4"
+          class="trash-content border mt-4"
         >
-          <p
-            class="px-4"
-          >
-            
-            Total number of views
-            
-            <span>
-              <a
-                aria-expanded="false"
-                aria-haspopup="true"
-                class="dropdown-toggle"
-                data-toggle="dropdown"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-              >
-                Last 24 hours
-              </a>
-               
-              <div
-                aria-labelledby="navbarDropdown"
-                class="dropdown-menu"
-              >
-                <a
-                  class="dropdown-item"
-                  href="#"
-                >
-                  Last 3 days
-                </a>
-                 
-                <a
-                  class="dropdown-item"
-                  href="#"
-                >
-                  Last 7 days
-                </a>
-                 
-                <a
-                  class="dropdown-item"
-                  href="#"
-                >
-                  Last 30 days
-                </a>
-                 
-                <div
-                  class="dropdown-divider"
-                />
-                 
-                <a
-                  class="dropdown-item"
-                  data-toggle="modal"
-                  href="#custom-date-modal"
-                >
-                  Choose Custom Date
-                </a>
-              </div>
-            </span>
-          </p>
-           
           <main
-            id="bl-modal"
+            class="container bl-trash"
+            id="bl-trash"
           >
-            <div
-              aria-hidden="true"
-              aria-labelledby="customModal"
-              class="modal fade"
-              id="custom-date-modal"
-              role="dialog"
-              tabindex="-1"
+            <main
+              class="card bl-trashItem"
+              id="bl-trashItem"
             >
               <div
-                class="modal-dialog modal-dialog-centered"
-                role="document"
+                class="card-body bl-trashItem-body"
               >
                 <div
-                  class="modal-content"
+                  class="card-title row title"
                 >
                   <div
-                    class="modal-header"
+                    class="col-9 row title--text"
                   >
-                    <h5
-                      class="modal-title"
-                      id="customModal"
+                    <span
+                      class="col-3"
                     >
-                      Custom Date
-                    </h5>
+                      category
+                    </span>
                      
-                    <div>
-                      <!---->
-                       
-                      <!---->
-                    </div>
+                    <p
+                      class="col-5 col-sm-6 font-weight-bold description"
+                    >
+                      
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+        
+                    </p>
                      
-                    <button
-                      aria-label="Close"
-                      class="close"
-                      data-dismiss="modal"
-                      type="button"
+                    <p
+                      class="col-4 col-sm-3 username d-none d-sm-block"
                     >
                       <span
-                        aria-hidden="true"
+                        class="time"
                       >
-                        ×
+                        16 hrs ago
                       </span>
-                    </button>
+                    </p>
                   </div>
                    
                   <div
-                    class="modal-body"
-                  >
-                    <div
-                      class="bl-modal-content"
-                    >
-                      <p>
-                        Choose Date Range:
-                      </p>
-                       
-                      <div
-                        class="popover-container"
-                        data-v-1ad2436f=""
-                      >
-                        <!---->
-                         
-                        <input
-                          class="form-control"
-                          data-v-1ad2436f=""
-                          placeholder="DD/MM/YYYY - DD/MM/YYYY"
-                          readonly="readonly"
-                          style="min-width: 150px;"
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="modal-footer"
-                  >
-                    <button
-                      class="btn btn-outline-primary"
-                      data-dismiss="modal"
-                      type="button"
-                    >
-                      Close
-                    </button>
-                     
-                    <button
-                      class="btn btn-primary"
-                      type="button"
-                    >
-                      Apply Filter
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-           
-          <div
-            class="p-0 p-lg-2 p-xl-2 gchart-container"
-          >
-            <div />
-          </div>
-        </div>
-         
-        <div
-          class="mt-4 px-4"
-        >
-          <div
-            class="row"
-          >
-            <div
-              class="col-12 col-lg-8 col-xl-8 mb-2"
-            >
-              <div
-                class="row"
-              >
-                <div
-                  class="col-12"
-                >
-                  <span
-                    class="first-circle fas fa-circle"
+                    class="col-3 title--image"
+                    style="background-image: url(test-file-stub);"
                   />
-                   Nigeria(64)
-                  
-                  <span
-                    class="second-circle fas fa-circle ml-4"
-                  />
-                   Kenya(36)
-                  
-                  <span
-                    class="third-circle fas fa-circle ml-4"
-                  />
-                   Mexico(6)
-                
-                </div>
-              </div>
-            </div>
-             
-            <div
-              class="col-12 col-lg-4 col-xl-4 mb-4"
-            >
-              <div
-                class="card p-2"
-              >
-                <div
-                  class="row"
-                >
-                  <div
-                    class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold"
-                  >
-                    Country:
-                  </div>
-                   
-                  <div
-                    class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold"
-                  >
-                    3
-                  </div>
                 </div>
                  
                 <div
-                  class="row"
+                  class="card-text row actions justify-content-between"
                 >
                   <div
-                    class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold"
+                    class="col-5 col-sm-0 views d-block d-sm-none"
                   >
-                    Total:
+                    <span
+                      class="time"
+                    >
+                      16 hrs ago
+                    </span>
                   </div>
                    
                   <div
-                    class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold"
+                    class="col-7 col-sm-12 row others justify-content-end"
                   >
-                    106
+                    <p
+                      class="undo"
+                    >
+                      <i
+                        class="fal fa-undo"
+                      />
+                       
+                      <span
+                        class="text d-none d-sm-inline"
+                      >
+                        Undo
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="delete"
+                    >
+                      <i
+                        class="fal fa-trash-alt"
+                      />
+                       
+                      <span
+                        class="text d-none d-sm-inline"
+                      >
+                        Delete
+                      </span>
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </main>
+             
+            <main
+              class="card bl-trashItem"
+              id="bl-trashItem"
+            >
+              <div
+                class="card-body bl-trashItem-body"
+              >
+                <div
+                  class="card-title row title"
+                >
+                  <div
+                    class="col-9 row title--text"
+                  >
+                    <span
+                      class="col-3"
+                    >
+                      category
+                    </span>
+                     
+                    <p
+                      class="col-5 col-sm-6 font-weight-bold description"
+                    >
+                      
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+        
+                    </p>
+                     
+                    <p
+                      class="col-4 col-sm-3 username d-none d-sm-block"
+                    >
+                      <span
+                        class="time"
+                      >
+                        16 hrs ago
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 title--image"
+                    style="background-image: url(test-file-stub);"
+                  />
+                </div>
+                 
+                <div
+                  class="card-text row actions justify-content-between"
+                >
+                  <div
+                    class="col-5 col-sm-0 views d-block d-sm-none"
+                  >
+                    <span
+                      class="time"
+                    >
+                      16 hrs ago
+                    </span>
+                  </div>
+                   
+                  <div
+                    class="col-7 col-sm-12 row others justify-content-end"
+                  >
+                    <p
+                      class="undo"
+                    >
+                      <i
+                        class="fal fa-undo"
+                      />
+                       
+                      <span
+                        class="text d-none d-sm-inline"
+                      >
+                        Undo
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="delete"
+                    >
+                      <i
+                        class="fal fa-trash-alt"
+                      />
+                       
+                      <span
+                        class="text d-none d-sm-inline"
+                      >
+                        Delete
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </main>
+             
+            <main
+              class="card bl-trashItem"
+              id="bl-trashItem"
+            >
+              <div
+                class="card-body bl-trashItem-body"
+              >
+                <div
+                  class="card-title row title"
+                >
+                  <div
+                    class="col-9 row title--text"
+                  >
+                    <span
+                      class="col-3"
+                    >
+                      category
+                    </span>
+                     
+                    <p
+                      class="col-5 col-sm-6 font-weight-bold description"
+                    >
+                      
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+        
+                    </p>
+                     
+                    <p
+                      class="col-4 col-sm-3 username d-none d-sm-block"
+                    >
+                      <span
+                        class="time"
+                      >
+                        16 hrs ago
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 title--image"
+                    style="background-image: url(test-file-stub);"
+                  />
+                </div>
+                 
+                <div
+                  class="card-text row actions justify-content-between"
+                >
+                  <div
+                    class="col-5 col-sm-0 views d-block d-sm-none"
+                  >
+                    <span
+                      class="time"
+                    >
+                      16 hrs ago
+                    </span>
+                  </div>
+                   
+                  <div
+                    class="col-7 col-sm-12 row others justify-content-end"
+                  >
+                    <p
+                      class="undo"
+                    >
+                      <i
+                        class="fal fa-undo"
+                      />
+                       
+                      <span
+                        class="text d-none d-sm-inline"
+                      >
+                        Undo
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="delete"
+                    >
+                      <i
+                        class="fal fa-trash-alt"
+                      />
+                       
+                      <span
+                        class="text d-none d-sm-inline"
+                      >
+                        Delete
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </main>
+             
+            <main
+              class="card bl-trashItem"
+              id="bl-trashItem"
+            >
+              <div
+                class="card-body bl-trashItem-body"
+              >
+                <div
+                  class="card-title row title"
+                >
+                  <div
+                    class="col-9 row title--text"
+                  >
+                    <span
+                      class="col-3"
+                    >
+                      category
+                    </span>
+                     
+                    <p
+                      class="col-5 col-sm-6 font-weight-bold description"
+                    >
+                      
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+        
+                    </p>
+                     
+                    <p
+                      class="col-4 col-sm-3 username d-none d-sm-block"
+                    >
+                      <span
+                        class="time"
+                      >
+                        16 hrs ago
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="col-3 title--image"
+                    style="background-image: url(test-file-stub);"
+                  />
+                </div>
+                 
+                <div
+                  class="card-text row actions justify-content-between"
+                >
+                  <div
+                    class="col-5 col-sm-0 views d-block d-sm-none"
+                  >
+                    <span
+                      class="time"
+                    >
+                      16 hrs ago
+                    </span>
+                  </div>
+                   
+                  <div
+                    class="col-7 col-sm-12 row others justify-content-end"
+                  >
+                    <p
+                      class="undo"
+                    >
+                      <i
+                        class="fal fa-undo"
+                      />
+                       
+                      <span
+                        class="text d-none d-sm-inline"
+                      >
+                        Undo
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="delete"
+                    >
+                      <i
+                        class="fal fa-trash-alt"
+                      />
+                       
+                      <span
+                        class="text d-none d-sm-inline"
+                      >
+                        Delete
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </main>
         </div>
       </div>
     </div>

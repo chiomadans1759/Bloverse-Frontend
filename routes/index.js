@@ -13,6 +13,7 @@ import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicyPage.vue';
 import Settings from '@/views/general/Settings/SettingsPage.vue';
 import AboutUs from '../src/views/general/About/AboutPage.vue';
 import ConsumerProfile from '../src/views/consumers/Profile/ProfilePage.vue';
+import NotFound from '../src/views/general/NotFoundPage/NotFoundPage.vue';
 
 // Blank Base Layout Pages
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
@@ -29,9 +30,11 @@ import ChangePassword from '../src/views/general/ChangePassword/ChangePassword.v
 import CreatorHomePage from '../src/views/journalists/CreatorHome/CreatorHomePage';
 import CreatorApply from '../src/views/journalists/CreatorApply/CreatorApplyPage.vue';
 import CreatorProfile from '../src/views/journalists/Profile/ProfilePage';
-import CreatorPosts from '../src/views/journalists/ProfilePost/ProfilePost';
+import CreatorPosts from '../src/views/journalists/Post/PostPage';
 import EmailPrefrence from '../src/views/journalists/EmailPrefrence/EmailPrefrencePage.vue';
-import Drafts from '../src/views/journalists/Drafts/DraftsPage';
+import SocialMedia from '../src/views/journalists/SocialMedia/SocialMediaPage.vue';
+import CreatorDrafts from '../src/views/journalists/Drafts/DraftsPage';
+import CreatorTrash from '../src/views/journalists/Trash/TrashPage.vue';
 
 // Version one routes
 import MyProfile from '../src/views/journalists/MyProfile.vue';
@@ -42,7 +45,6 @@ import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
 import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
 import AdminLogin from '../src/views/admin/Login.vue';
 import AdminHome from '../src/views/admin/Home.vue';
-import NotFound from '../src/views/NotFound.vue';
 
 const routes = [
   {
@@ -101,8 +103,10 @@ const routes = [
       { path: 'apply', component: CreatorApply },
       { path: 'email-settings', component: EmailPrefrence },
       { path: 'profile', component: CreatorProfile },
-      { path: 'profile/posts', component: CreatorPosts},
-      { path: 'drafts', component: Drafts },
+      { path: 'posts', component: CreatorPosts},
+      { path: 'social-media', component: SocialMedia },
+      { path: 'drafts', component: CreatorDrafts },
+      { path: 'trash', component: CreatorTrash },
       {
         path: 'setup', component: JournalistSetUp,
         beforeEnter(to, from, next) {

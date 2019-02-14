@@ -1,10 +1,10 @@
 import { mount, RouterLinkStub } from '@vue/test-utils';
-import Posts from '@/views/journalists/Post/PostPage.vue';
+import TrashPage from '@/views/journalists/Trash/TrashPage.vue';
 
-describe('Posts Component', () => {
+describe('TrashPage Component', () => {
   it('should render correctly', () => {
 
-    const wrapper = mount(Posts, {
+    const wrapper = mount(TrashPage, {
       stubs: {
         RouterLink: RouterLinkStub
       }

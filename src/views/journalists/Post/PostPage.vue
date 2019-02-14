@@ -47,34 +47,40 @@
           <i class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"></i>
         </div>
         <!-- on mobile view only ends -->
-
-        <div class="col-12 col-lg-7 col-xl-7  right-section p-0">
-          <h4><b>Posts</b></h4>
+        <div class="col-12 col-lg-7 col-xl-7 right-section p-0">
+          <h4>
+            <h5 class="font-weight-bold mb-4 pl-3 pl-md-0">Post</h5>
+          </h4>
           <div class="mt-4 px-4 bg-white">
             <div class="row">
-             <div class="mx-4 d-none d-sm-block w-100">
-                <nav class="navbar navbar-expand-lg navbar-light bg-white
-                  justify-content-end profile-navbar  border_bottom"
+              <div class="mx-4 d-none d-sm-block w-100">
+                <nav
+                  class="navbar navbar-expand-lg navbar-light bg-white justify-content-end profile-navbar border_bottom"
                 >
-                  <div class="">
+                  <div class>
                     <ul class="navbar-nav flex-row layout-nav">
                       <li :class="['nav-item', 'mr-4', 'py-2', {'active': active_tab === 'list'}]">
                         <span @click="toggleView('list')" to="#" class="nav-link list-view">
                           <span>
-                              <i class="fal fa-th-list mr-1 " :class="{'icon--active' : active_tab === 'list'}"></i>
+                            <i
+                              class="fal fa-th-list mr-1"
+                              :class="{'icon--active' : active_tab === 'list'}"
+                            ></i>
                           </span>
-                         <!--  <span v-show="active_tab === 'list'">
-                            <i class="fal fa-th-list mr-1 icon"></i>
-                          </span> -->
-                           List <span class="sr-only">(current)</span></span>
+                          List
+                          <span class="sr-only">(current)</span>
+                        </span>
                       </li>
                       <li :class="['nav-item', 'mr-4', 'py-2', {'active': active_tab === 'grid'}]">
                         <span @click="toggleView('grid')" to="#" class="nav-link grid-view">
                           <span>
-                            <i class="fal fa-th-large mr-1" :class="{'icon--active' : active_tab === 'grid'}"></i>
+                            <i
+                              class="fal fa-th-large mr-1"
+                              :class="{'icon--active' : active_tab === 'grid'}"
+                            ></i>
                           </span>
-                          
-                           Grid </span>
+                          Grid
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -87,36 +93,33 @@
                 <br>
                 <div class="row">
                   <div class="col-md-6 col-sm-6">
-                     <recommendation-card type="consumer"/>
+                    <recommendation-card type="consumer"/>
                   </div>
                   <div class="col-md-6 col-sm-6">
-                     <recommendation-card type="consumer"/>
+                    <recommendation-card type="consumer"/>
                   </div>
                   <div class="col-md-6 col-sm-6">
-                     <recommendation-card type="consumer"/>
+                    <recommendation-card type="consumer"/>
                   </div>
                   <div class="col-md-6 col-sm-6">
-                     <recommendation-card type="consumer"/>
+                    <recommendation-card type="consumer"/>
                   </div>
                   <div class="col-md-6 col-sm-6">
-                     <recommendation-card type="consumer"/>
+                    <recommendation-card type="consumer"/>
                   </div>
                   <div class="col-md-6 col-sm-6">
-                     <recommendation-card type="consumer"/>
+                    <recommendation-card type="consumer"/>
                   </div>
                   <div class="col-md-6 col-sm-6">
-                     <recommendation-card type="consumer"/>
+                    <recommendation-card type="consumer"/>
                   </div>
                   <div class="col-md-6 col-sm-6">
-                     <recommendation-card type="consumer"/>
+                    <recommendation-card type="consumer"/>
                   </div>
                 </div>
-                
-
               </div>
             </div>
           </div>
-         
         </div>
       </div>
     </div>
@@ -130,7 +133,7 @@ import Navbar from "@/components/Navbar/Navbar.vue";
 import Profile from "@/components/ProfileCard/ProfileCard";
 import CategoryCard from "@/components/CategoryCard/CategoryCard";
 import Footer from "@/components/Footer/Footer";
-import RecommendationCard from '@/components/Recommendations/RecommendationCard';
+import RecommendationCard from "@/components/Recommendations/RecommendationCard";
 import CreatorProfileActionsCard from "@/components/CreatorProfileActionsCard/CreatorProfileActionsCard";
 
 export default {
@@ -145,19 +148,19 @@ export default {
   },
   data() {
     return {
-      active_tab:'list',
-      hideCardBorder: true,
+      active_tab: "list",
+      hideCardBorder: true
     };
   },
-  methods:{
-    toggleView(key){
-      this.active_tab = key
+  methods: {
+    toggleView(key) {
+      this.active_tab = key;
     }
   }
 };
 </script>
 
 <style scoped lang="scss">
-@import "./ProfilePost";
+@import "./PostPage";
 </style>
 

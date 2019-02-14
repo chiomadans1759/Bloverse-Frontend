@@ -521,7 +521,7 @@ exports[`Drafts Component should render correctly 1`] = `
               class="interests"
             >
               <main
-                class="card category-card p-4 p-sm-3"
+                class="category-card p-4 p-sm-3"
               >
                 <div
                   class="header d-flex justify-content-between "
@@ -1022,20 +1022,23 @@ exports[`Drafts Component should render correctly 1`] = `
                 <div
                   class="col-8"
                 >
-                  <h6
-                    class="text-primary"
-                  >
-                    <i
-                      class="fal fa-rocket"
-                    />
-                     Posts
-                  </h6>
-                   
-                  <p
-                    class="text-muted mt-2"
-                  >
-                    Update your information
-                  </p>
+                  <a>
+                    <h6
+                      class="text-primary"
+                    >
+                      <i
+                        class="far fa-rocket"
+                      />
+                       Posts
+          
+                    </h6>
+                     
+                    <p
+                      class="text-muted mt-2"
+                    >
+                      Update your information
+                    </p>
+                  </a>
                 </div>
                  
                 <div
@@ -1063,6 +1066,7 @@ exports[`Drafts Component should render correctly 1`] = `
                         class="far fa-edit"
                       />
                        Drafts
+          
                     </h6>
                      
                     <p
@@ -1088,22 +1092,25 @@ exports[`Drafts Component should render correctly 1`] = `
                 class="row mb-3"
               >
                 <div
-                  class="col-12"
+                  class="col-8"
                 >
-                  <h6
-                    class="text-primary"
-                  >
-                    <i
-                      class="fal fa-trash-alt"
-                    />
-                     Trash
-                  </h6>
-                   
-                  <p
-                    class="text-muted mt-2"
-                  >
-                    Update your information
-                  </p>
+                  <a>
+                    <h6
+                      class="text-primary"
+                    >
+                      <i
+                        class="fal fa-trash-alt"
+                      />
+                       Trash
+          
+                    </h6>
+                     
+                    <p
+                      class="text-muted mt-2"
+                    >
+                      Update your information
+                    </p>
+                  </a>
                 </div>
               </div>
             </div>

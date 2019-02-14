@@ -521,7 +521,7 @@ exports[`Posts Component should render correctly 1`] = `
               class="interests"
             >
               <main
-                class="card category-card p-4 p-sm-3"
+                class="category-card p-4 p-sm-3"
               >
                 <div
                   class="header d-flex justify-content-between "
@@ -1019,20 +1019,23 @@ exports[`Posts Component should render correctly 1`] = `
                 <div
                   class="col-8"
                 >
-                  <h6
-                    class="text-primary"
-                  >
-                    <i
-                      class="fal fa-rocket"
-                    />
-                     Posts
-                  </h6>
-                   
-                  <p
-                    class="text-muted mt-2"
-                  >
-                    Update your information
-                  </p>
+                  <a>
+                    <h6
+                      class="text-primary"
+                    >
+                      <i
+                        class="far fa-rocket"
+                      />
+                       Posts
+          
+                    </h6>
+                     
+                    <p
+                      class="text-muted mt-2"
+                    >
+                      Update your information
+                    </p>
+                  </a>
                 </div>
                  
                 <div
@@ -1060,6 +1063,7 @@ exports[`Posts Component should render correctly 1`] = `
                         class="far fa-edit"
                       />
                        Drafts
+          
                     </h6>
                      
                     <p
@@ -1085,22 +1089,25 @@ exports[`Posts Component should render correctly 1`] = `
                 class="row mb-3"
               >
                 <div
-                  class="col-12"
+                  class="col-8"
                 >
-                  <h6
-                    class="text-primary"
-                  >
-                    <i
-                      class="fal fa-trash-alt"
-                    />
-                     Trash
-                  </h6>
-                   
-                  <p
-                    class="text-muted mt-2"
-                  >
-                    Update your information
-                  </p>
+                  <a>
+                    <h6
+                      class="text-primary"
+                    >
+                      <i
+                        class="fal fa-trash-alt"
+                      />
+                       Trash
+          
+                    </h6>
+                     
+                    <p
+                      class="text-muted mt-2"
+                    >
+                      Update your information
+                    </p>
+                  </a>
                 </div>
               </div>
             </div>
@@ -1211,12 +1218,14 @@ exports[`Posts Component should render correctly 1`] = `
       </div>
        
       <div
-        class="col-12 col-lg-7 col-xl-7  right-section p-0"
+        class="col-12 col-lg-7 col-xl-7 right-section p-0"
       >
         <h4>
-          <b>
-            Posts
-          </b>
+          <h5
+            class="font-weight-bold mb-4 pl-3 pl-md-0"
+          >
+            Post
+          </h5>
         </h4>
          
         <div
@@ -1229,8 +1238,7 @@ exports[`Posts Component should render correctly 1`] = `
               class="mx-4 d-none d-sm-block w-100"
             >
               <nav
-                class="navbar navbar-expand-lg navbar-light bg-white
-                justify-content-end profile-navbar  border_bottom"
+                class="navbar navbar-expand-lg navbar-light bg-white justify-content-end profile-navbar border_bottom"
               >
                 <div>
                   <ul
@@ -1245,11 +1253,12 @@ exports[`Posts Component should render correctly 1`] = `
                       >
                         <span>
                           <i
-                            class="fal fa-th-list mr-1  icon--active"
+                            class="fal fa-th-list mr-1 icon--active"
                           />
                         </span>
-                         
-                         List 
+                        
+                        List
+                        
                         <span
                           class="sr-only"
                         >
@@ -1271,8 +1280,8 @@ exports[`Posts Component should render correctly 1`] = `
                           />
                         </span>
                         
-                        
-                         Grid 
+                        Grid
+                      
                       </span>
                     </li>
                   </ul>

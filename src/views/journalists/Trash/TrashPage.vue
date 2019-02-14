@@ -1,16 +1,16 @@
 <template>
-  <main id="bl-drafts-page">
+  <main id="bl-trash-page">
     <Navbar/>
     <div class="container my-3 mb-5">
       <div class="row">
-        <div class="col-lg-5 d-none d-sm-block">
+        <div class="col-lg-5 d-none d-sm-block mb-4">
           <div class="col-lg-12 mr-2">
-            <profile displayInterest hideFollowing displayFollowers />
+            <profile displayInterest hideFollowing displayFollowers/>
           </div>
           <div class="col-lg-12 mr-2">
             <div class="bg-white publish-container">
               <div class="publish-link-container">
-                <router-link to="/" class="publish-link btn"><i class="fas fa-plus mr-2"></i> Publish An Article</router-link>
+                <router-link to="/" class="publish-link btn">Publish An Article</router-link>
               </div>
             </div>
           </div>
@@ -37,69 +37,52 @@
                   <span class="text-capitalize">feedback</span>
                 </p>
               </div>
-              <p class="row company-rights text-capitalize">2019 Bloverse. All Right Reserved</p>
+              <p class="row company-rights text-capitalize">2018 Bloverse. All Right Reserved</p>
             </div>
           </div>
         </div>
 
         <!-- on mobile view only -->
         <div class="d-inline-flex d-sm-none initials">
-          <button class="initials-link" id="navbarDropdown" role="button">SM</button>
+          <a class="initials-link" href="#" id="navbarDropdown" role="button">SM</a>
           <i class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"></i>
         </div>
         <!-- on mobile view only ends -->
 
-        <div class="px-0 px-md-3 col-lg-7">
-          <h5 class="font-weight-bold mb-4 pl-3 pl-md-0">Draft</h5>
-          <div class="border bg-white bl-content right-content">
-            <DraftItemCard />
-            <DraftItemCard />
-            <DraftItemCard />
-            <DraftItemCard />
+        <div class="col-12 col-lg-7 col-xl-7 bg-transparent right-section p-0 bl-trash-display">
+          <h5 class="font-weight-bold px-4 px-sm-0">Trash</h5>
+          <div class="trash-content border mt-4">
+            <trash />
           </div>
         </div>
       </div>
     </div>
-    <creator-publish-icon class="d-block d-md-none" />
     <Footer class="d-block d-lg-none d-xl-none"/>
   </main>
 </template>
 
 <script>
-import Profile from '@/components/ProfileCard/ProfileCard';
 import Navbar from "@/components/Navbar/Navbar.vue";
+import Profile from "@/components/ProfileCard/ProfileCard";
 import Footer from "@/components/Footer/Footer";
 import CreatorProfileActionsCard from "@/components/CreatorProfileActionsCard/CreatorProfileActionsCard";
-import DraftItemCard from '@/components/DraftItemCard/DraftItemCard';
-import CreatorPublishIcon from '@/components/CreatorPublishIcon/CreatorPublishIcon';
+import Trash from '@/components/Trash/Trash';
 
 export default {
   components: {
     Navbar,
     Profile,
-    CreatorPublishIcon,
     CreatorProfileActionsCard,
-    DraftItemCard,
     Footer,
+    Trash,
   },
   data() {
     return {
-
-    }
-  },
-  mounted() {
-    /* eslint-disable */
-    hideTawkBot();
-    window.onload = function() {
-      hideTawkBot();
     };
-  },
-  destroyed() {
-    showTawkBot();
   }
 };
 </script>
 
-<style lang="scss" scoped>
-@import "./DraftsPage";
+<style scoped lang="scss">
+  @import "./TrashPage";
 </style>

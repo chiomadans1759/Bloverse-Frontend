@@ -90,6 +90,10 @@ exports[`Settings Page should render correctly 1`] = `
             Update your information
           </p>
            
+          <!---->
+           
+          <!---->
+           
           <p
             class="text-capitalize font-weight-bold pt-4 auth"
           >
