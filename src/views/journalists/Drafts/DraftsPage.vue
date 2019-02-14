@@ -5,10 +5,7 @@
       <div class="row">
         <div class="col-lg-5 d-none d-sm-block">
           <div class="col-lg-12 mr-2">
-            <profile 
-              v-if="showMobileProfile"
-              :hideMobileUserInfo="hideMobileUserInfo"
-              displayInterest hideFollowing displayFollowers />
+            <profile displayInterest hideFollowing displayFollowers />
           </div>
           <div class="col-lg-12 mr-2">
             <div class="bg-white publish-container">
@@ -46,11 +43,7 @@
         </div>
 
         <!-- on mobile view only -->
-        <div
-          v-if="showMobileProfile"
-          class="d-inline-flex d-sm-none initials"
-          @click="showMobileUserInfo"
-        >
+        <div class="d-inline-flex d-sm-none initials">
           <button class="initials-link" id="navbarDropdown" role="button">SM</button>
           <i class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"></i>
         </div>
@@ -91,16 +84,8 @@ export default {
   },
   data() {
     return {
-      showMobileProfile: true,
+
     }
-  },
-  methods: {
-    showMobileUserInfo() {
-      this.showMobileProfile = false;
-    },
-    hideMobileUserInfo() {
-      this.showMobileProfile = true;
-    },
   },
   mounted() {
     /* eslint-disable */

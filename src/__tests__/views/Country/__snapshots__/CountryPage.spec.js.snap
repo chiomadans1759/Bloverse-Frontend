@@ -11,37 +11,41 @@ exports[`ChooseCountry Component dispatches "actionInput" when input event value
       id="feeds-header"
     >
       <nav
-        class="navbar navbar-expand-lg navbar-light px-5 back-nav"
+        class="navbar navbar-expand-lg navbar-light px-5"
       >
-        <a
-          class="backlink mr-4"
-          href="/settings"
+        <div
+          class="container-fluid back-nav"
         >
-          <i
-            class="fal fa-long-arrow-left fa-2x back-icon"
-          />
-           
-          <span
-            class="back-text"
+          <a
+            class="backlink mr-4"
+            href="/settings"
           >
-            Back
-          </span>
-        </a>
-         
-        <a
-          class="router-link"
-        >
-          <img
-            class="nav-logo"
-            src="@/assets/Logo.svg"
-          />
+            <i
+              class="fal fa-long-arrow-left fa-2x back-icon"
+            />
+             
+            <span
+              class="back-text"
+            >
+              Back
+            </span>
+          </a>
+           
+          <a
+            class="router-link"
+          >
+            <img
+              class="nav-logo"
+              src="@/assets/Bloverse.svg"
+            />
+             
+            <!---->
+          </a>
            
           <!---->
-        </a>
-         
-        <!---->
-         
-        <!---->
+           
+          <!---->
+        </div>
       </nav>
     </header>
      

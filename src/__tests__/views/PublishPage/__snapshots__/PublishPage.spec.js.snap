@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PublishPage Component should render correctly 1`] = `
+<main
+  id="publish-page"
+>
+  <nav
+    class="nav container d-flex justify-content-between align-items-center publish-nav"
+  >
+    <a
+      class="nav-link"
+    >
+      <i
+        class="fal fa-arrow-left back-icon"
+      />
+       
+      <span
+        class="text-muted ml-2"
+      >
+        Back
+      </span>
+    </a>
+     
+    <!---->
+     
+    <!---->
+  </nav>
+   
+  <div
+    class="container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-lg-1 icon-wrapper mt-4"
+      >
+        <ul
+          class="text-icons"
+        >
+          <li>
+            <button
+              class="btn rounded-circle d-flex justify-content-center show"
+            >
+              <i
+                class="fal fa-font"
+              />
+            </button>
+          </li>
+           
+          <li>
+            <poptip-stub
+              content=""
+              placement="right"
+              trigger="click"
+            >
+              <div
+                class="d-flex justify-content-between inner-icons"
+              >
+                <div>
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center"
+                  >
+                    <i
+                      class="fal fa-arrow-from-bottom"
+                    />
+                  </button>
+                   
+                  <p>
+                    Upload
+                  </p>
+                </div>
+                 
+                <div>
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center"
+                  >
+                    <i
+                      class="fal fa-search"
+                    />
+                  </button>
+                   
+                  <p>
+                    Search
+                  </p>
+                </div>
+                 
+                <div>
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center"
+                  >
+                    <i
+                      class="far fa-th"
+                    />
+                  </button>
+                   
+                  <p>
+                    Multiple
+                  </p>
+                </div>
+              </div>
+               
+              <button
+                class="btn rounded-circle d-flex justify-content-center"
+              >
+                <i
+                  class="fal fa-image"
+                />
+              </button>
+            </poptip-stub>
+          </li>
+           
+          <li>
+            <poptip-stub
+              content=""
+              placement="right"
+              trigger="click"
+            >
+              <div
+                class="d-flex justify-content-between inner-icons"
+              >
+                <div>
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center"
+                  >
+                    <i
+                      class="fal fa-arrow-from-bottom"
+                    />
+                  </button>
+                   
+                  <p>
+                    Upload
+                  </p>
+                </div>
+                 
+                <div>
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center text"
+                  >
+                    <i
+                      class="fal fa-link"
+                    />
+                  </button>
+                   
+                  <p>
+                    Embedded
+                  </p>
+                </div>
+              </div>
+               
+              <button
+                class="btn rounded-circle d-flex justify-content-center"
+              >
+                <i
+                  class="fal fa-video"
+                />
+              </button>
+            </poptip-stub>
+          </li>
+           
+          <li>
+            <poptip-stub
+              content=""
+              placement="right"
+              trigger="click"
+            >
+              <div
+                class="d-flex justify-content-between inner-icons"
+              >
+                <div>
+                  <input
+                    class="embed"
+                    placeholder="Enter a url link"
+                    type="text"
+                  />
+                   
+                  <p>
+                    Add a link from twitter, facebook
+                  </p>
+                </div>
+              </div>
+               
+              <button
+                class="btn rounded-circle d-flex justify-content-center"
+              >
+                <i
+                  class="fal fa-link"
+                />
+              </button>
+            </poptip-stub>
+          </li>
+        </ul>
+      </div>
+       
+      <div
+        class="col-lg-6 mt-4"
+      >
+        <form>
+          <div
+            class="form-group"
+          >
+            <input
+              autofocus="autofocus"
+              class="form-control p-0 one"
+              placeholder="Add a title"
+              type="text"
+            />
+          </div>
+           
+          <div
+            class="form-group"
+          >
+            <input
+              class="form-control p-0 two"
+              placeholder="Add keypoint"
+              type="text"
+            />
+          </div>
+           
+          <div
+            class="form-group pb-4"
+          >
+            <!---->
+          </div>
+        </form>
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+</main>
+`;

@@ -2,15 +2,16 @@
   <header id="feeds-header">
     <nav
       class="navbar navbar-expand-lg navbar-light px-5"
-      :class="[{ 'transparent': isTransparent, 'alt-button': isTransparent }, customClass]"
+      :class="[{ 'transparent': isTransparent, 'alt-button': isTransparent }]"
     >
+    <div :class="['container-fluid', customClass]">
       <a v-if="showBackArrow" class="backlink mr-4" href="/settings">
         <i class="fal fa-long-arrow-left fa-2x back-icon"></i>
         <span class="back-text">Back</span>
       </a>
       <router-link to="/" class="router-link">
-        <img class="nav-logo" v-if="!isTransparent" src="@/assets/Logo.svg">
-        <img class="nav-logo" v-if="isTransparent" src="@/assets/Logo - White.svg">
+        <img class="nav-logo" v-if="!isTransparent" src="@/assets/Bloverse.svg">
+        <img class="nav-logo" v-if="isTransparent" src="@/assets/Bloverse-white.svg">
       </router-link>
       <div
         v-if="showNavigations"
@@ -51,7 +52,7 @@
         <!-- initials mobile -->
         <div class="nav-item dropdown initials" v-if="isLogin">
           <a
-            class="dropdown-toggle initials-link"
+            class="dropdown-toggle initials-link round-avatar"
             to="/login"
             href="#"
             id="navbarDropdown"
@@ -60,7 +61,7 @@
             aria-haspopup="true"
             aria-expanded="false"
           >MD</a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu dropdown-mobile-view__avatar" aria-labelledby="navbarDropdown">
             <router-link to="/profile" class="dropdown-item">
               <span class="icon-profile">
                 <i class="fal fa-user-circle"></i>
@@ -112,7 +113,7 @@
               <span id="option-icon"/>
               <span id="option-icon"/>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu dropdown-menu--elipsis" aria-labelledby="navbarDropdown">
               <router-link to="/terms-and-conditions" class="dropdown-item">Terms</router-link>
               <router-link to="/privacy-policies" class="dropdown-item">Privacy</router-link>
               <a class="dropdown-item" href="#">FAQ</a>
@@ -127,7 +128,7 @@
           <!-- initials -->
           <div class="nav-item dropdown initials">
             <a
-              class="dropdown-toggle initials-link"
+              class="dropdown-toggle d-flex justify-content-center align-items-center"
               to="/login"
               v-if="isLogin"
               href="#"
@@ -136,7 +137,10 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-            >MD</a>
+            >
+            <button class="round-avatar mr-2">MD</button>
+            <i class="fal fa-angle-down fa-2x down-arrow"></i>
+            </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <router-link to="/profile" class="dropdown-item">
                 <span class="icon-profile">
@@ -161,8 +165,9 @@
             </div>
           </div>
           <span class="vl bg-light"></span>
-          <router-link class="publish-link" to="/creators">Publish</router-link>
+          <router-link class="publish-link btn btn-sm" to="/creators">Publish</router-link>
         </div>
+      </div>
       </div>
     </nav>
   </header>
