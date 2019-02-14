@@ -76,6 +76,7 @@ const routes = [
   { path: "/changepassword", component: ChangePassword },
   { path: '/edit/profile', component: EditProfile },
   { path: '/choosecountry', component: Country },
+  { path: '/publish', component: CreatorPublishPage },
 
   { path: '/publish', component: CreatorPublishPage },
 

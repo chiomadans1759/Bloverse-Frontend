@@ -311,6 +311,147 @@ exports[`PublishPage Component should render correctly 1`] = `
                 </div>
               </div>
             </div>
+
+            <poptip-stub
+              content=""
+              placement="right"
+              trigger="click"
+            >
+              <div
+                class="d-flex justify-content-between inner-icons"
+              >
+                <div>
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center"
+                  >
+                    <i
+                      class="fal fa-arrow-from-bottom"
+                    />
+                  </button>
+                   
+                  <p>
+                    Upload
+                  </p>
+                </div>
+                 
+                <div>
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center"
+                  >
+                    <i
+                      class="fal fa-search"
+                    />
+                  </button>
+                   
+                  <p>
+                    Search
+                  </p>
+                </div>
+                 
+                <div>
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center"
+                  >
+                    <i
+                      class="far fa-th"
+                    />
+                  </button>
+                   
+                  <p>
+                    Multiple
+                  </p>
+                </div>
+              </div>
+               
+              <button
+                class="btn rounded-circle d-flex justify-content-center"
+              >
+                <i
+                  class="fal fa-image"
+                />
+              </button>
+            </poptip-stub>
+          </li>
+           
+          <li>
+            <poptip-stub
+              content=""
+              placement="right"
+              trigger="click"
+            >
+              <div
+                class="d-flex justify-content-between inner-icons"
+              >
+                <div>
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center"
+                  >
+                    <i
+                      class="fal fa-arrow-from-bottom"
+                    />
+                  </button>
+                   
+                  <p>
+                    Upload
+                  </p>
+                </div>
+                 
+                <div>
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center text"
+                  >
+                    <i
+                      class="fal fa-link"
+                    />
+                  </button>
+                   
+                  <p>
+                    Embedded
+                  </p>
+                </div>
+              </div>
+               
+              <button
+                class="btn rounded-circle d-flex justify-content-center"
+              >
+                <i
+                  class="fal fa-video"
+                />
+              </button>
+            </poptip-stub>
+          </li>
+           
+          <li>
+            <poptip-stub
+              content=""
+              placement="right"
+              trigger="click"
+            >
+              <div
+                class="d-flex justify-content-between inner-icons"
+              >
+                <div>
+                  <input
+                    class="embed"
+                    placeholder="Enter a url link"
+                    type="text"
+                  />
+                   
+                  <p>
+                    Add a link from twitter, facebook
+                  </p>
+                </div>
+              </div>
+               
+              <button
+                class="btn rounded-circle d-flex justify-content-center"
+              >
+                <i
+                  class="fal fa-link"
+                />
+              </button>
+            </poptip-stub>
+>
           </li>
         </ul>
       </div>

@@ -10,7 +10,7 @@
           <div class="col-lg-12 mr-2">
             <div class="bg-white publish-container">
               <div class="publish-link-container">
-                <router-link to="/" class="publish-link btn">Publish An Article</router-link>
+                <router-link to="/publish" class="publish-link btn">Publish An Article</router-link>
               </div>
             </div>
           </div>

@@ -17,7 +17,6 @@ exports[`ErrorAlert Component should render correctly 1`] = `
     </span>
      
     <!---->
-     
     <p
       class="text"
     />

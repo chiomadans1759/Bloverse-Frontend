@@ -7,6 +7,7 @@
       </a>
       <p class="nav-link text-uppercase small" v-if="showThis">saving... to draft</p>
       <button class="btn btn-sm btn-primary-outline preview" @click.prevent="showPreview" v-if="showThis">Preview to post</button>
+
     </nav> 
      <div class="container">
        <div class="row">
@@ -153,8 +154,6 @@ import EntitySection from '@/components/EntitySection/EntitySection.vue'
 import { Poptip } from 'iview'
 import { setTimeout } from 'timers';
 
-export default {
-  components: { ErrorAlert, ErrorAlert1, Poptip, EntitySection },
   data() {
     return {
       textArea: false,
@@ -214,7 +213,7 @@ export default {
   }
 }
 </script>
- 
+
 <style lang="scss" scoped>
 @import "./PublishPage"
 </style>
