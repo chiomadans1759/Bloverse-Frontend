@@ -154,7 +154,7 @@ import { Poptip } from 'iview'
 import { setTimeout } from 'timers';
 
 export default {
-  components: { ErrorAlert, ErrorAlert1, Poptip, EntitySection },
+  components: { Poptip, EntitySection, ErrorAlert, ErrorAlert1},
   data() {
     return {
       textArea: false,

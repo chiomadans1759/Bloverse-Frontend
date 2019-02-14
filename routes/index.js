@@ -79,6 +79,8 @@ const routes = [
   { path: '/choosecountry', component: Country },
   { path: '/publish', component: CreatorPublishPage },
 
+  { path: '/publish', component: CreatorPublishPage },
+
   {
     path: '/admin', component: BlankBase,
     children: [

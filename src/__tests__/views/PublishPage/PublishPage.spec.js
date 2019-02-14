@@ -3,16 +3,17 @@ import PublishPage from '@/views/journalists/Publish/PublishPage.vue';
 
 describe('PublishPage Component', () => {
   it('should render correctly', () => {
-
-    const wrapper = mount(PublishPage);
-
+    const wrapper = mount(PublishPage, {
+      stubs: {
+        RouterLink: RouterLinkStub
+      }
+    });
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('should render correctly', () => {
-    
+
+  it('should increase the `textArea`', () => {
     const wrapper = mount(PublishPage, {
-      stubs: 
-      { RouterLink: RouterLinkStub }
+      stubs: { RouterLink: RouterLinkStub }
     });
     wrapper.find('.show').trigger('click');
 
@@ -22,7 +23,7 @@ describe('PublishPage Component', () => {
   it('should display `showMe`', () => {
     const wrapper = mount(PublishPage, {
       stubs: 
-      { RouterLink: RouterLinkStub }
+        { RouterLink: RouterLinkStub }
     });
     wrapper.find('.text').trigger('click');
 
