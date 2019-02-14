@@ -986,963 +986,971 @@ exports[`Profile Component should render correctly 1`] = `
       </div>
        
       <div
-        class="row m-4 p-2 d-none d-sm-flex flex-wrap"
+        class="d-none d-sm-block"
       >
         <div
-          class="col-lg-6 col-md-6 my-2"
+          class="row m-4 p-2 d-none d-sm-flex"
         >
-          <main
-            class="card recommendation-card profile-card"
+          <div
+            class="col-lg-6 my-2"
           >
-            <img
-              alt="..."
-              class="card-img-top"
-              src="@/assets/photo-4.jpg"
-            />
-             
-            <div
-              class="card-body"
+            <main
+              class="card recommendation-card"
             >
-              <h5
-                class="card-title"
-              >
-                Category
-              </h5>
+              <img
+                alt="..."
+                class="card-img-top"
+                src="@/assets/photo-4.jpg"
+              />
                
               <div
-                class="card-text recommendation-card--content"
+                class="card-body"
               >
-                <p
-                  class="font-weight-bold recommendation-card--content__text"
+                <h5
+                  class="card-title"
                 >
-                  <a>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </a>
-                </p>
+                  Category
+                </h5>
                  
-                <p
-                  class="recommendation-card--content__username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="card-text row actions"
-              >
                 <div
-                  class="col-7 views"
+                  class="card-text recommendation-card--content"
                 >
-                  <i
-                    class="fal fa-eye"
-                  />
-                   
-                  <span
-                    class="count"
+                  <p
+                    class="font-weight-bold recommendation-card--content__text"
                   >
-                    123
-                  </span>
+                    <a>
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="recommendation-card--content__username"
+                  >
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
                 </div>
                  
                 <div
-                  class="col-5 row others"
+                  class="card-text row actions"
                 >
                   <div
-                    class="col-9 likes"
+                    class="col-7 views"
                   >
-                    <p
-                      class="thumbs-up"
-                    >
-                      <i
-                        class="fal fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
+                    <i
+                      class="fal fa-eye"
+                    />
                      
-                    <p
-                      class="thumbs-up"
-                      style="display: none;"
+                    <span
+                      class="count"
                     >
-                      <i
-                        class="fas fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                    >
-                      <i
-                        class="fal fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
+                      123
+                    </span>
                   </div>
                    
                   <div
-                    class="col-3 ellipsis"
+                    class="col-5 row others"
                   >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
+                    <div
+                      class="col-9 likes"
                     >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
-                    </span>
+                      <p
+                        class="thumbs-up"
+                      >
+                        <i
+                          class="fal fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-up"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                    </div>
                      
                     <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
+                      class="col-3 ellipsis"
                     >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
                       <div
-                        class="d-flex bl-dropdown-menu__countries"
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
                       >
                         <div
-                          class="favourite-countries"
+                          class="d-flex bl-dropdown-menu__countries"
                         >
-                          <p
-                            class="dropdown-item country"
+                          <div
+                            class="favourite-countries"
                           >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
+                            <p
+                              class="dropdown-item country"
                             >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
                              
-                            <span
-                              class="count"
+                            <p
+                              class="dropdown-item country"
                             >
-                              67
-                            </span>
-                          </p>
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </main>
+            </main>
+          </div>
+           
+          <div
+            class="col-lg-6 my-2"
+          >
+            <main
+              class="card recommendation-card"
+            >
+              <img
+                alt="..."
+                class="card-img-top"
+                src="@/assets/photo-4.jpg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Category
+                </h5>
+                 
+                <div
+                  class="card-text recommendation-card--content"
+                >
+                  <p
+                    class="font-weight-bold recommendation-card--content__text"
+                  >
+                    <a>
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="recommendation-card--content__username"
+                  >
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="card-text row actions"
+                >
+                  <div
+                    class="col-7 views"
+                  >
+                    <i
+                      class="fal fa-eye"
+                    />
+                     
+                    <span
+                      class="count"
+                    >
+                      123
+                    </span>
+                  </div>
+                   
+                  <div
+                    class="col-5 row others"
+                  >
+                    <div
+                      class="col-9 likes"
+                    >
+                      <p
+                        class="thumbs-up"
+                      >
+                        <i
+                          class="fal fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-up"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <div
+                      class="col-3 ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+           
+          <div
+            class="col-lg-6 my-2"
+          >
+            <main
+              class="card recommendation-card"
+            >
+              <img
+                alt="..."
+                class="card-img-top"
+                src="@/assets/photo-4.jpg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Category
+                </h5>
+                 
+                <div
+                  class="card-text recommendation-card--content"
+                >
+                  <p
+                    class="font-weight-bold recommendation-card--content__text"
+                  >
+                    <a>
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="recommendation-card--content__username"
+                  >
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="card-text row actions"
+                >
+                  <div
+                    class="col-7 views"
+                  >
+                    <i
+                      class="fal fa-eye"
+                    />
+                     
+                    <span
+                      class="count"
+                    >
+                      123
+                    </span>
+                  </div>
+                   
+                  <div
+                    class="col-5 row others"
+                  >
+                    <div
+                      class="col-9 likes"
+                    >
+                      <p
+                        class="thumbs-up"
+                      >
+                        <i
+                          class="fal fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-up"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <div
+                      class="col-3 ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+           
+          <div
+            class="col-lg-6 my-2"
+          >
+            <main
+              class="card recommendation-card"
+            >
+              <img
+                alt="..."
+                class="card-img-top"
+                src="@/assets/photo-4.jpg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Category
+                </h5>
+                 
+                <div
+                  class="card-text recommendation-card--content"
+                >
+                  <p
+                    class="font-weight-bold recommendation-card--content__text"
+                  >
+                    <a>
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="recommendation-card--content__username"
+                  >
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="card-text row actions"
+                >
+                  <div
+                    class="col-7 views"
+                  >
+                    <i
+                      class="fal fa-eye"
+                    />
+                     
+                    <span
+                      class="count"
+                    >
+                      123
+                    </span>
+                  </div>
+                   
+                  <div
+                    class="col-5 row others"
+                  >
+                    <div
+                      class="col-9 likes"
+                    >
+                      <p
+                        class="thumbs-up"
+                      >
+                        <i
+                          class="fal fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-up"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <div
+                      class="col-3 ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+           
+          <div
+            class="col-lg-6 my-2"
+          >
+            <main
+              class="card recommendation-card"
+            >
+              <img
+                alt="..."
+                class="card-img-top"
+                src="@/assets/photo-4.jpg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Category
+                </h5>
+                 
+                <div
+                  class="card-text recommendation-card--content"
+                >
+                  <p
+                    class="font-weight-bold recommendation-card--content__text"
+                  >
+                    <a>
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="recommendation-card--content__username"
+                  >
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="card-text row actions"
+                >
+                  <div
+                    class="col-7 views"
+                  >
+                    <i
+                      class="fal fa-eye"
+                    />
+                     
+                    <span
+                      class="count"
+                    >
+                      123
+                    </span>
+                  </div>
+                   
+                  <div
+                    class="col-5 row others"
+                  >
+                    <div
+                      class="col-9 likes"
+                    >
+                      <p
+                        class="thumbs-up"
+                      >
+                        <i
+                          class="fal fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-up"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <div
+                      class="col-3 ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                67
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
         </div>
          
-        <div
-          class="col-lg-6 col-md-6 my-2"
-        >
-          <main
-            class="card recommendation-card profile-card"
-          >
-            <img
-              alt="..."
-              class="card-img-top"
-              src="@/assets/photo-4.jpg"
-            />
-             
-            <div
-              class="card-body"
-            >
-              <h5
-                class="card-title"
-              >
-                Category
-              </h5>
-               
-              <div
-                class="card-text recommendation-card--content"
-              >
-                <p
-                  class="font-weight-bold recommendation-card--content__text"
-                >
-                  <a>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </a>
-                </p>
-                 
-                <p
-                  class="recommendation-card--content__username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="card-text row actions"
-              >
-                <div
-                  class="col-7 views"
-                >
-                  <i
-                    class="fal fa-eye"
-                  />
-                   
-                  <span
-                    class="count"
-                  >
-                    123
-                  </span>
-                </div>
-                 
-                <div
-                  class="col-5 row others"
-                >
-                  <div
-                    class="col-9 likes"
-                  >
-                    <p
-                      class="thumbs-up"
-                    >
-                      <i
-                        class="fal fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-up"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                    >
-                      <i
-                        class="fal fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                  </div>
-                   
-                  <div
-                    class="col-3 ellipsis"
-                  >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                    >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
-                    </span>
-                     
-                    <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
-                    >
-                      <div
-                        class="d-flex bl-dropdown-menu__countries"
-                      >
-                        <div
-                          class="favourite-countries"
-                        >
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
-         
-        <div
-          class="col-lg-6 col-md-6 my-2"
-        >
-          <main
-            class="card recommendation-card profile-card"
-          >
-            <img
-              alt="..."
-              class="card-img-top"
-              src="@/assets/photo-4.jpg"
-            />
-             
-            <div
-              class="card-body"
-            >
-              <h5
-                class="card-title"
-              >
-                Category
-              </h5>
-               
-              <div
-                class="card-text recommendation-card--content"
-              >
-                <p
-                  class="font-weight-bold recommendation-card--content__text"
-                >
-                  <a>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </a>
-                </p>
-                 
-                <p
-                  class="recommendation-card--content__username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="card-text row actions"
-              >
-                <div
-                  class="col-7 views"
-                >
-                  <i
-                    class="fal fa-eye"
-                  />
-                   
-                  <span
-                    class="count"
-                  >
-                    123
-                  </span>
-                </div>
-                 
-                <div
-                  class="col-5 row others"
-                >
-                  <div
-                    class="col-9 likes"
-                  >
-                    <p
-                      class="thumbs-up"
-                    >
-                      <i
-                        class="fal fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-up"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                    >
-                      <i
-                        class="fal fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                  </div>
-                   
-                  <div
-                    class="col-3 ellipsis"
-                  >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                    >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
-                    </span>
-                     
-                    <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
-                    >
-                      <div
-                        class="d-flex bl-dropdown-menu__countries"
-                      >
-                        <div
-                          class="favourite-countries"
-                        >
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
-         
-        <div
-          class="col-lg-6 col-md-6 my-2"
-        >
-          <main
-            class="card recommendation-card profile-card"
-          >
-            <img
-              alt="..."
-              class="card-img-top"
-              src="@/assets/photo-4.jpg"
-            />
-             
-            <div
-              class="card-body"
-            >
-              <h5
-                class="card-title"
-              >
-                Category
-              </h5>
-               
-              <div
-                class="card-text recommendation-card--content"
-              >
-                <p
-                  class="font-weight-bold recommendation-card--content__text"
-                >
-                  <a>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </a>
-                </p>
-                 
-                <p
-                  class="recommendation-card--content__username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="card-text row actions"
-              >
-                <div
-                  class="col-7 views"
-                >
-                  <i
-                    class="fal fa-eye"
-                  />
-                   
-                  <span
-                    class="count"
-                  >
-                    123
-                  </span>
-                </div>
-                 
-                <div
-                  class="col-5 row others"
-                >
-                  <div
-                    class="col-9 likes"
-                  >
-                    <p
-                      class="thumbs-up"
-                    >
-                      <i
-                        class="fal fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-up"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                    >
-                      <i
-                        class="fal fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                  </div>
-                   
-                  <div
-                    class="col-3 ellipsis"
-                  >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                    >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
-                    </span>
-                     
-                    <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
-                    >
-                      <div
-                        class="d-flex bl-dropdown-menu__countries"
-                      >
-                        <div
-                          class="favourite-countries"
-                        >
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
-         
-        <div
-          class="col-lg-6 col-md-6 my-2"
-        >
-          <main
-            class="card recommendation-card profile-card"
-          >
-            <img
-              alt="..."
-              class="card-img-top"
-              src="@/assets/photo-4.jpg"
-            />
-             
-            <div
-              class="card-body"
-            >
-              <h5
-                class="card-title"
-              >
-                Category
-              </h5>
-               
-              <div
-                class="card-text recommendation-card--content"
-              >
-                <p
-                  class="font-weight-bold recommendation-card--content__text"
-                >
-                  <a>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </a>
-                </p>
-                 
-                <p
-                  class="recommendation-card--content__username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="card-text row actions"
-              >
-                <div
-                  class="col-7 views"
-                >
-                  <i
-                    class="fal fa-eye"
-                  />
-                   
-                  <span
-                    class="count"
-                  >
-                    123
-                  </span>
-                </div>
-                 
-                <div
-                  class="col-5 row others"
-                >
-                  <div
-                    class="col-9 likes"
-                  >
-                    <p
-                      class="thumbs-up"
-                    >
-                      <i
-                        class="fal fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-up"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                    >
-                      <i
-                        class="fal fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                  </div>
-                   
-                  <div
-                    class="col-3 ellipsis"
-                  >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                    >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
-                    </span>
-                     
-                    <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
-                    >
-                      <div
-                        class="d-flex bl-dropdown-menu__countries"
-                      >
-                        <div
-                          class="favourite-countries"
-                        >
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
+        <!---->
       </div>
+       
+      <!---->
        
       <!---->
        
