@@ -6,7 +6,7 @@ import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
 
 // General Layout Pages
-import ConsumerHomepage from '../src/views/consumers/ConsumerHome/ConsumerHomepage.vue';
+import ConsumerHomePage from '../src/views/consumers/ConsumerHome/ConsumerHomePage.vue';
 import PostDisplay from '../src/views/general/SinglePost/SinglePostPage.vue';
 import Terms from '../src/views/general/TermsAndConditions/TermsAndConditionsPage.vue';
 import Privacy from '../src/views/general/PrivacyPolicy/PrivacyPolicyPage.vue';
@@ -17,6 +17,7 @@ import NotFound from '../src/views/general/NotFoundPage/NotFoundPage.vue';
 
 // Blank Base Layout Pages
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
+import CreatorPublishPage from '@/views/journalists/Publish/PublishPage.vue'
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
 import EditProfile from '../src/views/general/EditProfile/EditProfilePage';
 import SigninPage from '../src/views/general/Signin/SigninPage.vue';
@@ -49,7 +50,7 @@ const routes = [
   {
     path: '/', component: GeneralLayout,
     children: [
-      { path: '', component: ConsumerHomepage },
+      { path: '', component: ConsumerHomePage },
       { path: 'posts', redirect: '/' },
       { path: 'posts/:slug', component: PostDisplay },
       { path: '/about', component: AboutUs },
@@ -75,6 +76,7 @@ const routes = [
   { path: "/changepassword", component: ChangePassword },
   { path: '/edit/profile', component: EditProfile },
   { path: '/choosecountry', component: Country },
+  { path: '/publish', component: CreatorPublishPage },
 
   {
     path: '/admin', component: BlankBase,

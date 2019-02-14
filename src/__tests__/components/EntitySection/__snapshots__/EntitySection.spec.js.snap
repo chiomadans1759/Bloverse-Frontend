@@ -1,0 +1,356 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EntitySection Component should render correctly 1`] = `
+<main
+  class="scrollbar"
+  id="entity-section"
+>
+  <div
+    class="d-flex align-items-center mb-4 item active"
+  >
+    <img
+      class="rounded-circle mr-3"
+      src="./../../assets/category/category3.jpg"
+    />
+     
+    <div>
+      <p
+        class="m-0"
+      >
+        Entity Name
+      </p>
+       
+      <div
+        class="count d-flex align-items-center"
+      >
+        <span>
+          <i
+            class="fal fa-id-card"
+          />
+          758
+        </span>
+         
+        <span
+          class="divider-circle"
+        />
+         
+        <span>
+          <i
+            class="fal fa-comment-dots"
+          />
+          234
+        </span>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="mb-3"
+  >
+    <div
+      class="item d-flex align-items-center "
+    >
+      <img
+        class="rounded-circle mr-3"
+        src="./../../assets/category/category7.jpg"
+      />
+       
+      <div
+        class="scroll"
+      >
+        <p
+          class="m-0"
+        >
+          Entity Name
+        </p>
+         
+        <div
+          class="count"
+        >
+          <span>
+            <i
+              class="fal fa-id-card"
+            />
+            758
+          </span>
+           
+          <span
+            class="circle mx-2"
+          />
+           
+          <span>
+            <i
+              class="fal fa-comment-dots"
+            />
+            234
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mb-3"
+  >
+    <div
+      class="item d-flex align-items-center "
+    >
+      <img
+        class="rounded-circle mr-3"
+        src="./../../assets/category/category7.jpg"
+      />
+       
+      <div
+        class="scroll"
+      >
+        <p
+          class="m-0"
+        >
+          Entity Name
+        </p>
+         
+        <div
+          class="count"
+        >
+          <span>
+            <i
+              class="fal fa-id-card"
+            />
+            758
+          </span>
+           
+          <span
+            class="circle mx-2"
+          />
+           
+          <span>
+            <i
+              class="fal fa-comment-dots"
+            />
+            234
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mb-3"
+  >
+    <div
+      class="item d-flex align-items-center "
+    >
+      <img
+        class="rounded-circle mr-3"
+        src="./../../assets/category/category7.jpg"
+      />
+       
+      <div
+        class="scroll"
+      >
+        <p
+          class="m-0"
+        >
+          Entity Name
+        </p>
+         
+        <div
+          class="count"
+        >
+          <span>
+            <i
+              class="fal fa-id-card"
+            />
+            758
+          </span>
+           
+          <span
+            class="circle mx-2"
+          />
+           
+          <span>
+            <i
+              class="fal fa-comment-dots"
+            />
+            234
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mb-3"
+  >
+    <div
+      class="item d-flex align-items-center "
+    >
+      <img
+        class="rounded-circle mr-3"
+        src="./../../assets/category/category7.jpg"
+      />
+       
+      <div
+        class="scroll"
+      >
+        <p
+          class="m-0"
+        >
+          Entity Name
+        </p>
+         
+        <div
+          class="count"
+        >
+          <span>
+            <i
+              class="fal fa-id-card"
+            />
+            758
+          </span>
+           
+          <span
+            class="circle mx-2"
+          />
+           
+          <span>
+            <i
+              class="fal fa-comment-dots"
+            />
+            234
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mb-3"
+  >
+    <div
+      class="item d-flex align-items-center "
+    >
+      <img
+        class="rounded-circle mr-3"
+        src="./../../assets/category/category7.jpg"
+      />
+       
+      <div
+        class="scroll"
+      >
+        <p
+          class="m-0"
+        >
+          Entity Name
+        </p>
+         
+        <div
+          class="count"
+        >
+          <span>
+            <i
+              class="fal fa-id-card"
+            />
+            758
+          </span>
+           
+          <span
+            class="circle mx-2"
+          />
+           
+          <span>
+            <i
+              class="fal fa-comment-dots"
+            />
+            234
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mb-3"
+  >
+    <div
+      class="item d-flex align-items-center "
+    >
+      <img
+        class="rounded-circle mr-3"
+        src="./../../assets/category/category7.jpg"
+      />
+       
+      <div
+        class="scroll"
+      >
+        <p
+          class="m-0"
+        >
+          Entity Name
+        </p>
+         
+        <div
+          class="count"
+        >
+          <span>
+            <i
+              class="fal fa-id-card"
+            />
+            758
+          </span>
+           
+          <span
+            class="circle mx-2"
+          />
+           
+          <span>
+            <i
+              class="fal fa-comment-dots"
+            />
+            234
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mb-3"
+  >
+    <div
+      class="item d-flex align-items-center "
+    >
+      <img
+        class="rounded-circle mr-3"
+        src="./../../assets/category/category7.jpg"
+      />
+       
+      <div
+        class="scroll"
+      >
+        <p
+          class="m-0"
+        >
+          Entity Name
+        </p>
+         
+        <div
+          class="count"
+        >
+          <span>
+            <i
+              class="fal fa-id-card"
+            />
+            758
+          </span>
+           
+          <span
+            class="circle mx-2"
+          />
+           
+          <span>
+            <i
+              class="fal fa-comment-dots"
+            />
+            234
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;

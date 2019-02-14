@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorAlert Component should render correctly 1`] = `
+<main
+  id="error-alert"
+>
+  <div
+    class="alert alert-danger error"
+    role="alert"
+  >
+    <span
+      class="d-flex justify-content-end"
+    >
+      <i
+        class="fal fa-times error-icon"
+      />
+    </span>
+     
+    <!---->
+     
+    <p />
+  </div>
+</main>
+`;
