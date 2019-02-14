@@ -3,17 +3,16 @@ import PublishPage from '@/views/journalists/Publish/PublishPage.vue';
 
 describe('PublishPage Component', () => {
   it('should render correctly', () => {
-    const wrapper = mount(PublishPage, {
-      stubs: {
-        RouterLink: RouterLinkStub
-      }
-    });
+
+    const wrapper = mount(PublishPage);
+
     expect(wrapper.element).toMatchSnapshot();
   });
-
-  it('should increase the `textArea`', () => {
+  it('should render correctly', () => {
+    
     const wrapper = mount(PublishPage, {
-      stubs: { RouterLink: RouterLinkStub }
+      stubs: 
+      { RouterLink: RouterLinkStub }
     });
     wrapper.find('.show').trigger('click');
 
@@ -22,7 +21,8 @@ describe('PublishPage Component', () => {
 
   it('should display `showMe`', () => {
     const wrapper = mount(PublishPage, {
-      stubs: { RouterLink: RouterLinkStub }
+      stubs: 
+      { RouterLink: RouterLinkStub }
     });
     wrapper.find('.text').trigger('click');
 
@@ -31,7 +31,8 @@ describe('PublishPage Component', () => {
 
   it('should display `showThis`', () => {
     const wrapper = mount(PublishPage, {
-      stubs: { RouterLink: RouterLinkStub }
+      stubs: 
+      { RouterLink: RouterLinkStub }
     });
     wrapper.find('.btn').trigger('input');
     wrapper.find('.nav-link').trigger('input');

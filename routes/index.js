@@ -31,10 +31,11 @@ import ChangePassword from '../src/views/general/ChangePassword/ChangePassword.v
 import CreatorHomePage from '../src/views/journalists/CreatorHome/CreatorHomePage';
 import CreatorApply from '../src/views/journalists/CreatorApply/CreatorApplyPage.vue';
 import CreatorProfile from '../src/views/journalists/Profile/ProfilePage';
+import CreatorPosts from '../src/views/journalists/Post/PostPage';
 import EmailPrefrence from '../src/views/journalists/EmailPrefrence/EmailPrefrencePage.vue';
 import SocialMedia from '../src/views/journalists/SocialMedia/SocialMediaPage.vue';
-import Drafts from '../src/views/journalists/Drafts/DraftsPage';
-import CreatorTrash from '../src/views/journalists/TrashPage/TrashPage.vue';
+import CreatorDrafts from '../src/views/journalists/Drafts/DraftsPage';
+import CreatorTrash from '../src/views/journalists/Trash/TrashPage.vue';
 
 // Version one routes
 import MyProfile from '../src/views/journalists/MyProfile.vue';
@@ -76,7 +77,6 @@ const routes = [
   { path: "/changepassword", component: ChangePassword },
   { path: '/edit/profile', component: EditProfile },
   { path: '/choosecountry', component: Country },
-
   { path: '/publish', component: CreatorPublishPage },
 
   {
@@ -105,8 +105,9 @@ const routes = [
       { path: 'apply', component: CreatorApply },
       { path: 'email-settings', component: EmailPrefrence },
       { path: 'profile', component: CreatorProfile },
+      { path: 'posts', component: CreatorPosts},
       { path: 'social-media', component: SocialMedia },
-      { path: 'drafts', component: Drafts },
+      { path: 'drafts', component: CreatorDrafts },
       { path: 'trash', component: CreatorTrash },
       {
         path: 'setup', component: JournalistSetUp,
