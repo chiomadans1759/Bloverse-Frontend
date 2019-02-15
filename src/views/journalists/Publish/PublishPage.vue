@@ -85,8 +85,15 @@
             <div class="form-group">
               <input type="text" class="form-control p-0 one" placeholder="Add a title" autofocus>
             </div>
-            <div class="form-group">
-              <input type="text" class="form-control p-0 two" placeholder="Add keypoint">
+            <div class="form-group d-flex" v-for="(line, index) in lines" :key="index">
+              <input type="text" class="form-control p-0 two" placeholder="Add keypoint" v-model="line.keypoint">
+              <div>
+                <span v-if="plus_btn">
+                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="addKeypoint" v-if="line.hideBtn">
+                  <i class="fal fa-plus"></i>
+                </button>
+                </span>
+              </div>
             </div>
             <div class="form-group pb-4">
               <textarea class="mytext" ref="autoText" v-model="textLength" v-if="textArea" @input="textareaResize"></textarea>
@@ -163,7 +170,14 @@ export default {
       showThis: false,
       hideMe: true,
       content1: true,
-      blurBackground: false
+      blurBackground: false,
+      plus_btn: true,
+      lines: [
+        {
+          keypoint:'',
+          hideBtn: true
+        }
+      ]
     }
   },
   watch:{
@@ -210,6 +224,18 @@ export default {
       /* eslint-disable */ 
       $('#previewModal').modal('hide');
       this.hideMe = true;
+    },
+    addKeypoint() {
+      if(this.lines.length < 3) {
+        this.lines.push({
+          keypoint:'',
+          hideBtn: false
+        })
+      }
+
+      if(this.lines.length == 3){
+        this.plus_btn = false;
+      }
     }
   }
 }
