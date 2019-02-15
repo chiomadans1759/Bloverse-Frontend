@@ -54,6 +54,22 @@
       }
     }
   }
+
+  &__no-feed {
+    height: rem(519px);
+    font-size: rem(16px);
+
+    &--content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: rem(100px);
+    }
+  }
+  .greyColor {
+    color: #868686;
+  }
 }
 
 .bl-homepage__content--publishedPosts__feeds {

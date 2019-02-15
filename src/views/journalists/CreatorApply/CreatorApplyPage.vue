@@ -7,7 +7,7 @@
           <span class="back-text">Back</span>
         </a>
         <router-link to="/" class="router-link pl-4">
-          <img class="nav-logo" src="@/assets/Logo.svg">
+          <img class="nav-logo" src="@/assets/Bloverse.svg">
         </router-link>
       </span>
     </div>

@@ -30,12 +30,12 @@ exports[`Signup Page should render correctly 1`] = `
         >
           <img
             class="logo"
-            src="@/assets/Logo - White.svg"
+            src="@/assets/Bloverse-white.svg"
           />
            
           <img
             class="blue-logo"
-            src="@/assets/Logo.svg"
+            src="@/assets/Bloverse.svg"
           />
         </a>
       </span>
