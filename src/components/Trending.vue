@@ -13,8 +13,7 @@
         id="carouselExampleIndicators"
         class="carousel slide"
         data-ride="carousel"
-        data-interval="3000"
-      >
+        data-interval="3000">
         <ol class="carousel-indicators" v-show="general.trendingPost.length > 4">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li
@@ -24,6 +23,7 @@
           ></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
+
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row no-gutters">
@@ -74,13 +74,13 @@
             </div>
           </div>
         </div>
+
         <a
           class="carousel-control-prev"
           href="#carouselExampleIndicators"
           role="button"
           data-slide="prev"
-          v-show="general.trendingPost.length > 4"
-        >
+          v-show="general.trendingPost.length > 4">
           <i class="fal fa-chevron-left"></i>
           <span class="sr-only">Previous</span>
         </a>
@@ -96,6 +96,7 @@
         </a>
       </div>
     </div>
+
     <!-- For Mobile View -->
     <div class="mobile">
       <carousel
@@ -127,15 +128,12 @@ export default {
   },
   components: { Row, Col, Avatar, Carousel, Slide, TrendingCard },
   methods: {
-    ...mapActions(["getAllTrendingPosts"]),
-
-    countPages() {
-      let pages = Math.ceil(this.general.trendingPost.length / 3);
-      this.pages = pages;
-    }
+    ...mapActions(["getAllTrendingPosts"])
+  },
+  async mounted() {
+    await this.getAllTrendingPosts();
   },
   async created() {
-    await this.getAllTrendingPosts();
     setInterval(async () => {
       await this.getAllTrendingPosts();
     }, 100000);
