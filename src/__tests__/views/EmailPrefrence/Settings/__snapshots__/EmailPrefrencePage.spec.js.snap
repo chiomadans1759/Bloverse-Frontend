@@ -152,7 +152,9 @@ exports[`Creator Email Settings Page should render properly 1`] = `
                 data-dismiss="modal"
                 type="button"
               >
-                Close
+                
+              Close
+            
               </button>
                
               <button

@@ -1,0 +1,14 @@
+@import 'sass-rem';
+
+.social {
+  &-title {
+    font-size: rem(16px);
+  }
+  .social-icon {
+    height: rem(14px);
+    width: rem(14px);
+  }
+  .social-text {
+    font-size: rem(12px);
+  }
+}

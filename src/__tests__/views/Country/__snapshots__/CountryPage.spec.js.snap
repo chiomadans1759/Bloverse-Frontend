@@ -155,7 +155,9 @@ exports[`ChooseCountry Component dispatches "actionInput" when input event value
                   data-dismiss="modal"
                   type="button"
                 >
-                  Close
+                  
+              Close
+            
                 </button>
                  
                 <button

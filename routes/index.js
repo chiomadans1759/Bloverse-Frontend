@@ -26,6 +26,7 @@ import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vu
 import Category from '@/views//general/Category/CategoryPage';
 import Country from '@/views/general/Country/CountryPage';
 import ChangePassword from '../src/views/general/ChangePassword/ChangePassword.vue';
+import SetupPassword from '../src/views/general/SetupPassword/SetupPassword.vue';
 
 // Creator Layout Pages
 import CreatorHomePage from '../src/views/journalists/CreatorHome/CreatorHomePage';
@@ -111,6 +112,7 @@ const routes = [
       { path: 'social-media', component: SocialMedia },
       { path: 'drafts', component: CreatorDrafts },
       { path: 'trash', component: CreatorTrash },
+      { path: "setuppassword", component: SetupPassword },
       {
         path: 'setup', component: JournalistSetUp,
         beforeEnter(to, from, next) {

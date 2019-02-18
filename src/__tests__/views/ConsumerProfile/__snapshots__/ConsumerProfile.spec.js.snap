@@ -637,12 +637,14 @@ exports[`Profile Component should render correctly 1`] = `
         class="col-lg-12 mt-2"
       >
         <main
-          class="category-card p-4 p-sm-3 card"
+          class="category-card card p-4 p-sm-3"
         >
           <div
             class="header d-flex justify-content-between "
           >
-            <h5>
+            <h5
+              class=""
+            >
               <strong>
                 Interest
               </strong>

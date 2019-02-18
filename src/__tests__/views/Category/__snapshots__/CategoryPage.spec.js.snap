@@ -155,7 +155,9 @@ exports[`ChooseCategory Component dispatches "actionInput" when input event valu
                   data-dismiss="modal"
                   type="button"
                 >
-                  Close
+                  
+              Close
+            
                 </button>
                  
                 <button
