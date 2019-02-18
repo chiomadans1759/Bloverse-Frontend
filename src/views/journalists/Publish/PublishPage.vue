@@ -13,7 +13,7 @@
         <div class="col-lg-1 icon-wrapper mt-4">
           <ul class="text-icons">
             <li>
-              <button class="btn rounded-circle d-flex justify-content-center show" v-if="hideMe" @click="showTextBox">
+              <button class="btn rounded-circle d-flex justify-content-center show" v-if="hideMe" @click.prevent="showTextBox">
                 <i class="fal fa-font"></i>
               </button>
             </li>
@@ -89,12 +89,12 @@
               <input type="text" class="form-control p-0 two" placeholder="Add keypoint" v-model="line.keypoint">
               <div>
                 <span v-if="line.hideBtn">
-                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click="addKeypoint" v-if="plus_btn">
+                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="addKeypoint" v-if="plus_btn">
                   <i class="fal fa-plus"></i>
                 </button>
                 </span>
                 <span v-if="!line.hideBtn">
-                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click="removeKeypoint(index)">
+                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="removeKeypoint(index)">
                   <i class="fal fa-minus"></i>
                 </button>
                 </span>

@@ -20,7 +20,7 @@
     color: #868686;
   }
   .two {
-    margin-bottom: -0.5rem;
+    margin-bottom: -1rem;
     &::placeholder {
       color: #868686;
     }
@@ -40,7 +40,7 @@
     padding-bottom: 3rem;
     font-size: 1rem;
     font-weight: 500;
-    margin-top: 4.5rem;
+    position: fixed !important;
     &:focus {
       outline: none;
       box-shadow: none;
