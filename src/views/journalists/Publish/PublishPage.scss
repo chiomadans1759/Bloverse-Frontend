@@ -40,6 +40,7 @@
     padding-bottom: 3rem;
     font-size: 1rem;
     font-weight: 500;
+    margin-top: 4.5rem;
     &:focus {
       outline: none;
       box-shadow: none;
@@ -63,7 +64,7 @@
   }
   .text-icons {
     list-style-type: none;
-    margin-top: 4.5rem;
+    margin-top: 10.5rem;
     position: fixed;
     li {
       margin-bottom: 1rem;
@@ -77,6 +78,10 @@
   }
   .icon-wrapper {
     z-index: 1;
+  }
+
+  .toggle {
+    cursor: pointer;
   }
 
   .text {

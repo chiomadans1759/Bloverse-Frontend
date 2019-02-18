@@ -349,6 +349,8 @@ exports[`PublishPage Component should render correctly 1`] = `
                   />
                 </button>
               </span>
+               
+              <!---->
             </div>
           </div>
            
@@ -360,7 +362,19 @@ exports[`PublishPage Component should render correctly 1`] = `
         </form>
       </div>
        
-      <!---->
+      <div
+        class="col-lg-3 err-alert"
+      >
+        <!---->
+         
+        <!---->
+         
+        <!---->
+         
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
    
