@@ -1,8 +1,9 @@
 <template>
   <main id="user-info-mobile" class="container d-block d-sm-none">
-    <profile :hideMobileUserInfo="hideMobileUserInfo" />
-    <country-card />
-    <category-card />
+    <profile :hideMobileUserInfo="hideMobileUserInfo"
+    displayInterest hideFollowing displayFollowers />
+    <country-card v-if="!hideCountry" />
+    <category-card v-if="!displayInterest" />
   </main>
 </template>
 
@@ -19,7 +20,23 @@ export default {
       type: Function,
       required: false,
       default: () => {},
-    }
+    },
+    displayInterest: {
+      type: Boolean,
+      default: false,
+    },
+    hideFollowing: {
+      type: Boolean,
+      default: false,
+    },
+    displayFollowers: {
+      type: Boolean,
+      default: false,
+    },
+    hideCountry: {
+      type: Boolean,
+      default: false
+    },
   }
 }
 </script>

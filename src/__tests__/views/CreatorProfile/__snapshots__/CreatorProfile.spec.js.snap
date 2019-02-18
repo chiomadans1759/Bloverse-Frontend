@@ -1215,14 +1215,15 @@ exports[`Profile Component should render correctly 1`] = `
       <div
         class="d-inline-flex d-sm-none initials"
       >
-        <a
+        <button
           class="initials-link"
-          href="#"
           id="navbarDropdown"
           role="button"
         >
+          
           SM
-        </a>
+        
+        </button>
          
         <i
           class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"
@@ -1631,6 +1632,12 @@ exports[`Profile Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+      </div>
+       
+      <div
+        class="row d-sm-none"
+      >
+        <!---->
       </div>
     </div>
   </div>
