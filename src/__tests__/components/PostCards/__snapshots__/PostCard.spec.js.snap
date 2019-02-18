@@ -118,7 +118,7 @@ exports[`PostCard Component should render correctly 1`] = `
           class="col-7 col-sm-4 likes"
         >
           <p
-            class="thumbs-up"
+            class="thumbs-up centerEle"
           >
             <i
               class="fal fa-thumbs-up"
@@ -132,7 +132,7 @@ exports[`PostCard Component should render correctly 1`] = `
           </p>
            
           <p
-            class="thumbs-up"
+            class="thumbs-up centerEle"
             style="display: none;"
           >
             <i
@@ -147,7 +147,7 @@ exports[`PostCard Component should render correctly 1`] = `
           </p>
            
           <p
-            class="thumbs-down"
+            class="thumbs-down centerEle"
           >
             <i
               class="fal fa-thumbs-down"
@@ -161,7 +161,7 @@ exports[`PostCard Component should render correctly 1`] = `
           </p>
            
           <p
-            class="thumbs-down"
+            class="thumbs-down centerEle"
             style="display: none;"
           >
             <i
@@ -180,7 +180,7 @@ exports[`PostCard Component should render correctly 1`] = `
           class="col-3 col-sm-7 comments"
         >
           <p
-            class="coment"
+            class="coment hideEle centerEle"
           >
             <i
               class="fal fa-comment-dots"
@@ -194,7 +194,7 @@ exports[`PostCard Component should render correctly 1`] = `
           </p>
            
           <p
-            class="share"
+            class="share hideEle centerEle"
           >
             <i
               class="fal fa-share"
@@ -226,7 +226,7 @@ exports[`PostCard Component should render correctly 1`] = `
              
             <div
               aria-labelledby="dropdownMenuReference"
-              class="dropdown-menu bl-dropdown-menu"
+              class="dropdown-menu bl-dropdown-menu top-dropdown"
             >
               <div
                 class="d-flex bl-dropdown-menu__countries"
@@ -246,6 +246,21 @@ exports[`PostCard Component should render correctly 1`] = `
                    
                   <p
                     class="dropdown-item country"
+                    style="display: none;"
+                  >
+                    <i
+                      class="fal fa-times"
+                    />
+                     
+                    <span
+                      class="count"
+                    >
+                      remove
+                    </span>
+                  </p>
+                   
+                  <p
+                    class="dropdown-item country"
                   >
                     <i
                       class="fal fa-plus"
@@ -257,6 +272,50 @@ exports[`PostCard Component should render correctly 1`] = `
                       Creators Profile
                     </span>
                   </p>
+                   
+                  <div
+                    class="d-md-none"
+                  >
+                    <p
+                      class="dropdown-item country"
+                    >
+                      <i
+                        class="fal fa-comment-dots"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        Comment
+                      
+                        <span
+                          class="badges"
+                        >
+                          5
+                        </span>
+                      </span>
+                    </p>
+                     
+                    <p
+                      class="dropdown-item country hidden-lg-down"
+                    >
+                      <i
+                        class="fal fa-share"
+                      />
+                       
+                      <span
+                        class="count"
+                      >
+                        Share
+                      
+                        <span
+                          class="badges"
+                        >
+                          5
+                        </span>
+                      </span>
+                    </p>
+                  </div>
                    
                   <p
                     class="dropdown-item country toggle-bookmark"
@@ -317,50 +376,6 @@ exports[`PostCard Component should render correctly 1`] = `
                       class="count"
                     >
                       Read Story
-                    </span>
-                  </p>
-                   
-                  <hr />
-                   
-                  <hr />
-                   
-                  <p
-                    class="dropdown-item country"
-                  >
-                    <i
-                      class="fal fa-comment-dots"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      Comment
-                      
-                      <span
-                        class="badges"
-                      >
-                        5
-                      </span>
-                    </span>
-                  </p>
-                   
-                  <p
-                    class="dropdown-item country"
-                  >
-                    <i
-                      class="fal fa-share"
-                    />
-                     
-                    <span
-                      class="count"
-                    >
-                      Share
-                      
-                      <span
-                        class="badges"
-                      >
-                        5
-                      </span>
                     </span>
                   </p>
                 </div>
