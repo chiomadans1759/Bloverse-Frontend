@@ -103,30 +103,121 @@ exports[`CountryCard Component should render correctly 1`] = `
         </p>
       </div>
        
+      <!---->
+       
       <div
-        class="follow d-flex justify-content-between"
+        class="follow d-flex align-items-center"
       >
         <a
-          data-toggle="modal"
-          href="#following-modal"
+          data-toggle=""
+          href="#"
         >
-          Following
+          Followers
         </a>
          
         <span
-          class="border rounded px-1 mr-2"
-          data-toggle="modal"
-          href="#following-modal"
-          id="number"
+          class="badge followers-icon badge-primary ml-2"
         >
           5
         </span>
       </div>
-       
-      <!---->
     </div>
      
-    <!---->
+    <div
+      class="interests"
+    >
+      <main
+        class="category-card p-4 p-sm-3"
+      >
+        <div
+          class="header d-flex justify-content-between "
+        >
+          <h5>
+            <strong>
+              Interest
+            </strong>
+          </h5>
+           
+          <span
+            class="edit-icon"
+          >
+            <i
+              class="fal fa-edit mr-2"
+            />
+          </span>
+        </div>
+         
+        <div
+          class="mt-1"
+        >
+          <p
+            class="category-title"
+          >
+            Lorem ipsum dolor sit amet
+          </p>
+           
+          <div
+            class="category-list d-flex flex-wrap mt-2"
+          >
+            <div
+              class="category border rounded my-1 mr-2 p-2"
+            >
+              <span>
+                Category One
+              </span>
+            </div>
+             
+            <div
+              class="category border rounded my-1 mr-2 p-2"
+            >
+              <span>
+                Category Two
+              </span>
+            </div>
+             
+            <div
+              class="category border rounded my-1 mr-2 p-2"
+            >
+              <span>
+                Category Three
+              </span>
+            </div>
+             
+            <div
+              class="category border rounded my-1 mr-2 p-2"
+            >
+              <span>
+                Category Four
+              </span>
+            </div>
+             
+            <div
+              class="category border rounded my-1 mr-2 p-2"
+            >
+              <span>
+                Category Five
+              </span>
+            </div>
+             
+            <div
+              class="category border rounded my-1 mr-2 p-2"
+            >
+              <span>
+                Category Six
+              </span>
+            </div>
+             
+            <div
+              class="category border rounded my-1 mr-2 p-2"
+            >
+              <span>
+                Category Seven
+              </span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
      
     <div
       class="social p-3"
@@ -500,228 +591,8 @@ exports[`CountryCard Component should render correctly 1`] = `
     </main>
   </main>
    
-  <main
-    class="card country-card p-4 p-sm-3"
-  >
-    <div
-      class="header d-flex justify-content-between "
-    >
-      <h5>
-        <strong>
-          Country
-        </strong>
-      </h5>
-       
-      <span
-        class="icon"
-      >
-        <i
-          class="fal fa-edit icon mr-2"
-        />
-      </span>
-    </div>
-     
-    <div
-      class="mt-1"
-    >
-      <p
-        class="country-title"
-      >
-        Lorem ipsum dolor sit amet
-      </p>
-       
-      <div
-        class="country-list d-flex flex-wrap mt-2"
-      >
-        <div
-          class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
-        >
-          <img
-            alt="..."
-            class="country-image rounded-circle "
-            src="@/assets/mexico.svg"
-          />
-           
-          <span
-            class="pl-2"
-          >
-            Mexico
-          </span>
-        </div>
-         
-        <div
-          class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
-        >
-          <img
-            alt="..."
-            class="country-image rounded-circle"
-            src="@/assets/mexico.svg"
-          />
-           
-          <span
-            class="pl-2"
-          >
-            France
-          </span>
-        </div>
-         
-        <div
-          class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
-        >
-          <img
-            alt="..."
-            class="country-image rounded-circle"
-            src="@/assets/mexico.svg"
-          />
-           
-          <span
-            class="pl-2"
-          >
-            Ghana
-          </span>
-        </div>
-         
-        <div
-          class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
-        >
-          <img
-            alt="..."
-            class="country-image rounded-circle"
-            src="@/assets/mexico.svg"
-          />
-           
-          <span
-            class="pl-2"
-          >
-            Kenya
-          </span>
-        </div>
-         
-        <div
-          class="country border rounded p-2 my-2 mr-2 d-flex justify-content-center align-items-center"
-        >
-          <img
-            alt="..."
-            class="country-image rounded-circle"
-            src="@/assets/mexico.svg"
-          />
-           
-          <span
-            class="pl-2"
-          >
-            Nigeria
-          </span>
-        </div>
-         
-        <div
-          class="country border rounded p-2 my-2 mr-2 d-flex justify-content-center align-items-center"
-        >
-          <img
-            alt="..."
-            class="country-image rounded-circle"
-            src="@/assets/mexico.svg"
-          />
-           
-          <span
-            class="pl-2"
-          >
-            UK
-          </span>
-        </div>
-      </div>
-    </div>
-  </main>
+  <!---->
    
-  <main
-    class="category-card p-4 p-sm-3 card"
-  >
-    <div
-      class="header d-flex justify-content-between "
-    >
-      <h5>
-        <strong>
-          Interest
-        </strong>
-      </h5>
-       
-      <span
-        class="edit-icon"
-      >
-        <i
-          class="fal fa-edit mr-2"
-        />
-      </span>
-    </div>
-     
-    <div
-      class="mt-1"
-    >
-      <p
-        class="category-title"
-      >
-        Lorem ipsum dolor sit amet
-      </p>
-       
-      <div
-        class="category-list d-flex flex-wrap mt-2"
-      >
-        <div
-          class="category border rounded my-1 mr-2 p-2"
-        >
-          <span>
-            Category One
-          </span>
-        </div>
-         
-        <div
-          class="category border rounded my-1 mr-2 p-2"
-        >
-          <span>
-            Category Two
-          </span>
-        </div>
-         
-        <div
-          class="category border rounded my-1 mr-2 p-2"
-        >
-          <span>
-            Category Three
-          </span>
-        </div>
-         
-        <div
-          class="category border rounded my-1 mr-2 p-2"
-        >
-          <span>
-            Category Four
-          </span>
-        </div>
-         
-        <div
-          class="category border rounded my-1 mr-2 p-2"
-        >
-          <span>
-            Category Five
-          </span>
-        </div>
-         
-        <div
-          class="category border rounded my-1 mr-2 p-2"
-        >
-          <span>
-            Category Six
-          </span>
-        </div>
-         
-        <div
-          class="category border rounded my-1 mr-2 p-2"
-        >
-          <span>
-            Category Seven
-          </span>
-        </div>
-      </div>
-    </div>
-  </main>
+  <!---->
 </main>
 `;

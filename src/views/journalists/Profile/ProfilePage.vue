@@ -5,7 +5,8 @@
       <div class="row">
         <div class="col-lg-5 d-none d-sm-block mb-4">
           <div class="col-lg-12 mr-2">
-            <profile displayInterest hideFollowing displayFollowers/>
+            <profile v-if="showMobileProfile" :hideMobileUserInfo="hideMobileUserInfo"
+            displayInterest hideFollowing displayFollowers/>
           </div>
           <div class="col-lg-12 mr-2">
             <div class="bg-white publish-container">
@@ -42,12 +43,16 @@
           </div>
         </div>
         <!-- on mobile view only -->
-        <div class="d-inline-flex d-sm-none initials">
-          <a class="initials-link" href="#" id="navbarDropdown" role="button">SM</a>
+        <div v-if="showMobileProfile" class="d-inline-flex d-sm-none initials"
+        @click="showMobileUserInfo"
+        >
+          <button class="initials-link" id="navbarDropdown" role="button">
+            SM
+          </button>
           <i class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"></i>
         </div>
         <!-- on mobile view only ends -->
-        <div class="col-12 col-lg-7 col-xl-7 bg-white right-section p-0">
+        <div v-if="showMobileProfile" class="col-12 col-lg-7 col-xl-7 bg-white right-section p-0">
           <div class="mt-4 px-4">
             <div class="row">
               <div class="col-12 col-lg-6 col-lg-6 mb-4">
@@ -160,6 +165,14 @@
             </div>
           </div>
         </div>
+        <!-- mobile view -->
+        <div class="row d-sm-none">
+          <user-info-mobile v-if="!showMobileProfile"
+            :hideMobileUserInfo="hideMobileUserInfo"
+            displayInterest hideFollowing displayFollowers hideCountry
+          />
+        </div>
+        <!-- mobile view ends -->
       </div>
     </div>
     <Footer class="d-block d-lg-none d-xl-none"/>
@@ -173,6 +186,7 @@ import CategoryCard from "@/components/CategoryCard/CategoryCard";
 import Modal from "@/components/Modal/Modal";
 import Footer from "@/components/Footer/Footer";
 import CreatorProfileActionsCard from "@/components/CreatorProfileActionsCard/CreatorProfileActionsCard";
+import UserInfoMobile from '@/components/UserInfoMobile/UserInfoMobile';
 import { GChart } from "vue-google-charts";
 import { setupCalendar, DatePicker } from "v-calendar";
 import "v-calendar/lib/v-calendar.min.css";
@@ -190,7 +204,8 @@ export default {
     GChart,
     DatePicker,
     Footer,
-    Modal
+    Modal,
+    UserInfoMobile,
   },
   data() {
     return {
@@ -212,8 +227,17 @@ export default {
       selectedDate: {
         start: null,
         end: null
-      }
+      },
+      showMobileProfile: true,
     };
+  },
+  methods: {
+    showMobileUserInfo() {
+      this.showMobileProfile = false;
+    },
+    hideMobileUserInfo() {
+      this.showMobileProfile = true;
+    },
   }
 };
 </script>
