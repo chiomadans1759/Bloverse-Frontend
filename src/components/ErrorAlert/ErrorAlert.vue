@@ -27,4 +27,3 @@ export default {
 <style lang="scss" scoped>
 @import './ErrorAlert'
 </style>
-
