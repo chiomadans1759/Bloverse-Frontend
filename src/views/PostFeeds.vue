@@ -69,6 +69,7 @@
           </div>
         </div>
       </div>
+      
       <display-feeds></display-feeds>
     </section>
   </main>
