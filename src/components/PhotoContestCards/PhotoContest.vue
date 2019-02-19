@@ -16,6 +16,7 @@
       :minSwipeDistance = "minSwipeDistance"
       :navigationNextLabel = "navigationNextLabel"
       :navigationPrevLabel = "navigationPrevLabel"
+      :autoplayTimeout="4000"
       :autoplay = "autoplay"
       :loop = "loop"
     >
