@@ -214,21 +214,6 @@
           </div>
         </div>
       </div>
-      <modal
-        target="feedback-modal"
-        altTitle="Send Us Some Feedback"
-        actionText="Send Feedback"
-        dark
-        subTitle="Found a bug? Have a suggestion?. Fill out the form below and we'll take a look!"
-        >
-        <div class="bl-modal-content">
-          <p>Enter your feedback here!</p>
-          <textarea class="form-control mb-2 p-1"></textarea>
-          <label class="ml-1 mr-3"><input type='radio' name='feedback-type'>  Bug</label>
-          <label class="mr-3"><input type='radio' name='feedback-type'>  Comment</label>
-          <label class="mr-3"><input type='radio' name='feedback-type'>  Other</label>
-        </div>
-      </modal>
     </div>
   </main>
 </template>
@@ -238,7 +223,6 @@ import PostCards from "@/components/PostCards/PostCards";
 import Trends from "@/components/Trends/Trends";
 import PhotoContest from "@/components/PhotoContestCards/PhotoContest";
 import CountryOptions from "@/components/CountryOptions/CountryOptions";
-import Modal from "@/components/Modal/Modal";
 
 export default {
   name: "ConsumerHomePage",
@@ -247,7 +231,6 @@ export default {
     Trends,
     PhotoContest,
     CountryOptions,
-    Modal,
   },
   data() {
     return {
