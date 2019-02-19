@@ -6,7 +6,7 @@
         <h5 class="card-title">{{category}}</h5>
         <p class="card-text">{{post.title | truncate(50)}}</p>
         <div class="author mt-4">
-          <img class="rounded mr-3" :src="post.author.image_url" alt>
+          <img class="rounded-circle mr-3" :src="post.author.image_url" alt>
           <span id="desktop">
             {{`${post.author.first_name} ${post.author.last_name}` | truncate(30)}}
           </span>
@@ -59,7 +59,7 @@ export default {
   #trending-card .card::after {
     display: block !important;
     background-image: linear-gradient(
-      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.9)
     ) !important;
     height: 100% !important;
@@ -74,7 +74,7 @@ export default {
 
   #trending-card .card img {
     height: 100%;
-    border-radius: 4px !important;
+    border-radius: 2px !important;
   }
 
   #trending-card .card .card-text {
@@ -90,19 +90,19 @@ export default {
   #trending-card .card .card-img-overlay .card-title {
     font-size: 13px;
     position: absolute;
-    top: 30px;
+    top: 25px;
   }
 
   #trending-card .card .card-img-overlay .card-text {
     font-weight: 700;
     font-size: 13px;
     position: absolute;
-    top: 70px;
+    top: 55px;
   }
 
   #trending-card .card .author {
     position: absolute;
-    top: 100px;
+    top: 90px;
   }
 
   #trending-card .card .author #mobile {
