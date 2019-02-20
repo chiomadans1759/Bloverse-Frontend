@@ -68,6 +68,7 @@ const routes = [
       { path: '/photocontest', component: PhotoContest },
     ]
   },
+
   { path: '/forgotpassword', component: ForgotPassword },
   { path: '/edit/profile', component: EditProfile },
   { path: '/login', component: SigninPage },
@@ -97,6 +98,7 @@ const routes = [
       { path: 'login', component: AdminLogin }
     ]
   },
+
   {
     path: '/creators',
     component: BlankBase,
@@ -119,7 +121,9 @@ const routes = [
           }
         }
       },
+
       { path: 'verify', component: JournalistVerify },
+
       {
         path: ':username', component: JournalistAccountLayout, meta: { journalist: true, auth: true }, beforeEnter(to, from, next) {
           if (store.getters.isAJournalist) {
@@ -202,6 +206,5 @@ const routes = [
     }
   }
 ]
-
 
 export default routes;
