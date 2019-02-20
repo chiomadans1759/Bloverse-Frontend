@@ -13,7 +13,7 @@
         <div class="col-lg-1 icon-wrapper mt-4">
           <ul class="text-icons">
             <li>
-              <button class="btn rounded-circle d-flex justify-content-center show" v-if="hideMe" @click.prevent="showTextBox">
+              <button class="btn rounded-btn-circle d-flex justify-content-center show" v-if="hideMe" @click.prevent="showTextBox">
                 <i class="fal fa-font"></i>
               </button>
             </li>
@@ -21,25 +21,25 @@
               <Poptip placement="right" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
-                    <button class="btn rounded-circle d-flex justify-content-center">
+                    <button class="btn rounded-btn-circle d-flex justify-content-center">
                       <i class="fal fa-arrow-from-bottom"></i>
                     </button>
                     <p>Upload</p>
                   </div>
                    <div>
-                    <button class="btn rounded-circle d-flex justify-content-center">
+                    <button class="btn rounded-btn-circle d-flex justify-content-center">
                       <i class="fal fa-search"></i>
                     </button>
                   <p>Search</p>
                   </div>
                   <div>
-                    <button class="btn rounded-circle d-flex justify-content-center">
+                    <button class="btn rounded-btn-circle d-flex justify-content-center">
                       <i class="far fa-th"></i>
                     </button>
                   <p>Multiple</p>
                   </div>
                 </div>
-                <button class="btn rounded-circle d-flex justify-content-center">
+                <button class="btn rounded-btn-circle d-flex justify-content-center">
                   <i class="fal fa-image"></i>
                 </button>
               </Poptip>
@@ -48,19 +48,19 @@
               <Poptip placement="right" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
-                    <button class="btn rounded-circle d-flex justify-content-center">
+                    <button class="btn rounded-btn-circle d-flex justify-content-center">
                       <i class="fal fa-arrow-from-bottom"></i>
                     </button>
                     <p>Upload</p>
                   </div>
                    <div>
-                    <button class="btn rounded-circle d-flex justify-content-center text">
+                    <button class="btn rounded-btn-circle d-flex justify-content-center text">
                       <i class="fal fa-link"></i>
                     </button>
                   <p>Embedded</p>
                   </div>
                 </div>
-                <button class="btn rounded-circle d-flex justify-content-center">
+                <button class="btn rounded-btn-circle d-flex justify-content-center">
                   <i class="fal fa-video"></i>
                 </button>
               </Poptip>
@@ -73,7 +73,7 @@
                     <p>Add a link from twitter, facebook</p>
                   </div>
                 </div>
-                <button class="btn rounded-circle d-flex justify-content-center">
+                <button class="btn rounded-btn-circle d-flex justify-content-center">
                   <i class="fal fa-link"></i>
                 </button>
               </Poptip>
@@ -89,12 +89,12 @@
               <input type="text" class="form-control p-0 two" placeholder="Add keypoint" v-model="line.keypoint">
               <div>
                 <span v-if="line.hideBtn">
-                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="addKeypoint" v-if="plus_btn">
+                <button class="btn rounded-btn-circle d-flex justify-content-center ml-3 text" @click.prevent="addKeypoint" v-if="plus_btn">
                   <i class="fal fa-plus"></i>
                 </button>
                 </span>
                 <span v-if="!line.hideBtn">
-                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="removeKeypoint(index)">
+                <button class="btn rounded-btn-circle d-flex justify-content-center ml-3 text" @click.prevent="removeKeypoint(index)">
                   <i class="fal fa-minus"></i>
                 </button>
                 </span>

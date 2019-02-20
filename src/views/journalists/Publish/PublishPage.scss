@@ -2,6 +2,11 @@
   background: #fff;
   height: auto;
   min-height: 100vh;
+
+  .rounded-btn-circle {
+    border-radius: 50% !important;
+  }
+
   .form-control {
     border: none;
     background: #fff;
@@ -201,9 +206,5 @@
         animation-delay: 1s;
       }
     }
-    
-  .rounded-circle {
-    border-radius: 50% !important;
-  }
  }
 }
