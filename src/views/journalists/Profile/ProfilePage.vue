@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-lg-5 d-none d-sm-block mb-4">
           <div class="col-lg-12 mr-2">
-            <profile v-if="showMobileProfile" :hideMobileUserInfo="hideMobileUserInfo"
+            <profile
             displayInterest hideFollowing displayFollowers/>
           </div>
           <div class="col-lg-12 mr-2">
@@ -14,9 +14,6 @@
                 <router-link to="/publish" class="publish-link btn">Publish An Article</router-link>
               </div>
             </div>
-          </div>
-          <div class="col-lg-12 mt-2">
-            <CreatorProfileActionsCard/>
           </div>
           <div class="col-lg-12 mr-2 mt-2">
             <div class="card contest-advert bg-white">
@@ -42,137 +39,127 @@
             </div>
           </div>
         </div>
-        <!-- on mobile view only -->
-        <div v-if="showMobileProfile" class="d-inline-flex d-sm-none initials"
-        @click="showMobileUserInfo"
-        >
-          <button class="initials-link" id="navbarDropdown" role="button">
-            SM
-          </button>
-          <i class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"></i>
-        </div>
         <!-- on mobile view only ends -->
-        <div v-if="showMobileProfile" class="col-12 col-lg-7 col-xl-7 bg-white right-section p-0">
-          <div class="mt-4 px-4">
-            <div class="row">
-              <div class="col-12 col-lg-6 col-lg-6 mb-4">
-                <div class="card top-card">
-                  <i class="card-icon fal fa-rocket"></i>
-                  <div class="card-body row">
-                    <div class="col-6 d-flex flex-column justify-content-between">
-                      <h5 class="card-title text-white font-weight-bold">Published</h5>
-                    </div>
-                    <div class="col-6 d-flex justify-content-end">
-                      <h2 class="text-white">3,252</h2>
-                    </div>
-                  </div>
-                  <div class="p-3">
-                    <p class="sub-text text-white">
-                      <span class="font-weight-bold">2</span> today
-                    </p>
-                    <p class="sub-text text-white">
-                      <span class="font-weight-bold">6</span> this week
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-lg-6 col-lg-6">
-                <div class="card top-card">
-                  <i class="card-icon fal fa-stars"></i>
-                  <div class="card-body row">
-                    <div class="col-6 d-flex flex-column justify-content-between">
-                      <h5 class="card-title text-white font-weight-bold">Points</h5>
-                    </div>
-                    <div class="col-6 d-flex justify-content-end">
-                      <h2 class="text-white">0.05</h2>
-                    </div>
-                  </div>
-                  <div class="p-3">
-                    <p class="sub-text text-white">
-                      <span class="font-weight-bold">6</span> of
-                      <span class="font-weight-bold">94</span> Nigeria
-                      <span class="fal fa-long-arrow-up"></span>
-                    </p>
-                    <p class="sub-text text-white">
-                      <span class="font-weight-bold">5,064</span> of
-                      <span class="font-weight-bold">9,124</span> Global
-                      <span class="fal fa-long-arrow-down"></span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="col-12 col-lg-7 col-xl-7 right-section p-0">
+          <div class="navigation-bar">
+            <creator-navigation />
           </div>
-          <div class="mt-4">
-            <p class="px-4">
-              Total number of views
-              <span>
-                <a
-                  class="dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >Last 24 hours</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Last 3 days</a>
-                  <a class="dropdown-item" href="#">Last 7 days</a>
-                  <a class="dropdown-item" href="#">Last 30 days</a>
-                  <div class="dropdown-divider"></div>
-                  <a data-toggle="modal" href="#custom-date-modal" class="dropdown-item">Choose Custom Date</a>
-                </div>
-              </span>
-            </p>
-            <modal target="custom-date-modal" title="Custom Date" actionText="Apply Filter">
-              <div class="bl-modal-content">
-                <p>Choose Date Range:</p>
-                <DatePicker
-                  mode="range"
-                  v-model="selectedDate"
-                  show-caps
-                  :input-props='{ class: "form-control", readonly: true }'></DatePicker>
-              </div>
-            </modal>
-            <div class="p-0 p-lg-2 p-xl-2 gchart-container">
-              <GChart type="GeoChart" :data="chartData" :options="chartOptions" ref="chartData"/>
-            </div>
-          </div>
-          <div class="mt-4 px-4">
-            <div class="row">
-              <div class="col-12 col-lg-8 col-xl-8 mb-2">
+          <div class="bg-white pt-1 tab-content">
+            <div>
+              <div class="mt-4 px-4">
                 <div class="row">
-                  <div class="col-12">
-                    <span class="first-circle fas fa-circle"></span> Nigeria(64)
-                    <span class="second-circle fas fa-circle ml-4"></span> Kenya(36)
-                    <span class="third-circle fas fa-circle ml-4"></span> Mexico(6)
+                  <div class="col-12 col-lg-6 col-lg-6 mb-4">
+                    <div class="card top-card">
+                      <i class="card-icon fal fa-rocket"></i>
+                      <div class="card-body row">
+                        <div class="col-6 d-flex flex-column justify-content-between">
+                          <h5 class="card-title text-white font-weight-bold">Published</h5>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                          <h2 class="text-white">3,252</h2>
+                        </div>
+                      </div>
+                      <div class="p-3">
+                        <p class="sub-text text-white">
+                          <span class="font-weight-bold">2</span> today
+                        </p>
+                        <p class="sub-text text-white">
+                          <span class="font-weight-bold">6</span> this week
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 col-lg-6">
+                    <div class="card top-card">
+                      <i class="card-icon fal fa-stars"></i>
+                      <div class="card-body row">
+                        <div class="col-6 d-flex flex-column justify-content-between">
+                          <h5 class="card-title text-white font-weight-bold">Points</h5>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                          <h2 class="text-white">0.05</h2>
+                        </div>
+                      </div>
+                      <div class="p-3">
+                        <p class="sub-text text-white">
+                          <span class="font-weight-bold">6</span> of
+                          <span class="font-weight-bold">94</span> Nigeria
+                          <span class="fal fa-long-arrow-up"></span>
+                        </p>
+                        <p class="sub-text text-white">
+                          <span class="font-weight-bold">5,064</span> of
+                          <span class="font-weight-bold">9,124</span> Global
+                          <span class="fal fa-long-arrow-down"></span>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-lg-4 col-xl-4 mb-4">
-                <div class="card p-2">
-                  <div class="row">
-                    <div class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold">Country:</div>
-                    <div class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold">3</div>
+              <div class="mt-4">
+                <p class="px-4">
+                  Total number of views
+                  <span>
+                    <a
+                      class="dropdown-toggle"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >Last 24 hours</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Last 3 days</a>
+                      <a class="dropdown-item" href="#">Last 7 days</a>
+                      <a class="dropdown-item" href="#">Last 30 days</a>
+                      <div class="dropdown-divider"></div>
+                      <a data-toggle="modal" href="#custom-date-modal" class="dropdown-item">Choose Custom Date</a>
+                    </div>
+                  </span>
+                </p>
+                <modal target="custom-date-modal" title="Custom Date" actionText="Apply Filter">
+                  <div class="bl-modal-content">
+                    <p>Choose Date Range:</p>
+                    <DatePicker
+                      mode="range"
+                      v-model="selectedDate"
+                      show-caps
+                      :input-props='{ class: "form-control", readonly: true }'></DatePicker>
                   </div>
-                  <div class="row">
-                    <div class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold">Total:</div>
-                    <div class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold">106</div>
+                </modal>
+                <div class="p-0 p-lg-2 p-xl-2 gchart-container">
+                  <GChart type="GeoChart" :data="chartData" :options="chartOptions" ref="chartData"/>
+                </div>
+              </div>
+              <div class="mt-4 px-4">
+                <div class="row">
+                  <div class="col-12 col-lg-8 col-xl-8 mb-2">
+                    <div class="row">
+                      <div class="col-12">
+                        <span class="first-circle fas fa-circle"></span> Nigeria(64)
+                        <span class="second-circle fas fa-circle ml-4"></span> Kenya(36)
+                        <span class="third-circle fas fa-circle ml-4"></span> Mexico(6)
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 col-xl-4 mb-4">
+                    <div class="card p-2">
+                      <div class="row">
+                        <div class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold">Country:</div>
+                        <div class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold">3</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold">Total:</div>
+                        <div class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold">106</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- mobile view -->
-        <div class="row d-sm-none">
-          <user-info-mobile v-if="!showMobileProfile"
-            :hideMobileUserInfo="hideMobileUserInfo"
-            displayInterest hideFollowing displayFollowers hideCountry
-          />
-        </div>
-        <!-- mobile view ends -->
       </div>
     </div>
     <Footer class="d-block d-lg-none d-xl-none"/>
@@ -186,7 +173,7 @@ import CategoryCard from "@/components/CategoryCard/CategoryCard";
 import Modal from "@/components/Modal/Modal";
 import Footer from "@/components/Footer/Footer";
 import CreatorProfileActionsCard from "@/components/CreatorProfileActionsCard/CreatorProfileActionsCard";
-import UserInfoMobile from '@/components/UserInfoMobile/UserInfoMobile';
+import CreatorNavigation from "@/components/CreatorNavigation/CreatorNavigation";
 import { GChart } from "vue-google-charts";
 import { setupCalendar, DatePicker } from "v-calendar";
 import "v-calendar/lib/v-calendar.min.css";
@@ -205,7 +192,7 @@ export default {
     DatePicker,
     Footer,
     Modal,
-    UserInfoMobile,
+    CreatorNavigation,
   },
   data() {
     return {
@@ -228,17 +215,8 @@ export default {
         start: null,
         end: null
       },
-      showMobileProfile: true,
     };
   },
-  methods: {
-    showMobileUserInfo() {
-      this.showMobileProfile = false;
-    },
-    hideMobileUserInfo() {
-      this.showMobileProfile = true;
-    },
-  }
 };
 </script>
 

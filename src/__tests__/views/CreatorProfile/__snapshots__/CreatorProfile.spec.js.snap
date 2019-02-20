@@ -1149,116 +1149,6 @@ exports[`Profile Component should render correctly 1`] = `
         </div>
          
         <div
-          class="col-lg-12 mt-2"
-        >
-          <main
-            id="bl-actions"
-          >
-            <div
-              class="bg-white p-4"
-            >
-              <div
-                class="row mb-3"
-              >
-                <div
-                  class="col-8"
-                >
-                  <a>
-                    <h6
-                      class="text-primary"
-                    >
-                      <i
-                        class="far fa-rocket"
-                      />
-                       Posts
-          
-                    </h6>
-                     
-                    <p
-                      class="text-muted mt-2"
-                    >
-                      Update your information
-                    </p>
-                  </a>
-                </div>
-                 
-                <div
-                  class="col-4 d-flex justify-content-end align-items-center"
-                >
-                  <span
-                    class="badge badge-primary"
-                  >
-                    4
-                  </span>
-                </div>
-              </div>
-               
-              <div
-                class="row mb-3"
-              >
-                <div
-                  class="col-8"
-                >
-                  <a>
-                    <h6
-                      class="text-primary"
-                    >
-                      <i
-                        class="far fa-edit"
-                      />
-                       Drafts
-          
-                    </h6>
-                     
-                    <p
-                      class="text-muted mt-2"
-                    >
-                      Update your information
-                    </p>
-                  </a>
-                </div>
-                 
-                <div
-                  class="col-4 d-flex justify-content-end align-items-center"
-                >
-                  <span
-                    class="badge badge-primary"
-                  >
-                    4
-                  </span>
-                </div>
-              </div>
-               
-              <div
-                class="row mb-3"
-              >
-                <div
-                  class="col-8"
-                >
-                  <a>
-                    <h6
-                      class="text-primary"
-                    >
-                      <i
-                        class="fal fa-trash-alt"
-                      />
-                       Trash
-          
-                    </h6>
-                     
-                    <p
-                      class="text-muted mt-2"
-                    >
-                      Update your information
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
-         
-        <div
           class="col-lg-12 mr-2 mt-2"
         >
           <div
@@ -1345,433 +1235,571 @@ exports[`Profile Component should render correctly 1`] = `
       </div>
        
       <div
-        class="d-inline-flex d-sm-none initials"
-      >
-        <button
-          class="initials-link"
-          id="navbarDropdown"
-          role="button"
-        >
-          
-          SM
-        
-        </button>
-         
-        <i
-          class="fal fa-long-arrow-right fa-2x back-icon initials-arrow"
-        />
-      </div>
-       
-      <div
-        class="col-12 col-lg-7 col-xl-7 bg-white right-section p-0"
+        class="col-12 col-lg-7 col-xl-7 right-section p-0"
       >
         <div
-          class="mt-4 px-4"
+          class="navigation-bar"
         >
-          <div
-            class="row"
-          >
-            <div
-              class="col-12 col-lg-6 col-lg-6 mb-4"
-            >
-              <div
-                class="card top-card"
-              >
-                <i
-                  class="card-icon fal fa-rocket"
-                />
-                 
-                <div
-                  class="card-body row"
-                >
-                  <div
-                    class="col-6 d-flex flex-column justify-content-between"
-                  >
-                    <h5
-                      class="card-title text-white font-weight-bold"
-                    >
-                      Published
-                    </h5>
-                  </div>
-                   
-                  <div
-                    class="col-6 d-flex justify-content-end"
-                  >
-                    <h2
-                      class="text-white"
-                    >
-                      3,252
-                    </h2>
-                  </div>
-                </div>
-                 
-                <div
-                  class="p-3"
-                >
-                  <p
-                    class="sub-text text-white"
-                  >
-                    <span
-                      class="font-weight-bold"
-                    >
-                      2
-                    </span>
-                     today
-                  
-                  </p>
-                   
-                  <p
-                    class="sub-text text-white"
-                  >
-                    <span
-                      class="font-weight-bold"
-                    >
-                      6
-                    </span>
-                     this week
-                  
-                  </p>
-                </div>
-              </div>
-            </div>
-             
-            <div
-              class="col-12 col-lg-6 col-lg-6"
-            >
-              <div
-                class="card top-card"
-              >
-                <i
-                  class="card-icon fal fa-stars"
-                />
-                 
-                <div
-                  class="card-body row"
-                >
-                  <div
-                    class="col-6 d-flex flex-column justify-content-between"
-                  >
-                    <h5
-                      class="card-title text-white font-weight-bold"
-                    >
-                      Points
-                    </h5>
-                  </div>
-                   
-                  <div
-                    class="col-6 d-flex justify-content-end"
-                  >
-                    <h2
-                      class="text-white"
-                    >
-                      0.05
-                    </h2>
-                  </div>
-                </div>
-                 
-                <div
-                  class="p-3"
-                >
-                  <p
-                    class="sub-text text-white"
-                  >
-                    <span
-                      class="font-weight-bold"
-                    >
-                      6
-                    </span>
-                     of
-                    
-                    <span
-                      class="font-weight-bold"
-                    >
-                      94
-                    </span>
-                     Nigeria
-                    
-                    <span
-                      class="fal fa-long-arrow-up"
-                    />
-                  </p>
-                   
-                  <p
-                    class="sub-text text-white"
-                  >
-                    <span
-                      class="font-weight-bold"
-                    >
-                      5,064
-                    </span>
-                     of
-                    
-                    <span
-                      class="font-weight-bold"
-                    >
-                      9,124
-                    </span>
-                     Global
-                    
-                    <span
-                      class="fal fa-long-arrow-down"
-                    />
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-         
-        <div
-          class="mt-4"
-        >
-          <p
-            class="px-4"
-          >
-            
-            Total number of views
-            
-            <span>
-              <a
-                aria-expanded="false"
-                aria-haspopup="true"
-                class="dropdown-toggle"
-                data-toggle="dropdown"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-              >
-                Last 24 hours
-              </a>
-               
-              <div
-                aria-labelledby="navbarDropdown"
-                class="dropdown-menu"
-              >
-                <a
-                  class="dropdown-item"
-                  href="#"
-                >
-                  Last 3 days
-                </a>
-                 
-                <a
-                  class="dropdown-item"
-                  href="#"
-                >
-                  Last 7 days
-                </a>
-                 
-                <a
-                  class="dropdown-item"
-                  href="#"
-                >
-                  Last 30 days
-                </a>
-                 
-                <div
-                  class="dropdown-divider"
-                />
-                 
-                <a
-                  class="dropdown-item"
-                  data-toggle="modal"
-                  href="#custom-date-modal"
-                >
-                  Choose Custom Date
-                </a>
-              </div>
-            </span>
-          </p>
-           
           <main
-            id="bl-modal"
+            id="bl-creator-navigation"
           >
             <div
-              aria-hidden="true"
-              aria-labelledby="customModal"
-              class="modal fade"
-              id="custom-date-modal"
-              role="dialog"
-              tabindex="-1"
-            >
-              <div
-                class="modal-dialog modal-dialog-centered"
-                role="document"
-              >
-                <div
-                  class="modal-content"
-                >
-                  <div
-                    class="modal-header"
-                  >
-                    <h5
-                      class="modal-title"
-                      id="customModal"
-                    >
-                      Custom Date
-                    </h5>
-                     
-                    <div>
-                      <!---->
-                       
-                      <!---->
-                    </div>
-                     
-                    <button
-                      aria-label="Close"
-                      class="close"
-                      data-dismiss="modal"
-                      type="button"
-                    >
-                      <span
-                        aria-hidden="true"
-                      >
-                        ×
-                      </span>
-                    </button>
-                  </div>
-                   
-                  <div
-                    class="modal-body"
-                  >
-                    <div
-                      class="bl-modal-content"
-                    >
-                      <p>
-                        Choose Date Range:
-                      </p>
-                       
-                      <div
-                        class="popover-container"
-                        data-v-1ad2436f=""
-                      >
-                        <!---->
-                         
-                        <input
-                          class="form-control"
-                          data-v-1ad2436f=""
-                          placeholder="DD/MM/YYYY - DD/MM/YYYY"
-                          readonly="readonly"
-                          style="min-width: 150px;"
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="modal-footer"
-                  >
-                    <button
-                      class="btn btn-outline-primary"
-                      data-dismiss="modal"
-                      type="button"
-                    >
-                      
-              Close
-            
-                    </button>
-                     
-                    <button
-                      class="btn btn-primary"
-                      type="button"
-                    >
-                      Apply Filter
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-           
-          <div
-            class="p-0 p-lg-2 p-xl-2 gchart-container"
-          >
-            <div />
-          </div>
-        </div>
-         
-        <div
-          class="mt-4 px-4"
-        >
-          <div
-            class="row"
-          >
-            <div
-              class="col-12 col-lg-8 col-xl-8 mb-2"
+              class="creator-info mx-2 mb-4 d-block d-sm-none"
             >
               <div
                 class="row"
               >
                 <div
-                  class="col-12"
+                  class="col-3 text-center pr-0"
                 >
-                  <span
-                    class="first-circle fas fa-circle"
+                  <img
+                    alt="..."
+                    class="profile-img rounded"
+                    src="@/assets/Avatar2.png"
                   />
-                   Nigeria(64)
-                  
-                  <span
-                    class="second-circle fas fa-circle ml-4"
-                  />
-                   Kenya(36)
-                  
-                  <span
-                    class="third-circle fas fa-circle ml-4"
-                  />
-                   Mexico(6)
-                
+                </div>
+                 
+                <div
+                  class="col-9 pl-0 d-flex align-items-center"
+                >
+                  <div
+                    class="user-info"
+                  >
+                    <h6
+                      class="font-weight-bold"
+                    >
+                      JohnDoe
+                    </h6>
+                     
+                    <p>
+                      John Doe
+                    </p>
+                     
+                    <p>
+                      <i
+                        class="fal fa-map-marker-alt"
+                      />
+                      <span
+                        class="ml-1"
+                      >
+                        Lagos, Nigeria
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
              
             <div
-              class="col-12 col-lg-4 col-xl-4 mb-4"
+              class="navigation-bar"
+            >
+              <ul
+                class="nav nav-tabs mb-3"
+                id="pills-tab"
+                role="tablist"
+              >
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-controls="pills-contest"
+                    aria-selected="true"
+                    class="nav-link d-flex align-items-center"
+                    data-toggle="pill"
+                    id="pills-contest-tab"
+                    role="tab"
+                  >
+                    Info
+        
+                  </a>
+                </li>
+                 
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-controls="pills-general"
+                    aria-selected="false"
+                    class="nav-link active d-flex align-items-center"
+                    data-toggle="pill"
+                    id="pills-general-tab"
+                    role="tab"
+                  >
+                    Dashboard
+                  </a>
+                </li>
+                 
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-controls="pills-contest"
+                    aria-selected="true"
+                    class="nav-link d-flex align-items-center"
+                    data-toggle="pill"
+                    href="#posts-tab"
+                    id="pills-contest-tab"
+                    role="tab"
+                  >
+                    Posts
+          
+                    <span
+                      class="badge badge-secondary ml-2"
+                    >
+                      4
+                    </span>
+                  </a>
+                </li>
+                 
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-controls="pills-contest"
+                    aria-selected="false"
+                    class="nav-link d-flex align-items-center"
+                    data-toggle="pill"
+                    href="#photocontest-tab"
+                    id="pills-contest-tab"
+                    role="tab"
+                  >
+                    Drafts
+          
+                    <span
+                      class="badge badge-secondary ml-2"
+                    >
+                      4
+                    </span>
+                  </a>
+                </li>
+                 
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-controls="pills-contest"
+                    aria-selected="false"
+                    class="nav-link d-flex align-items-center"
+                    data-toggle="pill"
+                    href="#photocontest-tab"
+                    id="pills-contest-tab"
+                    role="tab"
+                  >
+                    Trash
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </main>
+        </div>
+         
+        <div
+          class="bg-white pt-1 tab-content"
+        >
+          <div>
+            <div
+              class="mt-4 px-4"
             >
               <div
-                class="card p-2"
+                class="row"
               >
                 <div
-                  class="row"
+                  class="col-12 col-lg-6 col-lg-6 mb-4"
                 >
                   <div
-                    class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold"
+                    class="card top-card"
                   >
-                    Country:
-                  </div>
-                   
-                  <div
-                    class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold"
-                  >
-                    3
+                    <i
+                      class="card-icon fal fa-rocket"
+                    />
+                     
+                    <div
+                      class="card-body row"
+                    >
+                      <div
+                        class="col-6 d-flex flex-column justify-content-between"
+                      >
+                        <h5
+                          class="card-title text-white font-weight-bold"
+                        >
+                          Published
+                        </h5>
+                      </div>
+                       
+                      <div
+                        class="col-6 d-flex justify-content-end"
+                      >
+                        <h2
+                          class="text-white"
+                        >
+                          3,252
+                        </h2>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="p-3"
+                    >
+                      <p
+                        class="sub-text text-white"
+                      >
+                        <span
+                          class="font-weight-bold"
+                        >
+                          2
+                        </span>
+                         today
+                      
+                      </p>
+                       
+                      <p
+                        class="sub-text text-white"
+                      >
+                        <span
+                          class="font-weight-bold"
+                        >
+                          6
+                        </span>
+                         this week
+                      
+                      </p>
+                    </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row"
+                  class="col-12 col-lg-6 col-lg-6"
                 >
                   <div
-                    class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold"
+                    class="card top-card"
                   >
-                    Total:
+                    <i
+                      class="card-icon fal fa-stars"
+                    />
+                     
+                    <div
+                      class="card-body row"
+                    >
+                      <div
+                        class="col-6 d-flex flex-column justify-content-between"
+                      >
+                        <h5
+                          class="card-title text-white font-weight-bold"
+                        >
+                          Points
+                        </h5>
+                      </div>
+                       
+                      <div
+                        class="col-6 d-flex justify-content-end"
+                      >
+                        <h2
+                          class="text-white"
+                        >
+                          0.05
+                        </h2>
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="p-3"
+                    >
+                      <p
+                        class="sub-text text-white"
+                      >
+                        <span
+                          class="font-weight-bold"
+                        >
+                          6
+                        </span>
+                         of
+                        
+                        <span
+                          class="font-weight-bold"
+                        >
+                          94
+                        </span>
+                         Nigeria
+                        
+                        <span
+                          class="fal fa-long-arrow-up"
+                        />
+                      </p>
+                       
+                      <p
+                        class="sub-text text-white"
+                      >
+                        <span
+                          class="font-weight-bold"
+                        >
+                          5,064
+                        </span>
+                         of
+                        
+                        <span
+                          class="font-weight-bold"
+                        >
+                          9,124
+                        </span>
+                         Global
+                        
+                        <span
+                          class="fal fa-long-arrow-down"
+                        />
+                      </p>
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="mt-4"
+            >
+              <p
+                class="px-4"
+              >
+                
+                Total number of views
+                
+                <span>
+                  <a
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                  >
+                    Last 24 hours
+                  </a>
                    
                   <div
-                    class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold"
+                    aria-labelledby="navbarDropdown"
+                    class="dropdown-menu"
                   >
-                    106
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                    >
+                      Last 3 days
+                    </a>
+                     
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                    >
+                      Last 7 days
+                    </a>
+                     
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                    >
+                      Last 30 days
+                    </a>
+                     
+                    <div
+                      class="dropdown-divider"
+                    />
+                     
+                    <a
+                      class="dropdown-item"
+                      data-toggle="modal"
+                      href="#custom-date-modal"
+                    >
+                      Choose Custom Date
+                    </a>
+                  </div>
+                </span>
+              </p>
+               
+              <main
+                id="bl-modal"
+              >
+                <div
+                  aria-hidden="true"
+                  aria-labelledby="customModal"
+                  class="modal fade"
+                  id="custom-date-modal"
+                  role="dialog"
+                  tabindex="-1"
+                >
+                  <div
+                    class="modal-dialog modal-dialog-centered"
+                    role="document"
+                  >
+                    <div
+                      class="modal-content"
+                    >
+                      <div
+                        class="modal-header"
+                      >
+                        <h5
+                          class="modal-title"
+                          id="customModal"
+                        >
+                          Custom Date
+                        </h5>
+                         
+                        <div>
+                          <!---->
+                           
+                          <!---->
+                        </div>
+                         
+                        <button
+                          aria-label="Close"
+                          class="close"
+                          data-dismiss="modal"
+                          type="button"
+                        >
+                          <span
+                            aria-hidden="true"
+                          >
+                            ×
+                          </span>
+                        </button>
+                      </div>
+                       
+                      <div
+                        class="modal-body"
+                      >
+                        <div
+                          class="bl-modal-content"
+                        >
+                          <p>
+                            Choose Date Range:
+                          </p>
+                           
+                          <div
+                            class="popover-container"
+                            data-v-1ad2436f=""
+                          >
+                            <!---->
+                             
+                            <input
+                              class="form-control"
+                              data-v-1ad2436f=""
+                              placeholder="DD/MM/YYYY - DD/MM/YYYY"
+                              readonly="readonly"
+                              style="min-width: 150px;"
+                              type="text"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="modal-footer"
+                      >
+                        <button
+                          class="btn btn-outline-primary"
+                          data-dismiss="modal"
+                          type="button"
+                        >
+                          
+              Close
+            
+                        </button>
+                         
+                        <button
+                          class="btn btn-primary"
+                          type="button"
+                        >
+                          Apply Filter
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </main>
+               
+              <div
+                class="p-0 p-lg-2 p-xl-2 gchart-container"
+              >
+                <div />
+              </div>
+            </div>
+             
+            <div
+              class="mt-4 px-4"
+            >
+              <div
+                class="row"
+              >
+                <div
+                  class="col-12 col-lg-8 col-xl-8 mb-2"
+                >
+                  <div
+                    class="row"
+                  >
+                    <div
+                      class="col-12"
+                    >
+                      <span
+                        class="first-circle fas fa-circle"
+                      />
+                       Nigeria(64)
+                      
+                      <span
+                        class="second-circle fas fa-circle ml-4"
+                      />
+                       Kenya(36)
+                      
+                      <span
+                        class="third-circle fas fa-circle ml-4"
+                      />
+                       Mexico(6)
+                    
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="col-12 col-lg-4 col-xl-4 mb-4"
+                >
+                  <div
+                    class="card p-2"
+                  >
+                    <div
+                      class="row"
+                    >
+                      <div
+                        class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold"
+                      >
+                        Country:
+                      </div>
+                       
+                      <div
+                        class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold"
+                      >
+                        3
+                      </div>
+                    </div>
+                     
+                    <div
+                      class="row"
+                    >
+                      <div
+                        class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold"
+                      >
+                        Total:
+                      </div>
+                       
+                      <div
+                        class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold"
+                      >
+                        106
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="row d-sm-none"
-      >
-        <!---->
       </div>
     </div>
   </div>
