@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import 'flag-icon-css/css/flag-icon.css';
+// import 'flag-icon-css/css/flag-icon.css';
 
 export default {
   name: 'CountryCard'

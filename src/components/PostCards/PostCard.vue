@@ -1,148 +1,207 @@
 <template>
-  <main id="bl-postcard" class="card bl-postcard" :class="[{ hideCardBorder: hideCardBorder }]">
-    <div class="card-body bl-postcard-body">
-      <div class="card-title row title">
-        <div class="col-9 row title--text">
-          <span class="col-3">category</span>
-          <p class="col-5 col-sm-6 font-weight-bold description">
-            <router-link to="/posts/rere">
-              Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
-              Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-              Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
-            </router-link>
-          </p>
-          <p class="col-4 col-sm-3 username" v-if="customClass === 'consumer'">
-            <span class="time">1 min ago</span>
-          </p>
-          <p class="col-4 col-sm-3 username" v-else>
-            <a class="btn btn-primary initials" href="#" role="button">SM</a>
+  <main id="read-later-card" style="width: 18rem;"
+    class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
+  >
+    <div class="row flex-row-reverse mx-0">
+      <div class="col-4 read-later-image-list"
+        :style="{backgroundImage: 'url(' + readLaterImage + ')'}"
+      >
+        <button type="button" class="btn btn-sm bg-white m-2 rounded-0 float-right">
+          Category
+        </button>
+      </div>
+      <div class="col-8 card-body py-0">
+        <div class="card-body-title--content mt-2">
+          <button type="button" class="btn btn-sm bg-white mx-0 my-2">
+            Category
+          </button>
+          <h5 class="card-title font-weight-bold">
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+            ea nec elaboraret interpret
+          </h5>
+          <p class="username">
+            <a class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+              href="#" role="button"
+            >
+              JD
+            </a>
             &nbsp;
-            <span class="font-weight-normal name">Johndoe</span>
+            <span class="font-weight-bold name">username</span>
             &nbsp;
             <span class="time">1 min ago</span>
           </p>
         </div>
-        <div class="col-3 title--image" :style="{backgroundImage: 'url(' + feedCardImage + ')'}"></div>
-      </div>
-      <div class="card-text keypoints" v-show="showKeypoints">
-        <span class="font-weight-bold text-capitalize">keypoint</span>
-        <ul class="keypoints--lists">
-          <li>Phasellus iaculis nequeghjhjjkjjkjkhjk</li>
-          <li>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with</li>
-          <li>Vestibulum laoreet porttitor sem</li>
-        </ul>
-      </div>
-      <div class="card-text row actions">
-        <div class="col-5 col-sm-7 col-md-5 col-lg-7 views">
-          <i class="fal fa-eye"></i>
-          <span class="count">123</span>
+
+        <div class="row m-0 text-capitalize actions d-none">
+          <p class="col-8 p-0 counts">
+            <span class="mr-2 views">4k views</span>
+
+            <span class="comments">64 Comments</span>
+          </p>
+          <p class="col-4 p-0 text-right text-capitalize keypoints">
+            show keypoints
+          </p>
         </div>
-        <div class="col-7 col-sm-5 col-md-7 col-lg-5 row others">
-          <div class="col-7 col-sm-4 likes">
-            <p class="thumbs-up centerEle" @click="toggleLike()" v-show="!likePost">
+      </div>
+    </div>
+    <!-- <div class="read-later-image"
+      :style="{backgroundImage: 'url(' + readLaterImage + ')'}"
+    >
+      <button type="button" class="btn btn-sm bg-white m-2 rounded-0 float-right">
+        Category
+      </button>
+    </div>
+    <div class="card-body">
+      <div class="card-body-title--content">
+        <h5 class="card-title font-weight-bold">
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          ea nec elaboraret interpret
+        </h5>
+        <p class="username">
+          <a class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+            href="#" role="button"
+          >
+            JD
+          </a>
+          &nbsp;
+          <span class="font-weight-bold name">username</span>
+          &nbsp;
+          <span class="time">1 min ago</span>
+        </p>
+      </div>
+
+      <div class="row m-0 text-capitalize actions">
+        <p class="col-8 p-0 counts">
+          <span class="mr-2 views">4k views</span>
+
+          <span class="comments">64 Comments</span>
+        </p>
+        <p class="col-4 p-0 text-right text-capitalize keypoints">
+          show keypoints
+        </p>
+      </div>
+    </div> -->
+    <div class="row px-0 border bg-white card-footer mt-2">
+      <div class="col-6 row mx-0 actions--a">
+        <div class="col-6 d-flex justify-content-between border-right likes">
+          <p class="thumbs-up" v-show="!likePost">
+            <span class="border rounded-circle mr-1 icons" @click="toggleLike()">
               <i class="fal fa-thumbs-up"></i>
-              <span class="count">18</span>
-            </p>
-            <p class="thumbs-up centerEle" @click="toggleLike()" v-show="likePost">
+            </span>
+            <span class="count">18</span>
+          </p>
+          <p class=" thumbs-up" v-show="likePost">
+            <span class="border rounded-circle mr-1 icons clicked" @click="toggleLike">
               <i class="fas fa-thumbs-up"></i>
-              <span class="count">18</span>
-            </p>
-            <p class="thumbs-down centerEle" @click="toggleDislike()" v-show="!dislikePost">
+            </span>
+            <span class="count">18</span>
+          </p>
+          <p class="thumbs-down" v-show="!dislikePost">
+            <span class="border rounded-circle mr-1 icons" @click="toggleDislike">
               <i class="fal fa-thumbs-down"></i>
-              <span class="count">1</span>
-            </p>
-            <p class="thumbs-down centerEle" @click="toggleDislike()" v-show="dislikePost">
+            </span>
+            <span class="count">1</span>
+          </p>
+          <p class="thumbs-down" v-show="dislikePost">
+            <span class="border rounded-circle mr-1 icons clicked" @click="toggleDislike">
               <i class="fas fa-thumbs-down"></i>
-              <span class="count">1</span>
+            </span>
+            <span class="count">1</span>
+          </p>
+        </div>
+        <div class="col-6 d-flex justify-content-start share">
+          <p class="share" v-show="!share">
+            <span class="border rounded-circle mr-1 icons" @click="toggleShare">
+              <i class="fal fa-share"></i>
+            </span>
+            <span class="count">11</span>
+          </p>
+
+          <p class="share" v-show="share">
+            <span class="border rounded-circle mr-1 icons clicked"  @click="toggleShare">
+              <i class="fas fa-share"></i>
+            </span>
+            <span class="count">11</span>
+          </p>
+        </div>
+      </div>
+      <div class="col-6 mx-0 d-flex justify-content-end actions--b">
+        <p class="share mr-2" v-show="!bookmarked">
+            <span class="border rounded-circle mr-1 icons" @click="toggleBookmark">
+              <i class="fal fa-bookmark"></i>
+            </span>
+        </p>
+        <p class="share mr-2" v-show="bookmarked">
+            <span class="border rounded-circle mr-1 icons clicked" @click="toggleBookmark">
+              <i class="fas fa-bookmark"></i>
+            </span>
+        </p>
+        <div class="d-flex justify-content-center align-items-center ellipsis-div">
+            <p class="px-2 ellipsis dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              @click="positionDropdownArrow"
+            >
+              <span id="option-icon"/>
+              <span id="option-icon"/>
+              <span id="option-icon"/>
             </p>
-          </div>
-          <div class="col-3 col-sm-7 comments">
-              <p class="coment hideEle centerEle">
-                <i class="fal fa-comment-dots"></i>
-                <span class="count">67</span>
-              </p>
-              <p class="share hideEle centerEle">
-                <i class="fal fa-share"></i>
-                <span class="count">1</span>
-              </p>
-            <div class="ellipsis">
-              <span
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                @click="positionDropdownArrow"
-              >
-                <i class="fal fa-ellipsis-h"></i>
-              </span>
-              <div :class="['dropdown-menu', 'bl-dropdown-menu', { 'top-dropdown': !dropdownArrowDown , 'bottom-dropdown': dropdownArrowDown }]" aria-labelledby="dropdownMenuReference" ref="dropdown">
-                <div class="d-flex bl-dropdown-menu__countries">
-                  <div class="favourite-countries">
-                    <p class="dropdown-item country">Report Post</p>
-                    <hr>
-                    <hr>
-                    <p class="dropdown-item country" v-show="isConsumer">
-                      <i class="fal fa-times"></i>
-                      <span class="count">remove</span>
-                    </p>
-                    <p class="dropdown-item country">
-                      <i class="fal fa-plus"></i>
-                      <span class="count">Creators Profile</span>
-                    </p>
-                    <div class="d-md-none">
-                    <p class="dropdown-item country">
-                      <i class="fal fa-comment-dots"></i>
-                      <span class="count">Comment
-                        <span class="badges">5</span>
-                      </span>
-                    </p>
-                    <p class="dropdown-item country hidden-lg-down">
-                      <i class="fal fa-share"></i>
-                      <span class="count">Share
-                        <span class="badges">5</span>
-                      </span>
-                    </p>
-                    </div>
-                    <p class="dropdown-item country toggle-bookmark"  v-show="!addBookmark && !isConsumer" @click="toggleBookmark()">
-                      <i class="fal fa-bookmark"></i>
-                      <span class="count">Read Later</span>
-                    </p>
-                    <p class="dropdown-item country toggle-bookmark" v-show="addBookmark && !isConsumer" @click="toggleBookmark()">
-                      <i class="fas fa-bookmark"></i>
-                      <span class="count">Read Later</span>
-                    </p>
-                    <hr>
-                    <hr>
-                    <p class="dropdown-item country toggle-story" v-show="!readStory" @click="toggleReadStory()">
-                      <i class="fal fa-book-open"></i>
-                      <span class="count">Read Story</span>
-                    </p>
-                    <p class="dropdown-item country toggle-story" v-show="readStory" @click="toggleReadStory()">
-                      <i class="fas fa-book-open"></i>
-                      <span class="count">Read Story</span>
-                    </p>
+            <div :class="['dropdown-menu', 'bl-dropdown-menu',
+              { 'top-dropdown': !dropdownArrowDown , 'bottom-dropdown': dropdownArrowDown }]"
+              aria-labelledby="dropdownMenuReference" ref="dropdown"
+            >
+              <div class="d-flex bl-dropdown-menu__countries">
+                <div class="favourite-countries">
+                  <p class="dropdown-item country">Report Post</p>
+                  <hr>
+                  <hr>
+                  <p class="dropdown-item country" v-show="isConsumer">
+                    <i class="fal fa-times"></i>
+                    <span class="count">remove</span>
+                  </p>
+                  <p class="dropdown-item country">
+                    <i class="fal fa-plus mr-2"></i>
+                    <span class="count">Creators Profile</span>
+                  </p>
+                  <div class="d-md-none">
+                  <p class="dropdown-item country">
+                    <i class="fal fa-comment-dots mr-2"></i>
+                    <span class="count">Comment
+                      <span class="badges">5</span>
+                    </span>
+                  </p>
+                  <p class="dropdown-item country hidden-lg-down">
+                    <i class="fal fa-share mr-2"></i>
+                    <span class="count">Share
+                      <span class="badges">5</span>
+                    </span>
+                  </p>
                   </div>
+                  <p class="dropdown-item country toggle-bookmark"  v-show="!addBookmark && !isConsumer" @click="toggleBookmark()">
+                    <i class="fal fa-bookmark mr-2"></i>
+                    <span class="count">Read Later</span>
+                  </p>
+                  <p class="dropdown-item country toggle-bookmark" v-show="addBookmark && !isConsumer" @click="toggleBookmark()">
+                    <i class="fas fa-bookmark mr-2"></i>
+                    <span class="count">Read Later</span>
+                  </p>
+                  <hr>
+                  <hr>
+                  <p class="dropdown-item country toggle-story" v-show="!readStory" @click="toggleReadStory()">
+                    <i class="fal fa-book-open mr-2"></i>
+                    <span class="count">Read Story</span>
+                  </p>
+                  <p class="dropdown-item country toggle-story" v-show="readStory" @click="toggleReadStory()">
+                    <i class="fas fa-book-open mr-2"></i>
+                    <span class="count">Read Story</span>
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            v-show="showKeypoints"
-            class="col-2 col-sm-1 toggle-keypoints"
-            @click="toggleKeypoints()"
-          >
-            <i class="fal fa-angle-up"></i>
-          </div>
-          <div
-            v-show="!showKeypoints"
-            class="col-2 col-sm-1 toggle-keypoints"
-            @click="toggleKeypoints()"
-          >
-            <i class="fal fa-angle-down"></i>
-          </div>
         </div>
       </div>
     </div>
@@ -150,39 +209,24 @@
 </template>
 
 <script>
-import feedCardImage from "../../assets/post-card-image.jpg";
+import readLaterImage from '../../assets/readLaterImg.jpg';
 
 export default {
-  name: "PostCard",
-  props: {
-    hideCardBorder: {
-      type: Boolean,
-      default: false
-    },
-    customClass: {
-      type: String,
-      default: ""
-    },
-    isConsumer: {
-      type: Boolean,
-      default: false
-    },
-  },
+  name: 'ReadLaterCard',
   data() {
     return {
-      feedCardImage,
-      showKeypoints: false,
+      readLaterImage,
       likePost: false,
       dislikePost: false,
       addBookmark: false,
       readStory: false,
-      dropdownArrowDown: false
-    };
+      dropdownArrowDown: false,
+      share: false,
+      bookmarked: false,
+      isConsumer: false,
+    }
   },
   methods: {
-    toggleKeypoints() {
-      this.showKeypoints = !this.showKeypoints;
-    },
     toggleLike() {
       this.likePost = !this.likePost;
       this.dislikePost = false;
@@ -191,11 +235,11 @@ export default {
       this.dislikePost = !this.dislikePost;
       this.likePost = false;
     },
-    toggleBookmark() {
-      this.addBookmark = !this.addBookmark;
+    toggleShare() {
+      this.share = !this.share;
     },
-    toggleReadStory() {
-      this.readStory = !this.readStory;
+    toggleBookmark() {
+      this.bookmarked = !this.bookmarked;
     },
     positionDropdownArrow() {
       const dropdownEle = this.$refs.dropdown;
@@ -206,10 +250,10 @@ export default {
         this.dropdownArrowDown = true;
       }
     }
-  },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "./PostCard.scss";
+  @import './PostCard.scss';
 </style>
