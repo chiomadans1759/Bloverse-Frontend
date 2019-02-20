@@ -1,6 +1,9 @@
 <template>
   <main id="trending">
-    <h4 class="mb-4 text-bold" id="trend-card-heading">Top Stories</h4>
+    <div class="mb-4">
+      <h4 class="font-weight-bold text-uppercase">trending stories</h4>
+      <p>Stories with the highest views.</p>
+    </div>
 
     <section class="row" v-if="!general.trendingPost.length">
       <div class="col-md-3" v-for="(post, index) in 4" :key="index">

@@ -4,7 +4,8 @@ import { LoadingBar } from 'iview';
 import store from '../stores';
 
 // Layouts
-import GeneralLayout from '@/layouts/GeneralLayout';
+// import GeneralLayout from '@/layouts/GeneralLayout';
+import BlankLayout from '@/layouts/BlankLayout';
 import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
 
@@ -46,7 +47,7 @@ const router = new Router({
   },
   routes: [
     {
-      path: '/', component: GeneralLayout,
+      path: '/', component: BlankLayout,
       children: [
         { path: '', component: PostFeeds },
         { path: 'posts', redirect: '/' },
@@ -109,7 +110,7 @@ router.beforeEach((to, from, next) => {
         query: {
           redirect: to.fullPath
         }
-      });
+      })
     }
   } else if (to.matched.some(record => record.meta.admin)) {
     if (store.getters.isAnAdmin) {
@@ -120,7 +121,7 @@ router.beforeEach((to, from, next) => {
         query: {
           redirect: to.fullPath
         }
-      });
+      })
     }
   } else {
     next();

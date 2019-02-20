@@ -29,24 +29,8 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Montserrat");
 @import url("./assets/css/bootstrap.min.css");
-@import url("./assets/css/utility.css");
 
 #app {
-  /* font-family: 'Avenir', 'Roboto', Helvetica, Arial, sans-serif; */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  background-color: #f5f5f5 !important;
   font-family: "Montserrat", sans-serif;
-  min-height: 100vh;
-  /* overflow-x: hidden !important; */
-}
-
-body {
-  background-color: #f5f5f5 !important;
-}
-
-:root {
-  --primary: #2f80ed;
 }
 </style>

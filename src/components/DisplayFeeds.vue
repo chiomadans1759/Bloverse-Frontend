@@ -1,36 +1,18 @@
 <template>
   <main v-if="!general.publishedPostsLoading" id="display-feeds">
     <inline-loader v-if="general.publishedPostsLoading" />
-    <transition name="slide-fade">
+    <transition-group name="slide-fade">
       <div class="card" v-if="!general.publishedPosts.length">
         <div class="card-body">
           <img src="@/assets/image.svg" alt class="col-md-3">
           <span class="col-md-8">No content for this filter result yet!</span>
         </div>
       </div>
-    </transition>
-    
-    <transition name="slide-fade">
-      <div v-if="general.publishedPosts.length">
-        <Row id="card-rows" :gutter="32" v-if="general.activeFeedLayout == 'grid'">
-          <section v-if="!general.publishedPosts">
-            <Col class="mt-5" :xs="24" :sm="12" :md="8" v-for="(post, index) in 6" :key="index">
-              <img src="@/assets/placeholders/feed-card.svg" alt="">
-            </Col>
-          </section>
-          
-          <Col :xs="24" :sm="12" :md="8" v-for="post in general.publishedPosts" :key="post.id">
-            <FeedCard :post="post"/>
-          </Col>
-        </Row>
 
-        <Row type="flex" justify="center" v-if="general.activeFeedLayout == 'stack'">
-          <Col :xs="24" :sm="20" :md="14" v-for="post in general.publishedPosts" :key="post.id">
-            <FeedCard :post="post"/>
-          </Col>
-        </Row>
+      <div v-else v-for="post in general.publishedPosts" :key="post.id">
+        <FeedCard :post="post"/>
       </div>
-    </transition>
+    </transition-group>
   </main>    
 </template>
 

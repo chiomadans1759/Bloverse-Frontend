@@ -1,6 +1,22 @@
 <template>
-  <!-- Layout template for views with no header and footer (and with 100% height and width) -->
-  <main>
-    <slot></slot>
+  <main id="blank-layout">
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </main>
 </template>
+
+<script>
+export default {
+  name: "blank-layout"
+}
+</script>
+
+<style scoped>
+#blank-layout {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff !important;
+}
+</style>
+

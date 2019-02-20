@@ -1,6 +1,6 @@
 <template>
   <button id="login-btn" type="button" class="btn btn-link" @click="openLogin" :class="{'text-white': color == 'white'}">
-    LOGIN
+    login
   </button>
 </template>
 
