@@ -207,7 +207,8 @@
             >Apply</Button>
 
             <label class="pb-4">By creating an account, you agree to our
-              <router-link to="/terms-and-conditions" class="sign-up-link-text">Terms</router-link>and
+              <router-link to="/terms-and-conditions" class="sign-up-link-text">Terms</router-link>
+                and
               <router-link to="/privacy-policies" class="sign-up-link-text">Privacy</router-link>
             </label>
 
