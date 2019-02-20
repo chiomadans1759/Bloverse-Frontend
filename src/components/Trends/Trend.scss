@@ -57,9 +57,13 @@
   }
 }
 
+.card {
+  padding: 0rem;
+}
+
 @media screen and (min-width: 1020px) {
   .trendCard {
-    border: 1px solid #d9d9d9 !important;
+    border: rem(1px) solid #d9d9d9 !important;
     width: rem(420px);
     height: 100%;
     height: rem(240px);

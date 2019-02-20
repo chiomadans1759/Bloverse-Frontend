@@ -5,7 +5,7 @@
         <country-options/>
       </div>
 
-      <div class="row bl-homepage__content--categoryNav">
+      <div class="row bl-homepage__content--categoryNav" id="sticky-top">
         <div class="col-6 categories">
           <ul class="list-inline categories-list">
             <!-- hide on mobile devices -->
@@ -253,6 +253,24 @@ export default {
     return {
       noPublishedPost: false,
     }
+  },
+  methods: {
+    stickyNav() {
+      const categoryNav = document.getElementById("sticky-top");
+
+      if (window.innerWidth >= 979) {
+        if (window.pageYOffset >= 200) {
+          categoryNav.classList.add("bl-homepage__sticky-top");
+        } else if (window.pageYOffset < 200) {
+          categoryNav.classList.remove("bl-homepage__sticky-top");
+        }
+      }
+    }
+  },
+  created() {
+    window.onscroll = () => {
+      this.stickyNav();
+    };
   }
 };
 </script>

@@ -684,21 +684,19 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/mexico.svg"
+                              <span
+                                class="flag-icon flag-icon-mx rounded-circle mr-1"
                               />
                               
-          Mexico
+          Mexicoss
         
                             </p>
                              
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/US.svg"
+                              <span
+                                class="flag-icon flag-icon-us rounded-circle mr-1"
                               />
                               
           USA
@@ -708,9 +706,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/nigeria.svg"
+                              <span
+                                class="flag-icon flag-icon-ng rounded-circle mr-1"
                               />
                               
           Nigeria
@@ -720,9 +717,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/mexico.svg"
+                              <span
+                                class="flag-icon flag-icon-mx rounded-circle mr-1"
                               />
                               
           Mexico
@@ -732,9 +728,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/US.svg"
+                              <span
+                                class="flag-icon flag-icon-us rounded-circle mr-1"
                               />
                               
           USA
@@ -744,9 +739,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/nigeria.svg"
+                              <span
+                                class="flag-icon flag-icon-fr rounded-circle mr-1"
                               />
                               
           Nigeria
@@ -768,9 +762,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/mexico.svg"
+                              <span
+                                class="flag-icon flag-icon-mx rounded-circle mr-1"
                               />
                               
           Mexico
@@ -780,9 +773,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/US.svg"
+                              <span
+                                class="flag-icon flag-icon-us rounded-circle mr-1"
                               />
                               
           USA
@@ -792,9 +784,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/nigeria.svg"
+                              <span
+                                class="flag-icon flag-icon-ng rounded-circle mr-1"
                               />
                               
           Nigeria
@@ -804,9 +795,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/mexico.svg"
+                              <span
+                                class="flag-icon flag-icon-mx rounded-circle mr-1"
                               />
                               
           Mexico
@@ -816,9 +806,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/US.svg"
+                              <span
+                                class="flag-icon flag-icon-us rounded-circle mr-1"
                               />
                               
           USA
@@ -828,9 +817,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/nigeria.svg"
+                              <span
+                                class="flag-icon flag-icon-ng rounded-circle mr-1"
                               />
                               
           Nigeria
@@ -840,9 +828,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                             <p
                               class="dropdown-item country"
                             >
-                              <img
-                                alt="fr"
-                                src="@/assets/nigeria.svg"
+                              <span
+                                class="flag-icon flag-icon-ng rounded-circle mr-1"
                               />
                               
           Nigeria

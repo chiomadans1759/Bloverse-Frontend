@@ -1,5 +1,5 @@
 <template>
-  <main class="card text-white trendCard">
+  <main class="card text-white trendCard img-fluid">
     <img src="@/assets/photo-4.jpg" class="card-img" alt="trend image">
     <div class="card-img-overlay trendCard--overlay">
       <div class="content trendCard--overlay__content">

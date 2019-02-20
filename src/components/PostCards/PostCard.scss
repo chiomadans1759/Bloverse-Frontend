@@ -139,6 +139,7 @@
         padding: 0;
         .likes {
           border-right: rem(1px) solid #e6e5e5;
+          height: 1.3125rem;
           padding: 0;
           display: inline-flex;
           justify-content: space-around;
@@ -150,6 +151,7 @@
         }
         .comments {
           border-right: rem(1px) solid #e6e5e5;
+          height: 1.3125rem;
           padding: 0;
           display: inline-flex;
           justify-content: space-around;
@@ -558,6 +560,7 @@ and (-webkit-min-device-pixel-ratio: 1){
           padding: 0;
           .likes {
             border-right: rem(1px) solid #e6e5e5;
+            height: 1.3125rem;
             padding: 0;
             display: inline-flex;
             justify-content: space-around;
@@ -568,6 +571,7 @@ and (-webkit-min-device-pixel-ratio: 1){
           }
           .comments {
             border-right: rem(1px) solid #e6e5e5;
+            height: 1.3125rem;
             padding: 0;
             display: inline-flex;
             justify-content: space-around;

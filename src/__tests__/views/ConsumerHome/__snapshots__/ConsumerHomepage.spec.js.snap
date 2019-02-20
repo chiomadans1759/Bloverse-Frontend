@@ -26,9 +26,8 @@ exports[`Homepage Component should render correctly 1`] = `
           <p
             class="country"
           >
-            <img
-              alt="fr"
-              src="@/assets/france.svg"
+            <span
+              class="flag-icon flag-icon-fr rounded-circle mr-1"
             />
             
       France
@@ -66,21 +65,19 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/mexico.svg"
+                <span
+                  class="flag-icon flag-icon-mx rounded-circle mr-1"
                 />
                 
-          Mexico
+          Mexicoss
         
               </p>
                
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/US.svg"
+                <span
+                  class="flag-icon flag-icon-us rounded-circle mr-1"
                 />
                 
           USA
@@ -90,9 +87,8 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/nigeria.svg"
+                <span
+                  class="flag-icon flag-icon-ng rounded-circle mr-1"
                 />
                 
           Nigeria
@@ -102,9 +98,8 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/mexico.svg"
+                <span
+                  class="flag-icon flag-icon-mx rounded-circle mr-1"
                 />
                 
           Mexico
@@ -114,9 +109,8 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/US.svg"
+                <span
+                  class="flag-icon flag-icon-us rounded-circle mr-1"
                 />
                 
           USA
@@ -126,9 +120,8 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/nigeria.svg"
+                <span
+                  class="flag-icon flag-icon-fr rounded-circle mr-1"
                 />
                 
           Nigeria
@@ -150,9 +143,8 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/mexico.svg"
+                <span
+                  class="flag-icon flag-icon-mx rounded-circle mr-1"
                 />
                 
           Mexico
@@ -162,9 +154,8 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/US.svg"
+                <span
+                  class="flag-icon flag-icon-us rounded-circle mr-1"
                 />
                 
           USA
@@ -174,9 +165,8 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/nigeria.svg"
+                <span
+                  class="flag-icon flag-icon-ng rounded-circle mr-1"
                 />
                 
           Nigeria
@@ -186,9 +176,8 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/mexico.svg"
+                <span
+                  class="flag-icon flag-icon-mx rounded-circle mr-1"
                 />
                 
           Mexico
@@ -198,9 +187,8 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/US.svg"
+                <span
+                  class="flag-icon flag-icon-us rounded-circle mr-1"
                 />
                 
           USA
@@ -210,9 +198,8 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/nigeria.svg"
+                <span
+                  class="flag-icon flag-icon-ng rounded-circle mr-1"
                 />
                 
           Nigeria
@@ -222,9 +209,8 @@ exports[`Homepage Component should render correctly 1`] = `
               <p
                 class="dropdown-item country"
               >
-                <img
-                  alt="fr"
-                  src="@/assets/nigeria.svg"
+                <span
+                  class="flag-icon flag-icon-ng rounded-circle mr-1"
                 />
                 
           Nigeria
@@ -238,6 +224,7 @@ exports[`Homepage Component should render correctly 1`] = `
      
     <div
       class="row bl-homepage__content--categoryNav"
+      id="sticky-top"
     >
       <div
         class="col-6 categories"
@@ -2457,7 +2444,7 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard"
+                        class="card text-white trendCard img-fluid"
                       >
                         <img
                           alt="trend image"
@@ -2510,7 +2497,7 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard"
+                        class="card text-white trendCard img-fluid"
                       >
                         <img
                           alt="trend image"
@@ -2563,7 +2550,7 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard"
+                        class="card text-white trendCard img-fluid"
                       >
                         <img
                           alt="trend image"
@@ -2616,7 +2603,7 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard"
+                        class="card text-white trendCard img-fluid"
                       >
                         <img
                           alt="trend image"
@@ -2669,7 +2656,7 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard"
+                        class="card text-white trendCard img-fluid"
                       >
                         <img
                           alt="trend image"
@@ -2722,7 +2709,7 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard"
+                        class="card text-white trendCard img-fluid"
                       >
                         <img
                           alt="trend image"
@@ -2775,7 +2762,7 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard"
+                        class="card text-white trendCard img-fluid"
                       >
                         <img
                           alt="trend image"
@@ -2828,7 +2815,7 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard"
+                        class="card text-white trendCard img-fluid"
                       >
                         <img
                           alt="trend image"
@@ -2881,7 +2868,7 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard"
+                        class="card text-white trendCard img-fluid"
                       >
                         <img
                           alt="trend image"
@@ -2934,7 +2921,7 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard"
+                        class="card text-white trendCard img-fluid"
                       >
                         <img
                           alt="trend image"

@@ -38,7 +38,7 @@ exports[`Trends Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white trendCard"
+            class="card text-white trendCard img-fluid"
           >
             <img
               alt="trend image"
@@ -91,7 +91,7 @@ exports[`Trends Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white trendCard"
+            class="card text-white trendCard img-fluid"
           >
             <img
               alt="trend image"
@@ -144,7 +144,7 @@ exports[`Trends Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white trendCard"
+            class="card text-white trendCard img-fluid"
           >
             <img
               alt="trend image"
@@ -197,7 +197,7 @@ exports[`Trends Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white trendCard"
+            class="card text-white trendCard img-fluid"
           >
             <img
               alt="trend image"
@@ -250,7 +250,7 @@ exports[`Trends Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white trendCard"
+            class="card text-white trendCard img-fluid"
           >
             <img
               alt="trend image"
@@ -303,7 +303,7 @@ exports[`Trends Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white trendCard"
+            class="card text-white trendCard img-fluid"
           >
             <img
               alt="trend image"
@@ -356,7 +356,7 @@ exports[`Trends Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white trendCard"
+            class="card text-white trendCard img-fluid"
           >
             <img
               alt="trend image"
@@ -409,7 +409,7 @@ exports[`Trends Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white trendCard"
+            class="card text-white trendCard img-fluid"
           >
             <img
               alt="trend image"
@@ -462,7 +462,7 @@ exports[`Trends Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white trendCard"
+            class="card text-white trendCard img-fluid"
           >
             <img
               alt="trend image"
@@ -515,7 +515,7 @@ exports[`Trends Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white trendCard"
+            class="card text-white trendCard img-fluid"
           >
             <img
               alt="trend image"
