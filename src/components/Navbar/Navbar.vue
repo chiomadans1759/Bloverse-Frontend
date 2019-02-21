@@ -170,11 +170,31 @@
       </div>
       </div>
     </nav>
+    <modal
+      target="feedback-modal"
+      altTitle="Send Us Some Feedback"
+      actionText="Send Feedback"
+      dark
+      subTitle="Found a bug? Have a suggestion?. Fill out the form below and we'll take a look!"
+      >
+      <div class="bl-modal-content">
+        <p>Enter your feedback here!</p>
+        <textarea class="form-control mb-2 p-1"></textarea>
+        <label class="ml-1 mr-3"><input type='radio' name='feedback-type'>  Bug</label>
+        <label class="mr-3"><input type='radio' name='feedback-type'>  Comment</label>
+        <label class="mr-3"><input type='radio' name='feedback-type'>  Other</label>
+      </div>
+    </modal>
   </header>
 </template>
 
 <script>
+import Modal from "../Modal/Modal.vue";
+
 export default {
+  components: {
+    Modal
+  },
   props: {
     isTransparent: {
       type: Boolean,

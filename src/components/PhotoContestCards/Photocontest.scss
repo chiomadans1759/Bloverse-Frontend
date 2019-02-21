@@ -24,8 +24,11 @@
     margin-left: 0;
   }
   .VueCarousel-slide {
-    margin: auto rem(8px);
+    margin: auto rem(3px);
   }
+}
+.card {
+  padding: 0rem;
 }
 
 @media screen and (min-width: 1020px) {
@@ -54,7 +57,7 @@
     margin-left: 0;
   }
   .VueCarousel-slide {
-    margin: auto rem(8px);
+    margin: auto rem(3px);
   }
 } 
 }

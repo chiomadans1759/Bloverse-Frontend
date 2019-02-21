@@ -1,9 +1,9 @@
-import { mount, RouterLinkStub } from '@vue/test-utils';
+import { shallowMount, RouterLinkStub } from '@vue/test-utils';
 import PublishPage from '@/views/journalists/Publish/PublishPage.vue';
 
 describe('PublishPage Component', () => {
   it('should render correctly', () => {
-    const wrapper = mount(PublishPage, {
+    const wrapper = shallowMount(PublishPage, {
       stubs: {
         RouterLink: RouterLinkStub
       }
@@ -12,7 +12,7 @@ describe('PublishPage Component', () => {
   });
 
   it('should increase the `textArea`', () => {
-    const wrapper = mount(PublishPage, {
+    const wrapper = shallowMount(PublishPage, {
       stubs: { RouterLink: RouterLinkStub }
     });
     wrapper.find('.show').trigger('click');
@@ -21,7 +21,7 @@ describe('PublishPage Component', () => {
   });
 
   it('should display `showMe`', () => {
-    const wrapper = mount(PublishPage, {
+    const wrapper = shallowMount(PublishPage, {
       stubs: 
         { RouterLink: RouterLinkStub }
     });
@@ -31,7 +31,7 @@ describe('PublishPage Component', () => {
   });
 
   it('should display `showThis`', () => {
-    const wrapper = mount(PublishPage, {
+    const wrapper = shallowMount(PublishPage, {
       stubs: 
       { RouterLink: RouterLinkStub }
     });

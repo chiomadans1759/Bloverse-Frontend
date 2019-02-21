@@ -47,25 +47,25 @@
               <Poptip placement="top" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
-                    <button class="btn rounded-circle d-flex justify-content-center">
+                    <button class="btn rounded-btn-circle d-flex justify-content-center">
                       <i class="fal fa-arrow-from-bottom"></i>
                     </button>
                     <p>Upload</p>
                   </div>
                    <div>
-                    <button class="btn rounded-circle d-flex justify-content-center">
+                    <button class="btn rounded-btn-circle d-flex justify-content-center">
                       <i class="fal fa-search"></i>
                     </button>
                   <p>Search</p>
                   </div>
                   <div>
-                    <button class="btn rounded-circle d-flex justify-content-center">
+                    <button class="btn rounded-btn-circle d-flex justify-content-center">
                       <i class="far fa-th"></i>
                     </button>
                   <p>Multiple</p>
                   </div>
                 </div>
-                <button class="btn rounded-circle d-flex justify-content-center">
+                <button class="btn rounded-btn-circle d-flex justify-content-center">
                   <i class="fal fa-image"></i>
                 </button>
               </Poptip>
@@ -74,19 +74,19 @@
               <Poptip placement="top" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
-                    <button class="btn rounded-circle d-flex justify-content-center">
+                    <button class="btn rounded-btn-circle d-flex justify-content-center">
                       <i class="fal fa-arrow-from-bottom"></i>
                     </button>
                     <p>Upload</p>
                   </div>
                    <div>
-                    <button class="btn rounded-circle d-flex justify-content-center text">
+                    <button class="btn rounded-btn-circle d-flex justify-content-center text">
                       <i class="fal fa-link"></i>
                     </button>
                   <p>Embedded</p>
                   </div>
                 </div>
-                <button class="btn rounded-circle d-flex justify-content-center">
+                <button class="btn rounded-btn-circle d-flex justify-content-center">
                   <i class="fal fa-video"></i>
                 </button>
               </Poptip>
@@ -99,7 +99,7 @@
                     <p>Add a link from twitter, facebook</p>
                   </div>
                 </div>
-                <button class="btn rounded-circle d-flex justify-content-center">
+                <button class="btn rounded-btn-circle d-flex justify-content-center">
                   <i class="fal fa-link"></i>
                 </button>
               </Poptip>

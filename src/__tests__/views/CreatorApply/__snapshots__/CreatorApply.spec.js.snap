@@ -385,7 +385,8 @@ exports[`Creator Apply Component should render correctly 1`] = `
             >
               Terms
             </a>
-            and
+            
+              and
             
             <a
               class="sign-up-link-text"

@@ -7,6 +7,7 @@ describe('ErrorAlert1 Component', () => {
 
     expect(wrapper.element).toMatchSnapshot();
   });
+  
   it('should render title', () => {
     const wrapper = mount(ErrorAlert1, {
       propsData: {
