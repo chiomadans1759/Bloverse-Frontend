@@ -2190,7 +2190,43 @@ exports[`Homepage Component should render correctly 1`] = `
                         </span>
                       </p>
                     </div>
-                     
+                  </div>
+                </div>
+              </main>
+            </main>
+             
+            <main
+              class="container-fluid bl-photoContest"
+            >
+              <div
+                class="bl-photoContest--header"
+              >
+                <p
+                  class="font-weight-bold title"
+                >
+                  Photo Contest
+                </p>
+                 
+                <p
+                  class="subtitle"
+                >
+                  
+      Lorem ipsum dolor sit amet, vel accumsan
+    
+                </p>
+              </div>
+               
+              <section
+                class="VueCarousel"
+              >
+                <div
+                  class="VueCarousel-wrapper"
+                >
+                  <div
+                    class="VueCarousel-inner"
+                    role="listbox"
+                    style="transform: translate(0px, 0); visibility: hidden; height: auto;"
+                  >
                     <div
                       class="row m-0 text-capitalize actions"
                     >
@@ -6254,9 +6290,9 @@ exports[`Homepage Component should render correctly 1`] = `
                         </span>
                          
                         <span
-                          class="time"
+                          class="count"
                         >
-                          1 min ago
+                          11
                         </span>
                       </p>
                     </div>
@@ -8026,9 +8062,9 @@ exports[`Homepage Component should render correctly 1`] = `
                         </span>
                          
                         <span
-                          class="time"
+                          class="count"
                         >
-                          1 min ago
+                          11
                         </span>
                       </p>
                     </div>

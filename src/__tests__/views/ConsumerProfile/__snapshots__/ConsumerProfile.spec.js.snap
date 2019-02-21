@@ -673,7 +673,7 @@ exports[`Profile Component should render correctly 1`] = `
             class="card-img-overlay"
           >
             <h3
-              class="card-title font-weight-bold"
+              class="card-title"
             >
               
               Become a Content Creator
