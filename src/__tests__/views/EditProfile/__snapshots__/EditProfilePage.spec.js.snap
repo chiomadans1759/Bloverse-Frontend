@@ -17,16 +17,20 @@ exports[`EditProfile Page should render correctly 1`] = `
           class="backlink mr-4"
           href="/settings"
         >
-          <i
-            class="fal fa-long-arrow-left fa-2x back-icon"
-          />
-           
-          <span
-            class="back-text"
+          <div
+            class="btn rounded-btn-circle d-flex justify-content-center"
           >
-            Back
-          </span>
+            <i
+              class="fal fa-arrow-left back-icon"
+            />
+          </div>
         </a>
+         
+        <span
+          class="back-text"
+        >
+          Back
+        </span>
          
         <a
           class="router-link"

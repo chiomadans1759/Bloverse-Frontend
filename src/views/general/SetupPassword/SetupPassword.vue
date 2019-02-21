@@ -3,7 +3,7 @@
     <navbar :showBackArrow="showBackArrow" :showNavigations="showNavigations" customClass="back-nav"/>
     <div class="container main-content">
       <div class="title">
-        <h3>Password</h3>
+        <h3>Create Password</h3>
         <p>Enter your password</p>
       </div>
       <div class="row setup-password-form">

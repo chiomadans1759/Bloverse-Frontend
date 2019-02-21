@@ -19,6 +19,12 @@ exports[`PhotoContest Component should render correctly 1`] = `
         >
           <!---->
            
+          <span
+            class="back-text"
+          >
+            Back
+          </span>
+           
           <a
             class="router-link"
           >

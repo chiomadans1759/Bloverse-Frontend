@@ -19,6 +19,12 @@ exports[`Creator Home Page should render correctly 1`] = `
         >
           <!---->
            
+          <span
+            class="back-text"
+          >
+            Back
+          </span>
+           
           <a
             class="router-link"
           >

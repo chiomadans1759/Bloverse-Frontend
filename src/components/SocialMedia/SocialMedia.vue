@@ -1,5 +1,5 @@
 <template>
-  <div class="social my-4">
+  <div id="bl-socail-media" class="my-4">
     <p class="mb-2 social-title" :class="title"><strong>Social Media</strong></p>
     <div class="d-flex flex-wrap">
       <div class="mr-2">
