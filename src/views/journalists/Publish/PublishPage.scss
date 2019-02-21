@@ -32,20 +32,20 @@
   .mytext {
     overflow: hidden;
     width: 100%;
-    border: 0;
+    border: 1px solid red;
     margin-right: 1.5rem;
     background: #fff;
     color: #565656;
     resize: none;
-    padding-bottom: 3rem;
     font-size: 1rem;
     font-weight: 500;
-    position: fixed !important;
     &:focus {
       outline: none;
       box-shadow: none;
     }
   }
+
+  
 
   .back-icon {
     color: #000000;
@@ -62,12 +62,13 @@
   .click {
     cursor: pointer;
   }
+  
   .text-icons {
     list-style-type: none;
-    margin-top: 10.5rem;
-    position: fixed;
+    display: flex;
     li {
       margin-bottom: 1rem;
+      margin-right: 1rem;
     }
     button {
       background: transparent;
@@ -78,6 +79,8 @@
   }
   .icon-wrapper {
     z-index: 1;
+    position: relative;
+    padding-bottom: 3rem;
   }
 
   .toggle {

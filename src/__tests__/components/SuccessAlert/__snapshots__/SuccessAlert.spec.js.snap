@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuccessAlert Component should render correctly 1`] = `
+<main
+  id="success-alert"
+>
+  <div
+    class="alert alert-success success"
+    role="alert"
+  >
+    <!---->
+     
+    <p
+      class="text"
+    />
+  </div>
+</main>
+`;

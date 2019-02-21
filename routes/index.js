@@ -18,6 +18,7 @@ import NotFound from '../src/views/general/NotFoundPage/NotFoundPage.vue';
 // Blank Base Layout Pages
 import PhotoContest from '../src/views/general/PhotoContest/PhotoContestPage.vue';
 import CreatorPublishPage from '@/views/journalists/Publish/PublishPage.vue'
+import PublishPostSuccess from '@/views/journalists/PublishSuccess/PublishSuccessPage'
 import ForgotPassword from '../src/views/general/ForgotPassword/ForgotPasswordPage.vue';
 import EditProfile from '../src/views/general/EditProfile/EditProfilePage';
 import SigninPage from '../src/views/general/Signin/SigninPage.vue';
@@ -77,9 +78,8 @@ const routes = [
   { path: "/changepassword", component: ChangePassword },
   { path: '/edit/profile', component: EditProfile },
   { path: '/choosecountry', component: Country },
-  { path: '/publish', component: CreatorPublishPage },
-
-  { path: '/publish', component: CreatorPublishPage },
+  { path: '/publish', component: CreatorPublishPage},
+  { path: '/publish/success', component: PublishPostSuccess },
 
   {
     path: '/admin', component: BlankBase,

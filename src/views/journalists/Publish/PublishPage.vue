@@ -10,15 +10,41 @@
     </nav> 
      <div class="container">
        <div class="row">
-        <div class="col-lg-1 icon-wrapper mt-4">
-          <ul class="text-icons">
+        <div class="col-lg-8 mt-4">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control p-0 one" placeholder="Add a title" autofocus>
+            </div>
+            <div class="form-group d-flex" v-for="(line, index) in lines" :key="index">
+              <input type="text" class="form-control p-0 two" placeholder="Add keypoint" v-model="line.keypoint">
+              <div>
+                <span v-if="line.hideBtn">
+                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="addKeypoint" v-if="plus_btn">
+                  <i class="fal fa-plus"></i>
+                </button>
+                </span>
+                <span v-if="!line.hideBtn">
+                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="removeKeypoint(index)">
+                  <i class="fal fa-minus"></i>
+                </button>
+                </span>
+              </div>
+            </div>
+            </form>
+            
+            <div class="form-group pb-4">
+              <textarea class="mytext" ref="autoText" v-model="textLength" v-if="textArea" @input="textareaResize"></textarea>
+            </div>
+
+            <div class="mt-2 icon-wrapper">
+            <ul class="text-icons">
             <li>
               <button class="btn rounded-circle d-flex justify-content-center show" v-if="hideMe" @click.prevent="showTextBox">
                 <i class="fal fa-font"></i>
               </button>
             </li>
             <li>
-              <Poptip placement="right" v-if="hideMe">
+              <Poptip placement="top" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
                     <button class="btn rounded-circle d-flex justify-content-center">
@@ -45,7 +71,7 @@
               </Poptip>
             </li>
             <li>
-              <Poptip placement="right" v-if="hideMe">
+              <Poptip placement="top" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
                     <button class="btn rounded-circle d-flex justify-content-center">
@@ -66,7 +92,7 @@
               </Poptip>
               </li>
             <li>
-              <Poptip placement="right" v-if="hideMe">
+              <Poptip placement="top" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
                     <input type="text" placeholder="Enter a url link" class="embed">
@@ -80,30 +106,7 @@
               </li>
           </ul>
         </div>
-        <div class="col-lg-6 mt-4">
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control p-0 one" placeholder="Add a title" autofocus>
-            </div>
-            <div class="form-group d-flex" v-for="(line, index) in lines" :key="index">
-              <input type="text" class="form-control p-0 two" placeholder="Add keypoint" v-model="line.keypoint">
-              <div>
-                <span v-if="line.hideBtn">
-                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="addKeypoint" v-if="plus_btn">
-                  <i class="fal fa-plus"></i>
-                </button>
-                </span>
-                <span v-if="!line.hideBtn">
-                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="removeKeypoint(index)">
-                  <i class="fal fa-minus"></i>
-                </button>
-                </span>
-              </div>
-            </div>
-            <div class="form-group pb-4">
-              <textarea class="mytext" ref="autoText" v-model="textLength" v-if="textArea" @input="textareaResize"></textarea>
-            </div>
-          </form>
+          
         </div>
         <div class="col-lg-3 err-alert">
           <div class="d-flex justify-content-end mb-4 toggle" v-if="showMe" @click="toggleEntitySection">

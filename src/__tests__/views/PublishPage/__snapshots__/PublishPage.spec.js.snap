@@ -33,290 +33,7 @@ exports[`PublishPage Component should render correctly 1`] = `
       class="row"
     >
       <div
-        class="col-lg-1 icon-wrapper mt-4"
-      >
-        <ul
-          class="text-icons"
-        >
-          <li>
-            <button
-              class="btn rounded-circle d-flex justify-content-center show"
-            >
-              <i
-                class="fal fa-font"
-              />
-            </button>
-          </li>
-           
-          <li>
-            <div
-              class="ivu-poptip"
-            >
-              <div
-                class="ivu-poptip-rel"
-              >
-                 
-                <button
-                  class="btn rounded-circle d-flex justify-content-center"
-                >
-                  <i
-                    class="fal fa-image"
-                  />
-                </button>
-              </div>
-               
-              <div
-                class="ivu-poptip-popper"
-                name="fade"
-                style="display: none;"
-              >
-                <div
-                  class="ivu-poptip-content"
-                >
-                  <div
-                    class="ivu-poptip-arrow"
-                  />
-                   
-                  <!---->
-                   
-                  <div
-                    class="ivu-poptip-inner"
-                  >
-                    <div
-                      class="ivu-poptip-title"
-                    >
-                      <div
-                        class="ivu-poptip-title-inner"
-                      >
-                        
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="ivu-poptip-body"
-                    >
-                      <div
-                        class="ivu-poptip-body-content"
-                      >
-                        <div
-                          class="d-flex justify-content-between inner-icons"
-                        >
-                          <div>
-                            <button
-                              class="btn rounded-circle d-flex justify-content-center"
-                            >
-                              <i
-                                class="fal fa-arrow-from-bottom"
-                              />
-                            </button>
-                             
-                            <p>
-                              Upload
-                            </p>
-                          </div>
-                           
-                          <div>
-                            <button
-                              class="btn rounded-circle d-flex justify-content-center"
-                            >
-                              <i
-                                class="fal fa-search"
-                              />
-                            </button>
-                             
-                            <p>
-                              Search
-                            </p>
-                          </div>
-                           
-                          <div>
-                            <button
-                              class="btn rounded-circle d-flex justify-content-center"
-                            >
-                              <i
-                                class="far fa-th"
-                              />
-                            </button>
-                             
-                            <p>
-                              Multiple
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-           
-          <li>
-            <div
-              class="ivu-poptip"
-            >
-              <div
-                class="ivu-poptip-rel"
-              >
-                 
-                <button
-                  class="btn rounded-circle d-flex justify-content-center"
-                >
-                  <i
-                    class="fal fa-video"
-                  />
-                </button>
-              </div>
-               
-              <div
-                class="ivu-poptip-popper"
-                name="fade"
-                style="display: none;"
-              >
-                <div
-                  class="ivu-poptip-content"
-                >
-                  <div
-                    class="ivu-poptip-arrow"
-                  />
-                   
-                  <!---->
-                   
-                  <div
-                    class="ivu-poptip-inner"
-                  >
-                    <div
-                      class="ivu-poptip-title"
-                    >
-                      <div
-                        class="ivu-poptip-title-inner"
-                      >
-                        
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="ivu-poptip-body"
-                    >
-                      <div
-                        class="ivu-poptip-body-content"
-                      >
-                        <div
-                          class="d-flex justify-content-between inner-icons"
-                        >
-                          <div>
-                            <button
-                              class="btn rounded-circle d-flex justify-content-center"
-                            >
-                              <i
-                                class="fal fa-arrow-from-bottom"
-                              />
-                            </button>
-                             
-                            <p>
-                              Upload
-                            </p>
-                          </div>
-                           
-                          <div>
-                            <button
-                              class="btn rounded-circle d-flex justify-content-center text"
-                            >
-                              <i
-                                class="fal fa-link"
-                              />
-                            </button>
-                             
-                            <p>
-                              Embedded
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-           
-          <li>
-            <div
-              class="ivu-poptip"
-            >
-              <div
-                class="ivu-poptip-rel"
-              >
-                 
-                <button
-                  class="btn rounded-circle d-flex justify-content-center"
-                >
-                  <i
-                    class="fal fa-link"
-                  />
-                </button>
-              </div>
-               
-              <div
-                class="ivu-poptip-popper"
-                name="fade"
-                style="display: none;"
-              >
-                <div
-                  class="ivu-poptip-content"
-                >
-                  <div
-                    class="ivu-poptip-arrow"
-                  />
-                   
-                  <!---->
-                   
-                  <div
-                    class="ivu-poptip-inner"
-                  >
-                    <div
-                      class="ivu-poptip-title"
-                    >
-                      <div
-                        class="ivu-poptip-title-inner"
-                      >
-                        
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="ivu-poptip-body"
-                    >
-                      <div
-                        class="ivu-poptip-body-content"
-                      >
-                        <div
-                          class="d-flex justify-content-between inner-icons"
-                        >
-                          <div>
-                            <input
-                              class="embed"
-                              placeholder="Enter a url link"
-                              type="text"
-                            />
-                             
-                            <p>
-                              Add a link from twitter, facebook
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-       
-      <div
-        class="col-lg-6 mt-4"
+        class="col-lg-8 mt-4"
       >
         <form>
           <div
@@ -353,13 +70,296 @@ exports[`PublishPage Component should render correctly 1`] = `
               <!---->
             </div>
           </div>
-           
-          <div
-            class="form-group pb-4"
-          >
-            <!---->
-          </div>
         </form>
+         
+        <div
+          class="form-group pb-4"
+        >
+          <!---->
+        </div>
+         
+        <div
+          class="mt-2 icon-wrapper"
+        >
+          <ul
+            class="text-icons"
+          >
+            <li>
+              <button
+                class="btn rounded-circle d-flex justify-content-center show"
+              >
+                <i
+                  class="fal fa-font"
+                />
+              </button>
+            </li>
+             
+            <li>
+              <div
+                class="ivu-poptip"
+              >
+                <div
+                  class="ivu-poptip-rel"
+                >
+                   
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center"
+                  >
+                    <i
+                      class="fal fa-image"
+                    />
+                  </button>
+                </div>
+                 
+                <div
+                  class="ivu-poptip-popper"
+                  name="fade"
+                  style="display: none;"
+                >
+                  <div
+                    class="ivu-poptip-content"
+                  >
+                    <div
+                      class="ivu-poptip-arrow"
+                    />
+                     
+                    <!---->
+                     
+                    <div
+                      class="ivu-poptip-inner"
+                    >
+                      <div
+                        class="ivu-poptip-title"
+                      >
+                        <div
+                          class="ivu-poptip-title-inner"
+                        >
+                          
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="ivu-poptip-body"
+                      >
+                        <div
+                          class="ivu-poptip-body-content"
+                        >
+                          <div
+                            class="d-flex justify-content-between inner-icons"
+                          >
+                            <div>
+                              <button
+                                class="btn rounded-circle d-flex justify-content-center"
+                              >
+                                <i
+                                  class="fal fa-arrow-from-bottom"
+                                />
+                              </button>
+                               
+                              <p>
+                                Upload
+                              </p>
+                            </div>
+                             
+                            <div>
+                              <button
+                                class="btn rounded-circle d-flex justify-content-center"
+                              >
+                                <i
+                                  class="fal fa-search"
+                                />
+                              </button>
+                               
+                              <p>
+                                Search
+                              </p>
+                            </div>
+                             
+                            <div>
+                              <button
+                                class="btn rounded-circle d-flex justify-content-center"
+                              >
+                                <i
+                                  class="far fa-th"
+                                />
+                              </button>
+                               
+                              <p>
+                                Multiple
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+             
+            <li>
+              <div
+                class="ivu-poptip"
+              >
+                <div
+                  class="ivu-poptip-rel"
+                >
+                   
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center"
+                  >
+                    <i
+                      class="fal fa-video"
+                    />
+                  </button>
+                </div>
+                 
+                <div
+                  class="ivu-poptip-popper"
+                  name="fade"
+                  style="display: none;"
+                >
+                  <div
+                    class="ivu-poptip-content"
+                  >
+                    <div
+                      class="ivu-poptip-arrow"
+                    />
+                     
+                    <!---->
+                     
+                    <div
+                      class="ivu-poptip-inner"
+                    >
+                      <div
+                        class="ivu-poptip-title"
+                      >
+                        <div
+                          class="ivu-poptip-title-inner"
+                        >
+                          
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="ivu-poptip-body"
+                      >
+                        <div
+                          class="ivu-poptip-body-content"
+                        >
+                          <div
+                            class="d-flex justify-content-between inner-icons"
+                          >
+                            <div>
+                              <button
+                                class="btn rounded-circle d-flex justify-content-center"
+                              >
+                                <i
+                                  class="fal fa-arrow-from-bottom"
+                                />
+                              </button>
+                               
+                              <p>
+                                Upload
+                              </p>
+                            </div>
+                             
+                            <div>
+                              <button
+                                class="btn rounded-circle d-flex justify-content-center text"
+                              >
+                                <i
+                                  class="fal fa-link"
+                                />
+                              </button>
+                               
+                              <p>
+                                Embedded
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+             
+            <li>
+              <div
+                class="ivu-poptip"
+              >
+                <div
+                  class="ivu-poptip-rel"
+                >
+                   
+                  <button
+                    class="btn rounded-circle d-flex justify-content-center"
+                  >
+                    <i
+                      class="fal fa-link"
+                    />
+                  </button>
+                </div>
+                 
+                <div
+                  class="ivu-poptip-popper"
+                  name="fade"
+                  style="display: none;"
+                >
+                  <div
+                    class="ivu-poptip-content"
+                  >
+                    <div
+                      class="ivu-poptip-arrow"
+                    />
+                     
+                    <!---->
+                     
+                    <div
+                      class="ivu-poptip-inner"
+                    >
+                      <div
+                        class="ivu-poptip-title"
+                      >
+                        <div
+                          class="ivu-poptip-title-inner"
+                        >
+                          
+                        </div>
+                      </div>
+                       
+                      <div
+                        class="ivu-poptip-body"
+                      >
+                        <div
+                          class="ivu-poptip-body-content"
+                        >
+                          <div
+                            class="d-flex justify-content-between inner-icons"
+                          >
+                            <div>
+                              <input
+                                class="embed"
+                                placeholder="Enter a url link"
+                                type="text"
+                              />
+                               
+                              <p>
+                                Add a link from twitter, facebook
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
        
       <div
