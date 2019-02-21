@@ -45,7 +45,8 @@ let data = [
             "Daystar university",
             "Africa nazarene university",
             "Karatina university",
-            "St. Paul’s university"
+            "St. Paul’s university",
+            "Mt Kenya uni"
         ]
     },
     {
