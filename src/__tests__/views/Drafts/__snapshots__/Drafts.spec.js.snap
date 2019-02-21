@@ -468,7 +468,7 @@ exports[`Drafts Component should render correctly 1`] = `
                   class="pr-2 pb-5"
                 >
                   <i
-                    class="fal fa-phone"
+                    class="fal fa-phone icon"
                   />
                 </span>
                  +234 000 000 0000
@@ -480,7 +480,7 @@ exports[`Drafts Component should render correctly 1`] = `
                   class="pr-2 py-1"
                 >
                   <i
-                    class="fal fa-envelope"
+                    class="fal fa-envelope icon"
                   />
                 </span>
                  email@bloverse.com
@@ -492,7 +492,7 @@ exports[`Drafts Component should render correctly 1`] = `
                   class="pr-2"
                 >
                   <i
-                    class="fal fa-map-marker-alt"
+                    class="fal fa-map-marker-alt icon"
                   />
                 </span>
                  Lagos, Nigeria
@@ -505,7 +505,10 @@ exports[`Drafts Component should render correctly 1`] = `
                 <p
                   class="profile__text"
                 >
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                  
+        Some quick example text to build on the card title and make up the 
+        bulk of the card's content.
+      
                 </p>
               </div>
                
@@ -626,99 +629,19 @@ exports[`Drafts Component should render correctly 1`] = `
             </div>
              
             <div
-              class="social p-3"
+              class="px-3 points"
             >
-              <h5
-                class="mb-2"
+              <span
+                class="font-weight-bold"
               >
-                <strong>
-                  Social Media
-                </strong>
-              </h5>
+                Points
+              </span>
                
-              <div
-                class="d-flex flex-wrap"
+              <p
+                class="mt-2 mb-4"
               >
-                <div
-                  class="mr-2"
-                >
-                  <div
-                    class="border rounded p-2 mb-1 d-flex align-items-center"
-                  >
-                    <img
-                      alt="facebook"
-                      class="social-icon"
-                      src="@/assets/facebook-square.svg"
-                    />
-                     
-                    <h6
-                      class="social-text text-center pl-2"
-                    >
-                      Facebook
-                    </h6>
-                  </div>
-                </div>
-                 
-                <div
-                  class="mr-2"
-                >
-                  <div
-                    class="border rounded p-2 mb-1 d-flex align-items-center"
-                  >
-                    <img
-                      alt="facebook"
-                      class="social-icon"
-                      src="@/assets/twitter-square.svg"
-                    />
-                     
-                    <h6
-                      class="social-text text-center pl-2"
-                    >
-                      Twitter
-                    </h6>
-                  </div>
-                </div>
-                 
-                <div
-                  class="mr-2"
-                >
-                  <div
-                    class="border rounded p-2 mb-1 d-flex align-items-center"
-                  >
-                    <img
-                      alt="facebook"
-                      class="social-icon"
-                      src="@/assets/instagram-square.svg"
-                    />
-                     
-                    <h6
-                      class="social-text text-center pl-2"
-                    >
-                      Instagram
-                    </h6>
-                  </div>
-                </div>
-                 
-                <div
-                  class="mr-2"
-                >
-                  <div
-                    class="border rounded p-2 mb-1 d-flex align-items-center"
-                  >
-                    <img
-                      alt="facebook"
-                      class="social-icon"
-                      src="@/assets/linkedin-square.svg"
-                    />
-                     
-                    <h6
-                      class="social-text text-center pl-2"
-                    >
-                      Linkedin
-                    </h6>
-                  </div>
-                </div>
-              </div>
+                0.05
+              </p>
             </div>
              
             <div

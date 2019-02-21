@@ -15,27 +15,33 @@
       <h5 class="card-title">John Doe</h5>
       <p class="contact">
         <span class="pr-2 pb-5">
-          <i class="fal fa-phone"></i>
+          <i class="fal fa-phone icon"></i>
         </span> +234 000 000 0000
       </p>
       <p>
         <span class="pr-2 py-1">
-          <i class="fal fa-envelope"></i>
+          <i class="fal fa-envelope icon"></i>
         </span> email@bloverse.com
       </p>
       <p>
         <span class="pr-2">
-          <i class="fal fa-map-marker-alt"></i>
+          <i class="fal fa-map-marker-alt icon"></i>
         </span> Lagos, Nigeria
       </p>
       <div class="py-4 profile-content">
         <p
           class="profile__text"
-        >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        >
+          Some quick example text to build on the card title and make up the 
+          bulk of the card's content.
+        </p>
       </div>
-      <div v-if="!hideFollowing" class="follow d-flex justify-content-between">
+      <div v-if="!hideFollowing" class="follow d-flex justify-content-start">
         <a data-toggle="modal" href="#following-modal">Following</a>
-        <span class="border rounded px-1 mr-2" data-toggle="modal" href="#following-modal" id="number">5</span>
+        <span class="border rounded px-1 mx-2" data-toggle="modal"
+          href="#following-modal" id="number">
+          5
+        </span>
       </div>
       <div v-if="displayFollowers" class="follow d-flex align-items-center">
         <a data-toggle="" href="#">Followers</a>
@@ -45,34 +51,9 @@
     <div v-if="displayInterest" class="interests">
       <category-card hideCardClass />
     </div>
-    <div class="social p-3">
-      <h5 class="mb-2"><strong>Social Media</strong></h5>
-      <div class="d-flex flex-wrap">
-        <div class="mr-2">
-          <div class="border rounded p-2 mb-1 d-flex align-items-center">
-            <img class="social-icon" src="@/assets/facebook-square.svg" alt="facebook" />
-            <h6 class="social-text text-center pl-2">Facebook</h6>
-          </div>
-        </div>
-        <div class="mr-2">
-          <div class="border rounded p-2 mb-1 d-flex align-items-center">
-            <img class="social-icon" src="@/assets/twitter-square.svg" alt="facebook" />
-            <h6 class="social-text text-center pl-2">Twitter</h6>
-          </div>
-        </div>
-        <div class="mr-2">
-          <div class="border rounded p-2 mb-1 d-flex align-items-center">
-            <img class="social-icon" src="@/assets/instagram-square.svg" alt="facebook" />
-            <h6 class="social-text text-center pl-2">Instagram</h6>
-          </div>
-        </div>
-        <div class="mr-2">
-          <div class="border rounded p-2 mb-1 d-flex align-items-center">
-            <img class="social-icon" src="@/assets/linkedin-square.svg" alt="facebook" />
-            <h6 class="social-text text-center pl-2">Linkedin</h6>
-          </div>
-        </div>
-      </div>
+    <div class="px-3 points">
+      <span class="font-weight-bold">Points</span>
+      <p class="mt-2 mb-4">0.05</p>
     </div>
     <div class="card-footer text-muted bg-white footer-color">Member Since:
       <span class="text-dark">27 December, 2018</span>

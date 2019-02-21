@@ -12,20 +12,20 @@
           <category-card />
         </div>
         <div class="col-lg-12 mt-2">
-          <div class="card contest-advert bg-white">
+          <div class="card contest-advert">
             <div class="card-img-overlay">
-              <h3 class="card-title text-capitalize">
+              <h3 class="card-title font-weight-bold">
                 Become a Content Creator
               </h3>
-              <p class="card-text text-capitalize caption">
+              <p class="card-text font-weight-bold caption">
                 Publish your article to the world
               </p>
-              <span class="d-flex justify-content-between mb-0">
-                <a href="" class="mt-4">Know more</a>
+              <span class="d-flex justify-content-start mb-0">
                 <a role="button" href="#" class="btn know-more-btn">
                   Apply
                 </a>
               </span>
+              <div class="robot-image"></div>
             </div>
           </div>
            <div class="bl-footer">
@@ -132,13 +132,13 @@
           <div v-if="!showPrevRead">
             <!-- grid view -->
             <div v-if="!showListView" class="row mx-0 d-none d-sm-flex flex-wrap">
-              <post-cards />
+              <post-cards :listView="showListView" />
             </div>
             <!-- grid view ends  -->
 
             <!-- list view -->
             <div v-if="showListView" class="row mx-0 d-none d-sm-flex flex-wrap">
-              <post-cards />
+              <post-cards :listView="showListView" />
             </div>
             <!-- list view ends  -->
           </div>
@@ -147,32 +147,14 @@
           <!-- previously-read content -->
           <div v-else class="d-none d-sm-block">
             <!-- grid view  -->
-            <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex">
-              <div class="col-lg-6 my-2">
-                <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
-              </div>
-              <div class="col-lg-6 my-2">
-                <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
-              </div>
-              <div class="col-lg-6 my-2">
-                <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
-              </div>
-              <div class="col-lg-6 my-2">
-                <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
-              </div>
-              <div class="col-lg-6 my-2">
-                <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
-              </div>
+            <div v-if="!showListView" class="row mx-0 d-none d-sm-flex flex-wrap">
+              <post-cards :listView="showListView" />
             </div>
             <!-- grid view ends -->
 
             <!-- list view -->
-            <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
-              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
-              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
-              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
-              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
-              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+            <div v-if="showListView" class="row mx-0 d-none d-sm-flex flex-wrap">
+              <post-cards :listView="showListView" />
             </div>
             <!-- list view ends  -->
           </div>
@@ -244,11 +226,9 @@ export default {
     },
     togglePrevRead() {
       this.showPrevRead = true;
-      this.noSavedPost = false;
     },
     toggleReadLater() {
       this.showPrevRead = false;
-      this.noSavedPost = true;
     },
     showMobileUserInfo() {
       this.showMobileProfile = false;

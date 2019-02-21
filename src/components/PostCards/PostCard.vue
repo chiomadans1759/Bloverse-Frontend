@@ -2,24 +2,26 @@
   <main id="read-later-card" style="width: 18rem;"
     class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
   >
-    <div class="row flex-row-reverse mx-0">
-      <div class="col-4 read-later-image-list"
+    <div :class="['row mx-0', { 'flex-row-reverse': listView }]">
+      <div :class="[{ 'col-4 read-later-image-list': listView, 'col-12 read-later-image': !listView, }]"
         :style="{backgroundImage: 'url(' + readLaterImage + ')'}"
       >
-        <button type="button" class="btn btn-sm bg-white m-2 rounded-0 float-right">
+        <button v-show="!listView" type="button" 
+          class="btn btn-sm bg-white m-2 rounded-0 float-right"
+        >
           Category
         </button>
       </div>
-      <div class="col-8 card-body py-0">
+      <div :class="['card-body', { 'col-8 py-0': listView }]">
         <div class="card-body-title--content mt-2">
-          <button type="button" class="btn btn-sm bg-white mx-0 my-2">
+          <button v-show="listView" type="button" class="btn btn-sm bg-white mx-0 my-2">
             Category
           </button>
           <h5 class="card-title font-weight-bold">
             Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
             ea nec elaboraret interpret
           </h5>
-          <p class="username">
+          <p :class="['username', { 'mt-3': listView }]">
             <a class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
               href="#" role="button"
             >
@@ -32,7 +34,7 @@
           </p>
         </div>
 
-        <div class="row m-0 text-capitalize actions d-none">
+        <div :class="['row m-0 text-capitalize actions', { 'd-none': listView }]">
           <p class="col-8 p-0 counts">
             <span class="mr-2 views">4k views</span>
 
@@ -44,48 +46,11 @@
         </div>
       </div>
     </div>
-    <!-- <div class="read-later-image"
-      :style="{backgroundImage: 'url(' + readLaterImage + ')'}"
-    >
-      <button type="button" class="btn btn-sm bg-white m-2 rounded-0 float-right">
-        Category
-      </button>
-    </div>
-    <div class="card-body">
-      <div class="card-body-title--content">
-        <h5 class="card-title font-weight-bold">
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
-          ea nec elaboraret interpret
-        </h5>
-        <p class="username">
-          <a class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
-            href="#" role="button"
-          >
-            JD
-          </a>
-          &nbsp;
-          <span class="font-weight-bold name">username</span>
-          &nbsp;
-          <span class="time">1 min ago</span>
-        </p>
-      </div>
-
-      <div class="row m-0 text-capitalize actions">
-        <p class="col-8 p-0 counts">
-          <span class="mr-2 views">4k views</span>
-
-          <span class="comments">64 Comments</span>
-        </p>
-        <p class="col-4 p-0 text-right text-capitalize keypoints">
-          show keypoints
-        </p>
-      </div>
-    </div> -->
-    <div class="row px-0 border bg-white card-footer mt-2">
+    <div :class="['row px-0 border bg-white card-footer', { 'mt-1': listView }]">
       <div class="col-6 row mx-0 actions--a">
         <div class="col-6 d-flex justify-content-between border-right likes">
           <p class="thumbs-up" v-show="!likePost">
-            <span class="border rounded-circle mr-1 icons" @click="toggleLike()">
+            <span class="border rounded-circle mr-1 icons thumbs-up-icon" @click="toggleLike">
               <i class="fal fa-thumbs-up"></i>
             </span>
             <span class="count">18</span>
@@ -97,7 +62,7 @@
             <span class="count">18</span>
           </p>
           <p class="thumbs-down" v-show="!dislikePost">
-            <span class="border rounded-circle mr-1 icons" @click="toggleDislike">
+            <span class="border rounded-circle mr-1 icons  thumbs-down-icon" @click="toggleDislike">
               <i class="fal fa-thumbs-down"></i>
             </span>
             <span class="count">1</span>
@@ -111,14 +76,14 @@
         </div>
         <div class="col-6 d-flex justify-content-start share">
           <p class="share" v-show="!share">
-            <span class="border rounded-circle mr-1 icons" @click="toggleShare">
+            <span class="border rounded-circle mr-1 share icons" @click="toggleShare">
               <i class="fal fa-share"></i>
             </span>
             <span class="count">11</span>
           </p>
 
           <p class="share" v-show="share">
-            <span class="border rounded-circle mr-1 icons clicked"  @click="toggleShare">
+            <span class="border rounded-circle mr-1 icons share-icon clicked"  @click="toggleShare">
               <i class="fas fa-share"></i>
             </span>
             <span class="count">11</span>
@@ -127,12 +92,14 @@
       </div>
       <div class="col-6 mx-0 d-flex justify-content-end actions--b">
         <p class="share mr-2" v-show="!bookmarked">
-            <span class="border rounded-circle mr-1 icons" @click="toggleBookmark">
+            <span class="border rounded-circle mr-1 icons bookmark" @click="toggleBookmark">
               <i class="fal fa-bookmark"></i>
             </span>
         </p>
         <p class="share mr-2" v-show="bookmarked">
-            <span class="border rounded-circle mr-1 icons clicked" @click="toggleBookmark">
+            <span class="border rounded-circle mr-1 icons bookmark clicked"
+              @click="toggleBookmark"
+            >
               <i class="fas fa-bookmark"></i>
             </span>
         </p>
@@ -212,18 +179,25 @@
 import readLaterImage from '../../assets/readLaterImg.jpg';
 
 export default {
-  name: 'ReadLaterCard',
+  name: 'PostCard',
   data() {
     return {
       readLaterImage,
       likePost: false,
       dislikePost: false,
-      addBookmark: false,
       readStory: false,
+      addBookmark: false,
       dropdownArrowDown: false,
       share: false,
       bookmarked: false,
       isConsumer: false,
+    }
+  },
+  props: {
+    listView: {
+      type: Boolean,
+      default: false,
+      required: false,
     }
   },
   methods: {

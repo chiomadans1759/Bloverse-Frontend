@@ -14,6 +14,10 @@
     background-position: center;
     background-size: cover;
     width: 100%;
+    button {
+      color: #2F80ED;
+      font-size: rem(12px);
+    }
     &-list {
       height: rem(160px);
       background-color: #cccccc;
@@ -21,11 +25,14 @@
       background-position: center;
       background-size: cover;
       width: 100%;
+      button {
+        color: #2F80ED;
+        font-size: rem(12px);
+      }
     }
-    button {
-      color: #2F80ED;
-      font-size: rem(12px);
-    }
+  }
+  .list-view-height {
+    height: rem(160px);
   }
   .card-body {
     &-title--content {
@@ -119,7 +126,7 @@
             justify-content: center;
             align-items: center;
             .fa-thumbs-down {
-              transform: rotate(180deg);
+              transform: rotateY(180deg);
             }
           }
         }

@@ -24,6 +24,9 @@ nav {
 }
 
 .number {
+  background-color: #868686;
+  color: #ffffff;
+  // border: rem(1px) solid #868686;
   &--active {
     border: rem(1px) solid #3d98eb !important;
     background-color: #3d98eb;
@@ -38,9 +41,12 @@ nav {
 }
 
 .contest-advert {
-  background: #ffffff;
-  background-image: url('../../../assets/Mask-group-15.svg');
-  height: rem(171px);
+  background: #f6e5d9;
+  background-image: url('../../../assets/Group_975.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  height: rem(270px);
   margin: auto;
   margin-bottom: auto;
   border: rem(1px) solid #d9d9d9;
@@ -56,15 +62,16 @@ nav {
       color: #252525;
       padding-right: rem(20px); 
       font-size: rem(25px);
+      width: 74%;
     }
     .caption {
-      color:#868686;
+      columns: #000000;
       font-size: rem(16px);
     }
     .know-more-btn {
       margin: rem(16px) 0;
       height: rem(31px);
-      background-image: linear-gradient( to right, #2F80ED, #003CE1);
+      background-color: #210d0b;
       border: rem(0px);
       padding: rem(5px) rem(8px);
       font-size: rem(14px);
@@ -74,6 +81,19 @@ nav {
       cursor: pointer;
     }
   }
+  .robot-image {
+    background-image: url('../../../assets/Group_11.svg');
+    background-color: transparent;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: rem(80px);
+    position: absolute;
+    top: 70.5%;
+    right: rem(-1px);
+  }
+
 }
 
 a {
@@ -198,5 +218,14 @@ a {
   .no-saved-posts {
     height: 30%;
     margin: 0;
+  }
+
+  .contest-advert {
+    .card-img-overlay {
+      .card-title {
+        width: 60%;
+        font-size: rem(35px)
+      }
+    }
   }
 }
