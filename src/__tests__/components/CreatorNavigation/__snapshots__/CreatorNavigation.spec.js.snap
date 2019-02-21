@@ -60,7 +60,7 @@ exports[`CreatorNavigation Component should render correctly 1`] = `
       role="tablist"
     >
       <li
-        class="nav-item"
+        class="nav-item d-sm-none"
       >
         <router-link
           aria-controls="pills-contest"

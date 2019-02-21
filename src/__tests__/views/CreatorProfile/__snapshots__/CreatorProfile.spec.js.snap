@@ -1299,7 +1299,7 @@ exports[`Profile Component should render correctly 1`] = `
                 role="tablist"
               >
                 <li
-                  class="nav-item"
+                  class="nav-item d-sm-none"
                 >
                   <a
                     aria-controls="pills-contest"

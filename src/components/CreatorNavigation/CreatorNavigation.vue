@@ -16,7 +16,7 @@
     </div>
     <div class="navigation-bar">
       <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item">
+        <li class="nav-item d-sm-none">
           <router-link
             to="/creators/info"
             class="nav-link d-flex align-items-center"
