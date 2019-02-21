@@ -19,7 +19,7 @@
               <p>Johndoe</p>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-9 message">
-              <p>Greetings to the sun</p>
+              <p>Greetings to the sun and the moon in general</p>
             </div>
           </div>
         </div>
