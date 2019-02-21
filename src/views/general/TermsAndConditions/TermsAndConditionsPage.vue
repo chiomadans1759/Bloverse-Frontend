@@ -5,9 +5,10 @@
             <h1 class="font-weight-bold mb-2">Terms And Conditions</h1>
             <p class="last-update text-capitalize">Last Updated <span class="date">19 December, 2018</span></p>
           </div>
-          <div class="terms-content border mt-4 container p-0">
-            <div class="navigation-bar">
-              <ul class="nav nav-tabs mb-3 justify-content-center" id="pills-tab" role="tablist">
+          <div>
+            <br><br>
+            <div class="navigation-ba">
+              <ul class="nav nav-tabs mb-3 justify-content-left" id="pills-tab" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active d-flex align-items-center" id="pills-general-tab" data-toggle="pill" href="#general-tab" role="tab" aria-controls="pills-general" aria-selected="true">General</a>
                 </li>
@@ -16,6 +17,9 @@
                 </li>
               </ul>
             </div>
+          </div>
+          <div class="terms-content border mt-4 container p-0">
+            
             <div class="tab-content" id="terms-tab">
               <div class="tab-pane fade general show active" id="general-tab" role="tabpanel" aria-labelledby="general-tab">
                 <div class="bg-white mt-4 pt-0 mb-5">
