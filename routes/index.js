@@ -4,13 +4,13 @@ import { LoadingBar } from 'iview';
 import store from '../stores';
 
 // Layouts
-// import GeneralLayout from '@/layouts/GeneralLayout';
-import BlankLayout from '@/layouts/BlankLayout';
+import GeneralLayout from '@/layouts/GeneralLayout';
 import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
 
 // Client Views
 import PostFeeds from '../src/views/PostFeeds.vue';
+import TrendingFeed from '../src/views/TrendingFeed.vue';
 import PostDisplay from '../src/views/PostDisplay.vue';
 import PhotoContest from '../src/views/PhotoContest.vue';
 import MyProfile from '../src/views/journalists/MyProfile.vue';
@@ -47,15 +47,12 @@ const router = new Router({
   },
   routes: [
     {
-      path: '/', component: BlankLayout,
+      path: '/', component: GeneralLayout,
       children: [
         { path: '', component: PostFeeds },
         { path: 'posts', redirect: '/' },
-        { path: 'posts/:slug', component: PostDisplay },
-        { path: 'about', component: About },
-        { path: 'terms-and-conditions', component: Terms },
-        { path: 'privacy-policies', component: Privacy },
-        { path: 'photocontest', redirect: '/creators/photocontest' }
+        { path: 'feeds/trending', component: TrendingFeed },
+        { path: 'posts/:slug', component: PostDisplay }
       ]
     },
     {
@@ -94,6 +91,9 @@ const router = new Router({
         },
       ]
     },
+    { path: '/about', component: About },
+    { path: '/terms-and-conditions', component: Terms },
+    { path: '/privacy-policies', component: Privacy },
     { path: "*", component: NotFound },
     { path: '/creators/*', component: NotFound }
   ]

@@ -1,6 +1,12 @@
 <template>
   <main v-if="!general.publishedPostsLoading" id="display-feeds">
     <inline-loader v-if="general.publishedPostsLoading" />
+
+    <div class="mb-3">
+      <h4 class="font-weight-bold text-uppercase">get inspired</h4>
+      <p>Stories about our world today.</p>
+    </div>
+    
     <transition-group name="slide-fade">
       <div class="card" v-if="!general.publishedPosts.length">
         <div class="card-body">

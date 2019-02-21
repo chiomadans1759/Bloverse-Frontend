@@ -1,22 +1,30 @@
 <template>
-  <router-link :to="`posts/${post.slug}`" id="trending-card">
-    <div class="card text-white">
-      <img class="card-img" :src="post.image_url" alt="Card image">
-      <div class="card-img-overlay">
-        <h5 class="card-title">{{category}}</h5>
-        <p class="card-text">{{post.title | truncate(50)}}</p>
-        <div class="author mt-4">
-          <img class="rounded-circle mr-3" :src="post.author.image_url" alt>
-          <span id="desktop">
-            {{`${post.author.first_name} ${post.author.last_name}` | truncate(30)}}
-          </span>
-          <span id="mobile">
-            {{`${post.author.first_name} ${post.author.last_name}` | truncate(10)}}
-          </span>
+  <main id="trending-card">
+    <div class="card rounded-0">
+      <img class="card-img-top rounded-0" :src="post.image_url" alt="Card image cap">
+      <div class="card-body px-0">
+        <div class="container">
+          <h5 class="card-title">{{category}}</h5>
+          <router-link class="post-title" :to="`posts/${post.slug}`">
+            <b class="card-text">
+              {{post.title | truncate(50)}}
+            </b>
+          </router-link>
+          <div class="row author mt-4">
+            <div class="col-2">
+              <img class="rounded-circle mr-3 mt-1" :src="post.author.image_url" alt>
+            </div>
+
+            <div class="col-10 pt-2">
+              <span class="ml-2" id="desktop">
+                {{`${post.author.first_name} ${post.author.last_name}` | truncate(30)}}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </router-link>
+  </main>
 </template>
 
 <script>
@@ -43,121 +51,47 @@ export default {
 </script>
 
 <style scoped>
-  #trending-card {
-    height: auto;
-    margin: 0rem 0rem 5rem;
-  }
+#trending-card .card-img-top {
+  height: 10rem;
+}
 
-  #trending-card .card {
-    height: 180px;
-    box-shadow: none !important;
-    border: 0px !important;
-    border-radius: 4px !important;
-    margin-right: 0.4rem;
-  }
+#trending-card .card {
+  box-shadow: none !important;
+}
 
-  #trending-card .card::after {
-    display: block !important;
-    background-image: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.9)
-    ) !important;
-    height: 100% !important;
-    content: "\A";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 4px !important;
-  }
+#trending-card .card .card-img-top {
+  object-fit: cover;
+}
 
-  #trending-card .card img {
-    height: 100%;
-    border-radius: 2px !important;
-  }
+#trending-card .card-body {
+  height: 8rem;
+}
 
-  #trending-card .card .card-text {
-    position: absolute;
-    top: 70px;
-  }
+#trending-card .post-title {
+  color: #333333;
+}
 
-  #trending-card .card .card-img-overlay {
-    padding-top: 3rem;
-    z-index: 1;
-  }
+#trending-card .post-title:hover {
+  color: #2d8cf0;
+}
 
-  #trending-card .card .card-img-overlay .card-title {
-    font-size: 13px;
-    position: absolute;
-    top: 25px;
-  }
+#trending-card .card .card-title {
+  position: absolute;
+  top: 11rem;
+}
 
-  #trending-card .card .card-img-overlay .card-text {
-    font-weight: 700;
-    font-size: 13px;
-    position: absolute;
-    top: 55px;
-  }
+#trending-card .card .card-text {
+  position: absolute;
+  top: 12rem;
+}
 
-  #trending-card .card .author {
-    position: absolute;
-    top: 90px;
-  }
+#trending-card .author {
+  position: absolute;
+  top: 14rem;
+}
 
-  #trending-card .card .author #mobile {
-    display: none;
-  }
-
-  @media only screen and (max-width: 980px) {
-    #trending-card .card .card-img-overlay .card-text {
-      font-size: 11px;
-    }
-
-    #trending-card .card .author #desktop {
-      display: none;
-    }
-
-    #trending-card .card .author #mobile {
-      display: block;
-    }
-  }
-
-  #trending-card .card .card-img-overlay .author img {
-    width: 24px !important;
-    height: 24px !important;
-    margin-top: -0.3rem;
-    border-radius: 4px;
-  }
-
-  @media only screen and (max-width: 980px) {
-    #trending-card .card .card-img-overlay {
-      padding-top: 1rem;
-    }
-
-    #trending-card .card {
-      height: 160px;
-      margin-right: 0.8rem;
-    }
-
-    #trending-card .carousel-inner {
-      height: 100%;
-    }
-  }
-
-  @media only screen and (min-width: 300px) {
-    #trending-card .card {
-      height: 170px;
-      margin-right: 0.8rem;
-    }
-
-    #trending-card .card .card-img-overlay {
-      padding-top: 3rem;
-    }
-
-    #trending-card .card .author {
-      position: absolute;
-      top: 110px;
-    }
-  }
+#trending-card .author img {
+  width: 25px;
+  height: 25px;
+}
 </style>

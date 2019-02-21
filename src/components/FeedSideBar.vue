@@ -66,6 +66,7 @@
           v-show="categories.length == 4"
         >
           <i class="fal fa-plus"></i>
+					&nbsp;
           <span>Show More</span>
         </li>
         <li
@@ -75,6 +76,7 @@
           v-show="categories.length > 4"
         >
           <i class="fal fa-minus"></i>
+					&nbsp;
           <span>Show Less</span>
         </li>
       </ul>
@@ -217,6 +219,7 @@
           v-show="countries.length == 4"
         >
           <i class="fal fa-plus"></i>
+					&nbsp;
           <span>Show More</span>
         </li>
         <li
@@ -226,6 +229,7 @@
           v-show="countries.length > 4"
         >
           <i class="fal fa-minus"></i>
+					&nbsp;
           <span>Show Less</span>
         </li>
       </ul>

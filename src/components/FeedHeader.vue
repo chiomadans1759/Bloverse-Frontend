@@ -5,7 +5,7 @@
         <div class="col">
           <router-link to="/" class="router-link">
             <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
-            <span>beta</span>
+            <span class="text-secondary">beta</span>
           </router-link>
         </div>
 
@@ -16,7 +16,7 @@
               class="btn btn-link text-uppercase text-dark"
             >photo contest</router-link>
             <login-button class="mr-3 text-uppercase text-dark"/>
-            <router-link to="/creators" class="btn btn-outline-dark btn-md text-uppercase">create</router-link>
+            <router-link to="/creators" class="btn btn-primary text-uppercase">create</router-link>
           </div>
         </div>
       </div>
@@ -119,5 +119,10 @@ export default {
 #feed-header .cat-list .dropdown-menu {
   width: 20rem !important;
   border-radius: 1px;
+}
+
+#feed-header .btn {
+	padding: 0.3rem 1rem;
+	border-radius: 2px;
 }
 </style>

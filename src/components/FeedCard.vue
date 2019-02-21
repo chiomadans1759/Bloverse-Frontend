@@ -7,9 +7,9 @@
 
       <div class="col-9 py-1">
         <h5 class="card-category text-secondary mb-2">{{ category }}</h5>
-        <h4 class="post-title text-dark">
-          <b>{{ post.title }}</b>
-        </h4>
+        <router-link :to="`posts/${post.slug}`" class="post-title">
+          <h4><b>{{ post.title }}</b></h4>
+        </router-link>
 
         <div>
           <ul v-if="post.category != 7" class="list-unstyled mt-3 ml-1 keypoints">
@@ -78,13 +78,21 @@ export default {
   height: auto;
   margin-bottom: 1rem;
   border-bottom: 1px solid #cccccc;
-  padding: 1rem 0.5rem 2rem;
+  padding: 1rem 0rem 2rem;
 }
 
 #feed-card img {
   width: 100%;
   height: 10rem;
   object-fit: cover;
+}
+
+#feed-card .post-title {
+  color: #333333;
+}
+
+#feed-card .post-title:hover {
+  color: #2d8cf0;
 }
 
 #feed-card .keypoints li {

@@ -1,8 +1,16 @@
 <template>
   <main id="trending">
     <div class="mb-4">
-      <h4 class="font-weight-bold text-uppercase">trending stories</h4>
-      <p>Stories with the highest views.</p>
+      <div class="row">
+        <div class="col">
+          <h4 class="font-weight-bold text-uppercase">trending stories</h4>
+          <p>Stories with the highest views.</p>
+        </div>
+
+        <div class="col-auto pt-3">
+          <router-link to="/feeds/trending" style="font-size: 14px;">View all</router-link>
+        </div>
+      </div>
     </div>
 
     <section class="row" v-if="!general.trendingPost.length">
@@ -17,61 +25,59 @@
         class="carousel slide"
         data-ride="carousel"
         data-interval="3000">
-        <ol class="carousel-indicators" v-show="general.trendingPost.length > 4">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li
-            data-target="#carouselExampleIndicators"
-            data-slide-to="1"
-            v-show="general.trendingPost.length > 8"
-          ></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
 
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="row no-gutters">
-              <div class="col-3" v-if="general.trendingPost.length > 0">
+            <div class="row">
+              <div class="col-4" v-if="general.trendingPost.length > 0">
                 <trending-card :post="general.trendingPost[0]"/>
               </div>
-              <div class="col-3" v-if="general.trendingPost.length > 1">
+              <div class="col-4" v-if="general.trendingPost.length > 1">
                 <trending-card :post="general.trendingPost[1]"/>
               </div>
-              <div class="col-3" v-if="general.trendingPost.length > 2">
+              <div class="col-4" v-if="general.trendingPost.length > 2">
                 <trending-card :post="general.trendingPost[2]"/>
               </div>
-              <div class="col-3" v-if="general.trendingPost.length > 3">
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-4" v-if="general.trendingPost.length > 3">
                 <trending-card :post="general.trendingPost[3]"/>
               </div>
-            </div>
-          </div>
-          <div class="carousel-item" v-if="general.trendingPost.length > 4">
-            <div class="row no-gutters">
-              <div class="col-3">
+              <div class="col-4">
                 <trending-card :post="general.trendingPost[4]"/>
               </div>
-              <div class="col-3" v-if="general.trendingPost.length > 5">
+              <div class="col-4" v-if="general.trendingPost.length > 5">
                 <trending-card :post="general.trendingPost[5]"/>
-              </div>
-              <div class="col-3" v-if="general.trendingPost.length > 6">
-                <trending-card :post="general.trendingPost[6]"/>
-              </div>
-              <div class="col-3" v-if="general.trendingPost.length > 7">
-                <trending-card :post="general.trendingPost[8]"/>
               </div>
             </div>
           </div>
-          <div class="carousel-item" v-if="general.trendingPost.length > 8">
-            <div class="row no-gutters">
-              <div class="col-3">
+
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-4" v-if="general.trendingPost.length > 6">
+                <trending-card :post="general.trendingPost[6]"/>
+              </div>
+              <div class="col-4" v-if="general.trendingPost.length > 7">
+                <trending-card :post="general.trendingPost[8]"/>
+              </div>
+              <div class="col-4">
                 <trending-card :post="general.trendingPost[9]"/>
               </div>
-              <div class="col-3" v-if="general.trendingPost.length > 9">
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-4" v-if="general.trendingPost.length > 9">
                 <trending-card :post="general.trendingPost[10]"/>
               </div>
-              <div class="col-3" v-if="general.trendingPost.length > 10">
+              <div class="col-4" v-if="general.trendingPost.length > 10">
                 <trending-card :post="general.trendingPost[11]"/>
               </div>
-              <div class="col-3" v-if="general.trendingPost.length > 11">
+              <div class="col-4" v-if="general.trendingPost.length > 11">
                 <trending-card :post="general.trendingPost[12]"/>
               </div>
             </div>
@@ -217,7 +223,7 @@ export default {
   }
 
   #trending .carousel-control-next {
-    margin-top: 4.5rem;
+    margin-top: 7rem;
     margin-right: -1.5rem;
     border-radius: 50%;
     width: 38px;
@@ -253,7 +259,7 @@ export default {
   }
 
   #trending .carousel-control-prev {
-    margin-top: 4.5rem;
+    margin-top: 8.5rem;
     margin-left: -1.7rem;
     background-color: #000000;
     border-radius: 50%;
@@ -276,7 +282,7 @@ export default {
   }
 
   #trending .carousel-control-next {
-    margin-top: 4.5rem;
+    margin-top: 8rem;
     margin-left: -1.7rem;
     background-color: #000000;
     border-radius: 50%;
@@ -299,7 +305,7 @@ export default {
   }
 
   #trending .carousel-control-next {
-    margin-top: 4.5rem;
+    margin-top: 8rem;
     margin-right: -1.5rem;
     border-radius: 50%;
     width: 38px;
@@ -326,7 +332,7 @@ export default {
     }
 
     #trending .carousel-control-next {
-      margin-top: 4.5rem;
+      margin-top: 8.5rem;
       margin-left: -1.7rem;
       background-color: #000000;
       border-radius: 50%;
