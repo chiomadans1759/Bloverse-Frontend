@@ -15,6 +15,12 @@ exports[`TrashPage Component should render correctly 1`] = `
       >
         <!---->
          
+        <span
+          class="back-text"
+        >
+          Back
+        </span>
+         
         <a
           class="router-link"
         >
@@ -505,7 +511,9 @@ exports[`TrashPage Component should render correctly 1`] = `
                 data-dismiss="modal"
                 type="button"
               >
-                Close
+                
+              Close
+            
               </button>
                
               <button
@@ -660,7 +668,9 @@ exports[`TrashPage Component should render correctly 1`] = `
                 <div
                   class="header d-flex justify-content-between "
                 >
-                  <h5>
+                  <h5
+                    class=""
+                  >
                     <strong>
                       Interest
                     </strong>

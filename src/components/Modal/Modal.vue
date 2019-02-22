@@ -9,7 +9,7 @@
       aria-hidden="true"
     >
       <div class="modal-dialog" :class="{ 'modal-dialog-centered': !modalTop }" role="document">
-        <div class="modal-content">
+        <div class="modal-content" :class="{ 'noBorderRadius': noBorderRadius }">
           <div class="modal-header" :class="{ darkBackground: dark }">
             <h5 v-if="title" class="modal-title" id="customModal">{{title}}</h5>
             <div>
@@ -26,8 +26,12 @@
             <slot></slot>
           </div>
           <div v-if="!hideFooter" class="modal-footer">
-            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">{{closeText}}</button>
-            <button type="button" class="btn btn-primary">{{actionText}}</button>
+            <slot name="footer">
+              <button type="button" class="btn btn-outline-primary" data-dismiss="modal">
+                {{closeText}}
+              </button>
+              <button type="button" class="btn btn-primary">{{actionText}}</button>
+            </slot>
           </div>
         </div>
       </div>
@@ -86,6 +90,11 @@ export default {
     modalTop: {
       type: Boolean,
       default: false
+    },
+    noBorderRadius: {
+      type: Boolean,
+      default: false,
+      required: false,
     }
   }
 };

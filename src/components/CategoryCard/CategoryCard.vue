@@ -1,11 +1,15 @@
 <template>
-  <main class="category-card p-4 p-sm-3" :class="{ card: !hideCardClass }">
+  <main class="category-card" :class="{ 
+    card: !hideCardClass, 'p-4 p-sm-3': addPadding,
+  }">
     <div class="header d-flex justify-content-between ">
-      <h5><strong>Interest</strong></h5>
-      <span class="edit-icon"><i class="fal fa-edit mr-2"></i></span>
+      <h5 :class="titleStyle"><strong>{{title}}</strong></h5>
+      <span class="edit-icon" v-if="showEditIcon">
+        <i class="fal fa-edit mr-2"></i>
+      </span>
     </div>
     <div class="mt-1">
-      <p class="category-title">Lorem ipsum dolor sit amet</p>
+      <p class="category-title" v-if="showSubtitle">Lorem ipsum dolor sit amet</p>
       <div class="category-list d-flex flex-wrap mt-2">
         <div class="category border rounded my-1 mr-2 p-2">
           <span>Category One</span>
@@ -40,6 +44,31 @@ export default {
     hideCardClass: {
       type: Boolean,
       default: false,
+    },
+    titleStyle: {
+      type: String,
+      default: "",
+      required: false,
+    },
+    title: {
+      type: String,
+      required: false,
+      default: "Interest"
+    },
+    showEditIcon: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    showSubtitle: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    addPadding: {
+      type: Boolean,
+      required: false,
+      default: true,
     }
   }
 }

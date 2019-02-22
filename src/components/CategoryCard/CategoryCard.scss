@@ -17,6 +17,10 @@ main.card {
   border-radius: 0 !important;
 }
 
+.profile-details-title {
+  font-size: rem(16px);
+}
+
 @media screen and (min-width: 700px) {
   main.card {
     border-radius: rem(4px) !important;

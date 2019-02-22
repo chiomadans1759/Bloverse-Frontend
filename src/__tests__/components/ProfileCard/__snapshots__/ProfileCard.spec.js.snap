@@ -128,7 +128,9 @@ exports[`ProfileCard Component should render correctly 1`] = `
       <div
         class="header d-flex justify-content-between "
       >
-        <h5>
+        <h5
+          class=""
+        >
           <strong>
             Interest
           </strong>

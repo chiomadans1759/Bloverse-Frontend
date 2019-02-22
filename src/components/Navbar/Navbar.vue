@@ -6,9 +6,11 @@
     >
     <div :class="['container-fluid', customClass]">
       <a v-if="showBackArrow" class="backlink mr-4" href="/settings">
-        <i class="fal fa-long-arrow-left fa-2x back-icon"></i>
-        <span class="back-text">Back</span>
+      <div class="btn rounded-btn-circle d-flex justify-content-center">
+        <i class="fal fa-arrow-left back-icon"></i>
+      </div>
       </a>
+      <span class="back-text">Back</span>
       <router-link to="/" class="router-link">
         <img class="nav-logo" v-if="!isTransparent" src="@/assets/Bloverse.svg">
         <img class="nav-logo" v-if="isTransparent" src="@/assets/Bloverse-white.svg">
