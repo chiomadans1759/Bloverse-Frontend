@@ -657,7 +657,7 @@ exports[`PhotoContest Component should render correctly 1`] = `
                   </div>
                    
                   <div
-                    class="col-lg-6 col-md-6 col-sm-12 col-12"
+                    class="col-lg-7 col-md-7 col-sm-12 col-12"
                   >
                     <div
                       class="row userdetails"
@@ -683,20 +683,20 @@ exports[`PhotoContest Component should render correctly 1`] = `
                         class="col-lg-8 col-md-8 col-sm-8 col-9 message"
                       >
                         <p>
-                          Greetings to the sun
+                          Greetings to the sun and the moon in general
                         </p>
                       </div>
                     </div>
                   </div>
                    
                   <div
-                    class="col-lg-6 col-md-6 col-sm-12 col-12"
+                    class="col-lg-5 col-md-5 col-sm-12 col-12"
                   >
                     <div
                       class="row actions"
                     >
                       <div
-                        class="col-lg-3 col-md-3 col-sm-2 col-2"
+                        class="col-lg-3 col-md-3 col-sm-2 col-2 p-0"
                       >
                         <i
                           class="fal fa-eye icon"
@@ -706,7 +706,7 @@ exports[`PhotoContest Component should render correctly 1`] = `
                       </div>
                        
                       <div
-                        class="col-lg-3 col-md-3 col-sm-2 col-2"
+                        class="col-lg-3 col-md-3 col-sm-2 col-2 p-0"
                       >
                         <i
                           class="fal fa-thumbs-up icon"
@@ -716,7 +716,7 @@ exports[`PhotoContest Component should render correctly 1`] = `
                       </div>
                        
                       <div
-                        class="col-lg-3 col-md-3 col-sm-2 col-2"
+                        class="col-lg-3 col-md-3 col-sm-2 col-2 p-0"
                       >
                         <i
                           class="fal fa-comment-dots icon"
@@ -726,7 +726,7 @@ exports[`PhotoContest Component should render correctly 1`] = `
                       </div>
                        
                       <div
-                        class="col-lg-3 col-md-3 col-sm-2 col-2"
+                        class="col-lg-3 col-md-3 col-sm-2 col-2 p-0"
                       >
                         <i
                           class="fal fa-share icon"
@@ -748,7 +748,7 @@ exports[`PhotoContest Component should render correctly 1`] = `
               class="contestant-list"
             >
               <div
-                class="contestant-header row"
+                class="contestant-header row mb-1"
               >
                 <div
                   class="col-lg-10 col-md-10 col-sm-11 col-10"
