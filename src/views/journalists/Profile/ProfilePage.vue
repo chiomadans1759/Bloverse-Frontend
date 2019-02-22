@@ -1,42 +1,12 @@
 <template>
   <main id="bl-profile-page">
-    <Navbar/>
+    <Navbar />
     <div class="container my-3 mb-5">
       <div class="row">
         <div class="col-lg-5 d-none d-sm-block mb-4">
           <div class="col-lg-12 mr-2">
             <profile
             displayInterest hideFollowing displayFollowers/>
-          </div>
-          <div class="col-lg-12 mr-2">
-            <div class="bg-white publish-container">
-              <div class="publish-link-container">
-                <router-link to="/publish" class="publish-link btn">Publish An Article</router-link>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-12 mr-2 mt-2">
-            <div class="card contest-advert bg-white">
-              <div class="card-img-overlay">
-                <h3 class="card-title text-capitalize">Become a Content Consumer</h3>
-                <p class="card-text text-capitalize caption">Publish your article to the world</p>
-                <span class="d-flex justify-content-between mb-0">
-                  <a href class="mt-4">Know more</a>
-                  <a role="button" href="#" class="btn know-more-btn">Apply</a>
-                </span>
-              </div>
-            </div>
-            <div class="bl-footer">
-              <div class="row company-name d-flex justify-content-center align-items-center">
-                <div class="col-sm-3 text-lowercase">bloverse</div>
-                <p class="col-sm-9">
-                  <span class="text-capitalize dots">terms</span>
-                  <span class="text-capitalize dots">privacy</span>
-                  <span class="text-capitalize">feedback</span>
-                </p>
-              </div>
-              <p class="row company-rights text-capitalize">2018 Bloverse. All Right Reserved</p>
-            </div>
           </div>
         </div>
         <!-- on mobile view only ends -->
@@ -132,31 +102,32 @@
                   <GChart type="GeoChart" :data="chartData" :options="chartOptions" ref="chartData"/>
                 </div>
               </div>
+              <hr>
               <div class="mt-4 px-4">
-                <div class="row">
-                  <div class="col-12 col-lg-8 col-xl-8 mb-2">
-                    <div class="row">
-                      <div class="col-12">
-                        <span class="first-circle fas fa-circle"></span> Nigeria(64)
-                        <span class="second-circle fas fa-circle ml-4"></span> Kenya(36)
-                        <span class="third-circle fas fa-circle ml-4"></span> Mexico(6)
+                  <div class="row">
+                    <div class="col-12 col-lg-8 col-xl-8 mb-2">
+                      <div class="row">
+                        <div class="col-12">
+                          <span class="first-circle fas fa-circle"></span> Nigeria(64)
+                          <span class="second-circle fas fa-circle ml-4"></span> Kenya(36)
+                          <span class="third-circle fas fa-circle ml-4"></span> Mexico(6)
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-12 col-lg-4 col-xl-4 mb-4">
-                    <div class="card p-2">
-                      <div class="row">
-                        <div class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold">Country:</div>
-                        <div class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold">3</div>
+                    <div class="col-12 col-lg-4 col-xl-4 mb-4">
+                      <div class="card p-2">
+                        <div class="row">
+                          <div class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold">Country:</div>
+                          <div class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold">3</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold">Total:</div>
+                          <div class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold">106</div>
+                        </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="row">
-                        <div class="col-10 col-lg-6 col-xl-6 text-right font-weight-bold">Total:</div>
-                        <div class="col-2 col-lg-6 col-xl-6 text-right font-weight-bold">106</div>
-                      </div>
-                    </div>
                   </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

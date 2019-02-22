@@ -27,11 +27,7 @@ exports[`CategoryCard Component should render correctly 1`] = `
   <div
     class="mt-1"
   >
-    <p
-      class="category-title"
-    >
-      Lorem ipsum dolor sit amet
-    </p>
+    <!---->
      
     <div
       class="category-list d-flex flex-wrap mt-2"

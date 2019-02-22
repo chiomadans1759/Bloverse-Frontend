@@ -62,40 +62,38 @@ exports[`CreatorNavigation Component should render correctly 1`] = `
       <li
         class="nav-item d-sm-none"
       >
-        <router-link
+        <a
           aria-controls="pills-contest"
           aria-selected="true"
           class="nav-link d-flex align-items-center"
           data-toggle="pill"
           id="pills-contest-tab"
           role="tab"
-          to="/creators/info"
         >
           Info
         
-        </router-link>
+        </a>
       </li>
        
       <li
         class="nav-item"
       >
-        <router-link
+        <a
           aria-controls="pills-general"
           aria-selected="false"
           class="nav-link active d-flex align-items-center"
           data-toggle="pill"
           id="pills-general-tab"
           role="tab"
-          to="/creators/profile"
         >
           Dashboard
-        </router-link>
+        </a>
       </li>
        
       <li
         class="nav-item"
       >
-        <router-link
+        <a
           aria-controls="pills-contest"
           aria-selected="true"
           class="nav-link d-flex align-items-center"
@@ -103,7 +101,6 @@ exports[`CreatorNavigation Component should render correctly 1`] = `
           href="#posts-tab"
           id="pills-contest-tab"
           role="tab"
-          to="/creators/posts"
         >
           Posts
           
@@ -112,13 +109,13 @@ exports[`CreatorNavigation Component should render correctly 1`] = `
           >
             4
           </span>
-        </router-link>
+        </a>
       </li>
        
       <li
         class="nav-item"
       >
-        <router-link
+        <a
           aria-controls="pills-contest"
           aria-selected="false"
           class="nav-link d-flex align-items-center"
@@ -126,7 +123,6 @@ exports[`CreatorNavigation Component should render correctly 1`] = `
           href="#photocontest-tab"
           id="pills-contest-tab"
           role="tab"
-          to="/creators/drafts"
         >
           Drafts
           
@@ -135,13 +131,13 @@ exports[`CreatorNavigation Component should render correctly 1`] = `
           >
             4
           </span>
-        </router-link>
+        </a>
       </li>
        
       <li
         class="nav-item"
       >
-        <router-link
+        <a
           aria-controls="pills-contest"
           aria-selected="false"
           class="nav-link d-flex align-items-center"
@@ -149,10 +145,9 @@ exports[`CreatorNavigation Component should render correctly 1`] = `
           href="#photocontest-tab"
           id="pills-contest-tab"
           role="tab"
-          to="/creators/trash"
         >
           Trash
-        </router-link>
+        </a>
       </li>
     </ul>
   </div>
