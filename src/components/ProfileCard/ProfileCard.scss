@@ -6,7 +6,6 @@
 }
 
 .profile-name {
-  font-size: rem(18px);
   font-weight: 700;
 }
 
@@ -85,6 +84,10 @@ main.card {
     }
     .social-text {
       font-size: rem(12px);
+    }
+    .edit-icon {
+      font-size: rem(15px);
+      color: #096DD9;
     }
   }
 

@@ -22,6 +22,7 @@ describe('Modal component', () => {
         closeText: 'Close',
         target: 'target',
         modalTop: true,
+        noBorderRadius: true,
       }
     });
 
@@ -31,5 +32,6 @@ describe('Modal component', () => {
     expect(wrapper.props().closeText).toBe('Close');
     expect(wrapper.props().target).toBe('target');
     expect(wrapper.props().modalTop).toBeTruthy();
+    expect(wrapper.props().noBorderRadius).toBeTruthy();
   })
 });

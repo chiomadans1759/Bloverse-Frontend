@@ -40,7 +40,7 @@ exports[`PublishPage Component should render correctly 1`] = `
         >
           <li>
             <button
-              class="btn rounded-circle d-flex justify-content-center show"
+              class="btn rounded-btn-circle d-flex justify-content-center show"
             >
               <i
                 class="fal fa-font"
@@ -59,7 +59,7 @@ exports[`PublishPage Component should render correctly 1`] = `
               >
                 <div>
                   <button
-                    class="btn rounded-circle d-flex justify-content-center"
+                    class="btn rounded-btn-circle d-flex justify-content-center"
                   >
                     <i
                       class="fal fa-arrow-from-bottom"
@@ -73,7 +73,7 @@ exports[`PublishPage Component should render correctly 1`] = `
                  
                 <div>
                   <button
-                    class="btn rounded-circle d-flex justify-content-center"
+                    class="btn rounded-btn-circle d-flex justify-content-center"
                   >
                     <i
                       class="fal fa-search"
@@ -87,7 +87,7 @@ exports[`PublishPage Component should render correctly 1`] = `
                  
                 <div>
                   <button
-                    class="btn rounded-circle d-flex justify-content-center"
+                    class="btn rounded-btn-circle d-flex justify-content-center"
                   >
                     <i
                       class="far fa-th"
@@ -101,7 +101,7 @@ exports[`PublishPage Component should render correctly 1`] = `
               </div>
                
               <button
-                class="btn rounded-circle d-flex justify-content-center"
+                class="btn rounded-btn-circle d-flex justify-content-center"
               >
                 <i
                   class="fal fa-image"
@@ -121,7 +121,7 @@ exports[`PublishPage Component should render correctly 1`] = `
               >
                 <div>
                   <button
-                    class="btn rounded-circle d-flex justify-content-center"
+                    class="btn rounded-btn-circle d-flex justify-content-center"
                   >
                     <i
                       class="fal fa-arrow-from-bottom"
@@ -135,7 +135,7 @@ exports[`PublishPage Component should render correctly 1`] = `
                  
                 <div>
                   <button
-                    class="btn rounded-circle d-flex justify-content-center text"
+                    class="btn rounded-btn-circle d-flex justify-content-center text"
                   >
                     <i
                       class="fal fa-link"
@@ -149,7 +149,7 @@ exports[`PublishPage Component should render correctly 1`] = `
               </div>
                
               <button
-                class="btn rounded-circle d-flex justify-content-center"
+                class="btn rounded-btn-circle d-flex justify-content-center"
               >
                 <i
                   class="fal fa-video"
@@ -181,7 +181,7 @@ exports[`PublishPage Component should render correctly 1`] = `
               </div>
                
               <button
-                class="btn rounded-circle d-flex justify-content-center"
+                class="btn rounded-btn-circle d-flex justify-content-center"
               >
                 <i
                   class="fal fa-link"
@@ -208,13 +208,27 @@ exports[`PublishPage Component should render correctly 1`] = `
           </div>
            
           <div
-            class="form-group"
+            class="form-group d-flex"
           >
             <input
               class="form-control p-0 two"
               placeholder="Add keypoint"
               type="text"
             />
+             
+            <div>
+              <span>
+                <button
+                  class="btn rounded-btn-circle d-flex justify-content-center ml-3 text"
+                >
+                  <i
+                    class="fal fa-plus"
+                  />
+                </button>
+              </span>
+               
+              <!---->
+            </div>
           </div>
            
           <div
@@ -225,7 +239,62 @@ exports[`PublishPage Component should render correctly 1`] = `
         </form>
       </div>
        
-      <!---->
+      <div
+        class="col-lg-3 err-alert"
+      >
+        <!---->
+         
+        <!---->
+         
+        <!---->
+         
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    aria-hidden="true"
+    class="modal"
+    id="previewModal"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog modal-full"
+      role="document"
+    >
+      <div
+        class="modal-content"
+      >
+        <div
+          class="modal-body"
+        >
+          <div>
+            <div
+              class="loading-dots"
+            >
+              <div
+                class="loading-dots--dot"
+              />
+               
+              <div
+                class="loading-dots--dot"
+              />
+               
+              <div
+                class="loading-dots--dot"
+              />
+            </div>
+             
+            <p>
+              Scanning Article For Plagiarism...
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </main>

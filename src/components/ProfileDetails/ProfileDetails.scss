@@ -1,0 +1,32 @@
+@import 'sass-rem';
+
+.profile-details {
+  &-content {
+    max-height: none;
+    height: auto;
+    .contact-details {
+      &>p {
+        line-height: 1.9;
+        font-size: rem(16px);
+      }
+      .contact-icon {
+        color: #B7B7B7;
+      }
+    }
+  }
+
+  &-footer {
+    width: 100%;
+    &>.skip {
+      margin: auto;
+      color: #2F80ED;
+      font-size: rem(16px);
+      &>span {
+        cursor: pointer;
+      }
+    }
+    &>a.complete-profile-btn {
+      background-image: linear-gradient( to right, #003CE1, #2F80ED);
+    }
+  }
+}

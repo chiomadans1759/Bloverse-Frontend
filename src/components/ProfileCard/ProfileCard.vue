@@ -1,18 +1,21 @@
 <template>
   <main class="card profile">
     <img src="@/assets/Avatar.png" class="card-img-top" alt="...">
-    <div class="profile-edit-icon d-flex justify-content-between p-3">
+    <div class="d-flex justify-content-between p-3">
       <span class="d-inline d-sm-none bl-back-arrow" @click="hideMobileUserInfo">
         <i class="fal fa-long-arrow-left fa-2x back-arrow"></i>
       </span>
+    </div>
+    <div class="d-flex justify-content-end profile-edit-icon pr-2">
       <i class="fal fa-user-edit fa-2x"></i>
     </div>
+
     <div class="avatar mx-4">
-      <img src="@/assets/Avatar2.png" class="profile-img rounded" alt="...">
-      <span class="profile-name pl-3">Johndoe</span>
+      <img src="@/assets/Avatar2.png" class="profile-img rounded-circle" alt="...">
+      <span class="profile-name pl-3">Username</span>
     </div>
     <div class="card-body profile-body">
-      <h5 class="card-title">John Doe</h5>
+      <h5 class="card-title">Full Name</h5>
       <p class="contact">
         <span class="pr-2 pb-5">
           <i class="fal fa-phone icon"></i>
@@ -44,18 +47,19 @@
         </span>
       </div>
       <div v-if="displayFollowers" class="follow d-flex align-items-center">
-        <a data-toggle="" href="#">Followers</a>
+        <a data-toggle href="#">Followers</a>
         <span class="badge followers-icon badge-primary ml-2">5</span>
       </div>
     </div>
     <div v-if="displayInterest" class="interests">
-      <category-card hideCardClass />
+      <category-card hideCardClass/>
     </div>
     <div class="px-3 points">
       <span class="font-weight-bold">Points</span>
       <p class="mt-2 mb-4">0.05</p>
     </div>
-    <div class="card-footer text-muted bg-white footer-color">Member Since:
+    <div class="card-footer text-muted bg-white footer-color">
+      Member Since:
       <span class="text-dark">27 December, 2018</span>
     </div>
     <modal target="following-modal" title="Following" hideFooter>
@@ -72,8 +76,12 @@
               </span>
             </p>
             <p class="sub-text d-flex flex-wrap">
-              <span><span class="sub-span">24</span> Followers</span>
-              <span><span class="sub-span point">234</span> Articles</span>
+              <span>
+                <span class="sub-span">24</span> Followers
+              </span>
+              <span>
+                <span class="sub-span point">234</span> Articles
+              </span>
             </p>
           </div>
           <div class="d-none d-sm-none col-md-4 d-md-flex justify-content-end">
@@ -92,8 +100,12 @@
               </span>
             </p>
             <p class="sub-text d-flex flex-wrap">
-              <span><span class="sub-span">24</span> Followers</span>
-              <span><span class="sub-span point">234</span> Articles</span>
+              <span>
+                <span class="sub-span">24</span> Followers
+              </span>
+              <span>
+                <span class="sub-span point">234</span> Articles
+              </span>
             </p>
           </div>
           <div class="d-none d-sm-none col-md-4 d-md-flex justify-content-end">
@@ -112,8 +124,12 @@
               </span>
             </p>
             <p class="sub-text d-flex flex-wrap">
-              <span><span class="sub-span">24</span> Followers</span>
-              <span><span class="sub-span point">234</span> Articles</span>
+              <span>
+                <span class="sub-span">24</span> Followers
+              </span>
+              <span>
+                <span class="sub-span point">234</span> Articles
+              </span>
             </p>
           </div>
           <div class="d-none d-sm-none col-md-4 d-md-flex justify-content-end">
@@ -127,36 +143,36 @@
 
 <script>
 import Modal from "@/components/Modal/Modal";
-import CategoryCard from '@/components/CategoryCard/CategoryCard';
+import CategoryCard from "@/components/CategoryCard/CategoryCard";
 
 export default {
   name: "ProfileCard",
   components: {
     Modal,
-    CategoryCard,
+    CategoryCard
   },
   props: {
     hideMobileUserInfo: {
       type: Function,
       required: false,
-      default: () => {},
+      default: () => {}
     },
     displayInterest: {
       type: Boolean,
-      default: false,
+      default: false
     },
     hideFollowing: {
       type: Boolean,
-      default: false,
+      default: false
     },
     displayFollowers: {
       type: Boolean,
-      default: false,
+      default: false
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-  @import "./ProfileCard";
+@import "./ProfileCard";
 </style>

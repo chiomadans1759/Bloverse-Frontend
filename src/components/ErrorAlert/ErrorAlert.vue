@@ -5,7 +5,7 @@
         <i class="fal fa-times error-icon"></i>
       </span>
       <h4 v-if="heading" class="alert-heading" >{{heading}}</h4>
-      <p><slot></slot></p>
+      <p class="text"><slot></slot></p>
     </div>
   </main>
 </template>
@@ -20,6 +20,7 @@ export default {
       default: ""
     }
   }
+
 }
 </script>
 

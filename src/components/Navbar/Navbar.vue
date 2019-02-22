@@ -6,9 +6,11 @@
     >
     <div :class="['container-fluid', customClass]">
       <a v-if="showBackArrow" class="backlink mr-4" href="/settings">
-        <i class="fal fa-long-arrow-left fa-2x back-icon"></i>
-        <span class="back-text">Back</span>
+      <div class="btn rounded-btn-circle d-flex justify-content-center">
+        <i class="fal fa-arrow-left back-icon"></i>
+      </div>
       </a>
+      <span v-if="showBackArrow" class="back-text">Back</span>
       <router-link to="/" class="router-link">
         <img class="nav-logo" v-if="!isTransparent" src="@/assets/Bloverse.svg">
         <img class="nav-logo" v-if="isTransparent" src="@/assets/Bloverse-white.svg">
@@ -170,11 +172,31 @@
       </div>
       </div>
     </nav>
+    <modal
+      target="feedback-modal"
+      altTitle="Send Us Some Feedback"
+      actionText="Send Feedback"
+      dark
+      subTitle="Found a bug? Have a suggestion?. Fill out the form below and we'll take a look!"
+      >
+      <div class="bl-modal-content">
+        <p>Enter your feedback here!</p>
+        <textarea class="form-control mb-2 p-1"></textarea>
+        <label class="ml-1 mr-3"><input type='radio' name='feedback-type'>  Bug</label>
+        <label class="mr-3"><input type='radio' name='feedback-type'>  Comment</label>
+        <label class="mr-3"><input type='radio' name='feedback-type'>  Other</label>
+      </div>
+    </modal>
   </header>
 </template>
 
 <script>
+import Modal from "../Modal/Modal.vue";
+
 export default {
+  components: {
+    Modal
+  },
   props: {
     isTransparent: {
       type: Boolean,
