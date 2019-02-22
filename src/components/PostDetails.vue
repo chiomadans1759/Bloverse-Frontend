@@ -1,7 +1,8 @@
 <template>
   <main id="post-details">
-    <section v-if="post == null || post == undefined">
-      <img src="@/assets/placeholders/post.svg" alt="">
+    <section v-if="!post">
+      <!-- <inline-loader /> -->
+      <h1>LOADING</h1>
     </section>
 
     <section class="row">
@@ -69,16 +70,29 @@
 <script>
 import { mapState } from "vuex"
 import SocialButtons from '@/components/SocialButtons'
+import InlineLoader from "./InlineLoader.vue"
 
 export default {
   name: "post-details",
   props: ["post"],
-  components: { SocialButtons },
+  components: { SocialButtons, InlineLoader },
   data() {
     return {
-      show: false,
+      show_loader: false,
       imageShow: false
     };
+  },
+  methods: {
+    showLoader() {
+      if(!this.post) {
+        this.show_loader = true
+      }else {
+        this.show_loader = false
+      }
+    }
+  },
+  created() {
+    this.showLoader()
   },
   watch: {
     category: {
@@ -90,6 +104,7 @@ export default {
   },
   computed: {
     ...mapState(["general", "auth"]),
+
     category() {
       if (this.general.categories) {
         const postCategory = this.general.categories.find(
