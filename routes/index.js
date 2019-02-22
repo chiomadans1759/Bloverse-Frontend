@@ -26,15 +26,17 @@ import NewPasswordPage from '../src/views/general/NewPassword/NewPasswordPage.vu
 import Category from '@/views//general/Category/CategoryPage';
 import Country from '@/views/general/Country/CountryPage';
 import ChangePassword from '../src/views/general/ChangePassword/ChangePassword.vue';
+import SetupPassword from '../src/views/general/SetupPassword/SetupPassword.vue';
 
 // Creator Layout Pages
 import CreatorHomePage from '../src/views/journalists/CreatorHome/CreatorHomePage';
 import CreatorApply from '../src/views/journalists/CreatorApply/CreatorApplyPage.vue';
 import CreatorProfile from '../src/views/journalists/Profile/ProfilePage';
+import CreatorPosts from '../src/views/journalists/Post/PostPage';
 import EmailPrefrence from '../src/views/journalists/EmailPrefrence/EmailPrefrencePage.vue';
 import SocialMedia from '../src/views/journalists/SocialMedia/SocialMediaPage.vue';
-import Drafts from '../src/views/journalists/Drafts/DraftsPage';
-import CreatorTrash from '../src/views/journalists/TrashPage/TrashPage.vue';
+import CreatorDrafts from '../src/views/journalists/Drafts/DraftsPage';
+import CreatorTrash from '../src/views/journalists/Trash/TrashPage.vue';
 
 // Version one routes
 import MyProfile from '../src/views/journalists/MyProfile.vue';
@@ -67,6 +69,7 @@ const routes = [
       { path: '/photocontest', component: PhotoContest },
     ]
   },
+
   { path: '/forgotpassword', component: ForgotPassword },
   { path: '/edit/profile', component: EditProfile },
   { path: '/login', component: SigninPage },
@@ -96,6 +99,7 @@ const routes = [
       { path: 'login', component: AdminLogin }
     ]
   },
+
   {
     path: '/creators',
     component: BlankBase,
@@ -104,9 +108,11 @@ const routes = [
       { path: 'apply', component: CreatorApply },
       { path: 'email-settings', component: EmailPrefrence },
       { path: 'profile', component: CreatorProfile },
+      { path: 'posts', component: CreatorPosts},
       { path: 'social-media', component: SocialMedia },
-      { path: 'drafts', component: Drafts },
+      { path: 'drafts', component: CreatorDrafts },
       { path: 'trash', component: CreatorTrash },
+      { path: "setuppassword", component: SetupPassword },
       {
         path: 'setup', component: JournalistSetUp,
         beforeEnter(to, from, next) {
@@ -117,7 +123,9 @@ const routes = [
           }
         }
       },
+
       { path: 'verify', component: JournalistVerify },
+
       {
         path: ':username', component: JournalistAccountLayout, meta: { journalist: true, auth: true }, beforeEnter(to, from, next) {
           if (store.getters.isAJournalist) {
@@ -200,6 +208,5 @@ const routes = [
     }
   }
 ]
-
 
 export default routes;

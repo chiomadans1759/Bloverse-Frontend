@@ -1,0 +1,25 @@
+#bl-creator-navigation {
+  .nav-link {
+    font-size: 1rem;
+    color: #565656 !important;
+    border: none !important;
+    height: 2.15625rem;
+    background-color: transparent;
+  }
+  
+  .nav-link.active {
+    border-bottom: 0.0625rem solid #004ded !important;
+  }
+
+  .navigation-bar {
+    overflow-x: scroll;
+  }
+
+  .nav-tabs {
+    flex-wrap: nowrap !important;
+  }
+
+  .profile-img {
+    border-radius: 50% !important;
+  }
+}

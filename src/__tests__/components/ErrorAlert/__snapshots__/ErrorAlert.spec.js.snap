@@ -18,7 +18,9 @@ exports[`ErrorAlert Component should render correctly 1`] = `
      
     <!---->
      
-    <p />
+    <p
+      class="text"
+    />
   </div>
 </main>
 `;

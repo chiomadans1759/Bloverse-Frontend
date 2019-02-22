@@ -23,7 +23,7 @@ exports[`Profile Component should render correctly 1`] = `
           />
            
           <div
-            class="profile-edit-icon d-flex justify-content-between p-3"
+            class="d-flex justify-content-between p-3"
           >
             <span
               class="d-inline d-sm-none bl-back-arrow"
@@ -32,7 +32,11 @@ exports[`Profile Component should render correctly 1`] = `
                 class="fal fa-long-arrow-left fa-2x back-arrow"
               />
             </span>
-             
+          </div>
+           
+          <div
+            class="d-flex justify-content-end profile-edit-icon pr-2"
+          >
             <i
               class="fal fa-user-edit fa-2x"
             />
@@ -43,14 +47,14 @@ exports[`Profile Component should render correctly 1`] = `
           >
             <img
               alt="..."
-              class="profile-img rounded"
+              class="profile-img rounded-circle"
               src="@/assets/Avatar2.png"
             />
              
             <span
               class="profile-name pl-3"
             >
-              Johndoe
+              Username
             </span>
           </div>
            
@@ -60,7 +64,7 @@ exports[`Profile Component should render correctly 1`] = `
             <h5
               class="card-title"
             >
-              John Doe
+              Full Name
             </h5>
              
             <p
@@ -139,13 +143,25 @@ exports[`Profile Component should render correctly 1`] = `
           <div
             class="social p-3"
           >
-            <h5
-              class="mb-2"
+            <div
+              class="d-flex justify-content-between"
             >
-              <strong>
-                Social Media
-              </strong>
-            </h5>
+              <h6
+                class="mb-3"
+              >
+                <strong>
+                  Social Media
+                </strong>
+              </h6>
+               
+              <span
+                class="edit-icon"
+              >
+                <i
+                  class="fal fa-edit mr-2"
+                />
+              </span>
+            </div>
              
             <div
               class="d-flex flex-wrap"
@@ -235,7 +251,8 @@ exports[`Profile Component should render correctly 1`] = `
           <div
             class="card-footer text-muted bg-white footer-color"
           >
-            Member Since:
+            
+    Member Since:
     
             <span
               class="text-dark"
@@ -340,6 +357,7 @@ exports[`Profile Component should render correctly 1`] = `
                                 24
                               </span>
                                Followers
+            
                             </span>
                              
                             <span>
@@ -349,6 +367,7 @@ exports[`Profile Component should render correctly 1`] = `
                                 234
                               </span>
                                Articles
+            
                             </span>
                           </p>
                         </div>
@@ -407,6 +426,7 @@ exports[`Profile Component should render correctly 1`] = `
                                 24
                               </span>
                                Followers
+            
                             </span>
                              
                             <span>
@@ -416,6 +436,7 @@ exports[`Profile Component should render correctly 1`] = `
                                 234
                               </span>
                                Articles
+            
                             </span>
                           </p>
                         </div>
@@ -474,6 +495,7 @@ exports[`Profile Component should render correctly 1`] = `
                                 24
                               </span>
                                Followers
+            
                             </span>
                              
                             <span>
@@ -483,6 +505,7 @@ exports[`Profile Component should render correctly 1`] = `
                                 234
                               </span>
                                Articles
+            
                             </span>
                           </p>
                         </div>
@@ -548,10 +571,8 @@ exports[`Profile Component should render correctly 1`] = `
               <div
                 class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
               >
-                <img
-                  alt="..."
-                  class="country-image rounded-circle "
-                  src="@/assets/mexico.svg"
+                <span
+                  class="flag-icon flag-icon-mx rounded-circle"
                 />
                  
                 <span
@@ -564,10 +585,8 @@ exports[`Profile Component should render correctly 1`] = `
               <div
                 class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
               >
-                <img
-                  alt="..."
-                  class="country-image rounded-circle"
-                  src="@/assets/mexico.svg"
+                <span
+                  class="flag-icon flag-icon-fr rounded-circle"
                 />
                  
                 <span
@@ -580,10 +599,8 @@ exports[`Profile Component should render correctly 1`] = `
               <div
                 class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
               >
-                <img
-                  alt="..."
-                  class="country-image rounded-circle"
-                  src="@/assets/mexico.svg"
+                <span
+                  class="flag-icon flag-icon-gh rounded-circle"
                 />
                  
                 <span
@@ -596,10 +613,8 @@ exports[`Profile Component should render correctly 1`] = `
               <div
                 class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
               >
-                <img
-                  alt="..."
-                  class="country-image rounded-circle"
-                  src="@/assets/mexico.svg"
+                <span
+                  class="flag-icon flag-icon-ke rounded-circle"
                 />
                  
                 <span
@@ -612,10 +627,8 @@ exports[`Profile Component should render correctly 1`] = `
               <div
                 class="country border rounded p-2 my-2 mr-2 d-flex justify-content-center align-items-center"
               >
-                <img
-                  alt="..."
-                  class="country-image rounded-circle"
-                  src="@/assets/mexico.svg"
+                <span
+                  class="flag-icon flag-icon-ng rounded-circle"
                 />
                  
                 <span
@@ -628,10 +641,8 @@ exports[`Profile Component should render correctly 1`] = `
               <div
                 class="country border rounded p-2 my-2 mr-2 d-flex justify-content-center align-items-center"
               >
-                <img
-                  alt="..."
-                  class="country-image rounded-circle"
-                  src="@/assets/mexico.svg"
+                <span
+                  class="flag-icon flag-icon-gb rounded-circle"
                 />
                  
                 <span
@@ -649,12 +660,14 @@ exports[`Profile Component should render correctly 1`] = `
         class="col-lg-12 mt-2"
       >
         <main
-          class="category-card p-4 p-sm-3 card"
+          class="category-card card p-4 p-sm-3"
         >
           <div
             class="header d-flex justify-content-between "
           >
-            <h5>
+            <h5
+              class=""
+            >
               <strong>
                 Interest
               </strong>
@@ -672,11 +685,7 @@ exports[`Profile Component should render correctly 1`] = `
           <div
             class="mt-1"
           >
-            <p
-              class="category-title"
-            >
-              Lorem ipsum dolor sit amet
-            </p>
+            <!---->
              
             <div
               class="category-list d-flex flex-wrap mt-2"
@@ -985,963 +994,1532 @@ exports[`Profile Component should render correctly 1`] = `
         </nav>
       </div>
        
-      <div
-        class="row m-4 p-2 d-none d-sm-flex flex-wrap"
-      >
+      <div>
         <div
-          class="col-lg-6 col-md-6 my-2"
+          class="row m-4 p-2 d-none d-sm-flex flex-wrap"
         >
-          <main
-            class="card recommendation-card profile-card"
+          <div
+            class="col-lg-6 col-md-6 my-2"
           >
-            <img
-              alt="..."
-              class="card-img-top"
-              src="@/assets/photo-4.jpg"
-            />
-             
-            <div
-              class="card-body"
+            <main
+              class="card recommendation-card profile-card"
             >
-              <h5
-                class="card-title"
-              >
-                Category
-              </h5>
+              <img
+                alt="..."
+                class="card-img-top"
+                src="@/assets/photo-4.jpg"
+              />
                
               <div
-                class="card-text recommendation-card--content"
+                class="card-body"
               >
-                <p
-                  class="font-weight-bold recommendation-card--content__text"
+                <h5
+                  class="card-title"
                 >
-                  <a>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </a>
-                </p>
+                  Category
+                </h5>
                  
-                <p
-                  class="recommendation-card--content__username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="card-text row actions"
-              >
                 <div
-                  class="col-7 views"
+                  class="card-text recommendation-card--content"
                 >
-                  <i
-                    class="fal fa-eye"
-                  />
-                   
-                  <span
-                    class="count"
+                  <p
+                    class="font-weight-bold recommendation-card--content__text"
                   >
-                    123
-                  </span>
+                    <a>
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="recommendation-card--content__username"
+                  >
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
                 </div>
                  
                 <div
-                  class="col-5 row others"
+                  class="card-text row actions"
                 >
                   <div
-                    class="col-9 likes"
+                    class="col-7 views"
                   >
-                    <p
-                      class="thumbs-up"
-                    >
-                      <i
-                        class="fal fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
+                    <i
+                      class="fal fa-eye"
+                    />
                      
-                    <p
-                      class="thumbs-up"
-                      style="display: none;"
+                    <span
+                      class="count"
                     >
-                      <i
-                        class="fas fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                    >
-                      <i
-                        class="fal fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
+                      123
+                    </span>
                   </div>
                    
                   <div
-                    class="col-3 ellipsis"
+                    class="col-5 row others centerEle"
                   >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
+                    <div
+                      class="col-9 likes"
                     >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
-                    </span>
+                      <p
+                        class="thumbs-up centerEle"
+                      >
+                        <i
+                          class="fal fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-up centerEle"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down centerEle"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down centerEle"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                    </div>
                      
                     <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
+                      class="col-3 ellipsis"
                     >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
                       <div
-                        class="d-flex bl-dropdown-menu__countries"
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
-                          class="favourite-countries"
+                          class="d-flex bl-dropdown-menu__countries"
                         >
-                          <p
-                            class="dropdown-item country"
+                          <div
+                            class="favourite-countries"
                           >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
+                            <p
+                              class="dropdown-item country"
                             >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
+                              Report Post
+                            </p>
                              
-                            <span
-                              class="count"
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country pt-3"
                             >
-                              67
-                            </span>
-                          </p>
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country hidden-lg-down pb-3"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </main>
+            </main>
+          </div>
+           
+          <div
+            class="col-lg-6 col-md-6 my-2"
+          >
+            <main
+              class="card recommendation-card profile-card"
+            >
+              <img
+                alt="..."
+                class="card-img-top"
+                src="@/assets/photo-4.jpg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Category
+                </h5>
+                 
+                <div
+                  class="card-text recommendation-card--content"
+                >
+                  <p
+                    class="font-weight-bold recommendation-card--content__text"
+                  >
+                    <a>
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="recommendation-card--content__username"
+                  >
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="card-text row actions"
+                >
+                  <div
+                    class="col-7 views"
+                  >
+                    <i
+                      class="fal fa-eye"
+                    />
+                     
+                    <span
+                      class="count"
+                    >
+                      123
+                    </span>
+                  </div>
+                   
+                  <div
+                    class="col-5 row others centerEle"
+                  >
+                    <div
+                      class="col-9 likes"
+                    >
+                      <p
+                        class="thumbs-up centerEle"
+                      >
+                        <i
+                          class="fal fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-up centerEle"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down centerEle"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down centerEle"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <div
+                      class="col-3 ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country pt-3"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country hidden-lg-down pb-3"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+           
+          <div
+            class="col-lg-6 col-md-6 my-2"
+          >
+            <main
+              class="card recommendation-card profile-card"
+            >
+              <img
+                alt="..."
+                class="card-img-top"
+                src="@/assets/photo-4.jpg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Category
+                </h5>
+                 
+                <div
+                  class="card-text recommendation-card--content"
+                >
+                  <p
+                    class="font-weight-bold recommendation-card--content__text"
+                  >
+                    <a>
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="recommendation-card--content__username"
+                  >
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="card-text row actions"
+                >
+                  <div
+                    class="col-7 views"
+                  >
+                    <i
+                      class="fal fa-eye"
+                    />
+                     
+                    <span
+                      class="count"
+                    >
+                      123
+                    </span>
+                  </div>
+                   
+                  <div
+                    class="col-5 row others centerEle"
+                  >
+                    <div
+                      class="col-9 likes"
+                    >
+                      <p
+                        class="thumbs-up centerEle"
+                      >
+                        <i
+                          class="fal fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-up centerEle"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down centerEle"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down centerEle"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <div
+                      class="col-3 ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country pt-3"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country hidden-lg-down pb-3"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+           
+          <div
+            class="col-lg-6 col-md-6 my-2"
+          >
+            <main
+              class="card recommendation-card profile-card"
+            >
+              <img
+                alt="..."
+                class="card-img-top"
+                src="@/assets/photo-4.jpg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Category
+                </h5>
+                 
+                <div
+                  class="card-text recommendation-card--content"
+                >
+                  <p
+                    class="font-weight-bold recommendation-card--content__text"
+                  >
+                    <a>
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="recommendation-card--content__username"
+                  >
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="card-text row actions"
+                >
+                  <div
+                    class="col-7 views"
+                  >
+                    <i
+                      class="fal fa-eye"
+                    />
+                     
+                    <span
+                      class="count"
+                    >
+                      123
+                    </span>
+                  </div>
+                   
+                  <div
+                    class="col-5 row others centerEle"
+                  >
+                    <div
+                      class="col-9 likes"
+                    >
+                      <p
+                        class="thumbs-up centerEle"
+                      >
+                        <i
+                          class="fal fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-up centerEle"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down centerEle"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down centerEle"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <div
+                      class="col-3 ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country pt-3"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country hidden-lg-down pb-3"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+           
+          <div
+            class="col-lg-6 col-md-6 my-2"
+          >
+            <main
+              class="card recommendation-card profile-card"
+            >
+              <img
+                alt="..."
+                class="card-img-top"
+                src="@/assets/photo-4.jpg"
+              />
+               
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Category
+                </h5>
+                 
+                <div
+                  class="card-text recommendation-card--content"
+                >
+                  <p
+                    class="font-weight-bold recommendation-card--content__text"
+                  >
+                    <a>
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </a>
+                  </p>
+                   
+                  <p
+                    class="recommendation-card--content__username"
+                  >
+                    <span
+                      class="time"
+                    >
+                      1 min ago
+                    </span>
+                  </p>
+                </div>
+                 
+                <div
+                  class="card-text row actions"
+                >
+                  <div
+                    class="col-7 views"
+                  >
+                    <i
+                      class="fal fa-eye"
+                    />
+                     
+                    <span
+                      class="count"
+                    >
+                      123
+                    </span>
+                  </div>
+                   
+                  <div
+                    class="col-5 row others centerEle"
+                  >
+                    <div
+                      class="col-9 likes"
+                    >
+                      <p
+                        class="thumbs-up centerEle"
+                      >
+                        <i
+                          class="fal fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-up centerEle"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-up"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          18
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down centerEle"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="thumbs-down centerEle"
+                        style="display: none;"
+                      >
+                        <i
+                          class="fas fa-thumbs-down"
+                        />
+                         
+                        <span
+                          class="count"
+                        >
+                          1
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <div
+                      class="col-3 ellipsis"
+                    >
+                      <span
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                      >
+                        <i
+                          class="fal fa-ellipsis-h"
+                        />
+                      </span>
+                       
+                      <div
+                        aria-labelledby="dropdownMenuReference"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
+                      >
+                        <div
+                          class="d-flex bl-dropdown-menu__countries"
+                        >
+                          <div
+                            class="favourite-countries"
+                          >
+                            <p
+                              class="dropdown-item country"
+                            >
+                              Report Post
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country pt-3"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-plus "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Creators Profile
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
+                            >
+                              <i
+                                class="fal fa-comment-dots "
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Comment
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country hidden-lg-down pb-3"
+                            >
+                              <i
+                                class="fal fa-share"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Share
+                      
+                                <span
+                                  class="badges"
+                                >
+                                  5
+                                </span>
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-bookmark"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Later
+                              </span>
+                            </p>
+                             
+                            <hr />
+                             
+                            <hr />
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                            >
+                              <i
+                                class="fal fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country toggle-story"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fas fa-book-open"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                Read Story
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
         </div>
          
-        <div
-          class="col-lg-6 col-md-6 my-2"
-        >
-          <main
-            class="card recommendation-card profile-card"
-          >
-            <img
-              alt="..."
-              class="card-img-top"
-              src="@/assets/photo-4.jpg"
-            />
-             
-            <div
-              class="card-body"
-            >
-              <h5
-                class="card-title"
-              >
-                Category
-              </h5>
-               
-              <div
-                class="card-text recommendation-card--content"
-              >
-                <p
-                  class="font-weight-bold recommendation-card--content__text"
-                >
-                  <a>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </a>
-                </p>
-                 
-                <p
-                  class="recommendation-card--content__username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="card-text row actions"
-              >
-                <div
-                  class="col-7 views"
-                >
-                  <i
-                    class="fal fa-eye"
-                  />
-                   
-                  <span
-                    class="count"
-                  >
-                    123
-                  </span>
-                </div>
-                 
-                <div
-                  class="col-5 row others"
-                >
-                  <div
-                    class="col-9 likes"
-                  >
-                    <p
-                      class="thumbs-up"
-                    >
-                      <i
-                        class="fal fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-up"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                    >
-                      <i
-                        class="fal fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                  </div>
-                   
-                  <div
-                    class="col-3 ellipsis"
-                  >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                    >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
-                    </span>
-                     
-                    <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
-                    >
-                      <div
-                        class="d-flex bl-dropdown-menu__countries"
-                      >
-                        <div
-                          class="favourite-countries"
-                        >
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
-         
-        <div
-          class="col-lg-6 col-md-6 my-2"
-        >
-          <main
-            class="card recommendation-card profile-card"
-          >
-            <img
-              alt="..."
-              class="card-img-top"
-              src="@/assets/photo-4.jpg"
-            />
-             
-            <div
-              class="card-body"
-            >
-              <h5
-                class="card-title"
-              >
-                Category
-              </h5>
-               
-              <div
-                class="card-text recommendation-card--content"
-              >
-                <p
-                  class="font-weight-bold recommendation-card--content__text"
-                >
-                  <a>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </a>
-                </p>
-                 
-                <p
-                  class="recommendation-card--content__username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="card-text row actions"
-              >
-                <div
-                  class="col-7 views"
-                >
-                  <i
-                    class="fal fa-eye"
-                  />
-                   
-                  <span
-                    class="count"
-                  >
-                    123
-                  </span>
-                </div>
-                 
-                <div
-                  class="col-5 row others"
-                >
-                  <div
-                    class="col-9 likes"
-                  >
-                    <p
-                      class="thumbs-up"
-                    >
-                      <i
-                        class="fal fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-up"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                    >
-                      <i
-                        class="fal fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                  </div>
-                   
-                  <div
-                    class="col-3 ellipsis"
-                  >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                    >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
-                    </span>
-                     
-                    <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
-                    >
-                      <div
-                        class="d-flex bl-dropdown-menu__countries"
-                      >
-                        <div
-                          class="favourite-countries"
-                        >
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
-         
-        <div
-          class="col-lg-6 col-md-6 my-2"
-        >
-          <main
-            class="card recommendation-card profile-card"
-          >
-            <img
-              alt="..."
-              class="card-img-top"
-              src="@/assets/photo-4.jpg"
-            />
-             
-            <div
-              class="card-body"
-            >
-              <h5
-                class="card-title"
-              >
-                Category
-              </h5>
-               
-              <div
-                class="card-text recommendation-card--content"
-              >
-                <p
-                  class="font-weight-bold recommendation-card--content__text"
-                >
-                  <a>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </a>
-                </p>
-                 
-                <p
-                  class="recommendation-card--content__username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="card-text row actions"
-              >
-                <div
-                  class="col-7 views"
-                >
-                  <i
-                    class="fal fa-eye"
-                  />
-                   
-                  <span
-                    class="count"
-                  >
-                    123
-                  </span>
-                </div>
-                 
-                <div
-                  class="col-5 row others"
-                >
-                  <div
-                    class="col-9 likes"
-                  >
-                    <p
-                      class="thumbs-up"
-                    >
-                      <i
-                        class="fal fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-up"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                    >
-                      <i
-                        class="fal fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                  </div>
-                   
-                  <div
-                    class="col-3 ellipsis"
-                  >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                    >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
-                    </span>
-                     
-                    <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
-                    >
-                      <div
-                        class="d-flex bl-dropdown-menu__countries"
-                      >
-                        <div
-                          class="favourite-countries"
-                        >
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
-         
-        <div
-          class="col-lg-6 col-md-6 my-2"
-        >
-          <main
-            class="card recommendation-card profile-card"
-          >
-            <img
-              alt="..."
-              class="card-img-top"
-              src="@/assets/photo-4.jpg"
-            />
-             
-            <div
-              class="card-body"
-            >
-              <h5
-                class="card-title"
-              >
-                Category
-              </h5>
-               
-              <div
-                class="card-text recommendation-card--content"
-              >
-                <p
-                  class="font-weight-bold recommendation-card--content__text"
-                >
-                  <a>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </a>
-                </p>
-                 
-                <p
-                  class="recommendation-card--content__username"
-                >
-                  <span
-                    class="time"
-                  >
-                    1 min ago
-                  </span>
-                </p>
-              </div>
-               
-              <div
-                class="card-text row actions"
-              >
-                <div
-                  class="col-7 views"
-                >
-                  <i
-                    class="fal fa-eye"
-                  />
-                   
-                  <span
-                    class="count"
-                  >
-                    123
-                  </span>
-                </div>
-                 
-                <div
-                  class="col-5 row others"
-                >
-                  <div
-                    class="col-9 likes"
-                  >
-                    <p
-                      class="thumbs-up"
-                    >
-                      <i
-                        class="fal fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-up"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-up"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        18
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                    >
-                      <i
-                        class="fal fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                     
-                    <p
-                      class="thumbs-down"
-                      style="display: none;"
-                    >
-                      <i
-                        class="fas fa-thumbs-down"
-                      />
-                       
-                      <span
-                        class="count"
-                      >
-                        1
-                      </span>
-                    </p>
-                  </div>
-                   
-                  <div
-                    class="col-3 ellipsis"
-                  >
-                    <span
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                    >
-                      <i
-                        class="fal fa-ellipsis-h"
-                      />
-                    </span>
-                     
-                    <div
-                      aria-labelledby="dropdownMenuReference"
-                      class="dropdown-menu bl-dropdown-menu"
-                    >
-                      <div
-                        class="d-flex bl-dropdown-menu__countries"
-                      >
-                        <div
-                          class="favourite-countries"
-                        >
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-comment-dots"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                           
-                          <p
-                            class="dropdown-item country"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                             
-                            <span
-                              class="count"
-                            >
-                              67
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
+        <!---->
       </div>
        
       <!---->
@@ -2070,7 +2648,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-7 col-sm-4 likes"
                   >
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                     >
                       <i
                         class="fal fa-thumbs-up"
@@ -2084,7 +2662,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2099,7 +2677,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                     >
                       <i
                         class="fal fa-thumbs-down"
@@ -2113,7 +2691,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2132,7 +2710,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-3 col-sm-7 comments"
                   >
                     <p
-                      class="coment"
+                      class="coment hideEle centerEle"
                     >
                       <i
                         class="fal fa-comment-dots"
@@ -2146,7 +2724,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="share"
+                      class="share hideEle centerEle"
                     >
                       <i
                         class="fal fa-share"
@@ -2178,7 +2756,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -2198,6 +2776,21 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
                             >
                               <i
                                 class="fal fa-plus"
@@ -2209,6 +2802,50 @@ exports[`Profile Component should render correctly 1`] = `
                                 Creators Profile
                               </span>
                             </p>
+                             
+                            <div
+                              class="d-md-none"
+                            >
+                              <p
+                                class="dropdown-item country"
+                              >
+                                <i
+                                  class="fal fa-comment-dots"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Comment
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                               
+                              <p
+                                class="dropdown-item country hidden-lg-down"
+                              >
+                                <i
+                                  class="fal fa-share"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Share
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                            </div>
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
@@ -2269,50 +2906,6 @@ exports[`Profile Component should render correctly 1`] = `
                                 class="count"
                               >
                                 Read Story
-                              </span>
-                            </p>
-                             
-                            <hr />
-                             
-                            <hr />
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-comment-dots"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Comment
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
-                              </span>
-                            </p>
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-share"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Share
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
                               </span>
                             </p>
                           </div>
@@ -2459,7 +3052,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-7 col-sm-4 likes"
                   >
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                     >
                       <i
                         class="fal fa-thumbs-up"
@@ -2473,7 +3066,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2488,7 +3081,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                     >
                       <i
                         class="fal fa-thumbs-down"
@@ -2502,7 +3095,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2521,7 +3114,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-3 col-sm-7 comments"
                   >
                     <p
-                      class="coment"
+                      class="coment hideEle centerEle"
                     >
                       <i
                         class="fal fa-comment-dots"
@@ -2535,7 +3128,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="share"
+                      class="share hideEle centerEle"
                     >
                       <i
                         class="fal fa-share"
@@ -2567,7 +3160,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -2587,6 +3180,21 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
                             >
                               <i
                                 class="fal fa-plus"
@@ -2598,6 +3206,50 @@ exports[`Profile Component should render correctly 1`] = `
                                 Creators Profile
                               </span>
                             </p>
+                             
+                            <div
+                              class="d-md-none"
+                            >
+                              <p
+                                class="dropdown-item country"
+                              >
+                                <i
+                                  class="fal fa-comment-dots"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Comment
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                               
+                              <p
+                                class="dropdown-item country hidden-lg-down"
+                              >
+                                <i
+                                  class="fal fa-share"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Share
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                            </div>
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
@@ -2658,50 +3310,6 @@ exports[`Profile Component should render correctly 1`] = `
                                 class="count"
                               >
                                 Read Story
-                              </span>
-                            </p>
-                             
-                            <hr />
-                             
-                            <hr />
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-comment-dots"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Comment
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
-                              </span>
-                            </p>
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-share"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Share
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
                               </span>
                             </p>
                           </div>
@@ -2848,7 +3456,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-7 col-sm-4 likes"
                   >
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                     >
                       <i
                         class="fal fa-thumbs-up"
@@ -2862,7 +3470,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2877,7 +3485,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                     >
                       <i
                         class="fal fa-thumbs-down"
@@ -2891,7 +3499,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                       style="display: none;"
                     >
                       <i
@@ -2910,7 +3518,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-3 col-sm-7 comments"
                   >
                     <p
-                      class="coment"
+                      class="coment hideEle centerEle"
                     >
                       <i
                         class="fal fa-comment-dots"
@@ -2924,7 +3532,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="share"
+                      class="share hideEle centerEle"
                     >
                       <i
                         class="fal fa-share"
@@ -2956,7 +3564,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -2976,6 +3584,21 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
                             >
                               <i
                                 class="fal fa-plus"
@@ -2987,6 +3610,50 @@ exports[`Profile Component should render correctly 1`] = `
                                 Creators Profile
                               </span>
                             </p>
+                             
+                            <div
+                              class="d-md-none"
+                            >
+                              <p
+                                class="dropdown-item country"
+                              >
+                                <i
+                                  class="fal fa-comment-dots"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Comment
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                               
+                              <p
+                                class="dropdown-item country hidden-lg-down"
+                              >
+                                <i
+                                  class="fal fa-share"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Share
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                            </div>
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
@@ -3047,50 +3714,6 @@ exports[`Profile Component should render correctly 1`] = `
                                 class="count"
                               >
                                 Read Story
-                              </span>
-                            </p>
-                             
-                            <hr />
-                             
-                            <hr />
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-comment-dots"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Comment
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
-                              </span>
-                            </p>
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-share"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Share
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
                               </span>
                             </p>
                           </div>
@@ -3237,7 +3860,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-7 col-sm-4 likes"
                   >
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                     >
                       <i
                         class="fal fa-thumbs-up"
@@ -3251,7 +3874,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-up"
+                      class="thumbs-up centerEle"
                       style="display: none;"
                     >
                       <i
@@ -3266,7 +3889,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                     >
                       <i
                         class="fal fa-thumbs-down"
@@ -3280,7 +3903,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="thumbs-down"
+                      class="thumbs-down centerEle"
                       style="display: none;"
                     >
                       <i
@@ -3299,7 +3922,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-3 col-sm-7 comments"
                   >
                     <p
-                      class="coment"
+                      class="coment hideEle centerEle"
                     >
                       <i
                         class="fal fa-comment-dots"
@@ -3313,7 +3936,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class="share"
+                      class="share hideEle centerEle"
                     >
                       <i
                         class="fal fa-share"
@@ -3345,7 +3968,7 @@ exports[`Profile Component should render correctly 1`] = `
                        
                       <div
                         aria-labelledby="dropdownMenuReference"
-                        class="dropdown-menu bl-dropdown-menu"
+                        class="dropdown-menu bl-dropdown-menu top-dropdown"
                       >
                         <div
                           class="d-flex bl-dropdown-menu__countries"
@@ -3365,6 +3988,21 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
+                              style="display: none;"
+                            >
+                              <i
+                                class="fal fa-times"
+                              />
+                               
+                              <span
+                                class="count"
+                              >
+                                remove
+                              </span>
+                            </p>
+                             
+                            <p
+                              class="dropdown-item country"
                             >
                               <i
                                 class="fal fa-plus"
@@ -3376,6 +4014,50 @@ exports[`Profile Component should render correctly 1`] = `
                                 Creators Profile
                               </span>
                             </p>
+                             
+                            <div
+                              class="d-md-none"
+                            >
+                              <p
+                                class="dropdown-item country"
+                              >
+                                <i
+                                  class="fal fa-comment-dots"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Comment
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                               
+                              <p
+                                class="dropdown-item country hidden-lg-down"
+                              >
+                                <i
+                                  class="fal fa-share"
+                                />
+                                 
+                                <span
+                                  class="count"
+                                >
+                                  Share
+                      
+                                  <span
+                                    class="badges"
+                                  >
+                                    5
+                                  </span>
+                                </span>
+                              </p>
+                            </div>
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
@@ -3436,50 +4118,6 @@ exports[`Profile Component should render correctly 1`] = `
                                 class="count"
                               >
                                 Read Story
-                              </span>
-                            </p>
-                             
-                            <hr />
-                             
-                            <hr />
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-comment-dots"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Comment
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
-                              </span>
-                            </p>
-                             
-                            <p
-                              class="dropdown-item country"
-                            >
-                              <i
-                                class="fal fa-share"
-                              />
-                               
-                              <span
-                                class="count"
-                              >
-                                Share
-                      
-                                <span
-                                  class="badges"
-                                >
-                                  5
-                                </span>
                               </span>
                             </p>
                           </div>

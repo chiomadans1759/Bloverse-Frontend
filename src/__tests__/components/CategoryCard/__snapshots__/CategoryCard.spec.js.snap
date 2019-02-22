@@ -2,12 +2,14 @@
 
 exports[`CategoryCard Component should render correctly 1`] = `
 <main
-  class="category-card p-4 p-sm-3 card"
+  class="category-card card p-4 p-sm-3"
 >
   <div
     class="header d-flex justify-content-between "
   >
-    <h5>
+    <h5
+      class=""
+    >
       <strong>
         Interest
       </strong>
@@ -25,11 +27,7 @@ exports[`CategoryCard Component should render correctly 1`] = `
   <div
     class="mt-1"
   >
-    <p
-      class="category-title"
-    >
-      Lorem ipsum dolor sit amet
-    </p>
+    <!---->
      
     <div
       class="category-list d-flex flex-wrap mt-2"

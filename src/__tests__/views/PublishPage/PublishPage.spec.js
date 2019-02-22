@@ -22,7 +22,8 @@ describe('PublishPage Component', () => {
 
   it('should display `showMe`', () => {
     const wrapper = shallowMount(PublishPage, {
-      stubs: { RouterLink: RouterLinkStub }
+      stubs: 
+        { RouterLink: RouterLinkStub }
     });
     wrapper.find('.text').trigger('click');
 
@@ -31,7 +32,8 @@ describe('PublishPage Component', () => {
 
   it('should display `showThis`', () => {
     const wrapper = shallowMount(PublishPage, {
-      stubs: { RouterLink: RouterLinkStub }
+      stubs: 
+      { RouterLink: RouterLinkStub }
     });
     wrapper.find('.btn').trigger('input');
     wrapper.find('.nav-link').trigger('input');

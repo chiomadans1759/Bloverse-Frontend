@@ -84,6 +84,16 @@ describe('PostCard Component', () => {
     expect(wrapper.vm.readStory).toBe(true);
   });
 
+  it('should change the arrow position of the dropdown', () => {
+    const wrapper = mount(PostCard, {
+      stubs: { RouterLink: RouterLinkStub },
+    });
+
+    wrapper.findAll('.dropdown-toggle').at(0).trigger('click');
+
+    expect(wrapper.vm.dropdownArrowDown).toBe(false);
+  });
+
   it('sets the correct default data', () => {
     expect(typeof PostCard.data).toBe('function')
     const defaultData = PostCard.data()

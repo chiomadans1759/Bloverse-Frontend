@@ -2,7 +2,7 @@
 
 exports[`Trend Component should render correctly 1`] = `
 <main
-  class="card text-white trendCard"
+  class="card text-white trendCard img-fluid"
 >
   <img
     alt="trend image"

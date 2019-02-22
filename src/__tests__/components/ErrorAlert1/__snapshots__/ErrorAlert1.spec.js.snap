@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorAlert1 Component should render correctly 1`] = `
+<main
+  id="error-alert"
+>
+  <div
+    class="alert alert-danger error"
+    role="alert"
+  >
+    <!---->
+     
+    <p
+      class="text"
+    />
+  </div>
+</main>
+`;

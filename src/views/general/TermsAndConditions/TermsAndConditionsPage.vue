@@ -7,7 +7,7 @@
           </div>
           <div>
             <br><br>
-            <div class="navigation-ba">
+            <div class="navigation-bar">
               <ul class="nav nav-tabs mb-3 justify-content-left" id="pills-tab" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active d-flex align-items-center" id="pills-general-tab" data-toggle="pill" href="#general-tab" role="tab" aria-controls="pills-general" aria-selected="true">General</a>

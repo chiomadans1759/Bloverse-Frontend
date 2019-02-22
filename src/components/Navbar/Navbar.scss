@@ -16,7 +16,7 @@
 .router-link-exact-active {
   cursor: pointer;
   font-weight: 900;
-  color: #073cec !important;
+  color: #565656 !important;
 }
 
 nav {
@@ -142,7 +142,6 @@ nav {
   border: rem(1.5px) solid #096DD9;
   border-radius: 0.3rem;
   color: #ffffff;
-  padding: rem(7px) rem(16px);
   text-align: center;
   text-decoration: none;
   font-size: rem(14px);
@@ -165,7 +164,6 @@ nav {
   border: rem(1px) solid #096DD9;
   border-radius: 0.3rem;
   color: #096DD9;
-  padding: rem(7px) rem(16px);
   text-align: center;
   text-decoration: none;
   font-size: rem(14px);
@@ -206,22 +204,45 @@ nav {
 }
 
 .dropdown-menu {
-  left: rem(-62px);
+  left: rem(-25px);
   top: rem(45px);
+
+  &--elipsis {
+    left: rem(-63px);
+  }
 }
 
 #feeds-header {
   .backlink {
     margin: 0 rem(-5px);
-    color: #565656;
-    font-size: rem(16px);
-    .back-icon {
-      margin: rem(-6px) rem(10px);
-    }
-    .back-text {
-      margin: 0 rem(5px);
+    color: #096DD9;
+    .rounded-btn-circle {
+      border-radius: 50% !important;
+      border-color: #aaaaaa;
+      margin-right: rem(-17px);
+      padding: rem(4px);
     }
   }
+  .back-text {
+    color: #000000;
+    font-size: rem(12px);
+    margin-right: rem(20px);
+  }
+}
+
+.round-avatar {
+  width: rem(35px);
+  height: rem(35px);
+  border-radius: 50%;
+  background-color: #f8692b;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.down-arrow {
+  color:grey;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -242,22 +263,37 @@ nav {
 
 @media only screen and (max-width: 411px) {
   .dropdown-mobile-view {
-    left: rem(131px);
+    left: rem(192px);
     top: rem(65px);
+
+    &__avatar {
+      left: rem(-61px);
+      top: rem(50px);
+    }
   }
 }
 
 @media only screen and (max-width: 400px) {
   .dropdown-mobile-view {
-    left: rem(120px);
+    left: rem(181px);
     top: rem(65px);
+
+    &__avatar {
+      left: rem(-61px);
+      top: rem(50px);
+    }
   }
 }
 
 @media only screen and (min-width: 414px) {
   .dropdown-mobile-view {
-    left: rem(135px);
+    left: rem(194px);
     top: rem(65px);
+
+    &__avatar {
+      left: rem(-61px);
+      top: rem(50px);
+    }
   }
 }
 
@@ -271,7 +307,7 @@ nav {
   }
 
   .dropdown-mobile-view {
-    left: rem(97px);
+    left: rem(157px);
     top: rem(65px);
   }
 }
@@ -301,8 +337,13 @@ nav {
   }
 
   .dropdown-mobile-view {
-    left: rem(82px);
+    left: rem(142px);
     top: rem(65px);
+
+    &__avatar {
+      left: rem(-59px);
+      top: rem(50px);
+    }
   }
 }
 
@@ -316,8 +357,13 @@ nav {
   }
 
   .dropdown-mobile-view {
-    left: rem(42px);
+    left: rem(102px);
     top: rem(65px);
+
+    &__avatar {
+      left: rem(-59px);
+      top: rem(50px);
+    }
   }
 }
 
@@ -331,7 +377,7 @@ nav {
   }
 
   .dropdown-mobile-view {
-    left: rem(472px);
+    left: rem(532px);
     top: rem(65px);
   }
   #feeds-header {
@@ -348,9 +394,11 @@ nav {
   }
 }
 
-@media screen and (max-width: 986px) {
-  .back-nav {
-    justify-content: start;
-  }
+.back-nav {
+  display: flex !important;
+  justify-content: start !important;
 }
 
+.navbar-light .navbar-toggler {
+  border: none;
+}

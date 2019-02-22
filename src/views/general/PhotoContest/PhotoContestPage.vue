@@ -42,7 +42,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-12 d-lg-flex justify-content-center">
               <div class="contestant-list">
-                <div class="contestant-header row">
+                <div class="contestant-header row mb-1">
                   <div class="col-lg-10 col-md-10 col-sm-11 col-10">
                     <span class="contestant-title">
                       Contestants &nbsp;&nbsp; 

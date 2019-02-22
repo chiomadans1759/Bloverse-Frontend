@@ -30,7 +30,7 @@ exports[`Creator Apply Component should render correctly 1`] = `
       >
         <img
           class="nav-logo"
-          src="@/assets/Logo.svg"
+          src="@/assets/Bloverse.svg"
         />
       </a>
     </span>
@@ -385,7 +385,8 @@ exports[`Creator Apply Component should render correctly 1`] = `
             >
               Terms
             </a>
-            and
+            
+              and
             
             <a
               class="sign-up-link-text"
@@ -480,7 +481,9 @@ exports[`Creator Apply Component should render correctly 1`] = `
               data-dismiss="modal"
               type="button"
             >
+              
               Close
+            
             </button>
              
             <button

@@ -5,7 +5,7 @@
       data-reference="parent"
     >
       <p class="country">
-        <img src="@/assets/france.svg" alt="fr">
+        <span class="flag-icon flag-icon-fr rounded-circle mr-1"></span>
         France
         <i class="fal fa-angle-down"></i>
       </p>
@@ -26,27 +26,27 @@
           </p>
           <p class="dropdown-item subheader">All</p>
           <p class="dropdown-item country">
-            <img src="@/assets/mexico.svg" alt="fr">
-            Mexico
+            <span class="flag-icon flag-icon-mx rounded-circle mr-1"></span>
+            Mexicoss
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/US.svg" alt="fr">
+            <span class="flag-icon flag-icon-us rounded-circle mr-1"></span>
             USA
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/nigeria.svg" alt="fr">
+            <span class="flag-icon flag-icon-ng rounded-circle mr-1"></span>
             Nigeria
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/mexico.svg" alt="fr">
+            <span class="flag-icon flag-icon-mx rounded-circle mr-1"></span>
             Mexico
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/US.svg" alt="fr">
+            <span class="flag-icon flag-icon-us rounded-circle mr-1"></span>
             USA
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/nigeria.svg" alt="fr">
+            <span class="flag-icon flag-icon-fr rounded-circle mr-1"></span>
             Nigeria
           </p>
         </div>
@@ -55,31 +55,31 @@
             Other Country
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/mexico.svg" alt="fr">
+            <span class="flag-icon flag-icon-mx rounded-circle mr-1"></span>
             Mexico
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/US.svg" alt="fr">
+            <span class="flag-icon flag-icon-us rounded-circle mr-1"></span>
             USA
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/nigeria.svg" alt="fr">
+            <span class="flag-icon flag-icon-ng rounded-circle mr-1"></span>
             Nigeria
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/mexico.svg" alt="fr">
+            <span class="flag-icon flag-icon-mx rounded-circle mr-1"></span>
             Mexico
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/US.svg" alt="fr">
+            <span class="flag-icon flag-icon-us rounded-circle mr-1"></span>
             USA
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/nigeria.svg" alt="fr">
+            <span class="flag-icon flag-icon-ng rounded-circle mr-1"></span>
             Nigeria
           </p>
           <p class="dropdown-item country">
-            <img src="@/assets/nigeria.svg" alt="fr">
+            <span class="flag-icon flag-icon-ng rounded-circle mr-1"></span>
             Nigeria
           </p>
         </div>
@@ -88,6 +88,8 @@
   </main>
 </template>
 <script>
+import 'flag-icon-css/css/flag-icon.css';
+
 export default {
   name: 'CountryOptions',
   props: {

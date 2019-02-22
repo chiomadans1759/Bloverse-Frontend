@@ -93,7 +93,7 @@
         </div>
 
         <!-- view navigation -->
-        <div class="border-bottom mx-4 d-none d-sm-block">
+        <div v-if="!noSavedPost" class="border-bottom mx-4 d-none d-sm-block">
           <nav class="navbar navbar-expand-lg navbar-light bg-white
             justify-content-end profile-navbar"
           >
@@ -123,62 +123,93 @@
             </div>
           </nav>
         </div>
-        <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex flex-wrap">
-          <div class="col-lg-6 col-md-6 my-2">
-            <recommendation-card type="consumer" customClass="profile-card"/>
+
+        <div v-if="!showPrevRead">
+          <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex flex-wrap">
+            <div class="col-lg-6 col-md-6 my-2">
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
+            </div>
+            <div class="col-lg-6 col-md-6 my-2">
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
+            </div>
+            <div class="col-lg-6 col-md-6 my-2">
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
+            </div>
+            <div class="col-lg-6 col-md-6 my-2">
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
+            </div>
+            <div class="col-lg-6 col-md-6 my-2">
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
+            </div>
+            <!-- list view ends  -->
           </div>
-          <div class="col-lg-6 col-md-6 my-2">
-            <recommendation-card type="consumer" customClass="profile-card"/>
+
+          <!-- list view -->
+            <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
+              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+              <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+            </div>
+            <!-- list view ends  -->
           </div>
-          <div class="col-lg-6 col-md-6 my-2">
-            <recommendation-card type="consumer" customClass="profile-card"/>
-          </div>
-          <div class="col-lg-6 col-md-6 my-2">
-            <recommendation-card type="consumer" customClass="profile-card"/>
-          </div>
-          <div class="col-lg-6 col-md-6 my-2">
-            <recommendation-card type="consumer" customClass="profile-card"/>
-          </div>
-          <!-- list view ends  -->
-        </div>
         <!-- read-later content ends -->
 
         <!-- previously-read content -->
-        <div v-if="showPrevRead" class="d-none d-sm-block">
+        <div v-else class="d-none d-sm-block">
           <!-- grid view  -->
           <div v-if="!showListView" class="row m-4 p-2 d-none d-sm-flex">
             <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
             <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
             <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
             <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
             <div class="col-lg-6 my-2">
-              <recommendation-card type="consumer"/>
+              <recommendation-card type="consumer" customClass="profile-card" :isConsumer="true"/>
             </div>
           </div>
           <!-- grid view ends -->
 
           <!-- list view -->
           <div v-if="showListView" class="col-lg-12 my-2 d-none d-sm-block">
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
-            <post-card :hideCardBorder="hideCardBorder" />
+            <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+            <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+            <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+            <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
+            <post-card :hideCardBorder="hideCardBorder" :isConsumer="true" />
           </div>
           <!-- list view ends  -->
         </div>
         <!-- previously-read content ends -->
 
+        <!-- no-saved-posts -->
+        <div v-if="noSavedPost"
+          class="d-flex no-saved-posts justify-content-center align-items-center"
+        >
+          <div class="no-saved-posts__msg">
+            <p class="bookmark mb-4">
+              <i class="fal fa-bookmark bookmark-img"></i>
+            </p>
+            <p class="font-weight-bold mb-1 message">
+              You have not saved any articles yet.
+            </p>
+            <p class="message">
+              Save you favourite articles so you can read them when you're ready.
+            </p>
+          </div>
+        </div>
+        <!-- no-saved-posts ends -->
+
         <!-- mobile view -->
-        <div class="row d-sm-none">
+        <div  v-if="!noSavedPost" class="row d-sm-none">
           <post-cards v-if="showMobileProfile" :hideCardBorder="hideCardBorder" />
           <user-info-mobile v-if="!showMobileProfile"
             :hideMobileUserInfo="hideMobileUserInfo"
@@ -215,6 +246,7 @@ export default {
       hideCardBorder: true,
       showPrevRead: false,
       showMobileProfile: true,
+      noSavedPost: false,
     }
   },
   methods: {
@@ -223,9 +255,11 @@ export default {
     },
     togglePrevRead() {
       this.showPrevRead = true;
+      this.noSavedPost = false;
     },
     toggleReadLater() {
       this.showPrevRead = false;
+      this.noSavedPost = true;
     },
     showMobileUserInfo() {
       this.showMobileProfile = false;

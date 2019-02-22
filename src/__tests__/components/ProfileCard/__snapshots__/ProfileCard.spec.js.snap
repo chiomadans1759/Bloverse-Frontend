@@ -11,7 +11,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
   />
    
   <div
-    class="profile-edit-icon d-flex justify-content-between p-3"
+    class="d-flex justify-content-between p-3"
   >
     <span
       class="d-inline d-sm-none bl-back-arrow"
@@ -20,7 +20,11 @@ exports[`ProfileCard Component should render correctly 1`] = `
         class="fal fa-long-arrow-left fa-2x back-arrow"
       />
     </span>
-     
+  </div>
+   
+  <div
+    class="d-flex justify-content-end profile-edit-icon pr-2"
+  >
     <i
       class="fal fa-user-edit fa-2x"
     />
@@ -31,14 +35,14 @@ exports[`ProfileCard Component should render correctly 1`] = `
   >
     <img
       alt="..."
-      class="profile-img rounded"
+      class="profile-img rounded-circle"
       src="@/assets/Avatar2.png"
     />
      
     <span
       class="profile-name pl-3"
     >
-      Johndoe
+      Username
     </span>
   </div>
    
@@ -48,7 +52,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
     <h5
       class="card-title"
     >
-      John Doe
+      Full Name
     </h5>
      
     <p
@@ -128,7 +132,9 @@ exports[`ProfileCard Component should render correctly 1`] = `
       <div
         class="header d-flex justify-content-between "
       >
-        <h5>
+        <h5
+          class=""
+        >
           <strong>
             Interest
           </strong>
@@ -146,11 +152,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
       <div
         class="mt-1"
       >
-        <p
-          class="category-title"
-        >
-          Lorem ipsum dolor sit amet
-        </p>
+        <!---->
          
         <div
           class="category-list d-flex flex-wrap mt-2"
@@ -218,13 +220,25 @@ exports[`ProfileCard Component should render correctly 1`] = `
   <div
     class="social p-3"
   >
-    <h5
-      class="mb-2"
+    <div
+      class="d-flex justify-content-between"
     >
-      <strong>
-        Social Media
-      </strong>
-    </h5>
+      <h6
+        class="mb-3"
+      >
+        <strong>
+          Social Media
+        </strong>
+      </h6>
+       
+      <span
+        class="edit-icon"
+      >
+        <i
+          class="fal fa-edit mr-2"
+        />
+      </span>
+    </div>
      
     <div
       class="d-flex flex-wrap"
@@ -314,6 +328,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
   <div
     class="card-footer text-muted bg-white footer-color"
   >
+    
     Member Since:
     
     <span
@@ -419,6 +434,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         24
                       </span>
                        Followers
+            
                     </span>
                      
                     <span>
@@ -428,6 +444,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         234
                       </span>
                        Articles
+            
                     </span>
                   </p>
                 </div>
@@ -486,6 +503,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         24
                       </span>
                        Followers
+            
                     </span>
                      
                     <span>
@@ -495,6 +513,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         234
                       </span>
                        Articles
+            
                     </span>
                   </p>
                 </div>
@@ -553,6 +572,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         24
                       </span>
                        Followers
+            
                     </span>
                      
                     <span>
@@ -562,6 +582,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         234
                       </span>
                        Articles
+            
                     </span>
                   </p>
                 </div>

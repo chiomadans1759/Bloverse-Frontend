@@ -33,7 +33,7 @@ exports[`Terms And Conditions should render correctly 1`] = `
       <br />
        
       <div
-        class="navigation-ba"
+        class="navigation-bar"
       >
         <ul
           class="nav nav-tabs mb-3 justify-content-left"
