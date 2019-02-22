@@ -5,10 +5,6 @@ export default {
   state: {
     categories: null,
     countries: null,
-    activeCategory: {
-      id: '',
-      name: 'All'
-    },
     activeFeedLayout: 'grid',
     applicants: [],
     publishedPosts: [],

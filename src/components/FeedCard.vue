@@ -7,7 +7,7 @@
 
       <div class="col-9 py-1">
         <h5 class="card-category text-secondary mb-2">{{ category }}</h5>
-        <router-link :to="`posts/${post.slug}`" class="post-title">
+        <router-link :to="`/posts/${post.slug}`" class="post-title">
           <h4><b>{{ post.title }}</b></h4>
         </router-link>
 

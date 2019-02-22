@@ -143,6 +143,11 @@ export default {
     await this.getAllTrendingPosts();
   },
   async created() {
+    // eslint-disable-next-line 
+    $('.carousel').carousel({
+      interval: 2000
+    })
+
     setInterval(async () => {
       await this.getAllTrendingPosts();
     }, 100000);
@@ -156,14 +161,6 @@ export default {
         cat.id == cat_id;
       });
       return ct.name;
-    },
-
-    reduceText(text) {
-      if (text.length > 50) {
-        return text.substring(0, 50) + "...";
-      } else {
-        return text;
-      }
     }
   }
 };

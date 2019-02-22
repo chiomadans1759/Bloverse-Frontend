@@ -5,18 +5,18 @@
       <div class="card-body px-0">
         <div class="container">
           <h5 class="card-title">{{category}}</h5>
-          <router-link class="post-title" :to="`posts/${post.slug}`">
-            <b class="card-text">
+          <h4 class="text-bold card-text" style="font-weight: bold;">
+            <router-link class="post-title" :to="`posts/${post.slug}`">
               {{post.title | truncate(50)}}
-            </b>
-          </router-link>
+            </router-link>
+          </h4>
           <div class="row author mt-4">
             <div class="col-2">
               <img class="rounded-circle mr-3 mt-1" :src="post.author.image_url" alt>
             </div>
 
             <div class="col-10 pt-2">
-              <span class="ml-2" id="desktop">
+              <span class="ml-2">
                 {{`${post.author.first_name} ${post.author.last_name}` | truncate(30)}}
               </span>
             </div>

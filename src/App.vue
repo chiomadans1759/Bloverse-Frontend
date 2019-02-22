@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
-import TheModal from "@/components/TheModal";
-import LoadingIcon from "@/components/Loading";
+import { mapActions, mapState } from "vuex"
+import TheModal from "@/components/TheModal"
+import LoadingIcon from "@/components/Loading"
 
 export default {
   name: "app",
@@ -27,10 +27,5 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Comfortaa|Montserrat");
 @import url("./assets/css/bootstrap.min.css");
-
-#app {
-  font-family: "Montserrat", sans-serif;
-}
 </style>

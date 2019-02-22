@@ -4,18 +4,13 @@
 
     <div class="mb-3">
       <h4 class="font-weight-bold text-uppercase">get inspired</h4>
-      <p>Stories about our world today.</p>
+      <p class="text-capitalize">
+        Inspiring stories about our world today.
+      </p>
     </div>
     
     <transition-group name="slide-fade">
-      <div class="card" v-if="!general.publishedPosts.length">
-        <div class="card-body">
-          <img src="@/assets/image.svg" alt class="col-md-3">
-          <span class="col-md-8">No content for this filter result yet!</span>
-        </div>
-      </div>
-
-      <div v-else v-for="post in general.publishedPosts" :key="post.id">
+      <div v-for="post in general.publishedPosts" :key="post.id">
         <FeedCard :post="post"/>
       </div>
     </transition-group>

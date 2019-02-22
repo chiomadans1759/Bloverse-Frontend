@@ -3,26 +3,34 @@
     <section>
       <ul class="list-unstyled">
         <li>
-          <div class="row text-primary">
-            <div class="col-2">
-              <i class="fal fa-home"></i>
-            </div>
+          <router-link to="/">
+            <div
+              :class="{ 'row': true, 'text-dark': currentRoute != '/', 'text-primary':  currentRoute == '/'}"
+            >
+              <div class="col-2">
+                <i class="fal fa-home"></i>
+              </div>
 
-            <div class="col-10">
-              <span>Home</span>
+              <div class="col-10">
+                <span>Home</span>
+              </div>
             </div>
-          </div>
+          </router-link>
         </li>
         <li>
-          <div class="row">
-            <div class="col-2">
-              <i class="fal fa-fire"></i>
-            </div>
+          <router-link to="/feeds/trending">
+            <div
+              :class="{ 'row': true, 'text-dark': currentRoute != '/feeds/trending', 'text-primary':  currentRoute == '/feeds/trending'}"
+            >
+              <div class="col-2">
+                <i class="fal fa-fire"></i>
+              </div>
 
-            <div class="col-10">
-              <span>Trending</span>
+              <div class="col-10">
+                <span>Trending</span>
+              </div>
             </div>
-          </div>
+          </router-link>
         </li>
       </ul>
     </section>
@@ -32,7 +40,11 @@
 
       <ul class="list-unstyled">
         <li v-for="cat in categories" :key="cat.id">
-          <div class="row">
+          <div
+            :class="{ 'row': true, 'text-primary': active_category.name == cat.name }"
+            @click.prevent="filterCategory(cat.id, cat.name)"
+            id="click-item"
+          >
             <div class="col-2">
               <i class="fal fa-clipboard-list" v-show="cat.name == 'All'"></i>
               <i class="fal fa-business-time" v-show="cat.name == 'Business'"></i>
@@ -55,7 +67,7 @@
             </div>
 
             <div class="col-10">
-              <span @click.prevent="filterCategory(cat.id, cat.name)">{{cat.name}}</span>
+              <span>{{cat.name}}</span>
             </div>
           </div>
         </li>
@@ -66,7 +78,7 @@
           v-show="categories.length == 4"
         >
           <i class="fal fa-plus"></i>
-					&nbsp;
+          &nbsp;
           <span>Show More</span>
         </li>
         <li
@@ -76,7 +88,7 @@
           v-show="categories.length > 4"
         >
           <i class="fal fa-minus"></i>
-					&nbsp;
+          &nbsp;
           <span>Show Less</span>
         </li>
       </ul>
@@ -87,7 +99,11 @@
 
       <ul class="list-unstyled">
         <li v-for="(country, index) in countries" :key="index">
-          <div class="row">
+          <div
+            :class="{ 'row': true, 'text-primary': active_country.name == country.name }"
+            @click.prevent="filterCountry(country)"
+            id="click-item"
+          >
             <div class="col-2">
               <i class="fal fa-flag" v-show="country.name == 'All'"></i>
               <img
@@ -208,7 +224,7 @@
             </div>
 
             <div class="col-10">
-              <span @click.prevent="filterCountry(country)">{{country.name}}</span>
+              <span>{{country.name}}</span>
             </div>
           </div>
         </li>
@@ -219,7 +235,7 @@
           v-show="countries.length == 4"
         >
           <i class="fal fa-plus"></i>
-					&nbsp;
+          &nbsp;
           <span>Show More</span>
         </li>
         <li
@@ -229,7 +245,7 @@
           v-show="countries.length > 4"
         >
           <i class="fal fa-minus"></i>
-					&nbsp;
+          &nbsp;
           <span>Show Less</span>
         </li>
       </ul>
@@ -249,7 +265,7 @@ export default {
       categories: {},
       countries: {},
       active_country: {
-        name: "",
+        name: "All",
         id: ""
       },
       active_category: {
@@ -273,12 +289,21 @@ export default {
       this.categories = this.general.categories.slice(0, number);
     },
 
+    routeToHome() {
+      let path = this.$route.path;
+      if (path != "/") {
+        this.$router.push("/");
+      }
+    },
+
     filterCountry(country) {
-      this.active_country = country;
+      this.active_country.name = country.name;
+      this.active_country.id = country.id;
       this.filterPosts({
         category: this.active_category.id || "",
-        country: this.country.id
+        country: country.id
       });
+      this.routeToHome();
     },
 
     countryList(number = 4) {
@@ -293,6 +318,7 @@ export default {
         country: this.active_country.id
       });
       this.active_category = { id, name };
+      this.routeToHome();
     }
   },
   created() {
@@ -301,6 +327,10 @@ export default {
   },
   computed: {
     ...mapState(["general"]),
+
+    currentRoute() {
+      return this.$route.path;
+    },
 
     categoryName() {
       if (this.category) {
@@ -360,6 +390,14 @@ export default {
 
 #feed-side-bar #show-more {
   cursor: pointer;
+}
+
+#feed-side-bar #click-item {
+  cursor: pointer;
+}
+
+#feed-side-bar #click-item:hover {
+  color: #096dd9;
 }
 </style>
 

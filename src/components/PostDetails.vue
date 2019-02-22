@@ -1,46 +1,65 @@
 <template>
-  <main class="card p-0" id="post-details">
-    <section v-if="!post">
+  <main id="post-details">
+    <section v-if="post == null || post == undefined">
       <img src="@/assets/placeholders/post.svg" alt="">
     </section>
 
-    <section v-else>
-      <div class="card-header border-0">
-        <div class="row pt-4">
-          <div class="col">
-            <h5 class="card-header-title text-uppercase" v-if="show">{{category.name}}</h5>
-          </div>
-          <div class="col-auto">
-            <h6
-              class="text-secondary text-uppercase"
-            >{{post.created | customizedTime}}</h6>
-          </div>
+    <section class="row">
+      <div class="col-md-12">
+        <div class="mb-3">
+          <h5 class="mb-1 text-secondary">{{category.name}}</h5>
+          <h1 class="post-title">{{post.title}}</h1>
+        </div>
+        <img class="post-img" :src="post.image_url">
+      </div>
+
+      <div class="col-md-12 py-3">
+        <div class="details-sec-two mb-5">
+          <ul class="list-unstyled mt-4" v-if="post.category == 7">
+            <li class="text-secondary mb-1">
+              Device Used: {{post.device_type}}
+            </li>
+            <li class="text-secondary">
+              Location: {{post.location}}
+            </li>
+          </ul>
+
+          <ul class="post-keypoints mt-4 ml-4" v-else>
+            <li
+              class="text-secondary my-3"
+              v-for="point in post.keypoint"
+              :key="point.id"
+            >{{point}}</li>
+          </ul>
         </div>
       </div>
-      
-      <div class="card-body">
-        <img class="post-img" :src="post.image_url">
 
-        <h1 class="post-title mt-4">{{post.title}}</h1>
-        <ul class="list-unstyled mt-4" v-if="post.category == 7">
-          <li class="text-muted mb-1">
-            <i class="fas fa-camera-retro"></i>
-            Device Used: {{post.device_type}}
-          </li>
-          <li class="text-muted">
-            <i class="fas fa-map-marker-alt"></i>
-            Location: {{post.location}}
-          </li>
-        </ul>
-        <ul class="post-keypoints mt-4" v-else>
-          <li
-            v-for="point in post.keypoint"
-            :key="point.id"
-            v-if="point"
-          >{{point}}</li>
-        </ul>
-        <div class="post-content">
-          <div class="post-content-body" v-html="post.body"></div>
+      <div class="col-12 post-content-body text-dark" v-html="post.body"></div>
+
+      <div class="col-12 mt-5 pt-5 text-center">
+        <h3 class="text-uppercase mb-3">
+          Posted {{post.created | customizedTime}} by:
+        </h3>
+
+        <div class="authors-img">
+          <img :src="post.author.image_url" alt="Author's Image" class="rounded-circle">
+        </div>
+
+        <div class="pt-2">
+          <h3 class="mt-1">{{post.author.first_name}} {{post.author.last_name}}</h3>
+          <h5 class="author-email mt-1">{{post.author.email}}</h5>
+        </div>
+
+        <div class="col-12 text-center mt-3 pt-5">
+          <div class="row" style="padding: 0rem 20rem;">
+            <div class="col pt-1">
+              <h3 class="mt-2">Sharing is caring:</h3>
+            </div>
+
+            <div class="col-auto">
+              <social-buttons :slug="slug" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -48,11 +67,13 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from "vuex"
+import SocialButtons from '@/components/SocialButtons'
 
 export default {
   name: "post-details",
   props: ["post"],
+  components: { SocialButtons },
   data() {
     return {
       show: false,
@@ -82,64 +103,27 @@ export default {
 </script>
 
 <style scoped>
-.post-content-body {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: space-between;
-  object-fit: contain;
-}
-.post-content-body img {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  object-fit: contain;
-}
-#post-details .card-header {
-  width: 100%;
-}
-#post-details .card-header .card-header-title {
-  display: block;
-}
 #post-details .post-img {
   width: 100%;
-  height: auto;
+  max-height: 30rem;
   margin-bottom: 1rem;
   object-fit: cover;
 }
-.card-body {
-  margin-top: -1rem;
+
+#post-details .details-sec-two ul li {
+  font-size: 16px;
 }
-#post-details .img-descrip {
-  color: #aaaaaa;
-  font-size: 11px;
+
+#post-details .details-sec-three  .author-email {
+  font-size: 13px;
 }
-#post-details .post-cat {
-  color: #666666;
-  font-size: 12px;
-  padding-bottom: 16px;
-  text-transform: uppercase;
-  font-weight: bold;
+
+#post-details .post-content-body {
+  font-size: 18px;
 }
-#post-details .date-cat {
-  color: #aaaaaa;
-  font-size: 10px;
-  padding-bottom: 16px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-#post-details .post-keypoints li {
-  list-style-type: circle;
-  margin-left: 2rem;
-  margin-top: 0.7rem;
-  color: #aaaaaa;
-}
-#post-details .post-content {
-  padding: 3rem 0rem;
-}
-@media only screen and (max-width: 980px) {
-  #post-details .card {
-    margin-top: 3rem;
-  }
+
+#post-details .authors-img img {
+  width: 100px;
+  height: 100px;
 }
 </style>

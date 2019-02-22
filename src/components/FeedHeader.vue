@@ -15,7 +15,7 @@
               to="/creators/photocontest"
               class="btn btn-link text-uppercase text-dark"
             >photo contest</router-link>
-            <login-button class="mr-3 text-uppercase text-dark"/>
+            <login-button class="mr-2 text-uppercase text-dark"/>
             <router-link to="/creators" class="btn btn-primary text-uppercase">create</router-link>
           </div>
         </div>
@@ -108,8 +108,9 @@ export default {
   background-color: #ffffff;
   border-bottom: 1px solid #f5f5f5;
   padding-top: 0.6rem;
-  z-index: 3000;
+  z-index: 1000;
   top: 0;
+  /* font-family: 'Times New Roman', Times, serif; */
 }
 
 #feed-header .cat-list a {
