@@ -10,7 +10,7 @@
         <i class="fal fa-arrow-left back-icon"></i>
       </div>
       </a>
-      <span class="back-text">Back</span>
+      <span v-if="showBackArrow" class="back-text">Back</span>
       <router-link to="/" class="router-link">
         <img class="nav-logo" v-if="!isTransparent" src="@/assets/Bloverse.svg">
         <img class="nav-logo" v-if="isTransparent" src="@/assets/Bloverse-white.svg">

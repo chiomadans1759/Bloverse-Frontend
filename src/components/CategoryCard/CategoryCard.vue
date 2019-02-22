@@ -63,7 +63,7 @@ export default {
     showSubtitle: {
       type: Boolean,
       required: false,
-      default: true,
+      default: false,
     },
     addPadding: {
       type: Boolean,
