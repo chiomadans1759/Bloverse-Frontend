@@ -129,6 +129,7 @@ export default {
 <style scoped>
 #auth-sign-in {
   width: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #auth-sign-in .row {

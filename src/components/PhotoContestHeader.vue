@@ -14,7 +14,7 @@
               <router-link to="/creators/photocontest" class="btn btn-link text-uppercase text-white">
               photo contest
               </router-link>
-            <login-button class="pt-2 mr-3 text-white" />
+            <login-button class="pt-2 mr-3 text-white text-uppercase" />
             <router-link to="/creators" class="btn btn-white btn-sm text-uppercase">
               create
             </router-link>

@@ -208,6 +208,7 @@ export default {
 #photo-contest {
   font-size: 1rem;
   line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
 }
 section {
   margin: 7rem 0;

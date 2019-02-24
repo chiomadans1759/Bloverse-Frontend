@@ -70,14 +70,16 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
-import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share";
+import { mapState, mapActions } from "vuex"
+import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share"
+import SocialButtons from "@/components/SocialButtons.vue"
 
 export default {
   components: {
     Facebook,
     Twitter,
-    Linkedin
+    Linkedin,
+    SocialButtons
   },
   data: function() {
     return {
