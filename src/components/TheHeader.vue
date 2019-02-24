@@ -11,17 +11,6 @@
 
         <div class="col-auto">
           <div v-if="!auth.loggedInUser">
-            <!-- <div class="dropdown" id="mobile-dropdown">
-              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-ellipsis-h-alt"></i>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <router-link to="/creators/photocontest" class="btn btn-link text-uppercase dropdown-item">
-                  photo contest
-                </router-link>
-                <login-button class="pt-2 mr-3 dropdown-item" /> 
-              </div>
-            </div> -->
             <router-link to="/creators/photocontest" class="btn btn-link text-uppercase">
               photo contest
             </router-link>

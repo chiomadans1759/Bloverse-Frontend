@@ -7,7 +7,7 @@
 
       <div class="content">
         <transition name="fade" mode="out-in">
-          <div class="px-lg-6">
+          <div class="px-lg-6 px-xs-2">
             <router-view></router-view>
           </div>
         </transition>
@@ -50,6 +50,18 @@ export default {
   float: right !important;
   width: 82% !important;
   padding-top: 2rem;
+}
+
+@media only screen and (max-width: 980px) {
+  #general-layout .body .aside {
+    display: none;
+  }
+
+  #general-layout .body .content {
+    float: left !important;
+    width: 100% !important;
+    padding: 1rem;
+  }
 }
 </style>
 

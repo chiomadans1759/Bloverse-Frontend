@@ -3,13 +3,16 @@
     <div class="px-lg-4">
       <div class="row">
         <div class="col">
+          <span class="hidden-md mr-2 hamburger-menu">
+            <i class="fa fa-bars"></i>
+          </span>
           <router-link to="/" class="router-link">
             <img class="logo" src="@/assets/Logo.svg" style="height: 40px">
             <span class="text-secondary">beta</span>
           </router-link>
         </div>
 
-        <div class="col-auto pt-1">
+        <div class="col-auto pt-1 hidden-xs">
           <div class="float-right">
             <router-link
               to="/creators/photocontest"
@@ -18,6 +21,10 @@
             <login-button class="mr-2 text-uppercase text-dark"/>
             <router-link to="/creators" class="btn btn-primary text-uppercase">create</router-link>
           </div>
+        </div>
+
+        <div class="col-auto hidden-md pt-1">
+          <router-link to="/creators" class="btn btn-primary text-uppercase">create</router-link>
         </div>
       </div>
     </div>
@@ -125,5 +132,25 @@ export default {
 #feed-header .btn {
 	padding: 0.3rem 1rem;
 	border-radius: 2px;
+}
+
+@media only screen and (min-width: 981px) {
+  #feed-header .hidden-md {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  #feed-header {
+    padding: 1rem;
+  }
+
+  #feed-header .hamburger-menu {
+    font-size: 24px;
+  }
+
+  #feed-header .hidden-xs {
+    display: none;
+  }
 }
 </style>

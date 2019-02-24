@@ -110,10 +110,8 @@
     <div class="mobile">
       <carousel
         :autoplay="true"
-        paginationColor="#73C2FB;"
-        paginationActiveColor="#096DD9"
-        :autoplayTimeout="3000"
-      >
+        :paginationEnabled="false"
+        :autoplayTimeout="3000">
         <slide v-for="(post, index) in general.trendingPost" :key="index">
           <trending-card :post="post"/>
         </slide>

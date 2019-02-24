@@ -1,11 +1,11 @@
 <template>
   <main id="feed-card">
     <div class="row">
-      <div class="col-3">
+      <div class="col-md-3">
         <img class="rounded-0" :src="post.image_url">
       </div>
 
-      <div class="col-9 py-1">
+      <div class="col-md-9 py-1">
         <h5 class="card-category text-secondary mb-2">{{ category }}</h5>
         <router-link :to="`/posts/${post.slug}`" class="post-title">
           <h4><b>{{ post.title }}</b></h4>
@@ -102,5 +102,11 @@ export default {
 #feed-card .author-img {
   width: 25px;
   height: 25px;
+}
+
+@media only screen and (max-width: 980px) { 
+  #feed-card .card-category {
+    margin-top: 1rem;
+  }
 }
 </style>
