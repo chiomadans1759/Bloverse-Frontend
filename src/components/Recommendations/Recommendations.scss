@@ -9,7 +9,7 @@
     margin-left: 0;
   }
   .VueCarousel-slide {
-    margin: auto rem(8px);
+    margin: auto rem(2px);
   }
   &--header {
     margin: rem(16px) 0;
@@ -33,7 +33,7 @@
 
 @media screen and (min-width: 1020px) {
   .bl-recommendations {
-    margin: rem(8px) auto;
+    margin: rem(5px) auto;
     margin-bottom: rem(50px);
     height: auto;
     padding: 0;
@@ -41,7 +41,7 @@
       margin-left: 0;
     }
     .VueCarousel-slide {
-      margin: auto rem(8px);
+      margin: auto rem(2px);
     }
     &--header {
       margin: rem(16px) 0;

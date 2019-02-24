@@ -2,14 +2,43 @@
 
 .recommendation-card {
   border-radius: 0 !important;
-  height: rem(344px);
   width: rem(281px);
-  padding: rem(4px);
+  padding-bottom: rem(4px);
+  position: relative;
+
+  .card {
+    padding: 0;
+  }
+  .small-avatar {
+    width: rem(24px);
+    height: rem(24px);
+    font-size: rem(10px);
+    background: #2e8bc1;
+  }
+
+  .views {
+    color: #565656;
+  }
+
+  .icon-circle {
+    width: rem(24px) !important;
+    height: rem(24px) !important;
+  
+    &__active {
+      background: #cbcbcb;
+    }
+  }
   .card-body {
     padding: rem(12px);
     .card-title {
       color: #868686;
       font-size: rem(14px);
+      position: absolute;
+      top: rem(10px);
+      right: rem(10px);
+      background: #ffffff;
+      padding: rem(2px);
+      border-radius: rem(2px);
     }
   }
 
@@ -17,44 +46,24 @@
   width: 100%;
   border: none !important;
   margin: rem(0px);
+  object-fit: cover;
   }
 
   &>img {
     border-radius: 0 !important;
+    height: rem(136px);
   }
   &--content {
-    height: rem(65px);
     &__text {
-      height: 60%;
       overflow: hidden;
        a{
           color: #333333;
         }
     }
     &__username {
-      margin: rem(8px) auto;
-      .initials {
-        height: rem(16px);
-        width: rem(16px);
-        font-size: rem(10px);
-        text-align: center;
-        padding: 0;
-        padding-top: rem(1.5px);
-        padding-bottom: rem(1.5px);
-        background-color: #868686;
-        border: none;
-      }
-      .initials {
-        height: rem(16px);
-        width: rem(16px);
-        font-size: rem(10px);
-        text-align: center;
-        padding: 0;
-        padding-top: rem(2.5px);
-        padding-bottom: rem(1.5px);
-        background-color: #868686;
-        border: none;
-      }
+      display: flex;
+      justify-content: start;
+      align-items: center;
       .name {
         color: #565656;
         font-weight: 500;
@@ -73,27 +82,16 @@
     }
   }
   .actions {
-    height: rem(21px);
-    margin: rem(12px) auto;
+    margin: rem(12px) 0;
     margin-bottom: 0;
     .count {
       margin: rem(7px);
       color: #252525;
     }
-    .views {
-      color: #868686;
-      padding: 0;
-      cursor: pointer;
-    }
     .others {
       margin:0;
       padding: 0;
       .likes {
-        border-right: rem(1px) solid #e6e5e5;
-        padding: 0;
-        display: inline-flex;
-        justify-content: space-around;
-        color: #2F80ED;
         .thumbs-up, .thumbs-down {
           cursor: pointer;
         }
@@ -227,9 +225,8 @@
   }
   .recommendation-card {
     border-radius: 0 !important;
-    height: rem(344px);
     width: rem(281px);
-    padding: rem(4px);
+    padding-bottom: rem(4px);
     .card-body {
       padding: rem(12px);
       .card-title {
@@ -240,37 +237,13 @@
       border-radius: 0 !important;
     }
     &--content {
-      height: rem(65px);
       &__text {
-        height: 60%;
         overflow: hidden;
         font-size: rem(14px);
         color: #303030;
       }
       &__username {
-        margin: rem(8px) auto;
-        .initials {
-          height: rem(16px);
-          width: rem(16px);
-          font-size: rem(10px);
-          text-align: center;
-          padding: 0;
-          padding-top: rem(1.5px);
-          padding-bottom: rem(1.5px);
-          background-color: #868686;
-          border: none;
-        }
-        .initials {
-          height: rem(16px);
-          width: rem(16px);
-          font-size: rem(10px);
-          text-align: center;
-          padding: 0;
-          padding-top: rem(2.5px);
-          padding-bottom: rem(1.5px);
-          background-color: #868686;
-          border: none;
-        }
+        
         .name {
           color: #565656;
           font-weight: 500;
@@ -289,8 +262,7 @@
       }
     }
     .actions {
-      height: rem(21px);
-      margin: rem(12px) auto;
+      margin: rem(12px) 0;
       margin-bottom: 0;
       .count {
         margin: rem(7px);
@@ -305,10 +277,6 @@
         margin:0;
         padding: 0;
         .likes {
-          border-right: rem(1px) solid #e6e5e5;
-          padding: 0;
-          display: inline-flex;
-          justify-content: space-around;
           .thumbs-up, .thumbs-down {
             cursor: pointer;
           }
