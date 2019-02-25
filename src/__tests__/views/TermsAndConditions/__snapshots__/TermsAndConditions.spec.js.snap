@@ -28,14 +28,15 @@ exports[`Terms And Conditions should render correctly 1`] = `
       </p>
     </div>
      
-    <div
-      class="terms-content border mt-4 container p-0"
-    >
+    <div>
+      <br />
+      <br />
+       
       <div
         class="navigation-bar"
       >
         <ul
-          class="nav nav-tabs mb-3 justify-content-center"
+          class="nav nav-tabs mb-3 justify-content-left"
           id="pills-tab"
           role="tablist"
         >
@@ -72,7 +73,11 @@ exports[`Terms And Conditions should render correctly 1`] = `
           </li>
         </ul>
       </div>
-       
+    </div>
+     
+    <div
+      class="terms-content border mt-4 container p-0"
+    >
       <div
         class="tab-content"
         id="terms-tab"

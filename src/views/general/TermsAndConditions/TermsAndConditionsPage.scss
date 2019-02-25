@@ -80,6 +80,8 @@ nav {
 }
 
 .nav-link.active {
+  font-weight: 900 !important;
+  background: transparent !important;
   border-bottom: 0.0625rem solid #004ded !important;
 }
 
