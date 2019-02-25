@@ -14135,6 +14135,19 @@ exports[`Homepage Component should render correctly 1`] = `
           </p>
         </div>
       </div>
+       
+      <main
+        class="d-block d-md-none"
+        id="bl-creator-add"
+      >
+        <div
+          class="button-container text-center"
+        >
+          <i
+            class="fas fa-plus icon"
+          />
+        </div>
+      </main>
     </div>
   </div>
 </main>

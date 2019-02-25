@@ -214,6 +214,7 @@
             <p class="row company-rights text-capitalize">2019 Bloverse. All Right Reserved</p>
           </div>
         </div>
+        <creator-publish-icon class="d-block d-md-none" />
       </div>
     </div>
   </main>
@@ -224,6 +225,7 @@ import PostCards from "@/components/PostCards/PostCards";
 import Trends from "@/components/Trends/Trends";
 import PhotoContest from "@/components/PhotoContestCards/PhotoContest";
 import CountryOptions from "@/components/CountryOptions/CountryOptions";
+import CreatorPublishIcon from '@/components/CreatorPublishIcon/CreatorPublishIcon';
 
 export default {
   name: "ConsumerHomePage",
@@ -232,6 +234,7 @@ export default {
     Trends,
     PhotoContest,
     CountryOptions,
+    CreatorPublishIcon,
   },
   data() {
     return {
