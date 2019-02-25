@@ -47,8 +47,7 @@ main.card {
 }
 
 #number {
-  border: rem(1px) solid #3d98eb !important;
-  color: #3d98eb;
+  font-size: rem(10px);
   cursor: pointer;
 }
 
@@ -159,10 +158,9 @@ main.card {
   }
 
   #number {
-    border: rem(1px) solid #3d98eb !important;
-    background-color: #3d98eb;
     color: #ffffff;
     cursor: pointer;
+    font-size: rem(10px);
   }
   
   .profile {

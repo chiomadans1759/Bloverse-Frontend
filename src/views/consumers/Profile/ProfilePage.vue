@@ -28,19 +28,6 @@
               <div class="robot-image"></div>
             </div>
           </div>
-           <div class="bl-footer">
-            <div class="row company-name d-flex justify-content-center align-items-center">
-              <div class="col-sm-3 text-lowercase">bloverse</div>
-              <p class="col-sm-9">
-                <span class="text-capitalize dots">terms</span>
-                <span class="text-capitalize dots">privacy</span>
-                <span class="text-capitalize">feedback</span>
-              </p>
-            </div>
-            <p class="row company-rights text-capitalize">
-              2018 Bloverse. All Right Reserved
-            </p>
-          </div>
         </div>
       </div>
 
@@ -68,8 +55,8 @@
                 >
                   <router-link to="#" class="nav-link px-0">
                     Read Later
-                    <span class="border rounded px-1 ml-2"
-                    :class="{'number': showPrevRead, 'number--active': !showPrevRead}"
+                    <span class="badge ml-1"
+                    :class="{'badge-secondary': showPrevRead, 'badge-primary': !showPrevRead}"
                     >
                       5
                     </span>
@@ -81,8 +68,8 @@
                 >
                   <router-link to="#" class="nav-link px-0">
                     Previously Read
-                    <span class="border rounded px-1 ml-2"
-                      :class="{'number': !showPrevRead, 'number--active': showPrevRead}"
+                    <span class="badge ml-1"
+                      :class="{'badge-secondary': !showPrevRead, 'badge-primary': showPrevRead}"
                     >
                       13
                     </span>

@@ -129,7 +129,7 @@ exports[`Profile Component should render correctly 1`] = `
               </a>
                
               <span
-                class="border rounded px-1 mx-2"
+                class="badge badge-primary p-1 mx-2"
                 data-toggle="modal"
                 href="#following-modal"
                 id="number"
@@ -707,50 +707,6 @@ exports[`Profile Component should render correctly 1`] = `
             />
           </div>
         </div>
-         
-        <div
-          class="bl-footer"
-        >
-          <div
-            class="row company-name d-flex justify-content-center align-items-center"
-          >
-            <div
-              class="col-sm-3 text-lowercase"
-            >
-              bloverse
-            </div>
-             
-            <p
-              class="col-sm-9"
-            >
-              <span
-                class="text-capitalize dots"
-              >
-                terms
-              </span>
-               
-              <span
-                class="text-capitalize dots"
-              >
-                privacy
-              </span>
-               
-              <span
-                class="text-capitalize"
-              >
-                feedback
-              </span>
-            </p>
-          </div>
-           
-          <p
-            class="row company-rights text-capitalize"
-          >
-            
-            2018 Bloverse. All Right Reserved
-          
-          </p>
-        </div>
       </div>
     </div>
      
@@ -798,7 +754,7 @@ exports[`Profile Component should render correctly 1`] = `
                   Read Later
                   
                   <span
-                    class="border rounded px-1 ml-2 number--active"
+                    class="badge ml-1 badge-primary"
                   >
                     
                     5
@@ -823,7 +779,7 @@ exports[`Profile Component should render correctly 1`] = `
                   Previously Read
                   
                   <span
-                    class="border rounded px-1 ml-2 number"
+                    class="badge ml-1 badge-secondary"
                   >
                     
                     13
@@ -933,9 +889,7 @@ exports[`Profile Component should render correctly 1`] = `
                       class="btn btn-sm bg-white m-2 rounded-0 float-right"
                       type="button"
                     >
-                      
-        Category
-      
+                      Category
                     </button>
                   </div>
                    
@@ -950,16 +904,14 @@ exports[`Profile Component should render correctly 1`] = `
                         style="display: none;"
                         type="button"
                       >
-                        
-          Category
-        
+                        Category
                       </button>
                        
                       <h5
                         class="card-title font-weight-bold"
                       >
                         
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
                       </h5>
@@ -972,9 +924,7 @@ exports[`Profile Component should render correctly 1`] = `
                           href="#"
                           role="button"
                         >
-                          
-            JD
-          
+                          JD
                         </a>
                         
            
@@ -1017,9 +967,7 @@ exports[`Profile Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        
-          show keypoints
-        
+                        show keypoints
                       </p>
                     </div>
                   </div>
@@ -1053,7 +1001,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class=" thumbs-up"
+                        class="thumbs-up"
                         style="display: none;"
                       >
                         <span
@@ -1075,7 +1023,7 @@ exports[`Profile Component should render correctly 1`] = `
                         class="thumbs-down"
                       >
                         <span
-                          class="border rounded-circle mr-1 icons  thumbs-down-icon"
+                          class="border rounded-circle mr-1 icons thumbs-down-icon"
                         >
                           <i
                             class="fal fa-thumbs-down"
@@ -1156,6 +1104,7 @@ exports[`Profile Component should render correctly 1`] = `
                   >
                     <p
                       class="share mr-2"
+                      style="display: none;"
                     >
                       <span
                         class="border rounded-circle mr-1 icons bookmark"
@@ -1168,7 +1117,6 @@ exports[`Profile Component should render correctly 1`] = `
                      
                     <p
                       class="share mr-2"
-                      style="display: none;"
                     >
                       <span
                         class="border rounded-circle mr-1 icons bookmark clicked"
@@ -1226,16 +1174,15 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
-                              style="display: none;"
                             >
                               <i
-                                class="fal fa-times"
+                                class="fal fa-times mr-2"
                               />
                                
                               <span
                                 class="count"
                               >
-                                remove
+                                Remove
                               </span>
                             </p>
                              
@@ -1266,7 +1213,8 @@ exports[`Profile Component should render correctly 1`] = `
                                 <span
                                   class="count"
                                 >
-                                  Comment
+                                  
+                    Comment
                     
                                   <span
                                     class="badges"
@@ -1286,7 +1234,8 @@ exports[`Profile Component should render correctly 1`] = `
                                 <span
                                   class="count"
                                 >
-                                  Share
+                                  
+                    Share
                     
                                   <span
                                     class="badges"
@@ -1299,6 +1248,7 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
                             >
                               <i
                                 class="fal fa-bookmark mr-2"
@@ -1332,6 +1282,7 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-story"
+                              style="display: none;"
                             >
                               <i
                                 class="fal fa-book-open mr-2"
@@ -1346,7 +1297,6 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-story"
-                              style="display: none;"
                             >
                               <i
                                 class="fas fa-book-open mr-2"
@@ -1382,9 +1332,7 @@ exports[`Profile Component should render correctly 1`] = `
                       class="btn btn-sm bg-white m-2 rounded-0 float-right"
                       type="button"
                     >
-                      
-        Category
-      
+                      Category
                     </button>
                   </div>
                    
@@ -1399,16 +1347,14 @@ exports[`Profile Component should render correctly 1`] = `
                         style="display: none;"
                         type="button"
                       >
-                        
-          Category
-        
+                        Category
                       </button>
                        
                       <h5
                         class="card-title font-weight-bold"
                       >
                         
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
                       </h5>
@@ -1421,9 +1367,7 @@ exports[`Profile Component should render correctly 1`] = `
                           href="#"
                           role="button"
                         >
-                          
-            JD
-          
+                          JD
                         </a>
                         
            
@@ -1466,9 +1410,7 @@ exports[`Profile Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        
-          show keypoints
-        
+                        show keypoints
                       </p>
                     </div>
                   </div>
@@ -1502,7 +1444,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class=" thumbs-up"
+                        class="thumbs-up"
                         style="display: none;"
                       >
                         <span
@@ -1524,7 +1466,7 @@ exports[`Profile Component should render correctly 1`] = `
                         class="thumbs-down"
                       >
                         <span
-                          class="border rounded-circle mr-1 icons  thumbs-down-icon"
+                          class="border rounded-circle mr-1 icons thumbs-down-icon"
                         >
                           <i
                             class="fal fa-thumbs-down"
@@ -1605,6 +1547,7 @@ exports[`Profile Component should render correctly 1`] = `
                   >
                     <p
                       class="share mr-2"
+                      style="display: none;"
                     >
                       <span
                         class="border rounded-circle mr-1 icons bookmark"
@@ -1617,7 +1560,6 @@ exports[`Profile Component should render correctly 1`] = `
                      
                     <p
                       class="share mr-2"
-                      style="display: none;"
                     >
                       <span
                         class="border rounded-circle mr-1 icons bookmark clicked"
@@ -1675,16 +1617,15 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
-                              style="display: none;"
                             >
                               <i
-                                class="fal fa-times"
+                                class="fal fa-times mr-2"
                               />
                                
                               <span
                                 class="count"
                               >
-                                remove
+                                Remove
                               </span>
                             </p>
                              
@@ -1715,7 +1656,8 @@ exports[`Profile Component should render correctly 1`] = `
                                 <span
                                   class="count"
                                 >
-                                  Comment
+                                  
+                    Comment
                     
                                   <span
                                     class="badges"
@@ -1735,7 +1677,8 @@ exports[`Profile Component should render correctly 1`] = `
                                 <span
                                   class="count"
                                 >
-                                  Share
+                                  
+                    Share
                     
                                   <span
                                     class="badges"
@@ -1748,6 +1691,7 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
                             >
                               <i
                                 class="fal fa-bookmark mr-2"
@@ -1781,6 +1725,7 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-story"
+                              style="display: none;"
                             >
                               <i
                                 class="fal fa-book-open mr-2"
@@ -1795,7 +1740,6 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-story"
-                              style="display: none;"
                             >
                               <i
                                 class="fas fa-book-open mr-2"
@@ -1831,9 +1775,7 @@ exports[`Profile Component should render correctly 1`] = `
                       class="btn btn-sm bg-white m-2 rounded-0 float-right"
                       type="button"
                     >
-                      
-        Category
-      
+                      Category
                     </button>
                   </div>
                    
@@ -1848,16 +1790,14 @@ exports[`Profile Component should render correctly 1`] = `
                         style="display: none;"
                         type="button"
                       >
-                        
-          Category
-        
+                        Category
                       </button>
                        
                       <h5
                         class="card-title font-weight-bold"
                       >
                         
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
                       </h5>
@@ -1870,9 +1810,7 @@ exports[`Profile Component should render correctly 1`] = `
                           href="#"
                           role="button"
                         >
-                          
-            JD
-          
+                          JD
                         </a>
                         
            
@@ -1915,9 +1853,7 @@ exports[`Profile Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        
-          show keypoints
-        
+                        show keypoints
                       </p>
                     </div>
                   </div>
@@ -1951,7 +1887,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class=" thumbs-up"
+                        class="thumbs-up"
                         style="display: none;"
                       >
                         <span
@@ -1973,7 +1909,7 @@ exports[`Profile Component should render correctly 1`] = `
                         class="thumbs-down"
                       >
                         <span
-                          class="border rounded-circle mr-1 icons  thumbs-down-icon"
+                          class="border rounded-circle mr-1 icons thumbs-down-icon"
                         >
                           <i
                             class="fal fa-thumbs-down"
@@ -2054,6 +1990,7 @@ exports[`Profile Component should render correctly 1`] = `
                   >
                     <p
                       class="share mr-2"
+                      style="display: none;"
                     >
                       <span
                         class="border rounded-circle mr-1 icons bookmark"
@@ -2066,7 +2003,6 @@ exports[`Profile Component should render correctly 1`] = `
                      
                     <p
                       class="share mr-2"
-                      style="display: none;"
                     >
                       <span
                         class="border rounded-circle mr-1 icons bookmark clicked"
@@ -2124,16 +2060,15 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
-                              style="display: none;"
                             >
                               <i
-                                class="fal fa-times"
+                                class="fal fa-times mr-2"
                               />
                                
                               <span
                                 class="count"
                               >
-                                remove
+                                Remove
                               </span>
                             </p>
                              
@@ -2164,7 +2099,8 @@ exports[`Profile Component should render correctly 1`] = `
                                 <span
                                   class="count"
                                 >
-                                  Comment
+                                  
+                    Comment
                     
                                   <span
                                     class="badges"
@@ -2184,7 +2120,8 @@ exports[`Profile Component should render correctly 1`] = `
                                 <span
                                   class="count"
                                 >
-                                  Share
+                                  
+                    Share
                     
                                   <span
                                     class="badges"
@@ -2197,6 +2134,7 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
                             >
                               <i
                                 class="fal fa-bookmark mr-2"
@@ -2230,6 +2168,7 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-story"
+                              style="display: none;"
                             >
                               <i
                                 class="fal fa-book-open mr-2"
@@ -2244,7 +2183,6 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-story"
-                              style="display: none;"
                             >
                               <i
                                 class="fas fa-book-open mr-2"
@@ -2280,9 +2218,7 @@ exports[`Profile Component should render correctly 1`] = `
                       class="btn btn-sm bg-white m-2 rounded-0 float-right"
                       type="button"
                     >
-                      
-        Category
-      
+                      Category
                     </button>
                   </div>
                    
@@ -2297,16 +2233,14 @@ exports[`Profile Component should render correctly 1`] = `
                         style="display: none;"
                         type="button"
                       >
-                        
-          Category
-        
+                        Category
                       </button>
                        
                       <h5
                         class="card-title font-weight-bold"
                       >
                         
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
                       </h5>
@@ -2319,9 +2253,7 @@ exports[`Profile Component should render correctly 1`] = `
                           href="#"
                           role="button"
                         >
-                          
-            JD
-          
+                          JD
                         </a>
                         
            
@@ -2364,9 +2296,7 @@ exports[`Profile Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        
-          show keypoints
-        
+                        show keypoints
                       </p>
                     </div>
                   </div>
@@ -2400,7 +2330,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class=" thumbs-up"
+                        class="thumbs-up"
                         style="display: none;"
                       >
                         <span
@@ -2422,7 +2352,7 @@ exports[`Profile Component should render correctly 1`] = `
                         class="thumbs-down"
                       >
                         <span
-                          class="border rounded-circle mr-1 icons  thumbs-down-icon"
+                          class="border rounded-circle mr-1 icons thumbs-down-icon"
                         >
                           <i
                             class="fal fa-thumbs-down"
@@ -2503,6 +2433,7 @@ exports[`Profile Component should render correctly 1`] = `
                   >
                     <p
                       class="share mr-2"
+                      style="display: none;"
                     >
                       <span
                         class="border rounded-circle mr-1 icons bookmark"
@@ -2515,7 +2446,6 @@ exports[`Profile Component should render correctly 1`] = `
                      
                     <p
                       class="share mr-2"
-                      style="display: none;"
                     >
                       <span
                         class="border rounded-circle mr-1 icons bookmark clicked"
@@ -2573,16 +2503,15 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
-                              style="display: none;"
                             >
                               <i
-                                class="fal fa-times"
+                                class="fal fa-times mr-2"
                               />
                                
                               <span
                                 class="count"
                               >
-                                remove
+                                Remove
                               </span>
                             </p>
                              
@@ -2613,7 +2542,8 @@ exports[`Profile Component should render correctly 1`] = `
                                 <span
                                   class="count"
                                 >
-                                  Comment
+                                  
+                    Comment
                     
                                   <span
                                     class="badges"
@@ -2633,7 +2563,8 @@ exports[`Profile Component should render correctly 1`] = `
                                 <span
                                   class="count"
                                 >
-                                  Share
+                                  
+                    Share
                     
                                   <span
                                     class="badges"
@@ -2646,6 +2577,7 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
                             >
                               <i
                                 class="fal fa-bookmark mr-2"
@@ -2679,6 +2611,7 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-story"
+                              style="display: none;"
                             >
                               <i
                                 class="fal fa-book-open mr-2"
@@ -2693,7 +2626,6 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-story"
-                              style="display: none;"
                             >
                               <i
                                 class="fas fa-book-open mr-2"
@@ -2729,9 +2661,7 @@ exports[`Profile Component should render correctly 1`] = `
                       class="btn btn-sm bg-white m-2 rounded-0 float-right"
                       type="button"
                     >
-                      
-        Category
-      
+                      Category
                     </button>
                   </div>
                    
@@ -2746,16 +2676,14 @@ exports[`Profile Component should render correctly 1`] = `
                         style="display: none;"
                         type="button"
                       >
-                        
-          Category
-        
+                        Category
                       </button>
                        
                       <h5
                         class="card-title font-weight-bold"
                       >
                         
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
                       </h5>
@@ -2768,9 +2696,7 @@ exports[`Profile Component should render correctly 1`] = `
                           href="#"
                           role="button"
                         >
-                          
-            JD
-          
+                          JD
                         </a>
                         
            
@@ -2813,9 +2739,7 @@ exports[`Profile Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        
-          show keypoints
-        
+                        show keypoints
                       </p>
                     </div>
                   </div>
@@ -2849,7 +2773,7 @@ exports[`Profile Component should render correctly 1`] = `
                       </p>
                        
                       <p
-                        class=" thumbs-up"
+                        class="thumbs-up"
                         style="display: none;"
                       >
                         <span
@@ -2871,7 +2795,7 @@ exports[`Profile Component should render correctly 1`] = `
                         class="thumbs-down"
                       >
                         <span
-                          class="border rounded-circle mr-1 icons  thumbs-down-icon"
+                          class="border rounded-circle mr-1 icons thumbs-down-icon"
                         >
                           <i
                             class="fal fa-thumbs-down"
@@ -2952,6 +2876,7 @@ exports[`Profile Component should render correctly 1`] = `
                   >
                     <p
                       class="share mr-2"
+                      style="display: none;"
                     >
                       <span
                         class="border rounded-circle mr-1 icons bookmark"
@@ -2964,7 +2889,6 @@ exports[`Profile Component should render correctly 1`] = `
                      
                     <p
                       class="share mr-2"
-                      style="display: none;"
                     >
                       <span
                         class="border rounded-circle mr-1 icons bookmark clicked"
@@ -3022,16 +2946,15 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country"
-                              style="display: none;"
                             >
                               <i
-                                class="fal fa-times"
+                                class="fal fa-times mr-2"
                               />
                                
                               <span
                                 class="count"
                               >
-                                remove
+                                Remove
                               </span>
                             </p>
                              
@@ -3062,7 +2985,8 @@ exports[`Profile Component should render correctly 1`] = `
                                 <span
                                   class="count"
                                 >
-                                  Comment
+                                  
+                    Comment
                     
                                   <span
                                     class="badges"
@@ -3082,7 +3006,8 @@ exports[`Profile Component should render correctly 1`] = `
                                 <span
                                   class="count"
                                 >
-                                  Share
+                                  
+                    Share
                     
                                   <span
                                     class="badges"
@@ -3095,6 +3020,7 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-bookmark"
+                              style="display: none;"
                             >
                               <i
                                 class="fal fa-bookmark mr-2"
@@ -3128,6 +3054,7 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-story"
+                              style="display: none;"
                             >
                               <i
                                 class="fal fa-book-open mr-2"
@@ -3142,7 +3069,6 @@ exports[`Profile Component should render correctly 1`] = `
                              
                             <p
                               class="dropdown-item country toggle-story"
-                              style="display: none;"
                             >
                               <i
                                 class="fas fa-book-open mr-2"
@@ -3193,9 +3119,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="btn btn-sm bg-white m-2 rounded-0 float-right"
                     type="button"
                   >
-                    
-        Category
-      
+                    Category
                   </button>
                 </div>
                  
@@ -3210,16 +3134,14 @@ exports[`Profile Component should render correctly 1`] = `
                       style="display: none;"
                       type="button"
                     >
-                      
-          Category
-        
+                      Category
                     </button>
                      
                     <h5
                       class="card-title font-weight-bold"
                     >
                       
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
                     </h5>
@@ -3232,9 +3154,7 @@ exports[`Profile Component should render correctly 1`] = `
                         href="#"
                         role="button"
                       >
-                        
-            JD
-          
+                        JD
                       </a>
                       
            
@@ -3277,9 +3197,7 @@ exports[`Profile Component should render correctly 1`] = `
                     <p
                       class="col-4 p-0 text-right text-capitalize keypoints"
                     >
-                      
-          show keypoints
-        
+                      show keypoints
                     </p>
                   </div>
                 </div>
@@ -3313,7 +3231,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class=" thumbs-up"
+                      class="thumbs-up"
                       style="display: none;"
                     >
                       <span
@@ -3335,7 +3253,7 @@ exports[`Profile Component should render correctly 1`] = `
                       class="thumbs-down"
                     >
                       <span
-                        class="border rounded-circle mr-1 icons  thumbs-down-icon"
+                        class="border rounded-circle mr-1 icons thumbs-down-icon"
                       >
                         <i
                           class="fal fa-thumbs-down"
@@ -3416,6 +3334,7 @@ exports[`Profile Component should render correctly 1`] = `
                 >
                   <p
                     class="share mr-2"
+                    style="display: none;"
                   >
                     <span
                       class="border rounded-circle mr-1 icons bookmark"
@@ -3428,7 +3347,6 @@ exports[`Profile Component should render correctly 1`] = `
                    
                   <p
                     class="share mr-2"
-                    style="display: none;"
                   >
                     <span
                       class="border rounded-circle mr-1 icons bookmark clicked"
@@ -3486,16 +3404,15 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country"
-                            style="display: none;"
                           >
                             <i
-                              class="fal fa-times"
+                              class="fal fa-times mr-2"
                             />
                              
                             <span
                               class="count"
                             >
-                              remove
+                              Remove
                             </span>
                           </p>
                            
@@ -3526,7 +3443,8 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                Comment
+                                
+                    Comment
                     
                                 <span
                                   class="badges"
@@ -3546,7 +3464,8 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                Share
+                                
+                    Share
                     
                                 <span
                                   class="badges"
@@ -3559,6 +3478,7 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-bookmark"
+                            style="display: none;"
                           >
                             <i
                               class="fal fa-bookmark mr-2"
@@ -3592,6 +3512,7 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-story"
+                            style="display: none;"
                           >
                             <i
                               class="fal fa-book-open mr-2"
@@ -3606,7 +3527,6 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-story"
-                            style="display: none;"
                           >
                             <i
                               class="fas fa-book-open mr-2"
@@ -3643,9 +3563,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="btn btn-sm bg-white m-2 rounded-0 float-right"
                     type="button"
                   >
-                    
-        Category
-      
+                    Category
                   </button>
                 </div>
                  
@@ -3660,16 +3578,14 @@ exports[`Profile Component should render correctly 1`] = `
                       style="display: none;"
                       type="button"
                     >
-                      
-          Category
-        
+                      Category
                     </button>
                      
                     <h5
                       class="card-title font-weight-bold"
                     >
                       
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
                     </h5>
@@ -3682,9 +3598,7 @@ exports[`Profile Component should render correctly 1`] = `
                         href="#"
                         role="button"
                       >
-                        
-            JD
-          
+                        JD
                       </a>
                       
            
@@ -3727,9 +3641,7 @@ exports[`Profile Component should render correctly 1`] = `
                     <p
                       class="col-4 p-0 text-right text-capitalize keypoints"
                     >
-                      
-          show keypoints
-        
+                      show keypoints
                     </p>
                   </div>
                 </div>
@@ -3763,7 +3675,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class=" thumbs-up"
+                      class="thumbs-up"
                       style="display: none;"
                     >
                       <span
@@ -3785,7 +3697,7 @@ exports[`Profile Component should render correctly 1`] = `
                       class="thumbs-down"
                     >
                       <span
-                        class="border rounded-circle mr-1 icons  thumbs-down-icon"
+                        class="border rounded-circle mr-1 icons thumbs-down-icon"
                       >
                         <i
                           class="fal fa-thumbs-down"
@@ -3866,6 +3778,7 @@ exports[`Profile Component should render correctly 1`] = `
                 >
                   <p
                     class="share mr-2"
+                    style="display: none;"
                   >
                     <span
                       class="border rounded-circle mr-1 icons bookmark"
@@ -3878,7 +3791,6 @@ exports[`Profile Component should render correctly 1`] = `
                    
                   <p
                     class="share mr-2"
-                    style="display: none;"
                   >
                     <span
                       class="border rounded-circle mr-1 icons bookmark clicked"
@@ -3936,16 +3848,15 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country"
-                            style="display: none;"
                           >
                             <i
-                              class="fal fa-times"
+                              class="fal fa-times mr-2"
                             />
                              
                             <span
                               class="count"
                             >
-                              remove
+                              Remove
                             </span>
                           </p>
                            
@@ -3976,7 +3887,8 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                Comment
+                                
+                    Comment
                     
                                 <span
                                   class="badges"
@@ -3996,7 +3908,8 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                Share
+                                
+                    Share
                     
                                 <span
                                   class="badges"
@@ -4009,6 +3922,7 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-bookmark"
+                            style="display: none;"
                           >
                             <i
                               class="fal fa-bookmark mr-2"
@@ -4042,6 +3956,7 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-story"
+                            style="display: none;"
                           >
                             <i
                               class="fal fa-book-open mr-2"
@@ -4056,7 +3971,6 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-story"
-                            style="display: none;"
                           >
                             <i
                               class="fas fa-book-open mr-2"
@@ -4093,9 +4007,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="btn btn-sm bg-white m-2 rounded-0 float-right"
                     type="button"
                   >
-                    
-        Category
-      
+                    Category
                   </button>
                 </div>
                  
@@ -4110,16 +4022,14 @@ exports[`Profile Component should render correctly 1`] = `
                       style="display: none;"
                       type="button"
                     >
-                      
-          Category
-        
+                      Category
                     </button>
                      
                     <h5
                       class="card-title font-weight-bold"
                     >
                       
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
                     </h5>
@@ -4132,9 +4042,7 @@ exports[`Profile Component should render correctly 1`] = `
                         href="#"
                         role="button"
                       >
-                        
-            JD
-          
+                        JD
                       </a>
                       
            
@@ -4177,9 +4085,7 @@ exports[`Profile Component should render correctly 1`] = `
                     <p
                       class="col-4 p-0 text-right text-capitalize keypoints"
                     >
-                      
-          show keypoints
-        
+                      show keypoints
                     </p>
                   </div>
                 </div>
@@ -4213,7 +4119,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class=" thumbs-up"
+                      class="thumbs-up"
                       style="display: none;"
                     >
                       <span
@@ -4235,7 +4141,7 @@ exports[`Profile Component should render correctly 1`] = `
                       class="thumbs-down"
                     >
                       <span
-                        class="border rounded-circle mr-1 icons  thumbs-down-icon"
+                        class="border rounded-circle mr-1 icons thumbs-down-icon"
                       >
                         <i
                           class="fal fa-thumbs-down"
@@ -4316,6 +4222,7 @@ exports[`Profile Component should render correctly 1`] = `
                 >
                   <p
                     class="share mr-2"
+                    style="display: none;"
                   >
                     <span
                       class="border rounded-circle mr-1 icons bookmark"
@@ -4328,7 +4235,6 @@ exports[`Profile Component should render correctly 1`] = `
                    
                   <p
                     class="share mr-2"
-                    style="display: none;"
                   >
                     <span
                       class="border rounded-circle mr-1 icons bookmark clicked"
@@ -4386,16 +4292,15 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country"
-                            style="display: none;"
                           >
                             <i
-                              class="fal fa-times"
+                              class="fal fa-times mr-2"
                             />
                              
                             <span
                               class="count"
                             >
-                              remove
+                              Remove
                             </span>
                           </p>
                            
@@ -4426,7 +4331,8 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                Comment
+                                
+                    Comment
                     
                                 <span
                                   class="badges"
@@ -4446,7 +4352,8 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                Share
+                                
+                    Share
                     
                                 <span
                                   class="badges"
@@ -4459,6 +4366,7 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-bookmark"
+                            style="display: none;"
                           >
                             <i
                               class="fal fa-bookmark mr-2"
@@ -4492,6 +4400,7 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-story"
+                            style="display: none;"
                           >
                             <i
                               class="fal fa-book-open mr-2"
@@ -4506,7 +4415,6 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-story"
-                            style="display: none;"
                           >
                             <i
                               class="fas fa-book-open mr-2"
@@ -4543,9 +4451,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="btn btn-sm bg-white m-2 rounded-0 float-right"
                     type="button"
                   >
-                    
-        Category
-      
+                    Category
                   </button>
                 </div>
                  
@@ -4560,16 +4466,14 @@ exports[`Profile Component should render correctly 1`] = `
                       style="display: none;"
                       type="button"
                     >
-                      
-          Category
-        
+                      Category
                     </button>
                      
                     <h5
                       class="card-title font-weight-bold"
                     >
                       
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
                     </h5>
@@ -4582,9 +4486,7 @@ exports[`Profile Component should render correctly 1`] = `
                         href="#"
                         role="button"
                       >
-                        
-            JD
-          
+                        JD
                       </a>
                       
            
@@ -4627,9 +4529,7 @@ exports[`Profile Component should render correctly 1`] = `
                     <p
                       class="col-4 p-0 text-right text-capitalize keypoints"
                     >
-                      
-          show keypoints
-        
+                      show keypoints
                     </p>
                   </div>
                 </div>
@@ -4663,7 +4563,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class=" thumbs-up"
+                      class="thumbs-up"
                       style="display: none;"
                     >
                       <span
@@ -4685,7 +4585,7 @@ exports[`Profile Component should render correctly 1`] = `
                       class="thumbs-down"
                     >
                       <span
-                        class="border rounded-circle mr-1 icons  thumbs-down-icon"
+                        class="border rounded-circle mr-1 icons thumbs-down-icon"
                       >
                         <i
                           class="fal fa-thumbs-down"
@@ -4766,6 +4666,7 @@ exports[`Profile Component should render correctly 1`] = `
                 >
                   <p
                     class="share mr-2"
+                    style="display: none;"
                   >
                     <span
                       class="border rounded-circle mr-1 icons bookmark"
@@ -4778,7 +4679,6 @@ exports[`Profile Component should render correctly 1`] = `
                    
                   <p
                     class="share mr-2"
-                    style="display: none;"
                   >
                     <span
                       class="border rounded-circle mr-1 icons bookmark clicked"
@@ -4836,16 +4736,15 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country"
-                            style="display: none;"
                           >
                             <i
-                              class="fal fa-times"
+                              class="fal fa-times mr-2"
                             />
                              
                             <span
                               class="count"
                             >
-                              remove
+                              Remove
                             </span>
                           </p>
                            
@@ -4876,7 +4775,8 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                Comment
+                                
+                    Comment
                     
                                 <span
                                   class="badges"
@@ -4896,7 +4796,8 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                Share
+                                
+                    Share
                     
                                 <span
                                   class="badges"
@@ -4909,6 +4810,7 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-bookmark"
+                            style="display: none;"
                           >
                             <i
                               class="fal fa-bookmark mr-2"
@@ -4942,6 +4844,7 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-story"
+                            style="display: none;"
                           >
                             <i
                               class="fal fa-book-open mr-2"
@@ -4956,7 +4859,6 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-story"
-                            style="display: none;"
                           >
                             <i
                               class="fas fa-book-open mr-2"
@@ -4993,9 +4895,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="btn btn-sm bg-white m-2 rounded-0 float-right"
                     type="button"
                   >
-                    
-        Category
-      
+                    Category
                   </button>
                 </div>
                  
@@ -5010,16 +4910,14 @@ exports[`Profile Component should render correctly 1`] = `
                       style="display: none;"
                       type="button"
                     >
-                      
-          Category
-        
+                      Category
                     </button>
                      
                     <h5
                       class="card-title font-weight-bold"
                     >
                       
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
                     </h5>
@@ -5032,9 +4930,7 @@ exports[`Profile Component should render correctly 1`] = `
                         href="#"
                         role="button"
                       >
-                        
-            JD
-          
+                        JD
                       </a>
                       
            
@@ -5077,9 +4973,7 @@ exports[`Profile Component should render correctly 1`] = `
                     <p
                       class="col-4 p-0 text-right text-capitalize keypoints"
                     >
-                      
-          show keypoints
-        
+                      show keypoints
                     </p>
                   </div>
                 </div>
@@ -5113,7 +5007,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </p>
                      
                     <p
-                      class=" thumbs-up"
+                      class="thumbs-up"
                       style="display: none;"
                     >
                       <span
@@ -5135,7 +5029,7 @@ exports[`Profile Component should render correctly 1`] = `
                       class="thumbs-down"
                     >
                       <span
-                        class="border rounded-circle mr-1 icons  thumbs-down-icon"
+                        class="border rounded-circle mr-1 icons thumbs-down-icon"
                       >
                         <i
                           class="fal fa-thumbs-down"
@@ -5216,6 +5110,7 @@ exports[`Profile Component should render correctly 1`] = `
                 >
                   <p
                     class="share mr-2"
+                    style="display: none;"
                   >
                     <span
                       class="border rounded-circle mr-1 icons bookmark"
@@ -5228,7 +5123,6 @@ exports[`Profile Component should render correctly 1`] = `
                    
                   <p
                     class="share mr-2"
-                    style="display: none;"
                   >
                     <span
                       class="border rounded-circle mr-1 icons bookmark clicked"
@@ -5286,16 +5180,15 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country"
-                            style="display: none;"
                           >
                             <i
-                              class="fal fa-times"
+                              class="fal fa-times mr-2"
                             />
                              
                             <span
                               class="count"
                             >
-                              remove
+                              Remove
                             </span>
                           </p>
                            
@@ -5326,7 +5219,8 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                Comment
+                                
+                    Comment
                     
                                 <span
                                   class="badges"
@@ -5346,7 +5240,8 @@ exports[`Profile Component should render correctly 1`] = `
                               <span
                                 class="count"
                               >
-                                Share
+                                
+                    Share
                     
                                 <span
                                   class="badges"
@@ -5359,6 +5254,7 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-bookmark"
+                            style="display: none;"
                           >
                             <i
                               class="fal fa-bookmark mr-2"
@@ -5392,6 +5288,7 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-story"
+                            style="display: none;"
                           >
                             <i
                               class="fal fa-book-open mr-2"
@@ -5406,7 +5303,6 @@ exports[`Profile Component should render correctly 1`] = `
                            
                           <p
                             class="dropdown-item country toggle-story"
-                            style="display: none;"
                           >
                             <i
                               class="fas fa-book-open mr-2"

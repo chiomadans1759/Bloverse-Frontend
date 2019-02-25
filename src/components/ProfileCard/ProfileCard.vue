@@ -41,7 +41,7 @@
       </div>
       <div v-if="!hideFollowing" class="follow d-flex justify-content-start">
         <a data-toggle="modal" href="#following-modal">Following</a>
-        <span class="border rounded px-1 mx-2" data-toggle="modal"
+        <span class="badge badge-primary p-1 mx-2" data-toggle="modal"
           href="#following-modal" id="number">
           5
         </span>

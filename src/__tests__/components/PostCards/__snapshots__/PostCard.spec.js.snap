@@ -17,9 +17,7 @@ exports[`PostCard Component should render correctly 1`] = `
         class="btn btn-sm bg-white m-2 rounded-0 float-right"
         type="button"
       >
-        
         Category
-      
       </button>
     </div>
      
@@ -34,16 +32,14 @@ exports[`PostCard Component should render correctly 1`] = `
           style="display: none;"
           type="button"
         >
-          
           Category
-        
         </button>
          
         <h5
           class="card-title font-weight-bold"
         >
           
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, 
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
         </h5>
@@ -56,9 +52,7 @@ exports[`PostCard Component should render correctly 1`] = `
             href="#"
             role="button"
           >
-            
             JD
-          
           </a>
           
            
@@ -101,9 +95,7 @@ exports[`PostCard Component should render correctly 1`] = `
         <p
           class="col-4 p-0 text-right text-capitalize keypoints"
         >
-          
           show keypoints
-        
         </p>
       </div>
     </div>
@@ -137,7 +129,7 @@ exports[`PostCard Component should render correctly 1`] = `
         </p>
          
         <p
-          class=" thumbs-up"
+          class="thumbs-up"
           style="display: none;"
         >
           <span
@@ -159,7 +151,7 @@ exports[`PostCard Component should render correctly 1`] = `
           class="thumbs-down"
         >
           <span
-            class="border rounded-circle mr-1 icons  thumbs-down-icon"
+            class="border rounded-circle mr-1 icons thumbs-down-icon"
           >
             <i
               class="fal fa-thumbs-down"
@@ -240,6 +232,7 @@ exports[`PostCard Component should render correctly 1`] = `
     >
       <p
         class="share mr-2"
+        style="display: none;"
       >
         <span
           class="border rounded-circle mr-1 icons bookmark"
@@ -252,7 +245,6 @@ exports[`PostCard Component should render correctly 1`] = `
        
       <p
         class="share mr-2"
-        style="display: none;"
       >
         <span
           class="border rounded-circle mr-1 icons bookmark clicked"
@@ -310,16 +302,15 @@ exports[`PostCard Component should render correctly 1`] = `
                
               <p
                 class="dropdown-item country"
-                style="display: none;"
               >
                 <i
-                  class="fal fa-times"
+                  class="fal fa-times mr-2"
                 />
                  
                 <span
                   class="count"
                 >
-                  remove
+                  Remove
                 </span>
               </p>
                
@@ -350,6 +341,7 @@ exports[`PostCard Component should render correctly 1`] = `
                   <span
                     class="count"
                   >
+                    
                     Comment
                     
                     <span
@@ -370,6 +362,7 @@ exports[`PostCard Component should render correctly 1`] = `
                   <span
                     class="count"
                   >
+                    
                     Share
                     
                     <span
@@ -383,6 +376,7 @@ exports[`PostCard Component should render correctly 1`] = `
                
               <p
                 class="dropdown-item country toggle-bookmark"
+                style="display: none;"
               >
                 <i
                   class="fal fa-bookmark mr-2"
@@ -416,6 +410,7 @@ exports[`PostCard Component should render correctly 1`] = `
                
               <p
                 class="dropdown-item country toggle-story"
+                style="display: none;"
               >
                 <i
                   class="fal fa-book-open mr-2"
@@ -430,7 +425,6 @@ exports[`PostCard Component should render correctly 1`] = `
                
               <p
                 class="dropdown-item country toggle-story"
-                style="display: none;"
               >
                 <i
                   class="fas fa-book-open mr-2"
