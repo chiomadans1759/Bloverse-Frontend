@@ -30,6 +30,9 @@
   p {
     font-size: rem(14px) !important;
   }
+  .icon {
+    color: #B7B7B7;
+  }
 }
 
 main.card {
@@ -44,8 +47,7 @@ main.card {
 }
 
 #number {
-  border: rem(1px) solid #3d98eb !important;
-  color: #3d98eb;
+  font-size: rem(10px);
   cursor: pointer;
 }
 
@@ -104,6 +106,15 @@ main.card {
   max-height: 16.375rem !important;
 }
 
+.points {
+  &>span {
+    font-size: rem(16px);
+  }
+  &>p {
+    font-size: rem(32px);
+  }
+}
+
 @media screen and (min-width: 700px) {
   .profile-img {
     width: rem(64px);
@@ -147,9 +158,9 @@ main.card {
   }
 
   #number {
-    border: rem(1px) solid #3d98eb !important;
-    color: #3d98eb;
+    color: #ffffff;
     cursor: pointer;
+    font-size: rem(10px);
   }
   
   .profile {
@@ -170,6 +181,15 @@ main.card {
   
     .card-footer {
       font-size: rem(14px);
+    }
+  }
+
+  .points {
+    &>span {
+      font-size: rem(16px);
+    }
+    &>p {
+      font-size: rem(32px);
     }
   }
 }

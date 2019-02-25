@@ -8,10 +8,14 @@
 nav {
   margin: 0;
   cursor: pointer;
+  .nav-content {
+    margin-top: rem(-10px);
+  }
 }
 
 .active {
   border-bottom: rem(1px) solid #0885e7 !important;
+  font-weight: bold;
 }
 
 .right-content {
@@ -20,8 +24,12 @@ nav {
 }
 
 .number {
+  background-color: #868686;
+  color: #ffffff;
   &--active {
     border: rem(1px) solid #3d98eb !important;
+    background-color: #3d98eb;
+    color: #ffffff;
   }
 }
 
@@ -32,9 +40,12 @@ nav {
 }
 
 .contest-advert {
-  background: #ffffff;
-  background-image: url('../../../assets/Mask-group-15.svg');
-  height: rem(171px);
+  background: #f6e5d9;
+  background-image: url('../../../assets/Group_975.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  height: rem(270px);
   margin: auto;
   margin-bottom: auto;
   border: rem(1px) solid #d9d9d9;
@@ -50,15 +61,16 @@ nav {
       color: #252525;
       padding-right: rem(20px); 
       font-size: rem(25px);
+      width: 74%;
     }
     .caption {
-      color:#868686;
+      columns: #000000;
       font-size: rem(16px);
     }
     .know-more-btn {
       margin: rem(16px) 0;
       height: rem(31px);
-      background-image: linear-gradient( to right, #2F80ED, #003CE1);
+      background-color: #210d0b;
       border: rem(0px);
       padding: rem(5px) rem(8px);
       font-size: rem(14px);
@@ -68,50 +80,23 @@ nav {
       cursor: pointer;
     }
   }
+  .robot-image {
+    background-image: url('../../../assets/Group_11.svg');
+    background-color: transparent;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: rem(80px);
+    position: absolute;
+    top: 70.5%;
+    right: rem(-1px);
+  }
+
 }
 
 a {
   font-size: rem(14px);
-}
-
-.bl-footer {
-  display: block;
-  height: rem(37px);
-  margin: rem(24px) 0;
-  .company-name {
-    height: rem(15px);
-    margin: 0;
-    margin-bottom: 0;
-    padding: 0;
-    font-size: rem(12px);
-    opacity: 0.9;
-    color: #bebebe;
-    font-weight: 700;
-    &>div{
-      border-right: rem(1px) solid rgba(0, 0, 0, 0.15);
-      padding: 0;
-      font-size: rem(16px);
-    }
-    &>p {
-      padding: 0 rem(10px);
-      &>span {
-        margin: auto rem(5px);
-      }
-    }
-    .dots::after {
-      content: '\2022';
-      color: #096DD9;
-      margin-left: rem(5px);
-      font-weight: 900;
-    }
-  }
-  .company-rights {
-    font-size: rem(10px);
-    height: rem(13px);
-    color: #868686;
-    margin: 0;
-    padding-top: rem(10px);
-  }
 }
 
 .bl-contents {
@@ -177,6 +162,9 @@ a {
   .bl-content {
     margin-left: auto;
     margin-right: auto;
+    .main-contents {
+      padding-left: rem(0.5px);
+    }
   }
 
   .no-saved-posts {
@@ -189,5 +177,14 @@ a {
   .no-saved-posts {
     height: 30%;
     margin: 0;
+  }
+
+  .contest-advert {
+    .card-img-overlay {
+      .card-title {
+        width: 60%;
+        font-size: rem(35px)
+      }
+    }
   }
 }
