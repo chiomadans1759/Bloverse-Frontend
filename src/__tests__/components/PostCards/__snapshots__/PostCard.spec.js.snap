@@ -7,7 +7,7 @@ exports[`PostCard Component should render correctly 1`] = `
   style="width: 18rem;"
 >
   <div
-    class="row mx-0"
+    class="d-none d-sm-block row mx-0"
   >
     <div
       class="col-12 read-later-image"
@@ -97,18 +97,29 @@ exports[`PostCard Component should render correctly 1`] = `
         >
           show keypoints
         </p>
+         
+        <p
+          class="col-4 p-0 text-right text-capitalize keypoints"
+          style="display: none;"
+        >
+          
+          hide keypoints
+        
+        </p>
       </div>
+       
+      <!---->
     </div>
   </div>
    
   <div
-    class="row px-0 border bg-white card-footer"
+    class="d-none d-sm-flex row px-0 border bg-white card-footer"
   >
     <div
       class="col-6 row mx-0 actions--a"
     >
       <div
-        class="col-6 d-flex justify-content-between border-right likes"
+        class="col-5 d-flex justify-content-between border-right likes"
       >
         <p
           class="thumbs-up"
@@ -186,7 +197,7 @@ exports[`PostCard Component should render correctly 1`] = `
       </div>
        
       <div
-        class="col-6 d-flex justify-content-start share"
+        class="col-7 d-flex justify-content-start share"
       >
         <p
           class="share"
@@ -439,6 +450,371 @@ exports[`PostCard Component should render correctly 1`] = `
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="d-sm-none p-2"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-9"
+      >
+        <p
+          class="font-weight-light"
+        >
+          Category
+        </p>
+         
+        <p
+          class="font-weight-bold card-title"
+        >
+          
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea necLorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec.
+        </p>
+      </div>
+       
+      <div
+        class="col-3"
+      >
+        <img
+          class="img-fluid"
+          src="@/assets/readLaterImg.jpg"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="d-flex mt-2"
+    >
+      <p
+        class="username"
+      >
+        <a
+          class="btn btn-primary mr-1 text-uppercase initials"
+          href="#"
+          role="button"
+        >
+          
+            XS
+          
+        </a>
+        
+           
+          
+        <span
+          class="font-weight-bold name"
+        >
+          username
+        </span>
+        
+           
+          
+        <span
+          class="time"
+        >
+          1 min ago
+        </span>
+      </p>
+    </div>
+     
+    <!---->
+     
+    <div
+      class="row mt-2"
+    >
+      <div
+        class="col-6"
+      >
+        <span
+          class="icons icon-gray"
+        >
+          <i
+            class="fal fa-eye mr-1"
+          />
+           
+          <span
+            class="text-dark"
+          >
+            123
+          </span>
+        </span>
+      </div>
+       
+      <div
+        class="col-6 d-flex justify-content-around"
+      >
+        <p>
+          <span
+            class="icons icon-blue"
+          >
+            <i
+              class="far fa-thumbs-up mr-1"
+            />
+             
+            <span
+              class="text-dark"
+            >
+              18
+            </span>
+          </span>
+        </p>
+         
+        <p
+          style="display: none;"
+        >
+          <span
+            class="icons icon-blue"
+          >
+            <i
+              class="fas fa-thumbs-up mr-1"
+            />
+             
+            <span
+              class="text-dark"
+            >
+              18
+            </span>
+          </span>
+        </p>
+         
+        <p>
+          <span
+            class="icons icon-blue"
+          >
+            <i
+              class="far fa-thumbs-down mr-1"
+            />
+             
+            <span
+              class="text-dark"
+            >
+              1
+            </span>
+          </span>
+        </p>
+         
+        <p
+          style="display: none;"
+        >
+          <span
+            class="icons icon-blue"
+          >
+            <i
+              class="fas fa-thumbs-down mr-1"
+            />
+             
+            <span
+              class="text-dark"
+            >
+              1
+            </span>
+          </span>
+        </p>
+         
+        <div>
+          <p
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="px-2"
+            data-toggle="dropdown"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+          >
+            <span
+              class="icons border-right border-left px-2 text-dark"
+            >
+              <i
+                class="far fa-ellipsis-h"
+              />
+            </span>
+          </p>
+           
+          <div
+            aria-labelledby="dropdownMenuReference"
+            class="dropdown-menu bl-dropdown-menu top-dropdown"
+          >
+            <div
+              class="d-flex bl-dropdown-menu__countries"
+            >
+              <div
+                class="favourite-countries"
+              >
+                <p
+                  class="dropdown-item country"
+                >
+                  Report Post
+                </p>
+                 
+                <hr />
+                 
+                <hr />
+                 
+                <p
+                  class="dropdown-item country"
+                  style="display: none;"
+                >
+                  <i
+                    class="fal fa-times"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    remove
+                  </span>
+                </p>
+                 
+                <p
+                  class="dropdown-item country"
+                >
+                  <i
+                    class="fal fa-plus mr-2"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    Creators Profile
+                  </span>
+                </p>
+                 
+                <div
+                  class="d-md-none"
+                >
+                  <p
+                    class="dropdown-item country"
+                  >
+                    <i
+                      class="fal fa-comment-dots mr-2"
+                    />
+                     
+                    <span
+                      class="count"
+                    >
+                      Comment
+                    
+                      <span
+                        class="badges"
+                      >
+                        5
+                      </span>
+                    </span>
+                  </p>
+                   
+                  <p
+                    class="dropdown-item country hidden-lg-down"
+                  >
+                    <i
+                      class="fal fa-share mr-2"
+                    />
+                     
+                    <span
+                      class="count"
+                    >
+                      Share
+                    
+                      <span
+                        class="badges"
+                      >
+                        5
+                      </span>
+                    </span>
+                  </p>
+                </div>
+                 
+                <p
+                  class="dropdown-item country toggle-bookmark"
+                >
+                  <i
+                    class="fal fa-bookmark mr-2"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    Read Later
+                  </span>
+                </p>
+                 
+                <p
+                  class="dropdown-item country toggle-bookmark"
+                  style="display: none;"
+                >
+                  <i
+                    class="fas fa-bookmark mr-2"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    Read Later
+                  </span>
+                </p>
+                 
+                <hr />
+                 
+                <hr />
+                 
+                <p
+                  class="dropdown-item country toggle-story"
+                >
+                  <i
+                    class="fal fa-book-open mr-2"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    Read Story
+                  </span>
+                </p>
+                 
+                <p
+                  class="dropdown-item country toggle-story"
+                  style="display: none;"
+                >
+                  <i
+                    class="fas fa-book-open mr-2"
+                  />
+                   
+                  <span
+                    class="count"
+                  >
+                    Read Story
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <p
+          style="display: none;"
+        >
+          <span
+            class="icons angle-icon text-dark"
+          >
+            <i
+              class="fal fa-angle-up"
+            />
+          </span>
+        </p>
+         
+        <p>
+          <span
+            class="icons angle-icon text-dark"
+          >
+            <i
+              class="fal fa-angle-down"
+            />
+          </span>
+        </p>
       </div>
     </div>
   </div>

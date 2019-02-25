@@ -180,7 +180,7 @@
               </div>
             </div>
               <div v-else>
-                <post-cards/>
+                <post-cards />
                 <trends/>
                 <post-cards/>
                 <photo-contest/>
@@ -190,15 +190,16 @@
         </div>
 
         <div
-          class="col-sm-4 d-none d-md-inline-block bl-homepage__content--publishedPosts__competition"
+          class="col-sm-4 d-none d-md-inline-block pt-4 bl-homepage__content--publishedPosts__competition"
         >
           <div class="card contest-advert">
             <div class="card-img-overlay">
-              <h1 class="card-title text-capitalize">Photo Contest
-                <br>Competition
+              <h1 class="card-title text-capitalize">Become a Content Creator
+                <br>
               </h1>
-              <p class="card-text text-capitalize caption">'The story behind photos'</p>
-              <router-link role="button" to="/photocontest" class="btn know-more-btn">Know more</router-link>
+              <p class="card-text text-capitalize caption">Publish your article to the world</p>
+              <router-link role="button" to="/photocontest" class="btn know-more-btn">Apply</router-link>
+              <div class="robot-image"></div>
             </div>
           </div>
           <div class="bl-footer">
