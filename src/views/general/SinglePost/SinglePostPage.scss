@@ -327,6 +327,53 @@
   }
 }
 
+.comment {
+  cursor: pointer;
+
+  &__icon {
+    font-size: rem(16px);
+  }
+
+  &__text {
+    font-size: rem(14px);
+  }
+}
+
+.comment-box {
+  &>textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: rem(15px);
+    border-color: #e5e5e5;
+    font-size: rem(14px);
+    border-radius: rem(2px);
+    outline: none;
+    overflow: auto;
+    resize: none;
+  }
+
+  ::placeholder {
+    color: #b4b4b4;
+    font-size: rem(16px);
+  }
+
+  &__footer {
+    margin-top: rem(-5px);
+    border: rem(1px) solid #e5e5e5;
+    background: #f3f3f3;
+  }
+
+  &__text {
+    font-size: rem(14px);
+    color: #B7B7B7;
+  }
+
+  &__emoji {
+    font-size: rem(50px);
+    cursor: pointer;
+  }
+}
+
 
 
 .contest-advert {

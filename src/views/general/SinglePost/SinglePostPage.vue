@@ -254,10 +254,24 @@
                   <span class="bg-primary text-white p-1 rounded no-comment ml-2">64</span>
                 </span>
               </p>
-              <p class="mt-5">Want to Join the conversation ?
-                <router-link to="/register">Sign Up</router-link>
-              </p>
-              <br>
+              <div class="comment d-flex justify-content-start align-items-center my-4" @click="toggleAddComment" v-if="!addComment">
+                <div class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary">
+                  <i class="fal fa-comment-plus comment__icon"></i>
+                </div>
+                <span class="comment__text text-primary ml-3">Add a comment</span>
+              </div>
+              <div class="comment-box my-5" v-show="addComment">
+                <textarea name="comment" id="commentTextarea" rows="4" placeholder="Add a comment" v-model="textareaValue"></textarea>
+                <div class="comment-box__footer p-3">
+                  <span class="comment-box__text">Send your comment by choosing how you feel about this article</span>
+                  <div class="comment-box__emoji-section d-flex justify-content-around">
+                    <span class="comment-box__emoji " v-for="emoji in emojiData" :key="emoji" @click="addEmoji(emoji)">
+                     {{String.fromCodePoint(`0x${emoji}`)}}
+                    </span>
+                  </div>
+                </div>
+
+              </div>
               <div class="media">
                 <img
                   src="@/assets/signin-image.jpg"
@@ -265,25 +279,32 @@
                   class="img-responsive mr-3 rounded-circle medium-avatar"
                 >
                 <div class="media-body">
-                  <h5 class="d-flex justify-content-start align-items-center">
-                    <span class="mt-0 font-weight-bold">John Doe</span>
-                    <i class="fas fa-circle text-primary dot mx-2"></i>
-                    <small>1 min Ago</small>
-                  </h5>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <div class="d-flex justify-content-start align-items-center mt-2">
-                    <div
-                      class="border rounded-circle icon-circle icon-circle__active d-flex justify-content-center align-items-center text-primary"
-                    >
-                      <i class="fas fa-thumbs-up fa-1x"></i>
+                  <div class="row">
+                    <div class="col-md-10">
+                      <h5 class="d-flex justify-content-start align-items-center">
+                        <span class="mt-0 font-weight-bold">John Doe</span>
+                        <i class="fas fa-circle text-primary dot mx-2"></i>
+                        <small>1 min Ago</small>
+                      </h5>
+                      <p>Lorem ipsum dolor sit amet.</p>
+                      <div class="d-flex justify-content-start align-items-center mt-2">
+                        <div
+                          class="border rounded-circle icon-circle icon-circle__active d-flex justify-content-center align-items-center text-primary"
+                        >
+                          <i class="fas fa-thumbs-up fa-1x"></i>
+                        </div>
+                        <span class="ml-2 mr-3">18</span>
+                        <div
+                          class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
+                        >
+                          <i class="fal fa-thumbs-down"></i>
+                        </div>
+                        <span class="ml-2">4</span>
+                      </div>
                     </div>
-                    <span class="ml-2 mr-3">18</span>
-                    <div
-                      class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
-                    >
-                      <i class="fal fa-thumbs-down"></i>
+                    <div class="col-md-2 d-flex justify-content-end">
+                      <span class="comment-box__emoji">&#x1F609;</span>
                     </div>
-                    <span class="ml-2">4</span>
                   </div>
                 </div>
               </div>
@@ -294,25 +315,32 @@
                   class="img-responsive mr-3 rounded-circle medium-avatar"
                 >
                 <div class="media-body">
-                  <h5 class="d-flex justify-content-start align-items-center">
-                    <span class="mt-0 font-weight-bold">John Doe</span>
-                    <i class="fas fa-circle text-primary dot mx-2"></i>
-                    <small>1 min Ago</small>
-                  </h5>
-                  <p>Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpretaris, sed diceret concludatque no. Verear habemus nibh scripta in.</p>
-                  <div class="d-flex justify-content-start align-items-center mt-2">
-                    <div
-                      class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
-                    >
-                      <i class="fal fa-thumbs-up fa-1x"></i>
+                  <div class="row">
+                    <div class="col-md-10">
+                      <h5 class="d-flex justify-content-start align-items-center">
+                        <span class="mt-0 font-weight-bold">John Doe</span>
+                        <i class="fas fa-circle text-primary dot mx-2"></i>
+                        <small>1 min Ago</small>
+                      </h5>
+                      <p>Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpretaris, sed diceret concludatque no. Verear habemus nibh scripta in.</p>
+                      <div class="d-flex justify-content-start align-items-center mt-2">
+                        <div
+                          class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
+                        >
+                          <i class="fal fa-thumbs-up fa-1x"></i>
+                        </div>
+                        <span class="ml-2 mr-3">18</span>
+                        <div
+                          class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
+                        >
+                          <i class="fal fa-thumbs-down"></i>
+                        </div>
+                        <span class="ml-2">4</span>
+                      </div>
                     </div>
-                    <span class="ml-2 mr-3">18</span>
-                    <div
-                      class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
-                    >
-                      <i class="fal fa-thumbs-down"></i>
+                    <div class="col-md-2 d-flex justify-content-end">
+                       <span class="comment-box__emoji">&#x1F60A;</span>
                     </div>
-                    <span class="ml-2">4</span>
                   </div>
                 </div>
               </div>
@@ -395,6 +423,7 @@
 <script>
 import Trends from "@/components/Trends/Trends";
 import Recommendations from "@/components/Recommendations/Recommendations.vue";
+import emojiData from '../../../data/emoji.js';
 
 export default {
   name: "SinglePostPage",
@@ -411,8 +440,16 @@ export default {
       dislikePost: false,
       addBookmark: false,
       readStory: false,
-      dropdownArrowDown: false
+      dropdownArrowDown: false,
+      addComment: false,
+      emojiData,
+      textareaValue: '',
     };
+  },
+  computed: {
+    getEmoji() {
+      return this.emojiData;
+    }
   },
   methods: {
     toggleLike() {
@@ -440,6 +477,7 @@ export default {
     },
     removeStickyActions() {
       const Ele = this.$refs.postContent.getClientRects();
+
       const postContentFooter = document.getElementById("footer-action");
 
       if (Ele[0].bottom <= 0) {
@@ -447,6 +485,13 @@ export default {
       } else {
         postContentFooter.setAttribute("style", 'position:fixed');
       }
+    },
+    toggleAddComment() {
+      this.addComment = !this.addComment;
+    },
+    addEmoji(emoji) {
+      const getEmoji = String.fromCodePoint(`0x${emoji}`);
+      this.textareaValue += getEmoji;
     }
   },
   created() {

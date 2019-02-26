@@ -9,7 +9,7 @@ describe('SinglePost Page', () => {
         RouterLink: RouterLinkStub
       }
     });
-    expect(wrapper.find(RouterLinkStub).props().to).toBe('/register')
+    expect(wrapper.find(RouterLinkStub).props().to).toBe('/posts/rere')
     expect(wrapper.element).toMatchSnapshot();
   });
 
@@ -70,4 +70,97 @@ describe('SinglePost Page', () => {
 
     expect(wrapper.vm.dropdownArrowDown).toBe(false);
   });
+
+  it('has a created hook', () => {
+    const removeStickyActions = jest.fn();
+    const realRemoveStickyActions = SinglePost.methods.removeStickyActions;
+    SinglePost.methods.removeStickyActions = removeStickyActions;
+
+    mount(SinglePost, {
+      stubs: { RouterLink: RouterLinkStub },
+    });
+
+    global.onscroll();
+
+    expect(typeof SinglePost.created).toBe('function');
+    expect(removeStickyActions).toBeCalled();
+    removeStickyActions.mockRestore();
+
+    SinglePost.methods.removeStickyActions = realRemoveStickyActions;
+  });
+
+  it('should call remove sticky action', () => {
+    const wrapper = mount(SinglePost, {
+      stubs: { RouterLink: RouterLinkStub },
+    });
+
+    wrapper.vm.$refs.postContent = {
+      getClientRects() {
+        return [{
+          bottom: 0
+        }]
+      }
+    }
+    const postContentFooter = {
+      setAttribute: jest.fn()
+    }
+    global.document.getElementById = jest.fn(() => postContentFooter);
+    
+    wrapper.vm.removeStickyActions();
+
+    expect(postContentFooter.setAttribute).toBeCalledWith("style", "position:absolute");
+  });
+
+  it('should call add sticky action', () => {
+    const wrapper = mount(SinglePost, {
+      stubs: { RouterLink: RouterLinkStub },
+    });
+
+    wrapper.vm.$refs.postContent = {
+      getClientRects() {
+        return [{
+          bottom: 10
+        }]
+      }
+    }
+    const postContentFooter = {
+      setAttribute: jest.fn()
+    }
+    global.document.getElementById = jest.fn(() => postContentFooter);
+    wrapper.vm.removeStickyActions();
+
+    expect(postContentFooter.setAttribute).toBeCalledWith("style", "position:fixed");
+  });
+
+  it('should toggle comment section', () => {
+    const wrapper = mount(SinglePost, {
+      stubs: { RouterLink: RouterLinkStub },
+    });
+
+
+    wrapper.findAll('.comment').at(0).trigger('click');
+
+    expect(wrapper.vm.addComment).toBe(true);
+  });
+
+  it('should add emoji', () => {
+    const addEmoji = jest.spyOn(SinglePost.methods, "addEmoji");
+    const wrapper = mount(SinglePost, {
+      stubs: { RouterLink: RouterLinkStub },
+    });
+
+    wrapper.findAll('.comment-box__emoji').at(0).trigger('click');
+    expect(addEmoji).toBeCalledWith("1F621");
+  });
+
+  describe('Computed', () => {
+    it('should get emoji', (done) => {
+      const wrapper = mount(SinglePost, {
+        stubs: { RouterLink: RouterLinkStub },
+      });
+
+      expect(wrapper.vm.getEmoji).toHaveLength(9);
+      done();
+    })
+  })
 });

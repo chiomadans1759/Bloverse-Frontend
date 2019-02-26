@@ -571,81 +571,109 @@ exports[`SinglePost Page should render correctly 1`] = `
               </span>
             </p>
              
-            <p
-              class="mt-5"
+            <div
+              class="comment d-flex justify-content-start align-items-center my-4"
             >
-              Want to Join the conversation ?
-              
-              <a>
-                Sign Up
-              </a>
-            </p>
-             
-            <br />
+              <div
+                class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
+              >
+                <i
+                  class="fal fa-comment-plus comment__icon"
+                />
+              </div>
+               
+              <span
+                class="comment__text text-primary ml-3"
+              >
+                Add a comment
+              </span>
+            </div>
              
             <div
-              class="media"
+              class="comment-box my-5"
+              style="display: none;"
             >
-              <img
-                alt=""
-                class="img-responsive mr-3 rounded-circle medium-avatar"
-                src="@/assets/signin-image.jpg"
+              <textarea
+                id="commentTextarea"
+                name="comment"
+                placeholder="Add a comment"
+                rows="4"
               />
                
               <div
-                class="media-body"
+                class="comment-box__footer p-3"
               >
-                <h5
-                  class="d-flex justify-content-start align-items-center"
+                <span
+                  class="comment-box__text"
                 >
-                  <span
-                    class="mt-0 font-weight-bold"
-                  >
-                    John Doe
-                  </span>
-                   
-                  <i
-                    class="fas fa-circle text-primary dot mx-2"
-                  />
-                   
-                  <small>
-                    1 min Ago
-                  </small>
-                </h5>
-                 
-                <p>
-                  Lorem ipsum dolor sit amet.
-                </p>
+                  Send your comment by choosing how you feel about this article
+                </span>
                  
                 <div
-                  class="d-flex justify-content-start align-items-center mt-2"
+                  class="comment-box__emoji-section d-flex justify-content-around"
                 >
-                  <div
-                    class="border rounded-circle icon-circle icon-circle__active d-flex justify-content-center align-items-center text-primary"
-                  >
-                    <i
-                      class="fas fa-thumbs-up fa-1x"
-                    />
-                  </div>
-                   
                   <span
-                    class="ml-2 mr-3"
+                    class="comment-box__emoji "
                   >
-                    18
+                    
+                   😡
+                  
                   </span>
-                   
-                  <div
-                    class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
-                  >
-                    <i
-                      class="fal fa-thumbs-down"
-                    />
-                  </div>
-                   
                   <span
-                    class="ml-2"
+                    class="comment-box__emoji "
                   >
-                    4
+                    
+                   😥
+                  
+                  </span>
+                  <span
+                    class="comment-box__emoji "
+                  >
+                    
+                   😔
+                  
+                  </span>
+                  <span
+                    class="comment-box__emoji "
+                  >
+                    
+                   😳
+                  
+                  </span>
+                  <span
+                    class="comment-box__emoji "
+                  >
+                    
+                   😕
+                  
+                  </span>
+                  <span
+                    class="comment-box__emoji "
+                  >
+                    
+                   😃
+                  
+                  </span>
+                  <span
+                    class="comment-box__emoji "
+                  >
+                    
+                   😆
+                  
+                  </span>
+                  <span
+                    class="comment-box__emoji "
+                  >
+                    
+                   😍
+                  
+                  </span>
+                  <span
+                    class="comment-box__emoji "
+                  >
+                    
+                   😀
+                  
                   </span>
                 </div>
               </div>
@@ -663,58 +691,162 @@ exports[`SinglePost Page should render correctly 1`] = `
               <div
                 class="media-body"
               >
-                <h5
-                  class="d-flex justify-content-start align-items-center"
-                >
-                  <span
-                    class="mt-0 font-weight-bold"
-                  >
-                    John Doe
-                  </span>
-                   
-                  <i
-                    class="fas fa-circle text-primary dot mx-2"
-                  />
-                   
-                  <small>
-                    1 min Ago
-                  </small>
-                </h5>
-                 
-                <p>
-                  Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpretaris, sed diceret concludatque no. Verear habemus nibh scripta in.
-                </p>
-                 
                 <div
-                  class="d-flex justify-content-start align-items-center mt-2"
+                  class="row"
                 >
                   <div
-                    class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
+                    class="col-md-10"
                   >
-                    <i
-                      class="fal fa-thumbs-up fa-1x"
-                    />
+                    <h5
+                      class="d-flex justify-content-start align-items-center"
+                    >
+                      <span
+                        class="mt-0 font-weight-bold"
+                      >
+                        John Doe
+                      </span>
+                       
+                      <i
+                        class="fas fa-circle text-primary dot mx-2"
+                      />
+                       
+                      <small>
+                        1 min Ago
+                      </small>
+                    </h5>
+                     
+                    <p>
+                      Lorem ipsum dolor sit amet.
+                    </p>
+                     
+                    <div
+                      class="d-flex justify-content-start align-items-center mt-2"
+                    >
+                      <div
+                        class="border rounded-circle icon-circle icon-circle__active d-flex justify-content-center align-items-center text-primary"
+                      >
+                        <i
+                          class="fas fa-thumbs-up fa-1x"
+                        />
+                      </div>
+                       
+                      <span
+                        class="ml-2 mr-3"
+                      >
+                        18
+                      </span>
+                       
+                      <div
+                        class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                      </div>
+                       
+                      <span
+                        class="ml-2"
+                      >
+                        4
+                      </span>
+                    </div>
                   </div>
-                   
-                  <span
-                    class="ml-2 mr-3"
-                  >
-                    18
-                  </span>
                    
                   <div
-                    class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
+                    class="col-md-2 d-flex justify-content-end"
                   >
-                    <i
-                      class="fal fa-thumbs-down"
-                    />
+                    <span
+                      class="comment-box__emoji"
+                    >
+                      😉
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="media"
+            >
+              <img
+                alt=""
+                class="img-responsive mr-3 rounded-circle medium-avatar"
+                src="@/assets/signin-image.jpg"
+              />
+               
+              <div
+                class="media-body"
+              >
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-md-10"
+                  >
+                    <h5
+                      class="d-flex justify-content-start align-items-center"
+                    >
+                      <span
+                        class="mt-0 font-weight-bold"
+                      >
+                        John Doe
+                      </span>
+                       
+                      <i
+                        class="fas fa-circle text-primary dot mx-2"
+                      />
+                       
+                      <small>
+                        1 min Ago
+                      </small>
+                    </h5>
+                     
+                    <p>
+                      Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpretaris, sed diceret concludatque no. Verear habemus nibh scripta in.
+                    </p>
+                     
+                    <div
+                      class="d-flex justify-content-start align-items-center mt-2"
+                    >
+                      <div
+                        class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
+                      >
+                        <i
+                          class="fal fa-thumbs-up fa-1x"
+                        />
+                      </div>
+                       
+                      <span
+                        class="ml-2 mr-3"
+                      >
+                        18
+                      </span>
+                       
+                      <div
+                        class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary"
+                      >
+                        <i
+                          class="fal fa-thumbs-down"
+                        />
+                      </div>
+                       
+                      <span
+                        class="ml-2"
+                      >
+                        4
+                      </span>
+                    </div>
                   </div>
                    
-                  <span
-                    class="ml-2"
+                  <div
+                    class="col-md-2 d-flex justify-content-end"
                   >
-                    4
-                  </span>
+                    <span
+                      class="comment-box__emoji"
+                    >
+                      😊
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
