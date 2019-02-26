@@ -11,7 +11,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
   />
    
   <div
-    class="profile-edit-icon d-flex justify-content-between p-3"
+    class="d-flex justify-content-between p-3"
   >
     <span
       class="d-inline d-sm-none bl-back-arrow"
@@ -20,7 +20,11 @@ exports[`ProfileCard Component should render correctly 1`] = `
         class="fal fa-long-arrow-left fa-2x back-arrow"
       />
     </span>
-     
+  </div>
+   
+  <div
+    class="d-flex justify-content-end profile-edit-icon pr-2"
+  >
     <i
       class="fal fa-user-edit fa-2x"
     />
@@ -31,14 +35,14 @@ exports[`ProfileCard Component should render correctly 1`] = `
   >
     <img
       alt="..."
-      class="profile-img rounded"
+      class="profile-img rounded-circle"
       src="@/assets/Avatar2.png"
     />
      
     <span
       class="profile-name pl-3"
     >
-      Johndoe
+      Username
     </span>
   </div>
    
@@ -48,7 +52,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
     <h5
       class="card-title"
     >
-      John Doe
+      Full Name
     </h5>
      
     <p
@@ -58,7 +62,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
         class="pr-2 pb-5"
       >
         <i
-          class="fal fa-phone"
+          class="fal fa-phone icon"
         />
       </span>
        +234 000 000 0000
@@ -70,7 +74,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
         class="pr-2 py-1"
       >
         <i
-          class="fal fa-envelope"
+          class="fal fa-envelope icon"
         />
       </span>
        email@bloverse.com
@@ -82,7 +86,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
         class="pr-2"
       >
         <i
-          class="fal fa-map-marker-alt"
+          class="fal fa-map-marker-alt icon"
         />
       </span>
        Lagos, Nigeria
@@ -95,7 +99,10 @@ exports[`ProfileCard Component should render correctly 1`] = `
       <p
         class="profile__text"
       >
-        Some quick example text to build on the card title and make up the bulk of the card's content.
+        
+        Some quick example text to build on the card title and make up the 
+        bulk of the card's content.
+      
       </p>
     </div>
      
@@ -128,7 +135,9 @@ exports[`ProfileCard Component should render correctly 1`] = `
       <div
         class="header d-flex justify-content-between "
       >
-        <h5>
+        <h5
+          class=""
+        >
           <strong>
             Interest
           </strong>
@@ -146,11 +155,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
       <div
         class="mt-1"
       >
-        <p
-          class="category-title"
-        >
-          Lorem ipsum dolor sit amet
-        </p>
+        <!---->
          
         <div
           class="category-list d-flex flex-wrap mt-2"
@@ -216,104 +221,25 @@ exports[`ProfileCard Component should render correctly 1`] = `
   </div>
    
   <div
-    class="social p-3"
+    class="px-3 points"
   >
-    <h5
-      class="mb-2"
+    <span
+      class="font-weight-bold"
     >
-      <strong>
-        Social Media
-      </strong>
-    </h5>
+      Points
+    </span>
      
-    <div
-      class="d-flex flex-wrap"
+    <p
+      class="mt-2 mb-4"
     >
-      <div
-        class="mr-2"
-      >
-        <div
-          class="border rounded p-2 mb-1 d-flex align-items-center"
-        >
-          <img
-            alt="facebook"
-            class="social-icon"
-            src="@/assets/facebook-square.svg"
-          />
-           
-          <h6
-            class="social-text text-center pl-2"
-          >
-            Facebook
-          </h6>
-        </div>
-      </div>
-       
-      <div
-        class="mr-2"
-      >
-        <div
-          class="border rounded p-2 mb-1 d-flex align-items-center"
-        >
-          <img
-            alt="facebook"
-            class="social-icon"
-            src="@/assets/twitter-square.svg"
-          />
-           
-          <h6
-            class="social-text text-center pl-2"
-          >
-            Twitter
-          </h6>
-        </div>
-      </div>
-       
-      <div
-        class="mr-2"
-      >
-        <div
-          class="border rounded p-2 mb-1 d-flex align-items-center"
-        >
-          <img
-            alt="facebook"
-            class="social-icon"
-            src="@/assets/instagram-square.svg"
-          />
-           
-          <h6
-            class="social-text text-center pl-2"
-          >
-            Instagram
-          </h6>
-        </div>
-      </div>
-       
-      <div
-        class="mr-2"
-      >
-        <div
-          class="border rounded p-2 mb-1 d-flex align-items-center"
-        >
-          <img
-            alt="facebook"
-            class="social-icon"
-            src="@/assets/linkedin-square.svg"
-          />
-           
-          <h6
-            class="social-text text-center pl-2"
-          >
-            Linkedin
-          </h6>
-        </div>
-      </div>
-    </div>
+      0.05
+    </p>
   </div>
    
   <div
     class="card-footer text-muted bg-white footer-color"
   >
+    
     Member Since:
     
     <span
@@ -419,6 +345,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         24
                       </span>
                        Followers
+            
                     </span>
                      
                     <span>
@@ -428,6 +355,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         234
                       </span>
                        Articles
+            
                     </span>
                   </p>
                 </div>
@@ -486,6 +414,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         24
                       </span>
                        Followers
+            
                     </span>
                      
                     <span>
@@ -495,6 +424,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         234
                       </span>
                        Articles
+            
                     </span>
                   </p>
                 </div>
@@ -553,6 +483,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         24
                       </span>
                        Followers
+            
                     </span>
                      
                     <span>
@@ -562,6 +493,7 @@ exports[`ProfileCard Component should render correctly 1`] = `
                         234
                       </span>
                        Articles
+            
                     </span>
                   </p>
                 </div>

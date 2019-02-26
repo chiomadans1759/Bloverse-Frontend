@@ -321,7 +321,9 @@ exports[`Settings Page should render correctly 1`] = `
                 data-dismiss="modal"
                 type="button"
               >
-                Close
+                
+              Close
+            
               </button>
                
               <button

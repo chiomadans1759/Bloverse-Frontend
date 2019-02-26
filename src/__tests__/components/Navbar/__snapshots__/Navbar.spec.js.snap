@@ -12,6 +12,8 @@ exports[`Navbar Component should render correctly 1`] = `
     >
       <!---->
        
+      <!---->
+       
       <a
         class="router-link"
       >
@@ -502,7 +504,9 @@ exports[`Navbar Component should render correctly 1`] = `
               data-dismiss="modal"
               type="button"
             >
+              
               Close
+            
             </button>
              
             <button
@@ -529,6 +533,8 @@ exports[`Navbar Component should render initials button 1`] = `
     <div
       class="container-fluid"
     >
+      <!---->
+       
       <!---->
        
       <a
@@ -936,7 +942,9 @@ exports[`Navbar Component should render initials button 1`] = `
               data-dismiss="modal"
               type="button"
             >
+              
               Close
+            
             </button>
              
             <button

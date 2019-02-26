@@ -42,7 +42,6 @@ describe('Profile Component', () => {
     wrapper.find('.read-later').trigger('click');
     
     expect(wrapper.vm.showPrevRead).toBe(false);
-    expect(wrapper.vm.noSavedPost).toBe(true);
   });
   
   it('should toggle `previously-read`', () => {
@@ -53,7 +52,6 @@ describe('Profile Component', () => {
     wrapper.find('.prev-read').trigger('click');
     
     expect(wrapper.vm.showPrevRead).toBe(true);
-    expect(wrapper.vm.noSavedPost).toBe(false);
   });
 
   it('should toggle view to `list`', () => {

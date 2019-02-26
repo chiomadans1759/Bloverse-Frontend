@@ -19,6 +19,8 @@ exports[`Creator Home Page should render correctly 1`] = `
         >
           <!---->
            
+          <!---->
+           
           <a
             class="router-link"
           >
@@ -509,7 +511,9 @@ exports[`Creator Home Page should render correctly 1`] = `
                   data-dismiss="modal"
                   type="button"
                 >
-                  Close
+                  
+              Close
+            
                 </button>
                  
                 <button
