@@ -36,7 +36,6 @@ describe('PublishPage Component', () => {
       { RouterLink: RouterLinkStub }
     });
     wrapper.find('.btn').trigger('input');
-    wrapper.find('.nav-link').trigger('input');
 
     expect(wrapper.vm.showThis).toBe(false);
   })

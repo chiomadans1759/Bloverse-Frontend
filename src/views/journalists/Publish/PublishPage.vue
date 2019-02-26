@@ -1,33 +1,36 @@
 <template>
   <main id="publish-page">
-    <nav class="nav container d-flex justify-content-between align-items-center publish-nav">
-      <a class="nav-link" @click="goBack">
+    <nav class="nav container-fluid d-flex justify-content-between align-items-center publish-nav">
+      <div class="d-flex">
+        <button class="btn rounded-circle d-flex justify-content-center go-back" @click="goBack">
          <i class="fal fa-arrow-left back-icon"></i>
-         <span class="text-muted ml-2">Back</span>
-      </a>
+      </button>
+      <span class="text-muted ml-2 mt-2">Back</span>
+      </div>
       <p class="nav-link text-uppercase small" v-if="showThis">saving... to draft</p>
       <button class="btn btn-sm btn-primary-outline preview" @click="showPreview" v-if="showThis">Preview to post</button>
     </nav> 
      <div class="container">
        <div class="row">
-        <div class="col-lg-8 mt-4">
+         <div class="col-lg-1"></div>
+        <div class="col-lg-7 text-field">
           <form>
             <div class="form-group">
               <input type="text" class="form-control p-0 one" placeholder="Add a title" autofocus>
             </div>
             <div class="form-group d-flex" v-for="(line, index) in lines" :key="index">
-              <input type="text" class="form-control p-0 two" placeholder="Add keypoint" v-model="line.keypoint">
+              <input type="text" class="form-control p-0 two" placeholder="Add keypoint" v-model="line.keypoint" @input="addBullet">
               <div>
                 <span v-if="line.hideBtn">
                 <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="addKeypoint" v-if="plus_btn">
                   <i class="fal fa-plus"></i>
                 </button>
                 </span>
-                <span v-if="!line.hideBtn">
+                <!-- <span v-if="!line.hideBtn">
                 <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="removeKeypoint(index)">
-                  <i class="fal fa-minus"></i>
+                  <i class="fal fa-times"></i>
                 </button>
-                </span>
+                </span> -->
               </div>
             </div>
             </form>
@@ -47,25 +50,25 @@
               <Poptip placement="top" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
-                    <button class="btn rounded-btn-circle d-flex justify-content-center">
+                    <button class="btn rounded-circle d-flex justify-content-center">
                       <i class="fal fa-arrow-from-bottom"></i>
                     </button>
                     <p>Upload</p>
                   </div>
                    <div>
-                    <button class="btn rounded-btn-circle d-flex justify-content-center">
+                    <button class="btn rounded-circle d-flex justify-content-center">
                       <i class="fal fa-search"></i>
                     </button>
                   <p>Search</p>
                   </div>
                   <div>
-                    <button class="btn rounded-btn-circle d-flex justify-content-center">
+                    <button class="btn rounded-circle d-flex justify-content-center">
                       <i class="far fa-th"></i>
                     </button>
                   <p>Multiple</p>
                   </div>
                 </div>
-                <button class="btn rounded-btn-circle d-flex justify-content-center">
+                <button class="btn rounded-circle d-flex justify-content-center">
                   <i class="fal fa-image"></i>
                 </button>
               </Poptip>
@@ -74,19 +77,19 @@
               <Poptip placement="top" v-if="hideMe">
                 <div slot="content" class="d-flex justify-content-between inner-icons">
                   <div>
-                    <button class="btn rounded-btn-circle d-flex justify-content-center">
+                    <button class="btn rounded-circle d-flex justify-content-center">
                       <i class="fal fa-arrow-from-bottom"></i>
                     </button>
                     <p>Upload</p>
                   </div>
                    <div>
-                    <button class="btn rounded-btn-circle d-flex justify-content-center text">
+                    <button class="btn rounded-circle d-flex justify-content-center text">
                       <i class="fal fa-link"></i>
                     </button>
                   <p>Embedded</p>
                   </div>
                 </div>
-                <button class="btn rounded-btn-circle d-flex justify-content-center">
+                <button class="btn rounded-circle d-flex justify-content-center">
                   <i class="fal fa-video"></i>
                 </button>
               </Poptip>
@@ -99,7 +102,7 @@
                     <p>Add a link from twitter, facebook</p>
                   </div>
                 </div>
-                <button class="btn rounded-btn-circle d-flex justify-content-center">
+                <button class="btn rounded-circle d-flex justify-content-center">
                   <i class="fal fa-link"></i>
                 </button>
               </Poptip>
@@ -111,12 +114,12 @@
         <div class="col-lg-3 err-alert">
           <div class="d-flex justify-content-end mb-4 toggle" v-if="showMe" @click="toggleEntitySection">
             <span>
-              Hide EntitySection
+              Hide Info
             </span>
           </div> 
           <div class="d-flex justify-content-end mb-4 toggle" v-if="hideEntity"  @click="toggleEntitySection">
             <span>
-              Show EntitySection
+              Show Info
             </span>
           </div>
 
@@ -187,10 +190,11 @@ export default {
       content1: true,
       blurBackground: false,
       plus_btn: true,
+      minHeight: null,
       lines: [
         {
           keypoint:'',
-          hideBtn: true
+          hideBtn: false
         }
       ]
     }
@@ -216,14 +220,16 @@ export default {
   },
   methods: {
     textareaResize() {
-      this.$refs.autoText.style.minHeight = this.$refs.autoText.scrollHeight + 'px';
       if(this.textLength.length > 0) {
+        this.minHeight = this.$refs.autoText.style.minHeight;
+        this.$refs.autoText.style.minHeight = this.$refs.autoText.scrollHeight + 'px';
         this.showMe = true;
         this.showThis = true;
       } else {
         this.showMe = false;
         this.showThis = false;
         this.hideEntity = false
+        this.$refs.autoText.style.minHeight -= this.minHeight;
 
       }
       
@@ -268,6 +274,11 @@ export default {
       this.lines.splice(index,1)
       if (this.lines.length == 1) {
         this.plus_btn = true
+      }
+    },
+    addBullet(){
+      if(this.lines.keypoint.length > 0) {
+        this.line.hideBtn = true
       }
     }
   }

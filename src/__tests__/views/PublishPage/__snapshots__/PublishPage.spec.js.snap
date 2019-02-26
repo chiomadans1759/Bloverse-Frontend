@@ -5,21 +5,25 @@ exports[`PublishPage Component should render correctly 1`] = `
   id="publish-page"
 >
   <nav
-    class="nav container d-flex justify-content-between align-items-center publish-nav"
+    class="nav container-fluid d-flex justify-content-between align-items-center publish-nav"
   >
-    <a
-      class="nav-link"
+    <div
+      class="d-flex"
     >
-      <i
-        class="fal fa-arrow-left back-icon"
-      />
+      <button
+        class="btn rounded-circle d-flex justify-content-center go-back"
+      >
+        <i
+          class="fal fa-arrow-left back-icon"
+        />
+      </button>
        
       <span
-        class="text-muted ml-2"
+        class="text-muted ml-2 mt-2"
       >
         Back
       </span>
-    </a>
+    </div>
      
     <!---->
      
@@ -33,7 +37,11 @@ exports[`PublishPage Component should render correctly 1`] = `
       class="row"
     >
       <div
-        class="col-lg-8 mt-4"
+        class="col-lg-1"
+      />
+       
+      <div
+        class="col-lg-7 text-field"
       >
         <form>
           <div
@@ -57,16 +65,6 @@ exports[`PublishPage Component should render correctly 1`] = `
             />
              
             <div>
-              <span>
-                <button
-                  class="btn rounded-circle d-flex justify-content-center ml-3 text"
-                >
-                  <i
-                    class="fal fa-plus"
-                  />
-                </button>
-              </span>
-               
               <!---->
             </div>
           </div>
@@ -105,7 +103,7 @@ exports[`PublishPage Component should render correctly 1`] = `
                 >
                   <div>
                     <button
-                      class="btn rounded-btn-circle d-flex justify-content-center"
+                      class="btn rounded-circle d-flex justify-content-center"
                     >
                       <i
                         class="fal fa-arrow-from-bottom"
@@ -119,7 +117,7 @@ exports[`PublishPage Component should render correctly 1`] = `
                    
                   <div>
                     <button
-                      class="btn rounded-btn-circle d-flex justify-content-center"
+                      class="btn rounded-circle d-flex justify-content-center"
                     >
                       <i
                         class="fal fa-search"
@@ -133,7 +131,7 @@ exports[`PublishPage Component should render correctly 1`] = `
                    
                   <div>
                     <button
-                      class="btn rounded-btn-circle d-flex justify-content-center"
+                      class="btn rounded-circle d-flex justify-content-center"
                     >
                       <i
                         class="far fa-th"
@@ -147,7 +145,7 @@ exports[`PublishPage Component should render correctly 1`] = `
                 </div>
                  
                 <button
-                  class="btn rounded-btn-circle d-flex justify-content-center"
+                  class="btn rounded-circle d-flex justify-content-center"
                 >
                   <i
                     class="fal fa-image"
@@ -167,7 +165,7 @@ exports[`PublishPage Component should render correctly 1`] = `
                 >
                   <div>
                     <button
-                      class="btn rounded-btn-circle d-flex justify-content-center"
+                      class="btn rounded-circle d-flex justify-content-center"
                     >
                       <i
                         class="fal fa-arrow-from-bottom"
@@ -181,7 +179,7 @@ exports[`PublishPage Component should render correctly 1`] = `
                    
                   <div>
                     <button
-                      class="btn rounded-btn-circle d-flex justify-content-center text"
+                      class="btn rounded-circle d-flex justify-content-center text"
                     >
                       <i
                         class="fal fa-link"
@@ -195,7 +193,7 @@ exports[`PublishPage Component should render correctly 1`] = `
                 </div>
                  
                 <button
-                  class="btn rounded-btn-circle d-flex justify-content-center"
+                  class="btn rounded-circle d-flex justify-content-center"
                 >
                   <i
                     class="fal fa-video"
@@ -227,7 +225,7 @@ exports[`PublishPage Component should render correctly 1`] = `
                 </div>
                  
                 <button
-                  class="btn rounded-btn-circle d-flex justify-content-center"
+                  class="btn rounded-circle d-flex justify-content-center"
                 >
                   <i
                     class="fal fa-link"
