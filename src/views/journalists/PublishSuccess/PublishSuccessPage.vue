@@ -27,10 +27,20 @@
               <p>Your Article was successfully scanned. You have no issue of plagiarism with your article.</p>
             </div>
           </success-alert>
-           <div class="my-4">
+           <div class="my-2">
              <p>Select a Category</p>
                <select class="my-4 custom-select">
                 <option>Choose category</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+           </div>
+           <div class="my-2">
+             <p>Select a Country</p>
+               <select class="my-4 custom-select">
+                <option>Choose country</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
@@ -52,8 +62,10 @@
            </div>
            <div v-if="socialShare" class="mb-4 d-flex justify-content-between">
              <social-tags ref="reloadIcons" @removed="setReload"></social-tags>
-             <span @click.prevent="putBackIcons()" v-if="reloadIcons">
-               <i class="fal fa-undo reload"></i>
+             <span @click.prevent="putBackIcons()" v-if="reloadIcons" class="reload-me">
+               <button class="btn rounded-circle d-flex justify-content-center reloadBtn">
+                 <i class="fal fa-undo reload"></i>
+               </button>
               </span>
             </div>
            <div>

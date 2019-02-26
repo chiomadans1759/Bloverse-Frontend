@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PublishSuccess Component should render correctly 1`] = `
+<main
+  id="publish-success"
+>
+  <nav
+    class="nav container d-flex justify-content-between align-items-center success-nav"
+  >
+    <a
+      class="nav-link"
+    >
+      <i
+        class="fal fa-arrow-left back-icon"
+      />
+       
+      <span
+        class="text-muted ml-2"
+      >
+        Back
+      </span>
+    </a>
+  </nav>
+   
+  <div
+    class="container"
+  >
+    <div
+      class="row d-flex justify-content-center"
+    >
+      <div
+        class="col-lg-6 mt-5"
+      >
+        <h6
+          class="text-left title pr-4"
+        >
+          
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+        
+        </h6>
+         
+        <p
+          class="key"
+        >
+          
+            Add Keypoint
+          
+        </p>
+         
+        <p
+          class="pr-4"
+        >
+          
+            Lorem ipsum dolor sit amet, vel accumsan liberavisse ex, ea nec elaboraret interpretaris, sed diceret concludaturque no. Verear habemus sea ut. His nibh scripta in. In sea vocibus facilisis. Sed ea cibo eripuit vituperata, pri eius debitis ne. Eos et wisi legimus, vel cu paulo doctus vidisse. Iudico dicant nostrum nec an, in eos harum vitae, te quod vero salutandi nam. In detraxit eleifend duo, alterum iudicabit consectetuer per ad. Qui case possit omittam an, everti expetenda ut usu. Pro discere graecis liberavisse in. Ne docendi corpora quaestio eum, has vivendo suavitate accommodare an. Mei commune detraxit intellegebat ea, duo malis mundi abhorreant ei, cu mentitum recusabo elaboraret eos. Debitis temporibus sit an, eam at alterum efficiantur philosophia. Sea laoreet contentiones id, inermis partiendo vix ut, sea no graeco forensibus posidonium. Id pri error simul, ius illud falli meliore eu. Invenire forensibus est cu, diam ocurreret eu nam. Ne cum iriure accumsan oportere, laudem mandamus no duo. Vis at bonorum delenit appellantur, ne has oratio placerat posidonium, vix labores urbanitas interpretaris an. Nobis blandit adolescens eam ex. Doctus tamquam quaerendum sit ne. Ornatus repudiare pri ad, an ipsum animal vivendum eos. Duo ne mundi malorum, et falli tempor posidonium qui, est paulo scripta interpretaris ex.
+            
+          <img
+            class="img-responsive mt-2"
+            src="@/assets/post-card-image.jpg"
+          />
+        </p>
+      </div>
+       
+      <div
+        class="col-lg-4 mt-5 ml-3"
+      >
+        <success-alert-stub
+          heading=""
+        >
+          <div
+            class="d-flex justify-content-between"
+          >
+            <i
+              class="fal fa-check-circle checked"
+            />
+             
+            <p>
+              Your Article was successfully scanned. You have no issue of plagiarism with your article.
+            </p>
+          </div>
+        </success-alert-stub>
+         
+        <div
+          class="my-2"
+        >
+          <p>
+            Select a Category
+          </p>
+           
+          <select
+            class="my-4 custom-select"
+          >
+            <option>
+              Choose category
+            </option>
+             
+            <option>
+              2
+            </option>
+             
+            <option>
+              3
+            </option>
+             
+            <option>
+              4
+            </option>
+             
+            <option>
+              5
+            </option>
+          </select>
+        </div>
+         
+        <div
+          class="my-2"
+        >
+          <p>
+            Select a Country
+          </p>
+           
+          <select
+            class="my-4 custom-select"
+          >
+            <option>
+              Choose country
+            </option>
+             
+            <option>
+              2
+            </option>
+             
+            <option>
+              3
+            </option>
+             
+            <option>
+              4
+            </option>
+             
+            <option>
+              5
+            </option>
+          </select>
+        </div>
+         
+        <div
+          class="d-flex justify-content-between mb-4"
+        >
+          <p>
+            Share to social media
+          </p>
+           
+          <button
+            aria-pressed="true"
+            autocomplete="off"
+            class="btn btn-sm btn-toggle"
+            data-toggle="button"
+            type="button"
+          >
+            <div
+              class="square"
+            />
+          </button>
+        </div>
+         
+        <!---->
+         
+        <div>
+          <button-stub
+            customclass="btn btn-primary btn-lg btn-block"
+          >
+            <p
+              class="publish-txt"
+            >
+              Publish
+            </p>
+          </button-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;
