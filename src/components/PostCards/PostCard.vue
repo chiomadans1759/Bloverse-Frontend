@@ -25,12 +25,13 @@
           <p :class="['username', { 'mt-3': listView }]">
             <a
               class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+              v-if="!hideUsername"
               href="#"
               role="button"
             >JD</a>
-            &nbsp;
-            <span class="font-weight-bold name">username</span>
-            &nbsp;
+            <span class="font-weight-bold mx-1 name" v-if="!hideUsername">
+              username
+            </span>
             <span class="time">1 min ago</span>
           </p>
         </div>
@@ -216,6 +217,11 @@ export default {
       type: Boolean,
       default: false,
       required: false
+    },
+    hideUsername: {
+      type: Boolean,
+      default: false,
+      required: false,
     }
   },
   methods: {

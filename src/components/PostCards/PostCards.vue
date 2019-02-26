@@ -1,10 +1,30 @@
 <template>
   <main id="bl-postcards" class="container bl-postcards">
-    <post-card :hideCardBorder="hideCardBorder" :listView="listView" />
-    <post-card :hideCardBorder="hideCardBorder" :listView="listView" />
-    <post-card :hideCardBorder="hideCardBorder" :listView="listView" />
-    <post-card :hideCardBorder="hideCardBorder" :listView="listView" />
-    <post-card :hideCardBorder="hideCardBorder" :listView="listView" />
+    <post-card
+      :hideCardBorder="hideCardBorder"
+      :listView="listView"
+      :hideUsername="hideUsername" 
+    />
+    <post-card
+      :hideCardBorder="hideCardBorder"
+      :listView="listView"
+      :hideUsername="hideUsername" 
+    />
+    <post-card
+      :hideCardBorder="hideCardBorder"
+      :listView="listView"
+      :hideUsername="hideUsername" 
+    />
+    <post-card
+      :hideCardBorder="hideCardBorder"
+      :listView="listView"
+      :hideUsername="hideUsername" 
+    />
+    <post-card
+      :hideCardBorder="hideCardBorder"
+      :listView="listView"
+      :hideUsername="hideUsername" 
+    />
   </main>
 </template>
 
@@ -20,6 +40,10 @@ export default {
       default: false,
     },
     listView: {
+      type: Boolean,
+      default: false,
+    },
+    hideUsername: {
       type: Boolean,
       default: false,
     }

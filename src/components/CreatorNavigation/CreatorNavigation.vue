@@ -20,6 +20,7 @@
           <router-link
             to="/creators/info"
             class="nav-link d-flex align-items-center"
+            :class="{ 'active': active === 'info' }"
             id="pills-contest-tab"
             data-toggle="pill"
             role="tab"
@@ -31,7 +32,8 @@
         <li class="nav-item">
           <router-link
             to="/creators/profile"
-            class="nav-link active d-flex align-items-center"
+            class="nav-link d-flex align-items-center"
+            :class="{ 'active': active === 'dashboard' }"
             id="pills-general-tab"
             data-toggle="pill"
             role="tab"
@@ -43,6 +45,7 @@
           <router-link
             to="/creators/posts"
             class="nav-link d-flex align-items-center"
+            :class="{ 'active': active === 'posts' }"
             id="pills-contest-tab"
             data-toggle="pill"
             href="#posts-tab"
@@ -50,13 +53,18 @@
             aria-controls="pills-contest"
             aria-selected="true"
           >Posts
-            <span class="badge badge-secondary ml-2">4</span>
+            <span
+              class="badge ml-2"
+              :class="{'badge-primary': active === 'posts',
+                'badge-secondary': active !== 'posts'}"
+            >4</span>
           </router-link>
         </li>
         <li class="nav-item">
           <router-link
             to="/creators/drafts"
             class="nav-link d-flex align-items-center"
+            :class="{ 'active': active === 'drafts' }"
             id="pills-contest-tab"
             data-toggle="pill"
             href="#photocontest-tab"
@@ -64,13 +72,18 @@
             aria-controls="pills-contest"
             aria-selected="false"
           >Drafts
-            <span class="badge badge-secondary ml-2">4</span>
+            <span
+              class="badge ml-2"
+              :class="{'badge-primary': active === 'drafts',
+                'badge-secondary': active !== 'drafts'}"
+            >4</span>
           </router-link>
         </li>
         <li class="nav-item">
           <router-link
             to="/creators/trash"
             class="nav-link d-flex align-items-center"
+            :class="{ 'active': active === 'trash' }"
             id="pills-contest-tab"
             data-toggle="pill"
             href="#photocontest-tab"
@@ -86,7 +99,14 @@
 
 <script>
 export default {
-  
+  name: "CreatorNavigation",
+  props: {
+    active: {
+      type: String,
+      required: false,
+      default: "dashboard",
+    },
+  }
 }
 </script>
 
