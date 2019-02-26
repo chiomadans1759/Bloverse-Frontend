@@ -4,12 +4,9 @@
     style="width: 18rem;"
     class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
   >
-<<<<<<< HEAD
-    <div :class="['row mx-0', { 'flex-row-reverse': listView }]">
-      <div
-        :class="[{ 'col-4 read-later-image-list': listView, 'col-12 read-later-image': !listView, }]"
-=======
     <div class="d-none d-sm-block" :class="['row mx-0', { 'flex-row-reverse': listView }]">
+=======
+    <div class="d-none d-sm-flex" :class="['row mx-0', { 'flex-row-reverse': listView }]">
       <div :class="[{ 'col-4 read-later-image-list': listView, 'col-12 read-later-image': !listView, }]"
 >>>>>>> fix(homepage): update homepage with new design
         :style="{backgroundImage: 'url(' + readLaterImage + ')'}"
@@ -78,7 +75,7 @@
     </div>
     <div class="d-none d-sm-flex" :class="['row px-0 border bg-white card-footer', { 'mt-1': listView }]">
       <div class="col-6 row mx-0 actions--a">
-        <div class="col-5 d-flex justify-content-between border-right likes">
+        <div class="col-4 d-flex justify-content-around border-right px-0 likes">
           <p class="thumbs-up" v-show="!likePost">
             <span class="border rounded-circle mr-1 icons thumbs-up-icon" @click="toggleLike">
               <i class="fal fa-thumbs-up"></i>
@@ -104,7 +101,7 @@
             <span class="count">1</span>
           </p>
         </div>
-        <div class="col-7 d-flex justify-content-start share">
+        <div class="col-8 d-flex justify-content-start share">
           <p class="share" v-show="!share">
             <span class="border rounded-circle mr-1 share icons" @click="toggleShare">
               <i class="fal fa-share"></i>
@@ -262,7 +259,7 @@
             <p>Lorem ipsum dolor sit amet, vel accumsam iss</p>
           </div>
       </div>
-      <div class="row mt-2">
+      <div class="row mt-2 px-2">
         <div class="col-6">
           <span class="icons icon-gray">
             <i class="fal fa-eye mr-1"></i> <span class="text-dark">123</span>
@@ -392,14 +389,9 @@ export default {
       dropdownArrowDown: false,
       share: false,
       bookmarked: false,
-<<<<<<< HEAD
-      isConsumer: true
-    };
-=======
-      isConsumer: false,
+      isConsumer: true,
       showKeypoints: false,
     }
->>>>>>> fix(homepage): update homepage with new design
   },
   props: {
     listView: {

@@ -879,7 +879,7 @@ exports[`Profile Component should render correctly 1`] = `
                 style="width: 18rem;"
               >
                 <div
-                  class="d-none d-sm-block row mx-0"
+                  class="d-none d-sm-flex row mx-0"
                 >
                   <div
                     class="col-12 read-later-image"
@@ -991,7 +991,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-6 row mx-0 actions--a"
                   >
                     <div
-                      class="col-5 d-flex justify-content-between border-right likes"
+                      class="col-4 d-flex justify-content-around border-right px-0 likes"
                     >
                       <p
                         class="thumbs-up"
@@ -1069,7 +1069,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </div>
                      
                     <div
-                      class="col-7 d-flex justify-content-start share"
+                      class="col-8 d-flex justify-content-start share"
                     >
                       <p
                         class="share"
@@ -1397,7 +1397,7 @@ exports[`Profile Component should render correctly 1`] = `
                   <!---->
                    
                   <div
-                    class="row mt-2"
+                    class="row mt-2 px-2"
                   >
                     <div
                       class="col-6"
@@ -1698,7 +1698,7 @@ exports[`Profile Component should render correctly 1`] = `
                 style="width: 18rem;"
               >
                 <div
-                  class="d-none d-sm-block row mx-0"
+                  class="d-none d-sm-flex row mx-0"
                 >
                   <div
                     class="col-12 read-later-image"
@@ -1810,7 +1810,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-6 row mx-0 actions--a"
                   >
                     <div
-                      class="col-5 d-flex justify-content-between border-right likes"
+                      class="col-4 d-flex justify-content-around border-right px-0 likes"
                     >
                       <p
                         class="thumbs-up"
@@ -1888,7 +1888,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </div>
                      
                     <div
-                      class="col-7 d-flex justify-content-start share"
+                      class="col-8 d-flex justify-content-start share"
                     >
                       <p
                         class="share"
@@ -2216,7 +2216,7 @@ exports[`Profile Component should render correctly 1`] = `
                   <!---->
                    
                   <div
-                    class="row mt-2"
+                    class="row mt-2 px-2"
                   >
                     <div
                       class="col-6"
@@ -2517,7 +2517,7 @@ exports[`Profile Component should render correctly 1`] = `
                 style="width: 18rem;"
               >
                 <div
-                  class="d-none d-sm-block row mx-0"
+                  class="d-none d-sm-flex row mx-0"
                 >
                   <div
                     class="col-12 read-later-image"
@@ -2629,7 +2629,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-6 row mx-0 actions--a"
                   >
                     <div
-                      class="col-5 d-flex justify-content-between border-right likes"
+                      class="col-4 d-flex justify-content-around border-right px-0 likes"
                     >
                       <p
                         class="thumbs-up"
@@ -2707,7 +2707,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </div>
                      
                     <div
-                      class="col-7 d-flex justify-content-start share"
+                      class="col-8 d-flex justify-content-start share"
                     >
                       <p
                         class="share"
@@ -3035,7 +3035,7 @@ exports[`Profile Component should render correctly 1`] = `
                   <!---->
                    
                   <div
-                    class="row mt-2"
+                    class="row mt-2 px-2"
                   >
                     <div
                       class="col-6"
@@ -3336,7 +3336,7 @@ exports[`Profile Component should render correctly 1`] = `
                 style="width: 18rem;"
               >
                 <div
-                  class="d-none d-sm-block row mx-0"
+                  class="d-none d-sm-flex row mx-0"
                 >
                   <div
                     class="col-12 read-later-image"
@@ -3448,7 +3448,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-6 row mx-0 actions--a"
                   >
                     <div
-                      class="col-5 d-flex justify-content-between border-right likes"
+                      class="col-4 d-flex justify-content-around border-right px-0 likes"
                     >
                       <p
                         class="thumbs-up"
@@ -3526,7 +3526,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </div>
                      
                     <div
-                      class="col-7 d-flex justify-content-start share"
+                      class="col-8 d-flex justify-content-start share"
                     >
                       <p
                         class="share"
@@ -3854,7 +3854,7 @@ exports[`Profile Component should render correctly 1`] = `
                   <!---->
                    
                   <div
-                    class="row mt-2"
+                    class="row mt-2 px-2"
                   >
                     <div
                       class="col-6"
@@ -4155,7 +4155,7 @@ exports[`Profile Component should render correctly 1`] = `
                 style="width: 18rem;"
               >
                 <div
-                  class="d-none d-sm-block row mx-0"
+                  class="d-none d-sm-flex row mx-0"
                 >
                   <div
                     class="col-12 read-later-image"
@@ -4267,7 +4267,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="col-6 row mx-0 actions--a"
                   >
                     <div
-                      class="col-5 d-flex justify-content-between border-right likes"
+                      class="col-4 d-flex justify-content-around border-right px-0 likes"
                     >
                       <p
                         class="thumbs-up"
@@ -4345,7 +4345,7 @@ exports[`Profile Component should render correctly 1`] = `
                     </div>
                      
                     <div
-                      class="col-7 d-flex justify-content-start share"
+                      class="col-8 d-flex justify-content-start share"
                     >
                       <p
                         class="share"
@@ -4673,7 +4673,7 @@ exports[`Profile Component should render correctly 1`] = `
                   <!---->
                    
                   <div
-                    class="row mt-2"
+                    class="row mt-2 px-2"
                   >
                     <div
                       class="col-6"
@@ -4989,7 +4989,7 @@ exports[`Profile Component should render correctly 1`] = `
               style="width: 18rem;"
             >
               <div
-                class="d-none d-sm-block row mx-0"
+                class="d-none d-sm-flex row mx-0"
               >
                 <div
                   class="col-12 read-later-image"
@@ -5101,7 +5101,7 @@ exports[`Profile Component should render correctly 1`] = `
                   class="col-6 row mx-0 actions--a"
                 >
                   <div
-                    class="col-5 d-flex justify-content-between border-right likes"
+                    class="col-4 d-flex justify-content-around border-right px-0 likes"
                   >
                     <p
                       class="thumbs-up"
@@ -5179,7 +5179,7 @@ exports[`Profile Component should render correctly 1`] = `
                   </div>
                    
                   <div
-                    class="col-7 d-flex justify-content-start share"
+                    class="col-8 d-flex justify-content-start share"
                   >
                     <p
                       class="share"
@@ -5808,7 +5808,7 @@ exports[`Profile Component should render correctly 1`] = `
               style="width: 18rem;"
             >
               <div
-                class="d-none d-sm-block row mx-0"
+                class="d-none d-sm-flex row mx-0"
               >
                 <div
                   class="col-12 read-later-image"
@@ -5924,7 +5924,7 @@ exports[`Profile Component should render correctly 1`] = `
                   class="col-6 row mx-0 actions--a"
                 >
                   <div
-                    class="col-5 d-flex justify-content-between border-right likes"
+                    class="col-4 d-flex justify-content-around border-right px-0 likes"
                   >
                     <p
                       class="thumbs-up"
@@ -6002,7 +6002,7 @@ exports[`Profile Component should render correctly 1`] = `
                   </div>
                    
                   <div
-                    class="col-7 d-flex justify-content-start share"
+                    class="col-8 d-flex justify-content-start share"
                   >
                     <p
                       class="share"
@@ -6328,7 +6328,7 @@ exports[`Profile Component should render correctly 1`] = `
                 <!---->
                  
                 <div
-                  class="row mt-2"
+                  class="row mt-2 px-2"
                 >
                   <div
                     class="col-6"
@@ -6630,7 +6630,7 @@ exports[`Profile Component should render correctly 1`] = `
               style="width: 18rem;"
             >
               <div
-                class="d-none d-sm-block row mx-0"
+                class="d-none d-sm-flex row mx-0"
               >
                 <div
                   class="col-12 read-later-image"
@@ -6750,7 +6750,7 @@ exports[`Profile Component should render correctly 1`] = `
                   class="col-6 row mx-0 actions--a"
                 >
                   <div
-                    class="col-5 d-flex justify-content-between border-right likes"
+                    class="col-4 d-flex justify-content-around border-right px-0 likes"
                   >
                     <p
                       class="thumbs-up"
@@ -6828,7 +6828,7 @@ exports[`Profile Component should render correctly 1`] = `
                   </div>
                    
                   <div
-                    class="col-7 d-flex justify-content-start share"
+                    class="col-8 d-flex justify-content-start share"
                   >
                     <p
                       class="share"
@@ -7486,7 +7486,7 @@ exports[`Profile Component should render correctly 1`] = `
               style="width: 18rem;"
             >
               <div
-                class="d-none d-sm-block row mx-0"
+                class="d-none d-sm-flex row mx-0"
               >
                 <div
                   class="col-12 read-later-image"
@@ -7600,7 +7600,7 @@ exports[`Profile Component should render correctly 1`] = `
                   class="col-6 row mx-0 actions--a"
                 >
                   <div
-                    class="col-5 d-flex justify-content-between border-right likes"
+                    class="col-4 d-flex justify-content-around border-right px-0 likes"
                   >
                     <p
                       class="thumbs-up"
@@ -7678,7 +7678,7 @@ exports[`Profile Component should render correctly 1`] = `
                   </div>
                    
                   <div
-                    class="col-7 d-flex justify-content-start share"
+                    class="col-8 d-flex justify-content-start share"
                   >
                     <p
                       class="share"
@@ -8003,7 +8003,7 @@ exports[`Profile Component should render correctly 1`] = `
                 <!---->
                  
                 <div
-                  class="row mt-2"
+                  class="row mt-2 px-2"
                 >
                   <div
                     class="col-6"
@@ -8322,7 +8322,7 @@ exports[`Profile Component should render correctly 1`] = `
               style="width: 18rem;"
             >
               <div
-                class="d-none d-sm-block row mx-0"
+                class="d-none d-sm-flex row mx-0"
               >
                 <div
                   class="col-12 read-later-image"
@@ -8434,7 +8434,7 @@ exports[`Profile Component should render correctly 1`] = `
                   class="col-6 row mx-0 actions--a"
                 >
                   <div
-                    class="col-5 d-flex justify-content-between border-right likes"
+                    class="col-4 d-flex justify-content-around border-right px-0 likes"
                   >
                     <p
                       class="thumbs-up"
@@ -8512,7 +8512,7 @@ exports[`Profile Component should render correctly 1`] = `
                   </div>
                    
                   <div
-                    class="col-7 d-flex justify-content-start share"
+                    class="col-8 d-flex justify-content-start share"
                   >
                     <p
                       class="share"

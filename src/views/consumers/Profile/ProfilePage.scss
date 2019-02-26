@@ -41,8 +41,11 @@ nav {
 
 .contest-advert {
   background: #f6e5d9;
-  background-image: url('../../../assets/Mask-group-15.svg');
-  height: rem(200px);
+  background-image: url('../../../assets/Group_975.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  height: rem(270px);
   margin: auto;
   margin-bottom: auto;
   border: rem(1px) solid #d9d9d9;
@@ -89,7 +92,6 @@ nav {
     top: 70.5%;
     right: rem(-1px);
   }
-
 }
 
 a {
