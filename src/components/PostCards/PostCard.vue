@@ -18,10 +18,12 @@
       <div :class="['card-body', { 'col-8 py-0': listView }]">
         <div class="card-body-title--content mt-2">
           <button v-show="listView" type="button" class="btn btn-sm bg-white mx-0 my-2">Category</button>
+          <router-link to="/posts/rere">
           <h5 class="card-title font-weight-bold">
             Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
             ea nec elaboraret interpret
           </h5>
+          </router-link>
           <p :class="['username', { 'mt-3': listView }]">
             <a
               class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
