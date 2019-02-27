@@ -450,7 +450,7 @@ export default {
     }
   },
   created() {
-    window.onscroll  = () => {
+    window.onscroll = () => {
       this.removeStickyActions();
     }
   }

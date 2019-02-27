@@ -907,14 +907,16 @@ exports[`Profile Component should render correctly 1`] = `
                         Category
                       </button>
                        
-                      <h5
-                        class="card-title font-weight-bold"
-                      >
-                        
+                      <a>
+                        <h5
+                          class="card-title font-weight-bold"
+                        >
+                          
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                      </h5>
+                        </h5>
+                      </a>
                        
                       <p
                         class="username"
@@ -1350,14 +1352,16 @@ exports[`Profile Component should render correctly 1`] = `
                         Category
                       </button>
                        
-                      <h5
-                        class="card-title font-weight-bold"
-                      >
-                        
+                      <a>
+                        <h5
+                          class="card-title font-weight-bold"
+                        >
+                          
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                      </h5>
+                        </h5>
+                      </a>
                        
                       <p
                         class="username"
@@ -1793,14 +1797,16 @@ exports[`Profile Component should render correctly 1`] = `
                         Category
                       </button>
                        
-                      <h5
-                        class="card-title font-weight-bold"
-                      >
-                        
+                      <a>
+                        <h5
+                          class="card-title font-weight-bold"
+                        >
+                          
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                      </h5>
+                        </h5>
+                      </a>
                        
                       <p
                         class="username"
@@ -2236,14 +2242,16 @@ exports[`Profile Component should render correctly 1`] = `
                         Category
                       </button>
                        
-                      <h5
-                        class="card-title font-weight-bold"
-                      >
-                        
+                      <a>
+                        <h5
+                          class="card-title font-weight-bold"
+                        >
+                          
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                      </h5>
+                        </h5>
+                      </a>
                        
                       <p
                         class="username"
@@ -2679,14 +2687,16 @@ exports[`Profile Component should render correctly 1`] = `
                         Category
                       </button>
                        
-                      <h5
-                        class="card-title font-weight-bold"
-                      >
-                        
+                      <a>
+                        <h5
+                          class="card-title font-weight-bold"
+                        >
+                          
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                      </h5>
+                        </h5>
+                      </a>
                        
                       <p
                         class="username"
@@ -3137,14 +3147,16 @@ exports[`Profile Component should render correctly 1`] = `
                       Category
                     </button>
                      
-                    <h5
-                      class="card-title font-weight-bold"
-                    >
-                      
+                    <a>
+                      <h5
+                        class="card-title font-weight-bold"
+                      >
+                        
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                    </h5>
+                      </h5>
+                    </a>
                      
                     <p
                       class="username"
@@ -3581,14 +3593,16 @@ exports[`Profile Component should render correctly 1`] = `
                       Category
                     </button>
                      
-                    <h5
-                      class="card-title font-weight-bold"
-                    >
-                      
+                    <a>
+                      <h5
+                        class="card-title font-weight-bold"
+                      >
+                        
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                    </h5>
+                      </h5>
+                    </a>
                      
                     <p
                       class="username"
@@ -4025,14 +4039,16 @@ exports[`Profile Component should render correctly 1`] = `
                       Category
                     </button>
                      
-                    <h5
-                      class="card-title font-weight-bold"
-                    >
-                      
+                    <a>
+                      <h5
+                        class="card-title font-weight-bold"
+                      >
+                        
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                    </h5>
+                      </h5>
+                    </a>
                      
                     <p
                       class="username"
@@ -4469,14 +4485,16 @@ exports[`Profile Component should render correctly 1`] = `
                       Category
                     </button>
                      
-                    <h5
-                      class="card-title font-weight-bold"
-                    >
-                      
+                    <a>
+                      <h5
+                        class="card-title font-weight-bold"
+                      >
+                        
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                    </h5>
+                      </h5>
+                    </a>
                      
                     <p
                       class="username"
@@ -4913,14 +4931,16 @@ exports[`Profile Component should render correctly 1`] = `
                       Category
                     </button>
                      
-                    <h5
-                      class="card-title font-weight-bold"
-                    >
-                      
+                    <a>
+                      <h5
+                        class="card-title font-weight-bold"
+                      >
+                        
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                    </h5>
+                      </h5>
+                    </a>
                      
                     <p
                       class="username"

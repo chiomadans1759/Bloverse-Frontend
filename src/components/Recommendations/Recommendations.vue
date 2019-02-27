@@ -1,7 +1,6 @@
 <template>
   <main class="container-fluid bl-recommendations">
     <carousel
-      :perPage = "perPage"
       navigationEnabled
       paginationActiveColor = "#096DD9"
       paginationColor = "#868686"
@@ -12,7 +11,8 @@
       :navigationPrevLabel = "navigationPrevLabel"
       :autoplayTimeout="4000"
       :autoplay = "autoplay"
-      :loop = "loop"
+      :loop = "loop" 
+      :perPageCustom = "[[320, 1], [600, 2], [1000, 3], [1199, 4]]"
     >
       <slide>
           <recommendation-card />
@@ -48,7 +48,6 @@ export default {
   components: { Carousel, Slide, RecommendationCard },
   data() {
     return {
-      perPage: 4,
       paginationSize: 5,
       paginationPadding: 5,
       minSwipeDistance: 0,
