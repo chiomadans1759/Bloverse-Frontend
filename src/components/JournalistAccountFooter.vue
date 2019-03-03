@@ -1,18 +1,20 @@
 <template>
   <footer id="journalist-account-footer">
-    <div class="mt-5">
-      <ul class="list-inline mb-2">
-        <li class="list-inline-item">
-          <a href>Terms</a>
-        </li>
-        <li class="list-inline-item mx-3">
-          <a href>Privacy</a>
-        </li>
-        <li class="list-inline-item">
-          <a href>Feedback</a>
-        </li>
-      </ul>
-      <h5 class="text-secondary">{{current_year}} Bloverse. All rights reserved.</h5>
+    <div class="text-center">
+      <div class="mt-5">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item">
+            <a href>Terms</a>
+          </li>
+          <li class="list-inline-item mx-3">
+            <a href>Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href>Feedback</a>
+          </li>
+        </ul>
+        <h5 class="text-secondary">{{current_year}} Bloverse. All rights reserved.</h5>
+      </div>
     </div>
   </footer>
 </template>
@@ -36,12 +38,6 @@ export default {
 
   #journalist-account-footer .list-inline .list-inline-item a:hover {
     color: #2f80ed !important;
-  }
-
-  @media screen and (max-width: 600px) {
-    #journalist-account-footer {
-      display: none;
-    }
   }
 
   #journalist-account-footer h5 {

@@ -1,8 +1,8 @@
 <template>
   <main id="post-display">
     <div class="container">
-      <section v-if="!post">
-        <!-- <inline-loader /> -->
+      <section v-if="general.loading">
+        <preloader/>
         <h1>LOADING</h1>
       </section>
 
@@ -18,12 +18,8 @@
         <div class="col-md-12 py-3">
           <div class="details-sec-two mb-5">
             <ul class="list-unstyled mt-4" v-if="post.category == 7">
-              <li class="text-secondary mb-1">
-                Device Used: {{post.device_type}}
-              </li>
-              <li class="text-secondary">
-                Location: {{post.location}}
-              </li>
+              <li class="text-secondary mb-1">Device Used: {{post.device_type}}</li>
+              <li class="text-secondary">Location: {{post.location}}</li>
             </ul>
 
             <ul class="post-keypoints mt-4 ml-4" v-else>
@@ -39,9 +35,7 @@
         <div class="col-12 post-content-body text-dark" v-html="post.body"></div>
 
         <div class="col-12 mt-5 pt-5 text-center">
-          <h3 class="text-uppercase mb-3">
-            Posted {{post.created | customizedTime}} by:
-          </h3>
+          <h3 class="text-uppercase mb-3">Posted {{post.created | customizedTime}} by:</h3>
 
           <div class="authors-img">
             <img :src="post.author.image_url" alt="Author's Image" class="rounded-circle">
@@ -59,7 +53,7 @@
               </div>
 
               <div class="col-auto">
-                <social-buttons :slug="slug" />
+                <social-buttons :slug="slug"/>
               </div>
             </div>
           </div>
@@ -70,20 +64,22 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex"
-import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share"
-import SocialButtons from "@/components/SocialButtons.vue"
+import { mapState, mapActions } from "vuex";
+import { Facebook, Twitter, Linkedin } from "vue-socialmedia-share";
+import SocialButtons from "@/components/SocialButtons.vue";
+import Preloader from "@/components/preloader.vue";
 
 export default {
   components: {
     Facebook,
     Twitter,
     Linkedin,
-    SocialButtons
+    SocialButtons,
+    Preloader
   },
   data: function() {
     return {
-      post: {},
+      post: {}
     };
   },
   computed: {
@@ -103,7 +99,7 @@ export default {
   },
   methods: {
     ...mapActions(["getPostBySlug"]),
-    async getPostForDisplay(){
+    async getPostForDisplay() {
       // fetch the data when the view is created and the data is
       // already being observed
       let { slug } = this.$route.params;
@@ -112,15 +108,15 @@ export default {
     }
   },
   watch: {
-    async '$route'(to, from) {
-      await this.getPostForDisplay()
+    async $route(to, from) {
+      await this.getPostForDisplay();
     }
   },
   async created() {
-    await this.getPostForDisplay()
+    await this.getPostForDisplay();
   },
-  beforeDestroy: function(){
-    this.post = {}
+  beforeDestroy: function() {
+    this.post = {};
   }
 };
 </script>
@@ -141,7 +137,7 @@ export default {
   font-size: 16px;
 }
 
-#post-display .details-sec-three  .author-email {
+#post-display .details-sec-three .author-email {
   font-size: 13px;
 }
 

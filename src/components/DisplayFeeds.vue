@@ -20,8 +20,8 @@
 <script >
 import { Row, Col, vSelect, Card, Avatar, Icon } from "iview";
 import { mapActions, mapState } from "vuex";
-import FeedCard from "./FeedCard.vue";
-import InlineLoader from "./InlineLoader.vue";
+import FeedCard from "@/components/FeedCard.vue";
+import InlineLoader from "@/components/InlineLoader.vue";
 
 export default {
   name: "Displayfeeds",

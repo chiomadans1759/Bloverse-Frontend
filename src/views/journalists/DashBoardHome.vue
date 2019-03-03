@@ -1,6 +1,6 @@
 <template>
   <main id="journalist-dashboard">
-    <div class="container pt-5" style="margin-left: -3rem;">
+    <div class="container pt-5">
       <Row :gutter="32" v-if="show" id="stats">
         <Col :sm="8" :xs="24" id="icon-fix">
           <stat-card
@@ -61,8 +61,7 @@
                       :key="index"
                       v-if="index > 0"
                       style="font-size: 13px;"
-                      class="mb-2"
-                    >
+                      class="mb-2">
                       <span>{{ data[0] }}</span>
                     </p>
                   </div>
@@ -73,8 +72,7 @@
                       :key="index"
                       v-if="index > 0"
                       style="font-size: 10px;"
-                      class="mb-3"
-                    >
+                      class="mb-3">
                       <span>{{ data[1] }}</span>
                     </p>
                   </div>
@@ -130,7 +128,7 @@ export default {
       country: "",
       categories: "",
       chartOptions: {
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "#edf2f9",
         datalessRegionColor: "#c2c2c2",
         colorAxis: { colors: ["#c5c5c5", "#2F80ED"] }
       }
@@ -200,7 +198,7 @@ export default {
   overflow: hidden;
 }
 
-#blue-c:before {
+#journalist-dashboard #blue-c:before {
   content: " \25CF";
   font-size: 20px;
   margin-left: 2rem;
@@ -256,7 +254,7 @@ export default {
 }
 
 @media screen and (max-width: 360px) {
-  #stat-wrapper stat-card {
+  #journalist-dashboard #stat-wrapper stat-card {
     width: 100%;
     margin-bottom: 1rem;
   }
@@ -265,11 +263,11 @@ export default {
     display: block;
   }
 
-  .mobile-menu {
+  #journalist-dashboard .mobile-menu {
     display: block;
   }
 
-  .bm-burger-button {
+  #journalist-dashboard .bm-burger-button {
     cursor: pointer;
     height: 20px;
     left: 36px;
@@ -280,27 +278,26 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
-  #stat-wrapper stat-card {
+  #journalist-dashboard #stat-wrapper stat-card {
     width: 100%;
     margin-bottom: 1rem;
   }
 
-  .show-map {
+  #journalist-dashboard .show-map {
     display: none;
   }
 
-  #icon-fix {
+  #journalist-dashboard #icon-fix {
     margin-bottom: 1rem;
   }
 
-  #stats {
+  #journalist-dashboard #stats {
     display: flex;
     flex-direction: column;
     margin-top: 4rem;
     text-align: center;
     margin-left: -5rem;
   }
-
 }
 </style>
 

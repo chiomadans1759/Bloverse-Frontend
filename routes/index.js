@@ -9,6 +9,8 @@ import BlankBase from '@/layouts/BlankBase';
 import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
 
 // Client Views
+// const PostFeeds = () => import('../src/views/PostFeeds.vue');
+
 import PostFeeds from '../src/views/PostFeeds.vue';
 import TrendingFeed from '../src/views/TrendingFeed.vue';
 import PostDisplay from '../src/views/PostDisplay.vue';

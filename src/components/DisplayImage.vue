@@ -1,15 +1,13 @@
 <template>
-  <div class="col-md-12">
-    <div class="mother-div">
-      <section id="img-display" style="height:400px; width: 100%;">
+  <div class="row">
+    <div class="col-12">
+      <section id="img-display" style="height:200px; width: 100%;">
         <image-chooser
           :show="displayChooser"
           @closeModal="displayChooser=false"
           @selectImage="handleImageSelected"
         />
         <div class="img-wrapper" @mouseover="imageHover = true" @mouseleave="imageHover = false">
-          <i class="fal fa-file-upload fa-4x"></i>
-          <p>{{this.currImage ? 'Change Picture' : 'Add Picture'}}</p>
           <img v-if="currImage" :src="currImage" :alt="alt">
           <div v-else style="display: flex; width: 100%; height: 100%">
             <h2 style="margin: auto">NO IMAGE</h2>
@@ -18,12 +16,10 @@
             v-if="canEdit"
             id="activate-upload"
             v-show="imageHover"
-            @click="displayChooser = true"
-          >
+            @click="displayChooser = true">
             <div style="margin: auto; display: flex; flex-direction: column; align-items: center;">
-              <Icon type="ios-camera"></Icon>
-              <h3 v-if="currImage">+</h3>
-              <h3 v-else>Click to Upload Photo</h3>
+              <Icon type="ios-camera" style="font-size: 48px;"></Icon>
+              <h3 class="text-capitalize">Click to Upload Photo</h3>
             </div>
           </div>
         </div>

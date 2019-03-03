@@ -21,17 +21,16 @@
         :model="post"
         ref="basicCreatePostForm"
         class="travel-form"
-        :rules="validatePostForm"
-        style="margin-top: 6rem;"
-      >
-        <Row type="flex" justify="space-between">
-          <Col :sm="24" id="create-post">
-            <Row type="flex" justify="space-between">
-              <DisplayImage v-model="post.image_url" height="200px" width="100%" :can-edit="true"/>
-            </Row>
+        :rules="validatePostForm">
+        <div class="row mb-4">
+          <div class="col-12">
+            <DisplayImage v-model="post.image_url" :can-edit="true"/>
+          </div>
+        </div>
 
-            <br>
-
+        <div class="row">
+          <div class="col-12">
+            <label>Article Title</label>
             <FormItem prop="title" :error="errors.title">
               <div
                 class="alert alert-danger py-0"
@@ -45,95 +44,77 @@
                 :maxlength="max"
               />
             </FormItem>
+          </div>
+        </div>
 
-            <Row type="flex" justify="space-between">
-              <Col :sm="11">
-                <Select v-model="post.category" placeholder="Choose Category" :disabled="isTravel">
-                  <Option
-                    v-for="cat in general.categories"
-                    v-show="cat.name != 'Photo Contest'"
-                    :value="cat.id"
-                    :key="cat.id"
-                  >{{cat.name}}</Option>
-                </Select>
-              </Col>
-              <Col :sm="11">
-                <Select v-model="post.country" placeholder="Choose Country" :disabled="isTravel">
-                  <Option
-                    v-for="item in general.countries"
-                    :value="item.id"
-                    :key="item.id"
-                    v-show="item.name != 'All'"
-                  >{{item.name}}</Option>
-                </Select>
-              </Col>
-            </Row>
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <label>Category</label>
+          
+            <Select v-model="post.category" placeholder="Choose Category" :disabled="isTravel">
+              <Option
+                v-for="cat in general.categories"
+                v-show="cat.name != 'Photo Contest'"
+                :value="cat.id"
+                :key="cat.id"
+              >{{cat.name}}</Option>
+            </Select>
+          </div>
 
-            <br>
+          <div class="col-md-6">
+            <label>Country</label>
 
-            <section>
-              <div class="key-points" v-if="isTravel">
-                <input
-                  v-model="post.location"
-                  ref="autocomplete"
-                  placeholder="Location"
-                  class="search-location"
-                >
-                <FormItem prop="duration">
-                  <DatePicker
-                    v-model="post.duration"
-                    id="keypoint"
-                    type="date"
-                    placement="bottom-end"
-                    placeholder="Date Taken"
-                    style="width: 100%"
-                  ></DatePicker>
-                </FormItem>
-                <FormItem prop="device_type">
-                  <Select placeholder="Device Used" id="keypoint" v-model="post.device_type">
-                    <Option
-                      v-for="item in deviceList"
-                      :value="item.value"
-                      :key="item.value"
-                    >{{ item.label }}</Option>
-                  </Select>
-                </FormItem>
-              </div>
+            <Select v-model="post.country" placeholder="Choose Country" :disabled="isTravel">
+              <Option
+                v-for="item in general.countries"
+                :value="item.id"
+                :key="item.id"
+                v-show="item.name != 'All'"
+              >{{item.name}}</Option>
+            </Select>
+          </div>
+        </div>
 
-              <div class="keypoints" v-else>
-                <FormItem
-                  v-for="(val, index) in 3"
-                  :key="index"
-                >
-                  <Input :placeholder="`Keypoint ${index+1}`" v-model="post.keypoint[index]"/>
-                </FormItem>
-              </div>
-            </section>
+        <div class="row mb-3">
+          <div class="col-12 keypoints">
+            <label>Keypoints</label>
 
-            <div class="row">
-              <div class="col-md-12">
-                <tinymce
-                  v-if="showTiny || post_content"
-                  class="form-control required"
-                  v-model="tinyMiceValue"
-                ></tinymce>
-              </div>
-            </div>
+            <FormItem
+              v-for="(val, index) in 3"
+              :key="index">
+              <Input :placeholder="`Keypoint ${index+1}`" v-model="post.keypoint[index]"/>
+            </FormItem>
+          </div>
+        </div>
 
-            <br>
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <label>Article Body</label>
 
-            <div>
-              <Button id="btn-draft" @click="handleProcessPost()" class="text-uppercase mt-3">
-                <span>{{ post.id ? 'Save Changes' : 'Save as draft' }}</span>
-              </Button>
-              <button
-                type="button"
-                @click="previewPosts()"
-                class="float-right btn btn-primary btn-md text-white"
-              >Preview</button>
-            </div>
-          </Col>
-        </Row>
+            <br />
+
+            <tinymce
+              v-if="showTiny || post_content"
+              class="form-control required"
+              v-model="tinyMiceValue"
+            ></tinymce>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-center">
+            <button @click="handleProcessPost()" class="btn btn-secondary mr-2" style="border-radius: 2px;">
+              <span>{{ post.id ? 'Save Changes' : 'Save as draft' }}</span>
+            </button>
+
+            <button
+              type="button"
+              @click="previewPosts()"
+              class="btn btn-secondary ml-2" style="border-radius: 2px;">
+              <span>Preview Article</span>
+            </button>
+          </div>
+        </div>
       </Form>
     </div>
 
@@ -447,157 +428,7 @@ export default {
 </script>
 
 <style scoped>
-#create-basic-post #form-control {
-  height: 3rem !important;
-}
-.isTravel {
-  position: relative;
-  top: -1.6rem;
-}
-#create-basic-post {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 120vh;
-  margin-top: -80px;
-}
-.search-location {
-  width: 100%;
-  padding: 0.3rem 1.25rem;
-  margin-bottom: 1.2rem;
-  display: inline-block;
-  box-sizing: border-box;
-}
-.delete-btn {
-  margin: 0.6em;
-  width: 10rem;
-}
-#display-post #image {
-  width: 100%;
-  height: auto;
-}
-#display-post #title {
-  padding: 0 1.5rem;
-  margin-bottom: 2rem;
-}
-#display-post #body {
-  padding: 0 1.5rem;
-  margin-top: 2rem;
-}
-#modal-focus p {
-  width: 100% !important;
-  object-fit: contain;
-}
-@media screen and (max-width: 360px) {
-  #mobile {
-    display: flex;
-    flex-direction: column;
-  }
-  #every {
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 600px) {
-  #mobile {
-    display: flex;
-    flex-direction: column;
-  }
-  #every {
-    display: flex;
-    flex-direction: column;
-  }
-  #btn-draft {
-    width: 100%;
-    margin-bottom: 5px;
-  }
-  #btn-publish {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-#create-basic-post .previewMade #content {
-  width: 100% !important;
-  overflow-x: hidden !important;
-}
-.container-fluid.previewMade p {
-  padding: 0px 13px;
-  margin-top: 2%;
-}
-.container-fluid.previewMade ul {
-  padding: 0px 30px;
-}
-.container-fluid.previewMade h1 {
-  font-size: 29px;
-  padding: 0px 11px;
-  margin-bottom: 2%;
-}
-.container-fluid.previewMade div {
-  margin-top: 2%;
-  margin-bottom: 2%;
-}
-.container-fluid.previewMade {
-  padding: 29px;
-}
-</style>
-
-<style>
-#upload-post-image .ivu-upload-drag {
-  display: flex;
-  width: 200px;
-  height: 200px;
-}
-.ivu-btn {
-  font-size: 18px;
-  width: 200px;
-  font-weight: bold;
-  line-height: 21px;
-}
-#btn-draft {
-  background-color: white;
-  color: var(--primary);
-  padding: 0px !important;
-  background: transparent !important;
-  border: none !important;
-  font-size: 12px;
-  margin-top: 0.5rem;
-}
-#btn-publish {
-  background-color: var(--primary);
-  color: white;
-  width: 20%;
-  height: 2.5rem;
-}
-.red-border {
-  border: 1px solid red;
-}
-.keypoints .ivu-input-wrapper {
+#create-post-basic .keypoints .ivu-input-wrapper {
   margin: 0.5rem 0;
-}
-.posts {
-  position: relative;
-}
-.ivu-modal-close .ivu-icon-ios-close {
-  font-size: 31px;
-  color: #999;
-  transition: color 0.2s ease;
-  top: 1px;
-  margin-top: 0;
-  float: right;
-  right: 0px !important;
-}
-.container-fluid.previewMade section#img-display {
-  background: #aca7a7;
-  border: 0.1px solid grey;
-  width: 100%;
-  height: 500px !important;
-}
-div#modalfocus .ivu-modal-mask {
-  background: #fff;
-}
-div#modalfocus .ivu-modal-content {
-  box-shadow: none !important;
-  border: 1px solid #d9d9d9;
-  border-radius: 1px !important;
 }
 </style>
