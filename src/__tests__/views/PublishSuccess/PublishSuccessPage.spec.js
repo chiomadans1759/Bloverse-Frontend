@@ -17,7 +17,6 @@ describe('PublishSuccess Component', () => {
         RouterLink: RouterLinkStub
       }
     });
-    wrapper.find('.btn').trigger('click')
 
     expect(wrapper.vm.reloadIcons).toBe(false)
   });

@@ -39,13 +39,31 @@ exports[`PublishSuccess Component should render correctly 1`] = `
         
         </h6>
          
-        <p
-          class="key"
+        <form
+          class="form-line"
         >
-          
-            Add Keypoint
-          
-        </p>
+          <div
+            class="form-group d-flex"
+          >
+            <input
+              class="form-control p-0 two"
+              placeholder="Add keypoint"
+              type="text"
+            />
+             
+            <span
+              class="d-flex justify-content-end"
+            >
+              <!---->
+            </span>
+          </div>
+           
+          <div
+            class="d-flex justify-content-end"
+          >
+            <!---->
+          </div>
+        </form>
          
         <p
           class="pr-4"
@@ -80,7 +98,7 @@ exports[`PublishSuccess Component should render correctly 1`] = `
         </success-alert-stub>
          
         <div
-          class="my-2"
+          class="my-1"
         >
           <p>
             Select a Category
@@ -112,7 +130,7 @@ exports[`PublishSuccess Component should render correctly 1`] = `
         </div>
          
         <div
-          class="my-2"
+          class="my-1"
         >
           <p>
             Select a Country
@@ -144,26 +162,10 @@ exports[`PublishSuccess Component should render correctly 1`] = `
         </div>
          
         <div
-          class="d-flex justify-content-between mb-4"
+          class="mb-4 d-flex justify-content-between"
         >
-          <p>
-            Share to social media
-          </p>
-           
-          <button
-            aria-pressed="true"
-            autocomplete="off"
-            class="btn btn-sm btn-toggle"
-            data-toggle="button"
-            type="button"
-          >
-            <div
-              class="square"
-            />
-          </button>
+          <keyword-tags-stub />
         </div>
-         
-        <!---->
          
         <div>
           <button-stub

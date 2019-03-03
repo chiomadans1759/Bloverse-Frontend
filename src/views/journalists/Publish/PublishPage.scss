@@ -29,6 +29,62 @@
       color: #868686;
     }
   }
+
+  .main-container {
+    margin-right: 19.375rem;
+  }
+
+  .err-circle {
+    height:0.375rem;
+    width:0.375rem;
+    border-radius:100%;
+    background-color:red;
+    position:relative;
+    left:7rem;
+    
+    -webkit-transition:height .25s ease, width .25s ease;
+    transition:height .25s ease, width .25s ease;
+    
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+  }
+  
+  .err-circle:before,
+  .err-circle:after {
+    content:'';
+    display:block;
+    position:absolute;
+    top:0; right:0; bottom:0; left:0;
+    border-radius:50%;
+    border:1px solid red;
+  }
+  
+  .err-circle:before {
+    -webkit-animation: ripple 2s linear infinite;
+    animation: ripple 2s linear infinite;
+  }
+  .err-circle:after {
+    -webkit-animation: ripple 2s linear 1s infinite;
+    animation: ripple 2s linear 1s infinite;
+  }
+  
+  .err-circle:hover:before,
+  .err-circle:hover:after {
+    -webkit-animation: none;
+    animation: none;
+  }
+  
+  @-webkit-keyframes ripple{
+    0% {-webkit-transform:scale(1); }
+    75% {-webkit-transform:scale(1.75); opacity:1;}
+    100% {-webkit-transform:scale(4); opacity:0;}
+  }
+  
+  @keyframes ripple{
+    0% {transform:scale(1); }
+    75% {transform:scale(1.75); opacity:1;}
+    100% {transform:scale(2); opacity:0;}
+  }
   .mytext {
     overflow: hidden;
     width: 100%;
@@ -85,6 +141,9 @@
     li {
       margin-bottom: 1rem;
       margin-right: 1rem;
+    }
+    .content-icon {
+      color: #096DD9;
     }
     button {
       background: transparent;
@@ -156,13 +215,24 @@
   .compare{
     text-decoration: underline;
   }
+
+  .hide-border {
+    border: 0.063rem solid rgba(0, 0, 0, 0.15);
+    padding: 0.3rem;
+    margin-top: 0.3rem;
+  }
   .err-alert {
-    margin-top: -1rem;
+    width: 19.375rem;
     position: fixed;
+    top: 0;
     bottom: 0;
-    right: 7.063rem;
-    height: 80vh;
-    padding-bottom: 10%;
+    right: 0;
+    height: 100vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 5%;
+    border-left: 0.063rem solid rgba(0, 0, 0, 0.15);
+    margin-left: 10rem;
   }
   .exclam {
     width: 3rem; 

@@ -1,9 +1,9 @@
 import { mount, RouterLinkStub } from '@vue/test-utils';
-import SocialTags from '@/components/SocialTags/SocialTags.vue';
+import KeywordTags from '@/components/KeywordTags/KeywordTags.vue';
 
-describe('SocialTags Component', () => {
+describe('KeywordTags Component', () => {
   it('should render correctly', () => {
-    const wrapper = mount(SocialTags, {
+    const wrapper = mount(KeywordTags, {
       stubs: {
         RouterLink: RouterLinkStub
       }
@@ -12,7 +12,7 @@ describe('SocialTags Component', () => {
   });
 
   it('should close socialTag', () => {
-    const wrapper = mount(SocialTags, {
+    const wrapper = mount(KeywordTags, {
       stubs: { RouterLink: RouterLinkStub }
     });
     wrapper.find('.closeIcon').trigger('click')

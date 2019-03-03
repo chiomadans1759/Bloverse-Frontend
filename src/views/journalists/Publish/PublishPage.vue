@@ -1,37 +1,24 @@
 <template>
   <main id="publish-page">
-    <nav class="nav container-fluid d-flex justify-content-between align-items-center publish-nav">
-      <div class="d-flex">
-        <button class="btn rounded-circle d-flex justify-content-center go-back" @click="goBack">
-         <i class="fal fa-arrow-left back-icon"></i>
-      </button>
-      <span class="text-muted ml-2 mt-2">Back</span>
-      </div>
-      <p class="nav-link text-uppercase small" v-if="showThis">saving... to draft</p>
-      <button class="btn btn-sm btn-primary-outline preview" @click="showPreview" v-if="showThis">Preview to post</button>
-    </nav> 
+    <div class="main-container">
+      <nav class="nav container-fluid d-flex justify-content-between align-items-center publish-nav" id="publish-nav">
+        <div class="d-flex">
+          <button class="btn rounded-circle d-flex justify-content-center go-back" @click="goBack">
+          <i class="fal fa-arrow-left back-icon"></i>
+        </button>
+        <span class="text-muted ml-2 mt-2">Back</span>
+        </div>
+        <p class="nav-link text-uppercase small" v-if="showThis">saving... to draft</p>
+        <button class="btn btn-sm btn-primary-outline preview" @click="showPreview" v-if="showThis">Preview to post</button>
+      </nav> 
+    </div>
      <div class="container">
        <div class="row">
          <div class="col-lg-1"></div>
-        <div class="col-lg-7 text-field">
+        <div class="col-lg-6 text-field">
           <form>
             <div class="form-group">
               <input type="text" class="form-control p-0 one" placeholder="Add a title" autofocus>
-            </div>
-            <div class="form-group d-flex" v-for="(line, index) in lines" :key="index">
-              <input type="text" class="form-control p-0 two" placeholder="Add keypoint" v-model="line.keypoint" @input="addBullet">
-              <div>
-                <span v-if="line.hideBtn">
-                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="addKeypoint" v-if="plus_btn">
-                  <i class="fal fa-plus"></i>
-                </button>
-                </span>
-                <!-- <span v-if="!line.hideBtn">
-                <button class="btn rounded-circle d-flex justify-content-center ml-3 text" @click.prevent="removeKeypoint(index)">
-                  <i class="fal fa-times"></i>
-                </button>
-                </span> -->
-              </div>
             </div>
             </form>
             
@@ -43,7 +30,7 @@
             <ul class="text-icons">
             <li>
               <button class="btn rounded-circle d-flex justify-content-center show" v-if="hideMe" @click.prevent="showTextBox">
-                <i class="fal fa-font"></i>
+                <i class="fal fa-font content-icon"></i>
               </button>
             </li>
             <li>
@@ -69,7 +56,7 @@
                   </div>
                 </div>
                 <button class="btn rounded-circle d-flex justify-content-center">
-                  <i class="fal fa-image"></i>
+                  <i class="fal fa-image content-icon"></i>
                 </button>
               </Poptip>
             </li>
@@ -90,7 +77,7 @@
                   </div>
                 </div>
                 <button class="btn rounded-circle d-flex justify-content-center">
-                  <i class="fal fa-video"></i>
+                  <i class="fal fa-video content-icon"></i>
                 </button>
               </Poptip>
               </li>
@@ -103,7 +90,7 @@
                   </div>
                 </div>
                 <button class="btn rounded-circle d-flex justify-content-center">
-                  <i class="fal fa-link"></i>
+                  <i class="fal fa-link content-icon"></i>
                 </button>
               </Poptip>
               </li>
@@ -111,17 +98,24 @@
         </div>
           
         </div>
-        <div class="col-lg-3 err-alert">
+
+        <div class="err-alert" id="reduce" v-if="showSide">
           <div class="d-flex justify-content-end mb-4 toggle" v-if="showMe" @click="toggleEntitySection">
-            <span>
+            <span class="btn btn-sm hide-border" @click.prevent="reduceWidth">
               Hide Info
             </span>
-          </div> 
-          <div class="d-flex justify-content-end mb-4 toggle" v-if="hideEntity"  @click="toggleEntitySection">
-            <span>
-              Show Info
-            </span>
           </div>
+          <div class="text-right" v-if="hideEntity"  @click="toggleEntitySection">
+            <div class="d-flex justify-content-end mb-4 toggle">
+              <span class="btn btn-sm hide-border" @click.prevent="restoreWidth">
+                Show Info
+              </span>
+              </div>
+              <div class="err-circle"></div>
+               <div>
+                <h6 class="my-4">Entities <span class="badge badge-primary">50</span></h6>
+               </div>
+            </div>
 
           <error-alert v-if="showMe">
             <p>We have 3 articles that have similar title as yours. <a class="compare">Compare</a></p>
@@ -191,12 +185,7 @@ export default {
       blurBackground: false,
       plus_btn: true,
       minHeight: null,
-      lines: [
-        {
-          keypoint:'',
-          hideBtn: false
-        }
-      ]
+      showSide: false
     }
   },
   watch:{
@@ -225,10 +214,12 @@ export default {
         this.$refs.autoText.style.minHeight = this.$refs.autoText.scrollHeight + 'px';
         this.showMe = true;
         this.showThis = true;
+        this.showSide = true;
       } else {
         this.showMe = false;
         this.showThis = false;
         this.hideEntity = false
+        this.showSide = false;
         this.$refs.autoText.style.minHeight -= this.minHeight;
 
       }
@@ -258,28 +249,13 @@ export default {
       $('#previewModal').modal('hide');
       this.hideMe = true;
     },
-    addKeypoint() {
-      if(this.lines.length < 3) {
-        this.lines.push({
-          keypoint:'',
-          hideBtn: false
-        })
-      }
-
-      if(this.lines.length == 3){
-        this.plus_btn = false;
-      }
+    reduceWidth() {
+      document.getElementById('reduce').style.width = '150px';
+      document.getElementById('publish-nav').style.margin = "0px 0px 0px 150px";
     },
-    removeKeypoint(index) {
-      this.lines.splice(index,1)
-      if (this.lines.length == 1) {
-        this.plus_btn = true
-      }
-    },
-    addBullet(){
-      if(this.lines.keypoint.length > 0) {
-        this.line.hideBtn = true
-      }
+    restoreWidth() {
+      document.getElementById('reduce').style.width = '310px';
+      document.getElementById('publish-nav').style.margin = "0px 150px 0px 0px";
     }
   }
 }
