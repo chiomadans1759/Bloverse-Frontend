@@ -1,48 +1,64 @@
 <template>
   <main :class="['card', 'recommendation-card', customClass]">
-    <img src="@/assets/photo-4.jpg" class="card-img-top" alt="...">
+    <img src="@/assets/signin.jpg" class="card-img-top recom-card" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Category</h5>
+      <h5 class="card-title text-primary p-1">Category</h5>
       <div class="card-text recommendation-card--content">
         <p class="font-weight-bold recommendation-card--content__text">
-          <router-link to="/posts/rere">Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.</router-link>
+          <router-link to="/posts/rere">Some quick example text to build on the card...
+          </router-link>
         </p>
         <p class="recommendation-card--content__username" v-if="type === 'consumer'">
           <span class="time">1 min ago</span>
         </p>
-        <p class="recommendation-card--content__username" v-else>
-          <a class="btn btn-primary initials" href="#" role="button"></a>
-          <span class="font-weight-bold name">Johndoe</span>
+        <div class="recommendation-card--content__username mt-4" v-else>
+          <div class="small-avatar rounded-circle d-flex justify-content-center align-items-center p-2 text-white">JD</div>
+          <span class="font-weight-bold name text-primary">Johndoe</span>
           <span class="time">1 min ago</span>
-        </p>
-      </div>
-      <div class="card-text row actions">
-        <div class="col-7 views">
-          <i class="fal fa-eye"></i>
-          <span class="count">123</span>
         </div>
-        <div class="col-5 row others centerEle">
-          <div class="col-9 likes">
-            <p class="thumbs-up centerEle" @click="toggleLike()" v-show="!likePost">
-              <i class="fal fa-thumbs-up"></i>
-              <span class="count">18</span>
-            </p>
-            <p class="thumbs-up centerEle" @click="toggleLike()" v-show="likePost">
-              <i class="fas fa-thumbs-up"></i>
-              <span class="count">18</span>
-            </p>
-            <p class="thumbs-down centerEle" @click="toggleDislike()" v-show="!dislikePost">
-              <i class="fal fa-thumbs-down"></i>
-              <span class="count">1</span>
-            </p>
-            <p class="thumbs-down centerEle" @click="toggleDislike()" v-show="dislikePost">
-              <i class="fas fa-thumbs-down"></i>
-              <span class="count">1</span>
-            </p>
+        <div class="mt-3 views">
+           <h6 class="d-flex justify-content-start align-items-center">
+             <small class="mt-0 font-weight-bold"> 4k Views</small>
+             <i class="fas fa-circle text-primary dot mx-2"></i>
+             <small class="font-weight-bold">64 Comments</small>
+            </h6>
+        </div>
+      </div>
+      </div>
+      <hr>
+      <div class="actions">
+        <div class="likes others d-flex justify-content-around">
+          <div class="thumbs-up centerEle" @click="toggleLike()" v-show="!likePost">
+            <div class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary p-2">
+              <i class="fal fa-thumbs-up fa-1x"></i>
+            </div>
+            <span class="count">18</span>
           </div>
-          <div class="col-3 ellipsis">
+          <div class="thumbs-up centerEle" @click="toggleLike()" v-show="likePost">
+            <div class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary p-2">
+              <i class="fas fa-thumbs-up fa-1x"></i>
+            </div>
+            <span class="count">18</span>
+          </div>
+          <div class="thumbs-down centerEle" @click="toggleDislike()" v-show="!dislikePost">
+            <div class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary p-2">
+              <i class="fal fa-thumbs-down fa-1x"></i>
+            </div>
+            <span class="count">4</span>
+          </div>
+          <div class="thumbs-down centerEle" @click="toggleDislike()" v-show="dislikePost">
+            <div class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary p-2">
+              <i class="fas fa-thumbs-down fa-1x"></i>
+            </div>
+            <span class="count">4</span>
+          </div>
+          <div class="thumbs-down centerEle border-left pl-3 py-0">
+            <div class="border rounded-circle icon-circle d-flex justify-content-center align-items-center text-primary p-2">
+              <i class="fal fa-reply"></i>
+            </div>
+            <span class="count">11</span>
+          </div>
+          <div class="ellipsis">
             <span
               class="nav-link dropdown-toggle"
               href="#"
@@ -105,6 +121,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </main>
 </template>
