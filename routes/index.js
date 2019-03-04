@@ -4,37 +4,34 @@ import { LoadingBar } from 'iview';
 import store from '../stores';
 
 // Layouts
-import GeneralLayout from '@/layouts/GeneralLayout';
-import BlankBase from '@/layouts/BlankBase';
-import JournalistAccountLayout from '@/layouts/JournalistAccountLayout';
+const GeneralLayout = () => import('../src/views/GeneralLayout.vue')
+const BlankBase = () => import('../src/views/BlankBase.vue')
+const JournalistAccountLayout = () => import('../src/views/PostDisplay.vue')
 
-// Client Views
-// const PostFeeds = () => import('../src/views/PostFeeds.vue');
-
-import PostFeeds from '../src/views/PostFeeds.vue';
-import TrendingFeed from '../src/views/TrendingFeed.vue';
-import PostDisplay from '../src/views/PostDisplay.vue';
-import PhotoContest from '../src/views/PhotoContest.vue';
-import MyProfile from '../src/views/journalists/MyProfile.vue';
-import DashBoardHome from '../src/views/journalists/DashBoardHome.vue';
-import MyPosts from '../src/views/journalists/MyPosts.vue';
-import CreatePost from '../src/views/journalists/CreatePost.vue';
-import JournalistApply from '../src/views/journalists/AuthenticationApply.vue';
-import JournalistSetUp from '../src/views/journalists/AuthenticationSetUp.vue';
-import JournalistVerify from '../src/views/journalists/AuthenticationVerify.vue';
-import JournalistLanding from '../src/views/journalists/Landing.vue';
-import ForgotPassword from '@/views/journalists/ForgotPassword.vue';
-import ResetPassword from '@/views/journalists/ResetPassword.vue';
+// Views
+const PostFeeds = () => import('../src/views/PostFeeds.vue')
+const TrendingFeed = () => import('../src/views/TrendingFeed.vue')
+const PostDisplay = () => import('../src/views/PostDisplay.vue')
+const PhotoContest = () => import('../src/views/PhotoContest.vue')
+const DashBoardHome = () => import('../src/views/DashBoardHome.vue')
+const MyPosts = () => import('../src/views/MyPosts.vue')
+const CreatePost = () => import('../src/views/CreatePost.vue')
+const JournalistApply = () => import('../src/views/JournalistApply.vue')
+const JournalistSetUp = () => import('../src/views/JournalistSetUp.vue')
+const JournalistVerify = () => import('../src/views/JournalistVerify.vue')
+const JournalistLanding = () => import('../src/views/JournalistLanding.vue')
+const ForgotPassword = () => import('../src/views/ForgotPassword.vue')
+const ResetPassword = () => import('../src/views/ResetPassword.vue')
 
 // Admin Views
-import AdminLogin from '../src/views/admin/Login.vue';
-import AdminHome from '../src/views/admin/Home.vue';
+const AdminLogin = () => import('../src/views/admin/Login.vue')
+const AdminHome = () => import('../src/views/admin/Home.vue')
 
 // Other views
-import NotFound from '../src/views/NotFound.vue';
-import About from '../src/views/About.vue';
-import Terms from '../src/views/TermsAndConditions.vue';
-import Privacy from '../src/views/Privacy.vue';
+const NotFound = () => import('../src/views/NotFound.vue')
+const About = () => import('../src/views/About.vue')
+const Terms = () => import('../src/views/TermsAndConditions.vue')
+const Privacy = () => import('../src/views/Privacy.vue')
 
 Vue.use(Router);
 
@@ -79,7 +76,6 @@ const router = new Router({
         {
           path: ':username', component: JournalistAccountLayout, meta: { journalist: true },
           children: [
-            { path: '', component: MyProfile },
             { path: 'dashboard', name: 'journalist-dashboard', component: DashBoardHome },
             {
               path: 'posts', name: 'posts', component: BlankBase, meta: { journalist: true },
