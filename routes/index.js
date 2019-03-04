@@ -4,24 +4,26 @@ import { LoadingBar } from 'iview';
 import store from '../stores';
 
 // Layouts
-const GeneralLayout = () => import('../src/views/GeneralLayout.vue')
-const BlankBase = () => import('../src/views/BlankBase.vue')
-const JournalistAccountLayout = () => import('../src/views/PostDisplay.vue')
+const GeneralLayout = () => import('../src/layouts/GeneralLayout.vue')
+const BlankBase = () => import('../src/layouts/BlankBase.vue')
+const JournalistAccountLayout = () => import('../src/layouts/JournalistAccountLayout.vue')
 
-// Views
+// Client Views
 const PostFeeds = () => import('../src/views/PostFeeds.vue')
 const TrendingFeed = () => import('../src/views/TrendingFeed.vue')
 const PostDisplay = () => import('../src/views/PostDisplay.vue')
 const PhotoContest = () => import('../src/views/PhotoContest.vue')
-const DashBoardHome = () => import('../src/views/DashBoardHome.vue')
-const MyPosts = () => import('../src/views/MyPosts.vue')
-const CreatePost = () => import('../src/views/CreatePost.vue')
-const JournalistApply = () => import('../src/views/JournalistApply.vue')
-const JournalistSetUp = () => import('../src/views/JournalistSetUp.vue')
-const JournalistVerify = () => import('../src/views/JournalistVerify.vue')
-const JournalistLanding = () => import('../src/views/JournalistLanding.vue')
-const ForgotPassword = () => import('../src/views/ForgotPassword.vue')
-const ResetPassword = () => import('../src/views/ResetPassword.vue')
+
+// Creator Account Views
+const DashBoardHome = () => import('../src/views/journalists/DashBoardHome.vue')
+const MyPosts = () => import('../src/views/journalists/MyPosts.vue')
+const CreatePost = () => import('../src/views/journalists/CreatePost.vue')
+const JournalistApply = () => import('../src/views/journalists/AuthenticationApply.vue')
+const JournalistSetUp = () => import('../src/views/journalists/AuthenticationSetUp.vue')
+const JournalistVerify = () => import('../src/views/journalists/AuthenticationVerify.vue')
+const JournalistLanding = () => import('../src/views/journalists/Landing.vue')
+const ForgotPassword = () => import('../src/views/journalists/ForgotPassword.vue')
+const ResetPassword = () => import('../src/views/journalists/ResetPassword.vue')
 
 // Admin Views
 const AdminLogin = () => import('../src/views/admin/Login.vue')
