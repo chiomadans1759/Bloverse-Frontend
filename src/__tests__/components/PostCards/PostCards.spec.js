@@ -9,6 +9,24 @@ describe('PostCards Component', () => {
         RouterLink: RouterLinkStub
       }
     });
+    const usernames = wrapper.findAll('.name');
+
     expect(wrapper.element).toMatchSnapshot();
+    expect(usernames.length).toEqual(5);
+  });
+
+  it('should hide username', () => {
+    const wrapper = mount(PostCards, {
+      stubs: {
+        RouterLink: RouterLinkStub
+      },
+      propsData: {
+        hideUsername: true
+      }
+    });
+
+    const usernames = wrapper.findAll('.name');
+
+    expect(usernames.length).toEqual(0);
   });
 });

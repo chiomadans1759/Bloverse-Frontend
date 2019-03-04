@@ -1290,13 +1290,161 @@ exports[`Posts Component should render correctly 1`] = `
       <div
         class="col-12 col-lg-7 col-xl-7 right-section p-0"
       >
-        <h4>
-          <h5
-            class="font-weight-bold mb-4 pl-3 pl-md-0"
+        <div
+          class="navigation-bar"
+        >
+          <main
+            id="bl-creator-navigation"
           >
-            Post
-          </h5>
-        </h4>
+            <div
+              class="creator-info mx-2 mb-4 d-block d-sm-none"
+            >
+              <div
+                class="row"
+              >
+                <div
+                  class="col-3 text-center pr-0"
+                >
+                  <img
+                    alt="..."
+                    class="profile-img rounded"
+                    src="@/assets/Avatar2.png"
+                  />
+                </div>
+                 
+                <div
+                  class="col-9 pl-0 d-flex align-items-center"
+                >
+                  <div
+                    class="user-info"
+                  >
+                    <h6
+                      class="font-weight-bold"
+                    >
+                      JohnDoe
+                    </h6>
+                     
+                    <p>
+                      John Doe
+                    </p>
+                     
+                    <p>
+                      <i
+                        class="fal fa-map-marker-alt"
+                      />
+                      <span
+                        class="ml-1"
+                      >
+                        Lagos, Nigeria
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="navigation-bar"
+            >
+              <ul
+                class="nav nav-tabs mb-3"
+                id="pills-tab"
+                role="tablist"
+              >
+                <li
+                  class="nav-item d-sm-none"
+                >
+                  <a
+                    aria-controls="pills-contest"
+                    aria-selected="true"
+                    class="nav-link d-flex align-items-center"
+                    data-toggle="pill"
+                    id="pills-contest-tab"
+                    role="tab"
+                  >
+                    Info
+        
+                  </a>
+                </li>
+                 
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-controls="pills-general"
+                    aria-selected="false"
+                    class="nav-link d-flex align-items-center"
+                    data-toggle="pill"
+                    id="pills-general-tab"
+                    role="tab"
+                  >
+                    Dashboard
+                  </a>
+                </li>
+                 
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-controls="pills-contest"
+                    aria-selected="true"
+                    class="nav-link d-flex align-items-center active"
+                    data-toggle="pill"
+                    href="#posts-tab"
+                    id="pills-contest-tab"
+                    role="tab"
+                  >
+                    Posts
+          
+                    <span
+                      class="badge ml-2 badge-primary"
+                    >
+                      4
+                    </span>
+                  </a>
+                </li>
+                 
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-controls="pills-contest"
+                    aria-selected="false"
+                    class="nav-link d-flex align-items-center"
+                    data-toggle="pill"
+                    href="#photocontest-tab"
+                    id="pills-contest-tab"
+                    role="tab"
+                  >
+                    Drafts
+          
+                    <span
+                      class="badge ml-2 badge-secondary"
+                    >
+                      4
+                    </span>
+                  </a>
+                </li>
+                 
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-controls="pills-contest"
+                    aria-selected="false"
+                    class="nav-link d-flex align-items-center"
+                    data-toggle="pill"
+                    href="#photocontest-tab"
+                    id="pills-contest-tab"
+                    role="tab"
+                  >
+                    Trash
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </main>
+        </div>
          
         <div
           class="mt-4 px-4 bg-white"
@@ -1415,24 +1563,10 @@ exports[`Posts Component should render correctly 1`] = `
                         <p
                           class="username"
                         >
-                          <a
-                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
-                            href="#"
-                            role="button"
-                          >
-                            JD
-                          </a>
-                          
-           
-          
-                          <span
-                            class="font-weight-bold name"
-                          >
-                            username
-                          </span>
-                          
-           
-          
+                          <!---->
+                           
+                          <!---->
+                           
                           <span
                             class="time"
                           >
@@ -1861,24 +1995,10 @@ exports[`Posts Component should render correctly 1`] = `
                         <p
                           class="username"
                         >
-                          <a
-                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
-                            href="#"
-                            role="button"
-                          >
-                            JD
-                          </a>
-                          
-           
-          
-                          <span
-                            class="font-weight-bold name"
-                          >
-                            username
-                          </span>
-                          
-           
-          
+                          <!---->
+                           
+                          <!---->
+                           
                           <span
                             class="time"
                           >
@@ -2307,24 +2427,10 @@ exports[`Posts Component should render correctly 1`] = `
                         <p
                           class="username"
                         >
-                          <a
-                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
-                            href="#"
-                            role="button"
-                          >
-                            JD
-                          </a>
-                          
-           
-          
-                          <span
-                            class="font-weight-bold name"
-                          >
-                            username
-                          </span>
-                          
-           
-          
+                          <!---->
+                           
+                          <!---->
+                           
                           <span
                             class="time"
                           >
@@ -2753,24 +2859,10 @@ exports[`Posts Component should render correctly 1`] = `
                         <p
                           class="username"
                         >
-                          <a
-                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
-                            href="#"
-                            role="button"
-                          >
-                            JD
-                          </a>
-                          
-           
-          
-                          <span
-                            class="font-weight-bold name"
-                          >
-                            username
-                          </span>
-                          
-           
-          
+                          <!---->
+                           
+                          <!---->
+                           
                           <span
                             class="time"
                           >
@@ -3199,24 +3291,10 @@ exports[`Posts Component should render correctly 1`] = `
                         <p
                           class="username"
                         >
-                          <a
-                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
-                            href="#"
-                            role="button"
-                          >
-                            JD
-                          </a>
-                          
-           
-          
-                          <span
-                            class="font-weight-bold name"
-                          >
-                            username
-                          </span>
-                          
-           
-          
+                          <!---->
+                           
+                          <!---->
+                           
                           <span
                             class="time"
                           >
