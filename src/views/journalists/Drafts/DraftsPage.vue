@@ -91,16 +91,6 @@ export default {
 
     }
   },
-  mounted() {
-    /* eslint-disable */
-    hideTawkBot();
-    window.onload = function() {
-      hideTawkBot();
-    };
-  },
-  destroyed() {
-    showTawkBot();
-  }
 };
 </script>
 
