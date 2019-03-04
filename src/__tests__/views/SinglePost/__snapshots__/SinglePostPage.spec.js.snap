@@ -553,6 +553,7 @@ exports[`SinglePost Page should render correctly 1`] = `
            
           <div
             class="comment_content--creator"
+            style="display: none;"
           >
             <p
               class="mb-2"

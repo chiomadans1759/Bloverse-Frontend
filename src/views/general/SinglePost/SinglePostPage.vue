@@ -247,7 +247,7 @@
               </div>
             </div>
             <br>
-            <div class="comment_content--creator">
+            <div class="comment_content--creator" v-show="showCommentBox">
               <p class="mb-2">
                 <span style="font-weight: 600">
                   Comments
@@ -444,6 +444,7 @@ export default {
       addComment: false,
       emojiData,
       textareaValue: '',
+      showCommentBox: false,
     };
   },
   computed: {
