@@ -50,6 +50,8 @@ export default {
   float: right !important;
   width: 82% !important;
   padding-top: 2rem;
+  height: 90vh;
+  overflow-y: auto !important;
 }
 
 @media only screen and (max-width: 980px) {

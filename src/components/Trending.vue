@@ -124,7 +124,7 @@
 import { Row, Col, Avatar } from "iview";
 import { Carousel, Slide } from "vue-carousel";
 import { mapActions, mapState } from "vuex";
-import TrendingCard from "./TrendingCard.vue";
+import TrendingCard from "@/components/TrendingCard.vue";
 
 export default {
   name: "trending",

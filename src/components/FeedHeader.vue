@@ -3,7 +3,7 @@
     <div class="px-lg-4">
       <div class="row">
         <div class="col">
-          <span class="hidden-md mr-2 hamburger-menu">
+          <span class="hidden-md mr-2 hamburger-menu" data-toggle="modal" data-target="#modalVerticalLeft">
             <i class="fa fa-bars"></i>
           </span>
           <router-link to="/" class="router-link">
@@ -25,6 +25,15 @@
 
         <div class="col-auto hidden-md pt-1">
           <router-link to="/creators" class="btn btn-primary text-uppercase">create</router-link>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="modal fade" id="modalVerticalLeft" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-vertical" role="document">
+        <div class="modal-content">
+          ...
         </div>
       </div>
     </div>

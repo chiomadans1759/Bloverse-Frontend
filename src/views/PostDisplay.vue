@@ -1,7 +1,7 @@
 <template>
   <main id="post-display">
     <div class="container">
-      <section v-if="general.loading">
+      <section>
         <preloader/>
         <h1>LOADING</h1>
       </section>

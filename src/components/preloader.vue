@@ -14,7 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 $offset: 130;
-$stroke: white;
+$stroke: #aaaaaa;
 
 .preloader {
   transform: rotate(-90deg);
@@ -45,10 +45,6 @@ $stroke: white;
 
 // Below stuff for position only
 .preloader {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-
   &.preloader--thin {
     left: auto;
     right: 5%;
