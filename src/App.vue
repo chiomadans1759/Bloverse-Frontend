@@ -28,4 +28,5 @@ export default {
 
 <style>
 @import url("./assets/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Montserrat");
 </style>

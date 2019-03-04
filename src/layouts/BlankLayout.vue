@@ -13,6 +13,8 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 #blank-layout {
   width: 100%;
   height: auto;

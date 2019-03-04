@@ -173,7 +173,6 @@ export default {
       commit('setPublishedPostsLoading', loading);
     },
     async getPostBySlug({commit}, {slug}) {
-      commit('setLoading', true)
       let response = await Api.get(`posts?slug=${slug}`)
       commit('setLoading', false)
       return response.data.posts[0]

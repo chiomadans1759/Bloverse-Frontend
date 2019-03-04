@@ -1,11 +1,6 @@
 <template>
   <main id="post-display">
     <div class="container">
-      <section>
-        <preloader/>
-        <h1>LOADING</h1>
-      </section>
-
       <section class="row">
         <div class="col-md-12">
           <div class="mb-3">
@@ -47,12 +42,12 @@
           </div>
 
           <div class="col-12 text-center mt-3 pt-5">
-            <div class="row" style="padding: 0rem 20rem;">
-              <div class="col pt-1">
+            <div class="row" id="share-section">
+              <div class="col-md-7 pt-1">
                 <h3 class="mt-2">Sharing is caring:</h3>
               </div>
 
-              <div class="col-auto">
+              <div class="col-md-5">
                 <social-buttons :slug="slug"/>
               </div>
             </div>
@@ -86,6 +81,7 @@ export default {
     url() {
       return `${this.$BASE_URL}posts/${this.post.slug}`;
     },
+
     ...mapState(["general", "auth"]),
 
     category() {
@@ -99,12 +95,13 @@ export default {
   },
   methods: {
     ...mapActions(["getPostBySlug"]),
+
     async getPostForDisplay() {
       // fetch the data when the view is created and the data is
       // already being observed
       let { slug } = this.$route.params;
 
-      this.post = await this.getPostBySlug({ slug });
+      this.post = await this.getPostBySlug({ slug })
     }
   },
   watch: {
@@ -148,5 +145,21 @@ export default {
 #post-display .authors-img img {
   width: 100px;
   height: 100px;
+}
+
+@media screen and (min-width: 981px) { 
+  #post-display #share-section {
+    padding: 0rem 20rem;
+  }
+}
+
+@media screen and (max-width: 980px) { 
+  #post-display #share-section {
+    padding: 0rem 5rem;
+  }
+
+  #post-display #share-section h3 {
+    padding-bottom: 1rem;
+  }
 }
 </style>
