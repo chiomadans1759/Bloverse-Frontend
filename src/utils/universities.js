@@ -337,6 +337,34 @@ let data = [
             "University of Missouri",
             "University of North Texas"
         ]
+    },
+    {
+        "country": "Scotland",
+        "universities": [
+            "Glasgow Clyde College",
+            "University of Strathclyde",
+            "Glasgow Caledonian University",
+            "University of Glasgow",
+            "University Of The West Of Scotland",
+            "Napier University",
+            "University of Stirling"
+        ]
+    },
+    {
+        "country": "England",
+        "universities": [
+            "City university",
+            "University of Westminster",
+            "Roehampton university",
+            "London college of fashion",
+            "University of the Arts London",
+            "Goldsmiths University",
+            "London Southbank University",
+            "Birkbeck university",
+            "London school of Journalism",
+            "London College of Communication",
+            "Kingston University"
+        ]
     }   
 ]
 
