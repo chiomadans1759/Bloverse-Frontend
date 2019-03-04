@@ -10,7 +10,7 @@
             </router-link>
           </div>
 
-          <div class="col-auto pt-2 pr-5">
+          <div class="col-auto pt-2 pr-5" id="desktop">
             <nav class="menu pt-2">
               <ul class="list-inline">
                 <li class="list-inline-item">
@@ -42,7 +42,7 @@
           </div>
 
           <div class="col-auto">
-            <button class="btn btn-link dropdown-toggle text-dark" style="margin-top: -0.3rem;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-link text-dark" style="margin-top: -0.3rem;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="avatar avatar-sm">
                 <img :src="auth.loggedInUser.image_url" alt class="avatar-img rounded-circle">
               </div>
@@ -53,9 +53,30 @@
             </button>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li>
-                <!-- <a class="dropdown-item" href="#">Action</a>
-              </li> -->
+              <li id="mobile">
+                <router-link
+                  :to="`/creators/${auth.loggedInUser.username}/dashboard`"
+                  :class="{'dropdown-item': true, 'text-primary': currentRoute == 'journalist-dashboard'}">
+                  <i class="far fa-th-large"></i>
+                  <span class="ml-1">Dashboard</span>
+                </router-link>
+              </li>
+              <li id="mobile">
+                <router-link
+                  :to="`/creators/${auth.loggedInUser.username}/posts`"
+                  :class="{'dropdown-item': true, 'text-primary': currentRoute == 'all-posts'}">
+                  <i class="fal fa-rocket"></i>
+                  <span class="ml-1">My Posts</span>
+                </router-link>
+              </li>
+              <li id="mobile">
+                <router-link
+                  :to="`/creators/${auth.loggedInUser.username}/posts/create`"
+                  :class="{'dropdown-item': true, 'text-primary': currentRoute == 'create-post'}">
+                  <i class="fal fa-plus"></i>
+                  <span class="ml-1">Create Content</span>
+                </router-link>
+              </li>
               <li>
                 <a class="dropdown-item" href="#" @click.prevent="logout">Logout</a>
               </li>
@@ -107,5 +128,21 @@ export default {
 
 #journalist-account-nav .menu li a {
   color: #666666;
+}
+
+@media only screen and (min-width: 981px) { 
+  #mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 980px) { 
+  #desktop {
+    display: none;
+  }
+
+  #journalist-account-nav {
+    padding-top: 0.5rem;
+  }
 }
 </style>
