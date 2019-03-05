@@ -1,12 +1,12 @@
 <template>
   <main
-    id="read-later-card"
+    id="bl-postcard"
     style="width: 18rem;"
-    class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
+    class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
   >
     <div :class="['row mx-0', { 'flex-row-reverse': listView }]">
       <div
-        :class="[{ 'col-4 read-later-image-list': listView, 'col-12 read-later-image': !listView, }]"
+        :class="[{ 'col-4 bl-postcard-image-list': listView, 'col-12 bl-postcard-image': !listView, }]"
         :style="{backgroundImage: 'url(' + readLaterImage + ')'}"
       >
         <button
@@ -16,7 +16,9 @@
         >Category</button>
       </div>
       <div :class="['card-body', { 'col-8 py-0': listView }]">
-        <div class="card-body-title--content mt-2">
+        <div class="card-body-title--content mt-2"
+          :class="{'mb-2': hideMainActions, 'mb-4': !hideMainActions}"
+        >
           <button v-show="listView" type="button" class="btn btn-sm bg-white mx-0 my-2">Category</button>
           <router-link to="/posts/rere">
           <h5 class="card-title font-weight-bold">
@@ -39,16 +41,47 @@
         </div>
 
         <div :class="['row m-0 text-capitalize actions', { 'd-none': listView }]">
-          <p class="col-8 p-0 counts">
-            <span class="mr-2 views">4k views</span>
+          <p class="col-8 p-0 m-auto counts">
+            <span class="mr-2 views">4k 
+              <span class="views-text">views</span>
+            </span>
             
-            <span class="comments">64 Comments</span>
+            <span v-if="!hideMainActions" class="comments">64 Comments</span>
           </p>
-          <p class="col-4 p-0 text-right text-capitalize keypoints">show keypoints</p>
+          <p v-if="!hideMainActions" class="col-4 p-0 text-right text-capitalize keypoints">
+            show keypoints
+          </p>
+
+          <div v-if="hideMainActions"
+            class="align-items-center col-4 d-flex justify-content-end col-4 m-0 p-0 unpublish"
+          >
+            <button
+              type="button"
+              class="btn btn-sm bg-white mr-3 m-2 float-right"
+            >
+              Unpublish
+            </button>
+            <p class="share" v-show="!share">
+              <span class="border rounded-circle icons bookmark" @click="toggleShare">
+                <i class="fal fa-share"></i>
+              </span>
+            </p>
+            <p class="share" v-show="share">
+              <span class="border rounded-circle icons bookmark clicked" @click="toggleShare">
+                <i class="fas fa-share"></i>
+              </span>
+            </p>
+          </div>
+          <p v-if="hideMainActions" class="col-12 mt-2 p-0 text-capitalize keypoints">
+            show keypoints
+          </p>
         </div>
       </div>
     </div>
-    <div :class="['row px-0 border bg-white card-footer', { 'mt-1': listView }]">
+    <div v-if="!hideMainActions" 
+      :class="['row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top',
+        { 'mt-1': listView }]"
+    >
       <div class="col-6 row mx-0 actions--a">
         <div class="col-6 d-flex justify-content-between border-right likes">
           <p class="thumbs-up" v-show="!likePost">
@@ -118,8 +151,8 @@
             <span id="option-icon"/>
             <span id="option-icon"/>
           </p>
-          <div
-            :class="['dropdown-menu', 'bl-dropdown-menu',
+          <div 
+            :class="['dropdown-menu','bl-dropdown-menu',
               { 'top-dropdown': !dropdownArrowDown , 'bottom-dropdown': dropdownArrowDown }]"
             aria-labelledby="dropdownMenuReference"
             ref="dropdown"
@@ -224,6 +257,10 @@ export default {
       type: Boolean,
       default: false,
       required: false,
+    },
+    hideMainActions: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

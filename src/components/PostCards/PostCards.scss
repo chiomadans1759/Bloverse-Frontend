@@ -4,6 +4,9 @@
 .bl-postcards {
   margin: 0;
   padding: 0;
+  .bl-postcard:first-child {
+    margin-top: 0 !important;
+  }
   .bl-postcard:last-child {
     margin-bottom: 0;
   }

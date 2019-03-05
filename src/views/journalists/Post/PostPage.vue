@@ -51,7 +51,13 @@
           <div class="navigation-bar">
             <creator-navigation active="posts" />
           </div>
-          <div class="mt-4 px-4 bg-white">
+          <div class="d-flex flex-wrap mt-4 bl-posts">
+            <post-cards :hideCardBorder="hideCardBorder" hideUsername
+              :customClasses="['bg-white']"
+              hideMainActions
+            />
+          </div>
+          <!-- <div class="mt-4 px-4 bg-white">
             <div class="row">
               <div class="mx-4 d-none d-sm-block w-100">
                 <nav
@@ -86,40 +92,13 @@
                   </div>
                 </nav>
               </div>
+              <post-card :hideCardBorder="hideCardBorder" hideUsername />
+
               <div class="list_view creator_profile__post" v-if="active_tab === 'list'">
                 <post-cards :hideCardBorder="hideCardBorder" hideUsername />
               </div>
-              <div class="grid_view" v-if="active_tab === 'grid'">
-                <br>
-                <div class="row">
-                  <div class="col-md-6 col-sm-6">
-                    <recommendation-card type="consumer"/>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                    <recommendation-card type="consumer"/>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                    <recommendation-card type="consumer"/>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                    <recommendation-card type="consumer"/>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                    <recommendation-card type="consumer"/>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                    <recommendation-card type="consumer"/>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                    <recommendation-card type="consumer"/>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                    <recommendation-card type="consumer"/>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -129,6 +108,7 @@
 
 <script>
 import PostCards from "@/components/PostCards/PostCards";
+import PostCard from "@/components/PostCards/PostCard";
 import Navbar from "@/components/Navbar/Navbar.vue";
 import Profile from "@/components/ProfileCard/ProfileCard";
 import CategoryCard from "@/components/CategoryCard/CategoryCard";
@@ -141,6 +121,7 @@ export default {
   components: {
     Navbar,
     PostCards,
+    PostCard,
     Profile,
     RecommendationCard,
     CategoryCard,
