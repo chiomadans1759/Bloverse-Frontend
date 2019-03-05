@@ -13,14 +13,24 @@
   font-size: rem(14px) !important;
 }
 
-.icon {
+.edit-icon {
   color: #096DD9;
-  font-size: rem(20px);
+  font-size: rem(15px);
+  color: #096DD9;
+  height: rem(28px);
+  width: rem(28px);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main.card {
   border: 0 !important;
   border-radius: 0 !important;
+}
+
+.header>h5 {
+  font-size: rem(16px);
 }
 
 @media screen and (min-width: 700px) {

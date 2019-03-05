@@ -2,26 +2,27 @@
 
 exports[`DraftItemCard Component should render correctly 1`] = `
 <main
-  class="card bl-draft-item"
+  class="card mt-4 bl-draft-item"
   id="bl-draft-item"
 >
   <div
     class="card-body bl-draft-item-body"
   >
     <div
-      class="card-title row title"
+      class="card-title title"
     >
       <div
-        class="col-xs-12 col-sm-12 col-md-9 row title--text"
+        class="title--text"
       >
-        <span
-          class="col-3"
+        <button
+          class="btn btn-outline-primary btn-sm bg-white mb-3"
+          type="button"
         >
-          category
-        </span>
+          Category
+        </button>
          
         <p
-          class="col-5 col-sm-6 font-weight-bold description"
+          class="font-weight-bold description"
         >
           <a>
             
@@ -33,101 +34,47 @@ exports[`DraftItemCard Component should render correctly 1`] = `
         </p>
          
         <p
-          class="col-4 col-sm-3 username d-none d-sm-block"
+          class="col-4 col-sm-3 username d-none d-sm-block mt-3"
         >
           <span
             class="time"
           >
-            16 hours ago
+            1 min ago
           </span>
         </p>
       </div>
-       
-      <div
-        class="d-none col-3 d-md-flex justify-content-around align-items-center flex-wrap"
-      >
-        <div>
-          <a
-            href="#"
-          >
-            <div
-              class="text-center"
-            >
-              <i
-                class="fas fa-edit"
-              />
-            </div>
-             
-            <div>
-              Edit
-            </div>
-          </a>
-        </div>
-         
-        <div>
-          <a
-            href="#"
-          >
-            <div
-              class="text-center"
-            >
-              <i
-                class="fas fa-trash-alt"
-              />
-            </div>
-             
-            <div>
-              Delete
-            </div>
-          </a>
-        </div>
-      </div>
     </div>
-     
+  </div>
+   
+  <div
+    class="border-top bl-draft-item-footer"
+  >
     <div
-      class="d-md-none card-text row actions justify-content-between"
+      class="d-flex justify-content-end px-4 py-2 actions"
     >
-      <div
-        class="col-5 col-sm-0 views d-block d-sm-none"
+      <p
+        class="mx-3 edit"
       >
         <span
-          class="time"
-        >
-          16 hrs ago
-        </span>
-      </div>
-       
-      <div
-        class="col-7 col-sm-12 row others justify-content-end"
-      >
-        <p
-          class="mr-3"
+          class="border rounded-circle icons"
         >
           <i
             class="fal fa-edit"
           />
-           
-          <span
-            class="text d-none d-sm-inline"
-          >
-            Edit
-          </span>
-        </p>
-         
-        <p
-          class="delete"
+        </span>
+      </p>
+       
+      <p
+        class="delete"
+      >
+        <span
+          class="border rounded-circle icons"
         >
           <i
-            class="fal fa-trash-alt"
+            class="fal fa-times deleteIcon"
           />
-           
-          <span
-            class="text d-none d-sm-inline"
-          >
-            Delete
-          </span>
-        </p>
-      </div>
+        </span>
+      </p>
     </div>
   </div>
 </main>

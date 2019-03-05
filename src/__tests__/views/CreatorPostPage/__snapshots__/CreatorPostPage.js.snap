@@ -532,7 +532,7 @@ exports[`Posts Component should render correctly 1`] = `
       class="row"
     >
       <div
-        class="col-lg-5 d-none d-sm-block mb-4"
+        class="col-lg-5 d-none d-sm-block"
       >
         <div
           class="col-lg-12 mr-2"
@@ -644,22 +644,7 @@ exports[`Posts Component should render correctly 1`] = `
                
               <!---->
                
-              <div
-                class="follow d-flex align-items-center"
-              >
-                <a
-                  data-toggle=""
-                  href="#"
-                >
-                  Followers
-                </a>
-                 
-                <span
-                  class="badge followers-icon badge-primary ml-2"
-                >
-                  5
-                </span>
-              </div>
+              <!---->
             </div>
              
             <div
@@ -680,10 +665,10 @@ exports[`Posts Component should render correctly 1`] = `
                   </h5>
                    
                   <span
-                    class="edit-icon"
+                    class="border rounded-circle edit-icon"
                   >
                     <i
-                      class="fal fa-edit mr-2"
+                      class="fal fa-edit"
                     />
                   </span>
                 </div>
@@ -757,20 +742,241 @@ exports[`Posts Component should render correctly 1`] = `
             </div>
              
             <div
-              class="px-3 points"
+              class="interests"
             >
-              <span
-                class="font-weight-bold"
+              <main
+                class="country-card p-4 p-sm-3"
               >
-                Points
-              </span>
-               
-              <p
-                class="mt-2 mb-4"
-              >
-                0.05
-              </p>
+                <div
+                  class="header d-flex justify-content-between "
+                >
+                  <h5>
+                    <strong>
+                      Country
+                    </strong>
+                  </h5>
+                   
+                  <span
+                    class="border rounded-circle edit-icon"
+                  >
+                    <i
+                      class="fal fa-edit icon"
+                    />
+                  </span>
+                </div>
+                 
+                <div
+                  class="mt-1"
+                >
+                  <p
+                    class="country-title"
+                  >
+                    Lorem ipsum dolor sit amet
+                  </p>
+                   
+                  <div
+                    class="country-list d-flex flex-wrap mt-2"
+                  >
+                    <div
+                      class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
+                    >
+                      <span
+                        class="flag-icon flag-icon-mx rounded-circle"
+                      />
+                       
+                      <span
+                        class="pl-2"
+                      >
+                        Mexico
+                      </span>
+                    </div>
+                     
+                    <div
+                      class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
+                    >
+                      <span
+                        class="flag-icon flag-icon-fr rounded-circle"
+                      />
+                       
+                      <span
+                        class="pl-2"
+                      >
+                        France
+                      </span>
+                    </div>
+                     
+                    <div
+                      class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
+                    >
+                      <span
+                        class="flag-icon flag-icon-gh rounded-circle"
+                      />
+                       
+                      <span
+                        class="pl-2"
+                      >
+                        Ghana
+                      </span>
+                    </div>
+                     
+                    <div
+                      class="country border rounded p-2 my-2 mr-2 justify-content-center align-items-center"
+                    >
+                      <span
+                        class="flag-icon flag-icon-ke rounded-circle"
+                      />
+                       
+                      <span
+                        class="pl-2"
+                      >
+                        Kenya
+                      </span>
+                    </div>
+                     
+                    <div
+                      class="country border rounded p-2 my-2 mr-2 d-flex justify-content-center align-items-center"
+                    >
+                      <span
+                        class="flag-icon flag-icon-ng rounded-circle"
+                      />
+                       
+                      <span
+                        class="pl-2"
+                      >
+                        Nigeria
+                      </span>
+                    </div>
+                     
+                    <div
+                      class="country border rounded p-2 my-2 mr-2 d-flex justify-content-center align-items-center"
+                    >
+                      <span
+                        class="flag-icon flag-icon-gb rounded-circle"
+                      />
+                       
+                      <span
+                        class="pl-2"
+                      >
+                        UK
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </main>
             </div>
+             
+            <div
+              class="interests"
+            >
+              <div
+                class="p-4 p-sm-3 my-1"
+                id="bl-social-media"
+              >
+                <div
+                  class="header d-flex justify-content-between "
+                >
+                  <h5>
+                    <strong>
+                      Social Media
+                    </strong>
+                  </h5>
+                   
+                  <span
+                    class="border rounded-circle edit-icon"
+                  >
+                    <i
+                      class="fal fa-edit icon"
+                    />
+                  </span>
+                </div>
+                 
+                <div
+                  class="d-flex flex-wrap"
+                >
+                  <div
+                    class="mr-2"
+                  >
+                    <div
+                      class="border rounded p-2 mb-1 d-flex align-items-center"
+                    >
+                      <img
+                        alt="facebook"
+                        class="social-icon"
+                        src="@/assets/facebook-square.svg"
+                      />
+                       
+                      <h6
+                        class="social-text text-center pl-2"
+                      >
+                        Facebook
+                      </h6>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="mr-2"
+                  >
+                    <div
+                      class="border rounded p-2 mb-1 d-flex align-items-center"
+                    >
+                      <img
+                        alt="facebook"
+                        class="social-icon"
+                        src="@/assets/twitter-square.svg"
+                      />
+                       
+                      <h6
+                        class="social-text text-center pl-2"
+                      >
+                        Twitter
+                      </h6>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="mr-2"
+                  >
+                    <div
+                      class="border rounded p-2 mb-1 d-flex align-items-center"
+                    >
+                      <img
+                        alt="facebook"
+                        class="social-icon"
+                        src="@/assets/instagram-square.svg"
+                      />
+                       
+                      <h6
+                        class="social-text text-center pl-2"
+                      >
+                        Instagram
+                      </h6>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="mr-2"
+                  >
+                    <div
+                      class="border rounded p-2 mb-1 d-flex align-items-center"
+                    >
+                      <img
+                        alt="facebook"
+                        class="social-icon"
+                        src="@/assets/linkedin-square.svg"
+                      />
+                       
+                      <h6
+                        class="social-text text-center pl-2"
+                      >
+                        Linkedin
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <!---->
              
             <div
               class="card-footer text-muted bg-white footer-color"
@@ -1055,219 +1261,6 @@ exports[`Posts Component should render correctly 1`] = `
             </main>
           </main>
         </div>
-         
-        <div
-          class="col-lg-12 mr-2"
-        >
-          <div
-            class="bg-white publish-container"
-          >
-            <div
-              class="publish-link-container"
-            >
-              <a
-                class="publish-link btn"
-              >
-                Publish An Article
-              </a>
-            </div>
-          </div>
-        </div>
-         
-        <div
-          class="col-lg-12 mt-2"
-        >
-          <main
-            id="bl-actions"
-          >
-            <div
-              class="bg-white p-4"
-            >
-              <div
-                class="row mb-3"
-              >
-                <div
-                  class="col-8"
-                >
-                  <a>
-                    <h6
-                      class="text-primary"
-                    >
-                      <i
-                        class="far fa-rocket"
-                      />
-                       Posts
-          
-                    </h6>
-                     
-                    <p
-                      class="text-muted mt-2"
-                    >
-                      Update your information
-                    </p>
-                  </a>
-                </div>
-                 
-                <div
-                  class="col-4 d-flex justify-content-end align-items-center"
-                >
-                  <span
-                    class="badge badge-primary"
-                  >
-                    4
-                  </span>
-                </div>
-              </div>
-               
-              <div
-                class="row mb-3"
-              >
-                <div
-                  class="col-8"
-                >
-                  <a>
-                    <h6
-                      class="text-primary"
-                    >
-                      <i
-                        class="far fa-edit"
-                      />
-                       Drafts
-          
-                    </h6>
-                     
-                    <p
-                      class="text-muted mt-2"
-                    >
-                      Update your information
-                    </p>
-                  </a>
-                </div>
-                 
-                <div
-                  class="col-4 d-flex justify-content-end align-items-center"
-                >
-                  <span
-                    class="badge badge-primary"
-                  >
-                    4
-                  </span>
-                </div>
-              </div>
-               
-              <div
-                class="row mb-3"
-              >
-                <div
-                  class="col-8"
-                >
-                  <a>
-                    <h6
-                      class="text-primary"
-                    >
-                      <i
-                        class="fal fa-trash-alt"
-                      />
-                       Trash
-          
-                    </h6>
-                     
-                    <p
-                      class="text-muted mt-2"
-                    >
-                      Update your information
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
-         
-        <div
-          class="col-lg-12 mr-2 mt-2"
-        >
-          <div
-            class="card contest-advert bg-white"
-          >
-            <div
-              class="card-img-overlay"
-            >
-              <h3
-                class="card-title text-capitalize"
-              >
-                Become a Content Consumer
-              </h3>
-               
-              <p
-                class="card-text text-capitalize caption"
-              >
-                Publish your article to the world
-              </p>
-               
-              <span
-                class="d-flex justify-content-between mb-0"
-              >
-                <a
-                  class="mt-4"
-                  href=""
-                >
-                  Know more
-                </a>
-                 
-                <a
-                  class="btn know-more-btn"
-                  href="#"
-                  role="button"
-                >
-                  Apply
-                </a>
-              </span>
-            </div>
-          </div>
-           
-          <div
-            class="bl-footer"
-          >
-            <div
-              class="row company-name d-flex justify-content-center align-items-center"
-            >
-              <div
-                class="col-sm-3 text-lowercase"
-              >
-                bloverse
-              </div>
-               
-              <p
-                class="col-sm-9"
-              >
-                <span
-                  class="text-capitalize dots"
-                >
-                  terms
-                </span>
-                 
-                <span
-                  class="text-capitalize dots"
-                >
-                  privacy
-                </span>
-                 
-                <span
-                  class="text-capitalize"
-                >
-                  feedback
-                </span>
-              </p>
-            </div>
-             
-            <p
-              class="row company-rights text-capitalize"
-            >
-              2018 Bloverse. All Right Reserved
-            </p>
-          </div>
-        </div>
       </div>
        
       <div
@@ -1447,2237 +1440,692 @@ exports[`Posts Component should render correctly 1`] = `
         </div>
          
         <div
-          class="mt-4 px-4 bg-white"
+          class="d-flex flex-wrap mt-4 bl-posts"
         >
-          <div
-            class="row"
+          <main
+            class="container bl-postcards bg-white"
+            id="bl-postcards"
           >
-            <div
-              class="mx-4 d-none d-sm-block w-100"
+            <main
+              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+              hidecardborder="true"
+              id="bl-postcard"
+              style="width: 18rem;"
             >
-              <nav
-                class="navbar navbar-expand-lg navbar-light bg-white justify-content-end profile-navbar border_bottom"
+              <div
+                class="row mx-0"
               >
-                <div>
-                  <ul
-                    class="navbar-nav flex-row layout-nav"
+                <div
+                  class="col-12 bl-postcard-image"
+                  style="background-image: url(test-file-stub);"
+                >
+                  <button
+                    class="btn btn-sm bg-white m-2 rounded-0 float-right"
+                    type="button"
                   >
-                    <li
-                      class="nav-item mr-4 py-2 active"
-                    >
-                      <span
-                        class="nav-link list-view"
-                        to="#"
-                      >
-                        <span>
-                          <i
-                            class="fal fa-th-list mr-1 icon--active"
-                          />
-                        </span>
-                        
-                        List
-                        
-                        <span
-                          class="sr-only"
-                        >
-                          (current)
-                        </span>
-                      </span>
-                    </li>
-                     
-                    <li
-                      class="nav-item mr-4 py-2"
-                    >
-                      <span
-                        class="nav-link grid-view"
-                        to="#"
-                      >
-                        <span>
-                          <i
-                            class="fal fa-th-large mr-1"
-                          />
-                        </span>
-                        
-                        Grid
-                      
-                      </span>
-                    </li>
-                  </ul>
+                    Category
+                  </button>
                 </div>
-              </nav>
-            </div>
+                 
+                <div
+                  class="card-body"
+                >
+                  <div
+                    class="card-body-title--content mt-2 mb-2"
+                  >
+                    <button
+                      class="btn btn-sm bg-white mx-0 my-2"
+                      style="display: none;"
+                      type="button"
+                    >
+                      Category
+                    </button>
+                     
+                    <a>
+                      <h5
+                        class="card-title font-weight-bold"
+                      >
+                        
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
+          ea nec elaboraret interpret
+        
+                      </h5>
+                    </a>
+                     
+                    <p
+                      class="username"
+                    >
+                      <!---->
+                       
+                      <!---->
+                       
+                      <span
+                        class="time"
+                      >
+                        1 min ago
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="row m-0 text-capitalize actions"
+                  >
+                    <p
+                      class="col-8 p-0 m-auto counts"
+                    >
+                      <span
+                        class="mr-2 views"
+                      >
+                        4k 
+            
+                        <span
+                          class="views-text"
+                        >
+                          views
+                        </span>
+                      </span>
+                       
+                      <!---->
+                    </p>
+                     
+                    <!---->
+                     
+                    <div
+                      class="align-items-center col-4 d-flex justify-content-end col-4 m-0 p-0 unpublish"
+                    >
+                      <button
+                        class="btn btn-sm bg-white mr-3 m-2 float-right"
+                        type="button"
+                      >
+                        
+            Unpublish
+          
+                      </button>
+                       
+                      <p
+                        class="share"
+                      >
+                        <span
+                          class="border rounded-circle icons share"
+                        >
+                          <i
+                            class="fal fa-share"
+                          />
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="share"
+                        style="display: none;"
+                      >
+                        <span
+                          class="border rounded-circle icons share clicked"
+                        >
+                          <i
+                            class="fas fa-share"
+                          />
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <p
+                      class="col-12 mt-2 p-0 text-capitalize keypoints"
+                    >
+                      
+          show keypoints
+        
+                    </p>
+                  </div>
+                </div>
+              </div>
+               
+              <!---->
+            </main>
              
-            <div
-              class="list_view creator_profile__post"
+            <main
+              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+              hidecardborder="true"
+              id="bl-postcard"
+              style="width: 18rem;"
             >
-              <main
-                class="container bl-postcards"
-                id="bl-postcards"
+              <div
+                class="row mx-0"
               >
-                <main
-                  class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                  hidecardborder="true"
-                  id="read-later-card"
-                  style="width: 18rem;"
+                <div
+                  class="col-12 bl-postcard-image"
+                  style="background-image: url(test-file-stub);"
                 >
-                  <div
-                    class="row mx-0"
+                  <button
+                    class="btn btn-sm bg-white m-2 rounded-0 float-right"
+                    type="button"
                   >
-                    <div
-                      class="col-12 read-later-image"
-                      style="background-image: url(test-file-stub);"
-                    >
-                      <button
-                        class="btn btn-sm bg-white m-2 rounded-0 float-right"
-                        type="button"
-                      >
-                        Category
-                      </button>
-                    </div>
-                     
-                    <div
-                      class="card-body"
-                    >
-                      <div
-                        class="card-body-title--content mt-2"
-                      >
-                        <button
-                          class="btn btn-sm bg-white mx-0 my-2"
-                          style="display: none;"
-                          type="button"
-                        >
-                          Category
-                        </button>
-                         
-                        <a>
-                          <h5
-                            class="card-title font-weight-bold"
-                          >
-                            
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
-          ea nec elaboraret interpret
-        
-                          </h5>
-                        </a>
-                         
-                        <p
-                          class="username"
-                        >
-                          <!---->
-                           
-                          <!---->
-                           
-                          <span
-                            class="time"
-                          >
-                            1 min ago
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="row m-0 text-capitalize actions"
-                      >
-                        <p
-                          class="col-8 p-0 counts"
-                        >
-                          <span
-                            class="mr-2 views"
-                          >
-                            4k views
-                          </span>
-                           
-                          <span
-                            class="comments"
-                          >
-                            64 Comments
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="col-4 p-0 text-right text-capitalize keypoints"
-                        >
-                          show keypoints
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="row px-0 border bg-white card-footer"
-                  >
-                    <div
-                      class="col-6 row mx-0 actions--a"
-                    >
-                      <div
-                        class="col-6 d-flex justify-content-between border-right likes"
-                      >
-                        <p
-                          class="thumbs-up"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons thumbs-up-icon"
-                          >
-                            <i
-                              class="fal fa-thumbs-up"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            18
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-up"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons clicked"
-                          >
-                            <i
-                              class="fas fa-thumbs-up"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            18
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-down"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons thumbs-down-icon"
-                          >
-                            <i
-                              class="fal fa-thumbs-down"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            1
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-down"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons clicked"
-                          >
-                            <i
-                              class="fas fa-thumbs-down"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            1
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="col-6 d-flex justify-content-start share"
-                      >
-                        <p
-                          class="share"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 share icons"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            11
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="share"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons share-icon clicked"
-                          >
-                            <i
-                              class="fas fa-share"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            11
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="col-6 mx-0 d-flex justify-content-end actions--b"
-                    >
-                      <p
-                        class="share mr-2"
-                        style="display: none;"
-                      >
-                        <span
-                          class="border rounded-circle mr-1 icons bookmark"
-                        >
-                          <i
-                            class="fal fa-bookmark"
-                          />
-                        </span>
-                      </p>
-                       
-                      <p
-                        class="share mr-2"
-                      >
-                        <span
-                          class="border rounded-circle mr-1 icons bookmark clicked"
-                        >
-                          <i
-                            class="fas fa-bookmark"
-                          />
-                        </span>
-                      </p>
-                       
-                      <div
-                        class="d-flex justify-content-center align-items-center ellipsis-div"
-                      >
-                        <p
-                          aria-expanded="false"
-                          aria-haspopup="true"
-                          class="px-2 ellipsis dropdown-toggle"
-                          data-toggle="dropdown"
-                          href="#"
-                          id="navbarDropdown"
-                          role="button"
-                        >
-                          <span
-                            id="option-icon"
-                          />
-                           
-                          <span
-                            id="option-icon"
-                          />
-                           
-                          <span
-                            id="option-icon"
-                          />
-                        </p>
-                         
-                        <div
-                          aria-labelledby="dropdownMenuReference"
-                          class="dropdown-menu bl-dropdown-menu top-dropdown"
-                        >
-                          <div
-                            class="d-flex bl-dropdown-menu__countries"
-                          >
-                            <div
-                              class="favourite-countries"
-                            >
-                              <p
-                                class="dropdown-item country"
-                              >
-                                Report Post
-                              </p>
-                               
-                              <hr />
-                               
-                              <hr />
-                               
-                              <p
-                                class="dropdown-item country"
-                              >
-                                <i
-                                  class="fal fa-times mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Remove
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country"
-                              >
-                                <i
-                                  class="fal fa-plus mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Creators Profile
-                                </span>
-                              </p>
-                               
-                              <div
-                                class="d-md-none"
-                              >
-                                <p
-                                  class="dropdown-item country"
-                                >
-                                  <i
-                                    class="fal fa-comment-dots mr-2"
-                                  />
-                                   
-                                  <span
-                                    class="count"
-                                  >
-                                    
-                    Comment
-                    
-                                    <span
-                                      class="badges"
-                                    >
-                                      5
-                                    </span>
-                                  </span>
-                                </p>
-                                 
-                                <p
-                                  class="dropdown-item country hidden-lg-down"
-                                >
-                                  <i
-                                    class="fal fa-share mr-2"
-                                  />
-                                   
-                                  <span
-                                    class="count"
-                                  >
-                                    
-                    Share
-                    
-                                    <span
-                                      class="badges"
-                                    >
-                                      5
-                                    </span>
-                                  </span>
-                                </p>
-                              </div>
-                               
-                              <p
-                                class="dropdown-item country toggle-bookmark"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fal fa-bookmark mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Later
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country toggle-bookmark"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fas fa-bookmark mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Later
-                                </span>
-                              </p>
-                               
-                              <hr />
-                               
-                              <hr />
-                               
-                              <p
-                                class="dropdown-item country toggle-story"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fal fa-book-open mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Story
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country toggle-story"
-                              >
-                                <i
-                                  class="fas fa-book-open mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Story
-                                </span>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </main>
+                    Category
+                  </button>
+                </div>
                  
-                <main
-                  class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                  hidecardborder="true"
-                  id="read-later-card"
-                  style="width: 18rem;"
+                <div
+                  class="card-body"
                 >
                   <div
-                    class="row mx-0"
+                    class="card-body-title--content mt-2 mb-2"
                   >
-                    <div
-                      class="col-12 read-later-image"
-                      style="background-image: url(test-file-stub);"
+                    <button
+                      class="btn btn-sm bg-white mx-0 my-2"
+                      style="display: none;"
+                      type="button"
                     >
-                      <button
-                        class="btn btn-sm bg-white m-2 rounded-0 float-right"
-                        type="button"
-                      >
-                        Category
-                      </button>
-                    </div>
+                      Category
+                    </button>
                      
-                    <div
-                      class="card-body"
-                    >
-                      <div
-                        class="card-body-title--content mt-2"
+                    <a>
+                      <h5
+                        class="card-title font-weight-bold"
                       >
-                        <button
-                          class="btn btn-sm bg-white mx-0 my-2"
-                          style="display: none;"
-                          type="button"
-                        >
-                          Category
-                        </button>
-                         
-                        <a>
-                          <h5
-                            class="card-title font-weight-bold"
-                          >
-                            
+                        
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                          </h5>
-                        </a>
-                         
-                        <p
-                          class="username"
-                        >
-                          <!---->
-                           
-                          <!---->
-                           
-                          <span
-                            class="time"
-                          >
-                            1 min ago
-                          </span>
-                        </p>
-                      </div>
+                      </h5>
+                    </a>
+                     
+                    <p
+                      class="username"
+                    >
+                      <!---->
                        
-                      <div
-                        class="row m-0 text-capitalize actions"
+                      <!---->
+                       
+                      <span
+                        class="time"
                       >
-                        <p
-                          class="col-8 p-0 counts"
-                        >
-                          <span
-                            class="mr-2 views"
-                          >
-                            4k views
-                          </span>
-                           
-                          <span
-                            class="comments"
-                          >
-                            64 Comments
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="col-4 p-0 text-right text-capitalize keypoints"
-                        >
-                          show keypoints
-                        </p>
-                      </div>
-                    </div>
+                        1 min ago
+                      </span>
+                    </p>
                   </div>
                    
                   <div
-                    class="row px-0 border bg-white card-footer"
+                    class="row m-0 text-capitalize actions"
                   >
-                    <div
-                      class="col-6 row mx-0 actions--a"
+                    <p
+                      class="col-8 p-0 m-auto counts"
                     >
-                      <div
-                        class="col-6 d-flex justify-content-between border-right likes"
+                      <span
+                        class="mr-2 views"
                       >
-                        <p
-                          class="thumbs-up"
+                        4k 
+            
+                        <span
+                          class="views-text"
                         >
-                          <span
-                            class="border rounded-circle mr-1 icons thumbs-up-icon"
-                          >
-                            <i
-                              class="fal fa-thumbs-up"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            18
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-up"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons clicked"
-                          >
-                            <i
-                              class="fas fa-thumbs-up"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            18
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-down"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons thumbs-down-icon"
-                          >
-                            <i
-                              class="fal fa-thumbs-down"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            1
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-down"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons clicked"
-                          >
-                            <i
-                              class="fas fa-thumbs-down"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            1
-                          </span>
-                        </p>
-                      </div>
+                          views
+                        </span>
+                      </span>
                        
-                      <div
-                        class="col-6 d-flex justify-content-start share"
-                      >
-                        <p
-                          class="share"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 share icons"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            11
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="share"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons share-icon clicked"
-                          >
-                            <i
-                              class="fas fa-share"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            11
-                          </span>
-                        </p>
-                      </div>
-                    </div>
+                      <!---->
+                    </p>
+                     
+                    <!---->
                      
                     <div
-                      class="col-6 mx-0 d-flex justify-content-end actions--b"
-                    >
-                      <p
-                        class="share mr-2"
-                        style="display: none;"
-                      >
-                        <span
-                          class="border rounded-circle mr-1 icons bookmark"
-                        >
-                          <i
-                            class="fal fa-bookmark"
-                          />
-                        </span>
-                      </p>
-                       
-                      <p
-                        class="share mr-2"
-                      >
-                        <span
-                          class="border rounded-circle mr-1 icons bookmark clicked"
-                        >
-                          <i
-                            class="fas fa-bookmark"
-                          />
-                        </span>
-                      </p>
-                       
-                      <div
-                        class="d-flex justify-content-center align-items-center ellipsis-div"
-                      >
-                        <p
-                          aria-expanded="false"
-                          aria-haspopup="true"
-                          class="px-2 ellipsis dropdown-toggle"
-                          data-toggle="dropdown"
-                          href="#"
-                          id="navbarDropdown"
-                          role="button"
-                        >
-                          <span
-                            id="option-icon"
-                          />
-                           
-                          <span
-                            id="option-icon"
-                          />
-                           
-                          <span
-                            id="option-icon"
-                          />
-                        </p>
-                         
-                        <div
-                          aria-labelledby="dropdownMenuReference"
-                          class="dropdown-menu bl-dropdown-menu top-dropdown"
-                        >
-                          <div
-                            class="d-flex bl-dropdown-menu__countries"
-                          >
-                            <div
-                              class="favourite-countries"
-                            >
-                              <p
-                                class="dropdown-item country"
-                              >
-                                Report Post
-                              </p>
-                               
-                              <hr />
-                               
-                              <hr />
-                               
-                              <p
-                                class="dropdown-item country"
-                              >
-                                <i
-                                  class="fal fa-times mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Remove
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country"
-                              >
-                                <i
-                                  class="fal fa-plus mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Creators Profile
-                                </span>
-                              </p>
-                               
-                              <div
-                                class="d-md-none"
-                              >
-                                <p
-                                  class="dropdown-item country"
-                                >
-                                  <i
-                                    class="fal fa-comment-dots mr-2"
-                                  />
-                                   
-                                  <span
-                                    class="count"
-                                  >
-                                    
-                    Comment
-                    
-                                    <span
-                                      class="badges"
-                                    >
-                                      5
-                                    </span>
-                                  </span>
-                                </p>
-                                 
-                                <p
-                                  class="dropdown-item country hidden-lg-down"
-                                >
-                                  <i
-                                    class="fal fa-share mr-2"
-                                  />
-                                   
-                                  <span
-                                    class="count"
-                                  >
-                                    
-                    Share
-                    
-                                    <span
-                                      class="badges"
-                                    >
-                                      5
-                                    </span>
-                                  </span>
-                                </p>
-                              </div>
-                               
-                              <p
-                                class="dropdown-item country toggle-bookmark"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fal fa-bookmark mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Later
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country toggle-bookmark"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fas fa-bookmark mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Later
-                                </span>
-                              </p>
-                               
-                              <hr />
-                               
-                              <hr />
-                               
-                              <p
-                                class="dropdown-item country toggle-story"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fal fa-book-open mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Story
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country toggle-story"
-                              >
-                                <i
-                                  class="fas fa-book-open mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Story
-                                </span>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </main>
-                 
-                <main
-                  class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                  hidecardborder="true"
-                  id="read-later-card"
-                  style="width: 18rem;"
-                >
-                  <div
-                    class="row mx-0"
-                  >
-                    <div
-                      class="col-12 read-later-image"
-                      style="background-image: url(test-file-stub);"
+                      class="align-items-center col-4 d-flex justify-content-end col-4 m-0 p-0 unpublish"
                     >
                       <button
-                        class="btn btn-sm bg-white m-2 rounded-0 float-right"
+                        class="btn btn-sm bg-white mr-3 m-2 float-right"
                         type="button"
                       >
-                        Category
+                        
+            Unpublish
+          
                       </button>
-                    </div>
-                     
-                    <div
-                      class="card-body"
-                    >
-                      <div
-                        class="card-body-title--content mt-2"
-                      >
-                        <button
-                          class="btn btn-sm bg-white mx-0 my-2"
-                          style="display: none;"
-                          type="button"
-                        >
-                          Category
-                        </button>
-                         
-                        <a>
-                          <h5
-                            class="card-title font-weight-bold"
-                          >
-                            
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
-          ea nec elaboraret interpret
-        
-                          </h5>
-                        </a>
-                         
-                        <p
-                          class="username"
-                        >
-                          <!---->
-                           
-                          <!---->
-                           
-                          <span
-                            class="time"
-                          >
-                            1 min ago
-                          </span>
-                        </p>
-                      </div>
                        
-                      <div
-                        class="row m-0 text-capitalize actions"
-                      >
-                        <p
-                          class="col-8 p-0 counts"
-                        >
-                          <span
-                            class="mr-2 views"
-                          >
-                            4k views
-                          </span>
-                           
-                          <span
-                            class="comments"
-                          >
-                            64 Comments
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="col-4 p-0 text-right text-capitalize keypoints"
-                        >
-                          show keypoints
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="row px-0 border bg-white card-footer"
-                  >
-                    <div
-                      class="col-6 row mx-0 actions--a"
-                    >
-                      <div
-                        class="col-6 d-flex justify-content-between border-right likes"
-                      >
-                        <p
-                          class="thumbs-up"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons thumbs-up-icon"
-                          >
-                            <i
-                              class="fal fa-thumbs-up"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            18
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-up"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons clicked"
-                          >
-                            <i
-                              class="fas fa-thumbs-up"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            18
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-down"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons thumbs-down-icon"
-                          >
-                            <i
-                              class="fal fa-thumbs-down"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            1
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-down"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons clicked"
-                          >
-                            <i
-                              class="fas fa-thumbs-down"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            1
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="col-6 d-flex justify-content-start share"
-                      >
-                        <p
-                          class="share"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 share icons"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            11
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="share"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons share-icon clicked"
-                          >
-                            <i
-                              class="fas fa-share"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            11
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="col-6 mx-0 d-flex justify-content-end actions--b"
-                    >
                       <p
-                        class="share mr-2"
+                        class="share"
+                      >
+                        <span
+                          class="border rounded-circle icons share"
+                        >
+                          <i
+                            class="fal fa-share"
+                          />
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="share"
                         style="display: none;"
                       >
                         <span
-                          class="border rounded-circle mr-1 icons bookmark"
+                          class="border rounded-circle icons share clicked"
                         >
                           <i
-                            class="fal fa-bookmark"
+                            class="fas fa-share"
                           />
                         </span>
                       </p>
-                       
-                      <p
-                        class="share mr-2"
-                      >
-                        <span
-                          class="border rounded-circle mr-1 icons bookmark clicked"
-                        >
-                          <i
-                            class="fas fa-bookmark"
-                          />
-                        </span>
-                      </p>
-                       
-                      <div
-                        class="d-flex justify-content-center align-items-center ellipsis-div"
-                      >
-                        <p
-                          aria-expanded="false"
-                          aria-haspopup="true"
-                          class="px-2 ellipsis dropdown-toggle"
-                          data-toggle="dropdown"
-                          href="#"
-                          id="navbarDropdown"
-                          role="button"
-                        >
-                          <span
-                            id="option-icon"
-                          />
-                           
-                          <span
-                            id="option-icon"
-                          />
-                           
-                          <span
-                            id="option-icon"
-                          />
-                        </p>
-                         
-                        <div
-                          aria-labelledby="dropdownMenuReference"
-                          class="dropdown-menu bl-dropdown-menu top-dropdown"
-                        >
-                          <div
-                            class="d-flex bl-dropdown-menu__countries"
-                          >
-                            <div
-                              class="favourite-countries"
-                            >
-                              <p
-                                class="dropdown-item country"
-                              >
-                                Report Post
-                              </p>
-                               
-                              <hr />
-                               
-                              <hr />
-                               
-                              <p
-                                class="dropdown-item country"
-                              >
-                                <i
-                                  class="fal fa-times mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Remove
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country"
-                              >
-                                <i
-                                  class="fal fa-plus mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Creators Profile
-                                </span>
-                              </p>
-                               
-                              <div
-                                class="d-md-none"
-                              >
-                                <p
-                                  class="dropdown-item country"
-                                >
-                                  <i
-                                    class="fal fa-comment-dots mr-2"
-                                  />
-                                   
-                                  <span
-                                    class="count"
-                                  >
-                                    
-                    Comment
-                    
-                                    <span
-                                      class="badges"
-                                    >
-                                      5
-                                    </span>
-                                  </span>
-                                </p>
-                                 
-                                <p
-                                  class="dropdown-item country hidden-lg-down"
-                                >
-                                  <i
-                                    class="fal fa-share mr-2"
-                                  />
-                                   
-                                  <span
-                                    class="count"
-                                  >
-                                    
-                    Share
-                    
-                                    <span
-                                      class="badges"
-                                    >
-                                      5
-                                    </span>
-                                  </span>
-                                </p>
-                              </div>
-                               
-                              <p
-                                class="dropdown-item country toggle-bookmark"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fal fa-bookmark mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Later
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country toggle-bookmark"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fas fa-bookmark mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Later
-                                </span>
-                              </p>
-                               
-                              <hr />
-                               
-                              <hr />
-                               
-                              <p
-                                class="dropdown-item country toggle-story"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fal fa-book-open mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Story
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country toggle-story"
-                              >
-                                <i
-                                  class="fas fa-book-open mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Story
-                                </span>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </main>
-                 
-                <main
-                  class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                  hidecardborder="true"
-                  id="read-later-card"
-                  style="width: 18rem;"
-                >
-                  <div
-                    class="row mx-0"
-                  >
-                    <div
-                      class="col-12 read-later-image"
-                      style="background-image: url(test-file-stub);"
-                    >
-                      <button
-                        class="btn btn-sm bg-white m-2 rounded-0 float-right"
-                        type="button"
-                      >
-                        Category
-                      </button>
                     </div>
                      
-                    <div
-                      class="card-body"
+                    <p
+                      class="col-12 mt-2 p-0 text-capitalize keypoints"
                     >
-                      <div
-                        class="card-body-title--content mt-2"
-                      >
-                        <button
-                          class="btn btn-sm bg-white mx-0 my-2"
-                          style="display: none;"
-                          type="button"
-                        >
-                          Category
-                        </button>
-                         
-                        <a>
-                          <h5
-                            class="card-title font-weight-bold"
-                          >
-                            
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
-          ea nec elaboraret interpret
+                      
+          show keypoints
         
-                          </h5>
-                        </a>
-                         
-                        <p
-                          class="username"
-                        >
-                          <!---->
-                           
-                          <!---->
-                           
-                          <span
-                            class="time"
-                          >
-                            1 min ago
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="row m-0 text-capitalize actions"
-                      >
-                        <p
-                          class="col-8 p-0 counts"
-                        >
-                          <span
-                            class="mr-2 views"
-                          >
-                            4k views
-                          </span>
-                           
-                          <span
-                            class="comments"
-                          >
-                            64 Comments
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="col-4 p-0 text-right text-capitalize keypoints"
-                        >
-                          show keypoints
-                        </p>
-                      </div>
-                    </div>
+                    </p>
                   </div>
-                   
-                  <div
-                    class="row px-0 border bg-white card-footer"
-                  >
-                    <div
-                      class="col-6 row mx-0 actions--a"
-                    >
-                      <div
-                        class="col-6 d-flex justify-content-between border-right likes"
-                      >
-                        <p
-                          class="thumbs-up"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons thumbs-up-icon"
-                          >
-                            <i
-                              class="fal fa-thumbs-up"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            18
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-up"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons clicked"
-                          >
-                            <i
-                              class="fas fa-thumbs-up"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            18
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-down"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons thumbs-down-icon"
-                          >
-                            <i
-                              class="fal fa-thumbs-down"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            1
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-down"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons clicked"
-                          >
-                            <i
-                              class="fas fa-thumbs-down"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            1
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="col-6 d-flex justify-content-start share"
-                      >
-                        <p
-                          class="share"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 share icons"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            11
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="share"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons share-icon clicked"
-                          >
-                            <i
-                              class="fas fa-share"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            11
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="col-6 mx-0 d-flex justify-content-end actions--b"
-                    >
-                      <p
-                        class="share mr-2"
-                        style="display: none;"
-                      >
-                        <span
-                          class="border rounded-circle mr-1 icons bookmark"
-                        >
-                          <i
-                            class="fal fa-bookmark"
-                          />
-                        </span>
-                      </p>
-                       
-                      <p
-                        class="share mr-2"
-                      >
-                        <span
-                          class="border rounded-circle mr-1 icons bookmark clicked"
-                        >
-                          <i
-                            class="fas fa-bookmark"
-                          />
-                        </span>
-                      </p>
-                       
-                      <div
-                        class="d-flex justify-content-center align-items-center ellipsis-div"
-                      >
-                        <p
-                          aria-expanded="false"
-                          aria-haspopup="true"
-                          class="px-2 ellipsis dropdown-toggle"
-                          data-toggle="dropdown"
-                          href="#"
-                          id="navbarDropdown"
-                          role="button"
-                        >
-                          <span
-                            id="option-icon"
-                          />
-                           
-                          <span
-                            id="option-icon"
-                          />
-                           
-                          <span
-                            id="option-icon"
-                          />
-                        </p>
-                         
-                        <div
-                          aria-labelledby="dropdownMenuReference"
-                          class="dropdown-menu bl-dropdown-menu top-dropdown"
-                        >
-                          <div
-                            class="d-flex bl-dropdown-menu__countries"
-                          >
-                            <div
-                              class="favourite-countries"
-                            >
-                              <p
-                                class="dropdown-item country"
-                              >
-                                Report Post
-                              </p>
-                               
-                              <hr />
-                               
-                              <hr />
-                               
-                              <p
-                                class="dropdown-item country"
-                              >
-                                <i
-                                  class="fal fa-times mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Remove
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country"
-                              >
-                                <i
-                                  class="fal fa-plus mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Creators Profile
-                                </span>
-                              </p>
-                               
-                              <div
-                                class="d-md-none"
-                              >
-                                <p
-                                  class="dropdown-item country"
-                                >
-                                  <i
-                                    class="fal fa-comment-dots mr-2"
-                                  />
-                                   
-                                  <span
-                                    class="count"
-                                  >
-                                    
-                    Comment
-                    
-                                    <span
-                                      class="badges"
-                                    >
-                                      5
-                                    </span>
-                                  </span>
-                                </p>
-                                 
-                                <p
-                                  class="dropdown-item country hidden-lg-down"
-                                >
-                                  <i
-                                    class="fal fa-share mr-2"
-                                  />
-                                   
-                                  <span
-                                    class="count"
-                                  >
-                                    
-                    Share
-                    
-                                    <span
-                                      class="badges"
-                                    >
-                                      5
-                                    </span>
-                                  </span>
-                                </p>
-                              </div>
-                               
-                              <p
-                                class="dropdown-item country toggle-bookmark"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fal fa-bookmark mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Later
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country toggle-bookmark"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fas fa-bookmark mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Later
-                                </span>
-                              </p>
-                               
-                              <hr />
-                               
-                              <hr />
-                               
-                              <p
-                                class="dropdown-item country toggle-story"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fal fa-book-open mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Story
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country toggle-story"
-                              >
-                                <i
-                                  class="fas fa-book-open mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Story
-                                </span>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </main>
-                 
-                <main
-                  class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                  hidecardborder="true"
-                  id="read-later-card"
-                  style="width: 18rem;"
-                >
-                  <div
-                    class="row mx-0"
-                  >
-                    <div
-                      class="col-12 read-later-image"
-                      style="background-image: url(test-file-stub);"
-                    >
-                      <button
-                        class="btn btn-sm bg-white m-2 rounded-0 float-right"
-                        type="button"
-                      >
-                        Category
-                      </button>
-                    </div>
-                     
-                    <div
-                      class="card-body"
-                    >
-                      <div
-                        class="card-body-title--content mt-2"
-                      >
-                        <button
-                          class="btn btn-sm bg-white mx-0 my-2"
-                          style="display: none;"
-                          type="button"
-                        >
-                          Category
-                        </button>
-                         
-                        <a>
-                          <h5
-                            class="card-title font-weight-bold"
-                          >
-                            
-          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
-          ea nec elaboraret interpret
-        
-                          </h5>
-                        </a>
-                         
-                        <p
-                          class="username"
-                        >
-                          <!---->
-                           
-                          <!---->
-                           
-                          <span
-                            class="time"
-                          >
-                            1 min ago
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="row m-0 text-capitalize actions"
-                      >
-                        <p
-                          class="col-8 p-0 counts"
-                        >
-                          <span
-                            class="mr-2 views"
-                          >
-                            4k views
-                          </span>
-                           
-                          <span
-                            class="comments"
-                          >
-                            64 Comments
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="col-4 p-0 text-right text-capitalize keypoints"
-                        >
-                          show keypoints
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                   
-                  <div
-                    class="row px-0 border bg-white card-footer"
-                  >
-                    <div
-                      class="col-6 row mx-0 actions--a"
-                    >
-                      <div
-                        class="col-6 d-flex justify-content-between border-right likes"
-                      >
-                        <p
-                          class="thumbs-up"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons thumbs-up-icon"
-                          >
-                            <i
-                              class="fal fa-thumbs-up"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            18
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-up"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons clicked"
-                          >
-                            <i
-                              class="fas fa-thumbs-up"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            18
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-down"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons thumbs-down-icon"
-                          >
-                            <i
-                              class="fal fa-thumbs-down"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            1
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="thumbs-down"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons clicked"
-                          >
-                            <i
-                              class="fas fa-thumbs-down"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            1
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="col-6 d-flex justify-content-start share"
-                      >
-                        <p
-                          class="share"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 share icons"
-                          >
-                            <i
-                              class="fal fa-share"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            11
-                          </span>
-                        </p>
-                         
-                        <p
-                          class="share"
-                          style="display: none;"
-                        >
-                          <span
-                            class="border rounded-circle mr-1 icons share-icon clicked"
-                          >
-                            <i
-                              class="fas fa-share"
-                            />
-                          </span>
-                           
-                          <span
-                            class="count"
-                          >
-                            11
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                     
-                    <div
-                      class="col-6 mx-0 d-flex justify-content-end actions--b"
-                    >
-                      <p
-                        class="share mr-2"
-                        style="display: none;"
-                      >
-                        <span
-                          class="border rounded-circle mr-1 icons bookmark"
-                        >
-                          <i
-                            class="fal fa-bookmark"
-                          />
-                        </span>
-                      </p>
-                       
-                      <p
-                        class="share mr-2"
-                      >
-                        <span
-                          class="border rounded-circle mr-1 icons bookmark clicked"
-                        >
-                          <i
-                            class="fas fa-bookmark"
-                          />
-                        </span>
-                      </p>
-                       
-                      <div
-                        class="d-flex justify-content-center align-items-center ellipsis-div"
-                      >
-                        <p
-                          aria-expanded="false"
-                          aria-haspopup="true"
-                          class="px-2 ellipsis dropdown-toggle"
-                          data-toggle="dropdown"
-                          href="#"
-                          id="navbarDropdown"
-                          role="button"
-                        >
-                          <span
-                            id="option-icon"
-                          />
-                           
-                          <span
-                            id="option-icon"
-                          />
-                           
-                          <span
-                            id="option-icon"
-                          />
-                        </p>
-                         
-                        <div
-                          aria-labelledby="dropdownMenuReference"
-                          class="dropdown-menu bl-dropdown-menu top-dropdown"
-                        >
-                          <div
-                            class="d-flex bl-dropdown-menu__countries"
-                          >
-                            <div
-                              class="favourite-countries"
-                            >
-                              <p
-                                class="dropdown-item country"
-                              >
-                                Report Post
-                              </p>
-                               
-                              <hr />
-                               
-                              <hr />
-                               
-                              <p
-                                class="dropdown-item country"
-                              >
-                                <i
-                                  class="fal fa-times mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Remove
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country"
-                              >
-                                <i
-                                  class="fal fa-plus mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Creators Profile
-                                </span>
-                              </p>
-                               
-                              <div
-                                class="d-md-none"
-                              >
-                                <p
-                                  class="dropdown-item country"
-                                >
-                                  <i
-                                    class="fal fa-comment-dots mr-2"
-                                  />
-                                   
-                                  <span
-                                    class="count"
-                                  >
-                                    
-                    Comment
-                    
-                                    <span
-                                      class="badges"
-                                    >
-                                      5
-                                    </span>
-                                  </span>
-                                </p>
-                                 
-                                <p
-                                  class="dropdown-item country hidden-lg-down"
-                                >
-                                  <i
-                                    class="fal fa-share mr-2"
-                                  />
-                                   
-                                  <span
-                                    class="count"
-                                  >
-                                    
-                    Share
-                    
-                                    <span
-                                      class="badges"
-                                    >
-                                      5
-                                    </span>
-                                  </span>
-                                </p>
-                              </div>
-                               
-                              <p
-                                class="dropdown-item country toggle-bookmark"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fal fa-bookmark mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Later
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country toggle-bookmark"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fas fa-bookmark mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Later
-                                </span>
-                              </p>
-                               
-                              <hr />
-                               
-                              <hr />
-                               
-                              <p
-                                class="dropdown-item country toggle-story"
-                                style="display: none;"
-                              >
-                                <i
-                                  class="fal fa-book-open mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Story
-                                </span>
-                              </p>
-                               
-                              <p
-                                class="dropdown-item country toggle-story"
-                              >
-                                <i
-                                  class="fas fa-book-open mr-2"
-                                />
-                                 
-                                <span
-                                  class="count"
-                                >
-                                  Read Story
-                                </span>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </main>
-              </main>
-            </div>
+                </div>
+              </div>
+               
+              <!---->
+            </main>
              
-            <!---->
-          </div>
+            <main
+              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+              hidecardborder="true"
+              id="bl-postcard"
+              style="width: 18rem;"
+            >
+              <div
+                class="row mx-0"
+              >
+                <div
+                  class="col-12 bl-postcard-image"
+                  style="background-image: url(test-file-stub);"
+                >
+                  <button
+                    class="btn btn-sm bg-white m-2 rounded-0 float-right"
+                    type="button"
+                  >
+                    Category
+                  </button>
+                </div>
+                 
+                <div
+                  class="card-body"
+                >
+                  <div
+                    class="card-body-title--content mt-2 mb-2"
+                  >
+                    <button
+                      class="btn btn-sm bg-white mx-0 my-2"
+                      style="display: none;"
+                      type="button"
+                    >
+                      Category
+                    </button>
+                     
+                    <a>
+                      <h5
+                        class="card-title font-weight-bold"
+                      >
+                        
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
+          ea nec elaboraret interpret
+        
+                      </h5>
+                    </a>
+                     
+                    <p
+                      class="username"
+                    >
+                      <!---->
+                       
+                      <!---->
+                       
+                      <span
+                        class="time"
+                      >
+                        1 min ago
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="row m-0 text-capitalize actions"
+                  >
+                    <p
+                      class="col-8 p-0 m-auto counts"
+                    >
+                      <span
+                        class="mr-2 views"
+                      >
+                        4k 
+            
+                        <span
+                          class="views-text"
+                        >
+                          views
+                        </span>
+                      </span>
+                       
+                      <!---->
+                    </p>
+                     
+                    <!---->
+                     
+                    <div
+                      class="align-items-center col-4 d-flex justify-content-end col-4 m-0 p-0 unpublish"
+                    >
+                      <button
+                        class="btn btn-sm bg-white mr-3 m-2 float-right"
+                        type="button"
+                      >
+                        
+            Unpublish
+          
+                      </button>
+                       
+                      <p
+                        class="share"
+                      >
+                        <span
+                          class="border rounded-circle icons share"
+                        >
+                          <i
+                            class="fal fa-share"
+                          />
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="share"
+                        style="display: none;"
+                      >
+                        <span
+                          class="border rounded-circle icons share clicked"
+                        >
+                          <i
+                            class="fas fa-share"
+                          />
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <p
+                      class="col-12 mt-2 p-0 text-capitalize keypoints"
+                    >
+                      
+          show keypoints
+        
+                    </p>
+                  </div>
+                </div>
+              </div>
+               
+              <!---->
+            </main>
+             
+            <main
+              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+              hidecardborder="true"
+              id="bl-postcard"
+              style="width: 18rem;"
+            >
+              <div
+                class="row mx-0"
+              >
+                <div
+                  class="col-12 bl-postcard-image"
+                  style="background-image: url(test-file-stub);"
+                >
+                  <button
+                    class="btn btn-sm bg-white m-2 rounded-0 float-right"
+                    type="button"
+                  >
+                    Category
+                  </button>
+                </div>
+                 
+                <div
+                  class="card-body"
+                >
+                  <div
+                    class="card-body-title--content mt-2 mb-2"
+                  >
+                    <button
+                      class="btn btn-sm bg-white mx-0 my-2"
+                      style="display: none;"
+                      type="button"
+                    >
+                      Category
+                    </button>
+                     
+                    <a>
+                      <h5
+                        class="card-title font-weight-bold"
+                      >
+                        
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
+          ea nec elaboraret interpret
+        
+                      </h5>
+                    </a>
+                     
+                    <p
+                      class="username"
+                    >
+                      <!---->
+                       
+                      <!---->
+                       
+                      <span
+                        class="time"
+                      >
+                        1 min ago
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="row m-0 text-capitalize actions"
+                  >
+                    <p
+                      class="col-8 p-0 m-auto counts"
+                    >
+                      <span
+                        class="mr-2 views"
+                      >
+                        4k 
+            
+                        <span
+                          class="views-text"
+                        >
+                          views
+                        </span>
+                      </span>
+                       
+                      <!---->
+                    </p>
+                     
+                    <!---->
+                     
+                    <div
+                      class="align-items-center col-4 d-flex justify-content-end col-4 m-0 p-0 unpublish"
+                    >
+                      <button
+                        class="btn btn-sm bg-white mr-3 m-2 float-right"
+                        type="button"
+                      >
+                        
+            Unpublish
+          
+                      </button>
+                       
+                      <p
+                        class="share"
+                      >
+                        <span
+                          class="border rounded-circle icons share"
+                        >
+                          <i
+                            class="fal fa-share"
+                          />
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="share"
+                        style="display: none;"
+                      >
+                        <span
+                          class="border rounded-circle icons share clicked"
+                        >
+                          <i
+                            class="fas fa-share"
+                          />
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <p
+                      class="col-12 mt-2 p-0 text-capitalize keypoints"
+                    >
+                      
+          show keypoints
+        
+                    </p>
+                  </div>
+                </div>
+              </div>
+               
+              <!---->
+            </main>
+             
+            <main
+              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+              hidecardborder="true"
+              id="bl-postcard"
+              style="width: 18rem;"
+            >
+              <div
+                class="row mx-0"
+              >
+                <div
+                  class="col-12 bl-postcard-image"
+                  style="background-image: url(test-file-stub);"
+                >
+                  <button
+                    class="btn btn-sm bg-white m-2 rounded-0 float-right"
+                    type="button"
+                  >
+                    Category
+                  </button>
+                </div>
+                 
+                <div
+                  class="card-body"
+                >
+                  <div
+                    class="card-body-title--content mt-2 mb-2"
+                  >
+                    <button
+                      class="btn btn-sm bg-white mx-0 my-2"
+                      style="display: none;"
+                      type="button"
+                    >
+                      Category
+                    </button>
+                     
+                    <a>
+                      <h5
+                        class="card-title font-weight-bold"
+                      >
+                        
+          Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
+          ea nec elaboraret interpret
+        
+                      </h5>
+                    </a>
+                     
+                    <p
+                      class="username"
+                    >
+                      <!---->
+                       
+                      <!---->
+                       
+                      <span
+                        class="time"
+                      >
+                        1 min ago
+                      </span>
+                    </p>
+                  </div>
+                   
+                  <div
+                    class="row m-0 text-capitalize actions"
+                  >
+                    <p
+                      class="col-8 p-0 m-auto counts"
+                    >
+                      <span
+                        class="mr-2 views"
+                      >
+                        4k 
+            
+                        <span
+                          class="views-text"
+                        >
+                          views
+                        </span>
+                      </span>
+                       
+                      <!---->
+                    </p>
+                     
+                    <!---->
+                     
+                    <div
+                      class="align-items-center col-4 d-flex justify-content-end col-4 m-0 p-0 unpublish"
+                    >
+                      <button
+                        class="btn btn-sm bg-white mr-3 m-2 float-right"
+                        type="button"
+                      >
+                        
+            Unpublish
+          
+                      </button>
+                       
+                      <p
+                        class="share"
+                      >
+                        <span
+                          class="border rounded-circle icons share"
+                        >
+                          <i
+                            class="fal fa-share"
+                          />
+                        </span>
+                      </p>
+                       
+                      <p
+                        class="share"
+                        style="display: none;"
+                      >
+                        <span
+                          class="border rounded-circle icons share clicked"
+                        >
+                          <i
+                            class="fas fa-share"
+                          />
+                        </span>
+                      </p>
+                    </div>
+                     
+                    <p
+                      class="col-12 mt-2 p-0 text-capitalize keypoints"
+                    >
+                      
+          show keypoints
+        
+                    </p>
+                  </div>
+                </div>
+              </div>
+               
+              <!---->
+            </main>
+          </main>
         </div>
       </div>
     </div>

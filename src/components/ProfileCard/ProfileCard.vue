@@ -52,9 +52,15 @@
       </div>
     </div>
     <div v-if="displayInterest" class="interests">
-      <category-card hideCardClass/>
+      <category-card hideCardClass />
     </div>
-    <div class="px-3 points">
+    <div v-if="displayCountry" class="interests">
+      <country-card hideCardClass />
+    </div>
+    <div v-if="displaySocial" class="interests">
+      <social-media />
+    </div>
+    <div v-if="displayPoint" class="px-3 points">
       <span class="font-weight-bold">Points</span>
       <p class="mt-2 mb-4">0.05</p>
     </div>
@@ -144,12 +150,16 @@
 <script>
 import Modal from "@/components/Modal/Modal";
 import CategoryCard from "@/components/CategoryCard/CategoryCard";
+import CountryCard from "@/components/CountryCard/CountryCard";
+import SocialMedia from "@/components/SocialMedia/SocialMedia";
 
 export default {
   name: "ProfileCard",
   components: {
     Modal,
-    CategoryCard
+    CategoryCard,
+    CountryCard,
+    SocialMedia,
   },
   props: {
     hideMobileUserInfo: {
@@ -158,6 +168,18 @@ export default {
       default: () => {}
     },
     displayInterest: {
+      type: Boolean,
+      default: false
+    },
+    displayCountry: {
+      type: Boolean,
+      default: false
+    },
+    displaySocial: {
+      type: Boolean,
+      default: false
+    },
+    displayPoint: {
       type: Boolean,
       default: false
     },

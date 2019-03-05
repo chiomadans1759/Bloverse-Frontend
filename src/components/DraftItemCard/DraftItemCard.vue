@@ -29,7 +29,7 @@
         </p>
         <p class="delete">
           <span class="border rounded-circle icons">
-            <i class="fal fa-times"></i>
+            <i class="fal fa-times deleteIcon"></i>
           </span>
         </p>
       </div>

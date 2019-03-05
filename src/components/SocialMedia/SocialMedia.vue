@@ -1,6 +1,12 @@
 <template>
-  <div id="bl-socail-media" class="my-4">
-    <p class="mb-2 social-title" :class="title"><strong>Social Media</strong></p>
+  <div id="bl-social-media" class="p-4 p-sm-3 my-1">
+    <div class="header d-flex justify-content-between ">
+      <h5><strong>Social Media</strong></h5>
+      <span class="border rounded-circle edit-icon">
+        <i class="fal fa-edit icon"></i>
+      </span>
+    </div>
+
     <div class="d-flex flex-wrap">
       <div class="mr-2">
         <div class="border rounded p-2 mb-1 d-flex align-items-center">

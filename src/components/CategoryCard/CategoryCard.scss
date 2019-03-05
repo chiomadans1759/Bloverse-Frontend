@@ -7,6 +7,11 @@
 .edit-icon {
   font-size: rem(15px);
   color: #096DD9;
+  height: rem(28px);
+  width: rem(28px);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main.card {
@@ -14,6 +19,10 @@ main.card {
 }
 
 .profile-details-title {
+  font-size: rem(16px);
+}
+
+.header>h5 {
   font-size: rem(16px);
 }
 

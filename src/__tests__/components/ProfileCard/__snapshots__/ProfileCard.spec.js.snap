@@ -144,10 +144,10 @@ exports[`ProfileCard Component should render correctly 1`] = `
         </h5>
          
         <span
-          class="edit-icon"
+          class="border rounded-circle edit-icon"
         >
           <i
-            class="fal fa-edit mr-2"
+            class="fal fa-edit"
           />
         </span>
       </div>
@@ -220,21 +220,11 @@ exports[`ProfileCard Component should render correctly 1`] = `
     </main>
   </div>
    
-  <div
-    class="px-3 points"
-  >
-    <span
-      class="font-weight-bold"
-    >
-      Points
-    </span>
-     
-    <p
-      class="mt-2 mb-4"
-    >
-      0.05
-    </p>
-  </div>
+  <!---->
+   
+  <!---->
+   
+  <!---->
    
   <div
     class="card-footer text-muted bg-white footer-color"

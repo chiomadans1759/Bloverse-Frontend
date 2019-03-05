@@ -16,10 +16,10 @@ exports[`CategoryCard Component should render correctly 1`] = `
     </h5>
      
     <span
-      class="edit-icon"
+      class="border rounded-circle edit-icon"
     >
       <i
-        class="fal fa-edit mr-2"
+        class="fal fa-edit"
       />
     </span>
   </div>

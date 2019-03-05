@@ -5,40 +5,12 @@
       <div class="row">
         <div class="col-lg-5 d-none d-sm-block">
           <div class="col-lg-12 mr-2">
-            <profile displayInterest hideFollowing displayFollowers />
-          </div>
-          <div class="col-lg-12 mr-2">
-            <div class="bg-white publish-container">
-              <div class="publish-link-container">
-                <router-link to="/" class="publish-link btn"><i class="fas fa-plus mr-2"></i> Publish An Article</router-link>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-12 mt-2">
-            <CreatorProfileActionsCard/>
-          </div>
-          <div class="col-lg-12 mr-2 mt-2">
-            <div class="card contest-advert bg-white">
-              <div class="card-img-overlay">
-                <h3 class="card-title text-capitalize">Become a Content Consumer</h3>
-                <p class="card-text text-capitalize caption">Publish your article to the world</p>
-                <span class="d-flex justify-content-between mb-0">
-                  <a href class="mt-4">Know more</a>
-                  <a role="button" href="#" class="btn know-more-btn">Apply</a>
-                </span>
-              </div>
-            </div>
-            <div class="bl-footer">
-              <div class="row company-name d-flex justify-content-center align-items-center">
-                <div class="col-sm-3 text-lowercase">bloverse</div>
-                <p class="col-sm-9">
-                  <span class="text-capitalize dots">terms</span>
-                  <span class="text-capitalize dots">privacy</span>
-                  <span class="text-capitalize">feedback</span>
-                </p>
-              </div>
-              <p class="row company-rights text-capitalize">2019 Bloverse. All Right Reserved</p>
-            </div>
+            <profile
+              displayInterest
+              hideFollowing
+              displaySocial
+              displayCountry
+            />
           </div>
         </div>
 
@@ -53,7 +25,7 @@
           <div class="navigation-bar">
             <creator-navigation active="drafts" />
           </div>
-          <div class="border border-top-0 border-bottom-0 bg-white bl-content right-content">
+          <div class="border border-top-0 border-bottom-0 bg-white bl-content mt-4 right-content">
             <DraftItemCard />
             <DraftItemCard />
             <DraftItemCard />

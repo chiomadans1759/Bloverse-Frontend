@@ -1,8 +1,12 @@
 <template>
-  <main class="card country-card p-4 p-sm-3">
+  <main class="country-card p-4 p-sm-3"
+    :class="{'card': !hideCardClass }"
+  >
     <div class="header d-flex justify-content-between ">
       <h5><strong>Country</strong></h5>
-      <span class="icon"><i class="fal fa-edit icon mr-2"></i></span>
+      <span class="border rounded-circle edit-icon">
+        <i class="fal fa-edit icon"></i>
+      </span>
     </div>
     <div class="mt-1">
       <p class="country-title">Lorem ipsum dolor sit amet</p>
@@ -38,7 +42,13 @@
 
 <script>
 export default {
-  name: 'CountryCard'
+  name: 'CountryCard',
+  props: {
+    hideCardClass: {
+      type: Boolean,
+      default: false,
+    },
+  }
 }
 </script>
 

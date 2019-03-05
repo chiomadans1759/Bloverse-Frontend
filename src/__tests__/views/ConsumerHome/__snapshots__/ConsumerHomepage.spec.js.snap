@@ -791,15 +791,15 @@ exports[`Homepage Component should render correctly 1`] = `
               id="bl-postcards"
             >
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -814,7 +814,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -866,12 +866,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -884,14 +890,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -1234,15 +1246,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -1257,7 +1269,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -1309,12 +1321,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -1327,14 +1345,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -1677,15 +1701,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -1700,7 +1724,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -1752,12 +1776,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -1770,14 +1800,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -2120,15 +2156,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -2143,7 +2179,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -2195,12 +2231,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -2213,14 +2255,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -2563,15 +2611,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -2586,7 +2634,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -2638,12 +2686,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -2656,14 +2710,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -3591,15 +3651,15 @@ exports[`Homepage Component should render correctly 1`] = `
               id="bl-postcards"
             >
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -3614,7 +3674,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -3666,12 +3726,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -3684,14 +3750,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -4034,15 +4106,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -4057,7 +4129,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -4109,12 +4181,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -4127,14 +4205,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -4477,15 +4561,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -4500,7 +4584,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -4552,12 +4636,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -4570,14 +4660,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -4920,15 +5016,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -4943,7 +5039,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -4995,12 +5091,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -5013,14 +5115,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -5363,15 +5471,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -5386,7 +5494,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -5438,12 +5546,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -5456,14 +5570,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -6190,15 +6310,15 @@ exports[`Homepage Component should render correctly 1`] = `
               id="bl-postcards"
             >
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -6213,7 +6333,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -6265,12 +6385,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -6283,14 +6409,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -6633,15 +6765,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -6656,7 +6788,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -6708,12 +6840,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -6726,14 +6864,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -7076,15 +7220,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -7099,7 +7243,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -7151,12 +7295,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -7169,14 +7319,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -7519,15 +7675,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -7542,7 +7698,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -7594,12 +7750,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -7612,14 +7774,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -7962,15 +8130,15 @@ exports[`Homepage Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -7985,7 +8153,7 @@ exports[`Homepage Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -8037,12 +8205,18 @@ exports[`Homepage Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -8055,14 +8229,20 @@ exports[`Homepage Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"

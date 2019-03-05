@@ -145,21 +145,11 @@ exports[`Profile Component should render correctly 1`] = `
            
           <!---->
            
-          <div
-            class="px-3 points"
-          >
-            <span
-              class="font-weight-bold"
-            >
-              Points
-            </span>
-             
-            <p
-              class="mt-2 mb-4"
-            >
-              0.05
-            </p>
-          </div>
+          <!---->
+           
+          <!---->
+           
+          <!---->
            
           <div
             class="card-footer text-muted bg-white footer-color"
@@ -449,7 +439,7 @@ exports[`Profile Component should render correctly 1`] = `
         class="col-lg-12 mt-2"
       >
         <main
-          class="card country-card p-4 p-sm-3"
+          class="country-card p-4 p-sm-3 card"
         >
           <div
             class="header d-flex justify-content-between "
@@ -461,10 +451,10 @@ exports[`Profile Component should render correctly 1`] = `
             </h5>
              
             <span
-              class="icon"
+              class="border rounded-circle edit-icon"
             >
               <i
-                class="fal fa-edit icon mr-2"
+                class="fal fa-edit icon"
               />
             </span>
           </div>
@@ -587,10 +577,10 @@ exports[`Profile Component should render correctly 1`] = `
             </h5>
              
             <span
-              class="edit-icon"
+              class="border rounded-circle edit-icon"
             >
               <i
-                class="fal fa-edit mr-2"
+                class="fal fa-edit"
               />
             </span>
           </div>
@@ -874,15 +864,15 @@ exports[`Profile Component should render correctly 1`] = `
               id="bl-postcards"
             >
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -897,7 +887,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -949,12 +939,18 @@ exports[`Profile Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -967,14 +963,20 @@ exports[`Profile Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -1317,15 +1319,15 @@ exports[`Profile Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -1340,7 +1342,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -1392,12 +1394,18 @@ exports[`Profile Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -1410,14 +1418,20 @@ exports[`Profile Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -1760,15 +1774,15 @@ exports[`Profile Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -1783,7 +1797,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -1835,12 +1849,18 @@ exports[`Profile Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -1853,14 +1873,20 @@ exports[`Profile Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -2203,15 +2229,15 @@ exports[`Profile Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -2226,7 +2252,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -2278,12 +2304,18 @@ exports[`Profile Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -2296,14 +2328,20 @@ exports[`Profile Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -2646,15 +2684,15 @@ exports[`Profile Component should render correctly 1`] = `
               </main>
                
               <main
-                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
-                id="read-later-card"
+                class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
+                id="bl-postcard"
                 style="width: 18rem;"
               >
                 <div
                   class="row mx-0"
                 >
                   <div
-                    class="col-12 read-later-image"
+                    class="col-12 bl-postcard-image"
                     style="background-image: url(test-file-stub);"
                   >
                     <button
@@ -2669,7 +2707,7 @@ exports[`Profile Component should render correctly 1`] = `
                     class="card-body"
                   >
                     <div
-                      class="card-body-title--content mt-2"
+                      class="card-body-title--content mt-2 mb-4"
                     >
                       <button
                         class="btn btn-sm bg-white mx-0 my-2"
@@ -2721,12 +2759,18 @@ exports[`Profile Component should render correctly 1`] = `
                       class="row m-0 text-capitalize actions"
                     >
                       <p
-                        class="col-8 p-0 counts"
+                        class="col-8 p-0 m-auto counts"
                       >
                         <span
                           class="mr-2 views"
                         >
-                          4k views
+                          4k 
+            
+                          <span
+                            class="views-text"
+                          >
+                            views
+                          </span>
                         </span>
                          
                         <span
@@ -2739,14 +2783,20 @@ exports[`Profile Component should render correctly 1`] = `
                       <p
                         class="col-4 p-0 text-right text-capitalize keypoints"
                       >
-                        show keypoints
+                        
+          show keypoints
+        
                       </p>
+                       
+                      <!---->
+                       
+                      <!---->
                     </div>
                   </div>
                 </div>
                  
                 <div
-                  class="row px-0 border bg-white card-footer"
+                  class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
                 >
                   <div
                     class="col-6 row mx-0 actions--a"
@@ -3103,16 +3153,16 @@ exports[`Profile Component should render correctly 1`] = `
             id="bl-postcards"
           >
             <main
-              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
+              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
               hidecardborder="true"
-              id="read-later-card"
+              id="bl-postcard"
               style="width: 18rem;"
             >
               <div
                 class="row mx-0"
               >
                 <div
-                  class="col-12 read-later-image"
+                  class="col-12 bl-postcard-image"
                   style="background-image: url(test-file-stub);"
                 >
                   <button
@@ -3127,7 +3177,7 @@ exports[`Profile Component should render correctly 1`] = `
                   class="card-body"
                 >
                   <div
-                    class="card-body-title--content mt-2"
+                    class="card-body-title--content mt-2 mb-4"
                   >
                     <button
                       class="btn btn-sm bg-white mx-0 my-2"
@@ -3179,12 +3229,18 @@ exports[`Profile Component should render correctly 1`] = `
                     class="row m-0 text-capitalize actions"
                   >
                     <p
-                      class="col-8 p-0 counts"
+                      class="col-8 p-0 m-auto counts"
                     >
                       <span
                         class="mr-2 views"
                       >
-                        4k views
+                        4k 
+            
+                        <span
+                          class="views-text"
+                        >
+                          views
+                        </span>
                       </span>
                        
                       <span
@@ -3197,14 +3253,20 @@ exports[`Profile Component should render correctly 1`] = `
                     <p
                       class="col-4 p-0 text-right text-capitalize keypoints"
                     >
-                      show keypoints
+                      
+          show keypoints
+        
                     </p>
+                     
+                    <!---->
+                     
+                    <!---->
                   </div>
                 </div>
               </div>
                
               <div
-                class="row px-0 border bg-white card-footer"
+                class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
               >
                 <div
                   class="col-6 row mx-0 actions--a"
@@ -3547,16 +3609,16 @@ exports[`Profile Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
+              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
               hidecardborder="true"
-              id="read-later-card"
+              id="bl-postcard"
               style="width: 18rem;"
             >
               <div
                 class="row mx-0"
               >
                 <div
-                  class="col-12 read-later-image"
+                  class="col-12 bl-postcard-image"
                   style="background-image: url(test-file-stub);"
                 >
                   <button
@@ -3571,7 +3633,7 @@ exports[`Profile Component should render correctly 1`] = `
                   class="card-body"
                 >
                   <div
-                    class="card-body-title--content mt-2"
+                    class="card-body-title--content mt-2 mb-4"
                   >
                     <button
                       class="btn btn-sm bg-white mx-0 my-2"
@@ -3623,12 +3685,18 @@ exports[`Profile Component should render correctly 1`] = `
                     class="row m-0 text-capitalize actions"
                   >
                     <p
-                      class="col-8 p-0 counts"
+                      class="col-8 p-0 m-auto counts"
                     >
                       <span
                         class="mr-2 views"
                       >
-                        4k views
+                        4k 
+            
+                        <span
+                          class="views-text"
+                        >
+                          views
+                        </span>
                       </span>
                        
                       <span
@@ -3641,14 +3709,20 @@ exports[`Profile Component should render correctly 1`] = `
                     <p
                       class="col-4 p-0 text-right text-capitalize keypoints"
                     >
-                      show keypoints
+                      
+          show keypoints
+        
                     </p>
+                     
+                    <!---->
+                     
+                    <!---->
                   </div>
                 </div>
               </div>
                
               <div
-                class="row px-0 border bg-white card-footer"
+                class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
               >
                 <div
                   class="col-6 row mx-0 actions--a"
@@ -3991,16 +4065,16 @@ exports[`Profile Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
+              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
               hidecardborder="true"
-              id="read-later-card"
+              id="bl-postcard"
               style="width: 18rem;"
             >
               <div
                 class="row mx-0"
               >
                 <div
-                  class="col-12 read-later-image"
+                  class="col-12 bl-postcard-image"
                   style="background-image: url(test-file-stub);"
                 >
                   <button
@@ -4015,7 +4089,7 @@ exports[`Profile Component should render correctly 1`] = `
                   class="card-body"
                 >
                   <div
-                    class="card-body-title--content mt-2"
+                    class="card-body-title--content mt-2 mb-4"
                   >
                     <button
                       class="btn btn-sm bg-white mx-0 my-2"
@@ -4067,12 +4141,18 @@ exports[`Profile Component should render correctly 1`] = `
                     class="row m-0 text-capitalize actions"
                   >
                     <p
-                      class="col-8 p-0 counts"
+                      class="col-8 p-0 m-auto counts"
                     >
                       <span
                         class="mr-2 views"
                       >
-                        4k views
+                        4k 
+            
+                        <span
+                          class="views-text"
+                        >
+                          views
+                        </span>
                       </span>
                        
                       <span
@@ -4085,14 +4165,20 @@ exports[`Profile Component should render correctly 1`] = `
                     <p
                       class="col-4 p-0 text-right text-capitalize keypoints"
                     >
-                      show keypoints
+                      
+          show keypoints
+        
                     </p>
+                     
+                    <!---->
+                     
+                    <!---->
                   </div>
                 </div>
               </div>
                
               <div
-                class="row px-0 border bg-white card-footer"
+                class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
               >
                 <div
                   class="col-6 row mx-0 actions--a"
@@ -4435,16 +4521,16 @@ exports[`Profile Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
+              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
               hidecardborder="true"
-              id="read-later-card"
+              id="bl-postcard"
               style="width: 18rem;"
             >
               <div
                 class="row mx-0"
               >
                 <div
-                  class="col-12 read-later-image"
+                  class="col-12 bl-postcard-image"
                   style="background-image: url(test-file-stub);"
                 >
                   <button
@@ -4459,7 +4545,7 @@ exports[`Profile Component should render correctly 1`] = `
                   class="card-body"
                 >
                   <div
-                    class="card-body-title--content mt-2"
+                    class="card-body-title--content mt-2 mb-4"
                   >
                     <button
                       class="btn btn-sm bg-white mx-0 my-2"
@@ -4511,12 +4597,18 @@ exports[`Profile Component should render correctly 1`] = `
                     class="row m-0 text-capitalize actions"
                   >
                     <p
-                      class="col-8 p-0 counts"
+                      class="col-8 p-0 m-auto counts"
                     >
                       <span
                         class="mr-2 views"
                       >
-                        4k views
+                        4k 
+            
+                        <span
+                          class="views-text"
+                        >
+                          views
+                        </span>
                       </span>
                        
                       <span
@@ -4529,14 +4621,20 @@ exports[`Profile Component should render correctly 1`] = `
                     <p
                       class="col-4 p-0 text-right text-capitalize keypoints"
                     >
-                      show keypoints
+                      
+          show keypoints
+        
                     </p>
+                     
+                    <!---->
+                     
+                    <!---->
                   </div>
                 </div>
               </div>
                
               <div
-                class="row px-0 border bg-white card-footer"
+                class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
               >
                 <div
                   class="col-6 row mx-0 actions--a"
@@ -4879,16 +4977,16 @@ exports[`Profile Component should render correctly 1`] = `
             </main>
              
             <main
-              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
+              class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
               hidecardborder="true"
-              id="read-later-card"
+              id="bl-postcard"
               style="width: 18rem;"
             >
               <div
                 class="row mx-0"
               >
                 <div
-                  class="col-12 read-later-image"
+                  class="col-12 bl-postcard-image"
                   style="background-image: url(test-file-stub);"
                 >
                   <button
@@ -4903,7 +5001,7 @@ exports[`Profile Component should render correctly 1`] = `
                   class="card-body"
                 >
                   <div
-                    class="card-body-title--content mt-2"
+                    class="card-body-title--content mt-2 mb-4"
                   >
                     <button
                       class="btn btn-sm bg-white mx-0 my-2"
@@ -4955,12 +5053,18 @@ exports[`Profile Component should render correctly 1`] = `
                     class="row m-0 text-capitalize actions"
                   >
                     <p
-                      class="col-8 p-0 counts"
+                      class="col-8 p-0 m-auto counts"
                     >
                       <span
                         class="mr-2 views"
                       >
-                        4k views
+                        4k 
+            
+                        <span
+                          class="views-text"
+                        >
+                          views
+                        </span>
                       </span>
                        
                       <span
@@ -4973,14 +5077,20 @@ exports[`Profile Component should render correctly 1`] = `
                     <p
                       class="col-4 p-0 text-right text-capitalize keypoints"
                     >
-                      show keypoints
+                      
+          show keypoints
+        
                     </p>
+                     
+                    <!---->
+                     
+                    <!---->
                   </div>
                 </div>
               </div>
                
               <div
-                class="row px-0 border bg-white card-footer"
+                class="row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top"
               >
                 <div
                   class="col-6 row mx-0 actions--a"

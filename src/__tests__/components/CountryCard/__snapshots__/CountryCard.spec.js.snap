@@ -2,7 +2,7 @@
 
 exports[`CountryCard Component should render correctly 1`] = `
 <main
-  class="card country-card p-4 p-sm-3"
+  class="country-card p-4 p-sm-3 card"
 >
   <div
     class="header d-flex justify-content-between "
@@ -14,10 +14,10 @@ exports[`CountryCard Component should render correctly 1`] = `
     </h5>
      
     <span
-      class="icon"
+      class="border rounded-circle edit-icon"
     >
       <i
-        class="fal fa-edit icon mr-2"
+        class="fal fa-edit icon"
       />
     </span>
   </div>

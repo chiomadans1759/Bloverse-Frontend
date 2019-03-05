@@ -1,7 +1,7 @@
 @import 'sass-rem';
 
-#bl-socail-media {
-  &-title {
+#bl-social-media {
+  .social-title {
     font-size: rem(16px);
   }
   .social-icon {
@@ -10,5 +10,20 @@
   }
   .social-text {
     font-size: rem(12px);
+  }
+
+  .header>h5 {
+    font-size: rem(16px);
+  }
+
+  .edit-icon {
+    color: #096DD9;
+    font-size: rem(15px);
+    color: #096DD9;
+    height: rem(28px);
+    width: rem(28px);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
   }
 }

@@ -4,8 +4,8 @@
   }">
     <div class="header d-flex justify-content-between ">
       <h5 :class="titleStyle"><strong>{{title}}</strong></h5>
-      <span class="edit-icon" v-if="showEditIcon">
-        <i class="fal fa-edit mr-2"></i>
+      <span class="border rounded-circle edit-icon" v-if="showEditIcon">
+        <i class="fal fa-edit"></i>
       </span>
     </div>
     <div class="mt-1">
