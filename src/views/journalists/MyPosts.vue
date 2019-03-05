@@ -23,12 +23,12 @@
             <ul class="nav nav-tabs nav-overflow header-tabs">
               <li class="nav-item">
                 <a href="#!" :class="{ 'nav-link': true, 'active':  current_section == 'all' }" @click.prevent="currentSection('all')">
-                  All <span class="badge badge-pill badge-soft-secondary">{{all_posts.length}}</span>
+                  All <span class="badge badge-pill badge-soft-secondary">{{journalist.journalistPosts.length}}</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#!" :class="{ 'nav-link': true, 'active':  current_section == 'published' }" @click.prevent="currentSection('published')">
-                  Published <span class="badge badge-pill badge-soft-secondary">{{journalist.journalistPosts.length}}</span>
+                  Published <span class="badge badge-pill badge-soft-secondary">{{journalist.JournalistPublishedPosts.length}}</span>
                 </a>
               </li>
               <li class="nav-item">
@@ -44,14 +44,14 @@
 
     <div style="margin-top: -3rem;">
       <div class="row" v-if="current_section == 'all'">
-        <div class="col-md-4" v-for="post in all_posts" :key="post.id">
+        <div class="col-md-4" v-for="post in journalist.journalistPosts" :key="post.id">
           <draft-card :post="post"/>
         </div>
       </div>
 
       <div class="row" v-if="current_section == 'published'">
-        <div class="col-md-4" v-for="post in journalist.journalistPosts" :key="post.id">
-          <draft-card :post="post"/>
+        <div class="col-md-4" v-for="post in journalist.JournalistPublishedPosts" :key="post.id">
+          <draft-card :post="post" @unpublished="getMyPosts" />
         </div>
       </div>
 
@@ -77,6 +77,7 @@
 import { Row, Col, Button, Card } from "iview";
 import { mapState, mapActions } from "vuex";
 import DraftCard from "@/components/DraftCard.vue";
+import FeedCard from "@/components/FeedCard.vue";
 
 export default {
   data() {
@@ -85,7 +86,7 @@ export default {
       all_posts: []
     };
   },
-  components: { Row, Col, Button, Card, DraftCard },
+  components: { Row, Col, Button, Card, DraftCard, FeedCard },
   computed: {
     ...mapState(["journalist", "general", "auth"]),
 
@@ -96,12 +97,11 @@ export default {
   async created() {
     // fetch the data whethis.getMyPostn the view is created and the data is
     // already being observed
-    await this.getMyPosts();
-    this.getAllPosts()
+    await this.getMyPosts()
   },
   watch: {
     // call again the method if the route changes
-    $route: " getMyPosts"
+    $route: "getMyPosts"
   },
   methods: {
     ...mapActions([
@@ -117,10 +117,6 @@ export default {
 
     currentSection(section) {
       this.current_section = section;
-    },
-
-    getAllPosts() {
-      this.all_posts = this.journalist.journalistPosts.concat(this.journalist.draftPosts)
     }
   }
 };

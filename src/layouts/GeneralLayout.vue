@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import FeedSideBar from "@/components/FeedSideBar.vue"
 import FeedHeader from "@/components/FeedHeader.vue"
+import FeedSideBar from "@/components/FeedSideBar.vue"
 
 export default {
   components: { FeedHeader, FeedSideBar }

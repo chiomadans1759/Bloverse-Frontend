@@ -33,7 +33,7 @@
     <div class="modal fade" id="modalVerticalLeft" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-dialog-vertical" role="document">
         <div class="modal-content">
-          ...
+          <feed-side-bar />
         </div>
       </div>
     </div>
@@ -41,12 +41,13 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
-import LoginButton from "./LoginButton";
+import { mapState, mapActions } from "vuex"
+import LoginButton from "@/components/LoginButton"
+import FeedSideBar from "@/components/FeedSideBar.vue"
 
 export default {
   name: "feed-header",
-  components: { LoginButton },
+  components: { LoginButton, FeedSideBar },
   data() {
     return {
       allow: false,
@@ -96,7 +97,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(["general"]),
+    ...mapState(["general", "auth"]),
 
     categoryName() {
       if (this.category) {
@@ -111,6 +112,11 @@ export default {
       if (this.$store.state.general.categories) {
         return this.$store.state.general.categories.slice(0, 4);
       }
+    },
+
+    currentRoute() {
+      let route = this.$route.name;
+      return route;
     }
   }
 };
@@ -143,6 +149,16 @@ export default {
 	border-radius: 2px;
 }
 
+.modal-backdrop {
+  position: fixed;
+  z-index: 1040;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000000 !important;
+}
+
 @media only screen and (min-width: 981px) {
   #feed-header .hidden-md {
     display: none;
@@ -160,6 +176,10 @@ export default {
 
   #feed-header .hidden-xs {
     display: none;
+  }
+
+  #feed-header .modal-content {
+    z-index: 10000 !important;
   }
 }
 </style>

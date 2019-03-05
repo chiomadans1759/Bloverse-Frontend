@@ -1,97 +1,186 @@
 <template>
   <main id="draft-card">
-    <router-link :to="`/creators/${auth.loggedInUser.username}/posts/${post.slug}/edit`">
-      <div class="card" v-if="post.category === 7">
-        <img class="card-img-top" :src="post.image_url">
-        <div class="card-body">
-          <h5 class="card-titlee">{{ category }}</h5>
-          <p class="card-text">{{ post.title }}</p>
-          <div class="foott">
-            <div class="further">
-              <img :src="post.author.image_url" class="author-imgg">
-              <span class="detailss">
-                {{post.author.first_name}} {{post.author.last_name}}
-                <p>{{post.published | customizedTime}}</p>
-              </span>
-            </div>
-            <h6 class="right">
-              <i class="fal fa-eye" style="opacity:0.4;"></i>
-              {{post.views}}
-            </h6>
-          </div>
-        </div>
-        <div class="overlay">
-          <p>{{post.title}}</p>
-          <ul class="travel-deets">
-            <li>
-              <i class="fas fa-camera-retro"></i>
-              &nbsp;&nbsp;{{post.device_type}}
-            </li>
-            <li>
-              <i class="fas fa-map-marker-alt"></i>
-              &nbsp;&nbsp;{{post.location}}
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="card" v-if="post.category === 7">
+      <img class="card-img-top" :src="post.image_url">
+      <div class="card-body">
+        <h5 class="card-titlee">{{ category }}</h5>
 
-      <div class="card" v-else>
-        <img class="card-img-top" :src="post.image_url">
-        <div class="card-body">
-          <h5 class="card-title">{{ category }}</h5>
-          <p class="card-text">{{ post.title | truncate(50) }}</p>
-          <div class="foott">
-            <div class="further">
-              <img :src="post.author.image_url" class="author-imgg">
-              <span class="detailss">
-                {{post.author.first_name}} {{post.author.last_name}}
-                <p>{{post.published | customizedTime}}</p>
-              </span>
-            </div>
-            <h6 class="right">
-              <i class="fal fa-eye" style="opacity:0.4;"></i>
-              {{post.views}}
-            </h6>
+        <p class="card-text">{{ post.title }}</p>
+        <div class="foott">
+          <div class="further">
+            <img :src="post.author.image_url" class="author-imgg">
+            <span class="detailss">
+              {{post.author.first_name}} {{post.author.last_name}}
+              <p>{{post.published | customizedTime}}</p>
+            </span>
           </div>
-        </div>
-        <div class="overlay">
-          <ul class="overlay-content">
-            <h3 v-if="post.keypoint[0] && post.keypoint[1] && post.keypoint[2]">{{post.title}}</h3>
-            <h2 v-if="post.keypoint[0] && post.keypoint[1] && post.keypoint[2]">Keypoints</h2>
-            <li v-if="post.keypoint[0]">
-              <i class="fas fa-circle" style="font-size: 8px;"></i>
-              &nbsp;{{post.keypoint[0] | truncate(75)}}
-            </li>
-            <li v-if="post.keypoint[1]">
-              <i class="fas fa-circle" style="font-size: 8px;"></i>
-              &nbsp;{{post.keypoint[1] | truncate(75)}}
-            </li>
-            <li v-if="post.keypoint[2]">
-              <i class="fas fa-circle" style="font-size: 8px;"></i>
-              &nbsp;{{post.keypoint[2] | truncate(75)}}
-            </li>
-          </ul>
-          <h4
-            class="empty-class"
-            v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]">
-            No KeyPoints Available for this post
-          </h4>
+          <h6 class="right">
+            <i class="fal fa-eye" style="opacity:0.4;"></i>
+            {{post.views}}
+          </h6>
         </div>
       </div>
-    </router-link>
+      <div class="overlay">
+        <p>{{post.title}}</p>
+        <ul class="travel-deets">
+          <li>
+            <i class="fas fa-camera-retro"></i>
+            &nbsp;&nbsp;{{post.device_type}}
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            &nbsp;&nbsp;{{post.location}}
+          </li>
+        </ul>
+
+        <div class="text-center">
+          <button 
+            class="btn btn-primary btn-sm mr-2" 
+            style="border-radius: 2px;"
+            v-if="post.is_published == false">
+              Edit Post
+          </button>
+          <router-link 
+            :to="`/creators/${auth.loggedInUser.username}/posts/${post.slug}/edit`"
+            class="btn btn-primary btn-sm mr-2" 
+            style="border-radius: 2px;"
+            v-if="post.is_published == true">
+              View Post
+          </router-link>
+          <button 
+            class="btn btn-primary btn-sm ml-2" 
+            style="border-radius: 2px;"
+            v-if="post.is_published == true">
+              Unpublish
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" v-else>
+      <img class="card-img-top" :src="post.image_url">
+      <div class="card-body">
+        <h5 class="card-title">{{ category }}</h5>
+        <p class="card-text">{{ post.title | truncate(50) }}</p>
+        
+        <div class="foott">
+          <div class="further">
+            <img :src="post.author.image_url" class="author-imgg">
+            <span class="detailss">
+              {{post.author.first_name}} {{post.author.last_name}}
+              <p>{{post.published | customizedTime}}</p>
+            </span>
+          </div>
+          <h6 class="right">
+            <i class="fal fa-eye" style="opacity:0.4;"></i>
+            {{post.views}}
+          </h6>
+        </div>
+      </div>
+      
+      <div class="overlay">
+        <ul class="overlay-content">
+          <h3 class="mb-4" v-if="post.keypoint[0] && post.keypoint[1] && post.keypoint[2]">{{post.title}}</h3>
+          <h3 v-if="post.keypoint[0] && post.keypoint[1] && post.keypoint[2]">Keypoints</h3>
+          <li v-if="post.keypoint[0]">
+            <i class="fas fa-circle" style="font-size: 8px;"></i>
+            &nbsp;{{post.keypoint[0] | truncate(75)}}
+          </li>
+          <li v-if="post.keypoint[1]">
+            <i class="fas fa-circle" style="font-size: 8px;"></i>
+            &nbsp;{{post.keypoint[1] | truncate(75)}}
+          </li>
+          <li v-if="post.keypoint[2]">
+            <i class="fas fa-circle" style="font-size: 8px;"></i>
+            &nbsp;{{post.keypoint[2] | truncate(75)}}
+          </li>
+        </ul>
+        <h4
+          class="empty-class"
+          v-if="!post.keypoint[0] && !post.keypoint[1] && !post.keypoint[2]">
+          No KeyPoints Available for this post
+        </h4>
+
+        <div class="text-center">
+          <h2>{{post.id}}</h2>
+          <router-link 
+            :to="`/posts/${post.slug}`" 
+            class="btn btn-primary btn-sm mr-2" 
+            style="border-radius: 2px;"
+            v-if="post.is_published == true">
+              View Post
+          </router-link>
+          <router-link 
+            :to="`/creators/${auth.loggedInUser.username}/posts/${post.slug}/edit`"
+            class="btn btn-primary btn-sm mr-2" 
+            style="border-radius: 2px;"
+            v-if="post.is_published == false">
+              Edit Post
+          </router-link>
+          <button 
+            class="btn btn-primary btn-sm ml-2" 
+            style="border-radius: 2px;"
+            v-if="post.is_published == true"
+            data-toggle="modal" 
+            data-target="#confirmModal">
+              Unpublish
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirm Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmModalLabel">CONFIRM ACTION</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-center">
+              <h3>Are you sure you want to unpublish this post?</h3>
+
+              <div class="my-5">
+                <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary ml-2" @click.prevent="unpublishPost">Unpublish</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "draft-card",
-  props: {
-    post: Object
+  props: { post: Object },
+  methods: {
+    ...mapActions(["processPost"]),
+
+    async unpublishPost() {
+      let res = await this.processPost({
+        post: { id: this.post.id },
+        shouldPublish: false
+      })
+      let success = !!res.id
+      if(success) {
+        // eslint-disable-next-line 
+        $("#confirmModal").modal('hide')
+        alert('Post successfully unpublished')
+        this.$emit('unpublished')
+      }
+    }
   },
   computed: {
     ...mapState(["general", "auth"]),
+
     category() {
       const postCategory = this.general.categories.find(
         category => category.id === this.post.category
@@ -114,7 +203,6 @@ export default {
   }
   #draft-card .card:hover {
     transition: 0.5s ease;
-    cursor: pointer;
   }
   #draft-card .card-img-top {
     height: 220px;
@@ -228,6 +316,11 @@ export default {
   #draft-card .overlay .overlay-content li {
     margin-bottom: 1rem;
   }
+  #draft-card .overlay .text-center {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+  }
   #draft-card .read-more {
     margin-left: 16rem !important;
     position: absolute;
@@ -238,20 +331,24 @@ export default {
     margin-bottom: 1rem;
   }
   #draft-card .overlay-content {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    margin-left: 2.2rem;
-    left: 43%;
-    top: 46%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 12.6px;
-    width: 95%;
-    list-style-type: none;
-  }
-  #draft-card:hover .overlay {
-    opacity: 1;
-  }
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  margin-left: 2.2rem;
+  left: 43%;
+  top: 46%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 12.6px;
+  width: 95%;
+  list-style-type: none;
+}
+#draft-card:hover .overlay {
+  opacity: 1;
+}
+#draft-card .modal {
+  z-index: 3000;
+  top: 25%;
+}
 </style>

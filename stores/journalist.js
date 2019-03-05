@@ -3,6 +3,7 @@ import Api from '@/utils/Api';
 export default {
   state: {
     journalistPosts: {},
+    JournalistPublishedPosts: {},
     draftPosts: {},
     metrics: {}
   },
@@ -58,22 +59,18 @@ export default {
     async getMyPosts({ commit, rootState }) {
       let userId = rootState.auth.loggedInUser.id;
       let response = await Api.get('journalists/' + userId + '/posts/', true);
-      let posts = [];
+      let published = [];
       let drafts = [];
       response.data.posts.forEach(post => {
         if (post.is_published == true) {
-          posts.push(post)
+          published.push(post)
         } else if (post.is_published == false) {
           drafts.push(post)
         }
       })
-      commit('setPosts', posts);
-      commit('setDrafts', drafts);
-    },
-    async getMyDrafts({ commit, rootState }) {
-      let userId = rootState.auth.loggedInUser.id;
-      let response = await Api.get('journalists/' + userId + '/posts/', false);
-      commit('setDrafts', response.data);
+      commit('setPosts', response.data.posts)
+      commit('setPublished', published)
+      commit('setDrafts', drafts)
     },
     async getMyMetrics({ commit, rootState }) {
       let userId = rootState.auth.loggedInUser.id;
@@ -92,6 +89,9 @@ export default {
   mutations: {
     setPosts(state, props) {
       state.journalistPosts = props
+    },
+    setPublished(state, props) {
+      state.JournalistPublishedPosts = props
     },
     setDrafts(state, props) {
       state.draftPosts = props
