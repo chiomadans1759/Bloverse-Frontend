@@ -1,7 +1,7 @@
 <template>
   <main id="bl-creators" class="container-fluid p-0">
     <!-- Top Section Container Start -->
-    <div class="top-section-container">
+    <div class="top-section-container" :style="topSectionStyle" >
       <Navbar isTransparent whiteText/>
       <div class="container">
         <div class="welcome__link">
@@ -15,6 +15,37 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="left-container">
+      <carousel
+      :perPage = "perPage"
+      navigationEnabled
+      paginationActiveColor = "#096DD9"
+      paginationColor = "#868686"
+      :paginationSize = "paginationSize"
+      :paginationPadding = "paginationPadding"
+      :minSwipeDistance = "minSwipeDistance"
+      :autoplayTimeout="4000"
+      :autoplay = "autoplay"
+      :loop = "loop"
+    >
+      <slide>
+        <div class="left-container__photos">
+         <img v-for="image in images" :src="image.src" :alt="image.name" :key="image.id">
+        </div>
+      </slide>
+       <slide>
+         <div class="left-container__photos">
+          <img v-for="image in images" :src="image.src" :alt="image.name" :key="image.id">
+        </div>
+      </slide>
+       <slide>
+        <div class="left-container__photos">
+          <img v-for="image in images" :src="image.src" :alt="image.name" :key="image.id">
+        </div>
+      </slide>
+      </carousel>
+      
     </div>
     <div class="metrics">
       <div class="container">
@@ -43,25 +74,25 @@
       </div>
     </div>
     <div class="playVideo">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3"></div>
-          <div class="col-md-6">
-            <video class="col-12" id="video-element" controls style="display: none;">
-              <source src="@/assets/photocontest.mp4" type="video/mp4">
-            </video>
-            <div v-if="paused && !playing" class="video-button play">
-              <button v-if="paused && !playing" @click="play">
-                <i class="fas fa-play video-controls"></i>
-                <p>Watch Video</p>
-              </button>
-            </div>
-          </div>
-          <div class="col-md-3"></div>
-        </div>
+      <div v-if="paused && !playing" class="video-button play" @click="play">
+        <button v-if="paused && !playing">
+          <i class="fas fa-play video-controls"></i>
+          <p>Watch Video</p>
+        </button>
       </div>
     </div>
-    <div class="copyright text-center mt-13">
+    <div
+      class="creator-video"
+      ref="videoContainer"
+      tabindex="0"
+      @blur="closeVideo"
+      @keydown.esc="closeVideo"
+    >
+      <video v-show="playing" ref="video" id="video-element" controls>
+        <source src="@/assets/photocontest.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="copyright text-center mt-13 mb-0">
       <p class="title">
         <b>bloverse</b>
         <span class="sub-text">2018. All Right Reserved</span>
@@ -71,40 +102,58 @@
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
 import Navbar from "@/components/Navbar/Navbar.vue";
+import Modal from "@/components/Modal/Modal";
+import images from "../../../data/images.js";
 
 export default {
   name: "CreatorHomePage",
   data() {
     return {
       playing: false,
-      paused: true
+      paused: true,
+      images,
+      perPage: 1,
+      paginationSize: 3,
+      paginationPadding: 5,
+      minSwipeDistance: 0,
+      autoplay: true,
+      loop: true,
     };
   },
   components: { 
     Navbar,
+    Modal,
+    Carousel,
+    Slide
   },
   methods: {
-    play: function() {
-      const video = document.getElementById("video-element");
-      video.style.display = "block";
+    play() {
+      const { video, videoContainer } = this.$refs;
+
+      videoContainer.focus();
+
       this.playing = true;
       this.paused = false;
+
       video.play();
+    },
+    closeVideo() {
+      const { video } = this.$refs;
+
+      this.playing = false;
+      this.paused = true;
+
+      video.pause();
     }
   },
-  mounted() {
-    const video = document.getElementById("video-element");
-    const self = this;
-    if (video) {
-      video.onpause = function() {
-        self.playing = false;
-        self.paused = true;
-      };
-      video.onplay = function() {
-        self.playing = true;
-        self.paused = false;
-      };
+  computed: {
+    getImages() {
+      return this.images;
+    },
+    topSectionStyle() {
+      return { opacity: this.playing ? 0.4 : 1 };
     }
   }
 };

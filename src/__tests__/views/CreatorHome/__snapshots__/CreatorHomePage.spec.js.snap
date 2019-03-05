@@ -7,6 +7,7 @@ exports[`Creator Home Page should render correctly 1`] = `
 >
   <div
     class="top-section-container"
+    style="opacity: 1;"
   >
     <header
       id="feeds-header"
@@ -567,6 +568,391 @@ exports[`Creator Home Page should render correctly 1`] = `
   </div>
    
   <div
+    class="left-container"
+  >
+    <section
+      class="VueCarousel"
+    >
+      <div
+        class="VueCarousel-wrapper"
+      >
+        <div
+          class="VueCarousel-inner"
+          role="listbox"
+          style="transform: translate(0px, 0); visibility: hidden; height: auto;"
+        >
+          <div
+            class="VueCarousel-slide"
+            tabindex="-1"
+          >
+            <div
+              class="left-container__photos"
+            >
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1529044828/hvduesh8bvqypxokpx04.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1541603694/challenge3_i8e1ku.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1533584238/rhmb3fvaaihqahoiqdzz.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864649/category14_si7rgv.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864682/category18_fq9erz.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1530124462/osc6r2qd2yhirktihpuj.png"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864691/category17_cfka6f.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864699/category16_nzatcm.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category9_z9wypr.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category7_h0ydin.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/fashion_dm2i4a.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/tech_ivnn96.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/relationship_rnscmx.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category9_z9wypr.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category7_h0ydin.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1541603694/challenge3_i8e1ku.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/fashion_dm2i4a.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/tech_ivnn96.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/relationship_rnscmx.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864699/category16_nzatcm.jpg"
+              />
+            </div>
+          </div>
+           
+          <div
+            class="VueCarousel-slide"
+            tabindex="-1"
+          >
+            <div
+              class="left-container__photos"
+            >
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1529044828/hvduesh8bvqypxokpx04.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1541603694/challenge3_i8e1ku.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1533584238/rhmb3fvaaihqahoiqdzz.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864649/category14_si7rgv.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864682/category18_fq9erz.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1530124462/osc6r2qd2yhirktihpuj.png"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864691/category17_cfka6f.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864699/category16_nzatcm.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category9_z9wypr.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category7_h0ydin.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/fashion_dm2i4a.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/tech_ivnn96.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/relationship_rnscmx.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category9_z9wypr.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category7_h0ydin.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1541603694/challenge3_i8e1ku.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/fashion_dm2i4a.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/tech_ivnn96.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/relationship_rnscmx.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864699/category16_nzatcm.jpg"
+              />
+            </div>
+          </div>
+           
+          <div
+            class="VueCarousel-slide"
+            tabindex="-1"
+          >
+            <div
+              class="left-container__photos"
+            >
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1529044828/hvduesh8bvqypxokpx04.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1541603694/challenge3_i8e1ku.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1533584238/rhmb3fvaaihqahoiqdzz.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864649/category14_si7rgv.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864682/category18_fq9erz.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1530124462/osc6r2qd2yhirktihpuj.png"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864691/category17_cfka6f.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864699/category16_nzatcm.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category9_z9wypr.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category7_h0ydin.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/fashion_dm2i4a.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/tech_ivnn96.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/relationship_rnscmx.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category9_z9wypr.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864727/category7_h0ydin.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1541603694/challenge3_i8e1ku.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/fashion_dm2i4a.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/tech_ivnn96.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864775/relationship_rnscmx.jpg"
+              />
+              <img
+                alt="image"
+                src="https://res.cloudinary.com/annmary/image/upload/v1551864699/category16_nzatcm.jpg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="VueCarousel-pagination"
+        data-v-438fd353=""
+        style=""
+      >
+        <ul
+          class="VueCarousel-dot-container"
+          data-v-438fd353=""
+          role="tablist"
+        >
+          <li
+            aria-hidden="false"
+            aria-selected="true"
+            class="VueCarousel-dot VueCarousel-dot--active"
+            data-v-438fd353=""
+            role="presentation"
+            style="margin-top: 10px; padding: 5px;"
+          >
+            <button
+              aria-label="\`Item \${index}\`"
+              class="VueCarousel-dot-button"
+              data-v-438fd353=""
+              role="button"
+              style="width: 3px; height: 3px; background: rgb(9, 109, 217);"
+              tabindex="0"
+              title="Item 0"
+              type="button"
+            />
+          </li>
+          <li
+            aria-hidden="false"
+            aria-selected="false"
+            class="VueCarousel-dot"
+            data-v-438fd353=""
+            role="presentation"
+            style="margin-top: 10px; padding: 5px;"
+          >
+            <button
+              aria-label="\`Item \${index}\`"
+              class="VueCarousel-dot-button"
+              data-v-438fd353=""
+              role="button"
+              style="width: 3px; height: 3px; background: rgb(134, 134, 134);"
+              tabindex="0"
+              title="Item 1"
+              type="button"
+            />
+          </li>
+          <li
+            aria-hidden="false"
+            aria-selected="false"
+            class="VueCarousel-dot"
+            data-v-438fd353=""
+            role="presentation"
+            style="margin-top: 10px; padding: 5px;"
+          >
+            <button
+              aria-label="\`Item \${index}\`"
+              class="VueCarousel-dot-button"
+              data-v-438fd353=""
+              role="button"
+              style="width: 3px; height: 3px; background: rgb(134, 134, 134);"
+              tabindex="0"
+              title="Item 2"
+              type="button"
+            />
+          </li>
+        </ul>
+      </div>
+       
+      <div
+        class="VueCarousel-navigation"
+        data-v-453ad8cd=""
+      >
+        <button
+          aria-label="Previous page"
+          class="VueCarousel-navigation-button VueCarousel-navigation-prev"
+          data-v-453ad8cd=""
+          role="button"
+          style="padding: 8px; margin-right: -8px;"
+          type="button"
+        >
+          ◀
+        </button>
+         
+        <button
+          aria-label="Next page"
+          class="VueCarousel-navigation-button VueCarousel-navigation-next"
+          data-v-453ad8cd=""
+          role="button"
+          style="padding: 8px; margin-left: -8px;"
+          type="button"
+        >
+          ▶
+        </button>
+      </div>
+    </section>
+  </div>
+   
+  <div
     class="metrics"
   >
     <div
@@ -638,54 +1024,38 @@ exports[`Creator Home Page should render correctly 1`] = `
     class="playVideo"
   >
     <div
-      class="container"
+      class="video-button play"
     >
-      <div
-        class="row"
-      >
-        <div
-          class="col-md-3"
+      <button>
+        <i
+          class="fas fa-play video-controls"
         />
          
-        <div
-          class="col-md-6"
-        >
-          <video
-            class="col-12"
-            controls="controls"
-            id="video-element"
-            style="display: none;"
-          >
-            <source
-              src="@/assets/photocontest.mp4"
-              type="video/mp4"
-            />
-          </video>
-           
-          <div
-            class="video-button play"
-          >
-            <button>
-              <i
-                class="fas fa-play video-controls"
-              />
-               
-              <p>
-                Watch Video
-              </p>
-            </button>
-          </div>
-        </div>
-         
-        <div
-          class="col-md-3"
-        />
-      </div>
+        <p>
+          Watch Video
+        </p>
+      </button>
     </div>
   </div>
    
   <div
-    class="copyright text-center mt-13"
+    class="creator-video"
+    tabindex="0"
+  >
+    <video
+      controls="controls"
+      id="video-element"
+      style="display: none;"
+    >
+      <source
+        src="@/assets/photocontest.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+   
+  <div
+    class="copyright text-center mt-13 mb-0"
   >
     <p
       class="title"
