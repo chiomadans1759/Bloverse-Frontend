@@ -838,27 +838,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -1655,27 +1663,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -2472,27 +2488,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -3289,27 +3313,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -4106,27 +4138,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -5508,27 +5548,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -6325,27 +6373,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -7142,27 +7198,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -7959,27 +8023,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -8776,27 +8848,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -9977,16 +10057,25 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                        
-           
-          
+                          </span>
+                           
                           <span
                             class="time"
                           >
@@ -10793,27 +10882,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -11610,27 +11707,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -12427,27 +12532,35 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                         
-                        <span
-                          class="time"
-                        >
-                          1 min ago
-                        </span>
-                      </p>
-                    </div>
-                     
-                    <div
-                      class="row m-0 text-capitalize actions"
-                    >
-                      <p
-                        class="col-8 p-0 counts"
+                          </span>
+                           
+                          <span
+                            class="time"
+                          >
+                            1 min ago
+                          </span>
+                        </p>
+                      </div>
+                       
+                      <div
+                        class="row m-0 text-capitalize actions"
                       >
                         <p
                           class="col-8 p-0 counts"
@@ -13244,16 +13357,25 @@ exports[`Homepage Component should render correctly 1`] = `
                           </h5>
                         </a>
                          
-                        <span
-                          class="font-weight-bold mx-1 name"
+                        <p
+                          class="username"
                         >
-                          
+                          <a
+                            class="btn btn-primary mr-1 rounded-circle text-uppercase initials"
+                            href="#"
+                            role="button"
+                          >
+                            JD
+                          </a>
+                           
+                          <span
+                            class="font-weight-bold mx-1 name"
+                          >
+                            
             username
           
-                        </span>
-                        
-           
-          
+                          </span>
+                           
                           <span
                             class="time"
                           >

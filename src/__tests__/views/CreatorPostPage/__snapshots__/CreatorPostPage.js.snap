@@ -1560,29 +1560,26 @@ exports[`Posts Component should render correctly 1`] = `
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                          </h5>
-                        </a>
-                         
-                        <p
-                          class="username"
-                        >
-                          <!---->
+                            </h5>
+                          </a>
                            
-                          <!---->
-                           
-                          <span
-                            class="time"
+                          <p
+                            class="username"
                           >
-                            1 min ago
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="row m-0 text-capitalize actions"
-                      >
-                        <p
-                          class="col-8 p-0 counts"
+                            <!---->
+                             
+                            <!---->
+                             
+                            <span
+                              class="time"
+                            >
+                              1 min ago
+                            </span>
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="row m-0 text-capitalize actions"
                         >
                           <p
                             class="col-8 p-0 counts"
@@ -2005,23 +2002,11 @@ exports[`Posts Component should render correctly 1`] = `
                       <p
                         class="username"
                       >
-                        <a
-                          class="btn btn-primary mr-1 text-uppercase initials"
-                          href="#"
-                          role="button"
-                        >
-                          
-            XS
-          
-                        </a>
+                        <!---->
                         
            
           
-                        <span
-                          class="font-weight-bold name"
-                        >
-                          username
-                        </span>
+                        <!---->
                         
            
           
@@ -2377,29 +2362,26 @@ exports[`Posts Component should render correctly 1`] = `
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                          </h5>
-                        </a>
-                         
-                        <p
-                          class="username"
-                        >
-                          <!---->
+                            </h5>
+                          </a>
                            
-                          <!---->
-                           
-                          <span
-                            class="time"
+                          <p
+                            class="username"
                           >
-                            1 min ago
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="row m-0 text-capitalize actions"
-                      >
-                        <p
-                          class="col-8 p-0 counts"
+                            <!---->
+                             
+                            <!---->
+                             
+                            <span
+                              class="time"
+                            >
+                              1 min ago
+                            </span>
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="row m-0 text-capitalize actions"
                         >
                           <p
                             class="col-8 p-0 counts"
@@ -2822,23 +2804,11 @@ exports[`Posts Component should render correctly 1`] = `
                       <p
                         class="username"
                       >
-                        <a
-                          class="btn btn-primary mr-1 text-uppercase initials"
-                          href="#"
-                          role="button"
-                        >
-                          
-            XS
-          
-                        </a>
+                        <!---->
                         
            
           
-                        <span
-                          class="font-weight-bold name"
-                        >
-                          username
-                        </span>
+                        <!---->
                         
            
           
@@ -3194,29 +3164,26 @@ exports[`Posts Component should render correctly 1`] = `
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                          </h5>
-                        </a>
-                         
-                        <p
-                          class="username"
-                        >
-                          <!---->
+                            </h5>
+                          </a>
                            
-                          <!---->
-                           
-                          <span
-                            class="time"
+                          <p
+                            class="username"
                           >
-                            1 min ago
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="row m-0 text-capitalize actions"
-                      >
-                        <p
-                          class="col-8 p-0 counts"
+                            <!---->
+                             
+                            <!---->
+                             
+                            <span
+                              class="time"
+                            >
+                              1 min ago
+                            </span>
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="row m-0 text-capitalize actions"
                         >
                           <p
                             class="col-8 p-0 counts"
@@ -3639,23 +3606,11 @@ exports[`Posts Component should render correctly 1`] = `
                       <p
                         class="username"
                       >
-                        <a
-                          class="btn btn-primary mr-1 text-uppercase initials"
-                          href="#"
-                          role="button"
-                        >
-                          
-            XS
-          
-                        </a>
+                        <!---->
                         
            
           
-                        <span
-                          class="font-weight-bold name"
-                        >
-                          username
-                        </span>
+                        <!---->
                         
            
           
@@ -4011,29 +3966,26 @@ exports[`Posts Component should render correctly 1`] = `
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                          </h5>
-                        </a>
-                         
-                        <p
-                          class="username"
-                        >
-                          <!---->
+                            </h5>
+                          </a>
                            
-                          <!---->
-                           
-                          <span
-                            class="time"
+                          <p
+                            class="username"
                           >
-                            1 min ago
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="row m-0 text-capitalize actions"
-                      >
-                        <p
-                          class="col-8 p-0 counts"
+                            <!---->
+                             
+                            <!---->
+                             
+                            <span
+                              class="time"
+                            >
+                              1 min ago
+                            </span>
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="row m-0 text-capitalize actions"
                         >
                           <p
                             class="col-8 p-0 counts"
@@ -4456,23 +4408,11 @@ exports[`Posts Component should render correctly 1`] = `
                       <p
                         class="username"
                       >
-                        <a
-                          class="btn btn-primary mr-1 text-uppercase initials"
-                          href="#"
-                          role="button"
-                        >
-                          
-            XS
-          
-                        </a>
+                        <!---->
                         
            
           
-                        <span
-                          class="font-weight-bold name"
-                        >
-                          username
-                        </span>
+                        <!---->
                         
            
           
@@ -4828,29 +4768,26 @@ exports[`Posts Component should render correctly 1`] = `
           Lorem ipsum dolor sit amet, vel accumsan iberaviss ex,
           ea nec elaboraret interpret
         
-                          </h5>
-                        </a>
-                         
-                        <p
-                          class="username"
-                        >
-                          <!---->
+                            </h5>
+                          </a>
                            
-                          <!---->
-                           
-                          <span
-                            class="time"
+                          <p
+                            class="username"
                           >
-                            1 min ago
-                          </span>
-                        </p>
-                      </div>
-                       
-                      <div
-                        class="row m-0 text-capitalize actions"
-                      >
-                        <p
-                          class="col-8 p-0 counts"
+                            <!---->
+                             
+                            <!---->
+                             
+                            <span
+                              class="time"
+                            >
+                              1 min ago
+                            </span>
+                          </p>
+                        </div>
+                         
+                        <div
+                          class="row m-0 text-capitalize actions"
                         >
                           <p
                             class="col-8 p-0 counts"
@@ -5273,23 +5210,11 @@ exports[`Posts Component should render correctly 1`] = `
                       <p
                         class="username"
                       >
-                        <a
-                          class="btn btn-primary mr-1 text-uppercase initials"
-                          href="#"
-                          role="button"
-                        >
-                          
-            XS
-          
-                        </a>
+                        <!---->
                         
            
           
-                        <span
-                          class="font-weight-bold name"
-                        >
-                          username
-                        </span>
+                        <!---->
                         
            
           

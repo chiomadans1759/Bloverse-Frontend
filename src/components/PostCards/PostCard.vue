@@ -233,12 +233,12 @@
       <div class="d-flex mt-2">
         <p class="username">
             <a class="btn btn-primary mr-1 text-uppercase initials"
-              href="#" role="button"
+              href="#" role="button" v-if="!hideUsername"
             >
               XS
             </a>
             &nbsp;
-            <span class="font-weight-bold name">username</span>
+            <span class="font-weight-bold name" v-if="!hideUsername">username</span>
             &nbsp;
             <span class="time">1 min ago</span>
         </p>
