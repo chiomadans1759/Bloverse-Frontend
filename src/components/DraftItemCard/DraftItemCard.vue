@@ -18,20 +18,6 @@
             <span class="time">1 min ago</span>
           </p>
         </div>
-        <!-- <div class="d-none col-3 d-md-flex justify-content-around align-items-center flex-wrap">
-          <div>
-            <a href="#">
-              <div class="text-center"><i class="fas fa-edit"></i></div>
-              <div>Edit</div>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <div class="text-center"><i class="fas fa-trash-alt"></i></div>
-               <div>Delete</div>
-            </a>
-          </div>
-        </div> -->
       </div>
     </div>
     <div class="border-top bl-draft-item-footer">

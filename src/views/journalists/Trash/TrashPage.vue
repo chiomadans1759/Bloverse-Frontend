@@ -53,7 +53,7 @@
           <div class="navigation-bar">
             <creator-navigation active="trash" />
           </div>
-          <div class="trash-content border mt-4">
+          <div class="trash-content border-top-0 border-bottom-0 border  py-0 mt-4">
             <trash />
           </div>
         </div>

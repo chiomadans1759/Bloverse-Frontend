@@ -1,5 +1,5 @@
 <template>
-  <main id="bl-trashItem" class="card bl-trashItem" :class="customClass">
+  <!-- <main id="bl-trashItem" class="card bl-trashItem" :class="customClass">
     <div class="card-body bl-trashItem-body">
       <div class="card-title row title">
         <div class="col-9 row title--text">
@@ -30,6 +30,42 @@
             <span class="text d-none d-sm-inline">Delete</span>
           </p>
         </div>
+      </div>
+    </div>
+  </main> -->
+    <main id="bl-trash-item" class="card mt-4 bl-trash-item">
+    <div class="card-body bl-trash-item-body">
+      <div class="card-title title">
+        <div class="title--text">
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-sm bg-white mb-3"
+          >Category</button>
+          <p class="font-weight-bold description">
+            <router-link to="/posts/rere">
+              Lorem ipsum dolor sit amet, vel accumsan iberaviss extttttt, ea nec elaboraret interpret
+              Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+              Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
+            </router-link>
+          </p>
+          <p class="col-4 col-sm-3 username d-none d-sm-block mt-3">
+            <span class="time">1 min ago</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="border-top bl-trash-item-footer">
+      <div class="d-flex justify-content-end px-4 py-2 actions">
+        <p class="mx-3 edit">
+          <span class="border rounded-circle icons">
+            <i class="fal fa-undo"></i>
+          </span>
+        </p>
+        <p class="delete">
+          <span class="border rounded-circle icons">
+            <i class="fal fa-trash-alt"></i>
+          </span>
+        </p>
       </div>
     </div>
   </main>
