@@ -1,0 +1,43 @@
+#keyword-tags {
+  .card {
+    width: auto;
+    height: 1.938rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .svg-inline--fa {
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 0.125rem;
+  }
+  .item-content-block {
+    width: 17.125rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  width: 100%;
+  .max {
+    color: #B7B7B7;
+    font-size: 0.75rem;
+    margin: 0;
+  }
+  .text {
+    background: transparent;
+    border: 0.063rem solid rgba(0, 0, 0, 0.15);
+    height: 1.938rem;
+    width: 1.938rem;
+    color: #096DD9;
+    border-radius: 50% !important;
+  }
+  p {
+    display: inline-block;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .close {
+    margin-left: 0.3rem;
+    &:last-child {
+      margin-left: 1rem;
+    }
+  }
+}

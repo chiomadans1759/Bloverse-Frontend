@@ -7,19 +7,23 @@ exports[`PublishSuccess Component should render correctly 1`] = `
   <nav
     class="nav container d-flex justify-content-between align-items-center success-nav"
   >
-    <a
-      class="nav-link"
+    <div
+      class=" mt-2 d-flex"
     >
-      <i
-        class="fal fa-arrow-left back-icon"
-      />
+      <button
+        class="btn rounded-circle d-flex justify-content-center go-back"
+      >
+        <i
+          class="fal fa-arrow-left back-icon"
+        />
+      </button>
        
       <span
-        class="text-muted ml-2"
+        class="text-muted ml-2 mt-2"
       >
         Back
       </span>
-    </a>
+    </div>
   </nav>
    
   <div
@@ -43,8 +47,10 @@ exports[`PublishSuccess Component should render correctly 1`] = `
           class="form-line"
         >
           <div
-            class="form-group d-flex"
+            class="form-group d-flex justify-content-between"
           >
+            <!---->
+             
             <input
               class="form-control p-0 two"
               placeholder="Add keypoint"
@@ -52,14 +58,14 @@ exports[`PublishSuccess Component should render correctly 1`] = `
             />
              
             <span
-              class="d-flex justify-content-end"
+              class="d-flex justify-content-end mt-2 icon-position"
             >
               <!---->
             </span>
           </div>
            
           <div
-            class="d-flex justify-content-end"
+            class="d-flex justify-content-end icon-position"
           >
             <!---->
           </div>
@@ -97,86 +103,162 @@ exports[`PublishSuccess Component should render correctly 1`] = `
           </div>
         </success-alert-stub>
          
-        <div
-          class="my-1"
-        >
-          <p>
-            Select a Category
-          </p>
-           
-          <select
-            class="my-4 custom-select"
+        <form>
+          <div
+            class="form-group"
           >
-            <option>
-              Choose category
-            </option>
+            <label>
+              Select a Category
+            </label>
              
-            <option>
-              2
-            </option>
-             
-            <option>
-              3
-            </option>
-             
-            <option>
-              4
-            </option>
-             
-            <option>
-              5
-            </option>
-          </select>
-        </div>
-         
-        <div
-          class="my-1"
-        >
-          <p>
-            Select a Country
-          </p>
-           
-          <select
-            class="my-4 custom-select"
-          >
-            <option>
-              Choose country
-            </option>
-             
-            <option>
-              2
-            </option>
-             
-            <option>
-              3
-            </option>
-             
-            <option>
-              4
-            </option>
-             
-            <option>
-              5
-            </option>
-          </select>
-        </div>
-         
-        <div
-          class="mb-4 d-flex justify-content-between"
-        >
-          <keyword-tags-stub />
-        </div>
-         
-        <div>
-          <button-stub
-            customclass="btn btn-primary btn-lg btn-block"
-          >
-            <p
-              class="publish-txt"
+            <select
+              class="my-4 custom-select"
             >
-              Publish
+              <option>
+                Choose category
+              </option>
+               
+              <option>
+                2
+              </option>
+               
+              <option>
+                3
+              </option>
+               
+              <option>
+                4
+              </option>
+               
+              <option>
+                5
+              </option>
+            </select>
+          </div>
+           
+          <div
+            class="form-group"
+          >
+            <label>
+              Select a Country
+            </label>
+             
+            <select
+              class="my-4 custom-select"
+            >
+              <option>
+                Choose country
+              </option>
+               
+              <option>
+                2
+              </option>
+               
+              <option>
+                3
+              </option>
+               
+              <option>
+                4
+              </option>
+               
+              <option>
+                5
+              </option>
+            </select>
+          </div>
+           
+          <div
+            class="form-group keysection"
+          >
+            <div
+              class="mb-4 mt-3 d-flex justify-content-between"
+            >
+              <keyword-tags-stub />
+            </div>
+          </div>
+           
+          <div>
+            <button-stub
+              customclass="btn btn-primary btn-block"
+            >
+              <p
+                class="publish-txt"
+              >
+                Publish
+              </p>
+            </button-stub>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    aria-hidden="true"
+    class="modal"
+    id="successModal"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="d-flex justify-content-end close-icon"
+    >
+      <i
+        class="fal fa-times fa-3x"
+        style="color: white;"
+      />
+    </div>
+     
+    <div
+      class="modal-dialog modal-full"
+      role="document"
+    >
+      <div
+        class="modal-content"
+      >
+        <success-alert-stub
+          heading=""
+        >
+          <div
+            class="d-flex justify-content-center"
+          >
+            <i
+              class="fal fa-check-circle fa-3x"
+            />
+             
+            <p
+              class="ml-4 mt-2"
+            >
+              Your article has been published successfully
             </p>
-          </button-stub>
+          </div>
+        </success-alert-stub>
+         
+        <div
+          class="modal-body"
+        >
+          <h5>
+            Share on social media
+          </h5>
+           
+          <div>
+            <p
+              class="share-text"
+            >
+              Automatically share on your social media
+            </p>
+          </div>
+           
+          <div
+            class="d-flex justify-content-end mt-4"
+          >
+            <button
+              class="btn btn-sm btn-primary"
+            >
+              Share
+            </button>
+          </div>
         </div>
       </div>
     </div>

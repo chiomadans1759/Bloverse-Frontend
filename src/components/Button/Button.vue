@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button :class="customClass" @click="buttonClick">
+    <button :class="customClass" @click.prevent="$emit('buttonClick')">
       <slot></slot>
     </button>
   </div>
@@ -14,11 +14,6 @@ export default {
       type: String,
       required: false,
     },
-  },
-  methods: {
-    buttonClick: function() {
-      this.$emit('buttonClicked');
-    }
   }
 }
 </script>

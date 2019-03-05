@@ -2,7 +2,7 @@
 
 exports[`KeywordTags Component should render correctly 1`] = `
 <main
-  id="social-tags"
+  id="keyword-tags"
 >
   <div
     class="item-content-block d-flex"
@@ -31,7 +31,9 @@ exports[`KeywordTags Component should render correctly 1`] = `
       </div>
     </div>
      
-    <span>
+    <span
+      class="morekeys"
+    >
       <button
         class="btn rounded-btn-circle d-flex justify-content-center ml-3 text"
       >
@@ -43,7 +45,7 @@ exports[`KeywordTags Component should render correctly 1`] = `
   </div>
    
   <p
-    class="mt-3 d-flex justify-content-end max"
+    class="d-flex justify-content-end max"
   >
     Maxinum of 5
   </p>

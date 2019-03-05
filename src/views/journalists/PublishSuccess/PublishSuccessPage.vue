@@ -1,10 +1,12 @@
 <template>
   <main id="publish-success">
     <nav class="nav container d-flex justify-content-between align-items-center success-nav">
-      <a class="nav-link" @click="goBack">
-         <i class="fal fa-arrow-left back-icon"></i>
-         <span class="text-muted ml-2">Back</span>
-      </a>
+      <div class=" mt-2 d-flex">
+          <button class="btn rounded-circle d-flex justify-content-center go-back" @click="goBack">
+          <i class="fal fa-arrow-left back-icon"></i>
+        </button>
+        <span class="text-muted ml-2 mt-2">Back</span>
+        </div>
     </nav>
     <div class="container">
       <div class="row d-flex justify-content-center">
@@ -13,16 +15,19 @@
             Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec elaboraret interpret
           </h6>
           <form class="form-line">
-            <div class="form-group d-flex" v-for="(line, index) in lines" :key="index">
-              <input type="text" class="form-control p-0 two" placeholder="Add keypoint" v-model="line.keypoint" @input="addKeyPoint(line.keypoint)" @click.prevent="showRemoveIcon()">
-                <span class="d-flex justify-content-end">
-                  <button class="btn rounded-btn-circle d-flex justify-content-center ml-3 mt-3 text" v-if="removeKeyBtn && lines.length < 3" @click.prevent="removeKeypoint()">
-                    <i class="fal fa-minus icn"></i>
+            <div class="form-group d-flex justify-content-between" v-for="(line, index) in lines" :key="index">
+              <span class="keybullet" v-if="keyBullet">
+                <li></li>
+              </span>
+              <input type="text" class="form-control p-0 two" placeholder="Add keypoint" v-model="line.keypoint" @input="addKeyPoint(line.keypoint, index)" @mouseover="activateDelete()" @mouseout="deactivateDelete()">
+                <span class="d-flex justify-content-end mt-2 icon-position">
+                  <button class="btn rounded-btn-circle d-flex justify-content-center ml-3 text" v-if="removeKeyBtn" @click.prevent="removeKeypoint()">
+                    <i class="fal fa-times icn"></i>
                   </button>
                 </span>
             </div>
-            <div class="d-flex justify-content-end">
-              <button class="btn rounded-btn-circle d-flex justify-content-center ml-3 text" v-if="showKeyBtn && lines.length < 3" @click.prevent="addKey()">
+            <div class="d-flex justify-content-end icon-position">
+              <button class="btn rounded-btn-circle d-flex justify-content-center ml-3 mb-3 text" v-if="showKeyBtn && lines.length < 3" @click.prevent="addKey()">
                 <i class="fal fa-plus icn"></i>
               </button>
             </div>
@@ -39,8 +44,9 @@
               <p>Your Article was successfully scanned. You have no issue of plagiarism with your article.</p>
             </div>
           </success-alert>
-           <div class="my-1">
-             <p>Select a Category</p>
+          <form>
+           <div class="form-group">
+             <label>Select a Category</label>
                <select class="my-4 custom-select">
                 <option>Choose category</option>
                 <option>2</option>
@@ -49,8 +55,8 @@
                 <option>5</option>
               </select>
            </div>
-           <div class="my-1">
-             <p>Select a Country</p>
+           <div class="form-group">
+             <label>Select a Country</label>
                <select class="my-4 custom-select">
                 <option>Choose country</option>
                 <option>2</option>
@@ -59,14 +65,46 @@
                 <option>5</option>
               </select>
            </div>
-           <div class="mb-4 d-flex justify-content-between">
-             <keyword-tags ref="reloadIcons"></keyword-tags>
+           <div class="form-group keysection">
+            <div class="mb-4 mt-3 d-flex justify-content-between">
+              <keyword-tags ref="reloadIcons"></keyword-tags>
+            </div>
             </div>
            <div>
-            <Button customClass="btn btn-primary btn-lg btn-block">
+            <Button customClass="btn btn-primary btn-block" @buttonClick="publishSuccess">
               <p class="publish-txt">Publish</p>
             </Button>
            </div>
+           </form>
+        </div>
+      </div>
+    </div>
+
+     <!-- Publish Modal -->
+    <div class="modal" id="successModal" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="d-flex justify-content-end close-icon"  @click.prevent="closeModal">
+          <i class="fal fa-times fa-3x" style="color: white;"></i>
+        </div>
+      <div class="modal-dialog modal-full" role="document">
+        <div class="modal-content">
+           <success-alert>
+              <div class="d-flex justify-content-center">
+                <i class="fal fa-check-circle fa-3x"></i>
+                <p class="ml-4 mt-2">Your article has been published successfully</p>
+              </div>
+          </success-alert>
+          <div class="modal-body">
+            <h5>Share on social media</h5>
+            <div>
+              <p class="share-text">Automatically share on your social media</p>
+            </div>
+
+
+            <div class="d-flex justify-content-end mt-4">
+              <button class="btn btn-sm btn-primary" @click="goToPublish">Share</button>
+            </div>
+            
+          </div>
         </div>
       </div>
     </div>
@@ -92,23 +130,21 @@ export default {
         }
       ],
       showKeyBtn: false,
-      removeKeyBtn: false
+      removeKeyBtn: false,
+      keyBullet: false
     }
   },
   methods:{
     goBack(){
       this.$router.go(-1);
     },
-    // putBackIcons() {
-    //   this.$refs.reloadIcons.reassignIcons(this.newsocialLinks);
-    //   this.reloadIcons = false;
-      
-    // },
-    addKeyPoint(value) {
+    addKeyPoint(value, index) {
       if(value != '') {
-        this.showKeyBtn = true
-      } else {
-        this.showKeyBtn = false
+        this.showKeyBtn = true;
+        this.keyBullet = true;
+        
+      }else {
+        this.showKeyBtn = false  
       }
     },
     addKey() {
@@ -123,9 +159,28 @@ export default {
     },
     removeKeypoint(index) {
       this.lines.splice(index,1)
-      if (this.lines.length == 1) {
+      if (this.lines.length < 3) {
         this.plus_btn = true
       }
+    },
+    publishSuccess() {
+      /* eslint-disable */ 
+      $('#successModal').modal('show');
+    },
+    activateDelete(index) {
+      this.removeKeyBtn = true;
+    },
+    deactivateDelete(index) {
+      this.removeKeyBtn = false
+    },
+    goToPublish() {
+      this.$router.push('/publish');
+        /* eslint-disable */ 
+      $('#successModal').modal('hide');
+    },
+    closeModal() {
+      /* eslint-disable */ 
+      $('#successModal').modal('hide');
     }
   }
 }
