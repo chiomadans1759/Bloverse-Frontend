@@ -5,10 +5,8 @@
     class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top read-later-card"
   >
     <div class="d-none d-sm-block" :class="['row mx-0', { 'flex-row-reverse': listView }]">
-=======
     <div class="d-none d-sm-flex" :class="['row mx-0', { 'flex-row-reverse': listView }]">
       <div :class="[{ 'col-4 read-later-image-list': listView, 'col-12 read-later-image': !listView, }]"
->>>>>>> fix(homepage): update homepage with new design
         :style="{backgroundImage: 'url(' + readLaterImage + ')'}"
       >
         <button
@@ -217,6 +215,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
     <!-- Mobile View Start -->
     <div class="d-sm-none p-2">
