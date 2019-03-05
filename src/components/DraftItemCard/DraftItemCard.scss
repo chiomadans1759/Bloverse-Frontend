@@ -1,10 +1,16 @@
 @import 'sass-rem';
 
 .bl-draft-item {
-  border: none !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  border-top: 1px solid #dee2e6 !important;
+  border-left: none !important;
+  border-right: none !important;
   border-radius: 0 !important;
   background: #ffffff;
   margin-bottom:rem(4px);
+  &:first-child {
+    margin-top: 0 !important;
+  }
   &-body {
     background: #ffffff;
     .title {
@@ -16,6 +22,12 @@
         height: 100%;
         margin: auto;
         flex-direction: column;
+        &>button {
+          border-color: #dee2e6;
+          &:hover {
+            color: #2F80ED;
+          }
+        }
         &>span {
           max-width: none;
           width: 100%;
@@ -256,6 +268,24 @@
       }
     }
   }
+  &-footer {
+    .actions {
+      .edit, .delete {
+        cursor: pointer;
+        .icons {
+          color: #2F80ED;
+          height: rem(28px);
+          width: rem(28px);
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          .fa-thumbs-down {
+            transform: rotateY(180deg);
+          }
+        }
+      }
+    }
+  }
 }
 
 .hideCardBorder {
@@ -312,7 +342,7 @@
           .description {
             max-width: none;
             width: 100%;
-            height: auto;
+            height: rem(56px);
             font-size: rem(20px);
             text-align: left;
             color: #252525;

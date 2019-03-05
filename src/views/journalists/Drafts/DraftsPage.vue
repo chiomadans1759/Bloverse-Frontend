@@ -53,7 +53,7 @@
           <div class="navigation-bar">
             <creator-navigation active="drafts" />
           </div>
-          <div class="border bg-white bl-content right-content">
+          <div class="border border-top-0 border-bottom-0 bg-white bl-content right-content">
             <DraftItemCard />
             <DraftItemCard />
             <DraftItemCard />

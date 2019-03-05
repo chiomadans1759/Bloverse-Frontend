@@ -62,12 +62,12 @@
               Unpublish
             </button>
             <p class="share" v-show="!share">
-              <span class="border rounded-circle icons bookmark" @click="toggleShare">
+              <span class="border rounded-circle icons share" @click="toggleShare">
                 <i class="fal fa-share"></i>
               </span>
             </p>
             <p class="share" v-show="share">
-              <span class="border rounded-circle icons bookmark clicked" @click="toggleShare">
+              <span class="border rounded-circle icons share clicked" @click="toggleShare">
                 <i class="fas fa-share"></i>
               </span>
             </p>
