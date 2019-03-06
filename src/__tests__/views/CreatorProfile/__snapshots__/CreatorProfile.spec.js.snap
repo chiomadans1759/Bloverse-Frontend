@@ -1143,7 +1143,7 @@ exports[`Profile Component should render correctly 1`] = `
                   <a
                     aria-controls="pills-general"
                     aria-selected="false"
-                    class="nav-link active d-flex align-items-center"
+                    class="nav-link d-flex align-items-center active"
                     data-toggle="pill"
                     id="pills-general-tab"
                     role="tab"
@@ -1167,7 +1167,7 @@ exports[`Profile Component should render correctly 1`] = `
                     Posts
           
                     <span
-                      class="badge badge-secondary ml-2"
+                      class="badge ml-2 badge-secondary"
                     >
                       4
                     </span>
@@ -1189,7 +1189,7 @@ exports[`Profile Component should render correctly 1`] = `
                     Drafts
           
                     <span
-                      class="badge badge-secondary ml-2"
+                      class="badge ml-2 badge-secondary"
                     >
                       4
                     </span>

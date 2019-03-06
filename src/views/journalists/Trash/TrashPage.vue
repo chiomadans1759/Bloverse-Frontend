@@ -50,7 +50,9 @@
         <!-- on mobile view only ends -->
 
         <div class="col-12 col-lg-7 col-xl-7 bg-transparent right-section p-0 bl-trash-display">
-          <h5 class="font-weight-bold px-4 px-sm-0">Trash</h5>
+          <div class="navigation-bar">
+            <creator-navigation active="trash" />
+          </div>
           <div class="trash-content border mt-4">
             <trash />
           </div>
@@ -66,6 +68,7 @@ import Navbar from "@/components/Navbar/Navbar.vue";
 import Profile from "@/components/ProfileCard/ProfileCard";
 import Footer from "@/components/Footer/Footer";
 import CreatorProfileActionsCard from "@/components/CreatorProfileActionsCard/CreatorProfileActionsCard";
+import CreatorNavigation from "@/components/CreatorNavigation/CreatorNavigation";
 import Trash from '@/components/Trash/Trash';
 
 export default {
@@ -74,6 +77,7 @@ export default {
     Profile,
     CreatorProfileActionsCard,
     Footer,
+    CreatorNavigation,
     Trash,
   },
   data() {

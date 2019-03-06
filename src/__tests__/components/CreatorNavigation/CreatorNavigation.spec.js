@@ -6,6 +6,9 @@ describe('CreatorNavigation Component', () => {
     const wrapper = mount(CreatorNavigation , {
       stubs: {
         RouterLink: RouterLinkStub
+      },
+      propsData: {
+        active: 'posts',
       }
     });
     expect(wrapper.element).toMatchSnapshot();

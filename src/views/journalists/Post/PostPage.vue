@@ -48,9 +48,9 @@
         </div>
         <!-- on mobile view only ends -->
         <div class="col-12 col-lg-7 col-xl-7 right-section p-0">
-          <h4>
-            <h5 class="font-weight-bold mb-4 pl-3 pl-md-0">Post</h5>
-          </h4>
+          <div class="navigation-bar">
+            <creator-navigation active="posts" />
+          </div>
           <div class="mt-4 px-4 bg-white">
             <div class="row">
               <div class="mx-4 d-none d-sm-block w-100">
@@ -87,7 +87,7 @@
                 </nav>
               </div>
               <div class="list_view creator_profile__post" v-if="active_tab === 'list'">
-                <post-cards :hideCardBorder="hideCardBorder"/>
+                <post-cards :hideCardBorder="hideCardBorder" hideUsername />
               </div>
               <div class="grid_view" v-if="active_tab === 'grid'">
                 <br>
@@ -135,6 +135,7 @@ import CategoryCard from "@/components/CategoryCard/CategoryCard";
 import Footer from "@/components/Footer/Footer";
 import RecommendationCard from "@/components/Recommendations/RecommendationCard";
 import CreatorProfileActionsCard from "@/components/CreatorProfileActionsCard/CreatorProfileActionsCard";
+import CreatorNavigation from "@/components/CreatorNavigation/CreatorNavigation";
 
 export default {
   components: {
@@ -144,6 +145,7 @@ export default {
     RecommendationCard,
     CategoryCard,
     CreatorProfileActionsCard,
+    CreatorNavigation,
     Footer
   },
   data() {

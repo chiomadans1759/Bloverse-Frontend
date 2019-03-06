@@ -5,11 +5,9 @@
       <div class="row">
         <div class="col-lg-5 d-none d-sm-block mb-4">
           <div class="col-lg-12 mr-2">
-            <profile
-            displayInterest hideFollowing displayFollowers/>
+            <profile displayInterest hideFollowing displayFollowers />
           </div>
         </div>
-        <!-- on mobile view only ends -->
         <div class="col-12 col-lg-7 col-xl-7 right-section p-0">
           <div class="navigation-bar">
             <creator-navigation />

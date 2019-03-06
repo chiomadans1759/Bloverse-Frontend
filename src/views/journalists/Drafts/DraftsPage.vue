@@ -50,7 +50,9 @@
         <!-- on mobile view only ends -->
 
         <div class="px-0 px-md-3 col-lg-7">
-          <h5 class="font-weight-bold mb-4 pl-3 pl-md-0">Draft</h5>
+          <div class="navigation-bar">
+            <creator-navigation active="drafts" />
+          </div>
           <div class="border bg-white bl-content right-content">
             <DraftItemCard />
             <DraftItemCard />
@@ -71,6 +73,7 @@ import Navbar from "@/components/Navbar/Navbar.vue";
 import Footer from "@/components/Footer/Footer";
 import CreatorProfileActionsCard from "@/components/CreatorProfileActionsCard/CreatorProfileActionsCard";
 import DraftItemCard from '@/components/DraftItemCard/DraftItemCard';
+import CreatorNavigation from "@/components/CreatorNavigation/CreatorNavigation";
 import CreatorPublishIcon from '@/components/CreatorPublishIcon/CreatorPublishIcon';
 
 export default {
@@ -80,6 +83,7 @@ export default {
     CreatorPublishIcon,
     CreatorProfileActionsCard,
     DraftItemCard,
+    CreatorNavigation,
     Footer,
   },
   data() {
@@ -87,16 +91,6 @@ export default {
 
     }
   },
-  mounted() {
-    /* eslint-disable */
-    hideTawkBot();
-    window.onload = function() {
-      hideTawkBot();
-    };
-  },
-  destroyed() {
-    showTawkBot();
-  }
 };
 </script>
 

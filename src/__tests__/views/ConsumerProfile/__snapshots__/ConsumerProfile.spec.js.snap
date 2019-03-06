@@ -928,17 +928,15 @@ exports[`Profile Component should render correctly 1`] = `
                         >
                           JD
                         </a>
-                        
-           
-          
+                         
                         <span
-                          class="font-weight-bold name"
+                          class="font-weight-bold mx-1 name"
                         >
-                          username
-                        </span>
-                        
-           
+                          
+            username
           
+                        </span>
+                         
                         <span
                           class="time"
                         >
@@ -1373,17 +1371,15 @@ exports[`Profile Component should render correctly 1`] = `
                         >
                           JD
                         </a>
-                        
-           
-          
+                         
                         <span
-                          class="font-weight-bold name"
+                          class="font-weight-bold mx-1 name"
                         >
-                          username
-                        </span>
-                        
-           
+                          
+            username
           
+                        </span>
+                         
                         <span
                           class="time"
                         >
@@ -1818,17 +1814,15 @@ exports[`Profile Component should render correctly 1`] = `
                         >
                           JD
                         </a>
-                        
-           
-          
+                         
                         <span
-                          class="font-weight-bold name"
+                          class="font-weight-bold mx-1 name"
                         >
-                          username
-                        </span>
-                        
-           
+                          
+            username
           
+                        </span>
+                         
                         <span
                           class="time"
                         >
@@ -2263,17 +2257,15 @@ exports[`Profile Component should render correctly 1`] = `
                         >
                           JD
                         </a>
-                        
-           
-          
+                         
                         <span
-                          class="font-weight-bold name"
+                          class="font-weight-bold mx-1 name"
                         >
-                          username
-                        </span>
-                        
-           
+                          
+            username
           
+                        </span>
+                         
                         <span
                           class="time"
                         >
@@ -2708,17 +2700,15 @@ exports[`Profile Component should render correctly 1`] = `
                         >
                           JD
                         </a>
-                        
-           
-          
+                         
                         <span
-                          class="font-weight-bold name"
+                          class="font-weight-bold mx-1 name"
                         >
-                          username
-                        </span>
-                        
-           
+                          
+            username
           
+                        </span>
+                         
                         <span
                           class="time"
                         >
@@ -3168,17 +3158,15 @@ exports[`Profile Component should render correctly 1`] = `
                       >
                         JD
                       </a>
-                      
-           
-          
+                       
                       <span
-                        class="font-weight-bold name"
+                        class="font-weight-bold mx-1 name"
                       >
-                        username
-                      </span>
-                      
-           
+                        
+            username
           
+                      </span>
+                       
                       <span
                         class="time"
                       >
@@ -3614,17 +3602,15 @@ exports[`Profile Component should render correctly 1`] = `
                       >
                         JD
                       </a>
-                      
-           
-          
+                       
                       <span
-                        class="font-weight-bold name"
+                        class="font-weight-bold mx-1 name"
                       >
-                        username
-                      </span>
-                      
-           
+                        
+            username
           
+                      </span>
+                       
                       <span
                         class="time"
                       >
@@ -4060,17 +4046,15 @@ exports[`Profile Component should render correctly 1`] = `
                       >
                         JD
                       </a>
-                      
-           
-          
+                       
                       <span
-                        class="font-weight-bold name"
+                        class="font-weight-bold mx-1 name"
                       >
-                        username
-                      </span>
-                      
-           
+                        
+            username
           
+                      </span>
+                       
                       <span
                         class="time"
                       >
@@ -4506,17 +4490,15 @@ exports[`Profile Component should render correctly 1`] = `
                       >
                         JD
                       </a>
-                      
-           
-          
+                       
                       <span
-                        class="font-weight-bold name"
+                        class="font-weight-bold mx-1 name"
                       >
-                        username
-                      </span>
-                      
-           
+                        
+            username
           
+                      </span>
+                       
                       <span
                         class="time"
                       >
@@ -4952,17 +4934,15 @@ exports[`Profile Component should render correctly 1`] = `
                       >
                         JD
                       </a>
-                      
-           
-          
+                       
                       <span
-                        class="font-weight-bold name"
+                        class="font-weight-bold mx-1 name"
                       >
-                        username
-                      </span>
-                      
-           
+                        
+            username
           
+                      </span>
+                       
                       <span
                         class="time"
                       >
