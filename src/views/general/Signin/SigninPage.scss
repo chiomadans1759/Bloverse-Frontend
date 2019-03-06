@@ -16,7 +16,7 @@
 }
 
 .sign-in-content {
-  min-height: calc(100vh - 60px); 
+  min-height: calc(100vh - 100px); 
   position: relative;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .sign-in-social-button {
-  width: rem(281px);
+  width: rem(358px);
   height: rem(38px);
   border-radius: 0 !important;
 }
@@ -46,7 +46,6 @@
   margin-bottom: rem(-10px);
 }
 
-
 .forgot-password-link {
   color: #096DD9;
   font-size: rem(14px);
@@ -55,7 +54,7 @@
 
 .sign-in-primary-button {
   background-image: linear-gradient( to left, #2F80ED, #003CE1);
-  width: rem(281px);
+  width: rem(358px);
   height: rem(38px);
   margin-bottom: rem(32px);
   border-radius: 0 !important;
@@ -86,8 +85,8 @@
 }
 
 .secondary-button {
-  width: rem(281px);
-  height: rem(50px) !important;
+  width: rem(358px);
+  height: rem(67px) !important;
   border-width: rem(2px) !important;
   border-color: rgba(255, 255, 255, 0.2) !important;
   padding-left: rem(24px) !important;

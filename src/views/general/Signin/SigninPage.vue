@@ -62,32 +62,22 @@
         <Button customClass="btn btn-primary sign-in-primary-button">Login</Button>
 
         <Button customClass="btn btn-outline-secondary secondary-button">
-          <h2 class="sign-up-new-bloverse-text">New to Bloverse?
-            <router-link to="/register" class="signup-login-text">Sign Up</router-link>
+          <h2 class="sign-up-new-bloverse-text text-center">Content Creator?
+            <router-link to="/creators/apply" class="signup-login-text">Apply</router-link>
           </h2>
         </Button>
       </div>
-      
-      <div class="signup-creator-text">
-        <h2 class="sign-up-creator-text">Content creator? 
-        <router-link to="/creators/apply" class="router-link sign-up-apply-now-text">
-          Apply
-        </router-link>
-        </h2>
-      </div>
-      
     </div>
-    <creator-card />
+
     <div class="bottom">
-      <p><span class="bloverse">Bloverse</span> {{year}}. All Right Reserved</p>
+      <p><span class="bloverse">bloverse</span> {{year}}. All Right Reserved</p>
     </div>
   </div>
 </template>
 
 <script>
-import Button from "../../../components/Button/Button.vue";
-import TextInput from "../../../components/TextInput/TextInput.vue";
-import CreatorCard from "../../../components/CreatorCard/CreatorCard.vue";
+import Button from "@/components/Button/Button.vue";
+import TextInput from "@/components/TextInput/TextInput.vue";
 
 export default {
   data() {
@@ -100,23 +90,12 @@ export default {
   components: {
     Button,
     TextInput,
-    CreatorCard,
   },
   methods: {
     onChange: function(event) {
       this[event.target.name] = event.target.value;
     }
   },
-  mounted() {
-    /* eslint-disable */
-    hideTawkBot();
-    window.onload = function() {
-      hideTawkBot();
-    };
-  },
-  destroyed() {
-    showTawkBot();
-  }
 };
 
 </script>

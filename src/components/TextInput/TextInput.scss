@@ -1,16 +1,40 @@
 @import 'sass-rem';
 
+.form-group {
+  margin-bottom: rem(8px);
+}
+
 .defaultClass {
-  height: rem(40px);
-  width: rem(281px);
+  height: rem(38px);
+  width: rem(358px);
   background-color: rgba(0, 0, 0, 0.45) !important;
-  color: #ffffff;
+  color: #B7B7B7 !important;
   border: solid;
   border-width: rem(1px);
   border-color: rgba(255, 255, 255, 0.15) !important;
   border-radius: 0 !important;
   font-size: rem(16px);
 }
+
+.form-control::-webkit-input-placeholder {   /* WebKit, Blink, Edge */
+  color: #B7B7B7; 
+}
+
+.form-control:-moz-placeholder {  /* Mozilla Firefox 4 to 18 */
+  color: #B7B7B7; 
+} 
+
+.form-control::-moz-placeholder {   /* Mozilla Firefox 19+ */
+  color: #B7B7B7 
+}
+
+.form-control:-ms-input-placeholder {  /* Internet Explorer 10-11 */
+  color: #B7B7B7; 
+} 
+
+.form-control::-ms-input-placeholder { 
+  color: #B7B7B7; 
+} 
 
 /* Extra small devices (phones, 600px and down) */
 @media (min-width: 320px) and (max-width: 480px) { 
