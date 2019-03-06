@@ -48,6 +48,7 @@ export default {
   components: { Carousel, Slide, RecommendationCard },
   data() {
     return {
+      perPage: 4,
       paginationSize: 5,
       paginationPadding: 5,
       minSwipeDistance: 0,
