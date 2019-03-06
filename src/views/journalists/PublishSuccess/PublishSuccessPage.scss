@@ -32,6 +32,29 @@
     width: 100%;
   }
 
+  .preview-txtt{
+    margin-top: -0.292rem;
+  }
+
+  .preview-txt textarea {
+    width: 100%;
+    resize: none;
+    padding: 1rem;
+    outline: none;
+    border-top-left-radius: 0.125rem;
+    border-top-right-radius: 0.125rem;
+    border-bottom: none;
+  }
+
+  .preview-txtt textarea {
+    width: 100%;
+    resize: none;
+    padding: 1rem;
+    outline: none;
+    border-bottom-left-radius: 0.125rem;
+    border-bottom-right-radius: 0.125rem;
+  }
+
   .keysection {
     border-top: 0.063rem solid rgba(0, 0, 0, 0.15);
     border-bottom: 0.063rem solid rgba(0, 0, 0, 0.15);

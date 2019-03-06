@@ -83,7 +83,7 @@
      <!-- Publish Modal -->
     <div class="modal" id="successModal" tabindex="-1" role="dialog" aria-hidden="true">
        <div class="d-flex justify-content-end close-icon"  @click.prevent="closeModal">
-          <i class="fal fa-times fa-3x" style="color: white;"></i>
+          <i class="fal fa-times fa-3x text-white"></i>
         </div>
       <div class="modal-dialog modal-full" role="document">
         <div class="modal-content">
@@ -94,15 +94,21 @@
               </div>
           </success-alert>
           <div class="modal-body">
-            <h5>Share on social media</h5>
-            <div>
-              <p class="share-text">Automatically share on your social media</p>
-            </div>
-
-
-            <div class="d-flex justify-content-end mt-4">
-              <button class="btn btn-sm btn-primary" @click="goToPublish">Share</button>
-            </div>
+            <h5 class="mb-3">Share on social media</h5>
+            <form>
+              <div class="preview-txt">
+                <textarea type="text" placeholder="https://bloverse.com/posts/2019-atlantic-sun-mens-basketball-tournament-preview" disabled></textarea>
+              </div>
+               <div class="form-group preview-txtt">
+                <textarea type="text" placeholder="Say Something..." rows="1"></textarea>
+              </div>
+            </form>
+            <social-tags></social-tags>
+             <div class="modal-footer mt-3">
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-sm btn-primary" @click="goToPublish">Share</button>
+              </div>
+             </div>
             
           </div>
         </div>
@@ -114,11 +120,12 @@
 <script>
 import SuccessAlert from '@/components/SuccessAlert/SuccessAlert'
 import KeywordTags from '@/components/KeywordTags/KeywordTags'
+import SocialTags from '@/components/SocialTags/SocialTags'
 import Button from '@/components/Button/Button.vue';
 
 export default {
   components: {
-    SuccessAlert, KeywordTags, Button
+    SuccessAlert, KeywordTags, SocialTags, Button
   },
   data(){
     return {
@@ -144,7 +151,8 @@ export default {
         this.keyBullet = true;
         
       }else {
-        this.showKeyBtn = false  
+        this.showKeyBtn = false;
+        this.keyBullet = false; 
       }
     },
     addKey() {

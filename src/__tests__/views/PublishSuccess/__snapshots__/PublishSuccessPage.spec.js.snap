@@ -205,8 +205,7 @@ exports[`PublishSuccess Component should render correctly 1`] = `
       class="d-flex justify-content-end close-icon"
     >
       <i
-        class="fal fa-times fa-3x"
-        style="color: white;"
+        class="fal fa-times fa-3x text-white"
       />
     </div>
      
@@ -238,26 +237,48 @@ exports[`PublishSuccess Component should render correctly 1`] = `
         <div
           class="modal-body"
         >
-          <h5>
+          <h5
+            class="mb-3"
+          >
             Share on social media
           </h5>
            
-          <div>
-            <p
-              class="share-text"
+          <form>
+            <div
+              class="preview-txt"
             >
-              Automatically share on your social media
-            </p>
-          </div>
+              <textarea
+                disabled="disabled"
+                placeholder="https://bloverse.com/posts/2019-atlantic-sun-mens-basketball-tournament-preview"
+                type="text"
+              />
+            </div>
+             
+            <div
+              class="form-group preview-txtt"
+            >
+              <textarea
+                placeholder="Say Something..."
+                rows="1"
+                type="text"
+              />
+            </div>
+          </form>
+           
+          <social-tags-stub />
            
           <div
-            class="d-flex justify-content-end mt-4"
+            class="modal-footer mt-3"
           >
-            <button
-              class="btn btn-sm btn-primary"
+            <div
+              class="d-flex justify-content-end"
             >
-              Share
-            </button>
+              <button
+                class="btn btn-sm btn-primary"
+              >
+                Share
+              </button>
+            </div>
           </div>
         </div>
       </div>
