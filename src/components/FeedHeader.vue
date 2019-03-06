@@ -13,7 +13,39 @@
         </div>
 
         <div class="col-auto pt-1 hidden-xs">
-          <div class="float-right">
+          <div v-if="auth.loggedInUser">
+            <button class="btn btn-link text-dark" style="margin-top: -0.3rem;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar avatar-sm">
+                <img :src="auth.loggedInUser.image_url" alt class="avatar-img rounded-circle">
+              </div>
+              <span class="ml-2">
+                {{auth.loggedInUser.first_name}}&nbsp;{{auth.loggedInUser.last_name}}
+              </span>
+              <i class="fal fa-caret-down"></i>
+            </button>
+
+            <div class="dropdown-menu">
+              <router-link
+                :to="`/creators/${auth.loggedInUser.username}/dashboard`"
+                :class="{'dropdown-item': true, 'text-primary': currentRoute == 'journalist-dashboard'}">
+                <span>Dashboard</span>
+              </router-link>
+              <router-link
+                :to="`/creators/${auth.loggedInUser.username}/posts`"
+                :class="{'dropdown-item': true, 'text-primary': currentRoute == 'all-posts'}">
+                <span>My Posts</span>
+              </router-link>
+              <router-link
+                :to="`/creators/${auth.loggedInUser.username}/posts/create`"
+                :class="{'dropdown-item': true, 'text-primary': currentRoute == 'create-post'}">
+                <span>Create Content</span>
+              </router-link>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" @click.prevent="logout">Logout</a>
+            </div>
+          </div>
+
+          <div class="float-right" v-else>
             <router-link
               to="/creators/photocontest"
               class="btn btn-link text-uppercase text-dark"
@@ -72,7 +104,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["filterPosts"]),
+    ...mapActions(["filterPosts", "clearSession"]),
 
     filterCountry(country) {
       this.active_country = country;
@@ -94,6 +126,10 @@ export default {
 
     showMoreCats() {
       this.other_cats = this.general.categories;
+    },
+
+    logout() {
+      this.clearSession()
     }
   },
   computed: {
