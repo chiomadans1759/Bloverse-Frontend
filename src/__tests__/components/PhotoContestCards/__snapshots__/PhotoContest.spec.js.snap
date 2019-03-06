@@ -38,14 +38,9 @@ exports[`PhotoContest Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white photoContestCard"
+            class="card text-white photoContestCard d-flex justify-content-end"
+            style="background-image: url(test-file-stub);"
           >
-            <img
-              alt="trend image"
-              class="card-img"
-              src="@/assets/photo-contest-1.jpg"
-            />
-             
             <div
               class="card-img-overlay photoContestCard--overlay"
             >
@@ -61,18 +56,20 @@ exports[`PhotoContest Component should render correctly 1`] = `
                 </p>
                  
                 <p
-                  class="card-text photoContestCard--username"
+                  class="card-text photoContestCard--username mt-3"
                 >
                   <a
                     class="btn btn-primary initials"
                     href="#"
                     role="button"
-                  />
+                  >
+                    JD
+                  </a>
                    
                   <span
                     class="name"
                   >
-                    John Doe
+                    Johndoe
                   </span>
                 </p>
               </div>
@@ -85,14 +82,9 @@ exports[`PhotoContest Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white photoContestCard"
+            class="card text-white photoContestCard d-flex justify-content-end"
+            style="background-image: url(test-file-stub);"
           >
-            <img
-              alt="trend image"
-              class="card-img"
-              src="@/assets/photo-contest-1.jpg"
-            />
-             
             <div
               class="card-img-overlay photoContestCard--overlay"
             >
@@ -108,18 +100,20 @@ exports[`PhotoContest Component should render correctly 1`] = `
                 </p>
                  
                 <p
-                  class="card-text photoContestCard--username"
+                  class="card-text photoContestCard--username mt-3"
                 >
                   <a
                     class="btn btn-primary initials"
                     href="#"
                     role="button"
-                  />
+                  >
+                    JD
+                  </a>
                    
                   <span
                     class="name"
                   >
-                    John Doe
+                    Johndoe
                   </span>
                 </p>
               </div>
@@ -132,14 +126,9 @@ exports[`PhotoContest Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white photoContestCard"
+            class="card text-white photoContestCard d-flex justify-content-end"
+            style="background-image: url(test-file-stub);"
           >
-            <img
-              alt="trend image"
-              class="card-img"
-              src="@/assets/photo-contest-1.jpg"
-            />
-             
             <div
               class="card-img-overlay photoContestCard--overlay"
             >
@@ -155,18 +144,20 @@ exports[`PhotoContest Component should render correctly 1`] = `
                 </p>
                  
                 <p
-                  class="card-text photoContestCard--username"
+                  class="card-text photoContestCard--username mt-3"
                 >
                   <a
                     class="btn btn-primary initials"
                     href="#"
                     role="button"
-                  />
+                  >
+                    JD
+                  </a>
                    
                   <span
                     class="name"
                   >
-                    John Doe
+                    Johndoe
                   </span>
                 </p>
               </div>
@@ -179,14 +170,9 @@ exports[`PhotoContest Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white photoContestCard"
+            class="card text-white photoContestCard d-flex justify-content-end"
+            style="background-image: url(test-file-stub);"
           >
-            <img
-              alt="trend image"
-              class="card-img"
-              src="@/assets/photo-contest-1.jpg"
-            />
-             
             <div
               class="card-img-overlay photoContestCard--overlay"
             >
@@ -202,18 +188,20 @@ exports[`PhotoContest Component should render correctly 1`] = `
                 </p>
                  
                 <p
-                  class="card-text photoContestCard--username"
+                  class="card-text photoContestCard--username mt-3"
                 >
                   <a
                     class="btn btn-primary initials"
                     href="#"
                     role="button"
-                  />
+                  >
+                    JD
+                  </a>
                    
                   <span
                     class="name"
                   >
-                    John Doe
+                    Johndoe
                   </span>
                 </p>
               </div>
@@ -226,14 +214,9 @@ exports[`PhotoContest Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white photoContestCard"
+            class="card text-white photoContestCard d-flex justify-content-end"
+            style="background-image: url(test-file-stub);"
           >
-            <img
-              alt="trend image"
-              class="card-img"
-              src="@/assets/photo-contest-1.jpg"
-            />
-             
             <div
               class="card-img-overlay photoContestCard--overlay"
             >
@@ -249,18 +232,20 @@ exports[`PhotoContest Component should render correctly 1`] = `
                 </p>
                  
                 <p
-                  class="card-text photoContestCard--username"
+                  class="card-text photoContestCard--username mt-3"
                 >
                   <a
                     class="btn btn-primary initials"
                     href="#"
                     role="button"
-                  />
+                  >
+                    JD
+                  </a>
                    
                   <span
                     class="name"
                   >
-                    John Doe
+                    Johndoe
                   </span>
                 </p>
               </div>
@@ -273,14 +258,9 @@ exports[`PhotoContest Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white photoContestCard"
+            class="card text-white photoContestCard d-flex justify-content-end"
+            style="background-image: url(test-file-stub);"
           >
-            <img
-              alt="trend image"
-              class="card-img"
-              src="@/assets/photo-contest-1.jpg"
-            />
-             
             <div
               class="card-img-overlay photoContestCard--overlay"
             >
@@ -296,18 +276,20 @@ exports[`PhotoContest Component should render correctly 1`] = `
                 </p>
                  
                 <p
-                  class="card-text photoContestCard--username"
+                  class="card-text photoContestCard--username mt-3"
                 >
                   <a
                     class="btn btn-primary initials"
                     href="#"
                     role="button"
-                  />
+                  >
+                    JD
+                  </a>
                    
                   <span
                     class="name"
                   >
-                    John Doe
+                    Johndoe
                   </span>
                 </p>
               </div>
@@ -320,14 +302,9 @@ exports[`PhotoContest Component should render correctly 1`] = `
           tabindex="-1"
         >
           <main
-            class="card text-white photoContestCard"
+            class="card text-white photoContestCard d-flex justify-content-end"
+            style="background-image: url(test-file-stub);"
           >
-            <img
-              alt="trend image"
-              class="card-img"
-              src="@/assets/photo-contest-1.jpg"
-            />
-             
             <div
               class="card-img-overlay photoContestCard--overlay"
             >
@@ -343,18 +320,20 @@ exports[`PhotoContest Component should render correctly 1`] = `
                 </p>
                  
                 <p
-                  class="card-text photoContestCard--username"
+                  class="card-text photoContestCard--username mt-3"
                 >
                   <a
                     class="btn btn-primary initials"
                     href="#"
                     role="button"
-                  />
+                  >
+                    JD
+                  </a>
                    
                   <span
                     class="name"
                   >
-                    John Doe
+                    Johndoe
                   </span>
                 </p>
               </div>

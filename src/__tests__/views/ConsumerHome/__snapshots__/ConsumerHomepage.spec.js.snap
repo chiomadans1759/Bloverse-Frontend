@@ -4953,13 +4953,16 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard img-fluid"
+                        class="card text-white trendCard img-fluid d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-4.jpg"
-                        />
+                        <div
+                          class="bg-white trendCard--category p-2"
+                        >
+                          <p>
+                            Category
+                          </p>
+                        </div>
                          
                         <div
                           class="card-img-overlay trendCard--overlay"
@@ -4967,12 +4970,6 @@ exports[`Homepage Component should render correctly 1`] = `
                           <div
                             class="content trendCard--overlay__content"
                           >
-                            <p
-                              class="card-title trendCard--title"
-                            >
-                              Category
-                            </p>
-                             
                             <p
                               class="card-text font-weight-bold trendCard--text"
                             >
@@ -4982,18 +4979,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text trendCard--username"
+                              class="card-text trendCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -5006,13 +5005,16 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard img-fluid"
+                        class="card text-white trendCard img-fluid d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-4.jpg"
-                        />
+                        <div
+                          class="bg-white trendCard--category p-2"
+                        >
+                          <p>
+                            Category
+                          </p>
+                        </div>
                          
                         <div
                           class="card-img-overlay trendCard--overlay"
@@ -5020,12 +5022,6 @@ exports[`Homepage Component should render correctly 1`] = `
                           <div
                             class="content trendCard--overlay__content"
                           >
-                            <p
-                              class="card-title trendCard--title"
-                            >
-                              Category
-                            </p>
-                             
                             <p
                               class="card-text font-weight-bold trendCard--text"
                             >
@@ -5035,18 +5031,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text trendCard--username"
+                              class="card-text trendCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -5059,13 +5057,16 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard img-fluid"
+                        class="card text-white trendCard img-fluid d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-4.jpg"
-                        />
+                        <div
+                          class="bg-white trendCard--category p-2"
+                        >
+                          <p>
+                            Category
+                          </p>
+                        </div>
                          
                         <div
                           class="card-img-overlay trendCard--overlay"
@@ -5073,12 +5074,6 @@ exports[`Homepage Component should render correctly 1`] = `
                           <div
                             class="content trendCard--overlay__content"
                           >
-                            <p
-                              class="card-title trendCard--title"
-                            >
-                              Category
-                            </p>
-                             
                             <p
                               class="card-text font-weight-bold trendCard--text"
                             >
@@ -5088,18 +5083,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text trendCard--username"
+                              class="card-text trendCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -5112,13 +5109,16 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard img-fluid"
+                        class="card text-white trendCard img-fluid d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-4.jpg"
-                        />
+                        <div
+                          class="bg-white trendCard--category p-2"
+                        >
+                          <p>
+                            Category
+                          </p>
+                        </div>
                          
                         <div
                           class="card-img-overlay trendCard--overlay"
@@ -5126,12 +5126,6 @@ exports[`Homepage Component should render correctly 1`] = `
                           <div
                             class="content trendCard--overlay__content"
                           >
-                            <p
-                              class="card-title trendCard--title"
-                            >
-                              Category
-                            </p>
-                             
                             <p
                               class="card-text font-weight-bold trendCard--text"
                             >
@@ -5141,18 +5135,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text trendCard--username"
+                              class="card-text trendCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -5165,13 +5161,16 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard img-fluid"
+                        class="card text-white trendCard img-fluid d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-4.jpg"
-                        />
+                        <div
+                          class="bg-white trendCard--category p-2"
+                        >
+                          <p>
+                            Category
+                          </p>
+                        </div>
                          
                         <div
                           class="card-img-overlay trendCard--overlay"
@@ -5179,12 +5178,6 @@ exports[`Homepage Component should render correctly 1`] = `
                           <div
                             class="content trendCard--overlay__content"
                           >
-                            <p
-                              class="card-title trendCard--title"
-                            >
-                              Category
-                            </p>
-                             
                             <p
                               class="card-text font-weight-bold trendCard--text"
                             >
@@ -5194,18 +5187,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text trendCard--username"
+                              class="card-text trendCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -5218,13 +5213,16 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard img-fluid"
+                        class="card text-white trendCard img-fluid d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-4.jpg"
-                        />
+                        <div
+                          class="bg-white trendCard--category p-2"
+                        >
+                          <p>
+                            Category
+                          </p>
+                        </div>
                          
                         <div
                           class="card-img-overlay trendCard--overlay"
@@ -5232,12 +5230,6 @@ exports[`Homepage Component should render correctly 1`] = `
                           <div
                             class="content trendCard--overlay__content"
                           >
-                            <p
-                              class="card-title trendCard--title"
-                            >
-                              Category
-                            </p>
-                             
                             <p
                               class="card-text font-weight-bold trendCard--text"
                             >
@@ -5247,18 +5239,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text trendCard--username"
+                              class="card-text trendCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -5271,13 +5265,16 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard img-fluid"
+                        class="card text-white trendCard img-fluid d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-4.jpg"
-                        />
+                        <div
+                          class="bg-white trendCard--category p-2"
+                        >
+                          <p>
+                            Category
+                          </p>
+                        </div>
                          
                         <div
                           class="card-img-overlay trendCard--overlay"
@@ -5285,12 +5282,6 @@ exports[`Homepage Component should render correctly 1`] = `
                           <div
                             class="content trendCard--overlay__content"
                           >
-                            <p
-                              class="card-title trendCard--title"
-                            >
-                              Category
-                            </p>
-                             
                             <p
                               class="card-text font-weight-bold trendCard--text"
                             >
@@ -5300,18 +5291,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text trendCard--username"
+                              class="card-text trendCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -5324,13 +5317,16 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard img-fluid"
+                        class="card text-white trendCard img-fluid d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-4.jpg"
-                        />
+                        <div
+                          class="bg-white trendCard--category p-2"
+                        >
+                          <p>
+                            Category
+                          </p>
+                        </div>
                          
                         <div
                           class="card-img-overlay trendCard--overlay"
@@ -5338,12 +5334,6 @@ exports[`Homepage Component should render correctly 1`] = `
                           <div
                             class="content trendCard--overlay__content"
                           >
-                            <p
-                              class="card-title trendCard--title"
-                            >
-                              Category
-                            </p>
-                             
                             <p
                               class="card-text font-weight-bold trendCard--text"
                             >
@@ -5353,18 +5343,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text trendCard--username"
+                              class="card-text trendCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -5377,13 +5369,16 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard img-fluid"
+                        class="card text-white trendCard img-fluid d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-4.jpg"
-                        />
+                        <div
+                          class="bg-white trendCard--category p-2"
+                        >
+                          <p>
+                            Category
+                          </p>
+                        </div>
                          
                         <div
                           class="card-img-overlay trendCard--overlay"
@@ -5391,12 +5386,6 @@ exports[`Homepage Component should render correctly 1`] = `
                           <div
                             class="content trendCard--overlay__content"
                           >
-                            <p
-                              class="card-title trendCard--title"
-                            >
-                              Category
-                            </p>
-                             
                             <p
                               class="card-text font-weight-bold trendCard--text"
                             >
@@ -5406,18 +5395,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text trendCard--username"
+                              class="card-text trendCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -5430,13 +5421,16 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white trendCard img-fluid"
+                        class="card text-white trendCard img-fluid d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-4.jpg"
-                        />
+                        <div
+                          class="bg-white trendCard--category p-2"
+                        >
+                          <p>
+                            Category
+                          </p>
+                        </div>
                          
                         <div
                           class="card-img-overlay trendCard--overlay"
@@ -5444,12 +5438,6 @@ exports[`Homepage Component should render correctly 1`] = `
                           <div
                             class="content trendCard--overlay__content"
                           >
-                            <p
-                              class="card-title trendCard--title"
-                            >
-                              Category
-                            </p>
-                             
                             <p
                               class="card-text font-weight-bold trendCard--text"
                             >
@@ -5459,18 +5447,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text trendCard--username"
+                              class="card-text trendCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -9663,14 +9653,9 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white photoContestCard"
+                        class="card text-white photoContestCard d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-contest-1.jpg"
-                        />
-                         
                         <div
                           class="card-img-overlay photoContestCard--overlay"
                         >
@@ -9686,18 +9671,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text photoContestCard--username"
+                              class="card-text photoContestCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -9710,14 +9697,9 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white photoContestCard"
+                        class="card text-white photoContestCard d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-contest-1.jpg"
-                        />
-                         
                         <div
                           class="card-img-overlay photoContestCard--overlay"
                         >
@@ -9733,18 +9715,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text photoContestCard--username"
+                              class="card-text photoContestCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -9757,14 +9741,9 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white photoContestCard"
+                        class="card text-white photoContestCard d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-contest-1.jpg"
-                        />
-                         
                         <div
                           class="card-img-overlay photoContestCard--overlay"
                         >
@@ -9780,18 +9759,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text photoContestCard--username"
+                              class="card-text photoContestCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -9804,14 +9785,9 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white photoContestCard"
+                        class="card text-white photoContestCard d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-contest-1.jpg"
-                        />
-                         
                         <div
                           class="card-img-overlay photoContestCard--overlay"
                         >
@@ -9827,18 +9803,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text photoContestCard--username"
+                              class="card-text photoContestCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -9851,14 +9829,9 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white photoContestCard"
+                        class="card text-white photoContestCard d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-contest-1.jpg"
-                        />
-                         
                         <div
                           class="card-img-overlay photoContestCard--overlay"
                         >
@@ -9874,18 +9847,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text photoContestCard--username"
+                              class="card-text photoContestCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -9898,14 +9873,9 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white photoContestCard"
+                        class="card text-white photoContestCard d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-contest-1.jpg"
-                        />
-                         
                         <div
                           class="card-img-overlay photoContestCard--overlay"
                         >
@@ -9921,18 +9891,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text photoContestCard--username"
+                              class="card-text photoContestCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -9945,14 +9917,9 @@ exports[`Homepage Component should render correctly 1`] = `
                       tabindex="-1"
                     >
                       <main
-                        class="card text-white photoContestCard"
+                        class="card text-white photoContestCard d-flex justify-content-end"
+                        style="background-image: url(test-file-stub);"
                       >
-                        <img
-                          alt="trend image"
-                          class="card-img"
-                          src="@/assets/photo-contest-1.jpg"
-                        />
-                         
                         <div
                           class="card-img-overlay photoContestCard--overlay"
                         >
@@ -9968,18 +9935,20 @@ exports[`Homepage Component should render correctly 1`] = `
                             </p>
                              
                             <p
-                              class="card-text photoContestCard--username"
+                              class="card-text photoContestCard--username mt-3"
                             >
                               <a
                                 class="btn btn-primary initials"
                                 href="#"
                                 role="button"
-                              />
+                              >
+                                JD
+                              </a>
                                
                               <span
                                 class="name"
                               >
-                                John Doe
+                                Johndoe
                               </span>
                             </p>
                           </div>
@@ -14134,6 +14103,20 @@ exports[`Homepage Component should render correctly 1`] = `
                 </div>
               </main>
             </main>
+             
+            <div
+              class="mt-4 card p-3 view-more-button"
+            >
+              <span
+                class="view-more-text"
+              >
+                <i
+                  class="fal fa-long-arrow-down"
+                />
+                 View More Post
+                
+              </span>
+            </div>
           </div>
         </div>
       </div>

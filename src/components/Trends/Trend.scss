@@ -6,19 +6,36 @@
   height: 100%;
   height: rem(240px);
   border-radius: 0 !important;
-  &>img {
-    border-radius: 0 !important;
-    height: 100%;
+  background: center center no-repeat;
+  background-size: cover;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(transparent,#000000);
   }
   a{
     color: #fff;
   }
+
+  &--category {
+    width: rem(75px);
+    color: #096DD9;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    right: 10px;
+    font-size: rem(12px);
+  }
+
   &--overlay {
     position: relative;
     background-color: linear-gradient(red, yellow);
 
     &__content {
-      position: absolute;
       text-align: justify;
       align-items: baseline;
       bottom:  rem(60px);
@@ -41,8 +58,8 @@
     margin-top: rem(8px);
     font-weight: 600;
     .initials {
-      height: rem(16px);
-      width: rem(16px);
+      height: rem(24px);
+      width: rem(24px);
       font-size: rem(10px);
       text-align: center;
       padding: 0;
@@ -50,6 +67,10 @@
       padding-bottom: rem(1.5px);
       background-color: #868686;
       border: none;
+      border-radius: 50% !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .name {
       margin: 0 rem(5px);
@@ -68,15 +89,38 @@
     height: 100%;
     height: rem(240px);
     border-radius: 0 !important;
+    background-color: black;
+    background: center center no-repeat;
+    background-size: cover;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(transparent,#000000);
+    }
     &>img {
       border-radius: 0 !important;
     }
+
+    &--category {
+      width: rem(75px);
+      color: #096DD9;
+      position: absolute;
+      text-align: center;
+      top: 10px;
+      right: 10px;
+      font-size: rem(12px);
+    }
+
     &--overlay {
       position: relative;
       background-color: linear-gradient(red, yellow);
   
       &__content {
-        position: absolute;
         text-align: justify;
         align-items: baseline;
         bottom:  rem(60px);
@@ -98,8 +142,8 @@
       align-items: center;
       margin-top: rem(8px);
       .initials {
-        height: rem(16px);
-        width: rem(16px);
+        height: rem(24px);
+        width: rem(24px);
         font-size: rem(10px);
         text-align: center;
         padding: 0;
@@ -107,6 +151,10 @@
         padding-bottom: rem(1.5px);
         background-color: #868686;
         border: none;
+        border-radius: 50% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .name {
         margin: 0 rem(5px);

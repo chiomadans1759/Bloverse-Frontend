@@ -92,6 +92,20 @@
     top: 60.5%;
     right: rem(-1px);
   }
+
+  .view-more-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .view-more-button:hover {
+    cursor: pointer;
+  }
+
+  .view-more-text {
+    font-size: rem(16px);
+    color: #096DD9;
+  }
 }
 
 .bl-homepage__content--publishedPosts__feeds {

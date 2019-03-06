@@ -185,6 +185,11 @@
                 <post-cards/>
                 <photo-contest/>
                 <post-cards/>
+                <div class="mt-4 card p-3 view-more-button">
+                  <span class="view-more-text">
+                    <i class="fal fa-long-arrow-down"></i> View More Post
+                  </span>
+                </div>
               </div>
           </div>
         </div>
