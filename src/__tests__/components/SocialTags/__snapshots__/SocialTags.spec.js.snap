@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialTags Component should render correctly 1`] = `
+<main
+  id="social-tags"
+>
+  <div
+    class="item-content-block d-flex"
+  >
+    <div
+      class="card mr-2"
+    >
+      <div
+        class="card-content p-1"
+      >
+        <div
+          class="d-flex justify-content-between"
+        >
+          <span>
+            <p>
+              <i
+                class="fab fa-facebook d-blue"
+              />
+              <span
+                class="pl-2"
+              >
+                Facebook
+              </span>
+            </p>
+          </span>
+           
+          <span
+            class="ml-2 remove-icn"
+          >
+            <i
+              class="fal fa-times d-flex justify-content-end"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="card mr-2"
+    >
+      <div
+        class="card-content p-1"
+      >
+        <div
+          class="d-flex justify-content-between"
+        >
+          <span>
+            <p>
+              <i
+                class="fab fa-twitter s-blue"
+              />
+              <span
+                class="pl-2"
+              >
+                Twitter
+              </span>
+            </p>
+          </span>
+           
+          <span
+            class="ml-2 remove-icn"
+          >
+            <i
+              class="fal fa-times d-flex justify-content-end"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="card mr-2"
+    >
+      <div
+        class="card-content p-1"
+      >
+        <div
+          class="d-flex justify-content-between"
+        >
+          <span>
+            <p>
+              <i
+                class="fab fa-linkedin b-blue"
+              />
+              <span
+                class="pl-2"
+              >
+                Linkedin
+              </span>
+            </p>
+          </span>
+           
+          <span
+            class="ml-2 remove-icn"
+          >
+            <i
+              class="fal fa-times d-flex justify-content-end"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+</main>
+`;

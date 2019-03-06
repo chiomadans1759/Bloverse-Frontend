@@ -5,14 +5,14 @@
         <div class="card-content p-1">
           <div class="d-flex justify-content-between">
             <span v-html="link"></span>
-             <span class="ml-2 remove-icn" @click.prevent="removeItem()">
+             <span class="ml-2 remove-icn" @click.prevent="removeItem(index)">
               <i class="fal fa-times d-flex justify-content-end"></i>
              </span>
           </div>
         </div>
       </div>
-       <span class="morekeys" @click.prevent="refreshTags()">
-          <button class="btn rounded-btn-circle d-flex justify-content-center text">
+       <span class="morekeys" v-if="reloadSocial">
+          <button class="btn rounded-btn-circle d-flex justify-content-center text" @click.prevent="refreshTags()">
             <i class="fal fa-undo"></i>
           </button>
        </span>
@@ -28,15 +28,18 @@ export default {
         `<p><i class="fab fa-facebook d-blue"></i><span class="pl-2">Facebook</span></p>`,
         `<p><i class="fab fa-twitter s-blue"></i><span class="pl-2">Twitter</span></p>`,
         `<p><i class="fab fa-linkedin b-blue"></i><span class="pl-2">Linkedin</span></p>`
-      ]
+      ],
+      reloadSocial: false
     }
   },
   methods: {
     removeItem(index) {
       this.socialLinks.splice(index,1)
+      this.reloadSocial = true;
     },
     refreshTags() {
       this.socialLinks = JSON.parse(this.NewSocialLinks)
+      this.reloadSocial = false;
       
     }
   },
@@ -51,6 +54,7 @@ export default {
 
 #social-tags {
   width: 100%;
+  position: relative;
 }
 
 #social-tags .text {
@@ -66,7 +70,8 @@ export default {
 }
 
 #social-tags .morekeys {
-  margin-left: 7rem;
+  position: absolute;
+  right: 0;
 }
 
 </style>
