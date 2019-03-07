@@ -11,10 +11,8 @@
               <ul class="nav nav-tabs mb-3 justify-content-left" id="pills-tab" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active d-flex align-items-center" id="pills-general-tab" data-toggle="pill" href="#general-tab" role="tab" aria-controls="pills-general" aria-selected="true">General</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center" id="pills-contest-tab" data-toggle="pill" href="#photocontest-tab" role="tab" aria-controls="pills-contest" aria-selected="false">Photo Contest</a>
-                </li>
+                </li> 
+                <!-- add photocontest tab here to activate the rules -->
               </ul>
             </div>
           </div>
@@ -114,6 +112,7 @@
                   </div>
                 </div>
               </div>
+              <!-- photo contest rules -->
               <div class="tab-pane fade photocontest" id="photocontest-tab" role="tabpanel" aria-labelledby="photocontest-tab">
                 <div class="contest-content">
                   <p class="contest-header">

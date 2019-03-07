@@ -55,22 +55,6 @@ exports[`Terms And Conditions should render correctly 1`] = `
               General
             </a>
           </li>
-           
-          <li
-            class="nav-item"
-          >
-            <a
-              aria-controls="pills-contest"
-              aria-selected="false"
-              class="nav-link d-flex align-items-center"
-              data-toggle="pill"
-              href="#photocontest-tab"
-              id="pills-contest-tab"
-              role="tab"
-            >
-              Photo Contest
-            </a>
-          </li>
         </ul>
       </div>
     </div>
