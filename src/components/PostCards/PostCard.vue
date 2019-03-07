@@ -4,9 +4,9 @@
     style="width: 18rem;"
     class="card rounded-0 mt-4 pb-0 pt-2 px-2 border-top bl-postcard"
   >
-    <div :class="['row mx-0', { 'flex-row-reverse': listView }]">
-      <div
-        :class="[{ 'col-4 bl-postcard-image-list': listView, 'col-12 bl-postcard-image': !listView, }]"
+    <div class="d-none d-sm-block" :class="['row mx-0', { 'flex-row-reverse': listView }]">
+    <div class="d-none d-sm-flex" :class="['row mx-0', { 'flex-row-reverse': listView }]">
+      <div :class="[{ 'col-4 read-later-image-list': listView, 'col-12 read-later-image': !listView, }]"
         :style="{backgroundImage: 'url(' + readLaterImage + ')'}"
       >
         <button
@@ -75,15 +75,36 @@
           <p v-if="hideMainActions" class="col-12 mt-2 p-0 text-capitalize keypoints">
             show keypoints
           </p>
+          <p v-show="!showKeypoints" @click="toggleKeypoints" class="col-4 p-0 text-right text-capitalize keypoints">
+            show keypoints
+          </p>
+          <p v-show="showKeypoints" @click="toggleKeypoints" class="col-4 p-0 text-right text-capitalize keypoints">
+            hide keypoints
+          </p>
+        </div>
+
+        <div v-if="showKeypoints" class="keypoints">
+          <div class="py-3">
+            <p class="font-weight-bold mb-2">Keypoints</p>
+            <div class="d-flex">
+              <p class="keypoint"></p>
+              <p>Lorem ipsum dolor sit amet, vel accumsam iberaviss ex, ea nec</p>
+            </div>
+            <div class="d-flex">
+              <p class="keypoint"></p>
+              <p>Lorem ipsum dolor sit amet, vel accumsam iberaviss</p>
+            </div>
+            <div class="d-flex">
+              <p class="keypoint"></p>
+              <p>Lorem ipsum dolor sit amet, vel accumsam iss</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div v-if="!hideMainActions" 
-      :class="['row px-0 border bg-white card-footer border-bottom-0 border-left-0 border-left-0 border-top',
-        { 'mt-1': listView }]"
-    >
+    <div class="d-none d-sm-flex" :class="['row px-0 border bg-white card-footer', { 'mt-1': listView }]">
       <div class="col-6 row mx-0 actions--a">
-        <div class="col-6 d-flex justify-content-between border-right likes">
+        <div class="col-4 d-flex justify-content-around border-right px-0 likes">
           <p class="thumbs-up" v-show="!likePost">
             <span class="border rounded-circle mr-1 icons thumbs-up-icon" @click="toggleLike">
               <i class="fal fa-thumbs-up"></i>
@@ -109,7 +130,7 @@
             <span class="count">1</span>
           </p>
         </div>
-        <div class="col-6 d-flex justify-content-start share">
+        <div class="col-8 d-flex justify-content-start share">
           <p class="share" v-show="!share">
             <span class="border rounded-circle mr-1 share icons" @click="toggleShare">
               <i class="fal fa-share"></i>
@@ -226,6 +247,160 @@
         </div>
       </div>
     </div>
+    </div>
+    <!-- Mobile View Start -->
+    <div class="d-sm-none p-2">
+      <div class="row">
+        <div class="col-9">
+          <p class="font-weight-light">Category</p>
+          <p class="font-weight-bold card-title">
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec
+            Lorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea necLorem ipsum dolor sit amet, vel accumsan iberaviss ex, ea nec.</p>
+        </div>
+        <div class="col-3">
+          <img class="img-fluid" src="@/assets/readLaterImg.jpg" />
+        </div>
+      </div>
+      <div class="d-flex mt-2">
+        <p class="username">
+            <a class="btn btn-primary mr-1 text-uppercase initials"
+              href="#" role="button" v-if="!hideUsername"
+            >
+              XS
+            </a>
+            &nbsp;
+            <span class="font-weight-bold name" v-if="!hideUsername">username</span>
+            &nbsp;
+            <span class="time">1 min ago</span>
+        </p>
+      </div>
+      <div v-if="showKeypoints" class="keypoints mt-2">
+          <p class="font-weight-bold mb-2">Keypoints</p>
+          <div class="d-flex">
+            <p class="keypoint"></p>
+            <p>Lorem ipsum dolor sit amet, vel accumsam iberaviss ex, ea nec</p>
+          </div>
+          <div class="d-flex">
+            <p class="keypoint"></p>
+            <p>Lorem ipsum dolor sit amet, vel accumsam iberaviss</p>
+          </div>
+          <div class="d-flex">
+            <p class="keypoint"></p>
+            <p>Lorem ipsum dolor sit amet, vel accumsam iss</p>
+          </div>
+      </div>
+      <div class="row mt-2 px-2">
+        <div class="col-6">
+          <span class="icons icon-gray">
+            <i class="fal fa-eye mr-1"></i> <span class="text-dark">123</span>
+          </span>
+        </div>
+        <div class="col-6 d-flex justify-content-around">
+          <p v-show="!likePost">
+          <span class="icons icon-blue" @click="toggleLike">
+            <i class="far fa-thumbs-up mr-1"></i> <span class="text-dark">18</span>
+          </span>
+          </p>
+          <p v-show="likePost">
+            <span class="icons icon-blue" @click="toggleLike">
+              <i class="fas fa-thumbs-up mr-1"></i> <span class="text-dark">18</span>
+            </span>
+          </p>
+          <p v-show="!dislikePost">
+            <span class="icons icon-blue" @click="toggleDislike">
+              <i class="far fa-thumbs-down mr-1"></i> <span class="text-dark">1</span>
+            </span>
+          </p>
+          <p v-show="dislikePost">
+            <span class="icons icon-blue" @click="toggleDislike">
+              <i class="fas fa-thumbs-down mr-1"></i> <span class="text-dark">1</span>
+            </span>
+          </p>
+          <div>
+            <p class="px-2"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              @click="positionDropdownArrow"
+            >
+              <span
+                class="icons border-right border-left px-2 text-dark">
+                <i class="far fa-ellipsis-h"></i>
+              </span>
+            </p>
+            <div :class="['dropdown-menu', 'bl-dropdown-menu',
+              { 'top-dropdown': !dropdownArrowDown , 'bottom-dropdown': dropdownArrowDown }]"
+              aria-labelledby="dropdownMenuReference" ref="dropdown"
+            >
+              <div class="d-flex bl-dropdown-menu__countries">
+                <div class="favourite-countries">
+                  <p class="dropdown-item country">Report Post</p>
+                  <hr>
+                  <hr>
+                  <p class="dropdown-item country" v-show="isConsumer">
+                    <i class="fal fa-times"></i>
+                    <span class="count">remove</span>
+                  </p>
+                  <p class="dropdown-item country">
+                    <i class="fal fa-plus mr-2"></i>
+                    <span class="count">Creators Profile</span>
+                  </p>
+                  <div class="d-md-none">
+                  <p class="dropdown-item country">
+                    <i class="fal fa-comment-dots mr-2"></i>
+                    <span class="count">Comment
+                      <span class="badges">5</span>
+                    </span>
+                  </p>
+                  <p class="dropdown-item country hidden-lg-down">
+                    <i class="fal fa-share mr-2"></i>
+                    <span class="count">Share
+                      <span class="badges">5</span>
+                    </span>
+                  </p>
+                  </div>
+                  <p class="dropdown-item country toggle-bookmark" 
+                    v-show="!addBookmark && !isConsumer"
+                    @click="toggleBookmark()"
+                  >
+                    <i class="fal fa-bookmark mr-2"></i>
+                    <span class="count">Read Later</span>
+                  </p>
+                  <p class="dropdown-item country toggle-bookmark" v-show="addBookmark && !isConsumer" @click="toggleBookmark()">
+                    <i class="fas fa-bookmark mr-2"></i>
+                    <span class="count">Read Later</span>
+                  </p>
+                  <hr>
+                  <hr>
+                  <p class="dropdown-item country toggle-story" v-show="!readStory" @click="toggleReadStory()">
+                    <i class="fal fa-book-open mr-2"></i>
+                    <span class="count">Read Story</span>
+                  </p>
+                  <p class="dropdown-item country toggle-story" v-show="readStory" @click="toggleReadStory()">
+                    <i class="fas fa-book-open mr-2"></i>
+                    <span class="count">Read Story</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p v-show="showKeypoints">
+            <span class="icons angle-icon text-dark" @click="toggleKeypoints">
+              <i class="fal fa-angle-up"></i>
+            </span>
+          </p>
+          <p v-show="!showKeypoints">
+            <span class="icons angle-icon text-dark" @click="toggleKeypoints">
+              <i class="fal fa-angle-down"></i>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile View Ends -->
   </main>
 </template>
 
@@ -244,8 +419,9 @@ export default {
       dropdownArrowDown: false,
       share: false,
       bookmarked: false,
-      isConsumer: true
-    };
+      isConsumer: true,
+      showKeypoints: false,
+    }
   },
   props: {
     listView: {
@@ -289,6 +465,9 @@ export default {
       if (dropdownPositon === "top-start") {
         this.dropdownArrowDown = true;
       }
+    },
+    toggleKeypoints() {
+      this.showKeypoints = !this.showKeypoints;
     }
   }
 };

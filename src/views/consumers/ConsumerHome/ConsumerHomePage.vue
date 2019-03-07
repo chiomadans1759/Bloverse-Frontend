@@ -180,25 +180,31 @@
               </div>
             </div>
               <div v-else>
-                <post-cards/>
+                <post-cards />
                 <trends/>
                 <post-cards/>
                 <photo-contest/>
                 <post-cards/>
+                <div class="mt-4 card p-3 view-more-button">
+                  <span class="view-more-text">
+                    <i class="fal fa-long-arrow-down"></i> View More Post
+                  </span>
+                </div>
               </div>
           </div>
         </div>
 
         <div
-          class="col-sm-4 d-none d-md-inline-block bl-homepage__content--publishedPosts__competition"
+          class="col-sm-4 d-none d-md-inline-block pt-4 bl-homepage__content--publishedPosts__competition"
         >
           <div class="card contest-advert">
             <div class="card-img-overlay">
-              <h1 class="card-title text-capitalize">Photo Contest
-                <br>Competition
+              <h1 class="card-title text-capitalize">Become a Content Creator
+                <br>
               </h1>
-              <p class="card-text text-capitalize caption">'The story behind photos'</p>
-              <router-link role="button" to="/photocontest" class="btn know-more-btn">Know more</router-link>
+              <p class="card-text text-capitalize caption">Publish your article to the world</p>
+              <router-link role="button" to="/photocontest" class="btn know-more-btn">Apply</router-link>
+              <div class="robot-image"></div>
             </div>
           </div>
           <div class="bl-footer">
@@ -213,6 +219,7 @@
             <p class="row company-rights text-capitalize">2019 Bloverse. All Right Reserved</p>
           </div>
         </div>
+        <creator-publish-icon class="d-block d-md-none" />
       </div>
     </div>
   </main>
@@ -223,6 +230,7 @@ import PostCards from "@/components/PostCards/PostCards";
 import Trends from "@/components/Trends/Trends";
 import PhotoContest from "@/components/PhotoContestCards/PhotoContest";
 import CountryOptions from "@/components/CountryOptions/CountryOptions";
+import CreatorPublishIcon from '@/components/CreatorPublishIcon/CreatorPublishIcon';
 
 export default {
   name: "ConsumerHomePage",
@@ -231,6 +239,7 @@ export default {
     Trends,
     PhotoContest,
     CountryOptions,
+    CreatorPublishIcon,
   },
   data() {
     return {

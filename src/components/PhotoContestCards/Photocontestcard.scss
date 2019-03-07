@@ -5,6 +5,18 @@
   height: 100%;
   height: rem(192px);
   border-radius: 0 !important;
+  background: center center no-repeat;
+  background-size: cover;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(transparent,#000000);
+  }
+
   &>img {
     border-radius: 0 !important;
     height: 100%;
@@ -14,8 +26,6 @@
     background-color: linear-gradient(red, yellow);
 
     &__content {
-      position: absolute;
-      text-align: justify;
       align-items: baseline;
       bottom: rem(60px);
       padding-right: rem(16px);
@@ -34,15 +44,19 @@
     margin: rem(5px) 0;
     
     .initials {
-      height: rem(16px);
-      width: rem(16px);
-      font-size: rem(10px);
+      height: rem(24px);
+      width: rem(24px);
+      font-size: rem(8px);
       text-align: center;
       padding: 0;
       padding-top: rem(1.5px);
       padding-bottom: rem(1.5px);
       background-color: #868686;
       border: none;
+      border-radius: 50% !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .name {
       margin: 0 rem(5px);
@@ -54,8 +68,19 @@
   .photoContestCard {
     width: rem(272px);
     height: 100%;
-    height: rem(192px);
+    height: rem(296px);
     border-radius: 0 !important;
+    background: center center no-repeat;
+    background-size: cover;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(transparent,#000000);
+    }
     &>img {
       border-radius: 0 !important;
       height: 100%;
@@ -65,8 +90,6 @@
       background-color: linear-gradient(red, yellow);
   
       &__content {
-        position: absolute;
-        text-align: justify;
         align-items: baseline;
         bottom: rem(60px);
         padding-right: rem(16px);
@@ -83,15 +106,19 @@
       justify-content: flex-start;
       align-items: center;
       .initials {
-        height: rem(16px);
-        width: rem(16px);
-        font-size: rem(10px);
+        height: rem(24px);
+        width: rem(24px);
+        font-size: rem(8px);
         text-align: center;
         padding: 0;
         padding-top: rem(1.5px);
         padding-bottom: rem(1.5px);
         background-color: #868686;
         border: none;
+        border-radius: 50% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .name {
         margin: 0 rem(5px);

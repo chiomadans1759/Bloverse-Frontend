@@ -14,7 +14,7 @@
         <div class="col-lg-12 mt-2">
           <div class="card contest-advert">
             <div class="card-img-overlay">
-              <h3 class="card-title font-weight-bold">
+              <h3 class="card-title">
                 Become a Content Creator
               </h3>
               <p class="card-text font-weight-bold caption">
