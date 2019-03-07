@@ -45,19 +45,19 @@
     <div style="margin-top: -3rem;">
       <div class="row" v-if="current_section == 'all'">
         <div class="col-md-4" v-for="post in journalist.journalistPosts" :key="post.id">
-          <draft-card :post="post"/>
+          <draft-card :post="post" :current_tab="'all'" />
         </div>
       </div>
 
       <div class="row" v-if="current_section == 'published'">
         <div class="col-md-4" v-for="post in journalist.JournalistPublishedPosts" :key="post.id">
-          <draft-card :post="post" @unpublished="getMyPosts" />
+          <draft-card @unpublished="getMyPosts" :post="post" :current_tab="'published'" />
         </div>
       </div>
 
       <div class="row" v-if="current_section == 'draft'">
         <div class="col-md-4" v-for="draft in journalist.draftPosts" :key="draft.id">
-          <draft-card :post="draft"/>
+          <draft-card :post="draft" :current_tab="'draft'" />
         </div>
       </div>
 

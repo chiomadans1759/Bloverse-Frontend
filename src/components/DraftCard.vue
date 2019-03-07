@@ -102,7 +102,6 @@
         </h4>
 
         <div class="text-center">
-          <h2>{{post.id}}</h2>
           <router-link 
             :to="`/posts/${post.slug}`" 
             class="btn btn-primary btn-sm mr-2" 
@@ -120,7 +119,7 @@
           <button 
             class="btn btn-primary btn-sm ml-2" 
             style="border-radius: 2px;"
-            v-if="post.is_published == true"
+            v-if="post.is_published == true && current_tab == 'published'"
             data-toggle="modal" 
             data-target="#confirmModal">
               Unpublish
@@ -145,7 +144,10 @@
 
               <div class="my-5">
                 <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary ml-2" @click.prevent="unpublishPost">Unpublish</button>
+                <button 
+                  type="button" 
+                  class="btn btn-primary ml-2" 
+                  @click.prevent="unpublishPost">Unpublish</button>
               </div>
             </div>
           </div>
@@ -160,7 +162,7 @@ import { mapState, mapActions } from "vuex";
 
 export default {
   name: "draft-card",
-  props: { post: Object },
+  props: { post: Object, current_tab: String },
   methods: {
     ...mapActions(["processPost"]),
 
