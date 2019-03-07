@@ -39,8 +39,6 @@
 /* Extra small devices (phones, 600px and down) */
 @media (min-width: 320px) and (max-width: 480px) { 
   .defaultClass {
-    background-color: #FFFFFF !important;
-    border-color: rgba(255, 255, 255, 0.15) !important;
-    color: #868686 !important;
+    width: 19rem;
   }
 }

@@ -165,16 +165,6 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media (min-width: 320px) and (max-width: 480px) {
-.sign-up-container {
-    background-color: #F5F5F5;
-    color: #252525;
-    background-image: none;
-  }
-
-  .sign-up-new-bloverse-text {
-    color: #565656;
-  }
-
   .logo {
     visibility: hidden;
     padding-left: 0.25rem;
@@ -186,5 +176,10 @@
 
   .sign-up-social-button {
     background-color: #ffffff !important;
+    width: 19rem;
+  }
+
+  .primary-button {
+    width: 19rem;
   }
 }

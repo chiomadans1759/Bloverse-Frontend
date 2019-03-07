@@ -149,8 +149,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                     />
                   </span>
                   
-            Profile
-          
+              Profile
+            
                 </a>
                  
                 <div
@@ -168,8 +168,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                     />
                   </span>
                   
-            Settings
-          
+              Settings
+            
                 </a>
                  
                 <div
@@ -188,8 +188,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                     />
                   </span>
                   
-            Sign Out
-          
+              Sign Out
+            
                 </a>
               </div>
             </div>
@@ -207,8 +207,9 @@ exports[`PhotoContest Component should render correctly 1`] = `
                 <a
                   class="nav-link"
                 >
-                  Home
-            
+                  
+              Home
+              
                   <span
                     class="sr-only"
                   >
@@ -345,8 +346,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                       />
                     </span>
                     
-              Profile
-            
+                Profile
+              
                   </a>
                    
                   <div
@@ -364,8 +365,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                       />
                     </span>
                     
-              Settings
-            
+                Settings
+              
                   </a>
                    
                   <div
@@ -384,8 +385,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                       />
                     </span>
                     
-              Sign Out
-            
+                Sign Out
+              
                   </a>
                 </div>
               </div>
@@ -478,7 +479,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                       name="feedback-type"
                       type="radio"
                     />
-                      Bug
+                     Bug
+      
                   </label>
                    
                   <label
@@ -488,7 +490,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                       name="feedback-type"
                       type="radio"
                     />
-                      Comment
+                     Comment
+      
                   </label>
                    
                   <label
@@ -498,7 +501,8 @@ exports[`PhotoContest Component should render correctly 1`] = `
                       name="feedback-type"
                       type="radio"
                     />
-                      Other
+                     Other
+      
                   </label>
                 </div>
               </div>

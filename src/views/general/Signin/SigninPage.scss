@@ -16,7 +16,7 @@
 }
 
 .sign-in-content {
-  min-height: calc(100vh - 100px); 
+  min-height: calc(100vh - 170px);
   position: relative;
 }
 
@@ -71,14 +71,6 @@
 }
 
 // These styles apply to other pages 
-.bottom {
-  margin: auto;
-  width: 100%;
-  bottom: 0;
-  text-align: center;
-  padding: rem(10px);
-}
-
 .bloverse {
   font-size: rem(14px);
   font-weight: 900;
@@ -99,12 +91,6 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media (min-width: 320px) and (max-width: 600px) {
-  .sign-in-container {
-    background-color: #F5F5F5;
-    color: #252525;
-    background-image: none;
-  }
-
   .top {
     padding-top: 0.60rem;
     background-color: #ffffff;
@@ -116,15 +102,16 @@
     color: #000000;
   }
 
-  .svg-inline--fa.fa-w-14 {
-    color: #252525;
-  }
-
   .sign-in-social-button {
+    width: 19rem;
     background-color: #ffffff !important;
   }
 
   .secondary-button {
-    background-color: #ffffff !important;
+    width: 18rem;
+  }
+
+  .sign-in-primary-button {
+    width: 18rem;
   }
 }

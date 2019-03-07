@@ -4,43 +4,177 @@ exports[`Signup Page should render correctly 1`] = `
 <div
   class="sign-up-container"
 >
-  <div
-    class="top"
+  <header
+    id="feeds-header"
   >
-    <div>
-      <span
-        class="top-left-container"
+    <nav
+      class="navbar navbar-expand-lg navbar-light px-5 transparent alt-button"
+    >
+      <div
+        class="container-fluid auth-nav"
       >
         <a
-          href="/login"
+          class="backlink mr-4"
         >
-          <i
-            class="fal fa-long-arrow-left fa-2x"
-          />
-           
-          <span
-            class="back-text"
+          <div
+            class="btn rounded-btn-circle d-flex justify-content-center"
           >
-            Back
-          </span>
+            <i
+              class="fal fa-arrow-left back-icon"
+            />
+          </div>
         </a>
+         
+        <span
+          class="back-text"
+        >
+          Back
+        </span>
          
         <a
           class="router-link"
         >
-          <img
-            class="logo"
-            src="@/assets/Bloverse-white.svg"
-          />
+          <!---->
            
           <img
-            class="blue-logo"
-            src="@/assets/Bloverse.svg"
+            class="nav-logo"
+            src="@/assets/Bloverse-white.svg"
           />
         </a>
-      </span>
-    </div>
-  </div>
+         
+        <!---->
+         
+        <!---->
+      </div>
+    </nav>
+     
+    <main
+      id="bl-modal"
+    >
+      <div
+        aria-hidden="true"
+        aria-labelledby="customModal"
+        class="modal fade"
+        id="feedback-modal"
+        role="dialog"
+        tabindex="-1"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered"
+          role="document"
+        >
+          <div
+            class="modal-content"
+          >
+            <div
+              class="modal-header darkBackground"
+            >
+              <!---->
+               
+              <div>
+                <h6>
+                  <strong
+                    class="alt-title"
+                  >
+                    Send Us Some Feedback
+                  </strong>
+                </h6>
+                 
+                <h6
+                  class="mt-2 sub-title"
+                >
+                  Found a bug? Have a suggestion?. Fill out the form below and we'll take a look!
+                </h6>
+              </div>
+               
+              <button
+                aria-label="Close"
+                class="close"
+                data-dismiss="modal"
+                type="button"
+              >
+                <span
+                  aria-hidden="true"
+                >
+                  ×
+                </span>
+              </button>
+            </div>
+             
+            <div
+              class="modal-body"
+            >
+              <div
+                class="bl-modal-content"
+              >
+                <p>
+                  Enter your feedback here!
+                </p>
+                 
+                <textarea
+                  class="form-control mb-2 p-1"
+                />
+                 
+                <label
+                  class="ml-1 mr-3"
+                >
+                  <input
+                    name="feedback-type"
+                    type="radio"
+                  />
+                   Bug
+      
+                </label>
+                 
+                <label
+                  class="mr-3"
+                >
+                  <input
+                    name="feedback-type"
+                    type="radio"
+                  />
+                   Comment
+      
+                </label>
+                 
+                <label
+                  class="mr-3"
+                >
+                  <input
+                    name="feedback-type"
+                    type="radio"
+                  />
+                   Other
+      
+                </label>
+              </div>
+            </div>
+             
+            <div
+              class="modal-footer"
+            >
+              <button
+                class="btn btn-outline-primary"
+                data-dismiss="modal"
+                type="button"
+              >
+                
+              Close
+            
+              </button>
+               
+              <button
+                class="btn btn-primary"
+                type="button"
+              >
+                Send Feedback
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </header>
    
   <div
     class="sign-up-content d-flex flex-column justify-content-center align-items-center"
@@ -58,7 +192,7 @@ exports[`Signup Page should render correctly 1`] = `
         Lorem ipsum dolor sit amet, vel
         
         <br />
-         accumsanliberse ex, ea nec
+        accumsanliberse ex, ea nec
       
       </h4>
        
@@ -193,17 +327,15 @@ exports[`Signup Page should render correctly 1`] = `
       <h4
         class="sign-up-terms-and-privacy"
       >
+        By creating an account, you agree to our
         
-      By creating an account, you agree to our
-      
         <a
           class="sign-up-link-text"
         >
           Terms
         </a>
+        and
         
-      and
-      
         <a
           class="sign-up-link-text"
         >
@@ -219,7 +351,7 @@ exports[`Signup Page should render correctly 1`] = `
             class="sign-up-new-bloverse-text"
           >
             Have an account?
-        
+          
             <a
               class="signup-login-text"
             >
@@ -236,21 +368,19 @@ exports[`Signup Page should render correctly 1`] = `
       <h2
         class="sign-up-creator-text"
       >
-        Content creator? 
-      
+        Content creator?
+        
         <a
           class="router-link sign-up-apply-now-text"
         >
-          
-        Apply
-      
+          Apply
         </a>
       </h2>
     </div>
   </div>
    
   <div
-    class="bottom"
+    class="text-center m-3"
   >
     <p>
       <span
@@ -258,7 +388,9 @@ exports[`Signup Page should render correctly 1`] = `
       >
         Bloverse
       </span>
-       2019. All Right reserved
+      
+      2019. All Right reserved
+    
     </p>
   </div>
 </div>

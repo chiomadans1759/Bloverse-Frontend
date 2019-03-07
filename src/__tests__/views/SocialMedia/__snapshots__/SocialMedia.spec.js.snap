@@ -16,7 +16,6 @@ exports[`SocialMedia Component should render correctly 1`] = `
       >
         <a
           class="backlink mr-4"
-          href="/settings"
         >
           <div
             class="btn rounded-btn-circle d-flex justify-content-center"
@@ -124,7 +123,8 @@ exports[`SocialMedia Component should render correctly 1`] = `
                     name="feedback-type"
                     type="radio"
                   />
-                    Bug
+                   Bug
+      
                 </label>
                  
                 <label
@@ -134,7 +134,8 @@ exports[`SocialMedia Component should render correctly 1`] = `
                     name="feedback-type"
                     type="radio"
                   />
-                    Comment
+                   Comment
+      
                 </label>
                  
                 <label
@@ -144,7 +145,8 @@ exports[`SocialMedia Component should render correctly 1`] = `
                     name="feedback-type"
                     type="radio"
                   />
-                    Other
+                   Other
+      
                 </label>
               </div>
             </div>

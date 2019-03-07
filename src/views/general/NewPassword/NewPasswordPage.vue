@@ -1,17 +1,11 @@
 <template>
   <div class="new-password-container">
-    <div class="top">
-      <span class="top-left-container">
-        <a href="/">
-          <i class="fal fa-long-arrow-left fa-2x"></i>
-          <span class="back-text">Back</span>
-        </a>
-        <router-link to="/" class="router-link">
-          <img class="logo" src="@/assets/Bloverse-white.svg">
-          <img class="blue-logo" src="@/assets/Bloverse.svg">
-        </router-link>
-      </span>
-    </div>
+    <navbar
+      :showBackArrow="showBackArrow"
+      :showNavigations="showNavigations"
+      customClass="auth-nav"
+      isTransparent
+    />
     <div class="new-password-content d-flex flex-column justify-content-center align-items-center">
       <div>
         <h4 class="new-password-intro-one">New Password</h4>
@@ -41,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="password-bottom">
+    <div class="text-center m-3">
       <p>
         <span class="bloverse">Bloverse</span>
         {{year}}. All Right reserved
@@ -53,17 +47,21 @@
 <script>
 import Button from "@/components/Button/Button.vue";
 import TextInput from "@/components/TextInput/TextInput.vue";
+import Navbar from "@/components/Navbar/Navbar.vue";
 
 export default {
   data() {
     return {
       email: "",
-      year: new Date().getFullYear()
+      year: new Date().getFullYear(),
+      showNavigations: false,
+      showBackArrow: true
     };
   },
   components: {
     Button,
-    TextInput
+    TextInput,
+    Navbar
   },
   methods: {
     onChange: function(event) {

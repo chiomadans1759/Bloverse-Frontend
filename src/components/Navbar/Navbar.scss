@@ -212,7 +212,9 @@ nav {
   }
 }
 
-#feeds-header {
+.back-nav {
+  display: flex !important;
+  justify-content: start !important;
   .backlink {
     margin: 0 rem(-5px);
     color: #096DD9;
@@ -227,6 +229,35 @@ nav {
     color: #000000;
     font-size: rem(12px);
     margin-right: rem(20px);
+  }
+}
+
+.auth-nav {
+  display: flex !important;
+  justify-content: start !important;
+  .backlink {
+    margin: 0 rem(-5px);
+    color: #096DD9;
+    .rounded-btn-circle {
+      border-radius: 50% !important;
+      border-color: #aaaaaa;
+      margin-right: rem(-17px);
+      padding: rem(4px);
+      background-color: #ffffff;
+    }
+  }
+  .back-text {
+    color: #ffffff;
+    font-size: rem(12px);
+    margin-right: rem(20px);
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 320px){ 
+  .auth-nav {
+    .back-text {
+      margin-right: rem(40px);
+    }
   }
 }
 
@@ -392,11 +423,6 @@ nav {
     border: none !important;
     color: #ffffff !important;
   }
-}
-
-.back-nav {
-  display: flex !important;
-  justify-content: start !important;
 }
 
 .navbar-light .navbar-toggler {
