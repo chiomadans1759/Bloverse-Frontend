@@ -12,7 +12,7 @@ describe('PostCards Component', () => {
     const usernames = wrapper.findAll('.name');
 
     expect(wrapper.element).toMatchSnapshot();
-    expect(usernames.length).toEqual(5);
+    expect(usernames.length).toEqual(10);
   });
 
   it('should hide username', () => {

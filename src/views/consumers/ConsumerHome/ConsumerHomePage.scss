@@ -79,6 +79,33 @@
     padding: 1rem 7.5rem;
     border-bottom: rem(1px) solid #eeeeee;
   }
+
+  .robot-image {
+    background-image: url('../../../assets/Group_11.svg');
+    background-color: transparent;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: rem(80px);
+    position: absolute;
+    top: 60.5%;
+    right: rem(-1px);
+  }
+
+  .view-more-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .view-more-button:hover {
+    cursor: pointer;
+  }
+
+  .view-more-text {
+    font-size: rem(16px);
+    color: #096DD9;
+  }
 }
 
 .bl-homepage__content--publishedPosts__feeds {
@@ -116,7 +143,7 @@
         &>a {
           margin: 0 rem(10px);
           padding: rem(6px) 0;
-          padding-bottom: rem(16px);
+          padding-bottom: rem(7px);
           font-size: rem(14px);
           height: 100%;
           color: #868686;
@@ -264,8 +291,12 @@
   width: 100%;
   margin-bottom: rem(50px);
   .contest-advert {
-    background: #ffffff;
-    background-image: url('../../../assets/Mask-group-15.svg');
+    overflow: hidden;
+    background: #f6e5d9;
+    background-image: url('../../../assets/Group_975.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
     height: rem(200px);
     margin: auto;
     margin-bottom: rem(12px);
@@ -284,14 +315,14 @@
         font-size: rem(25px);
       }
       .caption {
-        color:#868686;
+        color:#210d0b;
         font-size: rem(16px);
       }
       .know-more-btn {
-        float: right;
+        float: left;
         margin: rem(16px) 0;
         height: rem(31px);
-        background-image: linear-gradient( to right, #2F80ED, #003CE1);
+        background-color: #210d0b;
         border: none;
         padding: rem(5px) rem(8px);
         font-size: rem(14px);
@@ -367,14 +398,14 @@
           font-size: rem(20px);
         }
         .caption {
-          color:#868686;
+          color:#210d0b;
           font-size: rem(12px);
         }
         .know-more-btn {
-          float: right;
+          float: left;
           margin: rem(16px) 0;
           height: rem(31px);
-          background-image: linear-gradient( to right, #2F80ED, #003CE1);
+          background-color: #210d0b;
           border: none;
           padding: rem(5px) rem(8px);
           font-size: rem(14px);
@@ -773,8 +804,11 @@
   .bl-homepage__content--publishedPosts__competition {
     margin-bottom: rem(20px);
     .contest-advert {
-      background: #ffffff;
-      background-image: url('../../../assets/Mask-group-15.svg');
+      background: #f6e5d9;
+      background-image: url('../../../assets/Group_975.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right;
       height: rem(200px);
       margin: auto;
       margin-bottom: auto;
@@ -793,14 +827,14 @@
           font-size: rem(30px);
         }
         .caption {
-          color:#868686;
+          color:#210d0b;
           font-size: rem(16px);
         }
         .know-more-btn {
-          float: right;
+          float: left;
           margin: rem(16px) 0;
           height: rem(31px);
-          background-image: linear-gradient( to right, #2F80ED, #003CE1);
+          background-color: #210d0b;
           border: none;
           padding: rem(5px) rem(8px);
           font-size: rem(14px);
