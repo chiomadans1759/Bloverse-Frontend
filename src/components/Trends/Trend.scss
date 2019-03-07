@@ -1,7 +1,7 @@
 @import 'sass-rem';
 
 .trendCard {
-  border: 1px solid #d9d9d9 !important;
+  border: rem(1px) solid #d9d9d9 !important;
   width: rem(343px);
   height: 100%;
   height: rem(240px);
@@ -26,8 +26,8 @@
     color: #096DD9;
     position: absolute;
     text-align: center;
-    top: 10px;
-    right: 10px;
+    top: rem(10px);
+    right: rem(10px);
     font-size: rem(12px);
   }
 
@@ -111,8 +111,8 @@
       color: #096DD9;
       position: absolute;
       text-align: center;
-      top: 10px;
-      right: 10px;
+      top: rem(10px);
+      right: rem(10px);
       font-size: rem(12px);
     }
 
