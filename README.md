@@ -1,6 +1,6 @@
 # Bloverse
 This web application is a content creation platform for users to create a blog for themselves. 
-https://www.bloverse.com
+v1.staging.bloverse.com
 
 <img width="1280" alt="Screen Shot 2019-09-22 at 10 02 27 AM" src="https://user-images.githubusercontent.com/26308412/65385096-3176b300-dd22-11e9-9c1b-7fd51f652274.png">
 <img width="1280" alt="Screen Shot 2019-09-22 at 10 02 38 AM" src="https://user-images.githubusercontent.com/26308412/65385097-32a7e000-dd22-11e9-9d8b-489989ce54af.png">
